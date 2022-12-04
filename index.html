@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog App</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/styleb.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+        
+    
+    </head>
+
+    <body>
+
+        <header>
+
+            <div class="logo">
+                <img  href="index.html" src="./design_files/images/logoabc.png" alt="image">
+            </div>
+            
+            <div class="menutop">
+                <ul>
+                    <li><a href="#banniere" onclick="toggleMenu();">Home</a> </li>
+                    <li><a href="signin.html" onclick="toggleMenu();">Se connecter</a></li>
+                    <li class="active"><a href="#corps_a" onclick="toggleMenu();">Publier un projet</a></li>
+                </ul>
+            </div>
+            
+        </header>
+
+        <section class="banniere" id="banniere">
+            <div class="contenu">
+                <h1>Trouvez des Freelances disponibles</h1>
+                <p>ABC Digital vous propose des freelances disponibles pour vos projets</p>
+                <b href="#">Recevoir un devis</b>
+            </div>
+        </section>
+        <section class="sousbanniere" id="sousbanniere">
+         
+            <div class="blockbanniere">
+                <div class="col11">
+                    <div class="img">
+                        <img src="./design_files/images/letterdevis.png" alt="image">
+                    </div>
+
+                    <div class="col10">
+                        <b class="titre-banniere" > Simple</b>
+                        <a>Décrivez votre projet en quelques mots et recevez votre dévis</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blockbanniere">
+                <div class="col11">
+                    <div class="img">
+                        <img src="./design_files/images/formationimage.png" alt="image">
+                    </div>
+
+                    <div class="col10">
+                        <b class="titre-banniere" >Formation</b>
+                        <a>Suivez des formations sur divers domaines</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blockbanniere">
+                <div class="col11">
+                    <div class="img">
+                        <img src="./design_files/images/moneypng.png" alt="image">
+                    </div>
+                </div>
+                <div class="col10">
+                    <b class="titre-banniere" >Gratuit</b>
+                    <a>Choisissez le freelance ideal pour votre projet, sans obligation ...</a>
+                </div>
+            </div>
+            
+        </section>
+        <section class="besoin" id="besoin">
+
+            <div class ="box1">
+                <div class="besointitre">
+                    <b class="titre-besoin" > De quoi avez vous besoin ?</b>
+                </div>
+    
+                <div class="orientationbtn">
+                    <div class="previousbtn" >
+                        <img onclick="scroollr()" src="./design_files/images/previousbtn.png" alt="image">
+                    </div>
+                    <div class="nextbtn" onclick="scroolll()">
+                        <img src="./design_files/images/nextbtn.png" alt="image">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider_container">
+
+                <div class="itemservice">
+                    <img src="./design_files/images/developpeurmobileimg.webp" alt="image">
+            
+                    <div class="col20">
+                        <a>Développement d'application</a>
+                        <b class="titre-service" >Appli Mobile</b>
+                    </div>
+                </div>
+    
+                <div class="itemservice">
+                    <img src="./design_files/images/developpeurwebimg.jpg" alt="image">
+               
+                    <div class="col20">
+                        <a>Création de Site Web </a>
+                        <b class="titre-service" >Application Web</b>
+                    </div>
+                </div>
+    
+                <div class="itemservice">
+                    <img src="./design_files/images/voixoffimg.jpg" alt="image">
+                
+                    <div class="col20">
+                        <a>Cinématographie audio/visuel</a>
+                        <b class="titre-service" > Voix Off</b>
+                    </div>
+                </div>
+    
+                <div class="itemservice">
+                    <img src="./design_files/images/translatorimg.jpg" alt="image">
+                    <div class="col20">
+                        <a>Service linguistique</a>
+                        <b class="titre-service" >Traducteur et interprete</b>
+                    </div>
+                </div>
+
+                <div class="itemservice">
+                    <img src="./design_files/images/ecommerceimg.webp" alt="image">
+                    <div class="col20">
+                        <a>Experience Ecommerce</a>
+                        <b class="titre-service" >Appli et site Ecommerce</b>
+                    </div>
+                </div>
+
+                <div class="itemservice">
+                    <img src="./design_files/images/seoimg.jpg" alt="image">
+                    <div class="col20">
+                        <a>Optimisation</a>
+                        <b class="titre-service" >Seo</b>
+                    </div>
+                </div>
+
+                <div class="itemservice">
+                    <img src="./design_files/images/soustitrageimg.jpg" alt="image">
+                    <div class="col20">
+                        <a>Montage</a>
+                        <b class="titre-service" >AudioVisuel</b>
+                    </div>
+                </div>
+            </div>
+
+        </section> 
+        <section class="sousbesoin" id="sousbesoin">
+
+            <div class="metier">
+                <div class="col30">
+                    <b class="titre-metier" > Nos principaux metiers</b>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/developpeur mobile.png" alt="image">
+                        <a>Developpeur Mobile</a>
+                    </div>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/webdevimg.png" alt="image">
+                        <a>Developpeur Web</a>
+                    </div>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/wordpressimg.png" alt="image">
+                        <a>Developpeur WordPress</a>
+                    </div>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/seoimgg.png" alt="image">
+                        <a>Consultant Seo</a>
+                    </div>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/graphisteimg.png" alt="image">
+                        <a>Graphiste</a>
+                    </div>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/voixoffimgg.png" alt="image">
+                        <a>Voix Off</a>
+                    </div>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/traducteurimg.png" alt="image">
+                        <a>Traducteur</a>
+                    </div>
+                    <div class="developpeur" >
+                        <img onclick="" src="./design_files/images/formationimgg.png" alt="image">
+                        <a>Formation Diverses</a>
+                    </div>
+                    <b class="titre-metier" >Excercez votre activité en portage salarial</b>
+                    <a>Profiter de la liberté du freelance et béneficiez des avantages du salarié grace au<span> portage salarial</span></a>
+
+                    <b class="titre-metier" >Trouvez une freelance rapidement</b>
+                    <a>Postez votre projet gratuitement pour etre mis en relation avec les nombreux<span> freelances disponible</span></a>
+                    <b class="boutontrouver">Trouvez un freelance</b>
+
+                </div>
+            </div>
+
+            <div class="projet">
+                <div class="col10">
+                    <b class="titre-metier" >Les projets à la une</b>
+                    <a>Suivez des formations sur divers domaines</a>
+                    <div class="developpeur" >
+                        <img class="boximage" src="./design_files/images/developpeur mobile.png" alt="image">
+                        <a class="boxtitre">Developpeur Mobile</a>
+                        <a class="boxprice">Developpeur Mobile</a>
+                        <a class="boxdescription">Developpeur Mobile</a>
+                        <a class="boxautor">Developpeur Mobile</a>
+                        <a class="boxtime">Developpeur Mobile</a>
+                        <a class="boxtitre">Developpeur Mobile</a>
+                        <a class="boxprice">Developpeur Mobile</a>
+                        <a class="boxdescription">Developpeur Mobile</a>
+                        <a class="boxautor">Developpeur Mobile</a>
+                        <a class="boxtime">Developpeur Mobile</a>
+                        <a class="boxtitre">Developpeur Mobile</a>
+                        <a class="boxprice">Developpeur Mobile</a>
+                        <a class="boxdescription">Developpeur Mobile</a>
+                        <a class="boxautor">Developpeur Mobile</a>
+                        <a class="boxtime">Developpeur Mobile</a>
+                        <a class="boxtitre">Developpeur Mobile</a>
+                        <a class="boxprice">Developpeur Mobile</a>
+                        <a class="boxdescription">Developpeur Mobile</a>
+                        <a class="boxautor">Developpeur Mobile</a>
+                        <a class="boxtime">Developpeur Mobile</a>
+                        <a class="boxtitre">Developpeur Mobile</a>
+                        <a class="boxprice">Developpeur Mobile</a>
+                        <a class="boxdescription">Developpeur Mobile</a>
+                        <a class="boxautor">Developpeur Mobile</a>
+                        <a class="boxtime">Developpeur Mobile</a>
+                        <a class="boxtitre">Developpeur Mobile</a>
+                        <a class="boxprice">Developpeur Mobile</a>
+                        <a class="boxdescription">Developpeur Mobile</a>
+                        <a class="boxautor">Developpeur Mobile</a>
+                        <a class="boxtime">Developpeur Mobile</a>
+                    </div>
+
+
+                  
+
+
+                    <a class="pagesuivante">Page suivante ....S </a>
+                </div>
+            </div>
+            
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>company ABC</h4>
+                        <div class="barorange">
+                            <img src="./design_files/images/fondrose.png" alt="image">
+                        </div>
+                        <ul>
+                            <li><a href="#">Aide et FAQ</a></li>
+                            <li><a href="#">Nos tarifs</a></li>
+                            <li><a href="#">Comment ca marche ?</a></li>
+                            <li><a href="#">Condition d'utilisation</a></li>
+                            <li><a href="#">Condition d'utilisation</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">Mention Legale</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>get-help</h4>
+                        <div class="barorange">
+                            <img src="./design_files/images/fondrose.png" alt="image">
+                        </div>
+                        <ul>
+                            <li><a href="#">Freelance par catégories</a></li>
+                            <li><a href="#">Les avis ABC Digital</a></li>
+                            <li><a href="#">A propos de nous</a></li>
+                            <li><a href="#">Nos partenaires</a></li>
+                            <li><a href="#">Nous contacter</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Services ABC</h4>
+                        <div class="barorange">
+                            <img src="./design_files/images/fondrose.png" alt="image">
+                        </div>
+                        <ul>
+                            <li><a href="#">Formation Developpeur Mobile</a></li>
+                            <li><a href="#">Formation Developpeur Web</a></li>
+                            <li><a href="#">Formation Web design</a></li>
+                            <li><a href="#">SEO / Augmentez votre efficacité</a></li>
+                            <li><a href="#">Sous titrage (Voix Off)</a></li>
+                            <li><a href="#">Formation Ecommerce et marketing digital</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="barorange">
+                            <img src="./design_files/images/fondrose.png" alt="image">
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-likedin-in"></i></a>
+                                
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </footer>
+
+
+        <div class="whatsappid" id="myDiv"></div>
+
+        <script src="js/index.js"></script>
+        <script>
+            firebase.auth().onAuthStateChange(function(user) {
+                if(user) {
+                    window.location.href = "signin.html";
+                }
+            });
+        </script>
+
+
+    </body>
+
+      <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237694937601',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'ABC Digital!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            position: 'right',
+            size: '50px'
+          });
+          
+        });
+
+        function scroolll () {
+            var left = document.querySelector(".slider_container");
+            left.scrollBy(350, 0);
+        }
+        function scroollr () {
+            var right = document.querySelector(".slider_container");
+            right.scrollBy(-350, 0);
+        }
+      </script>
+
+</html>
