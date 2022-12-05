@@ -602,8 +602,8 @@ ul {
   }
   .logo img{
     cursor: pointer;
-    height: 75px;
-    width: 170px;
+    height: 82px;
+    width: 190px;
     margin-left: 80px;
     margin-top: 30px;
     position: relative;
@@ -627,7 +627,7 @@ ul {
   }
   .banniere .contenu h1{
     color: rgb(40, 50, 250);
-    font-size: 6em;
+    font-size: 9em;
     font-weight: 700;
     width: 100%;
     text-transform: capitalize;
