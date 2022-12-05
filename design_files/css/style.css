@@ -84,16 +84,18 @@ header {
 
 
 .banniere{
+  background-color: #ebe7e7;
+  /* background-image: linear-gradient(rgba(0,0,0,0.3) , rgba(0,0.3,0,0.2)), url(../images/fondacceuil.jpg); */
   position: relative;
   width: 100%;
-  /* display: flex; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-}.banniere .contenu {
+}
+.banniere .contenu {
   position: absolute;
   right: 0;
   margin-right: 30px;
@@ -121,6 +123,7 @@ header {
   padding: 11px 60px;
   border-radius: 20px;
   font-size: 19px;
+  box-shadow: -1px 1px 15px rgb(197, 197, 197);
   cursor: pointer;
 }
 
@@ -165,6 +168,7 @@ header {
   padding: 5px;
   margin-bottom: 5px;
   position: relative;
+  box-shadow: -1px 1px 15px rgb(224, 222, 222);
   background-color: rgb(60, 130, 240);
   border-radius: 20px;
 }
@@ -276,6 +280,7 @@ header {
 }
 .itemservice .col20 a{
   font-family: Century Gothic;
+  font-weight: 550;
 }
 .itemservice .titre-service {
   display: block;
@@ -293,6 +298,7 @@ header {
   cursor: pointer;
   object-fit: cover;
   overflow: auto;
+  box-shadow: -1px 15px 10px rgb(190, 190, 190);
   scroll-behavior: smooth;
 }
 .besoin .titre-besoin{
@@ -320,13 +326,74 @@ header {
 }
 .sousbesoin .metier {
   display: inline-block;
-  width: 30%;
+  width: 28%;
   margin-left: 100px;
 }
 .sousbesoin .projet {
   display: inline-block;
-  width: 75%;
-  margin-left: 100px;
+  width: 85%;
+}
+.sousbesoin .projetdiv {
+  display: flex;
+  width: 85%;
+  min-height: 200px;
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+  background-color: white;
+  position: relative;
+  box-shadow: -1px 1px 25px rgb(218, 217, 217);
+}
+
+.sousbesoin .projetdiv img{
+  display: block;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  padding: 5px;
+  position: relative;
+  background-color: rgb(226, 226, 226);
+  border-radius: 20px;
+}
+.sousbesoin .contenuprojet {
+  position: relative;
+  display: flex;
+}
+.sousbesoin .contenuprojetb {
+  position: relative;
+  display: block;
+  margin-left: 25px;
+}
+.sousbesoin .contenuprojet h1{
+  color: rgb(45, 62, 158);
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.sousbesoin .contenuprojet p{
+  color: rgb(103, 121, 121);
+  font-size: 14px;
+  font-weight: 550;
+}
+.sousbesoin .contenuprojet a{
+  margin-top: 10px;
+  color: rgb(54, 59, 59);
+  font-size: 13px;
+  width: 600px;
+  font-weight: 400;
+}
+.sousbesoin .contenuprojet span{
+  color: green;
+  font-size: 25px;
+  font-weight: 600;
+}
+.sousbesoin .contenuprojet b{
+  position: absolute;
+  bottom: 0;
+  color: rgb(117, 128, 128);
+  cursor: pointer;
 }
 .sousbesoin .col30{
   display: block;
@@ -346,6 +413,7 @@ header {
   height: 20px;
   position: relative;
   display: inline-block;
+  box-shadow: -1px 1px 25px rgb(218, 217, 217);
 }
 .col30 a {
   cursor: pointer;
@@ -362,19 +430,19 @@ header {
   font-size: 15px;
   font-weight: 500px;
 }
-.col30 .boutontrouver{
+.col30 .developpeur .boutontrouver{
   position: relative;
-  display: inline-block;
+  display: flex;
+  width: 200px;
   margin-top: 40px;
-  width: 20px;
   transition: 0.5s ease;
   color: #fff;
   background-color: rgb(88, 197, 88);
-  padding: 11px 50px;
+  padding-top: 11px;
+  padding-bottom: 11px;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
-  
   font-size: 15px;
   cursor: pointer;
 }
@@ -404,15 +472,16 @@ header {
 
 .sousbesoin .titre-metier{
   display: block;
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: 300px;
   color: rgb(182, 172, 37);
   margin-top: 45px ;
 }
-.sousbesoin .pagesuivante {
+.developpeur .pagesuivante {
   display: block;
+  position: relative;
+  margin-top: 50px;
   margin-bottom: 80px;
-  margin-top: 10px;
 }
 
 
@@ -426,6 +495,7 @@ header {
   padding: 70px 0;
   box-sizing: border-box;
   background-color: #24262b;
+  margin-top: 120px;
 }
 .footer-col {
   width: 25%;
