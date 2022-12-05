@@ -603,7 +603,7 @@ ul {
   .logo img{
     cursor: pointer;
     height: 75px;
-    width: 160px;
+    width: 170px;
     margin-left: 80px;
     margin-top: 30px;
     position: relative;
@@ -623,11 +623,11 @@ ul {
     position: absolute;
     display: block;
    
-    margin-top: 220px;
+    margin-top: 260px;
   }
   .banniere .contenu h1{
     color: rgb(40, 50, 250);
-    font-size: 5em;
+    font-size: 6em;
     font-weight: 700;
     width: 100%;
     text-transform: capitalize;
