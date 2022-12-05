@@ -623,15 +623,15 @@ ul {
     position: absolute;
     display: block;
    
-    margin-top: 260px;
+    margin-top: 300px;
   }
   .banniere .contenu h1{
     color: rgb(40, 50, 250);
-    font-size: 9em;
-    font-weight: 700;
+    font-size: 15em;
+    font-weight: 1200;
     width: 100%;
     text-transform: capitalize;
-    margin-top: 70px;
+    margin-top: 150px;
   }
   .banniere .lottiescript {
     display: none;
