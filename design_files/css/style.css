@@ -592,7 +592,7 @@ ul {
   }
   header{
     position: absolute;
-    background-color: rgb(245, 247, 243);
+    background-color: white;
     top: 0; left: 0; right: 0;
     height: 100px;
     z-index: 1000;
@@ -610,8 +610,9 @@ ul {
   }
   .banniere{
     position: relative;
-    min-height: 59vh;
-    background-color: rgb(245, 247, 243);
+    min-height: 62vh;
+    width: 100%;
+    background-image: url("../images/fondblanc.jpg");
     display: block;
     background-size: cover;
     background-position: center;
@@ -629,7 +630,7 @@ ul {
     color: rgb(40, 50, 250);
     font-size: 10em;
     font-weight: 700;
-    width: 100%;
+    width: 90%;
     text-transform: capitalize;
     margin-top: 70px;
   }
@@ -640,7 +641,7 @@ ul {
     display: block;
     margin-top: 10px;
     color: rgb(53, 87, 87);
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 500;
   }
   .banniere .contenu b{
