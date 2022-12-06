@@ -611,7 +611,7 @@ ul {
   .banniere{
     background-image: url("../images/fondblanc.jpg");
     position: relative;
-    min-height: 62vh;
+    min-height: 76vh;
     width: 100%;
     display: block;
     background-size: cover;
