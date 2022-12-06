@@ -580,14 +580,15 @@ ul {
 
 
 
-@media(max-width:991px){
+@media(max-width:1000px){
 
   body {
     background-color: rgb(240, 243, 235);
     font-family: Century Gothic;
     color: #333;
     font-size: 13px;
-    margin: 0; 
+    margin: 0;
+    width : 100%;
   }
   header{
     position: absolute;
