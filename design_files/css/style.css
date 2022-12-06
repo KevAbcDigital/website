@@ -609,10 +609,10 @@ ul {
     position: relative;
   }
   .banniere{
+    background-image: url("../images/fondblanc.jpg");
     position: relative;
     min-height: 62vh;
     width: 100%;
-    background-image: url("../images/fondblanc.jpg");
     display: block;
     background-size: cover;
     background-position: center;
