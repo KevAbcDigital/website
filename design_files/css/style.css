@@ -628,9 +628,9 @@ ul {
   }
   .banniere .contenu h1{
     color: rgb(40, 50, 250);
-    font-size: 10em;
+    font-size: 11em;
     font-weight: 700;
-    width: 90%;
+    width: 80%;
     text-transform: capitalize;
     margin-top: 70px;
   }
@@ -641,7 +641,7 @@ ul {
     display: block;
     margin-top: 10px;
     color: rgb(53, 87, 87);
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: 500;
   }
   .banniere .contenu b{
