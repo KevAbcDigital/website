@@ -735,7 +735,7 @@ ul {
   width: 100%;
   padding-left: 10px;
   margin-top: 53px;
-  display: block;
+  display: none;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
@@ -893,7 +893,7 @@ ul {
   
   
   .sousbesoin{
-    display: block;
+    display: none;
     padding: 20px;
     width: 100%;
   }
