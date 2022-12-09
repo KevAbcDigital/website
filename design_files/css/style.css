@@ -577,7 +577,7 @@ ul {
   align-items: center;
   background-size: cover;
   background-position: center;
-  min-height: 95vh;
+  min-height: 85vh;
 }
 .banniere .imglogo{
   cursor: pointer;
