@@ -717,11 +717,11 @@ ul {
 .sousbanniereb .col11 .imgnoborder{
   display: block;
   cursor: pointer;
-  height: 460px;
-  width: 460px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  height: 300px;
+  width: 300px;
+  margin-top: 55px;
+  margin-bottom: 10px;
+  position: relative;
   box-shadow: none;
   background-color: transparent;
 }
