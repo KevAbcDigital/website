@@ -145,7 +145,9 @@ header {
 
 
 
-
+.sousbanniereb{
+  display: none;
+}
 .sousbanniere{
   position: relative;
   width: 100%;
@@ -577,7 +579,7 @@ ul {
   align-items: center;
   background-size: cover;
   background-position: center;
-  min-height: 85vh;
+  min-height: 100vh;
 }
 .banniere .imglogo{
   cursor: pointer;
@@ -601,7 +603,7 @@ ul {
   position: relative;
   display: block;
   color: rgb(248, 248, 248);
-  font-size: 3.3em;
+  font-size: 2.9em;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -641,47 +643,49 @@ ul {
 
 
 
-
 .sousbanniere{
+  display: none;
+}
+.sousbanniereb{
   position: relative;
   width: 100%;
-  padding-left: 100px;
-  padding-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-top: 80px;
-  display: none;
+  display: block;
   justify-content: center;
   align-items: center;
   background-size: cover;
   background-position: center;
 }
-.sousbanniere .blockbanniere {
-  display: flex;
+.sousbanniereb .blockbanniere {
+  display: block;
   width: 100%;
   margin-top: 85px;
 }
 
-.sousbanniere .col11{
-  display: flex;
+.sousbanniereb .col11{
+  display: block;
   position: relative;
   justify-content: center;
   align-items: center;
 }
-.sousbanniere .col10{
+.sousbanniereb .col10{
   display: block;
   position: relative;
 }
-.sousbanniere .col10 a {
+.sousbanniereb .col10 a {
   display: block;
   text-align: start;
   position: relative;
   color: rgb(100, 98, 98);
-  padding-left: 26px;
-  padding-right: 20px;
+  padding-left: 6px;
+  padding-right: 0px;
   width: 95%;
   margin-top: 12px;
   font-size: 14px;
 }
-.sousbanniere .blockbanniere .savoirplus {
+.sousbanniereb .blockbanniere .savoirplus {
   display: block;
   width: 350px;
   margin-top: 58px;
@@ -696,39 +700,21 @@ ul {
   box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
   cursor: pointer;
 }
-.sousbanniere .blockbanniere .savoirplus:hover{
+.sousbanniereb .blockbanniere .savoirplus:hover{
   background-color: rgb(87, 255, 87);
 }
-.sousbanniere .col11 img{
+.sousbanniereb .col11 img{
   display: block;
   cursor: pointer;
-  height: 350px;
-  width: 2600px;
+  height: 280px;
+  margin-bottom: 10px;
+  width: 400px;
   margin-top: 95px;
   position: relative;
   box-shadow: -1px 1px 15px rgb(224, 222, 222);
 }
 
-
-.sousbanniere .col120{
-  display: block;
-  position: relative;
-  padding-left: 40px;
-}
-.sousbanniere .img120{
-  display: block;
-  cursor: pointer;
-  height: 350px;
-  width: 5000px;
-  margin-top: 95px;
-  margin-left: 25px;
-  margin-right: 20px;
-  position: relative;
-  box-shadow: -1px 1px 15px rgb(224, 222, 222);
-  border-radius: 5px;
-}
-
-.sousbanniere .col11 .imgnoborder{
+.sousbanniereb .col11 .imgnoborder{
   display: block;
   cursor: pointer;
   height: 460px;
@@ -740,7 +726,7 @@ ul {
   background-color: transparent;
 }
 
-.sousbanniere .col10 .listeoffre {
+.sousbanniereb .col10 .listeoffre {
   display: block;
   text-align: start;
   position: relative;
@@ -749,21 +735,21 @@ ul {
   font-size: 15px;
   font-weight: 450;
 }
-.sousbanniere .col10 span {
+.sousbanniereb .col10 span {
   color: rgb(21, 62, 110);
   padding-left: 10px;
   padding-right: 10px;
   font-size: 16px;
   font-weight: 650;
 }
-.sousbanniere .col10 p {
+.sousbanniereb .col10 p {
   color: rgb(11, 78, 8);
   margin-top: 12px;
   font-size: 18px;
   font-weight: 600;
   margin-left: 30px;
 }
-.sousbanniere .titre-banniere{
+.sousbanniereb .titre-banniere{
   display: block;
   position: absolute;
   color: rgb(43, 41, 41);
@@ -771,7 +757,7 @@ ul {
   width: 100%;
   text-align: start;
   padding-left: 26px;
-  padding-right: 20px;
+  padding-right: 0px;
   position: relative;
   font-weight: 300px;
   text-transform: capitalize;
