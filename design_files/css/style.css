@@ -479,7 +479,6 @@ ul {
 .whatsappid {
   margin-right: 50px;
   margin-bottom: 20px;
-  position: absolute;
 }
 
 
@@ -496,27 +495,81 @@ ul {
 
 
 
+#menu-bar{
+  display: none;
+}
+header label{
+  font-size: 15px;
+  color: green;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 30px;
+  font-weight: bold;
+  display: none;
+}
+
 
 
 
 @media(max-width:991px){
 
-  body {
-    background-color: rgb(250, 253, 246);
-    color: #333;
-    font-size: 13px;
-    margin: 0; 
-    line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
-  }
-
   header{
+    padding: 20px;
+    justify-content: space-between;
+    z-index: 1000;
+    align-items: center;
+    display: flex;
+  }
+  header label {
+    display: initial;
+  }
+  header .menutop {
+    position: absolute;
+    margin-top: 65px;
+    top: 0; left:0; right: 0;
+    background-color: rgb(243, 236, 236);
+    border-top: 1px solid rgba(0,0,0,0.3);
     display: none;
   }
-  
-  
+  header .menutop ul li {
+    width: 100%;
+  }
+  header .menutop ul li a{
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    padding: 11px 8px;
+    border: 1px solid transparent;
+    transition: 0.5s ease;
+  }
+  .menutop ul li.active a {
+    display: none;
+  }
+  .logo img{
+    cursor: pointer;
+    float: left;
+    height: 29px;
+    width: 69px;
+    margin-left: 20px;
+    margin-top: 4px;
+  }
+
+
+
+  #menu-bar:checked ~ .menutop {
+    display: initial;
+  }
+
+body {
+  background-color: rgb(250, 253, 246);
+  color: #333;
+  font-size: 13px;
+  margin: 0; 
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
 .banniere{
-  background-image: linear-gradient(rgba(149, 197, 163, 0.534) , rgba(0,0.4,0,1.1)), url(../images/fondacceuil.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.534) , rgba(0,0.4,0,0.9)), url(../images/fondbanniere.jpg);
   position: relative;
   width: 100%;
   display: block;
@@ -524,7 +577,7 @@ ul {
   align-items: center;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 62vh;
 }
 .banniere .imglogo{
   cursor: pointer;
@@ -546,14 +599,14 @@ ul {
 }
 .banniere .contenu h1{
   position: relative;
-  display: block;
+  display: inline-block;
   color: rgb(248, 248, 248);
   font-size: 2.9em;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 120px;
   text-transform: capitalize;
   text-align: center;
 }
@@ -561,12 +614,16 @@ ul {
   display: none;
 }
 .banniere .contenu b{
-  display: inline-block;
+  display: block;
+  position: relative;
   margin-top: 68px;
+  width: 80%;
   transition: 0.5s ease;
+  margin-left: 10%;
+  
   color: rgb(6, 48, 15);
   background-color: rgb(220, 235, 18);
-  padding: 14px 50px;
+  padding: 14px 20px;
   border-radius: 20px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 22px;
@@ -574,12 +631,7 @@ ul {
   cursor: pointer;
 }
 .banniere .lottiescript {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin-left: 10px;
-  width: 320px;
-  height: 320px;
+  display: none;
 }
 
 
@@ -587,17 +639,16 @@ ul {
 /*interface de soutien de la page d'acceuil*/
 
 
-
 .sousbanniere{
   display: none;
 }
 .sousbanniereb{
   position: relative;
+  display: block;
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 80px;
-  display: block;
   justify-content: center;
   align-items: center;
   background-size: cover;
@@ -606,14 +657,9 @@ ul {
 .sousbanniereb .blockbanniere {
   display: block;
   width: 100%;
-  margin-top: 85px;
-}
-
-.sousbanniereb .col11{
-  display: block;
-  position: relative;
   justify-content: center;
   align-items: center;
+  margin-top: 85px;
 }
 .sousbanniereb .col10{
   display: block;
@@ -645,10 +691,7 @@ ul {
   box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
   cursor: pointer;
 }
-.sousbanniereb .blockbanniere .savoirplus:hover{
-  background-color: rgb(87, 255, 87);
-}
-.sousbanniereb .col11 img{
+.sousbanniereb img{
   display: block;
   cursor: pointer;
   height: 280px;
@@ -657,17 +700,6 @@ ul {
   margin-top: 95px;
   position: relative;
   box-shadow: -1px 1px 15px rgb(224, 222, 222);
-}
-.sousbanniereb .col11 .imgnoborder{
-  display: block;
-  cursor: pointer;
-  height: 300px;
-  width: 300px;
-  margin-top: 55px;
-  margin-bottom: 10px;
-  position: relative;
-  box-shadow: none;
-  background-color: transparent;
 }
 .sousbanniereb .col10 .listeoffre {
   display: block;
@@ -696,7 +728,7 @@ ul {
   display: block;
   position: absolute;
   color: rgb(43, 41, 41);
-  font-size: 3.1em;
+  font-size: 2.1em;
   width: 100%;
   text-align: start;
   padding-left: 26px;
@@ -707,7 +739,44 @@ ul {
 }
 
 
-  /*zone metier*/
+/*zone partenaire*/
+
+  
+.partenaire{
+  padding-left: 10px;
+  margin-top: 73px;
+  overflow: hidden;
+}
+.partenaire .orientationbtn {
+  display: none;
+}
+.partenaire .slider_container{
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.partenaire .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.partenaire .itemservice{
+  display: inline-block;
+  margin-right: 5px;
+}
+.itemservice .col20 a{
+  font-family: Century Gothic;
+  font-weight: 550;
+}
+.partenaire .titre-besoin{
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 35px;
+  margin-bottom: 19px;
+  color: #fff;
+  float: left;
+}
+
+
+/*footer*/
 
 
   
@@ -738,6 +807,12 @@ ul {
   border-radius: 50%;
   color: #fff;
   transition: all 0.5s ease;
+}
+
+
+.whatsappid {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 
