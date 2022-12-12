@@ -15,7 +15,7 @@ p{
   color: #fff;
 }
 body {
-  background-color: rgb(241, 247, 235);
+  background-color: rgba(243, 236, 236, 0.979);
   color: #333;
   font-size: 13px;
   margin: 0; 
@@ -29,8 +29,8 @@ body {
 
 
 header {
-  /*background-color: rgba(255, 255, 255, 0.979);*/
-  position: absolute;
+  background-color: rgb(243, 236, 236);
+  position: fixed;
   top: 0; left: 0; right: 0;
   height: 65px;
   z-index: 1000;
@@ -50,8 +50,8 @@ header {
   text-decoration: none;
   padding: 5px 25px;
   transition: 0.5s ease;
-  color: rgb(227, 248, 237);
-  font-weight: 400;
+  color: rgb(61, 70, 65);
+  font-weight: 450;
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
 }
@@ -72,10 +72,10 @@ header {
 .logo img{
   cursor: pointer;
   float: left;
-  height: 44px;
-  width: 98px;
+  height: 35px;
+  width: 80px;
   margin-left: 120px;
-  margin-top: 25px;
+  margin-top: 17px;
 }
 
 
@@ -86,7 +86,7 @@ header {
 
 
 .banniere{
-  background-image: linear-gradient(rgba(12, 53, 71, 0.534) , rgba(0,0.4,0,1.1)), url(../images/fondblanc.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.534) , rgba(0,0.4,0,0.9)), url(../images/fondbanniere.jpg);
   /*background-color: rgb(84, 180, 236);*/
   position: relative;
   width: 100%;
@@ -99,8 +99,8 @@ header {
 }
 .banniere .contenu {
   position: absolute;
-  right: 0;
-  margin-right: 30px;
+  left: 0;
+  margin-left: 22px;
   text-align: center;
   margin-top: 100px;
 }
@@ -123,8 +123,21 @@ header {
   display: inline-block;
   margin-top: 88px;
   transition: 0.5s ease;
-  color: rgb(6, 48, 15);
-  background-color: rgb(220, 235, 18);
+  color: rgb(255, 255, 255);
+  background-color: rgb(52, 129, 52);
+  padding: 14px 50px;
+  border-radius: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 22px;
+  box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
+  cursor: pointer;
+}
+.banniere .contenu b:hover{
+  display: inline-block;
+  margin-top: 88px;
+  transition: 0.5s ease;
+  color: rgb(212, 238, 218);
+  background-color: rgb(10, 63, 10);
   padding: 14px 50px;
   border-radius: 20px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -134,9 +147,9 @@ header {
 }
 .banniere .lottiescript {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
-  margin-left: 10px;
+  margin-right: 10px;
   width: 320px;
   height: 320px;
 }
@@ -162,10 +175,12 @@ header {
 }
 .sousbanniere .blockbanniere {
   display: flex;
+  position: relative;
+  align-items:center;
+  justify-content: center;
   width: 100%;
   margin-top: 85px;
 }
-
 .sousbanniere .col11{
   display: flex;
   position: relative;
@@ -214,8 +229,6 @@ header {
   position: relative;
   box-shadow: -1px 1px 15px rgb(224, 222, 222);
 }
-
-
 .sousbanniere .col120{
   display: block;
   position: relative;
@@ -224,28 +237,14 @@ header {
 .sousbanniere .img120{
   display: block;
   cursor: pointer;
-  height: 350px;
-  width: 5000px;
-  margin-top: 95px;
+  height: 300px;
+  width: 4000px;
   margin-left: 25px;
   margin-right: 20px;
   position: relative;
   box-shadow: -1px 1px 15px rgb(224, 222, 222);
   border-radius: 5px;
 }
-
-.sousbanniere .col11 .imgnoborder{
-  display: block;
-  cursor: pointer;
-  height: 460px;
-  width: 460px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  box-shadow: none;
-  background-color: transparent;
-}
-
 .sousbanniere .col10 .listeoffre {
   display: block;
   text-align: start;
@@ -286,174 +285,117 @@ header {
 
 
 
-/*zone metier*/
+
+/*suite partenaire*/
 
 
-.sousbesoin{
+.partenaire{
   position: relative;
   width: 100%;
-  justify-content: center;
-  display: flex;
+  padding-left: 100px;
+  margin-top: 73px;
+  background-color: rgb(3, 77, 95);
+  display: block;
   background-size: cover;
   background-position: center;
+  box-sizing: border-box;
+  overflow: auto;
 }
-.sousbesoin .metier {
-  display: inline-block;
-  width: 28%;
-  margin-left: 100px;
-}
-.sousbesoin .projet {
-  display: inline-block;
-  width: 85%;
-}
-.sousbesoin .projetdiv {
-  display: flex;
-  width: 85%;
-  min-height: 200px;
-  padding-left: 30px;
-  padding-right: 10px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  border-radius: 15px;
-  margin-top: 20px;
-  background-color: white;
-  position: relative;
-  box-shadow: -1px 1px 25px rgb(218, 217, 217);
-}
-.sousbesoin .projetdiv img{
+.partenaire .box1 {
   display: block;
+  width: 100%;
+  position: relative;
+  white-space: nowrap;
+}
+.partenaire .besointitre{
+  display: inline-block;
+  position: relative;
+}
+.partenaire .orientationbtn {
+  float: right;
+  margin-right: 60px;
+  position: relative;
+  white-space: nowrap;
+}
+.partenaire .slider_container{
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: hidden;
+  margin-bottom: 50px;
+  scroll-behavior: smooth;
+}
+.orientationbtn .previousbtn{
+  display: inline-block;
+  margin-top: 10px;
+  object-fit: cover;
+}
+.orientationbtn .nextbtn{
+  margin-left: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  object-fit: cover;
+}
+.previousbtn img {
   cursor: pointer;
-  height: 60px;
-  width: 60px;
-  padding: 5px;
-  position: relative;
-  background-color: rgb(226, 226, 226);
-  border-radius: 20px;
+  width: 72px;
+  height: 50px;
 }
-.sousbesoin .contenuprojet {
-  position: relative;
-  display: flex;
+.nextbtn img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
-.sousbesoin .contenuprojetb {
-  position: relative;
+.nextbtn img:hover {
+  width: 33px;
+  background-color: rgb(255, 255, 255);
+  height: 33px;
+  border-radius: 15px;
+}
+.partenaire .itemservice{
+  display: inline-block;
+  margin-right: 15px;
+}
+.itemservice .col20{
   display: block;
-  margin-left: 25px;
+  position: relative;
+  align-items: center;
+  padding: 7px 17px;
+  background-color: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
-.sousbesoin .contenuprojet h1{
-  color: rgb(45, 62, 158);
-  font-size: 18px;
-  text-transform: capitalize;
-}
-.sousbesoin .contenuprojet p{
-  color: rgb(103, 121, 121);
-  font-size: 14px;
+.itemservice .col20 a{
+  font-family: Century Gothic;
   font-weight: 550;
 }
-.sousbesoin .contenuprojet a{
-  margin-top: 10px;
-  color: rgb(54, 59, 59);
-  font-size: 13px;
-  width: 600px;
-  font-weight: 400;
-}
-.sousbesoin .contenuprojet span{
-  color: green;
-  font-size: 25px;
-  font-weight: 600;
-}
-.sousbesoin .contenuprojet b{
-  position: absolute;
-  bottom: 0;
-  color: rgb(117, 128, 128);
-  cursor: pointer;
-}
-.sousbesoin .col30{
+.itemservice .titre-service {
   display: block;
-  position: relative;
+  color: rgb(40, 130, 100);
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
 }
-.sousbesoin .col30 .developpeur{
-  position: relative;
-  display: flex;
-  margin-top: 6px;
-  align-items: center;
-}
-.sousbesoin .col30 .developpeur a:hover{
-  padding-left: 8px;
-}
-.col30 img{
-  width: 20px;
-  height: 20px;
-  position: relative;
-  display: inline-block;
-  box-shadow: -1px 1px 25px rgb(218, 217, 217);
-}
-.col30 a {
+.itemservice img{
+  width: 240px;
+  height: 160px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
   cursor: pointer;
-  width: 200px;
-  color: #000;
-  position: relative;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 500px;
-  margin-left: 10px;
+  object-fit: cover;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
-.col30 a span{
-  color: rgb(60, 130, 240);
-  font-size: 15px;
-  font-weight: 500px;
-}
-.col30 .developpeur .boutontrouver{
-  position: relative;
-  display: flex;
-  width: 200px;
-  margin-top: 40px;
-  transition: 0.5s ease;
+.partenaire .titre-besoin{
+  font-size: 2em;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 35px;
+  margin-bottom: 19px;
   color: #fff;
-  background-color: rgb(88, 197, 88);
-  padding-top: 11px;
-  padding-bottom: 11px;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  cursor: pointer;
+  float: left;
 }
-.sousbesoin .col30 b {
-  width: 300px;
-  margin-bottom: 20px;
-  color: #24262b;
-}
-.sousbesoin .col10{
-  display: block;
-  position: relative;
-}
-.sousbesoin .col10 a{
-  position: relative;
-  display: flex;
-  margin-top: 6px;
-  align-items: center;
-  
-}
-.col10 img{
-  width: 20px;
-  height: 20px;
-  position: relative;
-  display: inline-block;
-}
-.sousbesoin .titre-metier{
-  display: block;
-  font-size: 1.5em;
-  font-weight: 300px;
-  color: rgb(182, 172, 37);
-  margin-top: 45px ;
-}
-.developpeur .pagesuivante {
-  display: block;
-  position: relative;
-  margin-top: 50px;
-  margin-bottom: 80px;
-}
-
 
 
 /*Pieds de page Non Responsive*/
@@ -532,10 +474,13 @@ ul {
 }
 
 
+/*whatsapp*/
 
-
-
-
+.whatsappid {
+  margin-right: 50px;
+  margin-bottom: 20px;
+  position: absolute;
+}
 
 
 
@@ -557,7 +502,7 @@ ul {
 @media(max-width:991px){
 
   body {
-    background-color: rgb(241, 247, 235);
+    background-color: rgb(250, 253, 246);
     color: #333;
     font-size: 13px;
     margin: 0; 
@@ -687,8 +632,8 @@ ul {
 }
 .sousbanniereb .blockbanniere .savoirplus {
   display: block;
-  width: 350px;
-  margin-top: 58px;
+  width: 330px;
+  margin-top: 38px;
   transition: 0.5s ease;
   color: rgb(6, 48, 15);
   background-color: rgb(220, 235, 18);
@@ -696,7 +641,7 @@ ul {
   text-align: center;
   border-radius: 20px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 22px;
+  font-size: 19px;
   box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
   cursor: pointer;
 }
@@ -713,7 +658,6 @@ ul {
   position: relative;
   box-shadow: -1px 1px 15px rgb(224, 222, 222);
 }
-
 .sousbanniereb .col11 .imgnoborder{
   display: block;
   cursor: pointer;
@@ -725,7 +669,6 @@ ul {
   box-shadow: none;
   background-color: transparent;
 }
-
 .sousbanniereb .col10 .listeoffre {
   display: block;
   text-align: start;
@@ -765,143 +708,6 @@ ul {
 
 
   /*zone metier*/
-
-
-  
-  
-  .sousbesoin{
-    display: none;
-    padding: 20px;
-    width: 100%;
-  }
-  .sousbesoin .metier {
-    width: 100%;
-  }
-  .sousbesoin .projet {
-    width: 100%;
-  }
-  .sousbesoin .projetdiv {
-    display: flex;
-    width: 100%;
-    min-height: 600px;
-    padding-left: 30px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    border-radius: 15px;
-    margin-top: 20px;
-    background-color: white;
-    position: relative;
-    box-shadow: -1px 1px 25px rgb(218, 217, 217);
-  }
-  .sousbesoin .projetdiv img{
-    display: block;
-    cursor: pointer;
-    height: 100px;
-    width: 100px;
-    padding: 5px;
-    position: relative;
-    background-color: rgb(226, 226, 226);
-    border-radius: 20px;
-  }
-  .sousbesoin .contenuprojet {
-    position: relative;
-    display: flex;
-  }
-  .sousbesoin .contenuprojetb {
-    position: relative;
-    display: block;
-    margin-left: 25px;
-  }
-  .sousbesoin .contenuprojet h1{
-    color: rgb(45, 62, 158);
-    font-size: 40px;
-    text-transform: capitalize;
-  }
-  .sousbesoin .contenuprojet p{
-    color: rgb(103, 121, 121);
-    font-size: 25px;
-    font-weight: 550;
-  }
-  .sousbesoin .contenuprojet span{
-    color: green;
-    font-size: 29px;
-    font-weight: 600;
-  }
-  .sousbesoin .contenuprojetb b{
-    position: absolute;
-    bottom: 0;
-    color: rgb(117, 128, 128);
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 600;
-  }
-  .sousbesoin .col30{
-    display: block;
-    position: relative;
-    width: 100%;
-  }
-  .sousbesoin .col30 .developpeur{
-    width: 100%;
-    position: relative;
-    display: flex;
-    margin-top: 6px;
-    align-items: center;
-  }
-  .sousbesoin .col30 .developpeur a:hover{
-    padding-left: 8px;
-  }
-  .col30 .developpeur img{
-    width: 50px;
-    height: 50px;
-    position: relative;
-    display: inline-block;
-    background-color: rgb(240, 243, 235);
-  }
-  .col30 a {
-    cursor: pointer;
-    width: 90%;
-    color: #000;
-    position: relative;
-    display: inline-block;
-    font-size: 30px;
-    padding-left: 35px;
-    font-weight: 650px;
-    margin-left: 10px;
-  }
-  .col30 a span{
-    color: rgb(60, 130, 240);
-    font-size: 30px;
-    font-weight: 500px;
-  }
-  .col30 .developpeur .boutontrouver{
-    display: none;
-  }
-  .sousbesoin .col30 b {
-    width: 100%;
-    font-size: 30px;
-    font-weight: 550;
-    margin-bottom: 20px;
-    color: #24262b;
-  }
-  
-  .sousbesoin .col10 a{
-    font-size: 2.3em;
-    font-weight: 450;
-  }
-  .projet .col10{
-    display: block;
-    position: relative;
-  } 
-  .projet .col10 .titre-metier{
-    display: block;
-    font-size: 3.5em;
-    font-weight: 300px;
-    color: rgb(8, 8, 4);
-    margin-top: 100px ;
-  }
-  
-  
 
 
   
