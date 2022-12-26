@@ -199,6 +199,13 @@ header {
   font-weight: 500;
   color: rgb(20, 90, 148);
 }
+.actu .contenuactu .auteur{
+  display: block;
+  margin-top: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(192, 23, 23);
+}
 .actu .imgactu{
   display: block;
   position: relative;
@@ -209,7 +216,7 @@ header {
 }
 .actu .contenuactu .articlevide{
   display: block;
-  margin-top: 40px;
+  margin-top: 3px;
   width: 600px;
   font-size: 2em;
   font-weight: 550;
