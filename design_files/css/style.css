@@ -248,6 +248,26 @@ header {
   height: 300px;
   margin-top: 17px;
 }
+.actu .optiontv{
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.actu .optiontv .imgtv{
+  display: inline-block;
+  cursor: pointer;
+  height: 40px;
+  width: 83px;
+  align-items: center;
+}
+.actu .optiontv .titretv{
+  display: inline-block;
+  background-color: yellow;
+  padding-left: 10px;
+  font-size: 15px;
+  margin-left: 8px;
+  font-weight: 550;
+}
 
 
 
@@ -274,6 +294,7 @@ header {
 }
 .replay .besointitre{
   display: inline-block;
+  margin-top: 35px;
   position: relative;
   align-items: center;
 }
@@ -300,25 +321,25 @@ header {
 .replay .previousbtn {
   display: inline-block;
   cursor: pointer;
-  width: 30px;
+  width: 23px;
   margin-top: 15px; 
-  height: 30px;
+  height: 25px;
 }
 .replay .previousbtn:hover{
-  width: 33px;
-  height: 33px;
+  width: 25px;
+  height: 27px;
 }
 .replay .nextbtn:hover{
-  width: 53px;
-  height: 53px;
+  width: 40px;
+  height: 42px;
 }
 .replay .nextbtn {
   display: inline-block;
   margin-left: 15px;
   margin-top: 15px; 
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 38px;
+  height: 40px;
 }
 .replay .nextbtn img:hover {
   background-color: rgb(11, 119, 138);
@@ -342,8 +363,6 @@ header {
   font-size: 2em;
   text-align: center;
   font-weight: 500;
-  margin-top: 35px;
-  margin-bottom: 19px;
   color: #fff;
 }
 .replay img{
@@ -432,6 +451,15 @@ header {
 .container {
   max-width: 1170px;
 }
+.copyrigth {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -443,10 +471,6 @@ ul {
 
 /*whatsapp*/
 
-.whatsappid {
-  margin-right: 50px;
-  margin-bottom: 20px;
-}
 
 
 
