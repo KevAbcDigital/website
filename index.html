@@ -38,8 +38,8 @@
             <div class="menutop">
                 <ul>
                     <li><a href="#banniere" class="menuclick" onclick="toggleMenu();">TOUTE L'INFO</a> </li>
-                    <li><a href="signin.html" onclick="toggleMenu();">POUR VOUS</a> </li>
-                    <li><a href="#sousbesoin" onclick="toggleMenu();">NOS DIRECTS</a> </li>
+                    <li><a href="#signin.html" onclick="toggleMenu();">POUR VOUS</a> </li>
+                    <li><a href="contenu.html" onclick="toggleMenu();">NOS DIRECTS</a> </li>
                 </ul>
             </div>
             
@@ -162,10 +162,11 @@
         <img class="imgpub" src="./design_files/images/pub3.jpg" alt="image">
 
         <section class="actu" id="actu">
-            <div class="contenuactu">
+            <div class="contenuactu" >
                 <div class="optiontv">
                     <img class="imgtv" src="./design_files/images/videobtn.png" alt="image">
-                    <b class="titretv" >TV : Regarder le discours du président BIYA</b>
+                    <li><a href="contenu.html" onclick="toggleMenu();" class="titretv">TV : Regarder le discours du 
+                        président BIYA</a> </li>
                 </div>
     
                 <img class="imgactu" src="./design_files/images/paulpaul.jpg" alt="image">
@@ -313,23 +314,8 @@
 
     </body>
 
-      <script type="text/javascript">
-        $(function () {
-          $('#myDiv').floatingWhatsApp({
-            phone: '237694937601',
-            popupMessage: 'Comment pouvons nous vous aider?',
-            showPopup: true,
-            showOnIE: false,
-            headerTitle: 'ABC Digital service!',
-            headerColor: 'green',
-            backgroundColor: 'green',
-            position: 'right',
-            
-            size: '50px'
-          });
-          
-        });
-
+    <script type="text/javascript">
+     
         function scroolll () {
             var left = document.querySelector(".slider_container");
             left.scrollBy(810, 0);
@@ -339,5 +325,4 @@
             right.scrollBy(-810, 0);
         }
       </script>
-
 </html>
