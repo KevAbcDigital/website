@@ -256,14 +256,17 @@ header {
 .actu .optiontv .imgtv{
   display: inline-block;
   cursor: pointer;
-  height: 40px;
-  width: 83px;
+  height: 36px;
+  z-index: 500;
+  width: 77px;
   align-items: center;
 }
 .actu .optiontv .titretv{
   display: inline-block;
+  cursor: pointer;
   background-color: yellow;
   padding-left: 10px;
+  color: #24262b;
   font-size: 15px;
   margin-left: 8px;
   font-weight: 550;
@@ -469,9 +472,15 @@ ul {
 }
 
 
-/*whatsapp*/
+/*contenu page*/
 
 
+
+.headcontenu {
+  background-color: rgb(2, 33, 100);
+  position: relative;
+  height: 600px;
+}
 
 
 
