@@ -151,13 +151,6 @@ header {
   width: 100%;
   text-transform: capitalize;
 }
-.actu .contenuactu span{
-  margin-top: 10px;
-  width: 100%;
-  font-weight: 500;
-  font-size: 1em;
-  color: rgb(51, 163, 51);
-}
 .actu .contenuactu .blocklien{
   width: 570px;
   display: flex;
