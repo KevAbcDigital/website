@@ -599,7 +599,7 @@ header {
   background-color: rgb(2, 33, 100);
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 65px;
+  height: 80px;
   z-index: 2000;
   align-items: center;
   display: flex;
@@ -634,7 +634,7 @@ header .menutop ul li a{
 .logo img{
   cursor: pointer;
   float: left;
-  height: 45px;
+  height: 42px;
   width: 100px;
   margin-left: 30px;
   margin-top: 5px;
@@ -666,7 +666,7 @@ header .menutop ul li a{
 }
 .actu .contenuactuphone h1{
   color: rgb(2, 33, 100);
-  font-size: 2.5em;
+  font-size: 2.1em;
   font-weight: 620;
   width: 100%;
   text-transform: capitalize;
@@ -680,7 +680,7 @@ header .menutop ul li a{
 .actu .contenuactuphone p{
   display: inline-block;
   font-size: 1.1em;
-  width: 60%;
+  width: 75%;
   margin-top: 10px;
   font-weight: 500;
   color: rgb(143, 20, 77);
@@ -689,19 +689,14 @@ header .menutop ul li a{
   display: inline-block;
   margin-top: 10px;
   font-size: 15px;
-  width: 40%;
+  width: 25%;
   font-weight: 500;
   background-color: rgba(2, 112, 146, 0.925);
   color: rgb(255, 255, 255);
   padding: 4px 20px;
 }
 .actu .contenuactuphone b{
-  display: block;
-  margin-top: 10px;
-  width: 100%;
-  font-size: 1em;
-  font-weight: 400;
-  color: rgb(0, 0, 0);
+  display: none;
 }
 .actu .contenuactuphone .date{
   display: block;
@@ -721,15 +716,17 @@ header .menutop ul li a{
   display: block;
   position: relative;
   cursor: pointer;
-  width: 100%;
-  height: 150px;
+  width: 120%;
+  height: 220px;
+  object-fit: cover;
   margin-top: 15px;
 }
 .actu .contenuactuphone .articlevide{
   display: block;
   margin-top: 3px;
-  width: 95%;
-  font-size: 1.5em;
+  width: 120%;
+  position: relative;
+  font-size: 1.7em;
   font-weight: 550;
   color: rgba(2, 53, 68, 0.925);
 }
@@ -756,9 +753,8 @@ header .menutop ul li a{
 .actu .contenuactuphone .optiontv .titretv{
   display: inline-block;
   cursor: pointer;
-  background-color: yellow;
   padding-left: 10px;
-  font-size: 15px;
+  font-size: 11px;
   margin-left: 8px;
   font-weight: 550;
   width: 80%;
@@ -771,15 +767,15 @@ header .menutop ul li a{
 .replay{
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 370px;
   padding-left: 20px;
   margin-top: 73px;
   background-color: rgb(2, 33, 100);
-  display: none;
+  display: block;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-  overflow: auto;
+  overflow: hidden;
 }
 .replay .box1 {
   display: block;
@@ -794,24 +790,21 @@ header .menutop ul li a{
   align-items: center;
 }
 .replay .besointitre b{
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 550;
   margin-left: 6px;
 }
 .replay .orientationbtn {
-  float: right;
-  margin-right: 60px;
-  position: relative;
-  white-space: nowrap;
+  display: none;
 }
 .replay .slider_container{
-  position: relative;
   width: 100%;
-  height: 400px;
-  white-space: nowrap;
-  overflow-x: hidden;
-  margin-top: 30px;
+  height: 300px;
+  overflow-x: auto;
   scroll-behavior: smooth;
+}
+.replay .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
 }
 .replay .previousbtn {
   display: inline-block;
@@ -845,8 +838,8 @@ header .menutop ul li a{
   margin-right: 15px;
 }
 .replay .slider_container .itemservice{
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   border-radius: 10px;
   cursor: pointer;
   object-fit: cover;
@@ -863,226 +856,19 @@ header .menutop ul li a{
 .replay img{
   display: inline-block;
   cursor: pointer;
-  height: 50px;
-  width: 140px;
-  margin-left: 80px;
+  height: 30px;
+  width: 70px;
+  margin-left: 10px;
 }
 
 
 
-/*
-.banniere{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.534) , rgba(0,0.4,0,0.9)), url(../images/fondbanniere.jpg);
-  position: relative;
-  width: 100%;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  min-height: 62vh;
-}
-.banniere .imglogo{
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  height: 34px;
-  width: 68px;
-  margin-left: 40px;
-  margin-top: 30px;
-}
-.banniere .contenu {
-  position: relative;
-  margin-right: 0px;
-  display: block;
-  margin-top: 0px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-.banniere .contenu h1{
-  position: relative;
-  display: inline-block;
-  color: rgb(248, 248, 248);
-  font-size: 2.9em;
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  align-items: center;
-  margin-top: 120px;
-  text-transform: capitalize;
-  text-align: center;
-}
-.banniere .contenu p{
-  display: none;
-}
-.banniere .contenu b{
-  display: block;
-  position: relative;
-  margin-top: 68px;
-  width: 80%;
-  transition: 0.5s ease;
-  margin-left: 10%;
-  
-  color: rgb(6, 48, 15);
-  background-color: rgb(220, 235, 18);
-  padding: 14px 20px;
-  border-radius: 20px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 22px;
-  box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
-  cursor: pointer;
-}
-.banniere .lottiescript {
-  display: none;
-}
-
-
-
-
-
-.sousbanniere{
-  display: none;
-}
-.sousbanniereb{
-  position: relative;
-  display: block;
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 80px;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-}
-.sousbanniereb .blockbanniere {
-  display: block;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 85px;
-}
-.sousbanniereb .col10{
-  display: block;
-  position: relative;
-}
-.sousbanniereb .col10 a {
-  display: block;
-  text-align: start;
-  position: relative;
-  color: rgb(100, 98, 98);
-  padding-left: 6px;
-  padding-right: 0px;
-  width: 95%;
-  margin-top: 12px;
-  font-size: 14px;
-}
-.sousbanniereb .blockbanniere .savoirplus {
-  display: block;
-  width: 330px;
-  margin-top: 38px;
-  transition: 0.5s ease;
-  color: rgb(6, 48, 15);
-  background-color: rgb(220, 235, 18);
-  padding: 14px 50px;
-  text-align: center;
-  border-radius: 20px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 19px;
-  box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
-  cursor: pointer;
-}
-.sousbanniereb img{
-  display: block;
-  cursor: pointer;
-  height: 266px;
-  margin-bottom: 10px;
-  width: 400px;
-  margin-top: 95px;
-  position: relative;
-  box-shadow: -1px 1px 15px rgb(224, 222, 222);
-}
-.sousbanniereb .col10 .listeoffre {
-  display: block;
-  text-align: start;
-  position: relative;
-  color: rgb(100, 98, 98);
-  margin-top: 5px;
-  font-size: 15px;
-  font-weight: 450;
-}
-.sousbanniereb .col10 span {
-  color: rgb(21, 62, 110);
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
-  font-weight: 650;
-}
-.sousbanniereb .col10 p {
-  color: rgb(11, 78, 8);
-  margin-top: 12px;
-  font-size: 18px;
-  font-weight: 600;
-  margin-left: 30px;
-}
-.sousbanniereb .titre-banniere{
-  display: block;
-  position: absolute;
-  color: rgb(43, 41, 41);
-  font-size: 2.1em;
-  width: 100%;
-  text-align: start;
-  padding-left: 26px;
-  padding-right: 0px;
-  position: relative;
-  font-weight: 300px;
-  text-transform: capitalize;
-}
-
-
-
-  
-.partenaire{
-  padding-left: 10px;
-  margin-top: 73px;
-  overflow: hidden;
-}
-.partenaire .orientationbtn {
-  display: none;
-}
-.partenaire .slider_container{
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.partenaire .slider_container::-webkit-scrollbar{
-  -webkit-appearance: none;
-}
-.partenaire .itemservice{
-  display: inline-block;
-  margin-right: 5px;
-}
-.itemservice .col20 a{
-  font-family: Century Gothic;
-  font-weight: 550;
-}
-.partenaire .titre-besoin{
-  font-size: 1.3em;
-  text-align: center;
-  font-weight: 500;
-  margin-top: 35px;
-  margin-bottom: 19px;
-  color: #fff;
-  float: left;
-}
 
 
 /*footer*/
 
 
-.footer {
-  display: none;
-}
+
 .footer-col { 
   width: 100%;
   margin-bottom: 30px;
