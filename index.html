@@ -349,6 +349,99 @@
                 window.alert("Probleme de recherche smsid1");
             }
         });
+        AvisRef.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "sms2" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#sms2').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche sms2");
+            }
+        });
+
+        AvisRef.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "smsid2" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#smsid2').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche smsid2");
+            }
+        });
+        AvisRef.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "sms3" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#sms3').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche sms3");
+            }
+        });
+
+        AvisRef.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "smsid3" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#smsid3').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche smsid3");
+            }
+        });
+        AvisRef.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "sms4" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#sms4').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche sms4");
+            }
+        });
+
+        AvisRef.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "smsid4" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#smsid4').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche smsid4");
+            }
+        });
 
 
 
