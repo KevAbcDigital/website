@@ -429,6 +429,9 @@ ul {
 /* devis */
 /* banniere page devis */
 
+.formulaire {
+  background-color: #fff;
+}
 .bannieredevis{
   background-image: linear-gradient(rgba(0, 0, 0, 0.404) , rgba(44, 44, 44, 0.534)),
    url(../images/fonddevis.jpg);
@@ -525,10 +528,7 @@ ul {
         padding-left: 12px;
         font-family: 'Poppins', sans-serif;}
 .form-controla {
-  border: 1px solid #333;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  border: 1px solid #aaaaaa;
   display: block;
   width: 100%;
   height: 40px;
@@ -598,13 +598,18 @@ ul {
   background-position: center;
   min-height: 80vh;
 }
+.banniereservices .slogan {
+  position: absolute;
+  left: 0;
+  margin-left: 22px;
+  text-align: center;
+}
 .banniereservices .slogan h1{
   color: rgb(248, 248, 248);
   font-size: 3.3em;
   cursor: pointer;
   margin-left: 40px;
-  width: 100%;
-  padding: 0 15%;
+  width: 770px;
   text-transform: capitalize;
   text-align: center;
 }
