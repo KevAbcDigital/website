@@ -24,7 +24,6 @@
 
     <body>
 
-
         <header>
 
             <div class="logo">
@@ -60,72 +59,72 @@
                 background="transparent" speed="1"  loop autoplay></lottie-player>
 
             <div class="slogan" >
-                <h1 id="slogan">Une equipe de professionnels disponibles pour tous vos services et prets à toute epreuve</h1>
+                <h1 id="slogandevis">Chargement Slogan ...</h1>
 
             </div>
 
             <div class="b" id="contactid">Contact : service client</div>
 
-        </section>
-        
+        </section>   
 
         <section class="formulaire" id="formulaire">
             <div class="devisbloc">
 
                 <form action="">
 
-                    <h1>Devis Gratuit</h1>
-                    <h3>Remplissez fidelement ces champs en précisant avec détails les objets à débarrasser et surtout le type de demenagement que vous souhaitez effectuer.</h3>
+                    <h1 id="devisT1" >Devis Gratuit</h1>
+                    <h3 class="textcontenu" id="devisT1P1">Paragraphe1 Titre1 ... Chargement .......... </h3>
+
                     <div class="form-wrapper">
                         <a class="titleform">Personne responsable</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Nom et prénoms" class="form-controla">
+                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Nom et prénoms ..." class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Email du responsable</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex: user@gmail.com" class="form-controla">
+                        <input id="emailuser" style="padding-left: 15px;" type="email" placeholder="Ex: user@gmail.com" class="form-controla">
                         <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Contact du responsable</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex: 06 ..." class="form-controla">
+                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Ex: 06 ..." class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Ville du responsable</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex: Marseille" class="form-controla">
+                        <input id="villeuser" style="padding-left: 15px;" type="email" placeholder="Ex: Marseille" class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Code Postal du responsable</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex: 905003" class="form-controla">
+                        <input id="codepostaluser" style="padding-left: 15px;" type="email" placeholder="Ex: 905003" class="form-controla">
                         <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Adresse concernée</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Adresse à débarrasser" class="form-controla">
+                        <input id="lieuuser" style="padding-left: 15px;" type="email" placeholder="Adresse à débarrasser" class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Etage</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex : niveau 0 " class="form-controla">
+                        <input id="etageuser" style="padding-left: 15px;" type="email" placeholder="Ex : niveau 0 " class="form-controla">
                     </div>
         
                     <div class="form-wrapper">
                         <a class="titleform">Type d'habitaion</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex: Maison , studio, chambre etc..." class="form-controla">
+                        <input id="typehabitatuser" style="padding-left: 15px;" type="email" placeholder="Ex: Maison , studio, chambre etc..." class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Accessibilité</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex : facile , moyen , difficile etc..." class="form-controla">
+                        <input id="accessibiliteuser" style="padding-left: 15px;" type="email" placeholder="Ex : facile , moyen , difficile etc..." class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
                         <a class="titleform">Objets à débarrasser</a>
-                        <input id="emailup" style="padding-left: 15px;" type="email" placeholder="Ex: 01 lit - 02 tables - 01 frigo etc..." class="form-controla">
+                        <input id="objetsuser" style="padding-left: 15px;" type="email" placeholder="Ex: 01 lit - 02 tables - 01 frigo etc..." class="form-controla">
                     </div>
 
                     <h2>Les informations recueillies seront nécessaires pour votre devis. En soumettant ce formulaire vous acceptez que vos 
@@ -133,7 +132,7 @@
                         dans le cadre de ce service."</h2>
 
                     <div class="form-group container-login100-form-btn">
-                        <button id="btn-valider" type="button">
+                        <button id="btn-valider" type="button" onclick="ss()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
                         </button>
@@ -165,7 +164,7 @@
                         <ul>
                             <li><a href="#">Presentation</a></li>
                             <li><a href="#">nos partenaires</a></li>
-                            <li><a href="#">Politique</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
                         </ul>
                     </div>
 
@@ -245,12 +244,13 @@
         };
         firebase.initializeApp(firebaseConfig)
        
-       
         const database = firebase.database();
         var ContactRef = firebase.database().ref("contact");
-        var SloganRef = firebase.database().ref("slogan");
-        var AvisRef = firebase.database().ref("avis");
-        
+        var SloganRef = firebase.database().ref("slogandevis");
+        var DevisT1Ref = firebase.database().ref("devisT1");
+        var DevisT1P1Ref = firebase.database().ref("devisT1P1");
+
+
         ContactRef.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
@@ -271,181 +271,114 @@
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "slogan1" ) {
+                if(element.key == "slogandevis" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#slogan').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#slogandevis').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche slogan");
+                window.alert("Probleme de recherche slogandevis");
+            }
+        });
+     
+        DevisT1Ref.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "devisT1" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#devisT1').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche devisT1");
+            }
+        });
+        DevisT1P1Ref.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "devisT1P1" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.querySelector('#devisT1P1').innerHTML=`<b>${datacheck}</b>`
+            }else {
+                window.alert("Probleme de recherche devisT1P1");
             }
         });
 
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "sms1" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#sms1').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche sms1");
-            }
-        });
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "smsid1" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#smsid1').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche smsid1");
-            }
-        });
- 
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "sms2" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#sms2').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche sms2");
-            }
-        });
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "smsid2" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#smsid2').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche smsid2");
-            }
-        });
-
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "sms3" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#sms3').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche sms3");
-            }
-        });
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "smsid3" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#smsid3').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche smsid3");
-            }
-        });
-   
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "sms4" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#sms4').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche sms4");
-            }
-        });
-        AvisRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "smsid4" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.querySelector('#smsid4').innerHTML=`<b>${datacheck}</b>`
-            }else {
-                window.alert("Probleme de recherche smsid4");
-            }
-        });
-
-
-
+        function ss() {
+            window.alert("Desolé le champ email est vide...");
+        }
         function save() {
 
-            var email = $('#emailup').val();
-            var password = $('#passwordup').val();
-            var confirmpass = $('#confirmpass').val();
+            var nomuser = $('#nomuser').val();
+            var emailuser = $('#emailuser').val();
+            var teluser = $('#teluser').val();
+            var villeuser = $('#villeuser').val();
+            var codepostaluser = $('#codepostaluser').val();
+            var lieuuser = $('#lieuuser').val();
+            var etageuser = $('#etageuser').val();
+            var typehabitatuser = $('#typehabitatuser').val();
+            var accessibiliteuser = $('#accessibiliteuser').val();
+            var objetsuser = $('#objetsuser').val();
 
-            if(email != "" & password != "" & confirmpass != "" ) {
-                var dataRef = firebase.database().ref("users");
-                dataRef.once("value" , function(snapshot){
-                    var data = snapshot.val();
-                    for(let i in data){
-                        if (data[i] == email){
-                            alert("Ce compte a déjà été crée!")
-                        } else{
-                             // var newlistRef = listRef.push()
-                            listRef.set({
-                                'nom': 'fffff',
-                                'email' : email,
-                                'password' : password
-                         })
-                         
-                         
-                         }
-                    }
-                })
-   
-            } else if ( email == "" ) {
-              window.alert("Desolé le champ email est vide...");
-            } else if ( password == "" ) {
-              window.alert("Veuillez entrer votre mot de passe...");
-            } else if ( confirmpass == "" ) {
-              window.alert("confirmez votre passe est incorrect...");
-            } else if ( password != confirmpass ) {
-              window.alert("Mot de passe incorrect");
+            if(nomuser != "" & emailuser != "" & teluser != "" & objetsuser != "" 
+                & villeuser != "" & codepostaluser != "" & lieuuser != ""
+                & etageuser != "" & typehabitatuser != "" & accessibiliteuser != "" ) {
+                    window.alert("okay...");
+
+/*
+                if (teluser.length < 8 & "@".includes(emailuser)==true) {
+
+                    var dataUserRef = firebase.database().ref("users").child(teluser);
+                    dataUserRef.set({
+                        'nom': nomuser,
+                        'email' : email,
+                        'tel' : teluser,
+                        'ville': villeuser,
+                        'codepostaluser' : codepostaluser,
+                        'lieuuser' : lieuuser,
+                        'etageuse': etageuser,
+                        'typehabit' : typehabitatuser,
+                        'acces' : accessibiliteuser,
+                        'objetsuser': objetsuser
+                    });
+            
+                }
+*/
+            } else if ( nomuser == "" ) {
+            window.alert("Desolé entrez votre nom...");
+            } else if ( emailuser == "" ) {
+            window.alert("Desolé entrez votre adresse email...");
+            } else if ( teluser == "" ) {
+            window.alert("Desolé entrez votre numéro de telephone...");
+            } else if ( objetsuser == "" ) {
+            window.alert("Desolé entrez les objets à debarrasser");
+            } else if ( villeuser == "" ) {
+            window.alert("Desolé entrez la ville concernée");
+            } else if ( codepostaluser == "" ) {
+            window.alert("Desolé entrez votre code postal");
+            } else if ( lieuuser == "" ) {
+            window.alert("Desolé veuillez indiquer le lieu du débarras");
+            } else if ( etageuser == "" ) {
+            window.alert("Desolé si oui veuillez indiquer votre etage");
+            } else if ( typehabitatuser == "" ) {
+            window.alert("Desolé veuillez indiquer le type de pieces à débarasser");
+            } else if ( accessibiliteuser == "" ) {
+            window.alert("Desolé veuillez indiquer le niveau de difficulté d'acces");
+            } else {
+                window.alert("Erreur inconnue ...");                
             }
-      
         }
 
     </script>
+
 </html>
