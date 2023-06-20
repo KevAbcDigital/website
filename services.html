@@ -60,7 +60,7 @@
                 background="transparent" speed="1"  loop autoplay></lottie-player>
 
             <div class="slogan" >
-                <h1 id="slogan">Debarrasse Tout s'occupe du debarras dans toutes ses formes : grenier, cave, comble,salon , garage etc...</h1>
+                <h1 id="sloganservices">Chargement Slogan ...</h1>
             </div>
 
             <div class="b" id="contactid">Contact : service client</div>
@@ -72,41 +72,22 @@
             <div class="contextbloc">
                 
                 <h1>Nos services</h1>
-                <h3>Dites bon debarras à toutes ces affaires encombrantes</h3>
+                <h3 class="titlecontenu" id="servicesT1">Grand titre 1 ... Chargement ... </h3>
              
                 <div class="servicemode">
-                    <p class="textcontenu">Avant d'intervenir pour votre débarras, nous réalisons un <span href="devis.html" onclick="toggleMenu();">devis gratuit </span>
-                        et sans engagement, celui ci sera établi en fonction du volume à déblayer en mètre cube et 
-                        des valeurs récupérables. ( Estimation par un professionnel de l'art ou un expert reconnus
-                        par la Chambre Nationale des Experts Spécialisés en objet d'art)
-                    </p>
-                    <p class="textcontenu">Un listing complet du 
-                        contenu de l'habitation sera effectué et évalué en toute transparence ( supports d'évaluations
-                        consultables ). Notre tarif par mètre cube débarrassé sera compris entre <span 
-                        href="tarifs.html" onclick="toggleMenu();" style="color: brown;"> 45 et 75 euros TTC</span> en
-                        fonction de votre zone géographique, état de salubrité et accessibilité de l'habitation 
-                        ( Distance au parking, étages). Ce coût comprend la main d'oeuvre, le transport, la location 
-                        de bennes si nécessaire et les frais de déchetterie.
-                    </p>
+                    <p class="textcontenu" id="servicesT1P1">Paragraphe1 Titre1 ... Chargement .......... </p>
+                    <p class="textcontenu" id="servicesT1P2">Paragraphe2 Titre1 vide ... Chargement .......... </p>
                 </div>
     
                 <div class="types" id="types">
-                    <p class="titlecontenu" style="padding-top: 40px;">Nous vous proposons trois types de debarras</p>
-                    <p class="textcontenu" style="margin-left: 10px;"> - Le débarras indemnisé ( les valeurs récupérables sont plus importantes que le coût du service de débarras ).</p>
-                    <p class="textcontenu" style="margin-left: 10px;"> - Le débarras gratuit ( les valeurs récupérables couvrent le coût du service de débarras ).</p>
-                    <p class="textcontenu" style="margin-left: 10px;"> - Le débarras facturé ( les coûts du service de débarras sont plus importants que les valeurs récupérables ).</p>
+                    <p class="titlecontenu" style="padding-top: 40px;" id="servicesT2">Grand titre 2 ... Chargement ... </p>
+
+                    <p class="textcontenu" style="margin-left: 10px;" id="servicestype1"> - type1 ... chargement .... </p>
+                    <p class="textcontenu" style="margin-left: 10px;" id="servicestype2"> - type2 ... chargement .... </p>
     
-                    <p class="textcontenu"> Le débarras pourra se faire dans tout type d'habitation ( appartement, maison, pavillon, loft, duplex, château, manoir, entreprise ).</p>
-                    <p class="textcontenu"> Le débarras concerne aussi toutes vos pièces ( grenier, cave, comble, salon, garage et bureau ) et tous vos objets ( peintures, sculptures, 
-                        meubles anciens, meubles modernes, vaisselle, linge, bibelots, objets décoratifs, bijoux ou objets d'art ).</p>
-                    <p class="textcontenu"> Et car pour nous votre satisfaction est primordiale nous nous engageons à effectuer un travail correspondant à vos attentes dans les meilleurs délais.</p>
-                    <p class="textcontenu">Un listing complet du 
-                        contenu de l'habitation sera effectué et évalué en toute transparence ( supports d'évaluations
-                        consultables ). Notre tarif par mètre cube débarrassé sera compris entre <span style="color: brown;"> 45 et 75 euros TTC</span> en
-                        fonction de votre zone géographique, état de salubrité et accessibilité de l'habitation 
-                        ( Distance au parking, étages). Ce coût comprend la main d'oeuvre, le transport, la location 
-                        de bennes si nécessaire et les frais de déchetterie.
-                    </p>
+                    <p class="textcontenu" id="servicesT2P1">Paragraphe2 Titre2 ... Chargement .......... </p>
+                    <p class="textcontenu" id="servicesT2P2">Paragraphe2 Titre2 ... Chargement .......... </p>
+
                 </div>
             </div>
         </section>
@@ -133,7 +114,7 @@
                         <ul>
                             <li><a href="#">Presentation</a></li>
                             <li><a href="#">nos partenaires</a></li>
-                            <li><a href="#">Politique</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
                         </ul>
                     </div>
 
@@ -216,8 +197,15 @@
        
         const database = firebase.database();
         var ContactRef = firebase.database().ref("contact");
-        var SloganRef = firebase.database().ref("slogan");
-        var AvisRef = firebase.database().ref("avis");
+        var SloganRef = firebase.database().ref("sloganservices");
+        var ServicesT1Ref = firebase.database().ref("servicesT1");
+        var ServicesT1P1Ref = firebase.database().ref("servicesT1P1");
+        var ServicesT1P2Ref = firebase.database().ref("servicesT1P2");
+        var ServicesT2Ref = firebase.database().ref("servicesT2");
+        var ServicesT2P1Ref = firebase.database().ref("servicesT1P1");
+        var ServicesT2P2Ref = firebase.database().ref("servicesT1P2");
+        var ServicesType1Ref = firebase.database().ref("servicesType1");
+        var ServicesType2Ref = firebase.database().ref("servicesType2");
         
         ContactRef.on("value" , function(snapshot){
             var i = 0;
@@ -239,181 +227,140 @@
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "slogan1" ) {
+                if(element.key == "sloganservices" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#slogan').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#sloganservices').innerHTML=`<b>${datacheck}</b>`
             }else {
                 window.alert("Probleme de recherche slogan");
             }
         });
-
-        AvisRef.on("value" , function(snapshot){
+     
+        ServicesT1Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "sms1" ) {
+                if(element.key == "servicesT1" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#sms1').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesT1').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche sms1");
+                window.alert("Probleme de recherche servicesT1");
             }
         });
-        AvisRef.on("value" , function(snapshot){
+        ServicesT1P1Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "smsid1" ) {
+                if(element.key == "servicesT1P1" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#smsid1').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesT1P1').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche smsid1");
+                window.alert("Probleme de recherche servicesT1P1");
             }
         });
- 
-        AvisRef.on("value" , function(snapshot){
+        ServicesT1P2Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "sms2" ) {
+                if(element.key == "servicesT1P2" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#sms2').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesT1P2').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche sms2");
+                window.alert("Probleme de recherche servicesT1P2");
             }
         });
-        AvisRef.on("value" , function(snapshot){
+     
+        ServicesT2Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "smsid2" ) {
+                if(element.key == "servicesT2" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#smsid2').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesT2').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche smsid2");
+                window.alert("Probleme de recherche servicesT2");
             }
         });
-
-        AvisRef.on("value" , function(snapshot){
+        ServicesT2P1Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "sms3" ) {
+                if(element.key == "servicesT2P1" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#sms3').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesT2P1').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche sms3");
+                window.alert("Probleme de recherche servicesT2P1");
             }
         });
-        AvisRef.on("value" , function(snapshot){
+        ServicesT2P2Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "smsid3" ) {
+                if(element.key == "servicesT2P2" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#smsid3').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesT2P2').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche smsid3");
+                window.alert("Probleme de recherche servicesT2P2");
             }
         });
    
-        AvisRef.on("value" , function(snapshot){
+        ServicesType1Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "sms4" ) {
+                if(element.key == "servicesType1" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#sms4').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesType1').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche sms4");
+                window.alert("Probleme de recherche servicesType1");
             }
         });
-        AvisRef.on("value" , function(snapshot){
+        ServicesType2Ref.on("value" , function(snapshot){
             var i = 0;
             var datacheck;
             snapshot.forEach(function(element){
-                if(element.key == "smsid4" ) {
+                if(element.key == "servicesType2" ) {
                     i=1;
                     datacheck = element.val();
                 }
             });
             if(i==1) {
-                document.querySelector('#smsid4').innerHTML=`<b>${datacheck}</b>`
+                document.querySelector('#servicesType2').innerHTML=`<b>${datacheck}</b>`
             }else {
-                window.alert("Probleme de recherche smsid4");
+                window.alert("Probleme de recherche servicesType2");
             }
         });
-
-
-
-        function save() {
-
-            var email = $('#emailup').val();
-            var password = $('#passwordup').val();
-            var confirmpass = $('#confirmpass').val();
-
-            if(email != "" & password != "" & confirmpass != "" ) {
-                var dataRef = firebase.database().ref("users");
-                dataRef.once("value" , function(snapshot){
-                    var data = snapshot.val();
-                    for(let i in data){
-                        if (data[i] == email){
-                            alert("Ce compte a déjà été crée!")
-                        } else{
-                             // var newlistRef = listRef.push()
-                            listRef.set({
-                                'nom': 'fffff',
-                                'email' : email,
-                                'password' : password
-                         })
-                         
-                         
-                         }
-                    }
-                })
-   
-            } else if ( email == "" ) {
-              window.alert("Desolé le champ email est vide...");
-            } else if ( password == "" ) {
-              window.alert("Veuillez entrer votre mot de passe...");
-            } else if ( confirmpass == "" ) {
-              window.alert("confirmez votre passe est incorrect...");
-            } else if ( password != confirmpass ) {
-              window.alert("Mot de passe incorrect");
-            }
-      
-        }
 
     </script>
 </html>
