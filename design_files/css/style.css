@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap');
 
 /*font de page*/
-
-
-
-
 *{
 	margin: 0;padding: 0;
   box-sizing: border-box;
@@ -26,8 +22,44 @@ body {
 }
 
 
-/*Entete de header avec logo*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/* index */
+/*Entete de header avec logo*/
 
 
 header {
@@ -76,14 +108,11 @@ header {
   margin-top: 20px;
 }
 
-
-
 /*Premiere page (acceuil) Home*/
 
-
-
 .banniere{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.116) , rgba(62, 62, 63, 0.425)), url(../images/fondhome.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.226) , rgba(62, 62, 63, 0.308)), 
+  url(../images/fondindex.png);
   /*background-color: rgb(84, 180, 236);*/
   position: relative;
   max-width: 100%;
@@ -147,12 +176,6 @@ header {
   height: 320px;
 }
 
-
-
-
-
-
-
 /*corps du document*/
 
 .corps{
@@ -213,15 +236,6 @@ header {
   margin-top: -20px;
   margin-left: 30px;
 }
-
-
-
-
-
-
-
-
-
 
 /*interface actualité de la page d'acceuil*/
 
@@ -288,6 +302,13 @@ header {
   margin-top: 18px;
   cursor: pointer;
 }
+.contenu .textcontenu a{
+  color: rgb(121, 34, 34);
+  font-size: 16px;
+  font-weight: 550;
+  padding-top: 28px;
+  cursor: pointer;
+}
 .contenu .textcontenu span{
   color: rgb(41, 5, 202);
   font-size: 18px;
@@ -295,24 +316,14 @@ header {
   cursor: pointer;
 }
 
-
-
-
-
-
-
-
 /*Pieds de page Non Responsive*/
-
-
-
 
 .footer{
   padding-top: 70px;
   padding-bottom: 20px;
   box-sizing: border-box;
   background-color: #24262b;
-  margin-top: 25px;
+  margin-top: 45px;
 }
 .footer-col {
   width: 25%;
@@ -388,14 +399,300 @@ ul {
 
 
 
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* devis */
+/* banniere page devis */
 
-/* replay */
+.bannieredevis{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.404) , rgba(44, 44, 44, 0.534)),
+   url(../images/fonddevis.jpg);
+  /*background-color: rgb(84, 180, 236);*/
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+}
+.bannieredevis .slogan h1{
+  color: rgb(248, 248, 248);
+  font-size: 3.3em;
+  cursor: pointer;
+  margin-left: 40px;
+  width: 730px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.bannieredevis .b{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 80px;
+  margin-bottom: -17px;
+  transition: 0.5s ease;
+  color: rgb(255, 255, 255);
+  background-color: rgb(32, 39, 32);
+  padding: 14px 50px;
+  border-radius: 2px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 22px;
+  box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
+  cursor: pointer;
+}
+.bannieredevis b:hover{
+  display: inline-block;
+  margin-top: 88px;
+  transition: 0.5s ease;
+  color: rgb(212, 238, 218);
+  background-color: rgb(10, 11, 63);
+  padding: 14px 50px;
+  border-radius: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 22px;
+  box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
+  cursor: pointer;
+}
+.bannieredevis .lottiescript {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 10px;
+  width: 320px;
+  height: 320px;
+}
+.devisbloc{
+  padding: 10px;
+  background: transparent;
+  max-width: 80%;
+  margin: auto;
+  display: flex; }
+  .devisbloc form {
+    width: 100%;
+    padding-top: 36px;
+    padding-left: 45px;
+    padding-right: 45px; }
+  .devisbloc h1 {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 20px; }
+    .devisbloc h3 {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 20px;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-bottom: 28px; }
+      .devisbloc h2 {
+        font-size: 13px;
+        font-weight: 530;
+        padding: 0 15%;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        margin-top: 50px; }
+      .devisbloc a {
+        font-size: 13px;
+        font-weight: 500;
+        padding-left: 12px;
+        font-family: 'Poppins', sans-serif;}
+.form-controla {
+  border: 1px solid #333;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  margin-bottom: 25px;
+  margin-top: 5px; }
+  .form-controla ::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; }
+  .form-controla ::-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; }
+  .form-controla:-ms-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; }
+  .form-controla:-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;}
 
 
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* services */
+/* banniere page devis */
 
-
-
-
+.banniereservices{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.304) , rgba(44, 44, 44, 0.411)),
+   url(../images/fondservice.jpg);
+  /*background-color: rgb(84, 180, 236);*/
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+}
+.banniereservices .slogan h1{
+  color: rgb(248, 248, 248);
+  font-size: 3.3em;
+  cursor: pointer;
+  margin-left: 40px;
+  width: 100%;
+  padding: 0 15%;
+  text-transform: capitalize;
+  text-align: center;
+}
+.banniereservices .b{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 80px;
+  margin-bottom: -17px;
+  transition: 0.5s ease;
+  color: rgb(255, 255, 255);
+  background-color: rgb(32, 39, 32);
+  padding: 14px 50px;
+  border-radius: 2px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 22px;
+  box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
+  cursor: pointer;
+}
+.banniereservices b:hover{
+  display: inline-block;
+  margin-top: 88px;
+  transition: 0.5s ease;
+  color: rgb(212, 238, 218);
+  background-color: rgb(10, 11, 63);
+  padding: 14px 50px;
+  border-radius: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 22px;
+  box-shadow: -1px 1px 9px rgba(144, 194, 133, 0.377);
+  cursor: pointer;
+}
+.banniereservices .lottiescript {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 10px;
+  width: 320px;
+  height: 320px;
+}     
+.contexservice{
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+  padding: 2px 150px;
+}
+.contexservice .contextbloc{
+  padding: 10px;
+  background: transparent;
+  max-width: 80%;
+  margin: auto;
+  display: block; }
+  
+.contexservice .contextbloc h1 {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 20px; }
+.contexservice .contextbloc h3 {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 20px;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-bottom: 28px; }
+.contexservice .contextbloc .titlecontenu {
+  color: rgb(43, 43, 43);
+  font-size: 3em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 20px;
+  text-transform: capitalize;
+}
+.contexservice .textcontenu{
+  color: rgb(43, 43, 43);
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 18px;
+  cursor: pointer;
+}
+.contextbloc .textcontenu span{
+  color: rgb(41, 5, 202);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
 
 
 
@@ -645,19 +942,6 @@ header .menutop ul li a{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*footer*/
 
 
@@ -689,6 +973,11 @@ header .menutop ul li a{
   border-radius: 50%;
   color: #fff;
   transition: all 0.5s ease;
+}
+.whatsappid {
+  margin-right: 40px;
+  margin-bottom: 15px;
+  box-shadow: #24262b;
 }
 
 }
