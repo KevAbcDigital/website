@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>TennisKids 2023</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+    
+    </head>
+
+    <body>
+
+        <header>
+
+            <div class="logo">
+                <img  href="index.html" src="./design_files/images/logotenniskids.png" alt="image">
+            </div>
+
+            <div class="logosponsor">
+                <img  href="index.html" src="./design_files/images/logoTK.png" alt="image">
+            </div>
+            
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">
+                <img class="imgmenu" src="./design_files/images/menubtn.png" alt="image">
+            </label>
+
+            <div class="menutop">
+                <ul>
+
+                    <li class="boutonm"><a href="#partenaire" onclick="toggleMenu();">Programmation des matchs</a> </li>
+
+                    <li class="boutonm"><a href="index.html" onclick="toggleMenu();">Tableaux et Resultats</a> </li>
+
+                    <li class="boutonm"><a href="#partenaire" onclick="toggleMenu();">A propos ( Fiche d'information )</a> </li>
+
+                    <li class="boutonm"><a style="background-color: rgb(26, 13, 83); box-shadow: -1px 1px 9px rgba(45, 141, 23, 0.74);
+                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                        border-radius: 3px;" href="signup.html" onclick="toggleMenu();">Inscrivez vous maintenant</a>
+                    </li>
+
+                    <li class="boutonm" > <img class="imgmenu" src="./design_files/images/affichephoneapp.png" alt="image"> </li>
+
+                </ul>
+            </div>
+            
+        </header>
+
+        <section class="formulaire" id="formulaire">
+            <div class="devisbloc">
+
+                <form name="formweb" action="">
+
+                    <h1>Inscrivez vous</h1>
+                    <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
+
+                    <h3 class="textcontenu">NB: Une fois l'enregistrement effectué vous ne pourrez plus le
+                        modifier. Chaque joueur ne pourra jouer que dans une seule catégorie. </h3>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Noms et prénoms du joueur</a>
+                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Comme sur l'acte de naissance ..." class="form-controla">
+                    </div>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Choisissez votre Categorie </a>
+                        <select id="selectcat" style="display: block; margin-bottom: 20px; width: 100%; 
+                        height: 35px;" onchange="getcategorie()">
+                            <option value="Choisissez">selectionnez ...</option>
+                            <option value="poussin garcon">poussin garcon</option>
+                            <option value="poussin fille">poussin fille</option>
+                            <option value="Benjamin garcon">Benjamin garcon</option>
+                            <option value="Benjamine">Benjamine</option>
+                            <option value="Minime garcon">Minime garcon</option>
+                            <option value="Minime fille">Minime fille</option>
+                            <option value="Junior garcon">Junior garcon</option>
+                            <option value="Junior fille">Junior fille</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Telephone ( Ex : 698329293 )</a>
+                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Contact du joueur ou du responsable ..." class="form-controla">
+                        <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Club d'appartenance</a>
+                        <input id="villeuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
+                    </div>
+
+
+                    <h2>Les informations recueillies seront nécessaires pour votre inscription.
+                         En soumettant ce formulaire vous acceptez que vos informations soient sauvegardées et 
+                         utilisées pour preparer votre tirage au sort et pour vous contacter 
+                        dans le cadre de ce service."</h2>
+
+                    <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
+                        <button id="btn-valider" type="button" onclick="send()">
+                            Envoyer
+                            <i class="zmdi zmdi-arrow-right"></i>
+                        </button>
+                    </div>
+        
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Service WEB</h4>
+                        <div class="barorange">
+                            <img src="./design_files/images/fondrose.png" alt="image">
+                        </div>
+                        <ul>
+                            <li><a href="#">Dev by KevDesign</a></li>
+                            <li><a href="#">Tel : +237 694 93 76 01</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Directeur du tournoi</h4>
+                        <div class="barorange">
+                            <img src="./design_files/images/fondrose.png" alt="image">
+                        </div>
+                        <ul>
+                            <li><a href="#">Contact : 06 98 32 82 83 / 06 74 66 50 65</a></li>
+                            <li><a href="#">Email : cedricwoubs@gmail.com</a></li>
+                            <li><a href="#">Lieu : CLUB FRANCE NEW</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="barorange">
+                            <img src="./design_files/images/fondrose.png" alt="image">
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-likedin-in"></i></a>
+                                
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <p class="copyrigth">Copyright © Tous droits réservés - DebarasseTout</p>
+
+        </footer>
+  
+        <div class="whatsappid" id="myDiv"></div>
+
+    </body>
+
+    <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237698328283',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Tennis Kids service!',
+            headerColor: 'blue',
+            backgroundColor: 'blue',
+            position: 'right' ,
+            size: '50px'
+          });
+          
+        });
+
+        
+    </script>
+
+    <script>
+        function getcategorie() {
+            //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
+            var getcat = document.getElementById("selectcat").value;
+            if (getcat != "Choisissez") {
+                console.log(getcat);
+            }
+        }
+    </script>
+    
+</html>
