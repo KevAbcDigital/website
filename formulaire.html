@@ -22,87 +22,105 @@
     
     </head>
 
-    <body style="background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(48, 48, 48, 0.26)), 
-        url(./design_files/images/fondindex.png); background-size: cover; background-position: center; 
-        background-repeat: no-repeat; justify-content: center;">
+    <body>
 
-        <section class="headerindex">
+        <header>
 
-            <div class="menuindex">
-                <div class="logo">
-                    <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
-                </div>
-    
-                <div class="logosponsor">
-                    <img  href="index.html" src="./design_files/images/logoTK.png" alt="image">
-                </div>
-                
-                <input type="checkbox" id="menu-bar">
-                <label for="menu-bar">
-                    <img class="imgmenu" src="./design_files/images/menubtnindex.png" alt="image">
-                </label>
-    
-                <div class="menutop" style="background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(48, 48, 48, 0.26)), 
-                url(./design_files/images/fondindex.png); background-size: cover; background-position: center; 
-                background-repeat: no-repeat; justify-content: center;">
-                    <ul>
-    
-                        <li class="boutonm"><a href="#partenaire" onclick="toggleMenu();">Programmation des matchs</a> </li>
-    
-                        <li class="boutonm"><a href="index.html" onclick="toggleMenu();">Tableaux et Resultats</a> </li>
-    
-                        <li class="boutonm"><a href="#partenaire" onclick="toggleMenu();">A propos ( Fiche d'information )</a> </li>
-    
-                        <li class="boutonm"><a style="background-color: rgb(13, 83, 54); box-shadow: -1px 1px 9px rgba(45, 141, 23, 0.74);
-                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                            border-radius: 3px;" href="formulaire.html" onclick="toggleMenu();">Inscrivez vous maintenant</a>
-                        </li>
-    
-                        <li class="boutonm" > <img class="imgmenu" src="./design_files/images/Diapositive2.PNG" alt="image"> </li>
-    
-                    </ul>
-                </div>
+            <div class="logo">
+                <img  href="index.html" src="./design_files/images/logotenniskids.png" alt="image">
+            </div>
+
+            <div class="logosponsor">
+                <img  href="index.html" src="./design_files/images/logoTK.png" alt="image">
             </div>
             
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">
+                <img class="imgmenu" src="./design_files/images/menubtn.png" alt="image">
+            </label>
+
+            <div class="menutop">
+                <ul>
+
+                    <li class="boutonm"><a href="#partenaire" onclick="toggleMenu();">Programmation des matchs</a> </li>
+
+                    <li class="boutonm"><a href="index.html" onclick="toggleMenu();">Tableaux et Resultats</a> </li>
+
+                    <li class="boutonm"><a href="#partenaire" onclick="toggleMenu();">A propos ( Fiche d'information )</a> </li>
+
+                    <li class="boutonm"><a style="background-color: rgb(26, 13, 83); box-shadow: -1px 1px 9px rgba(45, 141, 23, 0.74);
+                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                        border-radius: 3px;" href="signup.html" onclick="toggleMenu();">Inscrivez vous maintenant</a>
+                    </li>
+
+                    <li class="boutonm" > <img class="imgmenu" src="./design_files/images/affichephoneapp.png" alt="image"> </li>
+
+                </ul>
+            </div>
             
-            <section class="formulaireindex" id="formulaireindex">
-            
-                <div class="devisblocindex">
-    
-                    <form name="formweb" action="">
-    
-                        <div class="form-wrapperindex">
-                            <a class="titleform"> > -- Poussin garcon ( Tableau final ) </a>
-                            <select id="selectcatdraw" style="display: block; margin-top: 7px; height: 28px;
-                            background-color: rgba(255, 255, 255, 0.603); border-radius: 5px; font-weight: 650; 
-                            font-size: 12px; width: 94%; margin-left: 3%; padding-left: 50px; border: none;
-                            " onchange="getdraw()">
-                                <option value="Choisissez">Choisissez une categorie</option>
-                                <option value="poussin garcon">poussin garcon</option>
-                                <option value="poussin fille">poussin fille</option>
-                                <option value="Benjamin garcon">Benjamin garcon</option>
-                                <option value="Benjamine">Benjamine</option>
-                                <option value="Minime garcon">Minime garcon</option>
-                                <option value="Minime fille">Minime fille</option>
-                                <option value="Junior garcon">Junior garcon</option>
-                                <option value="Junior fille">Junior fille</option>
-                            </select>
-    
-                        </div>
-                    </form>        
-                    
-                </div>
-            </section>
-    
-        </section>
-        
-                      
-        <section class="tableauindex" id="tableauindex">
-            <img class="items" src="./design_files/images/tpgimg.png" alt="image">
-        </section>
+        </header>
+
+        <section class="formulaire" id="formulaire">
+            <div class="devisbloc">
+
+                <form name="formweb" action="">
+
+                    <h1>Inscrivez vous</h1>
+                    <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
+
+                    <h3 class="textcontenu">NB: Une fois l'enregistrement effectué vous ne pourrez plus le
+                        modifier. Chaque joueur ne pourra jouer que dans une seule catégorie. </h3>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Noms et prénoms du joueur</a>
+                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Comme sur l'acte de naissance ..." class="form-controla">
+                    </div>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Choisissez votre Categorie </a>
+                        <select id="selectcat" style="display: block; margin-bottom: 20px; width: 100%; 
+                        height: 35px;" onchange="getcategorie()">
+                            <option value="Choisissez">selectionnez ...</option>
+                            <option value="poussin garcon">poussin garcon</option>
+                            <option value="poussin fille">poussin fille</option>
+                            <option value="Benjamin garcon">Benjamin garcon</option>
+                            <option value="Benjamine">Benjamine</option>
+                            <option value="Minime garcon">Minime garcon</option>
+                            <option value="Minime fille">Minime fille</option>
+                            <option value="Junior garcon">Junior garcon</option>
+                            <option value="Junior fille">Junior fille</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Telephone ( Ex : 698329293 )</a>
+                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Contact du joueur ou du responsable ..." class="form-controla">
+                        <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <a class="titleform">Club d'appartenance</a>
+                        <input id="villeuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
+                    </div>
 
 
+                    <h2>Les informations recueillies seront nécessaires pour votre inscription.
+                         En soumettant ce formulaire vous acceptez que vos informations soient sauvegardées et 
+                         utilisées pour preparer votre tirage au sort et pour vous contacter 
+                        dans le cadre de ce service."</h2>
+
+                    <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
+                        <button id="btn-valider" type="button" onclick="send()">
+                            Envoyer
+                            <i class="zmdi zmdi-arrow-right"></i>
+                        </button>
+                    </div>
         
+                </form>
+            </div>
+        </section>
+
         <footer class="footer" id="footer">
             <div class="container">
                 <div class="row">
@@ -124,44 +142,32 @@
 
         </footer>
   
-  
-  
+        <div class="whatsappid" id="myDiv"></div>
+
     </body>
+
+    <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237698328283',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Tennis Kids service!',
+            headerColor: 'blue',
+            backgroundColor: 'blue',
+            position: 'right' ,
+            size: '50px'
+          });
+          
+        });
+
+        
+    </script>
 
     <script>
         function getcategorie() {
             //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
-            /*
-
-            
-
-
-
-
-
-   <section class="contenuindex" id="contenuindex">
-
-            
-
-            <div class="mencontenu">
-                <div class="block" >
-
-                </div>
-    
-                <div class="block">
-                    
-                </div>
-    
-                <div class="block">
-                    
-                </div>
-
-            </div>
-            
-
-        </section>
-
-            */
             var getcat = document.getElementById("selectcat").value;
             if (getcat != "Choisissez") {
                 console.log(getcat);
