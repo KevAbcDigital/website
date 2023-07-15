@@ -98,12 +98,9 @@ header label .imgmenu {
 }
 
 header {
-  background-color: #fff;
-  border: 1px solid #f1f1f1;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  box-shadow: -1px 1px 9px #f1f1f1;
+  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
+  url(../images/fondloginn.png);
+  box-shadow: -1px 1px 9px #f1f1f16b;
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 60px;
@@ -211,13 +208,13 @@ header .logosponsor img {
         margin-top: 50px; }
       .devisbloc a {
         font-size: 13px;
-        font-weight: 550;
+        font-weight: 600;
         color: rgb(255, 255, 255);
         padding-left: 12px;
         font-family: 'Poppins', sans-serif;}
         .devisbloc .form-wrapper .titleform {
-          font-size: 13px;
-          font-weight: 500;
+          font-size: 12px;
+          font-weight: 600;
           color: rgb(245, 245, 245);
           padding-left: 12px;
           font-family: 'Poppins', sans-serif;}
@@ -254,7 +251,7 @@ header .logosponsor img {
 
 
 .footer{
-  padding-top: 20px;
+  padding-top: 15px;
   padding-bottom: 10px;
   box-sizing: border-box;
   background-color: #24262b;
@@ -330,9 +327,16 @@ ul {
 /*index */
 
 .headerindex {
+  /*
+  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
+  url(../images/fondindex.png);
+  */
+  /* background-color: #2a3f72; */
+  
+  background-color: #2c4c70;
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 130px;
+  height: 110px;
   z-index: 2000;
   justify-content: center;
   display: block;
@@ -351,7 +355,7 @@ ul {
 }
 .headerindex .menuindex .menutop {
   position: absolute;
-  margin-top: 130px;
+  margin-top: 110px;
   top: 0; left:0; right: 0;
   background-color: rgb(3, 110, 39);
   display: none;
@@ -411,8 +415,7 @@ ul {
   width: 100%;
 }
 .devisblocindex .form-wrapperindex .titleform {
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 1px;
   color: rgb(245, 245, 245);
   padding-left: 12px;
   font-family: 'Poppins', sans-serif;
@@ -421,19 +424,24 @@ ul {
 
 
 .tableauindex {
-  background-color: yellow;
   position: relative;
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 130px;
-  padding: 0 5px;
+  padding-bottom: 10px;
+  padding-top: -5px;
   overflow: auto;
   overflow-y: scroll;
+  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
+  url(../images/fondindex.png);
+  background-size: cover;
+  background-position: center;
+  margin-top: 110px;
 }
 
 .tableauindex img{
   width: auto;
+  padding: 0 10px;
   height: 600px;
   cursor: pointer;
   object-fit: cover;
