@@ -20,6 +20,11 @@
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="design_files/css/style.css">
     
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+
     </head>
 
     <body>
@@ -91,6 +96,8 @@
                       
         <section class="tableauindex" id="tableauindex">
             <img class="items" src="./design_files/images/tpgimg.png" alt="image">
+            <p class="listplayer" id="listplayer" style="margin-top: 20px; font-size: 13px; font-family: 'Poppins', sans-serif;
+            padding: 10px;"> Liste des inscrits :   </p>
         </section>
 
 
@@ -119,46 +126,114 @@
   
   
     </body>
-
+    
     <script>
+        
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+       
+       
+        const database = firebase.database();
+
+        var listplayer = firebase.database().ref("pg");
+        
+        
+        listplayer.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key != "" ) {
+                    i=1;
+                    datacheck = element.val();
+                    document.querySelector('#listplayer').innerHTML += `<b>${datacheck}</b>`
+                    document.getElementById('listplayer').style.fontSize='14px';
+                }
+            });
+            if(i==0) {
+               window.alert("impossible d'actualiser la liste des joueurs inscrits");
+            }
+        });
+        
+
         function getcategorie() {
             //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
-            /*
 
-            
-
-
-
-
-
-   <section class="contenuindex" id="contenuindex">
-
-            
-
-            <div class="mencontenu">
-                <div class="block" >
-
-                </div>
-    
-                <div class="block">
-                    
-                </div>
-    
-                <div class="block">
-                    
-                </div>
-
-            </div>
-            
-
-        </section>
-
-            */
             var getcat = document.getElementById("selectcat").value;
             if (getcat != "Choisissez") {
                 console.log(getcat);
             }
         }
+        
+/*     
+        var ImgindexRef = firebase.database().ref("imgindex");
+        ImgindexRef.on("value" , function(snapshot){
+            var i = 0;
+            var datacheck;
+            snapshot.forEach(function(element){
+                if(element.key == "imgindex" ) {
+                    i=1;
+                    datacheck = element.val();
+                }
+            });
+            if(i==1) {
+                document.getElementById("banniere").style.backgroundImage="url(https://img.freepik.com/vecteurs-libre/demenagement-vers-nouveau-concept-appartement_74855-7628.jpg)"
+            }else {
+                window.alert("Probleme de recherche imgindex");
+            }
+        });
+*/
+
+        
+  
+
+/*
+        function save() {
+
+            var email = $('#emailup').val();
+            var password = $('#passwordup').val();
+            var confirmpass = $('#confirmpass').val();
+
+            if(email != "" & password != "" & confirmpass != "" ) {
+                var dataRef = firebase.database().ref("users");
+                dataRef.once("value" , function(snapshot){
+                    var data = snapshot.val();
+                    for(let i in data){
+                        if (data[i] == email){
+                            alert("Ce compte a déjà été crée!")
+                        } else{
+                             // var newlistRef = listRef.push()
+                            listRef.set({
+                                'nom': 'fffff',
+                                'email' : email,
+                                'password' : password
+                         })
+                         
+                         
+                         }
+                    }
+                })
+   
+            } else if ( email == "" ) {
+              window.alert("Desolé le champ email est vide...");
+            } else if ( password == "" ) {
+              window.alert("Veuillez entrer votre mot de passe...");
+            } else if ( confirmpass == "" ) {
+              window.alert("confirmez votre passe est incorrect...");
+            } else if ( password != confirmpass ) {
+              window.alert("Mot de passe incorrect");
+            }
+      
+        }
+*/
     </script>
     
 </html>
