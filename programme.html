@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>TennisKids 2023</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+    
+    </head>
+
+    <body>
+
+        <section class="headerindex" style="background-color: rgb(6, 92, 25);">
+
+            <div class="menuindex">
+                <div class="logo">
+                    <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
+                </div>
+    
+                <div class="logosponsor">
+                    <img  href="index.html" src="./design_files/images/logoTK.png" alt="image">
+                </div>
+                
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar">
+                    <img class="imgmenu" src="./design_files/images/menubtnindex.png" alt="image">
+                </label>
+    
+                <div class="menutop" style="background-color: rgb(6, 92, 25); justify-content: center;">
+                    <ul>
+    
+                        <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
+    
+                        <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
+        
+                        <li class="boutonm"><a style="background-color: rgb(14, 167, 47); box-shadow: -1px 1px 9px rgba(23, 141, 121, 0.74);
+                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                            border-radius: 6px;" href="formulaire.html" onclick="toggleMenu();">Inscrivez vous maintenant</a>
+                        </li>
+        
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <section class="formulaireindex" id="formulaireindex">
+            
+                <div class="devisblocindex">
+    
+                    <form name="formweb" action="">
+    
+                        <div class="form-wrapperindex">
+                            <a class="titleform">.</a>
+                            <select id="selectcatdraw" style="display: block; margin-top: -4px; height: 25px;
+                            background-color: rgba(255, 255, 255, 0.850); border-radius: 5px; font-weight: 600; 
+                            font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(41, 93, 143);
+                            " onchange="getdraw()">
+                                <option value="Choisissez">Choisissez une date</option>
+                                <option value="poussin garcon">Journée du 14/08/2023</option>
+                                <option value="poussin garcon">Journée du 15/08/2023</option>
+                                <option value="poussin garcon">Journée du 16/08/2023</option>
+                                <option value="poussin garcon">Journée du 17/08/2023</option>
+                                <option value="poussin garcon">Journée du 18/08/2023</option>
+                                <option value="poussin garcon">Journée du 19/08/2023</option>
+                                <option value="poussin garcon">Journée du 20/08/2023</option>
+                                <option value="poussin garcon">Journée du 22/08/2023</option>
+                                <option value="poussin garcon">Journée du 23/08/2023</option>
+                                <option value="poussin garcon">Journée du 24/08/2023</option>
+                                <option value="poussin garcon">Journée du 25/08/2023</option>
+                                <option value="poussin garcon">Journée du 26/08/2023</option>
+                                
+                            </select>
+    
+                        </div>
+                    </form>        
+                    
+                </div>
+            </section>
+    
+        </section>
+        
+                      
+        <section class="tableauprogramme" id="tableauprogramme">
+            <img class="items" src="./design_files/images/P14.JPG" alt="image">
+        </section>
+
+
+        
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+               
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-likedin-in"></i></a>
+                                
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <p class="copyrigth">Copyright © Tous droits réservés - TennisKids</p>
+
+        </footer>
+  
+  
+  
+    </body>
+
+    <script>
+        function getcategorie() {
+            //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
+            /*
+
+            
+
+
+
+
+
+   <section class="contenuindex" id="contenuindex">
+
+            
+
+            <div class="mencontenu">
+                <div class="block" >
+
+                </div>
+    
+                <div class="block">
+                    
+                </div>
+    
+                <div class="block">
+                    
+                </div>
+
+            </div>
+            
+
+        </section>
+
+            */
+            var getcat = document.getElementById("selectcat").value;
+            if (getcat != "Choisissez") {
+                console.log(getcat);
+            }
+        }
+    </script>
+    
+</html>
