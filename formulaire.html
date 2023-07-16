@@ -87,14 +87,14 @@
                         <select id="selectcat" style="display: block; margin-bottom: 20px; width: 100%; 
                         height: 35px;" onchange="addcategorie() ">
                             <option value="Choisissez">selectionnez .....</option>
-                            <option value="poussin garcon">poussin garcon</option>
-                            <option value="poussin fille">poussin fille</option>
-                            <option value="Benjamin garcon">Benjamin garcon</option>
+                            <option value="poussingarcon">poussin garcon</option>
+                            <option value="poussinfille">poussin fille</option>
+                            <option value="Benjamingarcon">Benjamin garcon</option>
                             <option value="Benjamine">Benjamine</option>
-                            <option value="Minime garcon">Minime garcon</option>
-                            <option value="Minime fille">Minime fille</option>
-                            <option value="Junior garcon">Junior garcon</option>
-                            <option value="Junior fille">Junior fille</option>
+                            <option value="Minimegarcon">Minime garcon</option>
+                            <option value="Minimefille">Minime fille</option>
+                            <option value="Juniorgarcon">Junior garcon</option>
+                            <option value="Juniorfille">Junior fille</option>
                         </select>
                         <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
 
@@ -197,51 +197,65 @@
    
     const database = firebase.database();
 
-    var listplayer = firebase.database().ref("pg");
-    var cat = "test";
-    
+    var cat = "Choisissez";
  
     function addcategorie(){
-        //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
-
         var getcat = document.getElementById("selectcat").value;
-        if (getcat != "Choisissez") {
-            console.log(getcat);
-            cat = getcat;
-        }
+        cat = getcat;
     }
 
-    function save() {
+    function send(){
 
-        var nom = $('#nomuser').val();
+        var nom = $('#nomuser').val().toLowerCase().trim();
         var tel = $('#teluser').val();
         var club = $('#clubuser').val();
+        
+        if(nom != "" & tel != "" & club != "" & cat != "Choisissez") {
 
-        if(nom != "" & tel != "" & club != "" ) {
-            window.alert(cat);
 
-/*          
-            var dataRef = firebase.database().ref("pla");
-            dataRef.once("value" , function(snapshot){
-                var data = snapshot.val();
-                for(let i in data){
-                    if (data[i] == email){
-                        alert("Ce compte a déjà été crée!")
-                    } else{
-                         // var newlistRef = listRef.push()
-                        listRef.set({
-                            'nom': 'fffff',
-                            'email' : email,
-                            'password' : password
-                     })
-                     
-                     
-                     }
-                }
-            })
-*/
+            var dataRef = firebase.database().ref(cat).child(nom.toLowerCase().trim());
+            var dataRefa = firebase.database().ref("players");
+            var i = 0;
+
+            dataRefa.on("value" , function(snapshot){
+                snapshot.forEach(function(element){
+                    if(element.key == nom.toLowerCase().trim() ) {
+                        i=1;                    
+                    }
+                });
+            });
+
+            if(i==1) {
+                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit");
+                } else if (i == 0) {
+
+                    dataRefa.child(nom.toLowerCase().trim()).set({
+                            'nom': nom.toLowerCase().trim() ,
+                            'tel' : tel.toLowerCase() ,
+                            'club' : club.toLowerCase() ,
+                            'cat' : cat.toLowerCase()
+                     });
+
+                    dataRef.set({
+                            'nom': nom.toLowerCase().trim() ,
+                            'tel' : tel.toLowerCase() ,
+                            'club' : club.toLowerCase() ,
+                            'cat' : cat.toLowerCase()
+                     }).then(()=>{
+                        window.alert("enregistrement reuissi");
+                     }).catch((error)=>{
+                        window.alert("erreur survenue : "+ error);
+                     });
+  
+                    }
+
+                    
+
+
         } else if ( nom == "" ) {
-          window.alert("vauillez entrer le nom du joueur...");
+          window.alert("veuillez entrer le nom du joueur...");
+        } else if ( cat == "Choisissez" ) {
+          window.alert("veuillez renseigner la catégorie du joueur...");
         } else if ( tel == "" ) {
           window.alert("Veuillez entrer numero de telephone du responsable...");
         } else if ( club == "" ) {
