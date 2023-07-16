@@ -20,6 +20,11 @@
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="design_files/css/style.css">
     
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+
     </head>
 
     <body>
@@ -80,7 +85,7 @@
                     <div class="form-wrapper">
                         <a class="titleform">Choisissez votre Categorie </a>
                         <select id="selectcat" style="display: block; margin-bottom: 20px; width: 100%; 
-                        height: 35px;" onchange="getcategorie()">
+                        height: 35px;" onchange="addcategorie() ">
                             <option value="Choisissez">selectionnez .....</option>
                             <option value="poussin garcon">poussin garcon</option>
                             <option value="poussin fille">poussin fille</option>
@@ -103,7 +108,7 @@
 
                     <div class="form-wrapper">
                         <a class="titleform">Club d'appartenance</a>
-                        <input id="villeuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
+                        <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
                     </div>
 
 
@@ -120,6 +125,13 @@
                     </div>
         
                 </form>
+
+                    </lottie-player>
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player class="lottiescript" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                     background="transparent" speed="1"  loop autoplay></lottie-player>
+
+
             </div>
         </section>
 
@@ -167,14 +179,78 @@
         
     </script>
 
-    <script>
-        function getcategorie() {
-            //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
-            var getcat = document.getElementById("selectcat").value;
-            if (getcat != "Choisissez") {
-                console.log(getcat);
-            }
-        }
-    </script>
+
+<script>
+        
+    const firebaseConfig = {
+        databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+        apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+        authDomain: "nlogagolf-ed63e.firebaseapp.com",
+        projectId: "nlogagolf-ed63e",
+        storageBucket: "nlogagolf-ed63e.appspot.com",
+        messagingSenderId: "104686743459",
+        appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+        measurementId: "G-6BW97RHV89"
+    };
+    firebase.initializeApp(firebaseConfig)
+   
+   
+    const database = firebase.database();
+
+    var listplayer = firebase.database().ref("pg");
+    var cat = "test";
     
+ 
+    function addcategorie(){
+        //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
+
+        var getcat = document.getElementById("selectcat").value;
+        if (getcat != "Choisissez") {
+            console.log(getcat);
+            cat = getcat;
+        }
+    }
+
+    function save() {
+
+        var nom = $('#nomuser').val();
+        var tel = $('#teluser').val();
+        var club = $('#clubuser').val();
+
+        if(nom != "" & tel != "" & club != "" ) {
+            window.alert(cat);
+
+/*          
+            var dataRef = firebase.database().ref("pla");
+            dataRef.once("value" , function(snapshot){
+                var data = snapshot.val();
+                for(let i in data){
+                    if (data[i] == email){
+                        alert("Ce compte a déjà été crée!")
+                    } else{
+                         // var newlistRef = listRef.push()
+                        listRef.set({
+                            'nom': 'fffff',
+                            'email' : email,
+                            'password' : password
+                     })
+                     
+                     
+                     }
+                }
+            })
+*/
+        } else if ( nom == "" ) {
+          window.alert("vauillez entrer le nom du joueur...");
+        } else if ( tel == "" ) {
+          window.alert("Veuillez entrer numero de telephone du responsable...");
+        } else if ( club == "" ) {
+            window.alert("Veuillez saisir club du joueur...");
+        }
+  
+    }
+
+</script>
+    
+
 </html>
