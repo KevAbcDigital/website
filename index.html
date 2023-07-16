@@ -42,7 +42,7 @@
                 
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar">
-                    <img class="imgmenu" src="./design_files/images/menubtnindex.png" alt="image">
+                    <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
                 </label>
     
                 <div class="menutop" style="justify-content: center;">
@@ -75,14 +75,14 @@
                             font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(41, 93, 143);
                             " onchange="getdraw()">
                                 <option value="Choisissez">Choisissez une categorie</option>
-                                <option value="poussin garcon">poussin garcon</option>
-                                <option value="poussin fille">poussin fille</option>
-                                <option value="Benjamin garcon">Benjamin garcon</option>
+                                <option value="poussingarcon">poussin garcon</option>
+                                <option value="poussinfille">poussin fille</option>
+                                <option value="Benjamingarcon">Benjamin garcon</option>
                                 <option value="Benjamine">Benjamine</option>
-                                <option value="Minime garcon">Minime garcon</option>
-                                <option value="Minime fille">Minime fille</option>
-                                <option value="Junior garcon">Junior garcon</option>
-                                <option value="Junior fille">Junior fille</option>
+                                <option value="Minimegarcon">Minime garcon</option>
+                                <option value="Minimefille">Minime fille</option>
+                                <option value="Juniorgarcon">Junior garcon</option>
+                                <option value="Juniorfille">Junior fille</option>
                             </select>
     
                         </div>
@@ -141,37 +141,37 @@
         };
         firebase.initializeApp(firebaseConfig)
        
-       
         const database = firebase.database();
 
-        var listplayer = firebase.database().ref("pg");
-        
-        
-        listplayer.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key != "" ) {
-                    i=1;
-                    datacheck = element.val();
-                    document.querySelector('#listplayer').innerHTML += `<b>${datacheck}</b>`
-                    document.getElementById('listplayer').style.fontSize='14px';
+        var cat = "Choisissez";
+ 
+        function getdraw(){
+            var getcat = document.getElementById("selectcatdraw").value;
+            cat = getcat;
+            if (cat == "Choisissez") {
+                document.querySelector('#listplayer').innerHTML = " Liste des inscrits :   ";
+                document.getElementById('listplayer').style.fontSize='14px';
+            } else{
+                var dataRef = firebase.database().ref(cat);
+                dataRef.on("value" , function(snapshot){
+                var i = 0;
+                snapshot.forEach(function(element){
+                    if(element.key != "" ) {
+                        i=1;
+                        datacheck = element.key;
+                        document.querySelector('#listplayer').innerHTML += `<b>${datacheck}</b>`
+                        document.getElementById('listplayer').style.fontSize='14px';
+                    }
+                });
+                if(i==0) {
+                    window.alert("impossible d'actualiser la liste des joueurs inscrits");
                 }
-            });
-            if(i==0) {
-               window.alert("impossible d'actualiser la liste des joueurs inscrits");
-            }
-        });
-        
-
-        function getcategorie() {
-            //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
-
-            var getcat = document.getElementById("selectcat").value;
-            if (getcat != "Choisissez") {
-                console.log(getcat);
+                });
             }
         }
+
+        
+        
         
 /*     
         var ImgindexRef = firebase.database().ref("imgindex");
@@ -190,49 +190,6 @@
                 window.alert("Probleme de recherche imgindex");
             }
         });
-*/
-
-        
-  
-
-/*
-        function save() {
-
-            var email = $('#emailup').val();
-            var password = $('#passwordup').val();
-            var confirmpass = $('#confirmpass').val();
-
-            if(email != "" & password != "" & confirmpass != "" ) {
-                var dataRef = firebase.database().ref("users");
-                dataRef.once("value" , function(snapshot){
-                    var data = snapshot.val();
-                    for(let i in data){
-                        if (data[i] == email){
-                            alert("Ce compte a déjà été crée!")
-                        } else{
-                             // var newlistRef = listRef.push()
-                            listRef.set({
-                                'nom': 'fffff',
-                                'email' : email,
-                                'password' : password
-                         })
-                         
-                         
-                         }
-                    }
-                })
-   
-            } else if ( email == "" ) {
-              window.alert("Desolé le champ email est vide...");
-            } else if ( password == "" ) {
-              window.alert("Veuillez entrer votre mot de passe...");
-            } else if ( confirmpass == "" ) {
-              window.alert("confirmez votre passe est incorrect...");
-            } else if ( password != confirmpass ) {
-              window.alert("Mot de passe incorrect");
-            }
-      
-        }
 */
     </script>
     
