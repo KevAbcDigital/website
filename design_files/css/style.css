@@ -129,9 +129,9 @@ header .menutop ul li a{
   transition: 0.5s ease;
   background-color: transparent;
   margin-top: 6px;
-  color: rgba(51, 45, 128, 0.616);
+  color: rgb(29, 41, 95);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   padding : 5px 15px;
   font-style: italic;
   font-family: 'Poppins', sans-serif;
@@ -193,7 +193,7 @@ header .logosponsor img {
     .devisbloc h3 {
       font-size: 13px;
       font-weight: 600;
-      padding: 0 20px;
+      padding: 0 10px;
       font-family: 'Poppins', sans-serif;
       text-align: center;
       color: white;
@@ -327,12 +327,6 @@ ul {
 /*index */
 
 .headerindex {
-  /*
-  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
-  url(../images/fondindex.png);
-  */
-  /* background-color: #2a3f72; */
-  
   background-color: #2c4c70;
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -357,7 +351,7 @@ ul {
   position: absolute;
   margin-top: 110px;
   top: 0; left:0; right: 0;
-  background-color: rgb(3, 110, 39);
+  background-color: #2c4c70;
   display: none;
 }
 .headerindex .menutop ul li {
@@ -372,7 +366,7 @@ ul {
   margin-top: 6px;
   color: rgb(255, 255, 255);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   padding : 5px 15px;
   font-style: italic;
   font-family: 'Poppins', sans-serif;
@@ -438,11 +432,9 @@ ul {
   background-position: center;
   margin-top: 110px;
 }
-
 .tableauindex img{
   width: auto;
-  padding: 0 10px;
-  height: 600px;
+  height: 510px;
   cursor: pointer;
   object-fit: cover;
   overflow: scroll;
@@ -450,8 +442,48 @@ ul {
 
 
 
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
 
 
+.tableauprogramme {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-bottom: 10px;
+  padding-top: -5px;
+  overflow: auto;
+  overflow-y: scroll;
+  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
+  url(../images/fondindex.png);
+  background-size: cover;
+  background-position: center;
+  margin-top: 110px;
+}
+.tableauprogramme img{
+  width: auto;
+  height: 280px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: scroll;
+}
 
 
 
