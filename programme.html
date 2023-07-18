@@ -32,12 +32,12 @@
                 </div>
     
                 <div class="logosponsor">
-                    <img  href="index.html" src="./design_files/images/logoTK.png" alt="image">
+                    <img  class="logosponsorim" href="index.html" src="./design_files/images/logoTK.png" alt="image">
                 </div>
                 
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar">
-                    <img class="imgmenu" src="./design_files/images/menubtnindex.png" alt="image">
+                    <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
                 </label>
     
                 <div class="menutop" style="background-color: rgb(6, 92, 25); justify-content: center;">
@@ -70,18 +70,19 @@
                             font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(41, 93, 143);
                             " onchange="getdraw()">
                                 <option value="Choisissez">Choisissez une date</option>
-                                <option value="poussin garcon">Journée du 14/08/2023</option>
-                                <option value="poussin garcon">Journée du 15/08/2023</option>
-                                <option value="poussin garcon">Journée du 16/08/2023</option>
-                                <option value="poussin garcon">Journée du 17/08/2023</option>
-                                <option value="poussin garcon">Journée du 18/08/2023</option>
-                                <option value="poussin garcon">Journée du 19/08/2023</option>
-                                <option value="poussin garcon">Journée du 20/08/2023</option>
-                                <option value="poussin garcon">Journée du 22/08/2023</option>
-                                <option value="poussin garcon">Journée du 23/08/2023</option>
-                                <option value="poussin garcon">Journée du 24/08/2023</option>
-                                <option value="poussin garcon">Journée du 25/08/2023</option>
-                                <option value="poussin garcon">Journée du 26/08/2023</option>
+                                <option value="14">Journée du 14/08/2023</option>
+                                <option value="15">Journée du 15/08/2023</option>
+                                <option value="16">Journée du 16/08/2023</option>
+                                <option value="17">Journée du 17/08/2023</option>
+                                <option value="18">Journée du 18/08/2023</option>
+                                <option value="19">Journée du 19/08/2023</option>
+                                <option value="20">Journée du 20/08/2023</option>
+                                <option value="21">Journée du 21/08/2023</option>
+                                <option value="22">Journée du 22/08/2023</option>
+                                <option value="23">Journée du 23/08/2023</option>
+                                <option value="24">Journée du 24/08/2023</option>
+                                <option value="25">Journée du 25/08/2023</option>
+                                <option value="26">Journée du 26/08/2023</option>
                                 
                             </select>
     
@@ -95,9 +96,12 @@
         
                       
         <section class="tableauprogramme" id="tableauprogramme">
-            <img class="items" src="./design_files/images/P14.JPG" alt="image">
+            <img id="imgget" class="items" src="./design_files/images/ta (1).PNG" alt="image">
         </section>
 
+        <section class="indisponibletxt">
+            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
 
         
         <footer class="footer" id="footer">
@@ -126,42 +130,42 @@
     </body>
 
     <script>
-        function getcategorie() {
-            //console.log("formweb.selectcat[formweb.selectcat.selectedIndex].text");
-            /*
 
-            
+        var imgget = document.getElementById("imgget");
 
+        function getdraw() {
+            var getcat = document.getElementById("selectcatdraw").value;
+            cat = getcat;
 
-
-
-
-   <section class="contenuindex" id="contenuindex">
-
-            
-
-            <div class="mencontenu">
-                <div class="block" >
-
-                </div>
-    
-                <div class="block">
-                    
-                </div>
-    
-                <div class="block">
-                    
-                </div>
-
-            </div>
-            
-
-        </section>
-
-            */
-            var getcat = document.getElementById("selectcat").value;
-            if (getcat != "Choisissez") {
-                console.log(getcat);
+            if (cat == "14") {
+                    imgget.src="./design_files/images/ta (1).PNG";
+                } else if (cat == "15") {
+                    imgget.src="./design_files/images/ta (2).PNG";
+                } else if (cat == "16") {
+                    imgget.src="./design_files/images/ta (3).PNG";
+                } else if (cat == "17") {
+                    imgget.src="./design_files/images/ta (4).PNG";
+                } else if (cat == "18") {
+                    imgget.src="./design_files/images/ta (5).PNG";
+                } else if (cat == "19") {
+                    imgget.src="./design_files/images/ta (6).PNG";
+                } else if (cat == "20") {
+                    imgget.src="./design_files/images/ta (7).PNG";
+                } else if (cat == "21") {
+                    imgget.src="./design_files/images/ta (8).PNG";
+                } else if (cat == "22") {
+                    imgget.src="./design_files/images/ta (9).PNG";
+                } else if (cat == "23") {
+                    imgget.src="./design_files/images/ta (10).PNG";
+                } else if (cat == "24") {
+                    imgget.src="./design_files/images/ta (11).PNG";
+                } else if (cat == "25") {
+                    imgget.src="./design_files/images/ta (12).PNG";
+                } else if (cat == "26") {
+                    imgget.src="./design_files/images/ta (13).PNG";
+                } else if (cat == "Choisissez") {
+                    document.querySelector('#listplayer').innerHTML = " Liste des inscrits :   ";
+                    document.getElementById('listplayer').style.fontSize='14px';
             }
         }
     </script>
