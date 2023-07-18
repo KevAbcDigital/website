@@ -449,7 +449,7 @@ ul {
 }
 .tableauindex img{
   width: 100%;
-  height: 620px;
+  height: 320px;
   cursor: pointer;
   object-fit: cover;
   overflow: scroll;
