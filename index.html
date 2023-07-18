@@ -37,7 +37,7 @@
                 </div>
     
                 <div class="logosponsor">
-                    <img  href="index.html" src="./design_files/images/logoTK.png" alt="image">
+                    <img class="logosponsorim" href="index.html" src="./design_files/images/logoTK.png" alt="image">
                 </div>
                 
                 <input type="checkbox" id="menu-bar">
@@ -77,12 +77,12 @@
                                 <option value="Choisissez">Choisissez une categorie</option>
                                 <option value="poussingarcon">poussin garcon</option>
                                 <option value="poussinfille">poussin fille</option>
-                                <option value="Benjamingarcon">Benjamin garcon</option>
-                                <option value="Benjamine">Benjamine</option>
-                                <option value="Minimegarcon">Minime garcon</option>
-                                <option value="Minimefille">Minime fille</option>
-                                <option value="Juniorgarcon">Junior garcon</option>
-                                <option value="Juniorfille">Junior fille</option>
+                                <option value="benjamingarcon">Benjamin garcon</option>
+                                <option value="benjamine">Benjamine</option>
+                                <option value="minimegarcon">Minime garcon</option>
+                                <option value="minimefille">Minime fille</option>
+                                <option value="juniorgarcon">Junior garcon</option>
+                                <option value="juniorfille">Junior fille</option>
                             </select>
     
                         </div>
@@ -91,17 +91,18 @@
                 </div>
             </section>
     
-        </section>
-        
-                      
+        </section>    
+         
         <section class="tableauindex" id="tableauindex">
-            <img class="items" src="./design_files/images/tpgimg.png" alt="image">
+            <img id="imgget" class="items" src="./design_files/images/tchoiximg.png" alt="image">
             <p class="listplayer" id="listplayer" style="margin-top: 20px; font-size: 13px; font-family: 'Poppins', sans-serif;
-            padding: 10px;"> Liste des inscrits :   </p>
+            padding: 10px;"> Liste des inscrits :  Choisissez une categorie <br> </p>
         </section>
-
-
         
+        <section class="indisponibletxt">
+            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+                
         <footer class="footer" id="footer">
             <div class="container">
                 <div class="row">
@@ -144,10 +145,12 @@
         const database = firebase.database();
 
         var cat = "Choisissez";
- 
+        var imgget = document.getElementById("imgget");
+
         function getdraw(){
             var getcat = document.getElementById("selectcatdraw").value;
             cat = getcat;
+
             if (cat == "Choisissez") {
                 document.querySelector('#listplayer').innerHTML = " Liste des inscrits :   ";
                 document.getElementById('listplayer').style.fontSize='14px';
@@ -159,14 +162,34 @@
                     if(element.key != "" ) {
                         i=1;
                         datacheck = element.key;
-                        document.querySelector('#listplayer').innerHTML += `<b>${datacheck}</b>`
+                        document.querySelector('#listplayer').innerHTML += `<b>${"- " + datacheck}</b>`
                         document.getElementById('listplayer').style.fontSize='14px';
+
                     }
                 });
                 if(i==0) {
                     window.alert("impossible d'actualiser la liste des joueurs inscrits");
                 }
                 });
+
+                if (cat == "poussingarcon") {
+                    imgget.src="./design_files/images/tpgimg.png";
+                } else if (cat == "poussinfille") {
+                    imgget.src="./design_files/images/tpfimg.png";
+                } else if (cat == "benjamingarcon") {
+                    imgget.src="./design_files/images/tbgimg.png";
+                } else if (cat == "benjamine") {
+                    imgget.src="./design_files/images/tbfimg.png";
+                } else if (cat == "minimegarcon") {
+                    imgget.src="./design_files/images/tmgimg.png";
+                } else if (cat == "minimefille") {
+                    imgget.src="./design_files/images/tmfimg.png";
+                } else if (cat == "juniorgarcon") {
+                    imgget.src="./design_files/images/tjgimg.png";
+                } else if (cat == "juniorfille") {
+                    imgget.src="./design_files/images/tjfimg.png";
+                }
+
             }
         }
 
