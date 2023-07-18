@@ -36,7 +36,7 @@
             </div>
 
             <div class="logosponsor">
-                <img  href="index.html" src="./design_files/images/logoTK.png" alt="image">
+                <img class="logosponsorimg" href="index.html" src="./design_files/images/logoTK.png" alt="image">
             </div>
             
             <input type="checkbox" id="menu-bar">
@@ -64,6 +64,10 @@
             
         </header>
 
+        <section class="indisponibletxt">
+            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+
         <section class="formulaire" id="formulaire">
             <div class="devisbloc">
 
@@ -72,10 +76,8 @@
                     <h1>Inscrivez vous</h1>
                     <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
 
-                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTION : 13 Aout 2023 . Une fois cette date dépassée ce formulaire sera momentanement 
-                        indisponible pour les joeurs souhaitant partiiper à la première semaine de tournoi. Il sera remis en ligne le dimanche 20 Aout 2023
-                        pour l'enroulement de la deuxieme semaine. Une fois l'enregistrement effectué vous ne pourrez plus le
-                        modifier. Chaque joueur ne pourra jouer que dans une seule catégorie. </h3>
+                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 13 Aout 2023 à 15h . Une fois cette date dépassée, ce formulaire 
+                        sera momentanement indisponible pour les joueurs souhaitant participer à la première semaine de tournoi.  </h3>
 
                     <div class="form-wrapper">
                         <a class="titleform">Noms et prénoms du joueur</a>
@@ -117,8 +119,10 @@
                          utilisées pour preparer votre tirage au sort et pour vous contacter 
                         dans le cadre de ce service."</h2>
 
+                        
+
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
-                        <button id="btn-valider" type="button" onclick="send()">
+                        <button id="valider" type="button" onclick="send()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
                         </button>
@@ -128,7 +132,7 @@
 
                     </lottie-player>
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player class="lottiescript" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                    <lottie-player class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
                      background="transparent" speed="1"  loop autoplay></lottie-player>
 
 
@@ -198,6 +202,7 @@
     const database = firebase.database();
 
     var cat = "Choisissez";
+    var load = document.getElementById("lottieload");
  
     function addcategorie(){
         var getcat = document.getElementById("selectcat").value;
@@ -212,6 +217,7 @@
         
         if(nom != "" & tel != "" & club != "" & cat != "Choisissez") {
 
+            load.style.display = "block";
 
             var dataRef = firebase.database().ref(cat).child(nom.toLowerCase().trim());
             var dataRefa = firebase.database().ref("players");
@@ -227,6 +233,7 @@
 
             if(i==1) {
                     window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit");
+                    load.style.display = "none";
                 } else if (i == 0) {
 
                     dataRefa.child(nom.toLowerCase().trim()).set({
@@ -242,8 +249,10 @@
                             'club' : club.toLowerCase() ,
                             'cat' : cat.toLowerCase()
                      }).then(()=>{
+                        load.style.display = 'none';
                         window.alert("enregistrement reuissi");
                      }).catch((error)=>{
+                        load.style.display = 'none';
                         window.alert("erreur survenue : "+ error);
                      });
   
@@ -258,6 +267,8 @@
           window.alert("veuillez renseigner la catégorie du joueur...");
         } else if ( tel == "" ) {
           window.alert("Veuillez entrer numero de telephone du responsable...");
+        } else if ( tel.length != 9 ) {
+          window.alert("Veuillez entrer numero de telephone à 09 chiffres ...");
         } else if ( club == "" ) {
             window.alert("Veuillez saisir club du joueur...");
         }
