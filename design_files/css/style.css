@@ -21,45 +21,52 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-
-
-
-
-#menu-bar{
-  display: none;
+.indisponibletxt {
+  display: block;
 }
-header label{
-  cursor: pointer;
-  margin-top: 13px;
-  position: absolute;
-  left: 0;
-  margin-left: 23px;
-  display: none;
+.indisponibletxt .txtindis {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
-header label .imgmenu {
-  width: 25px;
-  height: 16px;
-}
-.headerindex label{
-  cursor: pointer;
-  margin-top: 13px;
-  position: absolute;
-  left: 0;
-  margin-left: 23px;
-  margin-top: 10px;
-  display: none;
-}
-.headerindex label .imgmenu {
-  width: 25px;
-  height: 16px;
-  margin-top: 15px;
-}
-
-
-
-
 
 @media(max-width:991px){
+
+  .indisponibletxt {
+    display: none;
+  }
+  
+  #menu-bar{
+    display: none;
+  }
+  header label{
+    cursor: pointer;
+    margin-top: 13px;
+    position: absolute;
+    left: 0;
+    margin-left: 23px;
+    display: none;
+  }
+  header label .imgmenu {
+    width: 25px;
+    height: 16px;
+  }
+  .headerindex label{
+    cursor: pointer;
+    margin-top: 13px;
+    position: absolute;
+    left: 0;
+    margin-left: 23px;
+    margin-top: 10px;
+    display: none;
+  }
+  .headerindex label .imgmenu {
+    width: 25px;
+    height: 16px;
+    margin-top: 15px;
+  }
 
   
   #menu-bar:checked ~ .menutop {
