@@ -351,6 +351,7 @@ ul {
   height: 220px;
   justify-content: center;
   display: block;
+  z-index: 1000;
 }
 .headerindex .menuindex{
   background-color: transparent;
@@ -478,35 +479,28 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 190px;
-  z-index: 1000;
+  margin-top: 220px;
 }
-.tableauprogramme .formulaireindex {
-  margin-top: 50px;
-  display: block;
-}
-.tableauprogramme .devisblocindex{
-  padding: 2px;
-  max-width: 100%;
-  margin: auto;
-  display: block;
-}
-.tableauprogramme .devisblocindex .form-wrapperindex {
-  width: 100%;
-}
-.tableauprogramme .devisblocindex .form-wrapperindex .titleform {
-  font-size: 1px;
-  color: rgb(245, 245, 245);
-  padding-left: 12px;
-  font-family: 'Poppins', sans-serif;
-}
-.tableauprogramme .items{
+
+.tableauprogramme .items1{
   width: 100%;
   display: block;
-  height: 250px;
+  height: 280px;
   margin-top: 30px;
+  margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/ta\ \(1\).PNG);
+  url(../images/tablecf.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauprogramme .items2{
+  width: 100%;
+  display: block;
+  height: 280px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableyuc.PNG);
   background-size: cover;
   background-position: center;
 }
