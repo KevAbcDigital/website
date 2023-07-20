@@ -232,21 +232,27 @@
                     load.style.display = "none";
                 } else if (i == 0) {
 
-                    dataRefa.child(nom.toLowerCase().trim()).set({
-                            'nom': nom.toLowerCase().trim() ,
-                            'tel' : tel.toLowerCase() ,
-                            'club' : club.toLowerCase() ,
-                            'cat' : cat.toLowerCase()
-                     });
-
                     dataRef.set({
                             'nom': nom.toLowerCase().trim() ,
                             'tel' : tel.toLowerCase() ,
                             'club' : club.toLowerCase() ,
                             'cat' : cat.toLowerCase()
                      }).then(()=>{
-                        load.style.display = 'none';
-                        window.alert("enregistrement reuissi. le joueur " + nom + " sera à été inscrit dans la catégorie " + cat );
+
+                        dataRefa.child(nom.toLowerCase().trim()).set({
+                            'nom': nom.toLowerCase().trim() ,
+                            'tel' : tel.toLowerCase() ,
+                            'club' : club.toLowerCase() ,
+                            'cat' : cat.toLowerCase()
+                        }).then(()=>{
+                            load.style.display = 'none';
+                            window.alert("enregistrement reuissi. le joueur " + nom + " sera inscrit dans la catégorie " + cat );
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+                        
+
                      }).catch((error)=>{
                         load.style.display = 'none';
                         window.alert("erreur survenue : "+ error);
