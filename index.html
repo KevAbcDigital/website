@@ -45,23 +45,30 @@
                     <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
                 </label>
     
-                <div class="menutop" style="justify-content: center;">
+
+                <div class="menutop">
                     <ul>
     
+                        <li class="boutonm"><a style="background-color: rgba(10, 12, 128, 0.938); 
+                            box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                             border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
+                             href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
+                        </li>
+        
                         <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
     
                         <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
-        
-                        <li class="boutonm"><a style="background-color: rgb(13, 37, 83); box-shadow: -1px 1px 9px rgba(23, 141, 121, 0.74);
-                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                            border-radius: 6px;" href="formulaire.html" onclick="toggleMenu();">Inscrivez vous maintenant</a>
-                        </li>
-        
+    
                     </ul>
                 </div>
+                
             </div>
             
-            
+        </section>    
+        
+        <section class="tableauindex" id="tableauindex">
+
             <section class="formulaireindex" id="formulaireindex">
             
                 <div class="devisblocindex">
@@ -70,9 +77,9 @@
     
                         <div class="form-wrapperindex">
                             <a class="titleform">.</a>
-                            <select id="selectcatdraw" style="display: block; margin-top: -4px; height: 25px;
-                            background-color: rgba(255, 255, 255, 0.850); border-radius: 5px; font-weight: 600; 
-                            font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(41, 93, 143);
+                            <select id="selectcatdraw" style="display: block; height: 30px;
+                            background-color: rgba(10, 12, 128, 0.829); border-radius: 7px; font-weight: 600; 
+                            font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(255, 255, 255);
                             " onchange="getdraw()">
                                 <option value="Choisissez">Choisissez une categorie</option>
                                 <option value="poussingarcon">poussin garcon</option>
@@ -90,13 +97,12 @@
                     
                 </div>
             </section>
-    
-        </section>    
-         
-        <section class="tableauindex" id="tableauindex">
-            <img id="imgget" class="items" src="./design_files/images/tchoiximg.png" alt="image">
+
+            <div id="imgget" class="items"></div>
+
             <p class="listplayer" id="listplayer" style="margin-top: 20px; font-size: 13px; font-family: 'Poppins', sans-serif;
             padding: 10px;"> Liste des inscrits :  Choisissez une categorie <br> </p>
+            
         </section>
         
         <section class="indisponibletxt" style="display: none;">
@@ -143,7 +149,6 @@
         firebase.initializeApp(firebaseConfig)
        
         const database = firebase.database();
-
         var cat = "Choisissez";
         var imgget = document.getElementById("imgget");
 
@@ -152,8 +157,9 @@
             cat = getcat;
 
             if (cat == "Choisissez") {
-                document.querySelector('#listplayer').innerHTML = " Liste des inscrits :   ";
+                document.querySelector('#listplayer').innerHTML = " Liste des inscrits :  Choisissez une categorie";
                 document.getElementById('listplayer').style.fontSize='14px';
+                imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
             } else{
                 var dataRef = firebase.database().ref(cat);
                 dataRef.on("value" , function(snapshot){
@@ -173,21 +179,21 @@
                 });
 
                 if (cat == "poussingarcon") {
-                    imgget.src="./design_files/images/tpgimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 } else if (cat == "poussinfille") {
-                    imgget.src="./design_files/images/tpfimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 } else if (cat == "benjamingarcon") {
-                    imgget.src="./design_files/images/tbgimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 } else if (cat == "benjamine") {
-                    imgget.src="./design_files/images/tbfimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 } else if (cat == "minimegarcon") {
-                    imgget.src="./design_files/images/tmgimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 } else if (cat == "minimefille") {
-                    imgget.src="./design_files/images/tmfimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 } else if (cat == "juniorgarcon") {
-                    imgget.src="./design_files/images/tjgimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 } else if (cat == "juniorfille") {
-                    imgget.src="./design_files/images/tjfimg.png";
+                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
                 }
 
             }
