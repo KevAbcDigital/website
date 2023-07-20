@@ -47,17 +47,17 @@
             <div class="menutop">
                 <ul>
 
-                    <li class="boutonm"><a style="background-color: rgba(45, 118, 255, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+                    <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
                         color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                          border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                         href="formulaire.html" onclick="toggleMenu();">Inscrivez vous maintenant</a>
+                         href="index.html" onclick="toggleMenu();">Tableau final et Resultats</a>
                     </li>
 
                     <li class="boutonm" > <img class="imgmenu" src="./design_files/images/affichephoneapp.png" alt="image"> </li>
 
                     <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
 
-                    <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
+                    <li class="boutonm"><a href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a> </li>
 
                 </ul>
             </div>
@@ -76,8 +76,8 @@
                     <h1>Inscrivez vous</h1>
                     <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
 
-                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 13 Aout 2023 à 15h . Une fois cette date dépassée, ce formulaire 
-                        sera momentanement indisponible pour les joueurs souhaitant participer à la première semaine de tournoi.  </h3>
+                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 13 Aout 2023 à 15H . Une fois cette date dépassée, ce formulaire 
+                        sera momentanement indisponible pour tout joueur souhaitant participer à la première semaine de tournoi;. </h3>
 
                     <div class="form-wrapper">
                         <a class="titleform">Noms et prénoms du joueur</a>
@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Telephone ( Ex : 698329293 )</a>
+                        <a class="titleform">Telephone ( Ex : 698328283 )</a>
                         <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Contact du joueur ou du responsable ..." class="form-controla">
                         <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
                     </div>
@@ -113,13 +113,9 @@
                         <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
                     </div>
 
-
-                    <h2>Les informations recueillies seront nécessaires pour votre inscription.
-                         En soumettant ce formulaire vous acceptez que vos informations soient sauvegardées et 
-                         utilisées pour preparer votre tirage au sort et pour vous contacter 
-                        dans le cadre de ce service."</h2>
-
-                        
+                    <h2 style="margin-bottom: -38px;">NB : UN JOUEUR NE POURRA S'INSCRIRE QUE DANS UNE SEULE CATEGORIE PAR SEMAINE.</h2>
+                    <h2>En soumettant ce formulaire vous ne pourrez plus le modifier et ces informations ainsi renseignées seront 
+                        utilisées pour votre tirage au sort et pour vous contacter dans le cadre de ce service.</h2>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
                         <button id="valider" type="button" onclick="send()">
@@ -214,8 +210,8 @@
         var nom = $('#nomuser').val().toLowerCase().trim();
         var tel = $('#teluser').val();
         var club = $('#clubuser').val();
-        
-        if(nom != "" & tel != "" & club != "" & cat != "Choisissez") {
+
+        if(nom != "" & tel != "" & club != "" & cat != "Choisissez" & tel.length == 9 ) {
 
             load.style.display = "block";
 
@@ -250,7 +246,7 @@
                             'cat' : cat.toLowerCase()
                      }).then(()=>{
                         load.style.display = 'none';
-                        window.alert("enregistrement reuissi");
+                        window.alert("enregistrement reuissi. le joueur " + nom + " sera à été inscrit dans la catégorie " + cat );
                      }).catch((error)=>{
                         load.style.display = 'none';
                         window.alert("erreur survenue : "+ error);
@@ -262,15 +258,15 @@
 
 
         } else if ( nom == "" ) {
-          window.alert("veuillez entrer le nom du joueur...");
+          window.alert("veuillez entrer le nom complet du joueur...");
         } else if ( cat == "Choisissez" ) {
           window.alert("veuillez renseigner la catégorie du joueur...");
         } else if ( tel == "" ) {
-          window.alert("Veuillez entrer numero de telephone du responsable...");
+          window.alert("Veuillez entrer numero de téléphone du responsable...");
         } else if ( tel.length != 9 ) {
-          window.alert("Veuillez entrer numero de telephone à 09 chiffres ...");
+          window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
         } else if ( club == "" ) {
-            window.alert("Veuillez saisir club du joueur...");
+            window.alert("Veuillez saisir le club du joueur...");
         }
   
     }
