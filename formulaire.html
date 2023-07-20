@@ -200,6 +200,10 @@
     var cat = "Choisissez";
     var load = document.getElementById("lottieload");
  
+    function containsOnlyNumbers(str) {
+        return /^\d+$/.test(str);
+    }
+
     function addcategorie(){
         var getcat = document.getElementById("selectcat").value;
         cat = getcat;
@@ -210,8 +214,9 @@
         var nom = $('#nomuser').val().toLowerCase().trim();
         var tel = $('#teluser').val();
         var club = $('#clubuser').val();
-
-        if(nom != "" & tel != "" & club != "" & cat != "Choisissez" & tel.length == 9 ) {
+       
+        if(nom != "" & tel != "" & club != "" & cat != "Choisissez" & tel.length == 9 
+            & ( containsOnlyNumbers(tel) == true ) ) {
 
             load.style.display = "block";
 
@@ -269,6 +274,8 @@
           window.alert("veuillez renseigner la catégorie du joueur...");
         } else if ( tel == "" ) {
           window.alert("Veuillez entrer numero de téléphone du responsable...");
+        } else if ( containsOnlyNumbers(tel) == false ) {
+          window.alert("Veuillez entrer numero de téléphone valide sans lettre ...");
         } else if ( tel.length != 9 ) {
           window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
         } else if ( club == "" ) {
