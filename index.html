@@ -168,6 +168,7 @@
                     if(element.key != "" ) {
                         i=1;
                         datacheck = element.key;
+                        document.querySelector('#listplayer').innerHTML = "  Liste des inscrits : ";
                         document.querySelector('#listplayer').innerHTML += `<b>${"- " + datacheck}</b>`
                         document.getElementById('listplayer').style.fontSize='14px';
 
@@ -175,6 +176,7 @@
                 });
                 if(i==0) {
                     window.alert("impossible d'actualiser la liste des joueurs inscrits");
+                    document.querySelector('#listplayer').innerHTML = "  Liste des inscrits : Aucun";
                 }
                 });
 
