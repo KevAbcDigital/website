@@ -24,7 +24,7 @@
 
     <body>
 
-        <section class="headerindex" style="background-color: rgb(6, 92, 25);">
+        <section class="headerindex">
 
             <div class="menuindex">
                 <div class="logo">
@@ -40,23 +40,28 @@
                     <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
                 </label>
     
-                <div class="menutop" style="background-color: rgb(6, 92, 25); justify-content: center;">
+                <div class="menutop">
                     <ul>
     
+                        <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                             border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
+                             href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
+                        </li>
+        
                         <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
     
                         <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
-        
-                        <li class="boutonm"><a style="background-color: rgb(14, 167, 47); box-shadow: -1px 1px 9px rgba(23, 141, 121, 0.74);
-                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                            border-radius: 6px;" href="formulaire.html" onclick="toggleMenu();">Inscrivez vous maintenant</a>
-                        </li>
-        
+    
                     </ul>
                 </div>
             </div>
-            
-            
+    
+        </section>
+        
+                      
+        <section class="tableauprogramme" id="tableauprogramme">
+
             <section class="formulaireindex" id="formulaireindex">
             
                 <div class="devisblocindex">
@@ -65,9 +70,9 @@
     
                         <div class="form-wrapperindex">
                             <a class="titleform">.</a>
-                            <select id="selectcatdraw" style="display: block; margin-top: -4px; height: 25px;
-                            background-color: rgba(255, 255, 255, 0.850); border-radius: 5px; font-weight: 600; 
-                            font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(41, 93, 143);
+                            <select id="selectcatdraw" style="display: block; height: 30px;
+                            background-color: rgba(10, 12, 128, 0.829); border-radius: 7px; font-weight: 600; 
+                            font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(255, 255, 255);
                             " onchange="getdraw()">
                                 <option value="Choisissez">Choisissez une date</option>
                                 <option value="14">Journée du 14/08/2023</option>
@@ -83,7 +88,6 @@
                                 <option value="24">Journée du 24/08/2023</option>
                                 <option value="25">Journée du 25/08/2023</option>
                                 <option value="26">Journée du 26/08/2023</option>
-                                
                             </select>
     
                         </div>
@@ -91,12 +95,9 @@
                     
                 </div>
             </section>
-    
-        </section>
-        
-                      
-        <section class="tableauprogramme" id="tableauprogramme">
-            <img id="imgget" class="items" src="./design_files/images/ta (1).PNG" alt="image">
+
+            <div id="imgget" class="items"></div>
+
         </section>
 
         <section class="indisponibletxt" style="display: none;">
@@ -138,31 +139,31 @@
             cat = getcat;
 
             if (cat == "14") {
-                    imgget.src="./design_files/images/ta (1).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (1).PNG)";
                 } else if (cat == "15") {
-                    imgget.src="./design_files/images/ta (2).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (2).PNG)";
                 } else if (cat == "16") {
-                    imgget.src="./design_files/images/ta (3).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (3).PNG)";
                 } else if (cat == "17") {
-                    imgget.src="./design_files/images/ta (4).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (4).PNG)";
                 } else if (cat == "18") {
-                    imgget.src="./design_files/images/ta (5).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (5).PNG)";
                 } else if (cat == "19") {
-                    imgget.src="./design_files/images/ta (6).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (6).PNG)";
                 } else if (cat == "20") {
-                    imgget.src="./design_files/images/ta (7).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (7).PNG)";
                 } else if (cat == "21") {
-                    imgget.src="./design_files/images/ta (8).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (8).PNG)";
                 } else if (cat == "22") {
-                    imgget.src="./design_files/images/ta (9).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (9).PNG)";
                 } else if (cat == "23") {
-                    imgget.src="./design_files/images/ta (10).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (10).PNG)";
                 } else if (cat == "24") {
-                    imgget.src="./design_files/images/ta (11).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (11).PNG)";
                 } else if (cat == "25") {
-                    imgget.src="./design_files/images/ta (12).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (12).PNG)";
                 } else if (cat == "26") {
-                    imgget.src="./design_files/images/ta (13).PNG";
+                    imgget.style.backgroundImage = "url(./design_files/images/ta (13).PNG)";
                 } else if (cat == "Choisissez") {
                     document.querySelector('#listplayer').innerHTML = " Liste des inscrits :   ";
                     document.getElementById('listplayer').style.fontSize='14px';
