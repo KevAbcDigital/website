@@ -113,7 +113,7 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
-                        <h4>follow us (698328283)</h4>
+                        <h4>follow us</h4>
                
                         <div class="social-links">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -130,9 +130,28 @@
 
         </footer>
   
-  
+        <div class="whatsappid" id="myDiv"></div>
   
     </body>
+
+    <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237698328283',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Tennis Kids service!',
+            headerColor: 'blue',
+            backgroundColor: 'green',
+            position: 'right' ,
+            size: '50px'
+          });
+          
+        });
+
+        
+    </script>
     
     <script>
         
