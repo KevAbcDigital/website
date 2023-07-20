@@ -13,7 +13,7 @@ p{
   color: #fff;
 }
 body {
-  background-color: rgba(243, 236, 236, 0.979);
+  background-color: white;
   color: #333;
   font-size: 13px;
   margin: 0; 
@@ -107,7 +107,7 @@ body {
 header {
   background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
   url(../images/fondloginn.png);
-  box-shadow: -1px 1px 9px #f1f1f16b;
+  box-shadow: -1px 1px 9px #f1f1f123;
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 60px;
@@ -342,11 +342,13 @@ ul {
 /*index */
 
 .headerindex {
-  background-color: #2c4c70;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/affichephoneapp3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 110px;
-  z-index: 2000;
+  height: 220px;
   justify-content: center;
   display: block;
 }
@@ -364,28 +366,25 @@ ul {
 }
 .headerindex .menuindex .menutop {
   position: absolute;
-  margin-top: 110px;
+  margin-top: 95px;
   top: 0; left:0; right: 0;
-  background-color: #2c4c70;
   display: none;
 }
 .headerindex .menutop ul li {
-  width: 90%;
-  padding-left: 10px;
+  width: 100%;
 }
 .headerindex .menutop ul li a{
   display: block;
   text-decoration: none;
+  height: 40px;
   transition: 0.5s ease;
-  background-color: transparent;
-  margin-top: 6px;
-  color: rgb(255, 255, 255);
+  color: rgb(29, 41, 95);
+  background-color: white;
   font-weight: 600;
   font-size: 14px;
   padding : 5px 15px;
   font-style: italic;
   font-family: 'Poppins', sans-serif;
-  border-radius: 19px;
 }
 .logo img{
   cursor: pointer;
@@ -410,25 +409,6 @@ ul {
   margin-right: 17px;
   margin-top: 0px;
 }
-.formulaireindex {
-  margin-top: 50px;
-  display: block;
-}
-.devisblocindex{
-  padding: 2px;
-  max-width: 100%;
-  margin: auto;
-  display: block;
-}
-.devisblocindex .form-wrapperindex {
-  width: 100%;
-}
-.devisblocindex .form-wrapperindex .titleform {
-  font-size: 1px;
-  color: rgb(245, 245, 245);
-  padding-left: 12px;
-  font-family: 'Poppins', sans-serif;
-}
 
 
 
@@ -437,22 +417,38 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  padding-bottom: 10px;
-  padding-top: -5px;
-  overflow: auto;
-  overflow-y: scroll;
-  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
-  url(../images/fondindex.png);
+  margin-top: 190px;
+  z-index: 1000;
+}
+.tableauindex .formulaireindex {
+  margin-top: 50px;
+  display: block;
+}
+.tableauindex .devisblocindex{
+  padding: 2px;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+.tableauindex .devisblocindex .form-wrapperindex {
+  width: 100%;
+}
+.tableauindex .devisblocindex .form-wrapperindex .titleform {
+  font-size: 1px;
+  color: rgb(245, 245, 245);
+  padding-left: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tableauindex .items{
+  width: 100%;
+  display: block;
+  height: 250px;
+  margin-top: 30px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/Diapositive1.PNG);
   background-size: cover;
   background-position: center;
-  margin-top: 110px;
-}
-.tableauindex img{
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  object-fit: cover;
-  overflow: scroll;
 }
 
 
@@ -482,24 +478,38 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  padding-bottom: 10px;
-  padding-top: -5px;
-  overflow: auto;
-  overflow-y: scroll;
-  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
-  url(../images/fondindex.png);
+  margin-top: 190px;
+  z-index: 1000;
+}
+.tableauprogramme .formulaireindex {
+  margin-top: 50px;
+  display: block;
+}
+.tableauprogramme .devisblocindex{
+  padding: 2px;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+.tableauprogramme .devisblocindex .form-wrapperindex {
+  width: 100%;
+}
+.tableauprogramme .devisblocindex .form-wrapperindex .titleform {
+  font-size: 1px;
+  color: rgb(245, 245, 245);
+  padding-left: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+.tableauprogramme .items{
+  width: 100%;
+  display: block;
+  height: 250px;
+  margin-top: 30px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/ta\ \(1\).PNG);
   background-size: cover;
   background-position: center;
-  margin-top: 110px;
 }
-.tableauprogramme img{
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  object-fit: cover;
-  overflow: scroll;
-}
-
 
 
 
