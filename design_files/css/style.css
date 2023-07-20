@@ -318,7 +318,7 @@ ul {
   text-align: center;
 }
 .whatsappid {
-  margin-right: 40px;
+  margin-right: 30px;
   margin-bottom: 15px;
   box-shadow: #24262b;
 }
@@ -418,11 +418,11 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 200px;
+  margin-top: 190px;
   z-index: 1000;
 }
 .tableauindex .formulaireindex {
-  margin-top: 55px;
+  margin-top: 50px;
   display: block;
 }
 .tableauindex .devisblocindex{
@@ -479,13 +479,13 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 240px;
+  margin-top: 220px;
 }
 
 .tableauprogramme .items1{
   width: 100%;
   display: block;
-  height: 300px;
+  height: 280px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
@@ -496,7 +496,7 @@ ul {
 .tableauprogramme .items2{
   width: 100%;
   display: block;
-  height: 320px;
+  height: 280px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
