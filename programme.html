@@ -94,9 +94,29 @@
 
         </footer>
   
+        <div class="whatsappid" id="myDiv"></div>
   
   
     </body>
+
+    <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237698328283',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Tennis Kids service!',
+            headerColor: 'blue',
+            backgroundColor: 'green',
+            position: 'right' ,
+            size: '50px'
+          });
+          
+        });
+
+        
+    </script>
 
     <script>
 
