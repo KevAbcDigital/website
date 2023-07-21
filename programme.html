@@ -20,122 +20,59 @@
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="design_files/css/style.css">
     
-        <!-- javadev -->
-
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-
     </head>
 
     <body>
 
-        <header>
+        <section class="headerindex">
 
-            <div class="logo">
-                <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
+            <div class="menuindex">
+                <div class="logo">
+                    <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
+                </div>
+    
+                <div class="logosponsor">
+                    <img  class="logosponsorim" href="index.html" src="./design_files/images/logoTK.png" alt="image">
+                </div>
+                
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar">
+                    <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
+                </label>
+    
+                <div class="menutop">
+                    <ul>
+    
+                        <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                             border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
+                             href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
+                        </li>
+        
+                        <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
+    
+                        <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
+    
+                    </ul>
+                </div>
             </div>
+    
+        </section>
+        
+                      
+        <section class="tableauprogramme" id="tableauprogramme">
 
-            <div class="logosponsor">
-                <img class="logosponsorimg" href="index.html" src="./design_files/images/logoTK.png" alt="image">
-            </div>
-            
-            <input type="checkbox" id="menu-bar">
-            <label for="menu-bar">
-                <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
-            </label>
+            <div id="imgget1" class="items1"></div>
 
-            <div class="menutop">
-                <ul>
+            <div id="imgget2" class="items2"></div>
 
-                    <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                         border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                         href="index.html" onclick="toggleMenu();">Tableau final et Resultats</a>
-                    </li>
-
-                    <li class="boutonm" > <img class="imgmenu" src="./design_files/images/affichephoneapp.png" alt="image"> </li>
-
-                    <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
-
-                    <li class="boutonm"><a href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a> </li>
-
-                </ul>
-            </div>
-            
-        </header>
+        </section>
 
         <section class="indisponibletxt" style="display: none;">
             <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
 
-        <section class="formulaire" id="formulaire">
-            <div class="devisbloc">
-
-                <form name="formweb" action="">
-
-                    <h1>Inscrivez vous</h1>
-                    <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
-
-                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 13 Aout 2023 à 15H . Une fois ce délai dépassé, ce formulaire 
-                        sera indisponible pour tout joueur souhaitant participer à la première semaine de tournoi. </h3>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Noms et prénoms du joueur</a>
-                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Comme sur l'acte de naissance ..." class="form-controla">
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Choisissez votre Categorie </a>
-                        <select id="selectcat" style="display: block; margin-bottom: 20px; width: 100%; 
-                        height: 35px;" onchange="addcategorie() ">
-                            <option value="Choisissez">selectionnez .....</option>
-                            <option value="poussingarcon">poussin garcon</option>
-                            <option value="poussinfille">poussin fille</option>
-                            <option value="Benjamingarcon">Benjamin garcon</option>
-                            <option value="Benjamine">Benjamine</option>
-                            <option value="Minimegarcon">Minime garcon</option>
-                            <option value="Minimefille">Minime fille</option>
-                            <option value="Juniorgarcon">Junior garcon</option>
-                            <option value="Juniorfille">Junior fille</option>
-                        </select>
-                        <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
-
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Telephone ( Ex : 698328283 )</a>
-                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Contact du joueur ou du responsable ..." class="form-controla">
-                        <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Club d'appartenance</a>
-                        <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
-                    </div>
-
-                    <h2 style="margin-bottom: -30px;">NB : UN JOUEUR NE POURRA S'INSCRIRE QUE DANS UNE SEULE CATEGORIE PAR SEMAINE.</h2>
-                    <h2>IMPORTANT : Bien vouloir vous rendre ( joueur ou encadreur ) sur le site de la compétition muni d'une piece d'identité 
-                        conforme (passport , CNI , acte de naissance etc...) pour la validation de votre inscription (SIGN IN) en 
-                        prelude des tirages au sort le DIMANCHE 13 AOUT 2023 avant 17h .</h2>
-
-                    <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
-                        <button id="valider" type="button" onclick="send()">
-                            Envoyer
-                            <i class="zmdi zmdi-arrow-right"></i>
-                        </button>
-                    </div>
         
-                </form>
-
-                    </lottie-player>
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                     background="transparent" speed="1"  loop autoplay></lottie-player>
-
-
-            </div>
-        </section>
-
         <footer class="footer" id="footer">
             <div class="container">
                 <div class="row">
@@ -158,7 +95,8 @@
         </footer>
   
         <div class="whatsappid" id="myDiv"></div>
-
+  
+  
     </body>
 
     <script type="text/javascript">
@@ -180,113 +118,14 @@
         
     </script>
 
+    <script>
 
-<script>
-        
-    const firebaseConfig = {
-        databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
-        apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
-        authDomain: "nlogagolf-ed63e.firebaseapp.com",
-        projectId: "nlogagolf-ed63e",
-        storageBucket: "nlogagolf-ed63e.appspot.com",
-        messagingSenderId: "104686743459",
-        appId: "1:104686743459:web:c380b6e47ebb21d413f416",
-        measurementId: "G-6BW97RHV89"
-    };
-    firebase.initializeApp(firebaseConfig)
-   
-   
-    const database = firebase.database();
+        var imgget1 = document.getElementById("imgget1");
+        imgget1.style.backgroundImage = "url(./design_files/images/tablecf.PNG)";
 
-    var cat = "Choisissez";
-    var load = document.getElementById("lottieload");
- 
-    function containsOnlyNumbers(str) {
-        return /^\d+$/.test(str);
-    }
+        var imgget2 = document.getElementById("imgget2");
+        imgget2.style.backgroundImage = "url(./design_files/images/tableyuc.PNG)";
 
-    function addcategorie(){
-        var getcat = document.getElementById("selectcat").value;
-        cat = getcat;
-    }
-
-    var dataRefa = firebase.database().ref("players");
-
-    function send(){
-
-        var nom = $('#nomuser').val().toLowerCase().trim();
-        var tel = $('#teluser').val();
-        var club = $('#clubuser').val();
-       
-        if(nom != "" & tel != "" & club != "" & cat != "Choisissez" & tel.length == 9 
-            & ( containsOnlyNumbers(tel) == true ) ) {
-
-            load.style.display = "block";
-
-            var dataRef = firebase.database().ref(cat).child(nom.toLowerCase().trim());
-            var i = 0;
-
-            dataRefa.on("value" , function(snapshot){
-                snapshot.forEach(function(element){
-                    if(element.key == nom.toLowerCase().trim() ) {
-                        i=1;                    
-                    }
-                });
-            });
-
-            if(i==1) {
-                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
-                    load.style.display = "none";
-                } else if (i == 0) {
-
-                    dataRef.set({
-                            'nom': nom.toLowerCase().trim() ,
-                            'tel' : tel.toLowerCase() ,
-                            'club' : club.toLowerCase() ,
-                            'cat' : cat.toLowerCase()
-                     }).then(()=>{
-
-                        dataRefa.child(nom.toLowerCase().trim()).set({
-                            'nom': nom.toLowerCase().trim() ,
-                            'tel' : tel.toLowerCase() ,
-                            'club' : club.toLowerCase() ,
-                            'cat' : cat.toLowerCase()
-                        }).then(()=>{
-                            load.style.display = 'none';
-                            window.alert("enregistrement reuissi. le joueur " + nom + " sera inscrit dans la catégorie " + cat );
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
-                        
-
-                     }).catch((error)=>{
-                        load.style.display = 'none';
-                        window.alert("erreur survenue : "+ error);
-                     });
-  
-                }
-
-                    
-
-
-        } else if ( nom == "" ) {
-          window.alert("veuillez entrer le nom complet du joueur...");
-        } else if ( cat == "Choisissez" ) {
-          window.alert("veuillez renseigner la catégorie du joueur...");
-        } else if ( tel == "" ) {
-          window.alert("Veuillez entrer numero de téléphone du responsable...");
-        } else if ( containsOnlyNumbers(tel) == false ) {
-          window.alert("Veuillez entrer numero de téléphone valide sans lettre ...");
-        } else if ( tel.length != 9 ) {
-          window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
-        } else if ( club == "" ) {
-            window.alert("Veuillez saisir le club du joueur...");
-        }
-  
-    }
-
-</script>
+    </script>
     
-
 </html>
