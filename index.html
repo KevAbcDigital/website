@@ -69,39 +69,22 @@
         
         <section class="tableauindex" id="tableauindex">
 
-            <section class="formulaireindex" id="formulaireindex">
+            <div id="img1" class="img1"></div>
             
-                <div class="devisblocindex">
-    
-                    <form name="formweb" action="">
-    
-                        <div class="form-wrapperindex">
-                            <a class="titleform">.</a>
-                            <select id="selectcatdraw" style="display: block; height: 30px;
-                            background-color: rgba(65, 68, 255, 0.973); border-radius: 7px; font-weight: 600; 
-                            font-size: 12px; width: 88%; margin-left: 6%; padding-left: 20px; border: none; color: rgb(255, 255, 255);
-                            " onchange="getdraw()">
-                                <option value="Choisissez">Choisissez une categorie</option>
-                                <option value="poussingarcon">poussin garcon</option>
-                                <option value="poussinfille">poussin fille</option>
-                                <option value="benjamingarcon">Benjamin garcon</option>
-                                <option value="benjamine">Benjamine</option>
-                                <option value="minimegarcon">Minime garcon</option>
-                                <option value="minimefille">Minime fille</option>
-                                <option value="juniorgarcon">Junior garcon</option>
-                                <option value="juniorfille">Junior fille</option>
-                            </select>
-    
-                        </div>
-                    </form>        
-                    
-                </div>
-            </section>
-
-            <div id="imgget" class="items"></div>
-
-            <p class="listplayer" id="listplayer" style="margin-top: 20px; font-size: 12px; color: rgb(0, 47, 255); font-family: 'Poppins', sans-serif;
-            padding: 15px;"> Liste des inscrits :  Choisissez une categorie <br> </p>
+            <div id="img2" class="img2"></div>
+            
+            <div id="img3" class="img3"></div>
+            
+            <div id="img4" class="img4"></div>
+            
+            <div id="img5" class="img5"></div>
+            
+            <div id="img6" class="img6"></div>
+            
+            <div id="img7" class="img7"></div>
+            
+            <div id="img8" class="img8"></div>
+            
             
         </section>
         
@@ -137,7 +120,7 @@
     <script type="text/javascript">
         $(function () {
           $('#myDiv').floatingWhatsApp({
-            phone: '237696039082',
+            phone: '237698328283',
             popupMessage: 'Comment pouvons nous vous aider?',
             showPopup: true,
             showOnIE: false,
@@ -152,97 +135,5 @@
 
         
     </script>
-    
-    <script>
-        
-        const firebaseConfig = {
-            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
-            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
-            authDomain: "nlogagolf-ed63e.firebaseapp.com",
-            projectId: "nlogagolf-ed63e",
-            storageBucket: "nlogagolf-ed63e.appspot.com",
-            messagingSenderId: "104686743459",
-            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
-            measurementId: "G-6BW97RHV89"
-        };
-        firebase.initializeApp(firebaseConfig)
-       
-        const database = firebase.database();
-        var cat = "Choisissez";
-        var imgget = document.getElementById("imgget");
-
-        function getdraw(){
-            var getcat = document.getElementById("selectcatdraw").value;
-            cat = getcat;
-
-            if (cat == "Choisissez") {
-                document.querySelector('#listplayer').innerHTML = " Liste des inscrits :  Choisissez une categorie";
-                document.getElementById('listplayer').style.fontSize='14px';
-                imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
-            } else{
-                var dataRef = firebase.database().ref(cat);
-                dataRef.on("value" , function(snapshot){
-                var i = 0;
-                snapshot.forEach(function(element){
-                    if(element.key != "" ) {
-                        i=1;
-                        datacheck = element.key;
-                        document.querySelector('#listplayer').innerHTML = "  Liste des inscrits : ";
-                        document.querySelector('#listplayer').innerHTML += `<b>${"- " + datacheck}</b>`
-                        document.getElementById('listplayer').style.fontSize='14px';
-
-                    }
-                });
-                if(i==0) {
-                    window.alert("impossible d'actualiser la liste des joueurs inscrits");
-                    document.querySelector('#listplayer').innerHTML = "  Liste des inscrits : Aucun";
-                }
-                });
-
-                if (cat == "poussingarcon") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive2.PNG)";
-                } else if (cat == "poussinfille") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive3.PNG)";
-                } else if (cat == "benjamingarcon") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive4.PNG)";
-                } else if (cat == "benjamine") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive5.PNG)";
-                } else if (cat == "minimegarcon") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive6.PNG)";
-                } else if (cat == "minimefille") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive7.PNG)";
-                } else if (cat == "juniorgarcon") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive8.PNG)";
-                } else if (cat == "juniorfille") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive9.PNG)";
-                } else if (cat == "Choisissez") {
-                    imgget.style.backgroundImage = "url(./design_files/images/Diapositive1.PNG)";
-                }
-
-            }
-        }
-
-        
-        
-        
-/*     
-        var ImgindexRef = firebase.database().ref("imgindex");
-        ImgindexRef.on("value" , function(snapshot){
-            var i = 0;
-            var datacheck;
-            snapshot.forEach(function(element){
-                if(element.key == "imgindex" ) {
-                    i=1;
-                    datacheck = element.val();
-                }
-            });
-            if(i==1) {
-                document.getElementById("banniere").style.backgroundImage="url(https://img.freepik.com/vecteurs-libre/demenagement-vers-nouveau-concept-appartement_74855-7628.jpg)"
-            }else {
-                window.alert("Probleme de recherche imgindex");
-            }
-        });
-*/
-    </script>
-    
+  
 </html>
