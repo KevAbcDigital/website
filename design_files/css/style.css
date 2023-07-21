@@ -367,7 +367,7 @@ ul {
 }
 .headerindex .menuindex .menutop {
   position: absolute;
-  margin-top: 95px;
+  margin-top: 100px;
   top: 0; left:0; right: 0;
   display: none;
 }
@@ -412,48 +412,101 @@ ul {
 }
 
 
-
 .tableauindex {
   position: relative;
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 190px;
-  z-index: 1000;
+  margin-top: 240px;
 }
-.tableauindex .formulaireindex {
-  margin-top: 50px;
-  display: block;
-}
-.tableauindex .devisblocindex{
-  padding: 2px;
-  max-width: 100%;
-  margin: auto;
-  display: block;
-}
-.tableauindex .devisblocindex .form-wrapperindex {
-  width: 100%;
-}
-.tableauindex .devisblocindex .form-wrapperindex .titleform {
-  font-size: 1px;
-  color: rgb(245, 245, 245);
-  padding-left: 12px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.tableauindex .items{
+.tableauindex .img1{
   width: 100%;
   display: block;
   height: 250px;
   margin-top: 30px;
+  margin-bottom: 50px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/Diapositive1.PNG);
+  url(../images/tableaux/Diapositive1.PNG);
   background-size: cover;
   background-position: center;
 }
-
-
-
+.tableauprogramme .img2{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive2.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img3{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive3.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauprogramme .img4{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive4.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img5{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive5.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauprogramme .img6{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive6.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img7{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive7.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauprogramme .img8{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive8.PNG);
+  background-size: cover;
+  background-position: center;
+}
 /*programme*/
 /*programme*/
 /*programme*/
@@ -481,26 +534,25 @@ ul {
   display: block;
   margin-top: 220px;
 }
-
 .tableauprogramme .items1{
   width: 100%;
   display: block;
-  height: 280px;
+  height: 310px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tablecf.PNG);
+  url(../images/rencontres/Diapositive1.PNG);
   background-size: cover;
   background-position: center;
 }
 .tableauprogramme .items2{
   width: 100%;
   display: block;
-  height: 280px;
+  height: 310px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableyuc.PNG);
+  url(../images/rencontres/Diapositive2.PNG);
   background-size: cover;
   background-position: center;
 }
