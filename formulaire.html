@@ -76,8 +76,8 @@
                     <h1>Inscrivez vous</h1>
                     <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
 
-                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 13 Aout 2023 à 15H . Une fois cette date dépassée, ce formulaire 
-                        sera momentanement indisponible pour tout joueur souhaitant participer à la première semaine de tournoi;. </h3>
+                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 13 Aout 2023 à 15H . Une fois ce délai dépassé, ce formulaire 
+                        sera indisponible pour tout joueur souhaitant participer à la première semaine de tournoi. </h3>
 
                     <div class="form-wrapper">
                         <a class="titleform">Noms et prénoms du joueur</a>
@@ -113,9 +113,10 @@
                         <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
                     </div>
 
-                    <h2 style="margin-bottom: -38px;">NB : UN JOUEUR NE POURRA S'INSCRIRE QUE DANS UNE SEULE CATEGORIE PAR SEMAINE.</h2>
-                    <h2>En soumettant ce formulaire vous ne pourrez plus le modifier et ces informations ainsi renseignées seront 
-                        utilisées pour votre tirage au sort et pour vous contacter dans le cadre de ce service.</h2>
+                    <h2 style="margin-bottom: -30px;">NB : UN JOUEUR NE POURRA S'INSCRIRE QUE DANS UNE SEULE CATEGORIE PAR SEMAINE.</h2>
+                    <h2>IMPORTANT : Bien vouloir vous rendre ( joueur ou encadreur ) sur le site de la compétition muni d'une piece d'identité 
+                        conforme (passport , CNI , acte de naissance etc...) pour la validation de votre inscription (SIGN IN) en 
+                        prelude des tirages au sort le DIMANCHE 13 AOUT 2023 avant 17h .</h2>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
                         <button id="valider" type="button" onclick="send()">
@@ -163,7 +164,7 @@
     <script type="text/javascript">
         $(function () {
           $('#myDiv').floatingWhatsApp({
-            phone: '237696039082',
+            phone: '237698328283',
             popupMessage: 'Comment pouvons nous vous aider?',
             showPopup: true,
             showOnIE: false,
@@ -214,60 +215,55 @@
         var nom = $('#nomuser').val().toLowerCase().trim();
         var tel = $('#teluser').val();
         var club = $('#clubuser').val();
-       
+        var i = 0;
+        var dataRefa = firebase.database().ref("players");
+
         if(nom != "" & tel != "" & club != "" & cat != "Choisissez" & tel.length == 9 
             & ( containsOnlyNumbers(tel) == true ) ) {
 
             load.style.display = "block";
 
-            var dataRef = firebase.database().ref(cat).child(nom.toLowerCase().trim());
-            var dataRefa = firebase.database().ref("players");
-            var i = 0;
-
             dataRefa.on("value" , function(snapshot){
                 snapshot.forEach(function(element){
                     if(element.key == nom.toLowerCase().trim() ) {
-                        i=1;                    
+                        i = 1;
                     }
                 });
-            });
-
-            if(i==1) {
-                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
-                    load.style.display = "none";
-                } else if (i == 0) {
-
+                if ( i == 0 ) {
+                    var dataRef = firebase.database().ref(cat).child(nom.toLowerCase().trim());
                     dataRef.set({
-                            'nom': nom.toLowerCase().trim() ,
-                            'tel' : tel.toLowerCase() ,
-                            'club' : club.toLowerCase() ,
-                            'cat' : cat.toLowerCase()
-                     }).then(()=>{
-
-                        dataRefa.child(nom.toLowerCase().trim()).set({
-                            'nom': nom.toLowerCase().trim() ,
-                            'tel' : tel.toLowerCase() ,
-                            'club' : club.toLowerCase() ,
-                            'cat' : cat.toLowerCase()
+                                'nom': nom.toLowerCase().trim() ,
+                                'tel' : tel.toLowerCase() ,
+                                'club' : club.toLowerCase() ,
+                                'cat' : cat.toLowerCase()
                         }).then(()=>{
-                            load.style.display = 'none';
-                            window.alert("enregistrement reuissi. le joueur " + nom + " sera inscrit dans la catégorie " + cat );
+
+                            (dataRefa.child(nom.toLowerCase().trim())).set({
+                                'nom': nom.toLowerCase().trim() ,
+                                'tel' : tel.toLowerCase() ,
+                                'club' : club.toLowerCase() ,
+                                'cat' : cat.toLowerCase()
+                            }).then(()=>{
+                                load.style.display = 'none';
+                                window.alert("enregistrement reuissi. le joueur " + nom + " sera inscrit dans la catégorie " + cat );
+                                window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+                            
+
                         }).catch((error)=>{
                             load.style.display = 'none';
                             window.alert("erreur survenue : "+ error);
                         });
-                        
-
-                     }).catch((error)=>{
-                        load.style.display = 'none';
-                        window.alert("erreur survenue : "+ error);
-                     });
+                } else if ( i == 1 ) {
+                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
+                    load.style.display = "none";
+                }
+                
+            });
   
-                    }
-
-                    
-
-
         } else if ( nom == "" ) {
           window.alert("veuillez entrer le nom complet du joueur...");
         } else if ( cat == "Choisissez" ) {
@@ -283,6 +279,7 @@
         }
   
     }
+
 
 </script>
     
