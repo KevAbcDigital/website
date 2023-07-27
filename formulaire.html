@@ -84,22 +84,57 @@
                         <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Comme sur l'acte de naissance ..." class="form-controla">
                     </div>
 
-                    <div class="form-wrapper">
-                        <a class="titleform">Choisissez votre Categorie </a>
-                        <select id="selectcat" style="display: block; margin-bottom: 20px; width: 100%; 
-                        height: 35px;" onchange="addcategorie() ">
-                            <option value="Choisissez">selectionnez .....</option>
-                            <option value="poussingarcon">poussin garcon</option>
-                            <option value="poussinfille">poussin fille</option>
-                            <option value="Benjamingarcon">Benjamin garcon</option>
-                            <option value="Benjamine">Benjamine</option>
-                            <option value="Minimegarcon">Minime garcon</option>
-                            <option value="Minimefille">Minime fille</option>
-                            <option value="Juniorgarcon">Junior garcon</option>
-                            <option value="Juniorfille">Junior fille</option>
-                        </select>
-                        <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
+                    <a class="titleform" style="color: white;">Date de naissance</a>
+                    <div class="datenaissance">
 
+
+                        <div class="form-wrapper">
+                            <a class="titleform">Jour</a>
+                            <input id="jouruser" style="width: 50px; height: 30px; padding-left: 5px;" type="email" placeholder="00" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper" style="width: 30%; margin-left: 7px;">
+                            <a class="titleform">Mois </a>
+                            <select id="selectmois" style="display: block; margin-bottom: 20px; width: 130px;
+                            height: 35px;" onchange="addmois() ">
+                                <option value="Choisissez">Mois ...</option>
+                                <option value="Janvier">Janvier</option>
+                                <option value="Fevrier">Fevrier</option>
+                                <option value="Mars">Mars</option>
+                                <option value="Avril">Avril</option>
+                                <option value="Mai">Mai</option>
+                                <option value="Juin">Juin</option>
+                                <option value="Juillet">Juillet</option>
+                                <option value="Aout">Aout</option>
+                                <option value="Septembre">Septembre</option>
+                                <option value="Octobre">Octobre</option>
+                                <option value="Novembre">Novembre</option>
+                                <option value="Decembre">Decembre</option>
+                            </select>    
+                        </div>
+
+                        <div class="form-wrapper" style="width: 30%; margin-left: 37px;">
+                            <a class="titleform">Année </a>
+                            <select id="selectannee" style="display: block; margin-bottom: 20px; width: 100px;
+                            height: 35px;" onchange="addannee() ">
+                                <option value="Choisissez">Année ...</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                            </select>    
+                        </div>
+                        
                     </div>
 
                     <div class="form-wrapper">
@@ -113,10 +148,10 @@
                         <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
                     </div>
 
-                    <h2 style="margin-bottom: -30px;">NB : UN JOUEUR NE POURRA S'INSCRIRE QUE DANS UNE SEULE CATEGORIE PAR SEMAINE.</h2>
-                    <h2>IMPORTANT : Bien vouloir vous rendre ( joueur ou encadreur ) sur le site de la compétition muni d'une piece d'identité 
-                        conforme (passport , CNI , acte de naissance etc...) pour la validation de votre inscription (SIGN IN) en 
-                        prelude des tirages au sort le DIMANCHE 13 AOUT 2023 avant 17h .</h2>
+                    <h2 style="color: rgb(255, 208, 0); font-size: 16px; margin-bottom: -32px;">NB : TRES URGENT !!!.</h2>
+                    <h2>Afin d'etre intégré dans le tirage au sort, tout joueur déjà inscrit en ligne devra
+                        se presenter au bureau du juge arbitre (club france) le DIMANCHE 13 AOUT 2023 avant 16h muni d'une piece 
+                        d'identité copie ou originale de (passport ou CNI ou acte de naissance ou bulletin scolaire 2022/2023) .</h2>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
                         <button id="valider" type="button" onclick="send()">
@@ -198,16 +233,21 @@
    
     const database = firebase.database();
 
-    var cat = "Choisissez";
+    var moistxt = "Choisissez";
+    var anneetxt = "Choisissez";
     var load = document.getElementById("lottieload");
  
     function containsOnlyNumbers(str) {
         return /^\d+$/.test(str);
     }
 
-    function addcategorie(){
-        var getcat = document.getElementById("selectcat").value;
-        cat = getcat;
+    function addmois(){
+        var getmm = document.getElementById("selectmois").value;
+        moistxt = getmm;
+    }
+    function addannee(){
+        var getann = document.getElementById("selectannee").value;
+        anneetxt = getann;
     }
 
     function send(){
@@ -215,11 +255,12 @@
         var nom = $('#nomuser').val().toLowerCase().trim();
         var tel = $('#teluser').val();
         var club = $('#clubuser').val();
+        var jouruser = $('#jouruser').val();
         var i = 0;
         var dataRefa = firebase.database().ref("players");
 
-        if(nom != "" & tel != "" & club != "" & cat != "Choisissez" & tel.length == 9 
-            & ( containsOnlyNumbers(tel) == true ) ) {
+        if(nom != "" & jouruser != "" & tel != "" & club != "" & moistxt != "Choisissez" & anneetxt != "Choisissez"
+         & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) ) {
 
             load.style.display = "block";
 
@@ -235,14 +276,19 @@
                                 'nom': nom.toLowerCase().trim() ,
                                 'tel' : tel.toLowerCase() ,
                                 'club' : club.toLowerCase() ,
-                                'cat' : cat.toLowerCase()
+                                'jour' : club.toLowerCase() ,
+                                'mois' : club.toLowerCase() ,
+                                'annee' : club.toLowerCase()
                         }).then(()=>{
 
                             (dataRefa.child(nom.toLowerCase().trim())).set({
                                 'nom': nom.toLowerCase().trim() ,
                                 'tel' : tel.toLowerCase() ,
                                 'club' : club.toLowerCase() ,
-                                'cat' : cat.toLowerCase()
+                                'jour' : jouruser.toLowerCase() ,
+                                'mois' : moistxt.toLowerCase() ,
+                                'annee' : anneetxt.toLowerCase()
+
                             }).then(()=>{
                                 load.style.display = 'none';
                                 window.alert("enregistrement reuissi. le joueur " + nom + " sera inscrit dans la catégorie " + cat );
@@ -266,16 +312,22 @@
   
         } else if ( nom == "" ) {
           window.alert("veuillez entrer le nom complet du joueur...");
-        } else if ( cat == "Choisissez" ) {
-          window.alert("veuillez renseigner la catégorie du joueur...");
+        }  else if ( jouruser == "" ) {
+          window.alert("veuillez renseigner le jour de naissance de " + nom);
+        }  else if ( containsOnlyNumbers(jouruser) == false ) {
+          window.alert("Veuillez entrer un jour de naissance en chiffre ...");
+        } else if ( moistxt == "Choisissez" ) {
+          window.alert("veuillez renseigner le mois de naissance de " + nom);
+        } else if ( anneetxt == "Choisissez" ) {
+          window.alert("veuillez renseigner l'année de naissance de " + nom);
         } else if ( tel == "" ) {
           window.alert("Veuillez entrer numero de téléphone du responsable...");
         } else if ( containsOnlyNumbers(tel) == false ) {
-          window.alert("Veuillez entrer numero de téléphone valide sans lettre ...");
+          window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
         } else if ( tel.length != 9 ) {
           window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
         } else if ( club == "" ) {
-            window.alert("Veuillez saisir le club du joueur...");
+            window.alert("Veuillez saisir le club de " + nom);
         }
   
     }
