@@ -93,9 +93,9 @@
                             <input id="jouruser" style="width: 50px; height: 30px; padding-left: 5px;" type="email" placeholder="00" class="form-controla">
                         </div>
 
-                        <div class="form-wrapper" style="width: 30%; margin-left: 17px;">
+                        <div class="form-wrapper" style="width: 30%; margin-left: 7px;">
                             <a class="titleform">Mois </a>
-                            <select id="selectmois" style="border-radius: 5px; margin-bottom: 20px; width: 130px;
+                            <select id="selectmois" style="border-radius: 4px; margin-bottom: 20px; width: 130px;
                             height: 35px;" onchange="addmois() ">
                                 <option value="Choisissez">Mois ...</option>
                                 <option value="Janvier">Janvier</option>
@@ -115,7 +115,7 @@
 
                         <div class="form-wrapper" style="width: 30%; margin-left: 37px;">
                             <a class="titleform">Année </a>
-                            <select id="selectannee" style="border-radius: 5px; margin-bottom: 20px; width: 100px;
+                            <select id="selectannee" style="border-radius: 4px; margin-bottom: 20px; width: 100px;
                             height: 35px;" onchange="addannee() ">
                                 <option value="Choisissez">Année ...</option>
                                 <option value="2005">2005</option>
@@ -260,7 +260,7 @@
         var dataRefa = firebase.database().ref("players");
 
         if(nom != "" & jouruser != "" & tel != "" & club != "" & moistxt != "Choisissez" & anneetxt != "Choisissez"
-         & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) ) {
+         & tel.length == 9 & jouruser.length == 2 & ( containsOnlyNumbers(tel) == true ) & ( containsOnlyNumbers(jouruser) == true ) ) {
 
             load.style.display = "block";
 
@@ -298,22 +298,25 @@
                                 window.alert("erreur survenue : "+ error);
                             });
                             
-
                         }).catch((error)=>{
                             load.style.display = 'none';
                             window.alert("erreur survenue : "+ error);
                         });
-                } else if ( i == 1 ) {
-                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
-                    load.style.display = "none";
                 }
-                
             });
+
+            if ( i == 1 ) {
+                    load.style.display = "none";
+                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
+                    window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                }
   
         } else if ( nom == "" ) {
           window.alert("veuillez entrer le nom complet du joueur...");
         }  else if ( jouruser == "" ) {
           window.alert("veuillez renseigner le jour de naissance de " + nom);
+        } else if ( jouruser.length != 2 ) {
+          window.alert("Veuillez entrer un jour de naissance à 02 chiffres exemple : 01/ ");
         }  else if ( containsOnlyNumbers(jouruser) == false ) {
           window.alert("Veuillez entrer un jour de naissance en chiffre ...");
         } else if ( moistxt == "Choisissez" ) {
