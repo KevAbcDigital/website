@@ -278,7 +278,7 @@
          & ( containsOnlyNumbers(jouruser) == true ) & sexetxt != "Choisissez") {
 
             load.style.display = "block";
-            var datefinale = (" ( "+jouruser+"- "+moistxt+" -"+anneetxt+" ) "+club.toLowerCase()) ; 
+            var datefinale = (" ( "+jouruser+"- "+moistxt+" -"+anneetxt+" ) "+club.toLowerCase()+" Tel : "+tel.toLowerCase()) ; 
 
             dataRefa.on("value" , function(snapshot){
                 snapshot.forEach(function(element){
@@ -302,7 +302,7 @@
 
                             }).then(()=>{
                                 load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit . Veuillez vous rassurer deffectuer votre SIGN IN au pret du juge arbitre avant le dimanche 13 Aout à 16h.");
+                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit . Veuillez vous rassurer deffectuer votre SIGN IN au près du juge arbitre le dimanche 13 Aout avant 16h.");
                                 window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
                             }).catch((error)=>{
                                 load.style.display = 'none';
