@@ -160,7 +160,7 @@
                     <h2 style="color: rgb(255, 208, 0); font-size: 16px; margin-bottom: -32px;">NB : TRES URGENT !!!.</h2>
                     <h2>Afin d'etre intégré dans le tirage au sort, tout joueur déjà inscrit en ligne devra
                         se presenter au bureau du juge arbitre (club france) le DIMANCHE 13 AOUT 2023 avant 16h muni d'une piece 
-                        d'identité copie ou originale de (passport ou CNI ou acte de naissance ou bulletin scolaire 2022/2023) .</h2>
+                        d'identité copie ou originale de (passport ou CNI ou acte de naissance et bulletin scolaire 2022/2023) .</h2>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
                         <button id="valider" type="button" onclick="send()">
@@ -286,7 +286,7 @@
                         i = 1;
                         load.style.display = "none";
                         window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
-                        window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                        window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
                     }
                 });
                 if ( i == 0 ) {
@@ -303,7 +303,9 @@
                             }).then(()=>{
                                 load.style.display = 'none';
                                 window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit . Veuillez vous rassurer deffectuer votre SIGN IN au près du juge arbitre le dimanche 13 Aout avant 16h.");
-                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
+                                // window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
+                                window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+
                             }).catch((error)=>{
                                 load.style.display = 'none';
                                 window.alert("erreur survenue : "+ error);
