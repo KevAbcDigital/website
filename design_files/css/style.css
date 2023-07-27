@@ -387,7 +387,7 @@ ul {
   background-size: cover;
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 270px;
+  height: 250px;
   justify-content: center;
   display: block;
   z-index: 1000;
@@ -455,7 +455,7 @@ ul {
 .tableauindex {
   position: relative;
   width: 100%;
-  margin-top: 260px;
+  margin-top: 300px;
   height: auto;
   display: block;
 }
@@ -575,7 +575,7 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 250px;
+  margin-top: 300px;
 }
 .tableauprogramme .items1{
   width: 100%;
