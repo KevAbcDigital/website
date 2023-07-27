@@ -387,7 +387,7 @@ ul {
   background-size: cover;
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 240px;
+  height: 250px;
   justify-content: center;
   display: block;
   z-index: 1000;
