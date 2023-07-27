@@ -452,6 +452,104 @@ ul {
 
 
 
+.tableauindex {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 260px;
+}
+.tableauindex .img1{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive1.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img2{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive2.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img3{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive3.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img4{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive4.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img5{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive5.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img6{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive6.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img7{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive7.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindex .img8{
+  width: 100%;
+  display: block;
+  height: 255px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableaux/Diapositive8.PNG);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
 /*programme*/
 /*programme*/
 /*programme*/
@@ -477,7 +575,7 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 220px;
+  margin-top: 255px;
 }
 .tableauprogramme .items1{
   width: 100%;
