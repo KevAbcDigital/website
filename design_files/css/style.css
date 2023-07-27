@@ -457,7 +457,7 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 280px;
+  margin-top: 260px;
 }
 .tableauindex .img1{
   width: 100%;
@@ -575,7 +575,7 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 280px;
+  margin-top: 255px;
 }
 .tableauprogramme .items1{
   width: 100%;
@@ -611,12 +611,12 @@ ul {
 /*inscrits*/
 /*inscrits*/
 
-.tableaui {
+.tableauprogramme .tableaui {
   display: block;
-  margin-top: 240px;
+  margin-top: 40px;
   width: 100%;
 }
-.tableaui a {
+.tableauprogramme .tableaui .titreti {
   margin-top: 10px;
   font-size: 15px;
   font-weight: 600;
@@ -627,7 +627,7 @@ ul {
   padding-right: 29px; 
   background-color: rgb(255, 217, 0);
 }
-.tableaui .inscritsdiv {
+.tableauprogramme .tableaui .inscritsdiv {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 13px;
