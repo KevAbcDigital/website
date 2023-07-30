@@ -804,6 +804,21 @@ ul {
   display: block;
   margin-top: 300px;
 }
+.contenuhomea .tableaui .titreti{
+  background-color: yellow;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+  font-size: 15px;
+  padding: 0px 20px;
+  font-weight: 600;
+}
+.contenuhomea .tableaui .inscritsdiv{
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
 
 
 
