@@ -477,95 +477,18 @@ ul {
 .tableauindex {
   position: relative;
   width: 100%;
-  margin-top: 300px;
+  margin-top: 110px;
   height: auto;
   display: block;
 }
 .tableauindex .img1{
   width: 100%;
   display: block;
-  height: 275px;
+  height: 520px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive1.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindex .img2{
-  width: 100%;
-  display: block;
-  height: 275px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive2.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindex .img3{
-  width: 100%;
-  display: block;
-  height: 275px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive3.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindex .img4{
-  width: 100%;
-  display: block;
-  height: 275px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive4.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindex .img5{
-  width: 100%;
-  display: block;
-  height: 275px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive5.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindex .img6{
-  width: 100%;
-  display: block;
-  height: 275px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive6.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindex .img7{
-  width: 100%;
-  display: block;
-  height: 275px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive7.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindex .img8{
-  width: 100%;
-  display: block;
-  height: 275px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableaux/Diapositive8.PNG);
+  url(../images/tableauxb/Diapositive3.PNG);
   background-size: cover;
   background-position: center;
 }
@@ -598,20 +521,6 @@ ul {
   height: auto;
   display: block;
   margin-top: 300px;
-}
-.tableauprogramme .tableaui .titreti{
-  background-color: rgb(255, 217, 0);
-  border-top-right-radius: 9px;
-  border-bottom-right-radius: 9px;
-  font-size: 15px;
-  padding: 0px 20px;
-  font-weight: 600;
-}
-.tableauprogramme .tableaui .inscritsdiv{
-  padding-left: 10px;
-  padding-right: 5px;
-  margin-top: 5px;
-  font-weight: 600;
 }
 .tableauprogramme .items1{
   width: 100%;
@@ -784,12 +693,19 @@ ul {
   padding : 5px 25px;
   font-family: 'Poppins', sans-serif;
 }
+.contenuhomea .imgbord {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 200px;
+}
 .contenuhomea .slidertab {
   display: block;
   position: relative;
   width: 100%;
   height: auto;
-  margin-top: 220px;
+  margin-top: 20px;
 }
 .contenuhomea .slidertab img {
   width: 90%;
