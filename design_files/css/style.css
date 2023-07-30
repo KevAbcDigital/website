@@ -245,47 +245,54 @@ header .logosponsor img {
   background: transparent;
   max-width: 100%;
   margin: auto;
-  display: block; }
-  .devisbloc form {
-    width: 100%;
-    padding-top: 36px;
-    padding-left: 25px;
-    padding-right: 25px; }
-  .devisbloc h1 {
-    text-transform: uppercase;
-    font-size: 35px;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    text-align: center;
-    margin-bottom: 20px; }
-    .devisbloc h3 {
-      font-size: 13px;
-      font-weight: 600;
-      padding: 0 10px;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      color: white;
-      margin-bottom: 28px; }
-      .devisbloc h2 {
-        font-size: 13px;
-        font-weight: 530;
-        color: white;
-        padding: 0 10%;
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
-        margin-top: 50px; }
-      .devisbloc a {
-        font-size: 13px;
-        font-weight: 600;
-        color: rgb(255, 255, 255);
-        padding-left: 12px;
-        font-family: 'Poppins', sans-serif;}
-        .devisbloc .form-wrapper .titleform {
-          font-size: 12px;
-          font-weight: 600;
-          color: rgb(245, 245, 245);
-          padding-left: 12px;
-          font-family: 'Poppins', sans-serif;}
+  display: block; 
+}
+.devisbloc form {
+  width: 100%;
+  padding-top: 36px;
+  padding-left: 25px;
+  padding-right: 25px; 
+}
+.devisbloc h1 {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.devisbloc h3 {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: white;
+  margin-bottom: 28px; 
+}
+.devisbloc h2 {
+  font-size: 13px;
+  font-weight: 530;
+  color: white;
+  padding: 0 10%;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-top: 50px; 
+}
+.devisbloc a {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding-left: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+.devisbloc .form-wrapper .titleform {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(245, 245, 245);
+  padding-left: 12px;
+  font-family: 'Poppins', sans-serif;
+}
 .form-controla {
   border: 1px solid #aaaaaa;
   display: block;
@@ -293,7 +300,8 @@ header .logosponsor img {
   height: 40px;
   padding: 0 15px;
   margin-bottom: 25px;
-  margin-top: 5px; }
+  margin-top: 5px;
+}
   .form-controla ::-webkit-input-placeholder {
     font-size: 13px;
     color: #333;
@@ -591,6 +599,14 @@ ul {
   display: block;
   margin-top: 300px;
 }
+.tableauprogramme .tableaui .titreti{
+  background-color: yellow;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+  font-size: 15px;
+  padding: 0px 20px;
+  font-weight: 600;
+}
 .tableauprogramme .items1{
   width: 100%;
   display: block;
@@ -639,7 +655,7 @@ ul {
 /*home */
 
 .headerhome {
-  background-color: rgb(247, 248, 249);
+  background-color: rgb(255, 255, 255);
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 70px;
@@ -699,7 +715,13 @@ ul {
 
 
 
-.slider {
+.bodyhome {
+  display: block;
+  margin-top: 110px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.bodyhome .slider {
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
   url(../images/mformyimg.PNG);
   background-repeat: no-repeat;
@@ -708,25 +730,74 @@ ul {
   justify-content: center;
   display: block;
   z-index: 1000;
+  border-radius: 10px;
 }
-.slidersuita {
-  display: block;
-  margin-top: 30px;
-  margin-left: -10px;
-}
-.slidersuita a {
+.bodyhome a {
   display: block;
   text-decoration: none;
   height: 40px;
   transition: 0.5s ease;
-  color: rgb(29, 41, 95);
+  color: rgb(7, 14, 44);
   font-weight: 700;
-  font-size: 14px;
-  margin-left: 12px;
-  padding : 5px 15px;
+  font-size: 15px;
   font-family: 'Poppins', sans-serif;
 }
+.slidersuita {
+  display: block;
+  margin-top: -65px;
+  margin-left: -10px;
 
+}
+
+.contenuhomea {
+  display: block;
+  position: relative;
+  margin-top: -30px;
+}
+.contenuhomea a {
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  transition: 0.5s ease;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: 16px;
+  margin-left: 12px;
+  padding : 5px 25px;
+  font-family: 'Poppins', sans-serif;
+}
+.contenuhomea b {
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  transition: 0.5s ease;
+  color: rgb(0, 0, 0);
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 12px;
+  padding : 5px 25px;
+  font-family: 'Poppins', sans-serif;
+}
+.contenuhomea .slidertab {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 220px;
+}
+.contenuhomea .slidertab img {
+  width: 90%;
+  height: 420px;
+  border-radius: 15px;
+  margin-left: 5%;
+}
+.contenuhomea .tableaui {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 300px;
+}
 
 
 
