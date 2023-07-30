@@ -50,10 +50,12 @@
                     <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
                         color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                          border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                         href="index.html" onclick="toggleMenu();">Tableau final et Resultats</a>
+                         href="home.html" onclick="toggleMenu();">+ Home</a>
                     </li>
 
                     <li class="boutonm" > <img class="imgmenu" src="./design_files/images/affichephoneapp.png" alt="image"> </li>
+
+                    <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
 
                     <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
 
@@ -160,7 +162,7 @@
                     <h2 style="color: rgb(255, 208, 0); font-size: 16px; margin-bottom: -32px;">NB : TRES URGENT !!!.</h2>
                     <h2>Afin d'etre intégré dans le tirage au sort, tout joueur déjà inscrit en ligne devra
                         se presenter au bureau du juge arbitre (club france) le DIMANCHE 13 AOUT 2023 avant 16h muni d'une piece 
-                        d'identité copie ou originale de (passport ou CNI ou acte de naissance plus bulletin scolaire 2022/2023) .</h2>
+                        d'identité copie ou originale de (passport ou CNI ou acte de naissance et bulletin scolaire 2022/2023) .</h2>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
                         <button id="valider" type="button" onclick="send()">
@@ -286,7 +288,7 @@
                         i = 1;
                         load.style.display = "none";
                         window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
-                        window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
+                        window.location.href = 'https://kevabcdigital.github.io/website/home.html #tableaui';
                     }
                 });
                 if ( i == 0 ) {
@@ -341,6 +343,12 @@
         }
   
     }
+
+    function invalid() {
+        window.alert("Desolé ce formulaire est indisponible pour le moment. Il sera de nouveau opérationel à partir du mercredi 16 Aout 2023 dès 10h pour le compte de la deuxieme semaine de tournoi.");
+        window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
+    }
+
 
 </script>
     
