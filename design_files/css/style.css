@@ -607,6 +607,11 @@ ul {
   padding: 0px 20px;
   font-weight: 600;
 }
+.tableauprogramme .tableaui .inscritsdiv{
+  padding-left: 10px;
+  padding-right: 5px;
+  font-weight: 600;
+}
 .tableauprogramme .items1{
   width: 100%;
   display: block;
