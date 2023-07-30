@@ -600,7 +600,7 @@ ul {
   margin-top: 300px;
 }
 .tableauprogramme .tableaui .titreti{
-  background-color: yellow;
+  background-color: rgb(255, 217, 0);
   border-top-right-radius: 9px;
   border-bottom-right-radius: 9px;
   font-size: 15px;
@@ -799,17 +799,17 @@ ul {
 }
 .contenuhomea .tableaui {
   position: relative;
-  width: 100%;
+  width: 93%;
+  margin-left: 2%;
   height: auto;
   display: block;
-  margin-top: 300px;
+  margin-top: 50px;
 }
 .contenuhomea .tableaui .titreti{
-  background-color: yellow;
+  background-color: rgb(255, 217, 0);
   border-top-right-radius: 9px;
-  border-bottom-right-radius: 9px;
+  border-top-left-radius: 9px;
   font-size: 15px;
-  padding: 0px 20px;
   font-weight: 600;
 }
 .contenuhomea .tableaui .inscritsdiv{
