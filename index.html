@@ -27,64 +27,69 @@
 
     </head>
 
-    <body>
-
-        <section class="headerindex">
+    <body style="background-color: black;">
+        
+        <section class="headerhome">
 
             <div class="menuindex">
-                <div class="logo">
-                    <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
-                </div>
-    
+
                 <div class="logosponsor">
-                    <img class="logosponsorim" href="index.html" src="./design_files/images/logoTK.png" alt="image">
+                    <img style="width: 105px; margin-right: 3px;" href="index.html" src="./design_files/images/logotenniskids.png" alt="image">
+                    <img  class="logosponsorim" style=" width: 25px; height: 25px;" href="index.html" 
+                    src="./design_files/images/logoTK.png" alt="image">
+                    <img  class="logosponsorim" style=" margin-right: 3px; margin-left: -8px; width: 30px; height: 25px;" href="index.html" 
+                    src="./design_files/images/logobrasserie.png" alt="image">
+                    <img  class="logosponsorim" style="margin-right: 3px; margin-left: -8px; width: 40px; height: 15px;" href="index.html" 
+                    src="./design_files/images/logogicam.jpg" alt="image">
                 </div>
                 
                 <input type="checkbox" id="menu-bar">
                 <label for="menu-bar">
-                    <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
+                    <img class="imgmenu" src="./design_files/images/menubtn.png" alt="image">
                 </label>
-    
+
 
                 <div class="menutop">
                     <ul>
     
-                        <li class="boutonm"><a style="background-color: rgba(65, 68, 255, 0.925); 
-                            box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+                        <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
                             color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                              border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
                              href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
                         </li>
-        
+
+                        <li class="boutonm"><a href="home.html" onclick="toggleMenu();">+ Home</a> </li>
+
                         <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
     
                         <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
     
                     </ul>
                 </div>
-                
+
             </div>
-            
-        </section>    
-        
+    
+        </section>
+
         <section class="tableauindex" id="tableauindex">
 
-            <div id="img1" class="img1"></div>
-            
-            <div id="img2" class="img2"></div>
-            
-            <div id="img3" class="img3"></div>
-            
-            <div id="img4" class="img4"></div>
-            
-            <div id="img5" class="img5"></div>
-            
-            <div id="img6" class="img6"></div>
-            
-            <div id="img7" class="img7"></div>
-            
-            <div id="img8" class="img8"></div>
-            
+            <div class="form-wrapper" style="width: 100%;">
+                <a class="titleform"></a>
+                <select id="selectcat" style="border-radius: 4px; margin-bottom: 20px; width: 76%; margin: 0 12%;
+                height: 35px; background-color: white;"  onchange="addcat() ">
+                    <option value="Choisissez">Selectionnez une categorie ...</option>
+                    <option value="pg">Poussin Garcon</option>
+                    <option value="pf">Poussin Fille</option>
+                    <option value="bg">Benjamin Garcon</option>
+                    <option value="bf">Benjamine</option>
+                    <option value="mg">Minime Garcon</option>
+                    <option value="mf">Minime Fille</option>
+                    <option value="jg">Junior Garcon</option>
+                    <option value="jf">Junior Fille</option>
+                </select>    
+            </div>
+
+            <div id="imgcat" class="img1"></div>
             
         </section>
         
@@ -120,7 +125,7 @@
     <script type="text/javascript">
         $(function () {
           $('#myDiv').floatingWhatsApp({
-            phone: '237698328283',
+            phone: '+237698328283',
             popupMessage: 'Comment pouvons nous vous aider?',
             showPopup: true,
             showOnIE: false,
@@ -133,6 +138,35 @@
           
         });
 
+        
+    </script>
+
+    <script>
+
+        var imgc = document.getElementById("imgcat")
+        var cat = "choisissez"
+        function addcat(){
+            cat = document.getElementById("selectcat").value;
+            if (cat == "pg") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive2.PNG')";
+            } else if (cat == "pf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive3.PNG')";
+            } else if (cat == "bj") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive4.PNG')";
+            } else if (cat == "bf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive5.PNG')";
+            } else if (cat == "mg") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive6.PNG')";
+            } else if (cat == "mf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive7.PNG')";
+            } else if (cat == "jg") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive8.PNG')";
+            } else if (cat == "jf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive9.PNG')";
+            } else if (cat == "choisissez") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive2.PNG')";
+            }
+        }
         
     </script>
   
