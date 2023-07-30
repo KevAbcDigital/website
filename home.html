@@ -27,13 +27,20 @@
     
     </head>
 
-    <body style="background-color: rgb(247, 248, 249)">
+    <body style="background-color: rgb(252, 252, 252)">
 
         <section class="headerhome">
 
             <div class="menuindex">
-                <div class="logo">
-                    <img  href="index.html" src="./design_files/images/logotenniskids.png" alt="image">
+
+                <div class="logosponsor">
+                    <img style="width: 105px; margin-right: 3px;" href="index.html" src="./design_files/images/logotenniskids.png" alt="image">
+                    <img  class="logosponsorim" style=" width: 25px; height: 25px;" href="index.html" 
+                    src="./design_files/images/logoTK.png" alt="image">
+                    <img  class="logosponsorim" style=" margin-right: 3px; margin-left: -8px; width: 30px; height: 25px;" href="index.html" 
+                    src="./design_files/images/logobrasserie.png" alt="image">
+                    <img  class="logosponsorim" style="margin-right: 3px; margin-left: -8px; width: 40px; height: 15px;" href="index.html" 
+                    src="./design_files/images/logogicam.jpg" alt="image">
                 </div>
                 
                 <input type="checkbox" id="menu-bar">
@@ -64,15 +71,78 @@
     
         </section>
 
-        <section class="slider"> </section>
+        <section class="bodyhome">
 
-        <section class="slidersuita">
             <a class="txtindis">NOS  CHAMPIONS 2022</a>
-            <img  href="index.html" src="./design_files/images/okalawin.png" alt="image">
+            <section class="slider"></section>
+
+
         </section>
 
 
-        <section class="indisponibletxt" >
+        <section class="slidersuita">
+            <img href="index.html" src="./design_files/images/okalawin.png" alt="image">
+        </section>
+
+        <section class="contenuhomea" >
+
+            <a class="txtindis">PRESENTATION DU TOURNOI</a>
+
+            <b class="txtcontenuhomea">
+                L'open TENNIS KIDS est la compétition phare organisée par le club France en collaboration avec la 
+                FECATENNIS tous les ans et entièrement dédiée aux catégories jeunes. Cette compétition s'étend sur 
+                tout le territoire national et regroupe toutes les composantes du tennis jeune au Cameroun. 
+                Arrivé à sa troisième édition, l'historicité de TENNIS KIDS est remplie de faits marquants mais aussi
+                de réalisations qui sont à coup sur son patrimoine personnel et donc à mettre sur le compte non 
+                seulement de la fédération mais aussi des joueurs et des partenaires multiformes; cette édition ne 
+                sera qu'une suite logique des autres éditions qui ont brillé par des records en termes de participation 
+                des athlètes et aussi en termes de régions représentées.
+            </b>
+
+            <section class="imgbord">
+                <img class="ibord" src="./design_files/images/imga.png" alt="image">
+                <img class="ibord" src="./design_files/images/imgb.png" alt="image">
+            </section>
+
+            <section class="slidertab">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive2.PNG" alt="image">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive3.PNG" alt="image">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive4.PNG" alt="image">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive5.PNG" alt="image">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive6.PNG" alt="image">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive7.PNG" alt="image">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive8.PNG" alt="image">
+                <img name="imgid" class="slideid" src="./design_files/images/tableauxb/Diapositive9.PNG" alt="image">
+            </section>
+
+            <a class="txtcontenuhomea" style="cursor: pointer; margin-top: 10px; font-size: 14px;" href="index.html" > > voir tous les tableaux ... </a>
+        
+            <section class="tableaui" id="tableaui">
+
+                <a class="titreti"> Poussin Garcon</a>
+                <div class="inscritsdiv" id="pgi"></div>
+                <a class="titreti"> Poussin Fille</a>
+                <div class="inscritsdiv" id="pfi"></div>
+                <a class="titreti"> Benjamin Garcon</a>
+                <div class="inscritsdiv" id="bgi"></div>
+                <a class="titreti"> Benjamine</a>
+                <div class="inscritsdiv" id="bfi"></div>
+                <a class="titreti"> Minime Garcon</a>
+                <div class="inscritsdiv" id="mgi"></div>
+                <a class="titreti"> Minime Fille</a>
+                <div class="inscritsdiv" id="mfi"></div>
+                <a class="titreti"> Junior Garcon</a>
+                <div class="inscritsdiv" id="jgi"></div>
+                <a class="titreti"> Junior Fille</a>
+                <div class="inscritsdiv" id="jfi"></div>
+    
+            </section>
+            
+        </section>
+
+        
+
+        <section class="indisponibletxt">
             <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
 
@@ -101,7 +171,24 @@
     </body>
 
     
+       
 <script>
+
+var firstindex=0;
+    function automaticslide(){
+        setTimeout(automaticslide, 2000);
+        var pics;
+        const img = document.getElementsByClassName('slideid');
+        for(pics=0; pics<img.length; pics++) {
+            img[pics].style.display="none";
+        }
+        firstindex++;
+        if(firstindex > img.length) {
+            firstindex = 1;
+        }
+        img[firstindex - 1].style.display="block";
+    }
+    automaticslide();
         
     const firebaseConfig = {
         databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -121,27 +208,14 @@
 
     var datafille = firebase.database().ref("fille");
 
-    document.getElementById('pgi').style.fontSize='10px';
-    document.getElementById('bgi').style.fontSize='10px';
-    document.getElementById('mgi').style.fontSize='10px';
-    document.getElementById('jgi').style.fontSize='10px';
-    document.getElementById('pfi').style.fontSize='10px';
-    document.getElementById('bfi').style.fontSize='10px';
-    document.getElementById('mfi').style.fontSize='10px';
-    document.getElementById('jfi').style.fontSize='10px';
-
-
-
-
-
-
-
-
-
-
-
-
-
+    document.getElementById('pgi').style.fontSize='8px';
+    document.getElementById('bgi').style.fontSize='8px';
+    document.getElementById('mgi').style.fontSize='8px';
+    document.getElementById('jgi').style.fontSize='8px';
+    document.getElementById('pfi').style.fontSize='8px';
+    document.getElementById('bfi').style.fontSize='8px';
+    document.getElementById('mfi').style.fontSize='8px';
+    document.getElementById('jfi').style.fontSize='8px';
 
 
 
