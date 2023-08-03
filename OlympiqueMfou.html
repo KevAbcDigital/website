@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Olympic de Mfou</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    
+    </head>
+
+    <body >
+
+        <section class="headerhome">
+
+            <div class="menuindex">
+
+                <div class="logosponsor">
+                    <img style="height: 28px; width: 32px; margin-top: 8px;" href="index.html" src="./design_files/images/logoOM.png" alt="image">
+                    <img  class="logosponsorim" style=" margin-right: 3px; margin-left: -8px; margin-top: -6px; width: 40px; height: 50px;" href="index.html" 
+                    src="./design_files/images/logo okml.png" alt="image">
+                    <img  class="logosponsorim" style="margin-right: 13px; margin-top: 10px; margin-left: -1px; width: 29px; height: 22px;" href="index.html" 
+                    src="./design_files/images/Symbole-Puma.jpg" alt="image">
+                </div>
+                
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar">
+                    <img class="imgmenu" src="./design_files/images/menubtn.png" alt="image">
+                </label>
+
+
+                <div class="menutop">
+                    <ul>
+    
+                        <li class="boutonm"><a style="background-color: rgb(47, 174, 224); color: white; 
+                        font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif; height: 40px;"
+                             href="home.html" onclick="toggleMenu();">+ Home</a>
+                        </li>
+
+                        <li class="boutonm"><a href="#slidersuitc" onclick="toggleMenu();">+ Nos Resultats</a> </li>
+
+                        <li class="boutonm"><a href="#slidersuitd" onclick="toggleMenu();">+ Centre technique</a> </li>
+
+                        <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Contact</a> </li>
+
+                        <li class="boutonm"><a style="height: 15px;" href="index.html" onclick="toggleMenu();"></a> </li>
+
+                    </ul>
+                </div>
+
+            </div>
+    
+        </section>
+
+        <section class="slidertab">
+            <img name="imgid" class="slideid" src="./design_files/images/tableauxb/slide12.jpg" alt="image">
+            <img name="imgid" class="slideid" src="./design_files/images/tableauxb/slide11.jpg" alt="image">
+            <img name="imgid" class="slideid" src="./design_files/images/tableauxb/slide8.jpg" alt="image">
+            <img name="imgid" class="slideid" src="./design_files/images/tableauxb/slide10.jpg" alt="image">
+        </section>
+
+
+        <section class="slidersuita">
+            <p> Partenaires Majeurs</p>
+            <div class="blocksponsor">
+                <img href="index.html" style="height: 30px; width: 70px;" src="./design_files/images/logook.jpg" alt="image">
+                <img href="index.html" style="margin-left: 30px; width: 40px;" src="./design_files/images/logoezezek.png" alt="image">
+            </div>
+        </section>
+
+
+        <section class="slidersuitb">
+            <p style="font-size: 14px; font-weight: 700; padding-top: 60px;"> Prochain Match</p>
+            <p style="font-size: 9px; font-weight: 700; padding-top: 10px;">  VOIR LE CALENDRIER > </p>
+            <p style="font-size: 18px; font-weight: 700; padding-top: 30px; color: rgb(17, 27, 27);"> MERCREDI 02/10/2023</p>
+            <p style="font-size: 13px; font-weight: 700; padding-top: 6px; color: rgb(17, 27, 27);"> 15:45 YDE |  Annexe 1</p>
+
+            <div class="blocksponsor">
+                <img href="index.html" style="margin-top: 20px; width: 60%;" src="./design_files/images/rencontrea.png" alt="image">
+            </div>
+
+            <div class="blocksponsorb">
+                <p style="font-size: 10px; background-color: rgb(47, 174, 224); font-weight: 700; padding-top: 6px; 
+                    color: rgb(255, 255, 255); padding: 5px 30px;">
+                 DEVENEZ PARTENAIRE DE OLYMPIQUE DE MFOU !</p>
+            </div>
+        </section>
+
+
+        <section id="slidersuitc" class="slidersuitc">
+            <p> Nos Resultats</p>
+            <p style="font-size: 10px; margin-top: 6px;">TOUS NOS DERNIERS SCORES ></p>
+            <div class="blocksponsor" style="margin-top: 40px;"></div>
+            <p style="font-size: 10px; margin-top: 16px;"> VOIR PLUS ...</p>
+
+        </section>
+
+
+        <section id="slidersuitd" class="slidersuitd">
+            <p> Nos Installations</p>
+            <p style="font-size: 10px; margin-top: 6px; "> TOUS SAVOIR SUR CETTE ACADEMIE ></p>
+
+            <div class="blocksponsorcentre" style="margin-top: 40px;"></div>
+
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Doté d’installations de très haut 
+                niveau, au cœur d’un écrin de verdure et d'un Parc artificiel dans ma localité de MFOU (emplacement à préciser ) , 
+                Ce chef d'oeuvre architectural saura parfaitement placer les plus grands joueurs locaux dans les meilleures 
+                dispositions pour performer au plus haut-niveau.</p>
+                <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);"> 
+                Ce cadre professionnel repondant à toutes les exigences et les attentes du football comprendra un Hôtel (R+1) 
+                dédié aux cadres, sélections nationales et reservations VIP qui possedera
+                au rez-de-chaussée 08 chambres + 01 suite, un hall d’entrée, un jacuzzi, un sauna, 
+                une salle de conférence, une salle de réunion, une salle de sport et une infirmerie. Au premier étage, 
+                10 chambres standards, une salle de détente commercialisable.</p>
+
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Les 02 autres bâtiments (R+1) seront constitués chacun d’un bloc administratif et de 
+                08 chambres disponibles pour les visiteurs. Les internes (residents de OLYMPIQUE DE MFOU) seront logés exclusivement au rez-de-chaussée du premier batiment 
+                et disposeront de leurs propres salles de sport , vestiaires , espace d'echauffement et stade d'entrainement pour des principes d'hygiène. </p>
+                
+            <p style="font-size: 18px; margin-top: 30px;"> CONDITIONS PROFESSIONNELLES</p>
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Pour votre développement sportif, nous mettons en place des conditions
+               professionnelles, afin de vous permettre de progresser rapidelent et efficacement.</p>
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Ceci passe par des installations de 
+               qualité, des coaches qualifiés qui ont tous joué, ou entrainé dans des grands clubs et détiennent des diplomes de coaching
+            les plus élevés. Quelle que soit la section sportive, nos coaches et nos installations sportives sont parmi les meuilleurs au cameroun.</p>
+
+            <div class="blocksponsor" style="margin-top: 20px;"></div>
+
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Pour maximiser vos progrès, vous avez un accès illimité à la salle de sport
+                située à quelques minutes à pied du logement. Vous établissez un programme athlétique avec nos coaches, avec lesquels vous faites 
+                un point chaque semaine, et faites évoluer votre programme tout au long de l'année.</p>
+
+            <p style="font-size: 18px; margin-top: 6px; text-transform: capitalize;">Hygiène de vie</p>
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Comme vous le savez, un sportif se doit d'avoir une
+                hygiène de vie saine pour se maintenir, et se développer.</p>
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">En debut d'année, des nutritionisteq vous expliquent comment et quand
+                vous alimenter, vous hydrater, dormir, par rapport à votre emploi de temps de matchs, d'entrainements et phases de repos.</p>
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Votre budget nourriture, donné trimestriellement par l'académie, vous permet 
+                de vous acheter tout ce qu'il vous faut pour une alimentation saine et cohérente avec votre rythme de sportif de haut niveau</p>
+            
+            <div class="blocksponsord" style="margin-top: 40px;"></div>
+            
+            <p style="font-size: 18px; margin-top: 6px; text-transform: capitalize;">Kinésithérapeutes</p>
+
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Afin de prévenir, ou traiter la fatigue musculaire, 
+                les petites blessures ou parfois de plus grosses, nous avons une équipe de kinésithérapeutes à l’académie. Nos 
+                kinésithérapeutes sont présents aux entraînements, ou à la clinique située à la salle de sport près du logement. 
+                Chaque joueur peut avoir accès à un kinésithérapeute chaque jour, et assurer son suivi pour maintenir sa bonne 
+                condition physique, ou parfois effectuer sa rééducation lorsqu’il en a besoin. </p>
+
+            <p style="font-size: 10px; margin-top: 10px; color: rgb(100, 104, 109);">Comme nous savons que les blessures font 
+                partie de la vie du sportif, nous pourrons vous proposer une assurance* vous permettant d’être remboursé de vos frais 
+                d’inscription, au prorata du temps passé dans le programme si d’aventure votre blessure vous empêchait de continuer 
+                votre année à l’académie. * voir conditions</p>
+
+        </section>
+
+        <section class="maillotsection">
+            <p>Maillot 23/24</p>
+            <p style="font-size: 14px; padding-top: 0px; width: 60%; font-weight: 500;">TENUS OFFICIELLES POUR LA SAISON 23/24</p>
+            <p style="font-size: 14px; margin-top: 30px; border-radius: 20px; width: 140px; justify-content: center;
+               background-color: rgb(255, 255, 255); color: rgb(22, 23, 24); padding: 6px 0px; text-align: center;">ACQUERIR ></p>
+            <img class="imgmenu" style="width: 240px; height: 300px; margin-left: 50px; margin-top: 40px;" 
+                src="./design_files/images/Diapositive4.PNG" alt="image">
+
+        </section>
+
+
+        <section class="indisponibletxt">
+            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+
+        
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+               
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-likedin-in"></i></a>
+                                
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <p class="copyrigth">Copyright © Tous droits réservés - TennisKids</p>
+
+        </footer>  
+
+        <div class="whatsappid" id="myDiv"></div>
+
+  
+    </body>
+
+    <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237698328283',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Tennis Kids service!',
+            headerColor: 'blue',
+            backgroundColor: 'green',
+            position: 'right' ,
+            size: '50px'
+          });
+          
+        });
+    </script>
+    
+    
+       
+<script>
+
+var firstindex=0;
+    function automaticslide(){
+        setTimeout(automaticslide, 2000);
+        var pics;
+        const img = document.getElementsByClassName('slideid');
+        for(pics=0; pics<img.length; pics++) {
+            img[pics].style.display="none";
+        }
+        firstindex++;
+        if(firstindex > img.length) {
+            firstindex = 1;
+        }
+        img[firstindex - 1].style.display="block";
+    }
+    automaticslide();
+        
+    const firebaseConfig = {
+        databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+        apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+        authDomain: "nlogagolf-ed63e.firebaseapp.com",
+        projectId: "nlogagolf-ed63e",
+        storageBucket: "nlogagolf-ed63e.appspot.com",
+        messagingSenderId: "104686743459",
+        appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+        measurementId: "G-6BW97RHV89"
+    };
+    firebase.initializeApp(firebaseConfig)
+     
+    const database = firebase.database();
+
+    var datagarcon = firebase.database().ref("garcon");
+
+    var datafille = firebase.database().ref("fille");
+
+    document.getElementById('pgi').style.fontSize='8px';
+    document.getElementById('bgi').style.fontSize='8px';
+    document.getElementById('mgi').style.fontSize='8px';
+    document.getElementById('jgi').style.fontSize='8px';
+    document.getElementById('pfi').style.fontSize='8px';
+    document.getElementById('bfi').style.fontSize='8px';
+    document.getElementById('mfi').style.fontSize='8px';
+    document.getElementById('jfi').style.fontSize='8px';
+
+
+
+
+
+    datagarcon.child("2017").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2016").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2015").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2014").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2013").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2012").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2011").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2010").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2009").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2008").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2007").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datagarcon.child("2006").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datagarcon.child("2005").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    datafille.child("2017").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2016").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2015").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2014").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2013").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2012").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2011").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2010").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2009").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2008").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2007").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datafille.child("2006").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datafille.child("2005").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+
+
+
+</script>
+    
+    
+</html>
