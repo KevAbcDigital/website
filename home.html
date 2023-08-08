@@ -69,8 +69,10 @@
     
         </section>
 
-        <section class="slidera"> </section>
-
+        <video style="width: 100%;" loop muted class="myVideo" id="myVideo">
+            <source src="./design_files/images/vid.mp4" type="video/mp4">
+        </video> 
+        
         <section class="contenuhomea" >
 
             <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
@@ -292,7 +294,10 @@ var firstindex=0;
     }
     automaticslide();
   
-
+    window.onload = function() {
+        document.getElementById("myVideo").play();
+    }
+    
     const firebaseConfig = {
         databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
         apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
