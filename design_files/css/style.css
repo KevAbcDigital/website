@@ -75,7 +75,6 @@ header {
   #menu-bar{
     display: none;
   }
-	
   header label{
     cursor: pointer;
     margin-top: 13px;
@@ -104,20 +103,17 @@ header {
   }
   .headerhome label{
     cursor: pointer;
-    margin-top: 13px;
+    margin-top: 3px;
     position: absolute;
     left: 0;
     margin-left: 23px;
-    margin-top: 10px;
+    margin-top: 15px;
     display: none;
   }
   .headerhome label .imgmenu {
     width: 25px;
     height: 16px;
-    margin-top: 15px;
   }
-
-
 
   
   #menu-bar:checked ~ .menutop {
@@ -576,7 +572,7 @@ ul {
   background-color: rgb(255, 255, 255);
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 70px;
+  height: 50px;
   justify-content: center;
   display: block;
   z-index: 1000;
@@ -585,7 +581,7 @@ ul {
   background-color: transparent;
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 80px;
+  height: 50px;
   z-index: 2000;
   justify-content: center;
   display: flex;
@@ -595,7 +591,7 @@ ul {
 }
 .headerhome .menuindex .menutop {
   position: absolute;
-  margin-top: 70px;
+  margin-top: 50px;
   top: 0; left:0; right: 0;
   display: none;
 }
@@ -619,7 +615,7 @@ ul {
   cursor: pointer;
   position: absolute;
   right: 0;
-  margin-top: 10px;
+  margin-top: 4px;
   margin-left: 23px;
   font-weight: bold;
   display: block;
@@ -627,61 +623,37 @@ ul {
 .headerhome .logosponsor img {
   height: 40px;
   width: 40px;
-  margin-right: 17px;
   margin-top: 0px;
 }
 
 
 
-.bodyhome {
-  display: block;
-  margin-top: 110px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.bodyhome .slider {
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/mformyimg.PNG);
+
+.slidera {
+  background-image: linear-gradient(rgba(41, 42, 43, 0) , rgba(11, 53, 109, 0)), 
+  url(../images/Diapositive2.PNG);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 350px;
+  height: 600px;
+  width: 100%;
   justify-content: center;
+  margin-top: 40px;
   display: block;
   z-index: 1000;
   border-radius: 10px;
 }
-.bodyhome a {
-  display: block;
-  text-decoration: none;
-  height: 40px;
-  transition: 0.5s ease;
-  color: rgb(7, 14, 44);
-  font-weight: 700;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-}
-.slidersuita {
-  display: block;
-  margin-top: -65px;
-  margin-left: -10px;
-
-}
-
 .contenuhomea {
   display: block;
   position: relative;
-  margin-top: -30px;
+  margin-top: 10px;
 }
 .contenuhomea a {
   display: block;
   text-decoration: none;
-  height: 40px;
   transition: 0.5s ease;
-  color: rgb(0, 0, 0);
   font-weight: 700;
-  font-size: 16px;
-  margin-left: 12px;
-  padding : 5px 25px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   font-family: 'Poppins', sans-serif;
 }
 .contenuhomea b {
@@ -689,34 +661,82 @@ ul {
   text-decoration: none;
   height: 40px;
   transition: 0.5s ease;
-  color: rgb(0, 0, 0);
+  color: rgb(52, 54, 56);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
+  margin-top: 30px;
   margin-left: 12px;
   padding : 5px 25px;
   font-family: 'Poppins', sans-serif;
 }
-.contenuhomea .imgbord {
+.bachebleua {
   display: block;
   position: relative;
   width: 100%;
   height: auto;
-  margin-top: 200px;
+  margin-top: 210px;
 }
-.contenuhomea .slidertab {
-  display: block;
+.partenaire{
   position: relative;
   width: 100%;
-  height: auto;
+  padding-left: 30px;
+  height: 500px;
+  margin-top: 73px;
+  background-color: rgb(0, 0, 0);
+  display: block;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.partenaire .box {
+  display: block;
+  margin-top: 15px;
+  position: relative;
+}
+.partenaire .box b {
+  display: block;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+.partenaire .slider_container{
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
   margin-top: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
-.contenuhomea .slidertab img {
-  width: 90%;
-  height: 420px;
-  border-radius: 15px;
-  margin-left: 5%;
+.partenaire .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
 }
-.contenuhomea .tableaui {
+.partenaire .itemservice{
+  display: inline-block;
+  margin-right: 15px;
+}
+.itemservice img{
+  width: 240px;
+  height: 360px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.slidertab {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.slidertab img {
+  width: 100%;
+  height: 550px;
+}
+.tableaui {
   position: relative;
   width: 93%;
   margin-left: 2%;
@@ -724,20 +744,21 @@ ul {
   display: block;
   margin-top: 50px;
 }
-.contenuhomea .tableaui .titreti{
+.tableaui .titreti{
   background-color: rgb(255, 217, 0);
   border-top-right-radius: 9px;
   border-top-left-radius: 9px;
   font-size: 15px;
   font-weight: 600;
 }
-.contenuhomea .tableaui .inscritsdiv{
+.tableaui .inscritsdiv{
   padding-left: 10px;
   padding-right: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   font-weight: 600;
 }
+
 
 
 
