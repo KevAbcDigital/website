@@ -628,6 +628,8 @@ ul {
 
 
 
+/*
+<section class="slidera"> </section>
 
 .slidera {
   background-image: linear-gradient(rgba(41, 42, 43, 0) , rgba(11, 53, 109, 0)), 
@@ -642,6 +644,7 @@ ul {
   z-index: 1000;
   border-radius: 10px;
 }
+*/
 .contenuhomea {
   display: block;
   position: relative;
