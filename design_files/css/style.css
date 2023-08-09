@@ -629,8 +629,10 @@ ul {
 
 
 /*
-<section class="slidera"> </section>
-
+<video style="width: 100%;" loop muted class="myVideo" id="myVideo">
+            <source src="./design_files/images/vid.mp4" type="video/mp4">
+        </video>
+*/
 .slidera {
   background-image: linear-gradient(rgba(41, 42, 43, 0) , rgba(11, 53, 109, 0)), 
   url(../images/Diapositive2.PNG);
@@ -644,7 +646,7 @@ ul {
   z-index: 1000;
   border-radius: 10px;
 }
-*/
+
 .contenuhomea {
   display: block;
   position: relative;
