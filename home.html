@@ -69,7 +69,11 @@
     
         </section>
 
-        <section class="slidera"> </section> 
+        <section class="slideraaa">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/Diapositive2.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/Diapositive3.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/Diapositive4.PNG" alt="image">
+        </section>
         
         <section class="contenuhomea" >
 
@@ -276,7 +280,7 @@
        
 <script>
 
-var firstindex=0;
+    var firstindex=0;
     function automaticslide(){
         setTimeout(automaticslide, 2000);
         var pics;
@@ -291,6 +295,28 @@ var firstindex=0;
         img[firstindex - 1].style.display="block";
     }
     automaticslide();
+
+
+
+
+    var firstindexa=0;
+    function automaticslidea(){
+        setTimeout(automaticslidea, 5000);
+        var pics;
+        const img = document.getElementsByClassName('slideidaaa');
+        for(pics=0; pics<img.length; pics++) {
+            img[pics].style.display="none";
+        }
+        firstindexa++;
+        if(firstindexa > img.length) {
+            firstindexa = 1;
+        }
+        img[firstindexa - 1].style.display="block";
+    }
+    automaticslidea();
+
+
+
   
     window.onload = function() {
         document.getElementById("myVideo").play();
