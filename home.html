@@ -336,7 +336,291 @@
      
     const database = firebase.database();
 
+    /*
+    var datagarcon = firebase.database().ref("garcon");
+
+    var datafille = firebase.database().ref("fille");
+
+    document.getElementById('pgi').style.fontSize='8px';
+    document.getElementById('bgi').style.fontSize='8px';
+    document.getElementById('mgi').style.fontSize='8px';
+    document.getElementById('jgi').style.fontSize='8px';
+    document.getElementById('pfi').style.fontSize='8px';
+    document.getElementById('bfi').style.fontSize='8px';
+    document.getElementById('mfi').style.fontSize='8px';
+    document.getElementById('jfi').style.fontSize='8px';
+
+
+
+
+
+    datagarcon.child("2017").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2016").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2015").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2014").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2013").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2012").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
     
+
+
+
+    datagarcon.child("2011").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2010").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2009").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2008").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2007").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datagarcon.child("2006").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datagarcon.child("2005").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    datafille.child("2017").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2016").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2015").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2014").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2013").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2012").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2011").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2010").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2009").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2008").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2007").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datafille.child("2006").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datafille.child("2005").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    */
+
 
 
 
