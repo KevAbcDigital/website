@@ -543,8 +543,33 @@ ul {
   background-size: cover;
   background-position: center;
 }
-
-
+.tableauindexa {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  height: auto;
+  display: block;
+}
+.tableauindexa .img1{
+  width: 100%;
+  display: block;
+  height: 270px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableauxb/Diapositive1.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindexa a {
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font-weight: 700;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+}
 
 
 /*home */
