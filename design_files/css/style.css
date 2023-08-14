@@ -653,7 +653,7 @@ ul {
   width: 100%;
   height: auto;
   justify-content: center;
-  z-index: 1000;
+  z-index: 500;
   margin-top: 50px;
 }
 .slidertaaa img {
