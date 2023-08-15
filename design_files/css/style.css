@@ -524,7 +524,7 @@ ul {
 .tableauprogramme .items1{
   width: 100%;
   display: block;
-  height: auto;
+  height: 300px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
@@ -535,7 +535,7 @@ ul {
 .tableauprogramme .items2{
   width: 100%;
   display: block;
-  height: auto;
+  height: 300px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
@@ -1018,4 +1018,3 @@ button {
         margin-top: 60px; } }
     
 /*# sourceMappingURL=style.css.map */
-
