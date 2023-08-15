@@ -1,185 +1,1020 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap');
 
-        <title>TennisKids 2023</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-               
-        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="floating-wpp.min.js"></script>
-        <link rel="stylesheet" href="floating-wpp.min.css">
+/*font de page*/
+*{
+	margin: 0;padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+p{
+  font-weight: 300;
+  color: #fff;
+}
+body {
+  background-color: white;
+  color: #333;
+  font-size: 13px;
+  margin: 0; 
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
 
-        <!-- MATERIAL DESIGN ICONIC FONT -->
-        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
-                
-        <!-- STYLE CSS -->
-        <link rel="stylesheet" href="design_files/css/style.css">
+.indisponibletxt {
+  display: block;
+  margin-top: 100px;
+}
+.indisponibletxt .txtindis {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
 
-        <!-- javadev -->
 
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-    
-    </head>
 
-    <body>
+/*formulaire*/
+/*formulaire*/
+/*formulaire*/
+/*formulaire*/
+/*formulaire*/
+/*formulaire*/
+/*formulaire*/
 
-        <section class="headerindex">
 
-            <div class="menuindex">
-                <div class="logo">
-                    <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
-                </div>
-    
-                <div class="logosponsor">
-                    <img  class="logosponsorim" href="index.html" src="./design_files/images/logoTK.png" alt="image">
-                </div>
-                
-                <input type="checkbox" id="menu-bar">
-                <label for="menu-bar">
-                    <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
-                </label>
-    
-                <div class="menutop">
-                    <ul>
-    
-                        <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                             border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                             href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
-                        </li>
+header {
+  display: none;
+}
+.formulaire {
+  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
+  url(../images/fondloginn.png);
+  background-size: cover;
+  background-position: center;
+  margin-top: 60px;
+}
+.devisbloc{
+  display: none; 
+}
+.formulaire .devisbloc .datenaissance {
+  display: none;
+}
+.formulaire .devisbloc .lottiescript {
+  display: none;
+}
 
-                        <li class="boutonm"><a href="home.html" onclick="toggleMenu();">+ Home</a> </li>
 
-                        <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
-    
-                        <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
-    
-                    </ul>
-                </div>
-            </div>
-    
-        </section>
-                      
-        <section class="tableauprogramme" id="tableauprogramme">
 
-            <div id="imgget1" class="items1"></div>
+@media(max-width:991px){
 
-            <div id="imgget2" class="items2"></div>
-    
-        </section>
-
-        <section class="tableauindexa" id="tableauindex">
-
-            <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
-                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;
-                ">TABLEAUX ET RESULTATS</a>
-
-            <div class="form-wrapper" style="width: 100%; margin-top: 30px;">
-                <a class="titleform"></a>
-                <select id="selectcat" style="border-radius: 4px; margin-bottom: 20px; width: 76%; margin: 0 12%;
-                height: 35px; background-color: rgb(181, 212, 255);"  onchange="addcat() ">
-                    <option value="Choisissez">Selectionnez une categorie ici ...</option>
-                    <option value="pg">Poussin Garcon</option>
-                    <option value="pf">Poussin Fille</option>
-                    <option value="bg">Benjamin Garcon</option>
-                    <option value="bf">Benjamine</option>
-                    <option value="mg">Minime Garcon</option>
-                    <option value="mf">Minime Fille</option>
-                    <option value="jg">Junior Garcon</option>
-                    <option value="jf">Junior Fille</option>
-                </select>    
-            </div>
-
-            <div id="imgcat" class="img1"></div>
-            
-        </section>
-
-        <section class="indisponibletxt">
-            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
-        </section>
+  .indisponibletxt {
+    display: none;
+  }
   
-        <footer class="footer" id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>follow us</h4>
-               
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-likedin-in"></i></a>
-                                
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
-            <p class="copyrigth">Copyright © Tous droits réservés - TennisKids</p>
+  #menu-bar{
+    display: none;
+  }
+  header label{
+    cursor: pointer;
+    margin-top: 13px;
+    position: absolute;
+    left: 0;
+    margin-left: 23px;
+    display: none;
+  }
+  header label .imgmenu {
+    width: 25px;
+    height: 16px;
+  }
+  .headerindex label{
+    cursor: pointer;
+    margin-top: 13px;
+    position: absolute;
+    left: 0;
+    margin-left: 23px;
+    margin-top: 10px;
+    display: none;
+  }
+  .headerindex label .imgmenu {
+    width: 25px;
+    height: 16px;
+    margin-top: 15px;
+  }
+  .headerhome label{
+    cursor: pointer;
+    margin-top: 3px;
+    position: absolute;
+    left: 0;
+    margin-left: 23px;
+    margin-top: 15px;
+    display: none;
+  }
+  .headerhome label .imgmenu {
+    width: 25px;
+    height: 16px;
+  }
 
-        </footer>
   
-        <div class="whatsappid" id="myDiv"></div>
-  
-  
-    </body>
+  #menu-bar:checked ~ .menutop {
+    display: initial;
+  }
 
-    <script type="text/javascript">
-        $(function () {
-          $('#myDiv').floatingWhatsApp({
-            phone: '237698328283',
-            popupMessage: 'Comment pouvons nous vous aider?',
-            showPopup: true,
-            showOnIE: false,
-            headerTitle: 'Tennis Kids service!',
-            headerColor: 'blue',
-            backgroundColor: 'green',
-            position: 'right' ,
-            size: '50px'
-          });
-          
-        });
-    </script>
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+  /* formulaire */
+
+
+  body {
+  background-color: #fff;
+  color: #333;
+  font-size: 13px;
+  margin: 0; 
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
+  url(../images/fondloginn.png);
+  box-shadow: -1px 1px 9px #f1f1f123;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+header label {
+  display: initial;
+}
+header .menutop {
+  position: absolute;
+  margin-top: 60px;
+  top: 0; left:0; right: 0;
+  background-color: rgb(255, 255, 255);
+  display: none;
+}
+header .menutop ul li {
+  width: 90%;
+  padding-left: 10px;
+}
+header .menutop ul li a{
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  background-color: transparent;
+  margin-top: 6px;
+  color: rgb(29, 41, 95);
+  font-weight: 600;
+  font-size: 14px;
+  padding : 5px 15px;
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 19px;
+}
+.logo img{
+  cursor: pointer;
+  height: 45px;
+  width: 125px;
+  margin-left: 0px;
+  margin-top: 0px;
+  float: none;
+}
+header .logosponsor {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-left: 23px;
+  font-weight: bold;
+  display: block;
+}
+header .logosponsor img {
+  height: 40px;
+  width: 40px;
+  margin-right: 17px;
+  margin-top: 0px;
+}
+
+
+
+
+
+
+.formulaire {
+  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
+  url(../images/fondloginn.png);
+  background-size: cover;
+  background-position: center;
+  margin-top: 60px;
+}
+.formulaire .devisbloc .datenaissance {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.formulaire .devisbloc .lottiescript {
+  position: relative;
+  display: none;
+  width: 100%;
+  padding-left: 30%;
+  padding-right: 30%;
+  margin-top: -110px;
+}
+.devisbloc{
+  padding: 2px;
+  background: transparent;
+  max-width: 100%;
+  margin: auto;
+  display: block; 
+}
+.devisbloc form {
+  width: 100%;
+  padding-top: 36px;
+  padding-left: 25px;
+  padding-right: 25px; 
+}
+.devisbloc h1 {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.devisbloc h3 {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: white;
+  margin-bottom: 28px; 
+}
+.devisbloc h2 {
+  font-size: 13px;
+  font-weight: 530;
+  color: white;
+  padding: 0 10%;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-top: 50px; 
+}
+.devisbloc a {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding-left: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+.devisbloc .form-wrapper .titleform {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(245, 245, 245);
+  padding-left: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+.form-controla {
+  border: 1px solid #aaaaaa;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  margin-bottom: 25px;
+  margin-top: 5px;
+}
+  .form-controla ::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; }
+  .form-controla ::-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; }
+  .form-controla:-ms-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; }
+  .form-controla:-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;}
+  }
+
+
+
+
+
+
+
+.footer{
+  padding-top: 15px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  background-color: #24262b;
+}
+.footer-col {
+  width: 100%;
+  margin-bottom: 3px;
+  padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255, 0.2);
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  background-color: #fff;
+  color: #24262b;
+}
+.container {
+  max-width: 1170px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.footer p {
+  margin-top: 0px;
+  text-align: center;
+}
+.whatsappid {
+  margin-right: 30px;
+  margin-bottom: 15px;
+  box-shadow: #24262b;
+}
+
+
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+/*index */
+
+.headerindex {
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/affichephoneapp3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 250px;
+  justify-content: center;
+  display: block;
+  z-index: 1000;
+}
+.headerindex .menuindex{
+  background-color: transparent;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  z-index: 2000;
+  justify-content: center;
+  display: flex;
+}
+.headerindex label {
+  display: initial;
+}
+.headerindex .menuindex .menutop {
+  position: absolute;
+  margin-top: 130px;
+  top: 0; left:0; right: 0;
+  display: none;
+}
+.headerindex .menutop ul li {
+  width: 100%;
+}
+.headerindex .menutop ul li a{
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  transition: 0.5s ease;
+  color: rgb(29, 41, 95);
+  background-color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding : 5px 15px;
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+}
+.logo img{
+  cursor: pointer;
+  height: 45px;
+  width: 125px;
+  margin-left: 0px;
+  margin-top: 10px;
+  float: none;
+}
+.headerindex .logosponsor {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-top: 10px;
+  margin-left: 23px;
+  font-weight: bold;
+  display: block;
+}
+.headerindex .logosponsor img {
+  height: 40px;
+  width: 40px;
+  margin-right: 17px;
+  margin-top: 0px;
+}
+
+
+
+.tableauindex {
+  position: relative;
+  width: 100%;
+  margin-top: 310px;
+  height: auto;
+  display: block;
+}
+.tableauindex .img1{
+  width: 100%;
+  display: block;
+  height: 270px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableauxb/Diapositive1.PNG);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+/*programme*/
+
+
+.tableauprogramme {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 300px;
+}
+.tableauprogramme .items1{
+  width: 100%;
+  display: block;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/rencontres/Diapositive1.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauprogramme .items2{
+  width: 100%;
+  display: block;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/rencontres/Diapositive2.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindexa {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  height: auto;
+  display: block;
+}
+.tableauindexa .img1{
+  width: 100%;
+  display: block;
+  height: 270px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/tableauxb/Diapositive1.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauindexa a {
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font-weight: 700;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+/*home */
+
+.headerhome {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 50px;
+  justify-content: center;
+  display: block;
+  z-index: 1000;
+}
+.headerhome .menuindex{
+  background-color: transparent;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 50px;
+  z-index: 2000;
+  justify-content: center;
+  display: flex;
+}
+.headerhome label {
+  display: initial;
+}
+.headerhome .menuindex .menutop {
+  position: absolute;
+  margin-top: 50px;
+  top: 0; left:0; right: 0;
+  display: none;
+}
+.headerhome .menutop ul li {
+  width: 100%;
+}
+.headerhome .menutop ul li a{
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  transition: 0.5s ease;
+  color: rgb(29, 41, 95);
+  background-color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding : 5px 15px;
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+}
+.headerhome .logosponsor {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-top: 4px;
+  margin-left: 23px;
+  font-weight: bold;
+  display: block;
+}
+.headerhome .logosponsor img {
+  height: 40px;
+  width: 40px;
+  margin-top: 0px;
+}
+
+
+
+/*
+<video style="width: 100%;" loop muted class="myVideo" id="myVideo">
+            <source src="./design_files/images/vid.mp4" type="video/mp4">
+        </video>
+
+.slidera {
+  background-image: linear-gradient(rgba(41, 42, 43, 0) , rgba(11, 53, 109, 0)), 
+  url(../images/Diapositive2.PNG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+  display: block;
+  z-index: 1000;
+  border-radius: 10px;
+}
+*/
+.slideraaa {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  z-index: 500;
+  margin-top: 50px;
+}
+.slidertaaa img {
+  width: 100%;
+  height: 550px;
+}
+
+
+.contenuhomea {
+  display: block;
+  position: relative;
+  margin-top: 10px;
+}
+.contenuhomea a {
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font-weight: 700;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.contenuhomea b {
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  transition: 0.5s ease;
+  color: rgb(52, 54, 56);
+  font-size: 11px;
+  font-weight: 800;
+  margin-top: 30px;
+  margin-left: 12px;
+  padding : 5px 25px;
+  font-family: 'Poppins', sans-serif;
+}
+.bachebleua {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 210px;
+}
+.partenaire{
+  position: relative;
+  width: 100%;
+  padding-left: 30px;
+  height: 500px;
+  margin-top: 73px;
+  background-color: rgb(0, 0, 0);
+  display: block;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.partenaire .box {
+  display: block;
+  margin-top: 15px;
+  position: relative;
+}
+.partenaire .box b {
+  display: block;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+.partenaire .slider_container{
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.partenaire .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.partenaire .itemservice{
+  display: inline-block;
+  margin-right: 15px;
+}
+.itemservice img{
+  width: 240px;
+  height: 360px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.slidertab {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.slidertab img {
+  width: 100%;
+  height: 550px;
+}
+.tableaui {
+  position: relative;
+  width: 93%;
+  margin-left: 2%;
+  height: auto;
+  display: block;
+  margin-top: 50px;
+}
+.tableaui .titreti{
+  background-color: rgb(255, 217, 0);
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.tableaui .inscritsdiv{
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/poppins/Poppins-Regular.ttf"); }
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../fonts/poppins/Poppins-SemiBold.ttf"); }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+
+
+input, textarea, select, button {
+  font-family: "Poppins-Regular";
+  color: #333;
+  font-size: 13px; }
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+img {
+  max-width: 100%; }
+
+image-holder {
+  border-radius: 15px;
+}
+
+a:hover {
+  text-decoration: none; }
+
+:focus {
+  outline: none; }
+
+.wrapper {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center; }
+
+.inner {
+  padding: 20px;
+  background: #fff;
+  max-width: 850px;
+  margin: auto;
+  display: flex; }
+  .inner .image-holder {
+    width: 50%; }
+  .inner form {
+    width: 50%;
+    padding-top: 36px;
+    padding-left: 45px;
+    padding-right: 45px; }
+  .inner h3 {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: "Poppins-SemiBold";
+    text-align: center;
+    margin-bottom: 28px; }
+
+.form-group {
+  display: flex; }
+  .form-group input {
+    width: 50%; }
+    .form-group input:first-child {
+      margin-right: 25px; }
+
+.form-wrapper {
+  position: relative; }
+  .form-wrapper i {
+    position: absolute;
+    bottom: 9px;
+    right: 0; }
+
+.form-control {
+  border: 1px solid #333;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 0;
+  margin-bottom: 25px; }
+  .form-control::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular"; }
+  .form-control::-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular"; }
+  .form-control:-ms-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular"; }
+  .form-control:-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular"; }
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-left: 20px; }
+  select option[value=""][disabled] {
+    display: none; }
+
+button {
+  border: none;
+  width: 100%;
+  height: 51px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #333;
+  font-size: 15px;
+  color: #fff;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+  button i {
+    margin-left: 10px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  button:hover i, button:focus i, button:active i {
+    -webkit-animation-name: hvr-icon-wobble-horizontal;
+    animation-name: hvr-icon-wobble-horizontal;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
+
+    @-webkit-keyframes hvr-icon-wobble-horizontal {
+      16.65% {
+        -webkit-transform: translateX(6px);
+        transform: translateX(6px); }
+      33.3% {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px); }
+      49.95% {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px); }
+      66.6% {
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px); }
+      83.25% {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px); }
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0); } }
+    @keyframes hvr-icon-wobble-horizontal {
+      16.65% {
+        -webkit-transform: translateX(6px);
+        transform: translateX(6px); }
+      33.3% {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px); }
+      49.95% {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px); }
+      66.6% {
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px); }
+      83.25% {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px); }
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0); } }
+    @media (max-width: 1199px) {
+      .wrapper {
+        background-position: right center; } }
+    @media (max-width: 991px) {
+      .inner form {
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 30px; } }
+    @media (max-width: 767px) {
+      .inner {
+        display: block; }
+        .inner .image-holder {
+          width: 100%; }
+        .inner form {
+          width: 100%;
+          padding: 40px 0 30px; }
     
-
-       
-<script>
+      button {
+        margin-top: 60px; } }
     
-    var imgc = document.getElementById("imgcat")
-        var cat = "choisissez"
-        function addcat(){
-            cat = document.getElementById("selectcat").value;
-            if (cat == "pg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive1.PNG')";
-            } else if (cat == "pf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive2.PNG')";
-            } else if (cat == "bg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive3.PNG')";
-            } else if (cat == "bf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive4.PNG')";
-            } else if (cat == "mg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive5.PNG')";
-            } else if (cat == "mf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive6.PNG')";
-            } else if (cat == "jg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive7.PNG')";
-            } else if (cat == "jf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive8.PNG')";
-            } else if (cat == "choisissez") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive1.PNG')";
-            }
-        }
-
-
-
-</script>
-    
-    
-
-</html>
+/*# sourceMappingURL=style.css.map */
