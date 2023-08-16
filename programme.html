@@ -29,43 +29,51 @@
 
     <body>
 
-        <section class="headerindex">
+        <header>
 
-            <div class="menuindex">
-                <div class="logo">
-                    <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
-                </div>
-    
-                <div class="logosponsor">
-                    <img  class="logosponsorim" href="index.html" src="./design_files/images/logoTK.png" alt="image">
-                </div>
-                
-                <input type="checkbox" id="menu-bar">
-                <label for="menu-bar">
-                    <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
-                </label>
-    
-                <div class="menutop">
-                    <ul>
-    
-                        <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-                            color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                             border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                             href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
-                        </li>
-
-                        <li class="boutonm"><a href="home.html" onclick="toggleMenu();">+ Home</a> </li>
-
-                        <li class="boutonm"><a href="programme.html" onclick="toggleMenu();">+ Programmation des matchs</a> </li>
-    
-                        <li class="boutonm"><a href="index.html" onclick="toggleMenu();">+ Tableau final et Resultats</a> </li>
-    
-                    </ul>
-                </div>
+            <div class="logo">
+                <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
             </div>
-    
-        </section>
+
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">
+                <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
+            </label>
+
+            <div class="menutop">
+                <ul>
+
+                    <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                         border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
+                         href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
+                    </li>
+
+                    <li class="boutonm" > <img class="imgmenu" src="./design_files/images/mformyimg.PNG" alt="image"> </li>
+
+                    <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                         border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 0px; border-top-left-radius: 0px;"
+                         href="programme.html" onclick="toggleMenu();">+ Programmes et resultats</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            
+        </header>
                       
+        <section class="slideraaa">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/Diapositive2.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/affichemformy.png" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/Diapositive4.PNG" alt="image">
+        </section>
+
+        <a class="txtindist" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
+                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;
+                ">PROGRAMME DES MATCHS</a>
+
+
         <section class="tableauprogramme" id="tableauprogramme">
 
             <div id="imgget1" class="items1"></div>
@@ -74,15 +82,16 @@
     
         </section>
 
-        <section class="tableauindexa" id="tableauindex">
-
-            <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
+        <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
                 padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;
                 ">TABLEAUX ET RESULTATS</a>
 
+
+        <section class="tableauindexa" id="tableauindex">
+
             <div class="form-wrapper" style="width: 100%; margin-top: 30px;">
                 <a class="titleform"></a>
-                <select id="selectcat" style="border-radius: 4px; margin-bottom: 20px; width: 76%; margin: 0 12%;
+                <select id="selectcat" style="border-radius: 4px; width: 76%; margin: 0 12%;
                 height: 35px; background-color: rgb(181, 212, 255);"  onchange="addcat() ">
                     <option value="Choisissez">Selectionnez une categorie ici ...</option>
                     <option value="pg">Poussin Garcon</option>
@@ -95,10 +104,89 @@
                     <option value="jf">Junior Fille</option>
                 </select>    
             </div>
+    
+         <div id="imgcat" class="img1"></div>
 
-            <div id="imgcat" class="img1"></div>
-            
         </section>
+
+
+        <section class="contenuhomea" >
+
+            <b class="txtcontenuhomea" style="width: 100%; text-align: center; font-size: 17px; padding-top: 40px; padding-left: 0px;">
+                GALLERIE PHOTO
+            </b>
+
+        </section>
+
+        <section class="partenaire" id="partenaire">
+            
+            <div class="box">
+                <b style="margin-top: 10px;">TENNIS STORIES</b>
+                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >MORE >>> </b>
+            </div>
+            
+            
+            <div class="slider_container">
+
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/aa.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/bb.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/cc.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/dd.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/ee.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/ff.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/a.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/b.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/c.png" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/d.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/e.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/g.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/h.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/i.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/j.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/l.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/m.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/p.jpeg" alt="image">
+                </div>
+
+            </div>
+
+        </section>
+
 
         <section class="indisponibletxt">
             <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
@@ -176,6 +264,23 @@
             }
         }
 
+
+
+    var firstindexa=0;
+    function automaticslidea(){
+        setTimeout(automaticslidea, 3000);
+        var pics;
+        const img = document.getElementsByClassName('slideidaaa');
+        for(pics=0; pics<img.length; pics++) {
+            img[pics].style.display="none";
+        }
+        firstindexa++;
+        if(firstindexa > img.length) {
+            firstindexa = 1;
+        }
+        img[firstindexa - 1].style.display="block";
+    }
+    automaticslidea();
 
 
 </script>
