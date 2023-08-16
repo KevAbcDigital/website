@@ -152,12 +152,15 @@ header {
 }
 
 header {
-  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
-  url(../images/fondloginn.png);
+  background-image: linear-gradient(rgba(202, 202, 202, 0.155) , rgb(24, 36, 88)), 
+  url(../images/fondmenu.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
   box-shadow: -1px 1px 9px #f1f1f123;
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 60px;
+  height: 90px;
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -168,7 +171,7 @@ header label {
 }
 header .menutop {
   position: absolute;
-  margin-top: 60px;
+  margin-top: 90px;
   top: 0; left:0; right: 0;
   background-color: rgb(255, 255, 255);
   display: none;
@@ -193,35 +196,20 @@ header .menutop ul li a{
 }
 .logo img{
   cursor: pointer;
-  height: 45px;
+  height: 50px;
   width: 125px;
   margin-left: 0px;
   margin-top: 0px;
   float: none;
 }
-header .logosponsor {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  margin-left: 23px;
-  font-weight: bold;
-  display: block;
-}
-header .logosponsor img {
-  height: 40px;
-  width: 40px;
-  margin-right: 17px;
-  margin-top: 0px;
-}
-
 
 
 
 
 
 .formulaire {
-  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
-  url(../images/fondloginn.png);
+  background-image: linear-gradient(rgb(8, 8, 58) , rgba(20, 6, 45, 0.402)), 
+  url(../images/Diapositive5.PNG);
   background-size: cover;
   background-position: center;
   margin-top: 60px;
@@ -271,7 +259,7 @@ header .logosponsor img {
 }
 .devisbloc h2 {
   font-size: 13px;
-  font-weight: 530;
+  font-weight: 600;
   color: white;
   padding: 0 10%;
   font-family: 'Poppins', sans-serif;
@@ -384,116 +372,6 @@ ul {
 }
 
 
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-/*index */
-
-.headerindex {
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/affichephoneapp3.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 250px;
-  justify-content: center;
-  display: block;
-  z-index: 1000;
-}
-.headerindex .menuindex{
-  background-color: transparent;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 80px;
-  z-index: 2000;
-  justify-content: center;
-  display: flex;
-}
-.headerindex label {
-  display: initial;
-}
-.headerindex .menuindex .menutop {
-  position: absolute;
-  margin-top: 130px;
-  top: 0; left:0; right: 0;
-  display: none;
-}
-.headerindex .menutop ul li {
-  width: 100%;
-}
-.headerindex .menutop ul li a{
-  display: block;
-  text-decoration: none;
-  height: 40px;
-  transition: 0.5s ease;
-  color: rgb(29, 41, 95);
-  background-color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding : 5px 15px;
-  font-style: italic;
-  font-family: 'Poppins', sans-serif;
-}
-.logo img{
-  cursor: pointer;
-  height: 45px;
-  width: 125px;
-  margin-left: 0px;
-  margin-top: 10px;
-  float: none;
-}
-.headerindex .logosponsor {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  margin-top: 10px;
-  margin-left: 23px;
-  font-weight: bold;
-  display: block;
-}
-.headerindex .logosponsor img {
-  height: 40px;
-  width: 40px;
-  margin-right: 17px;
-  margin-top: 0px;
-}
-
-
-
-.tableauindex {
-  position: relative;
-  width: 100%;
-  margin-top: 310px;
-  height: auto;
-  display: block;
-}
-.tableauindex .img1{
-  width: 100%;
-  display: block;
-  height: 270px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableauxb/Diapositive1.PNG);
-  background-size: cover;
-  background-position: center;
-}
-
-
-
 /*programme*/
 /*programme*/
 /*programme*/
@@ -519,14 +397,13 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 300px;
+  margin-top: 50px;
 }
 .tableauprogramme .items1{
   width: 100%;
   display: block;
-  height: 320px;
+  height: 300px;
   margin-top: 30px;
-  margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
   url(../images/rencontres/Diapositive1.PNG);
   background-size: cover;
@@ -535,8 +412,7 @@ ul {
 .tableauprogramme .items2{
   width: 100%;
   display: block;
-  height: 320px;
-  margin-top: 30px;
+  height: 300px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
   url(../images/rencontres/Diapositive2.PNG);
@@ -561,7 +437,16 @@ ul {
   background-size: cover;
   background-position: center;
 }
-.tableauindexa a {
+.txtindis {
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font-weight: 700;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.txtindist {
   display: block;
   text-decoration: none;
   transition: 0.5s ease;
@@ -572,106 +457,7 @@ ul {
 }
 
 
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
-/*home */
 
-.headerhome {
-  background-color: rgb(255, 255, 255);
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 50px;
-  justify-content: center;
-  display: block;
-  z-index: 1000;
-}
-.headerhome .menuindex{
-  background-color: transparent;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 50px;
-  z-index: 2000;
-  justify-content: center;
-  display: flex;
-}
-.headerhome label {
-  display: initial;
-}
-.headerhome .menuindex .menutop {
-  position: absolute;
-  margin-top: 50px;
-  top: 0; left:0; right: 0;
-  display: none;
-}
-.headerhome .menutop ul li {
-  width: 100%;
-}
-.headerhome .menutop ul li a{
-  display: block;
-  text-decoration: none;
-  height: 40px;
-  transition: 0.5s ease;
-  color: rgb(29, 41, 95);
-  background-color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding : 5px 15px;
-  font-style: italic;
-  font-family: 'Poppins', sans-serif;
-}
-.headerhome .logosponsor {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  margin-top: 4px;
-  margin-left: 23px;
-  font-weight: bold;
-  display: block;
-}
-.headerhome .logosponsor img {
-  height: 40px;
-  width: 40px;
-  margin-top: 0px;
-}
-
-
-
-/*
-<video style="width: 100%;" loop muted class="myVideo" id="myVideo">
-            <source src="./design_files/images/vid.mp4" type="video/mp4">
-        </video>
-
-.slidera {
-  background-image: linear-gradient(rgba(41, 42, 43, 0) , rgba(11, 53, 109, 0)), 
-  url(../images/Diapositive2.PNG);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 600px;
-  width: 100%;
-  justify-content: center;
-  margin-top: 40px;
-  display: block;
-  z-index: 1000;
-  border-radius: 10px;
-}
-*/
 .slideraaa {
   display: block;
   position: relative;
@@ -679,7 +465,7 @@ ul {
   height: auto;
   justify-content: center;
   z-index: 500;
-  margin-top: 50px;
+  margin-top: 90px;
 }
 .slidertaaa img {
   width: 100%;
@@ -771,39 +557,6 @@ ul {
   overflow: auto;
   scroll-behavior: smooth;
 }
-.slidertab {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-.slidertab img {
-  width: 100%;
-  height: 550px;
-}
-.tableaui {
-  position: relative;
-  width: 93%;
-  margin-left: 2%;
-  height: auto;
-  display: block;
-  margin-top: 50px;
-}
-.tableaui .titreti{
-  background-color: rgb(255, 217, 0);
-  border-top-right-radius: 9px;
-  border-top-left-radius: 9px;
-  font-size: 15px;
-  font-weight: 600;
-}
-.tableaui .inscritsdiv{
-  padding-left: 10px;
-  padding-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
 
 
 
