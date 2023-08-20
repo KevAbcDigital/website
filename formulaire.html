@@ -19,12 +19,12 @@
                 
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="design_files/css/style.css">
-    
+
         <!-- javadev -->
 
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-
+    
     </head>
 
     <body>
@@ -46,7 +46,7 @@
                     <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
                         color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                          border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                         href="programme.html" onclick="toggleMenu();">+ Programmes et resultats</a>
+                         href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
                     </li>
 
                     <li class="boutonm" > <img class="imgmenu" src="./design_files/images/mformyimg.PNG" alt="image"> </li>
@@ -54,7 +54,7 @@
                     <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
                         color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                          border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 0px; border-top-left-radius: 0px;"
-                         href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
+                         href="programme.html" onclick="toggleMenu();">+ Programmes et resultats</a>
                     </li>
 
 
@@ -62,123 +62,197 @@
             </div>
             
         </header>
+                      
+        <section class="slideraaa">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive4.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive5.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive6.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive7.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive8.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive9.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive10.PNG" alt="image">
+            <img name="imgid" class="slideidaaa" src="./design_files/images/finale1/Diapositive11.PNG" alt="image">
+
+        </section>
+
+        <a class="txtindist" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
+                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;
+                ">PROGRAMME DES MATCHS</a>
+
+
+        <section class="tableauprogramme" id="tableauprogramme">
+
+            <div id="imgget1" class="items1"></div>
+
+            <div id="imgget2" class="items2"></div>
+    
+        </section>
+
+        <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
+                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;">TABLEAUX ET RESULTATS</a>
+
+
+        <section class="tableauindexa" id="tableauindex">
+
+            <div class="form-wrapper" style="width: 100%; margin-top: 30px;">
+                <a class="titleform"></a>
+                <select id="selectcat" style="border-radius: 4px; width: 76%; margin: 0 12%;
+                height: 35px; background-color: rgb(181, 212, 255);"  onchange="addcat() ">
+                    <option value="Choisissez">Selectionnez une categorie ici ...</option>
+                    <option value="pg">Poussin Garcon</option>
+                    <option value="pf">Poussin Fille</option>
+                    <option value="bg">Benjamin Garcon</option>
+                    <option value="bf">Benjamine</option>
+                    <option value="mg">Minime Garcon</option>
+                    <option value="mf">Minime Fille</option>
+                    <option value="jg">Junior Garcon</option>
+                    <option value="jf">Junior Fille</option>
+                </select>    
+            </div>
+    
+         <div id="imgcat" class="img1"></div>
+
+        </section>
+
+        <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
+                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;
+                ">CLASSEMENT DU TOURNOI</a>
+
+
+        <section class="tableauindexa" id="tableauindex">
+
+            <div class="form-wrapper" style="width: 100%; margin-top: 30px;">
+                <a class="titleform"></a>
+                <select id="selectcatclass" style="border-radius: 4px; width: 76%; margin: 0 12%;
+                height: 35px; background-color: rgb(181, 212, 255);"  onchange="addcatclass() ">
+                    <option value="Choisissez">Selectionnez une categorie ici ...</option>
+                    <option value="pg">Poussin Garcon</option>
+                    <option value="pf">Poussin Fille</option>
+                    <option value="bg">Benjamin Garcon</option>
+                    <option value="bf">Benjamine</option>
+                    <option value="mg">Minime Garcon</option>
+                    <option value="mf">Minime Fille</option>
+                    <option value="jg">Junior Garcon</option>
+                    <option value="jf">Junior Fille</option>
+                </select>    
+            </div>
+    
+         <div id="imgcatclass" class="img1class"></div>
+
+        </section>
+
+
+        <section class="contenuhomea" >
+
+            <b class="txtcontenuhomea" style="width: 100%; text-align: center; font-size: 17px; padding-top: 40px; padding-left: 0px;">
+                GALLERIE PHOTO
+            </b>
+
+        </section>
+
+
+        <section class="partenaire" id="partenaire">
+            
+            <div class="box">
+                <b style="margin-top: 10px;">TENNIS STORIES</b>
+                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >MORE >>> </b>
+            </div>
+            
+            
+            <div class="slider_container">
+
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/aa.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/bb.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/cc.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/dd.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/ee.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/ff.JPG" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/a.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/b.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/c.png" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/d.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/e.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/g.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/h.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/i.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/j.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/l.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/m.jpeg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/gallerie/p.jpeg" alt="image">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <a class="txtcontenuhomea" style="color: black; padding-left: 30px; padding-top: 20px; display: block;
+        cursor: pointer; margin-top: 10px; font-size: 14px; font-weight: 600;" href="index.html" >
+         > voir tous les tableaux ... </a>
+   
+       <section class="tableaui" id="tableaui">
+
+           <a class="titreti"> Poussin Garcon</a>
+           <div class="inscritsdiv" id="pgi"></div>
+           <a class="titreti"> Poussin Fille</a>
+           <div class="inscritsdiv" id="pfi"></div>
+           <a class="titreti"> Benjamin Garcon</a>
+           <div class="inscritsdiv" id="bgi"></div>
+           <a class="titreti"> Benjamine</a>
+           <div class="inscritsdiv" id="bfi"></div>
+           <a class="titreti"> Minime Garcon</a>
+           <div class="inscritsdiv" id="mgi"></div>
+           <a class="titreti"> Minime Fille</a>
+           <div class="inscritsdiv" id="mfi"></div>
+           <a class="titreti"> Junior Garcon</a>
+           <div class="inscritsdiv" id="jgi"></div>
+           <a class="titreti"> Junior Fille</a>
+           <div class="inscritsdiv" id="jfi"></div>
+
+       </section>
+
+
+
 
         <section class="indisponibletxt">
             <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
-
-        <section class="formulaire" id="formulaire">
-            <div class="devisbloc">
-
-                <form name="formweb" action="">
-
-                    <h1>Inscrivez vous</h1>
-                    <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
-
-                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 20 Aout 2023 à 15H . Une fois ce délai dépassé, ce formulaire 
-                        sera indisponible pour tout joueur souhaitant participer à la deuxieme semaine de tournoi. </h3>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Noms et prénoms du joueur</a>
-                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Comme sur l'acte de naissance ..." class="form-controla">
-                    </div>
-
-                    <a class="titleform" style="color: white;">Date de naissance</a>
-                    <div class="datenaissance">
-
-
-                        <div class="form-wrapper">
-                            <a class="titleform">Jour</a>
-                            <input id="jouruser" style="width: 50px; height: 30px; padding-left: 5px;" type="email" placeholder="00" class="form-controla">
-                        </div>
-
-                        <div class="form-wrapper" style="width: 30%; margin-left: 7px;">
-                            <a class="titleform">Mois </a>
-                            <select id="selectmois" style="border-radius: 4px; margin-bottom: 20px; width: 130px;
-                            height: 35px;" onchange="addmois() ">
-                                <option value="Choisissez">Mois ...</option>
-                                <option value="Janvier">Janvier</option>
-                                <option value="Fevrier">Fevrier</option>
-                                <option value="Mars">Mars</option>
-                                <option value="Avril">Avril</option>
-                                <option value="Mai">Mai</option>
-                                <option value="Juin">Juin</option>
-                                <option value="Juillet">Juillet</option>
-                                <option value="Aout">Aout</option>
-                                <option value="Septembre">Septembre</option>
-                                <option value="Octobre">Octobre</option>
-                                <option value="Novembre">Novembre</option>
-                                <option value="Decembre">Decembre</option>
-                            </select>    
-                        </div>
-
-                        <div class="form-wrapper" style="width: 30%; margin-left: 37px;">
-                            <a class="titleform">Année </a>
-                            <select id="selectannee" style="border-radius: 4px; margin-bottom: 20px; width: 100px;
-                            height: 35px;" onchange="addannee() ">
-                                <option value="Choisissez">Année ...</option>
-                                <option value="2005">2005</option>
-                                <option value="2006">2006</option>
-                                <option value="2007">2007</option>
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                            </select>    
-                        </div>
-                        
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Sexe </a>
-                        <select id="selectsexe" style="border-radius: 4px; margin-bottom: 20px; width: 100%;
-                        height: 35px;" onchange="addsexe() ">
-                            <option value="Choisissez">Choisissez ...</option>
-                            <option value="garcon">Garcon</option>
-                            <option value="fille">Fille</option>
-                        </select>    
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Telephone ( Ex : 698328283 )</a>
-                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Contact du joueur ou du responsable ..." class="form-controla">
-                        <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Club d'appartenance</a>
-                        <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
-                    </div>
-
-                    <h2 style="color: rgb(255, 208, 0); font-size: 16px; margin-bottom: -32px;">NB : TRES URGENT !!!.</h2>
-                    <h2>Afin d'etre intégré dans le tirage au sort, tout joueur déjà inscrit en ligne devra
-                        se presenter au bureau du juge arbitre (club france) le DIMANCHE 20 AOUT 2023 avant 16h muni d'une piece 
-                        d'identité copie ou originale de (passport ou CNI ou acte de naissance et bulletin scolaire 2022/2023) .</h2>
-
-                    <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
-                        <button id="valider" type="button" onclick="send()">
-                            Envoyer
-                            <i class="zmdi zmdi-arrow-right"></i>
-                        </button>
-                    </div>
-        
-                </form>
-
-                    </lottie-player>
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                     background="transparent" speed="1"  loop autoplay></lottie-player>
-
-
-            </div>
-        </section>
-
+  
         <footer class="footer" id="footer">
             <div class="container">
                 <div class="row">
@@ -201,7 +275,8 @@
         </footer>
   
         <div class="whatsappid" id="myDiv"></div>
-
+  
+  
     </body>
 
     <script type="text/javascript">
@@ -219,13 +294,13 @@
           });
           
         });
-
-        
     </script>
+    
 
-
+       
 <script>
-        
+
+
     const firebaseConfig = {
         databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
         apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
@@ -237,117 +312,370 @@
         measurementId: "G-6BW97RHV89"
     };
     firebase.initializeApp(firebaseConfig)
-   
-   
+     
     const database = firebase.database();
 
-    var moistxt = "Choisissez";
-    var anneetxt = "Choisissez";
-    var sexetxt = "Choisissez";
-    var load = document.getElementById("lottieload");
- 
-    function containsOnlyNumbers(str) {
-        return /^\d+$/.test(str);
-    }
+    var datagarcon = firebase.database().ref("garcon");
 
-    function addmois(){
-        var getmm = document.getElementById("selectmois").value;
-        moistxt = getmm;
-    }
-    function addannee(){
-        var getann = document.getElementById("selectannee").value;
-        anneetxt = getann;
-    }
-    function addsexe(){
-        var getsex = document.getElementById("selectsexe").value;
-        sexetxt = getsex;
-    }
+    var datafille = firebase.database().ref("fille");
 
-    function send(){
+    document.getElementById('pgi').style.fontSize='8px';
+    document.getElementById('bgi').style.fontSize='8px';
+    document.getElementById('mgi').style.fontSize='8px';
+    document.getElementById('jgi').style.fontSize='8px';
+    document.getElementById('pfi').style.fontSize='8px';
+    document.getElementById('bfi').style.fontSize='8px';
+    document.getElementById('mfi').style.fontSize='8px';
+    document.getElementById('jfi').style.fontSize='8px';
 
-        var nom = $('#nomuser').val().toLowerCase().trim();
-        var tel = $('#teluser').val();
-        var club = $('#clubuser').val();
-        var jouruser = $('#jouruser').val();
-        var i = 0;
-        var dataRefa = firebase.database().ref("players");
 
-        if(nom != "" & jouruser != "" & tel != "" & club != "" & moistxt != "Choisissez" & anneetxt != "Choisissez"
-         & tel.length == 9 & jouruser.length == 2 & ( containsOnlyNumbers(tel) == true ) 
-         & ( containsOnlyNumbers(jouruser) == true ) & sexetxt != "Choisissez") {
 
-            load.style.display = "block";
-            var datefinale = (" ( "+jouruser+"- "+moistxt+" -"+anneetxt+" ) "+club.toLowerCase()+" Tel : "+tel.toLowerCase()) ; 
 
-            dataRefa.on("value" , function(snapshot){
-                snapshot.forEach(function(element){
-                    if(element.key == nom.toLowerCase().trim() ) {
-                        i = 1;
-                        load.style.display = "none";
-                        window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
-                        window.location.href = 'https://kevabcdigital.github.io/website/home.html #tableaui';
-                    }
-                });
-                if ( i == 0 ) {
-                    var dataRef = firebase.database().ref(sexetxt).child(anneetxt).child(nom.toLowerCase().trim() + datefinale);
-                    dataRef.set({
-                                'info' : (nom.toLowerCase().trim() + datefinale)
-                        }).then(()=>{
 
-                            (dataRefa.child(nom.toLowerCase().trim())).set({
-                                'nom': nom.toLowerCase().trim() ,
-                                'tel' : tel.toLowerCase() ,
-                                'sexe' : sexetxt.toLowerCase()
+    datagarcon.child("2017").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
 
-                            }).then(()=>{
-                                load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit . Veuillez vous rassurer deffectuer votre SIGN IN auprès du juge arbitre le dimanche 13 Aout avant 16h.");
-                                window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                            });
-                            
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
-                }
-            });
-  
-        } else if ( nom == "" ) {
-          window.alert("veuillez entrer le nom complet du joueur...");
-        }  else if ( jouruser == "" ) {
-          window.alert("veuillez renseigner le jour de naissance de " + nom);
-        } else if ( jouruser.length != 2 ) {
-          window.alert("Veuillez entrer un jour de naissance à 02 chiffres exemple : 01/ ");
-        }  else if ( containsOnlyNumbers(jouruser) == false ) {
-          window.alert("Veuillez entrer un jour de naissance en chiffre ...");
-        } else if ( moistxt == "Choisissez" ) {
-          window.alert("veuillez renseigner le mois de naissance de " + nom);
-        } else if ( sexetxt == "Choisissez" ) {
-          window.alert("veuillez renseigner le sexe de " + nom);
-        } else if ( anneetxt == "Choisissez" ) {
-          window.alert("veuillez renseigner l'année de naissance de " + nom);
-        } else if ( tel == "" ) {
-          window.alert("Veuillez entrer numero de téléphone du responsable...");
-        } else if ( containsOnlyNumbers(tel) == false ) {
-          window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
-        } else if ( tel.length != 9 ) {
-          window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
-        } else if ( club == "" ) {
-            window.alert("Veuillez saisir le club de " + nom);
+    datagarcon.child("2016").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2015").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2014").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2013").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2012").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#pgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2011").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2010").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#bgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2009").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datagarcon.child("2008").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#mgi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datagarcon.child("2007").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datagarcon.child("2006").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datagarcon.child("2005").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jgi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    datafille.child("2017").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2016").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2015").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2014").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2013").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2012").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#pfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2011").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2010").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#bfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2009").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+    datafille.child("2008").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            if (!(element.key).includes("Aout") & !(element.key).includes("Septembre") & !(element.key).includes("Octobre")
+                & !(element.key).includes("Novembre") & !(element.key).includes("Decembre")) {
+                document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Aout")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Septembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Octobre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Novembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            } else if ((element.key).includes("Decembre")) {
+                document.querySelector('#mfi').innerHTML+=`<div>${element.key}</div>`
+            }
+        });
+    });
+    
+
+
+
+    datafille.child("2007").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datafille.child("2006").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+    datafille.child("2005").on("value" , function(snapshot){
+        snapshot.forEach(function(element){
+            document.querySelector('#jfi').innerHTML+=`<div>${element.key}</div>`
+        });
+    });
+
+
+
+    var imgc = document.getElementById("imgcat")
+        var cat = "choisissez"
+        function addcat(){
+            cat = document.getElementById("selectcat").value;
+            if (cat == "pg") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive1.PNG')";
+            } else if (cat == "pf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive2.PNG')";
+            } else if (cat == "bg") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive3.PNG')";
+            } else if (cat == "bf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive4.PNG')";
+            } else if (cat == "mg") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive5.PNG')";
+            } else if (cat == "mf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive6.PNG')";
+            } else if (cat == "jg") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive7.PNG')";
+            } else if (cat == "jf") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive8.PNG')";
+            } else if (cat == "choisissez") {
+            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive1.PNG')";
+            }
         }
-  
-    }
 
-    function invalid() {
-        window.alert("Desolé ce formulaire est indisponible pour le moment. Il sera de nouveau opérationel à partir du mercredi 16 Aout 2023 dès 10h pour le compte de la deuxieme semaine de tournoi.");
-        window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
+
+
+
+        var imgcclass = document.getElementById("imgcatclass")
+        var catclass = "choisissez"
+        function addcatclass(){
+            catclass = document.getElementById("selectcatclass").value;
+            if (catclass == "pg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive1.PNG')";
+            } else if (catclass == "pf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive2.PNG')";
+            } else if (catclass == "bg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive3.PNG')";
+            } else if (catclass == "bf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive4.PNG')";
+            } else if (catclass == "mg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive5.PNG')";
+            } else if (catclass == "mf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive6.PNG')";
+            } else if (catclass == "jg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive7.PNG')";
+            } else if (catclass == "jf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive8.PNG')";
+            } else if (catclass == "choisissez") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive1.PNG')";
+            }
+        }
+
+
+
+
+
+    var firstindexa=0;
+    function automaticslidea(){
+        setTimeout(automaticslidea, 3000);
+        var pics;
+        const img = document.getElementsByClassName('slideidaaa');
+        for(pics=0; pics<img.length; pics++) {
+            img[pics].style.display="none";
+        }
+        firstindexa++;
+        if(firstindexa > img.length) {
+            firstindexa = 1;
+        }
+        img[firstindexa - 1].style.display="block";
     }
+    automaticslidea();
 
 
 </script>
+    
     
 
 </html>
