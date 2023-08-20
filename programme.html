@@ -89,8 +89,7 @@
         </section>
 
         <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
-                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;
-                ">TABLEAUX ET RESULTATS</a>
+                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;">TABLEAUX ET RESULTATS</a>
 
 
         <section class="tableauindexa" id="tableauindex">
@@ -115,6 +114,33 @@
 
         </section>
 
+        <a class="txtindis" style="background-color: rgb(13, 50, 99); color: white; margin-top: 50px;
+                padding: 8px 0px; width: 250px; text-align: center; justify-content: center; font-size: 13px;
+                ">CLASSEMENT DU TOURNOI</a>
+
+
+        <section class="tableauindexa" id="tableauindex">
+
+            <div class="form-wrapper" style="width: 100%; margin-top: 30px;">
+                <a class="titleform"></a>
+                <select id="selectcatclass" style="border-radius: 4px; width: 76%; margin: 0 12%;
+                height: 35px; background-color: rgb(181, 212, 255);"  onchange="addcatclass() ">
+                    <option value="Choisissez">Selectionnez une categorie ici ...</option>
+                    <option value="pg">Poussin Garcon</option>
+                    <option value="pf">Poussin Fille</option>
+                    <option value="bg">Benjamin Garcon</option>
+                    <option value="bf">Benjamine</option>
+                    <option value="mg">Minime Garcon</option>
+                    <option value="mf">Minime Fille</option>
+                    <option value="jg">Junior Garcon</option>
+                    <option value="jf">Junior Fille</option>
+                </select>    
+            </div>
+    
+         <div id="imgcatclass" class="img1class"></div>
+
+        </section>
+
 
         <section class="contenuhomea" >
 
@@ -123,6 +149,7 @@
             </b>
 
         </section>
+
 
         <section class="partenaire" id="partenaire">
             
@@ -244,7 +271,8 @@
 
        
 <script>
-    
+
+
     var imgc = document.getElementById("imgcat")
         var cat = "choisissez"
         function addcat(){
@@ -269,6 +297,36 @@
             imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive1.PNG')";
             }
         }
+
+
+
+
+        var imgcclass = document.getElementById("imgcatclass")
+        var catclass = "choisissez"
+        function addcatclass(){
+            catclass = document.getElementById("selectcatclass").value;
+            if (catclass == "pg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive1.PNG')";
+            } else if (catclass == "pf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive2.PNG')";
+            } else if (catclass == "bg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive3.PNG')";
+            } else if (catclass == "bf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive4.PNG')";
+            } else if (catclass == "mg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive5.PNG')";
+            } else if (catclass == "mf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive6.PNG')";
+            } else if (catclass == "jg") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive7.PNG')";
+            } else if (catclass == "jf") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive8.PNG')";
+            } else if (catclass == "choisissez") {
+            imgcclass.style.backgroundImage="url('./design_files/images/tableauxbc/Diapositive1.PNG')";
+            }
+        }
+
+
 
 
 
