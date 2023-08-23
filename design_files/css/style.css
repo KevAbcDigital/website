@@ -398,7 +398,7 @@ ul {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .tableauprogramme .items1{
   width: 100%;
@@ -568,6 +568,102 @@ ul {
   object-fit: cover;
   overflow: auto;
   scroll-behavior: smooth;
+}
+
+
+
+
+
+
+.partenairea{
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 73px;
+  background-color: rgb(255, 255, 255);
+  display: block;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.partenairea .slider_container{
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.partenairea .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.partenairea .itemservice{
+  display: inline-block;
+  margin-right: 15px;
+}
+.partenairea .itemservice img{
+  width: 300px;
+  height: 275px;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: auto;
+  scroll-behavior: smooth;
+  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+}
+
+
+
+
+
+
+
+.bbox{
+  width: 100%;
+  display: block;
+  height: 300px;
+  margin-top: 3px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/classement/fondclassement.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.partenaireb{
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin-top: 33px;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.partenaireb .slider_container{
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.partenaireb .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.partenaireb .itemservice{
+  display: inline-block;
+  margin-right: 15px;
+}
+.partenaireb .itemservice img{
+  width: 310px;
+  height: 190px;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: auto;
+  scroll-behavior: smooth;
+  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
 }
 
 
