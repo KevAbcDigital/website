@@ -151,13 +151,17 @@ header {
   font-family: 'Poppins', sans-serif;
 }
 
+
+
+
+
 header {
-  background-image: linear-gradient(rgba(202, 202, 202, 0.155) , rgb(24, 36, 88)), 
+  background-image: linear-gradient(rgba(202, 202, 202, 0.155) , rgb(2, 3, 14)), 
   url(../images/fondmenu.png);
   background-size: cover;
   background-position: center;
   width: 100%;
-  box-shadow: -1px 1px 9px #f1f1f123;
+  box-shadow: -1px 1px 9px #030714a2;
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 90px;
@@ -196,8 +200,8 @@ header .menutop ul li a{
 }
 .logo img{
   cursor: pointer;
-  height: 50px;
-  width: 125px;
+  height: 40px;
+  width: 135px;
   margin-left: 0px;
   margin-top: 0px;
   float: none;
@@ -207,6 +211,14 @@ header .menutop ul li a{
 
 
 
+
+
+
+
+
+
+
+	
 .formulaire {
   background-image: linear-gradient(rgb(8, 8, 58) , rgba(20, 6, 45, 0.402)), 
   url(../images/Diapositive5.PNG);
