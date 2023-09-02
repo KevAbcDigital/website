@@ -87,20 +87,6 @@ header {
     width: 25px;
     height: 16px;
   }
-  .headerindex label{
-    cursor: pointer;
-    margin-top: 13px;
-    position: absolute;
-    left: 0;
-    margin-left: 23px;
-    margin-top: 10px;
-    display: none;
-  }
-  .headerindex label .imgmenu {
-    width: 25px;
-    height: 16px;
-    margin-top: 15px;
-  }
   .headerhome label{
     cursor: pointer;
     margin-top: 3px;
@@ -151,17 +137,13 @@ header {
   font-family: 'Poppins', sans-serif;
 }
 
-
-
-
-
 header {
-  background-image: linear-gradient(rgba(202, 202, 202, 0.155) , rgb(2, 3, 14)), 
+  background-image: linear-gradient(rgba(202, 202, 202, 0.155) , rgb(0, 0, 0)), 
   url(../images/fondmenu.png);
   background-size: cover;
   background-position: center;
   width: 100%;
-  box-shadow: -1px 1px 9px #030714a2;
+  box-shadow: -1px 1px 9px #000000c0;
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 90px;
@@ -177,7 +159,7 @@ header .menutop {
   position: absolute;
   margin-top: 90px;
   top: 0; left:0; right: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   display: none;
 }
 header .menutop ul li {
@@ -211,16 +193,8 @@ header .menutop ul li a{
 
 
 
-
-
-
-
-
-
-
-	
 .formulaire {
-  background-image: linear-gradient(rgb(8, 8, 58) , rgba(20, 6, 45, 0.402)), 
+  background-image: linear-gradient(rgb(2, 3, 14) , rgba(20, 6, 45, 0.402)), 
   url(../images/Diapositive5.PNG);
   background-size: cover;
   background-position: center;
@@ -405,12 +379,200 @@ ul {
 /*programme*/
 
 
+.topm {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 530px;
+  justify-content: center;
+  z-index: 500;
+  padding: 30px 18px;
+  margin-top: 85px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.89) , rgba(119, 119, 119, 0)), 
+  url(../images/garoua/affichetournoi.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.topm .imgpost{
+  width: 67%;
+  display: block;
+  height: 320px;
+  border-radius: 5px;
+  margin-top: 11px;
+  background-image: linear-gradient(rgba(145, 250, 124, 0.3) , rgba(119, 119, 119, 0)), 
+  url(../images/garoua/affichetournoi.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+
+
+
+.contenuhomea {
+  display: block;
+  position: relative;
+  margin-top: 10px;
+}
+.contenuhomea a {
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font-weight: 700;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.contenuhomea b {
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  transition: 0.5s ease;
+  color: rgb(52, 54, 56);
+  font-size: 11px;
+  font-weight: 800;
+  margin-top: 30px;
+  margin-left: 12px;
+  padding : 5px 25px;
+  font-family: 'Poppins', sans-serif;
+}
+.contenuhomeab {
+  display: block;
+  position: relative;
+  margin-top: 35px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/images/fonddesign.png);
+  background-size: cover;
+  background-position: center;
+}
+.contenuhomeab b{
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font-weight: 700;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.contenuhomeab a{
+  display: block;
+  text-decoration: none;
+  transition: 0.5s ease;
+  font-weight: 700;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+
+.contenuhomeab .partenairea{
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.contenuhomeab .partenairea .slider_container{
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.contenuhomeab .partenairea .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.contenuhomeab .partenairea .itemservice{
+  display: inline-block;
+  margin-right: 15px;
+}
+.contenuhomeab .partenairea .itemservice img{
+  width: 300px;
+  height: 275px;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: auto;
+  scroll-behavior: smooth;
+  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+}
+
+
+
+
+
+
+
+
+.bbox{
+  width: 100%;
+  display: block;
+  height: 300px;
+  margin-top: -40px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/classement/fondclassement.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.partenaireb{
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin-top: 33px;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.partenaireb .slider_container{
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.partenaireb .slider_container::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+.partenaireb .itemservice{
+  display: inline-block;
+  margin-right: 15px;
+}
+.partenaireb .itemservice img{
+  width: 310px;
+  height: 190px;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: auto;
+  scroll-behavior: smooth;
+  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+}
+
+
+
+
+
+
+
 .tableauprogramme {
   position: relative;
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 20px;
+  margin-top: -10px;
 }
 .tableauprogramme .items1{
   width: 100%;
@@ -428,7 +590,16 @@ ul {
   height: 300px;
   margin-bottom: 20px;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/rencontres/Diapositive2.PNG);
+  url(../images/liste/Diapositive1.PNG);
+  background-size: cover;
+  background-position: center;
+}
+.tableauprogramme .items3{
+  width: 100%;
+  display: block;
+  height: 300px;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+  url(../images/aucunmatch.png);
   background-size: cover;
   background-position: center;
 }
@@ -482,35 +653,11 @@ ul {
 
 
 
-.topm {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 600px;
-  justify-content: center;
-  z-index: 500;
-  padding: 30px 18px;
-  margin-top: 88px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/fondhome.png);
-  background-size: cover;
-  background-position: center;
-}
-.topm .imgpost{
-  width: 67%;
-  display: block;
-  height: 320px;
-  margin-top: 11px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/Diapositive1.PNG);
-  background-size: cover;
-  background-position: center;
-}
 
 
 
 .slideraaa {
-  display: block;
+  display: none;
   position: relative;
   width: 100%;
   height: auto;
@@ -524,33 +671,9 @@ ul {
 }
 
 
-.contenuhomea {
-  display: block;
-  position: relative;
-  margin-top: 10px;
-}
-.contenuhomea a {
-  display: block;
-  text-decoration: none;
-  transition: 0.5s ease;
-  font-weight: 700;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-}
-.contenuhomea b {
-  display: block;
-  text-decoration: none;
-  height: 40px;
-  transition: 0.5s ease;
-  color: rgb(52, 54, 56);
-  font-size: 11px;
-  font-weight: 800;
-  margin-top: 30px;
-  margin-left: 12px;
-  padding : 5px 25px;
-  font-family: 'Poppins', sans-serif;
-}
+
+
+
 .bachebleua {
   display: block;
   position: relative;
@@ -614,43 +737,6 @@ ul {
 
 
 
-.partenairea{
-  position: relative;
-  width: 100%;
-  height: 400px;
-  margin-top: 73px;
-  background-color: rgb(255, 255, 255);
-  display: block;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.partenairea .slider_container{
-  position: relative;
-  width: 100%;
-  padding: 12px;
-  white-space: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.partenairea .slider_container::-webkit-scrollbar{
-  -webkit-appearance: none;
-}
-.partenairea .itemservice{
-  display: inline-block;
-  margin-right: 15px;
-}
-.partenairea .itemservice img{
-  width: 300px;
-  height: 275px;
-  border-radius: 5px;
-  cursor: pointer;
-  object-fit: cover;
-  overflow: auto;
-  scroll-behavior: smooth;
-  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-}
 
 
 
@@ -658,7 +744,14 @@ ul {
 
 
 
-.bbox{
+
+
+
+
+
+
+
+.bboxc{
   width: 100%;
   display: block;
   height: 300px;
@@ -668,7 +761,7 @@ ul {
   background-size: cover;
   background-position: center;
 }
-.partenaireb{
+.partenairec{
   position: relative;
   width: 100%;
   height: 220px;
@@ -679,7 +772,7 @@ ul {
   box-sizing: border-box;
   overflow: hidden;
 }
-.partenaireb .slider_container{
+.partenairec .slider_container{
   position: relative;
   width: 100%;
   padding: 12px;
@@ -687,14 +780,14 @@ ul {
   overflow-x: auto;
   scroll-behavior: smooth;
 }
-.partenaireb .slider_container::-webkit-scrollbar{
+.partenairec .slider_container::-webkit-scrollbar{
   -webkit-appearance: none;
 }
-.partenaireb .itemservice{
+.partenairec .itemservice{
   display: inline-block;
   margin-right: 15px;
 }
-.partenaireb .itemservice img{
+.partenairec .itemservice img{
   width: 310px;
   height: 190px;
   border-radius: 5px;
@@ -704,6 +797,8 @@ ul {
   scroll-behavior: smooth;
   box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
 }
+
+
 
 
 
