@@ -139,7 +139,7 @@ header {
 
 header {
   background-image: linear-gradient(rgba(202, 202, 202, 0.155) , rgb(0, 0, 0)), 
-  url(../images/fondmenu.png);
+  url(../images/images/fondmenu.png);
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -441,7 +441,7 @@ ul {
 .contenuhomeab {
   display: block;
   position: relative;
-  margin-top: 35px;
+  margin-top: 55px;
   background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(119, 119, 119, 0)), 
   url(../images/images/fonddesign.png);
   background-size: cover;
