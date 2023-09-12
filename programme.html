@@ -43,29 +43,25 @@
             <div class="menutop">
                 <ul>
 
-                    <li class="boutonm"><a style="background-color: rgba(255, 239, 8, 0.877); box-shadow: -1px 1px 9px rgba(42, 168, 109, 0.212);
-                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                    <li class="boutonm"><a style="background-color: rgba(238, 10, 10, 0.938); box-shadow: -1px 1px 9px rgba(42, 168, 109, 0.212);
+                        color: rgb(255, 255, 255); font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                          border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
                          href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
                     </li>
 
-                    <li class="boutonm" > <img class="imgmenu" src="./design_files/images/images/affichejoueur.jpg" alt="image"> </li>
-
-                    <li class="boutonm"><a style="background-color: rgba(41, 161, 25, 0.836); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
+                    <li class="boutonm"><a style="background-color: rgba(41, 161, 25, 0.932); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
                         color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                          border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 0px; border-top-left-radius: 0px;"
                          href="programme.html" onclick="toggleMenu();">+ Tableaux et resultats</a>
                     </li>
-
-
+                    
                 </ul>
             </div>
             
         </header>
                
-        
         <section class="topm">
-            <a style="background-color: rgb(22, 117, 22); width: 65%; text-align: center;
+            <a style="background-color: rgb(62, 153, 27); width: 65%; text-align: center;
                 color: rgb(255, 255, 255); padding : 5px 0; font-family: 'Poppins', sans-serif;
                 border-radius: 3px; font-weight: 600; display: block;"
                 onclick="page();"># Inscrivez vous maintenant
@@ -247,8 +243,7 @@
         </section>
 
 
-        <section class="contenuhomeab" style=" margin-top: 100px; height: 600px; background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(119, 119, 119, 0)), 
-        url(./design_files/images/images/fonddesignb.png); background-size: cover; background-position: center;">
+        <section class="contenuhomeab" style=" margin-top: 100px;">
 
             <b class="txtcontenuhomea" style="width: 100%; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 21px; padding-top: 40px; padding-left: 0px;">
                 GAROUA SAHEL
@@ -257,18 +252,9 @@
                 Liste Des Participants
             </b>
 
-            <a id="listshow" style="align-items: center; text-align: center; background-color: rgba(255, 239, 8, 0.877);
-             box-shadow: -1px 1px 9px rgba(42, 168, 109, 0.212); cursor: pointer;
-            color: white; font-size: 16px; padding : 8px 20px; margin: 10px 80px; font-family: 'Poppins', sans-serif;"
-            onclick="affichelist();">+ Voir La Liste</a>
+            <b class="listplayer" id="listplayer" style="width: 100%; display: block; text-align: start; font-size: 10px; padding: 10px 15px;"></b>
 
         </section>
-
-        <section id="lista" class="contenuhomeab" style="display: none; margin-top: -400px; margin-left: 2%; width: 96%; height: 620px; background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(119, 119, 119, 0)), 
-        url(./design_files/images/liste/Diapositive1.PNG); background-size: cover; background-position: center;">    </section>
-        
-        <section id="listb" class="contenuhomeab" style="display: none; margin-top: 0px; margin-left: 2%; width: 96%; height: 620px; background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(119, 119, 119, 0)), 
-        url(./design_files/images/liste/Diapositive2.PNG); background-size: cover; background-position: center;">    </section>
 
 
         <section class="contenuhomea" style="margin-top: 70px;">
@@ -401,95 +387,34 @@
        
 <script>
 
-    var imgtournoi = document.getElementById("imgpost");
-    var catopen = "choisissez"
+    
+const firebaseConfig = {
+        databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+        apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+        authDomain: "nlogagolf-ed63e.firebaseapp.com",
+        projectId: "nlogagolf-ed63e",
+        storageBucket: "nlogagolf-ed63e.appspot.com",
+        messagingSenderId: "104686743459",
+        appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+        measurementId: "G-6BW97RHV89"
+    };
+    firebase.initializeApp(firebaseConfig)
 
-    function addopen(){
-        catopen = document.getElementById("selecttour").value;
-        if (catopen == "tk") {
-            window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
-        } else if (catopen == "cc") {
-            window.location.href = 'https://kevabcdigital.github.io/website/cc.html';
-        } else if (catopen == "oe") {
-            window.location.href = 'https://kevabcdigital.github.io/website/oe.html';
-        } else if (catopen == "om") {
-            window.location.href = 'https://kevabcdigital.github.io/website/om.html';
-        } else if (catopen == "choisissez") {
-            window.alert(" Selectionnez une catégorie correcte !");
-        }
-    }
+    const database = firebase.database();
 
 
-
-
-
-    var i=0;
-    var listshow = document.getElementById("listshow");
-    var lista = document.getElementById("lista");
-    var listb = document.getElementById("listb");
-    function affichelist(){
-
-        if(i==0) {
-            listshow.innerHTML="Masquez La Liste";
-            listshow.style.backgroundColor='red';
-            lista.style.display="block";
-            listb.style.display="block";
-            i = 1;
-        } else {
-            listshow.innerHTML="Voir La Liste";
-            listshow.style.backgroundColor='yellow';
-            lista.style.display="none";
-            listb.style.display="none";
-            i = 0;
-        }
-    }
+var datagarcon = firebase.database().ref("liste");
+var i = 0 ;
+datagarcon.on("value" , function(snapshot){
+    snapshot.forEach(function(element){
+        i = i + 1;
+        document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
+    });
+});
 
 
 
 
-    var imgc = document.getElementById("imgcat");
-        var cat = "choisissez"
-        function addcat(){
-            cat = document.getElementById("selectcat").value;
-            if (cat == "pg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive1.PNG')";
-            } else if (cat == "pf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive2.PNG')";
-            } else if (cat == "bg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive3.PNG')";
-            } else if (cat == "bf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive4.PNG')";
-            } else if (cat == "mg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive5.PNG')";
-            } else if (cat == "mf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive6.PNG')";
-            } else if (cat == "jg") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive7.PNG')";
-            } else if (cat == "jf") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive8.PNG')";
-            } else if (cat == "choisissez") {
-            imgc.style.backgroundImage="url('./design_files/images/tableauxb/Diapositive1.PNG')";
-            }
-        }
-
-
-
-
-    var firstindexa=0;
-    function automaticslidea(){
-        setTimeout(automaticslidea, 3000);
-        var pics;
-        const img = document.getElementsByClassName('slideidaaa');
-        for(pics=0; pics<img.length; pics++) {
-            img[pics].style.display="none";
-        }
-        firstindexa++;
-        if(firstindexa > img.length) {
-            firstindexa = 1;
-        }
-        img[firstindexa - 1].style.display="block";
-    }
-    automaticslidea();
 
 
 </script>
