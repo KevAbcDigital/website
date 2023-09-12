@@ -138,15 +138,15 @@ header {
 }
 
 header {
-  background-image: linear-gradient(rgba(202, 202, 202, 0.155) , rgb(0, 0, 0)), 
-  url(../images/images/fondmenu.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.979)), 
+  url(../images/images/affichejoueur.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
-  box-shadow: -1px 1px 9px #000000c0;
+  box-shadow: -1px 1px 9px #000000b9;
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 90px;
+  height: 100px;
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -157,9 +157,14 @@ header label {
 }
 header .menutop {
   position: absolute;
-  margin-top: 90px;
+  margin-top: 100px;
+  width: 100%;
   top: 0; left:0; right: 0;
-  background-color: rgb(0, 0, 0);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.562) , rgba(0, 0, 0, 0)), 
+  url(../images/garoua/affichetournoi2.PNG);
+  height: 380px;
+  background-size: cover;
+  background-position: center;
   display: none;
 }
 header .menutop ul li {
@@ -194,11 +199,11 @@ header .menutop ul li a{
 
 
 .formulaire {
-  background-image: linear-gradient(rgb(2, 3, 14) , rgba(20, 6, 45, 0.402)), 
-  url(../images/Diapositive5.PNG);
+  background-image: linear-gradient(rgb(0, 0, 0) , rgba(0, 0, 0, 0.747)), 
+  url(../images/garoua/affichetournoi2.PNG);
   background-size: cover;
   background-position: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .formulaire .devisbloc .datenaissance {
   position: relative;
@@ -387,20 +392,20 @@ ul {
   justify-content: center;
   z-index: 500;
   padding: 30px 18px;
-  margin-top: 85px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.89) , rgba(119, 119, 119, 0)), 
-  url(../images/garoua/affichetournoi.jpeg);
+  margin-top: 98px;
+  background-image: linear-gradient(rgb(0, 0, 0) , rgba(131, 131, 131, 0)), 
+  url(../images/garoua/affichetournoi3.jpeg);
   background-size: cover;
   background-position: center;
 }
 .topm .imgpost{
   width: 67%;
-  display: block;
+  display: none;
   height: 320px;
   border-radius: 5px;
   margin-top: 11px;
   background-image: linear-gradient(rgba(145, 250, 124, 0.3) , rgba(119, 119, 119, 0)), 
-  url(../images/garoua/affichetournoi.jpeg);
+  url(../images/garoua/affichetournoi3.jpeg);
   background-size: cover;
   background-position: center;
 }
@@ -443,10 +448,6 @@ ul {
   position: relative;
   margin-top: 25px;
   padding: 15px 0px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/images/fonddesign.png);
-  background-size: cover;
-  background-position: center;
 }
 .contenuhomeab b{
   display: block;
