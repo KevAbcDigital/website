@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>TennisKids 2023</title>
+        <title>TennisCamer</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
@@ -29,35 +29,33 @@
 
     <body>
 
+        
         <header>
 
             <div class="logo">
-                <img  href="index.html" src="./design_files/images/logotenniskidsindex.png" alt="image">
+                <img  href="index.html" src="./design_files/images/images/logokevdesign.png" alt="image">
             </div>
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">
-                <img class="imgmenu" src="./design_files/images/menubtnblanc.png" alt="image">
+                <img class="imgmenu" src="./design_files/images/images/menubtnblanc.png" alt="image">
             </label>
 
             <div class="menutop">
                 <ul>
 
-                    <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                    <li class="boutonm"><a style="background-color: rgba(238, 10, 10, 0.938); box-shadow: -1px 1px 9px rgba(42, 168, 109, 0.212);
+                        color: rgb(255, 255, 255); font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
                          border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                         href="programme.html" onclick="toggleMenu();">+ Programmes et resultats</a>
-                    </li>
-
-                    <li class="boutonm" > <img class="imgmenu" src="./design_files/images/fondmenu.png" alt="image"> </li>
-
-                    <li class="boutonm"><a style="background-color: rgba(10, 32, 75, 0.836); box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                         border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 0px; border-top-left-radius: 0px;"
                          href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
                     </li>
 
-
+                    <li class="boutonm"><a style="background-color: rgba(41, 161, 25, 0.932); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
+                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                         border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 0px; border-top-left-radius: 0px;"
+                         href="programme.html" onclick="toggleMenu();">+ Tableaux et resultats</a>
+                    </li>
+                    
                 </ul>
             </div>
             
@@ -72,97 +70,27 @@
 
                 <form name="formweb" action="">
 
-                    <h1>Inscrivez vous</h1>
-                    <h3 class="textcontenu" style="margin-bottom: 5px;">Remplissez ces champs exactement comme indiqué ci après .</h3>
-
-                    <h3 class="textcontenu">NB: DATE LIMITE DES INSCRIPTIONS : Dimanche 20 Aout 2023 à 15H . Une fois ce délai dépassé, ce formulaire 
-                        sera indisponible pour tout joueur souhaitant participer à la deuxieme semaine de tournoi. </h3>
+                    <h1 style="margin-top: 50px; font-weight: 600; color: rgb(80, 202, 69);">Inscrivez vous</h1>
+                    <h3 class="textcontenu">NB: Date limite des inscriptions : Mardi 21 Novembre 2023 à 15H . </h3>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Noms et prénoms du joueur</a>
-                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Comme sur l'acte de naissance ..." class="form-controla">
-                    </div>
-
-                    <a class="titleform" style="color: white;">Date de naissance</a>
-                    <div class="datenaissance">
-
-
-                        <div class="form-wrapper">
-                            <a class="titleform">Jour</a>
-                            <input id="jouruser" style="width: 50px; height: 30px; padding-left: 5px;" type="email" placeholder="00" class="form-controla">
-                        </div>
-
-                        <div class="form-wrapper" style="width: 30%; margin-left: 7px;">
-                            <a class="titleform">Mois </a>
-                            <select id="selectmois" style="border-radius: 4px; margin-bottom: 20px; width: 130px;
-                            height: 35px;" onchange="addmois() ">
-                                <option value="Choisissez">Mois ...</option>
-                                <option value="Janvier">Janvier</option>
-                                <option value="Fevrier">Fevrier</option>
-                                <option value="Mars">Mars</option>
-                                <option value="Avril">Avril</option>
-                                <option value="Mai">Mai</option>
-                                <option value="Juin">Juin</option>
-                                <option value="Juillet">Juillet</option>
-                                <option value="Aout">Aout</option>
-                                <option value="Septembre">Septembre</option>
-                                <option value="Octobre">Octobre</option>
-                                <option value="Novembre">Novembre</option>
-                                <option value="Decembre">Decembre</option>
-                            </select>    
-                        </div>
-
-                        <div class="form-wrapper" style="width: 30%; margin-left: 37px;">
-                            <a class="titleform">Année </a>
-                            <select id="selectannee" style="border-radius: 4px; margin-bottom: 20px; width: 100px;
-                            height: 35px;" onchange="addannee() ">
-                                <option value="Choisissez">Année ...</option>
-                                <option value="2005">2005</option>
-                                <option value="2006">2006</option>
-                                <option value="2007">2007</option>
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                            </select>    
-                        </div>
-                        
+                        <a class="titleform">Noms et prénoms du joueur *</a>
+                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Entrez votre nom complet ..." class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Sexe </a>
-                        <select id="selectsexe" style="border-radius: 4px; margin-bottom: 20px; width: 100%;
-                        height: 35px;" onchange="addsexe() ">
-                            <option value="Choisissez">Choisissez ...</option>
-                            <option value="garcon">Garcon</option>
-                            <option value="fille">Fille</option>
-                        </select>    
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a class="titleform">Telephone ( Ex : 698328283 )</a>
-                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Contact du joueur ou du responsable ..." class="form-controla">
+                        <a class="titleform">Telephone * ( Ex : 698328283 )</a>
+                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Entrez votre numéro de téléphone ..." class="form-controla">
                         <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Club d'appartenance</a>
-                        <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
+                        <a class="titleform">Club d'appartenance *</a>
+                        <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC ASECNA " class="form-controla">
                     </div>
 
-                    <h2 style="color: rgb(255, 208, 0); font-size: 16px; margin-bottom: -32px;">NB : TRES URGENT !!!.</h2>
-                    <h2>Afin d'etre intégré dans le tirage au sort, tout joueur déjà inscrit en ligne devra
-                        se presenter au bureau du juge arbitre (club france) le DIMANCHE 20 AOUT 2023 avant 16h muni d'une piece 
-                        d'identité copie ou originale de (passport ou CNI ou acte de naissance et bulletin scolaire 2022/2023) .</h2>
-
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
-                        <button id="valider" type="button" onclick="send()">
+                        <button id="valider" style="border-radius: 6px; background-color: rgb(255, 230, 10); color: rgb(16, 4, 36);" type="button" onclick="send()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
                         </button>
@@ -196,7 +124,7 @@
                 
                 </div>
             </div>
-            <p class="copyrigth">Copyright © Tous droits réservés - TennisKids</p>
+            <p class="copyrigth">Copyright © Tous droits réservés - TennisCamer</p>
 
         </footer>
   
@@ -241,26 +169,10 @@
    
     const database = firebase.database();
 
-    var moistxt = "Choisissez";
-    var anneetxt = "Choisissez";
-    var sexetxt = "Choisissez";
     var load = document.getElementById("lottieload");
  
     function containsOnlyNumbers(str) {
-        return /^\d+$/.test(str);
-    }
-
-    function addmois(){
-        var getmm = document.getElementById("selectmois").value;
-        moistxt = getmm;
-    }
-    function addannee(){
-        var getann = document.getElementById("selectannee").value;
-        anneetxt = getann;
-    }
-    function addsexe(){
-        var getsex = document.getElementById("selectsexe").value;
-        sexetxt = getsex;
+        return /^\d+$/.test(str); 
     }
 
     function send(){
@@ -268,41 +180,38 @@
         var nom = $('#nomuser').val().toLowerCase().trim();
         var tel = $('#teluser').val();
         var club = $('#clubuser').val();
-        var jouruser = $('#jouruser').val();
         var i = 0;
-        var dataRefa = firebase.database().ref("players");
+        var n = 0;
+        var dataRef = firebase.database().ref("players");
 
-        if(nom != "" & jouruser != "" & tel != "" & club != "" & moistxt != "Choisissez" & anneetxt != "Choisissez"
-         & tel.length == 9 & jouruser.length == 2 & ( containsOnlyNumbers(tel) == true ) 
-         & ( containsOnlyNumbers(jouruser) == true ) & sexetxt != "Choisissez") {
+        if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) ) {
+
+            var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel ;
 
             load.style.display = "block";
-            var datefinale = (" ( "+jouruser+"- "+moistxt+" -"+anneetxt+" ) "+club.toLowerCase()+" Tel : "+tel.toLowerCase()) ; 
-
-            dataRefa.on("value" , function(snapshot){
+            
+            dataRef.on("value" , function(snapshot){
                 snapshot.forEach(function(element){
                     if(element.key == nom.toLowerCase().trim() ) {
                         i = 1;
                         load.style.display = "none";
-                        window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit . En cas de soucis contactez le juge arbitre / FERDINAND MELATAGUIA : 696 03 90 82");
-                        window.location.href = 'https://kevabcdigital.github.io/website/home.html #tableaui';
+                        window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
+                        window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
                     }
                 });
                 if ( i == 0 ) {
-                    var dataRef = firebase.database().ref(sexetxt).child(anneetxt).child(nom.toLowerCase().trim() + datefinale);
-                    dataRef.set({
-                                'info' : (nom.toLowerCase().trim() + datefinale)
+                    var dataRefb = firebase.database().ref("liste").child(play);
+                    dataRefb.set({
+                                'info' : (play)
                         }).then(()=>{
 
-                            (dataRefa.child(nom.toLowerCase().trim())).set({
-                                'nom': nom.toLowerCase().trim() ,
-                                'tel' : tel.toLowerCase() ,
-                                'sexe' : sexetxt.toLowerCase()
+                            (dataRef.child(nom.toLowerCase().trim())).set({
+                                'info' : (play)
 
                             }).then(()=>{
                                 load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit . Veuillez vous rassurer deffectuer votre SIGN IN auprès du juge arbitre le dimanche 13 Aout avant 16h.");
-                                window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
                             }).catch((error)=>{
                                 load.style.display = 'none';
                                 window.alert("erreur survenue : "+ error);
@@ -315,20 +224,35 @@
                 }
             });
   
+           
+/*
+            if ( n == 0 ) {
+                    dataRef.child( " 0 ) " + play).set({
+                                'info' : (nom.toLowerCase().trim())
+                        }).then(()=>{
+                                load.style.display = 'none';
+                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                        });
+                } else {
+                    dataRef.child( n.toString() + " ) " + play).set({
+                        
+                                'info' : (nom.toLowerCase().trim())
+                        }).then(()=>{
+                                load.style.display = 'none';
+                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                        });
+                }
+  */              
         } else if ( nom == "" ) {
           window.alert("veuillez entrer le nom complet du joueur...");
-        }  else if ( jouruser == "" ) {
-          window.alert("veuillez renseigner le jour de naissance de " + nom);
-        } else if ( jouruser.length != 2 ) {
-          window.alert("Veuillez entrer un jour de naissance à 02 chiffres exemple : 01/ ");
-        }  else if ( containsOnlyNumbers(jouruser) == false ) {
-          window.alert("Veuillez entrer un jour de naissance en chiffre ...");
-        } else if ( moistxt == "Choisissez" ) {
-          window.alert("veuillez renseigner le mois de naissance de " + nom);
-        } else if ( sexetxt == "Choisissez" ) {
-          window.alert("veuillez renseigner le sexe de " + nom);
-        } else if ( anneetxt == "Choisissez" ) {
-          window.alert("veuillez renseigner l'année de naissance de " + nom);
         } else if ( tel == "" ) {
           window.alert("Veuillez entrer numero de téléphone du responsable...");
         } else if ( containsOnlyNumbers(tel) == false ) {
@@ -342,7 +266,7 @@
     }
 
     function invalid() {
-        window.alert("Desolé ce formulaire est indisponible pour le moment. Il sera de nouveau opérationel à partir du mercredi 16 Aout 2023 dès 10h pour le compte de la deuxieme semaine de tournoi.");
+        window.alert("Desolé ce formulaire est indisponible pour le moment.");
         window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
     }
 
