@@ -107,6 +107,23 @@
             </div>
         </section>
 
+        <section class="contenulist">
+
+            <b class="txtcontenuhomea" style="width: 100%; display: block; text-align: center; 
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 21px; 
+            padding-top: 10px; padding-left: 0px; color: beige;">
+                GAROUA SAHEL
+            </b>
+            <b class="txtcontenuhomea" style="width: 100%; display: block; text-align: center; 
+            font-size: 11px; padding-top: 0px; padding-left: 0px; color: rgb(185, 236, 185);" >
+                Liste Des Participants
+            </b>
+
+            <b class="listplayer" id="listplayer" style="width: 100%; color: white; display: block; text-align: center; 
+            font-size: 10px; padding: 30px 15px;"></b>
+
+        </section>
+
         <footer class="footer" id="footer">
             <div class="container">
                 <div class="row">
@@ -269,6 +286,18 @@
         window.alert("Desolé ce formulaire est indisponible pour le moment.");
         window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
     }
+
+
+    
+
+var datagarcon = firebase.database().ref("liste");
+var i = 0 ;
+datagarcon.on("value" , function(snapshot){
+    snapshot.forEach(function(element){
+        i = i + 1;
+        document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
+    });
+});
 
 
 </script>
