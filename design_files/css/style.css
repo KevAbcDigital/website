@@ -47,22 +47,6 @@ body {
 header {
   display: none;
 }
-.formulaire {
-  background-image: linear-gradient(rgba(110, 107, 107, 0.116) , rgba(119, 119, 119, 0.26)), 
-  url(../images/fondloginn.png);
-  background-size: cover;
-  background-position: center;
-  margin-top: 60px;
-}
-.devisbloc{
-  display: none; 
-}
-.formulaire .devisbloc .datenaissance {
-  display: none;
-}
-.formulaire .devisbloc .lottiescript {
-  display: none;
-}
 
 
 
@@ -141,7 +125,7 @@ header {
   background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.979)), 
   url(../images/images/affichejoueur.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   width: 100%;
   box-shadow: -1px 1px 9px #000000b9;
   position: fixed;
@@ -199,8 +183,8 @@ header .menutop ul li a{
 
 
 .formulaire {
-  background-image: linear-gradient(rgb(0, 0, 0) , rgba(0, 0, 0, 0.747)), 
-  url(../images/garoua/affichetournoi2.PNG);
+ background-image: linear-gradient(rgb(0, 0, 0) , rgba(0, 0, 0, 0.747)), 
+  url(../images/garoua/fondnoir.png); 
   background-size: cover;
   background-position: center;
   margin-top: 40px;
@@ -299,6 +283,32 @@ header .menutop ul li a{
   }
 
 
+
+
+
+
+
+
+
+  
+
+
+.contenulist {
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  margin-top: 0px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+.contenulist .devisbloc{
+  padding: 2px;
+  background: transparent;
+  max-width: 100%;
+  margin: auto;
+  display: block; 
+}
 
 
 
@@ -562,97 +572,6 @@ ul {
   scroll-behavior: smooth;
   box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
 }
-
-
-
-
-
-
-
-.tableauprogramme {
-  position: relative;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-top: -10px;
-}
-.tableauprogramme .items1{
-  width: 100%;
-  display: block;
-  height: 300px;
-  margin-top: 30px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/rencontres/Diapositive1.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauprogramme .items2{
-  width: 100%;
-  display: none;
-  height: 300px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/liste/Diapositive1.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauprogramme .items3{
-  width: 100%;
-  display: block;
-  height: 300px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/aucunmatch.png);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindexa {
-  position: relative;
-  width: 100%;
-  margin-top: 50px;
-  height: auto;
-  display: block;
-}
-.tableauindexa .img1{
-  width: 100%;
-  display: block;
-  height: 270px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableauxb/Diapositive1.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.tableauindexa .img1class{
-  width: 100%;
-  display: block;
-  height: 270px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/tableauxb/Diapositive1.PNG);
-  background-size: cover;
-  background-position: center;
-}
-.txtindis {
-  display: block;
-  text-decoration: none;
-  transition: 0.5s ease;
-  font-weight: 700;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-}
-.txtindist {
-  display: block;
-  text-decoration: none;
-  transition: 0.5s ease;
-  font-weight: 700;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-}
-
 
 
 
