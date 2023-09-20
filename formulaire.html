@@ -27,13 +27,17 @@
 
     </head>
 
-    <body>
+    <body style="background-color: black;">
 
         
-        <header>
+        <header style="background-image: linear-gradient(rgba(0, 0, 0, 0) , rgb(0, 0, 0)), 
+        url(./design_files/images/images/affichejoueur.jpg); background-size: cover; background-position: top; width: 100%;
+        box-shadow: -1px 1px 9px #0000005b; position: fixed; top: 0; left: 0; right: 0; z-index: 1050; align-items: center;
+        justify-content: center; display: flex;" >
+
 
             <div class="logo">
-                <img  href="index.html" src="./design_files/images/images/logokevdesign.png" alt="image">
+                <img  onclick="openhome();" src="./design_files/images/images/logokevdesign.png" alt="image">
             </div>
 
             <input type="checkbox" id="menu-bar">
@@ -44,16 +48,32 @@
             <div class="menutop">
                 <ul>
 
-                    <li class="boutonm"><a style="background-color: rgba(238, 10, 10, 0.938); box-shadow: -1px 1px 9px rgba(42, 168, 109, 0.212);
-                        color: rgb(255, 255, 255); font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                         border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;"
-                         href="formulaire.html" onclick="toggleMenu();">+ Inscrivez vous maintenant</a>
+                    <li class="boutonm" > <img style="width: 100%; height: 250px;" src="./design_files/images/images/affichephoneapp.jpeg" alt="image"> </li>
+                    
+                    <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 7px; font-weight: 300; text-align: center;
+                        width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
 
-                    <li class="boutonm"><a style="background-color: rgba(41, 161, 25, 0.932); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
-                        color: white; font-size: 16px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                         border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 0px; border-top-left-radius: 0px;"
-                         href="programme.html" onclick="toggleMenu();">+ Tableaux et resultats</a>
+                    <li class="boutonm" > <img style="width: 94%; margin-left: 3%; ; height: 2px;" src="./design_files/images/images/afficheGsahel.jpeg" alt="image"> </li>
+
+                    <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; font-weight: 700; padding : 8px 20px; 
+                    font-family: 'Poppins', sans-serif; cursor: pointer; "
+                        onclick="j30douala();">+ J30 DOUALA</a>
+                    </li>
+
+                   <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; font-weight: 700; padding : 8px 20px; 
+                    font-family: 'Poppins', sans-serif; cursor: pointer; "
+                        onclick="opengaroua();">+ Garoua Sahel</a>
+                    </li>
+
+                    <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; margin-top: -10px; font-weight: 700; padding : 8px 20px; 
+                        font-family: 'Poppins', sans-serif; cursor: pointer;"
+                            onclick="opentk();">+ Tennis Kids</a>
+                    </li>
+
+                    <li class="boutonm"><a style="cursor: pointer; background-color: rgba(41, 161, 25, 0.932); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
+                        color: white; font-size: 16px; margin: 7px 12px; padding : 8px 20px; font-family: 'Poppins', sans-serif; border-radius: 8px;"
+                        onclick="openhome();">+ Espace Licencié</a>
                     </li>
                     
                 </ul>
@@ -124,7 +144,7 @@
 
         </section>
 
-        <footer class="footer" id="footer">
+        <footer class="footer" id="footer" style="background-color: rgb(1, 66, 18);" >
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
@@ -156,7 +176,7 @@
             popupMessage: 'Comment pouvons nous vous aider?',
             showPopup: true,
             showOnIE: false,
-            headerTitle: 'Tennis Kids service!',
+            headerTitle: 'Tennis Camer service!',
             headerColor: 'blue',
             backgroundColor: 'green',
             position: 'right' ,
@@ -170,7 +190,27 @@
 
 
 <script>
+
+        function savoirplus() {
+            window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
+        }
+        function j30douala() {
+            window.alert('page momentenément indisponible')
+            // window.location.href = 'https://kevabcdigital.github.io/website/j30douala.html';
+        }
+        function opengaroua() {
+            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+        }
+        function opentk() {
+            window.alert('page momentenément indisponible')
+            // window.location.href = 'https://kevabcdigital.github.io/website/tenniskids.html';
+        }
+        function openhome() {
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+    
         
+
     const firebaseConfig = {
         databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
         apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
