@@ -375,7 +375,7 @@ header {
 
 
   .formulaire {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.842) , rgb(0, 0, 0)), 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.671) , rgb(0, 0, 0)), 
     url(../images/garoua/affichetournoi2.PNG);
     background-size: cover;
     background-position: center;
@@ -487,7 +487,7 @@ header {
   }
   .slideraaa img {
     width: 100%;
-    height: 610px;
+    height: 590px;
   }
 
 
@@ -509,7 +509,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 89px;
+    margin-top: 92px;
     padding: 5px 15px;
     font-weight: 700;
     font-size: 22px;
