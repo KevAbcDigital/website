@@ -487,7 +487,7 @@ header {
   }
   .slideraaa img {
     width: 100%;
-    height: 540px;
+    height: 590px;
   }
 
 
@@ -509,7 +509,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 102px;
+    margin-top: 92px;
     padding: 5px 15px;
     font-weight: 700;
     font-size: 22px;
@@ -693,6 +693,24 @@ header {
 
 
 
+
+  
+.topm {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+  z-index: 500;
+  padding: 30px 18px;
+}
+.topm .imgpost{
+  width: 77%;
+  display: none;
+  height: 320px;
+  border-radius: 5px;
+  margin-top: 11px;
+}
 
 
 
