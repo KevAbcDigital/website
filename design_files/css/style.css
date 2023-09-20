@@ -13,40 +13,84 @@ p{
   color: #fff;
 }
 body {
-  background-color: white;
-  color: #333;
+  background-image: linear-gradient(rgba(71, 111, 197, 0.151) , rgba(44, 144, 151, 0.418)), 
+  url(../images/images/affichephoneapp.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  color: white;
   font-size: 13px;
   margin: 0; 
   line-height: 1.5;
   font-family: 'Poppins', sans-serif;
 }
 
+/* sms indisponible */
+
 .indisponibletxt {
   display: block;
-  margin-top: 100px;
+  align-items: center;
+  text-align: center;
 }
 .indisponibletxt .txtindis {
   font-size: 20px;
   font-weight: 600;
+  color: #fff;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }
-
-
-
-/*formulaire*/
-/*formulaire*/
-/*formulaire*/
-/*formulaire*/
-/*formulaire*/
-/*formulaire*/
-/*formulaire*/
-
-
 header {
   display: none;
 }
+.headerbtn {
+  display: none;
+}
+.topm {
+  display: none;
+}
+.formulaire {
+  display: none;
+}
+.bbox {
+  display: none;
+}
+.txtcontenuhomea {
+  display: none;
+}
+.partenaire {
+  display: none;
+}
+.slideraaa {
+  display: none;
+}
+.entete {
+  display: none;
+}
+.footer {
+  display: none;
+}
+.formulairelicence {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,7 +99,15 @@ header {
   .indisponibletxt {
     display: none;
   }
-  
+  body {
+    background-image: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 13px;
+    margin: 0; 
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+  }
   #menu-bar{
     display: none;
   }
@@ -63,6 +115,7 @@ header {
     cursor: pointer;
     margin-top: 13px;
     position: absolute;
+    z-index: 1100;
     left: 0;
     margin-left: 23px;
     display: none;
@@ -71,215 +124,248 @@ header {
     width: 25px;
     height: 16px;
   }
-  .headerhome label{
-    cursor: pointer;
-    margin-top: 3px;
-    position: absolute;
-    left: 0;
-    margin-left: 23px;
-    margin-top: 15px;
-    display: none;
-  }
-  .headerhome label .imgmenu {
-    width: 25px;
-    height: 16px;
-  }
-
-  
   #menu-bar:checked ~ .menutop {
     display: initial;
   }
 
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
-  /* formulaire */
+  
+
+  
+
+  header {
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    box-shadow: -1px 1px 9px #00000000;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 90px;
+    z-index: 1300;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  header label {
+    display: initial;
+  }
+  header .menutop {
+    position: absolute;
+    margin-top: 0px;
+    z-index: 900;
+    top: 0; left:0; right: 0;
+    background-color: rgb(255, 255, 255);
+    display: none;
+  }
+  header .menutop ul li {
+    width: 100%;
+  }
+  header .menutop ul li a{
+    display: block;
+    text-decoration: none;
+    transition: 0.5s ease;
+    background-color: transparent;
+    margin-top: 6px;
+    color: rgb(29, 41, 95);
+    font-weight: 600;
+    font-size: 14px;
+    padding : 5px 15px;
+    font-style: italic;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 19px;
+  }
+  .logo img{
+    cursor: pointer;
+    height: 40px;
+    width: 135px;
+    margin-left: 0px;
+    margin-top: 0px;
+    float: none;
+    z-index: 1200;
+  }
 
 
-  body {
-  background-color: #fff;
-  color: #333;
-  font-size: 13px;
-  margin: 0; 
-  line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
-}
 
-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.979)), 
-  url(../images/images/affichejoueur.jpg);
-  background-size: cover;
-  background-position: top;
-  width: 100%;
-  box-shadow: -1px 1px 9px #000000b9;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 100px;
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-header label {
-  display: initial;
-}
-header .menutop {
-  position: absolute;
-  margin-top: 100px;
-  width: 100%;
-  top: 0; left:0; right: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.562) , rgba(0, 0, 0, 0)), 
-  url(../images/garoua/affichetournoi2.PNG);
-  height: 380px;
-  background-size: cover;
-  background-position: center;
-  display: none;
-}
-header .menutop ul li {
-  width: 90%;
-  padding-left: 10px;
-}
-header .menutop ul li a{
-  display: block;
-  text-decoration: none;
-  transition: 0.5s ease;
-  background-color: transparent;
-  margin-top: 6px;
-  color: rgb(29, 41, 95);
-  font-weight: 600;
-  font-size: 14px;
-  padding : 5px 15px;
-  font-style: italic;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 19px;
-}
-.logo img{
-  cursor: pointer;
-  height: 40px;
-  width: 135px;
-  margin-left: 0px;
-  margin-top: 0px;
-  float: none;
-}
+  .headerbtn {
+    background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(14, 13, 13, 0.61)), 
+    url(../images/images/fondmenua.jpeg);
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    box-shadow: -1px 1px 9px #0000005b;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 80px;
+    z-index: 1050;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 
 
 
 
+  
 
-.formulaire {
- background-image: linear-gradient(rgb(0, 0, 0) , rgba(0, 0, 0, 0.747)), 
-  url(../images/garoua/fondnoir.png); 
-  background-size: cover;
-  background-position: center;
-  margin-top: 40px;
-}
-.formulaire .devisbloc .datenaissance {
-  position: relative;
-  display: flex;
-  width: 100%;
-}
-.formulaire .devisbloc .lottiescript {
-  position: relative;
-  display: none;
-  width: 100%;
-  padding-left: 30%;
-  padding-right: 30%;
-  margin-top: -110px;
-}
-.devisbloc{
-  padding: 2px;
-  background: transparent;
-  max-width: 100%;
-  margin: auto;
-  display: block; 
-}
-.devisbloc form {
-  width: 100%;
-  padding-top: 36px;
-  padding-left: 25px;
-  padding-right: 25px; 
-}
-.devisbloc h1 {
-  text-transform: uppercase;
-  font-size: 35px;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.devisbloc h3 {
-  font-size: 13px;
-  font-weight: 600;
-  padding: 0 10px;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  color: white;
-  margin-bottom: 28px; 
-}
-.devisbloc h2 {
-  font-size: 13px;
-  font-weight: 600;
-  color: white;
-  padding: 0 10%;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  margin-top: 50px; 
-}
-.devisbloc a {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgb(255, 255, 255);
-  padding-left: 12px;
-  font-family: 'Poppins', sans-serif;
-}
-.devisbloc .form-wrapper .titleform {
-  font-size: 12px;
-  font-weight: 600;
-  color: rgb(245, 245, 245);
-  padding-left: 12px;
-  font-family: 'Poppins', sans-serif;
-}
-.form-controla {
-  border: 1px solid #aaaaaa;
-  display: block;
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  margin-bottom: 25px;
-  margin-top: 5px;
-}
-  .form-controla ::-webkit-input-placeholder {
+
+
+
+  
+  .formulairelicence {
+    background-image: linear-gradient(rgba(2, 3, 14, 0) , rgba(20, 6, 45, 0)), 
+    url(../images/images/fondformulaire.png);
+    background-size: cover;
+    background-position: center;
+    margin-top: 0px;
+    display: block;
+  }
+  .formulairelicence .pictureblock {
+    display: flex;
+    margin-top: 90px;
+  }
+  .formulairelicence .pictureblock .imgbloc {
+    display: flex;
+    width: 30%;
+    margin-left: 3%;
+  }
+  .formulairelicence .partenaire{
+    position: relative;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 30px;
+    background-color: rgb(7, 7, 47);
+    display: block;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .formulairelicence .partenaire .box {
+    display: block;
+    margin-top: 15px;
+    position: relative;
+  }
+  .formulairelicence .partenaire .box b {
+    display: block;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+  }
+  .formulairelicence .partenaire .slider_container{
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    margin-top: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .formulairelicence .partenaire .slider_container::-webkit-scrollbar{
+    -webkit-appearance: none;
+  }
+  .formulairelicence .partenaire .itemservice{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .formulairelicence .partenaire .itemservice img{
+    width: 200px;
+    height: 200px;
+    border-radius: 7px;
+    margin: 7px;
+    cursor: pointer;
+    object-fit: cover;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  .formulairelicence .devisbloc .lottiescript {
+    position: relative;
+    display: none;
+    width: 100%;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top: -110px;
+  }
+  .formulairelicence .devisbloc{
+    padding: 2px;
+    background: transparent;
+    max-width: 100%;
+    margin: auto;
+    display: block; 
+  }
+  .formulairelicence .devisbloc form {
+    width: 100%;
+    padding-top: 36px;
+    padding-left: 25px;
+    padding-right: 25px; 
+  }
+  .formulairelicence .devisbloc h1 {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .formulairelicence .devisbloc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+    margin-bottom: 28px; 
+  }
+  .formulairelicence .devisbloc h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    padding: 0 10%;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 50px; 
+  }
+  .formulairelicence .devisbloc a {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding-left: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .formulairelicence .devisbloc .form-wrapper .titleform {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding-left: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .formulairelicence .form-controla {
+    border: 1px solid #aaaaaa;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+  }
+  .formulairelicence .form-controla ::-webkit-input-placeholder {
     font-size: 13px;
     color: #333;
-    font-family: 'Poppins', sans-serif; }
-  .form-controla ::-moz-placeholder {
+    font-family: 'Poppins', sans-serif; 
+  }
+  .formulairelicence .form-controla ::-moz-placeholder {
     font-size: 13px;
     color: #333;
-    font-family: 'Poppins', sans-serif; }
-  .form-controla:-ms-input-placeholder {
+    font-family: 'Poppins', sans-serif; 
+  }
+  .formulairelicence .form-controla:-ms-input-placeholder {
     font-size: 13px;
     color: #333;
-    font-family: 'Poppins', sans-serif; }
-  .form-controla:-moz-placeholder {
+    font-family: 'Poppins', sans-serif; 
+  }
+  .formulairelicence .form-controla:-moz-placeholder {
     font-size: 13px;
     color: #333;
-    font-family: 'Poppins', sans-serif;}
+    font-family: 'Poppins', sans-serif;
   }
 
 
@@ -288,445 +374,392 @@ header .menutop ul li a{
 
 
 
+  .formulaire {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.842) , rgb(0, 0, 0)), 
+    url(../images/garoua/affichetournoi2.PNG);
+    background-size: cover;
+    background-position: center;
+    margin-top: 60px;
+    display: block;
+  }
+  .formulaire .devisbloc .lottiescript {
+    position: relative;
+    display: none;
+    width: 100%;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top: -110px;
+  }
+  .devisbloc{
+    padding: 2px;
+    background: transparent;
+    max-width: 100%;
+    margin: auto;
+    display: block; 
+  }
+  .devisbloc form {
+    width: 100%;
+    padding-top: 36px;
+    padding-left: 25px;
+    padding-right: 25px; 
+  }
+  .devisbloc h1 {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .devisbloc h3 {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+    margin-bottom: 28px; 
+  }
+  .devisbloc h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    padding: 0 10%;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 50px; 
+  }
+  .devisbloc a {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    padding-left: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .devisbloc .form-wrapper .titleform {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(245, 245, 245);
+    padding-left: 12px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .form-controla {
+    border: 1px solid #aaaaaa;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+  }
+  .form-controla ::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; 
+  }
+  .form-controla ::-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; 
+  }
+  .form-controla:-ms-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif; 
+  }
+  .form-controla:-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+
 
 
   
 
+  .slideraaa {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    z-index: 1100;
+  }
+  .slideraaa img {
+    width: 100%;
+    height: 520px;
+  }
 
-.contenulist {
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-  margin-top: 0px;
-  display: block;
-  align-items: center;
-  justify-content: center;
+
+
+  .entete {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .entete p{
+    position: relative;
+    display: block;
+    text-decoration: none;
+    transition: 0.5s ease;
+    color: rgb(70, 54, 54);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 152px;
+    padding: 5px 15px;
+    font-weight: 700;
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .entete .enteteligne {
+    position: relative;
+    display: block;
+    width: 94%;
+    margin-left: 3%;
+    border-radius: 8px;
+    height: 250px;
+    background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/images/affichemformy.jpeg);
+    background-size: cover;
+    background-position: center;
+  }
+  .entete .enteteimg1 {
+    position: relative;
+    display: block;
+    width: 94%;
+    margin-left: 3%;
+    border-radius: 8px;
+    height: 250px;
+    background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/maquette/aa.jpeg);
+    background-size: cover;
+    background-position: center;
+  }
+  .entete .enteteimg2 {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 250px;
+    background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/maquette/Image2.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  
+  .bbox{
+    width: 100%;
+    display: block;
+    margin-top: 160px;
+    background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/classement/fondclassement.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px ;
+  }
+  .contenuhomea {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+  }
+  .contenuhomea a {
+    display: block;
+    text-decoration: none;
+    transition: 0.5s ease;
+    font-weight: 700;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .contenuhomea b {
+    display: block;
+    text-decoration: none;
+    height: 40px;
+    transition: 0.5s ease;
+    color: rgb(52, 54, 56);
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: 12px;
+    padding : 5px 25px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .partenaireb{
+    position: relative;
+    width: 100%;
+    height: 220px;
+    margin-top: 33px;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .partenaireb .slider_container{
+    position: relative;
+    width: 100%;
+    padding: 12px;
+    white-space: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .partenaireb .slider_container::-webkit-scrollbar{
+    -webkit-appearance: none;
+  }
+  .partenaireb .itemservice{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .partenaireb .itemservice img{
+    width: 310px;
+    height: 190px;
+    border-radius: 5px;
+    cursor: pointer;
+    object-fit: cover;
+    overflow: auto;
+    scroll-behavior: smooth;
+    box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+  }
+
+
+
+  .partenaire{
+    position: relative;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 30px;
+    background-color: rgb(7, 7, 47);
+    display: block;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .partenaire .box {
+    display: block;
+    margin-top: 15px;
+    position: relative;
+  }
+  .partenaire .box b {
+    display: block;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+  }
+  .partenaire .slider_container{
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    margin-top: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .partenaire .slider_container::-webkit-scrollbar{
+    -webkit-appearance: none;
+  }
+  .partenaire .itemservice{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .partenaire .itemservice img{
+    width: 240px;
+    height: 360px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    cursor: pointer;
+    object-fit: cover;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+  .partenaire .itemserviceb{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .partenaire .itemserviceb img{
+    width: 310px;
+    border-radius: 5px;
+    cursor: pointer;
+    object-fit: cover;
+    overflow: auto;
+    scroll-behavior: smooth;
+    box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+  }
+
+
+
+
+
+
+/*  Footer */
+
+
+  .footer{
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    background-color: rgb(7, 7, 47);
+  }
+  .footer-col {
+    width: 100%;
+    margin-bottom: 3px;
+    padding: 0 15px;
+  }
+  .footer-col h4{
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    font-weight: 500;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }
+  .footer-col .social-links a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+  }
+  .footer-col .social-links a:hover{
+    background-color: #fff;
+    color: #24262b;
+  }
+  .container {
+    max-width: 1170px;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  ul {
+    list-style: none;
+  }
+  .footer p {
+    margin-top: 0px;
+    text-align: center;
+  }
+  .whatsappid {
+    margin-right: 30px;
+    margin-bottom: 15px;
+    box-shadow: #24262b;
+    z-index: 1000;
+  }
+
 }
-.contenulist .devisbloc{
-  padding: 2px;
-  background: transparent;
-  max-width: 100%;
-  margin: auto;
-  display: block; 
-}
-
-
-
-
-
-.footer{
-  padding-top: 15px;
-  padding-bottom: 10px;
-  box-sizing: border-box;
-  background-color: #24262b;
-}
-.footer-col {
-  width: 100%;
-  margin-bottom: 3px;
-  padding: 0 15px;
-}
-.footer-col h4{
-  font-size: 17px;
-  color: #fff;
-  margin-bottom: 0px;
-  text-transform: capitalize;
-  font-weight: 500;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-}
-.footer-col .social-links a{
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(255, 255, 255, 0.2);
-  margin-top: 10px;
-  margin-bottom: 15px;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 50%;
-  color: #fff;
-  transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-  background-color: #fff;
-  color: #24262b;
-}
-.container {
-  max-width: 1170px;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-ul {
-  list-style: none;
-}
-.footer p {
-  margin-top: 0px;
-  text-align: center;
-}
-.whatsappid {
-  margin-right: 30px;
-  margin-bottom: 15px;
-  box-shadow: #24262b;
-  z-index: 1000;
-}
-
-
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-/*programme*/
-
-
-.topm {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 530px;
-  justify-content: center;
-  z-index: 500;
-  padding: 30px 18px;
-  margin-top: 98px;
-  background-image: linear-gradient(rgb(0, 0, 0) , rgba(131, 131, 131, 0)), 
-  url(../images/garoua/affichetournoi3.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-.topm .imgpost{
-  width: 67%;
-  display: none;
-  height: 320px;
-  border-radius: 5px;
-  margin-top: 11px;
-  background-image: linear-gradient(rgba(145, 250, 124, 0.3) , rgba(119, 119, 119, 0)), 
-  url(../images/garoua/affichetournoi3.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-
-
-
-
-
-
-
-.contenuhomea {
-  display: block;
-  position: relative;
-  margin-top: 10px;
-}
-.contenuhomea a {
-  display: block;
-  text-decoration: none;
-  transition: 0.5s ease;
-  font-weight: 700;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-}
-.contenuhomea b {
-  display: block;
-  text-decoration: none;
-  height: 40px;
-  transition: 0.5s ease;
-  color: rgb(52, 54, 56);
-  font-size: 11px;
-  font-weight: 800;
-  margin-top: 30px;
-  margin-left: 12px;
-  padding : 5px 25px;
-  font-family: 'Poppins', sans-serif;
-}
-.contenuhomeab {
-  display: block;
-  position: relative;
-  margin-top: 25px;
-  padding: 15px 0px;
-}
-.contenuhomeab b{
-  display: block;
-  text-decoration: none;
-  transition: 0.5s ease;
-  font-weight: 700;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-family: 'Poppins', sans-serif;
-}
-.contenuhomeab a{
-  display: block;
-  text-decoration: none;
-  transition: 0.5s ease;
-  font-weight: 700;
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-}
-
-
-
-
-
-
-.contenuhomeab .partenairea{
-  position: relative;
-  width: 100%;
-  height: 400px;
-  margin-top: 40px;
-  display: block;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.contenuhomeab .partenairea .slider_container{
-  position: relative;
-  width: 100%;
-  padding: 12px;
-  white-space: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.contenuhomeab .partenairea .slider_container::-webkit-scrollbar{
-  -webkit-appearance: none;
-}
-.contenuhomeab .partenairea .itemservice{
-  display: inline-block;
-  margin-right: 15px;
-}
-.contenuhomeab .partenairea .itemservice img{
-  width: 300px;
-  height: 275px;
-  border-radius: 5px;
-  cursor: pointer;
-  object-fit: cover;
-  overflow: auto;
-  scroll-behavior: smooth;
-  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-}
-
-
-
-
-
-
-
-
-.bbox{
-  width: 100%;
-  display: block;
-  height: 300px;
-  margin-top: -40px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/classement/fondclassement.jpg);
-  background-size: cover;
-  background-position: center;
-}
-.partenaireb{
-  position: relative;
-  width: 100%;
-  height: 220px;
-  margin-top: 33px;
-  display: block;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.partenaireb .slider_container{
-  position: relative;
-  width: 100%;
-  padding: 12px;
-  white-space: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.partenaireb .slider_container::-webkit-scrollbar{
-  -webkit-appearance: none;
-}
-.partenaireb .itemservice{
-  display: inline-block;
-  margin-right: 15px;
-}
-.partenaireb .itemservice img{
-  width: 310px;
-  height: 190px;
-  border-radius: 5px;
-  cursor: pointer;
-  object-fit: cover;
-  overflow: auto;
-  scroll-behavior: smooth;
-  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-}
-
-
-
-
-
-.slideraaa {
-  display: none;
-  position: relative;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-  z-index: 500;
-  margin-top: 90px;
-}
-.slidertaaa img {
-  width: 100%;
-  height: 550px;
-}
-
-
-
-
-
-.bachebleua {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-top: 210px;
-}
-.partenaire{
-  position: relative;
-  width: 100%;
-  padding-left: 30px;
-  height: 500px;
-  margin-top: 73px;
-  background-color: rgb(0, 0, 0);
-  display: block;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.partenaire .box {
-  display: block;
-  margin-top: 15px;
-  position: relative;
-}
-.partenaire .box b {
-  display: block;
-  color: white;
-  font-size: 24px;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-}
-.partenaire .slider_container{
-  position: relative;
-  width: 100%;
-  white-space: nowrap;
-  margin-top: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.partenaire .slider_container::-webkit-scrollbar{
-  -webkit-appearance: none;
-}
-.partenaire .itemservice{
-  display: inline-block;
-  margin-right: 15px;
-}
-.itemservice img{
-  width: 240px;
-  height: 360px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  cursor: pointer;
-  object-fit: cover;
-  overflow: auto;
-  scroll-behavior: smooth;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.bboxc{
-  width: 100%;
-  display: block;
-  height: 300px;
-  margin-top: 3px;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-  url(../images/classement/fondclassement.jpg);
-  background-size: cover;
-  background-position: center;
-}
-.partenairec{
-  position: relative;
-  width: 100%;
-  height: 220px;
-  margin-top: 33px;
-  display: block;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.partenairec .slider_container{
-  position: relative;
-  width: 100%;
-  padding: 12px;
-  white-space: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.partenairec .slider_container::-webkit-scrollbar{
-  -webkit-appearance: none;
-}
-.partenairec .itemservice{
-  display: inline-block;
-  margin-right: 15px;
-}
-.partenairec .itemservice img{
-  width: 310px;
-  height: 190px;
-  border-radius: 5px;
-  cursor: pointer;
-  object-fit: cover;
-  overflow: auto;
-  scroll-behavior: smooth;
-  box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-}
-
-
-
-
-
-
-
-
-
 
 
 
