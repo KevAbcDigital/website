@@ -79,32 +79,29 @@
 
         
         <section class="indisponibletxt">
-            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
 
         <section class="formulairelicence" id="formulairelicence">
             <div class="devisbloc">
 
-                <section class="pictureblock"  id="partenaire">
+                <section class="pictureblock"  id="pictureblock">
                     
                     
-                    <div class="imgbloc">
-                        <img src="./design_files/images/gallerie/bb.jpeg" alt="image">
+                    <div class="imgbloc" onclick="indisponible()">
+                        <img src="./design_files/images/maquette/photo.jpeg" alt="image">
                     </div>
 
-                    <div class="imgbloc">
-                        <img src="./design_files/images/gallerie/bb.jpeg" alt="image">
+                    <div class="imgbloc" onclick="indisponible()">
+                        <img src="./design_files/images/maquette/recto.jpeg" alt="image">
                     </div>
 
-                    <div class="imgbloc">
-                        <img src="./design_files/images/gallerie/bb.jpeg" alt="image">
+                    <div class="imgbloc" onclick="indisponible()">
+                        <img src="./design_files/images/maquette/verso.jpeg" alt="image">
                     </div>
 
                    
                 </section>
-
-             
-
 
                 <form name="formweb" action="">
 
@@ -126,7 +123,8 @@
                     </div>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
-                        <button id="valider" type="button" onclick="send()">
+                        <button style="background-color: rgb(10, 83, 28); box-shadow: -1px 1px 9px #f4fa9bb6; 
+                        border-radius: 6px;" id="valider" type="button" onclick="indisponible()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
                         </button>
@@ -143,7 +141,7 @@
             </div>
         </section>
 
-        <footer style="background-color: rgb(1, 143, 85);" class="footer" id="footer">
+        <footer style="background-color: rgb(10, 83, 28);" class="footer" id="footer">
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
@@ -224,6 +222,13 @@
             img[firstindexa - 1].style.display="block";
         }
         automaticslidea();
+
+
+
+        function indisponible(){
+            window.alert('DESOLE ! Ce formulaire sera opérationnel à partir du 15 Novembre 2023.');
+        }
+
 
 
     </script>
