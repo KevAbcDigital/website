@@ -13,17 +13,17 @@ p{
   color: #fff;
 }
 body {
-  background-image: linear-gradient(rgba(71, 111, 197, 0.151) , rgba(44, 144, 151, 0.418)), 
-  url(../images/images/affichephoneapp.png);
+  background-color: #492424;
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
-  color: white;
   font-size: 13px;
   margin: 0; 
   line-height: 1.5;
+  align-items: center;
+  justify-content: center;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -37,8 +37,10 @@ body {
 .indisponibletxt .txtindis {
   font-size: 20px;
   font-weight: 600;
-  color: #fff;
+  color: #000000;
   padding: 20px;
+  display: block;
+  position: relative;
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }
@@ -52,6 +54,18 @@ header {
   display: none;
 }
 .formulaire {
+  display: none;
+}
+.contenulist{
+  display: none;
+}
+.contenuhomeab {
+  display: none;
+}
+.topm {
+  display: none;
+}
+.formulairelicence {
   display: none;
 }
 .bbox {
@@ -212,8 +226,8 @@ header {
 
   
   .formulairelicence {
-    background-image: linear-gradient(rgba(2, 3, 14, 0) , rgba(20, 6, 45, 0)), 
-    url(../images/images/fondformulaire.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.096) , rgba(0, 0, 0, 0.63)), 
+    url(../images/maquette/licencefond.jpeg);
     background-size: cover;
     background-position: center;
     margin-top: 0px;
@@ -221,62 +235,15 @@ header {
   }
   .formulairelicence .pictureblock {
     display: flex;
-    margin-top: 90px;
+    margin-top: 110px;
   }
   .formulairelicence .pictureblock .imgbloc {
     display: flex;
     width: 30%;
     margin-left: 3%;
+    background-color: white;
   }
-  .formulairelicence .partenaire{
-    position: relative;
-    width: 100%;
-    padding-top: 10px;
-    padding-left: 30px;
-    background-color: rgb(7, 7, 47);
-    display: block;
-    background-size: cover;
-    background-position: center;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-  .formulairelicence .partenaire .box {
-    display: block;
-    margin-top: 15px;
-    position: relative;
-  }
-  .formulairelicence .partenaire .box b {
-    display: block;
-    color: white;
-    font-size: 24px;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-  }
-  .formulairelicence .partenaire .slider_container{
-    position: relative;
-    width: 100%;
-    white-space: nowrap;
-    margin-top: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-  .formulairelicence .partenaire .slider_container::-webkit-scrollbar{
-    -webkit-appearance: none;
-  }
-  .formulairelicence .partenaire .itemservice{
-    display: inline-block;
-    margin-right: 15px;
-  }
-  .formulairelicence .partenaire .itemservice img{
-    width: 200px;
-    height: 200px;
-    border-radius: 7px;
-    margin: 7px;
-    cursor: pointer;
-    object-fit: cover;
-    overflow: auto;
-    scroll-behavior: smooth;
-  }
+ 
   .formulairelicence .devisbloc .lottiescript {
     position: relative;
     display: none;
@@ -375,8 +342,8 @@ header {
 
 
   .formulaire {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.671) , rgb(0, 0, 0)), 
-    url(../images/garoua/affichetournoi2.PNG);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.658) , rgb(0, 0, 0)), 
+    url(../images/garoua/affichetournoi2.jpeg);
     background-size: cover;
     background-position: center;
     margin-top: 60px;
@@ -472,7 +439,9 @@ header {
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
-
+  .contenulist {
+    display: block;
+  }
 
 
   
@@ -545,7 +514,7 @@ header {
     width: 100%;
     height: 250px;
     background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-    url(../images/maquette/Image2.png);
+    url(../images/maquette/maquette.jpeg);
     background-size: cover;
     background-position: center;
   }
@@ -644,14 +613,10 @@ header {
   height: 100px;
   justify-content: center;
   z-index: 500;
-  padding: 30px 18px;
 }
-.topm .imgpost{
-  width: 77%;
-  display: none;
-  height: 320px;
-  border-radius: 5px;
-  margin-top: 11px;
+
+.contenuhomeab {
+  display: block;
 }
 
 
