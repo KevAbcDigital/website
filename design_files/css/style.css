@@ -247,6 +247,7 @@ header {
     background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0)), 
     url(../images/maquette/picture.png);
     background-size: contain;
+    object-fit: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -632,6 +633,19 @@ header {
     overflow: auto;
     scroll-behavior: smooth;
     box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+  }
+  .partenaire .itemserviced{
+    display: inline-block;
+    margin-right: 35px;
+  }
+  .partenaire .itemserviced img{
+    width: auto;
+    height: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    object-fit: contain;
+    overflow: auto;
+    scroll-behavior: smooth;
   }
 
 
