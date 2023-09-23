@@ -234,7 +234,7 @@ header {
     display: block;
   }
   .formulairelicence .profil {
-    display: flex;
+    display: none;
     margin-top: 130px;
     align-items: center;
     justify-content: center;
@@ -267,7 +267,7 @@ header {
     font-family: 'Poppins', sans-serif;
   }
   .formulairelicence .pictureblock {
-    display: flex;
+    display: none;
     margin-top: 30px;
   }
   .formulairelicence .pictureblock .imgbloc {
