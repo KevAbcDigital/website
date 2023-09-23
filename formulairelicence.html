@@ -84,15 +84,43 @@
         </section>
 
         <section class="formulairelicence" id="formulairelicence">
+
+            
+        <section style="background-color: rgba(245, 245, 220, 0);" class="partenaire" id="partenaire">
+            
+
+            <div class="box">
+                <b style="margin-top: 100px;">DOSSIER</b>
+                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >PHOTO 4x4 / CNI, passport Recto-Verso >>> </b>
+            </div>
+
+
+            <div class="slider_container" style="margin-top: 25px;" >
+                <div class="itemserviced">
+                    <img id="myimg" src="./design_files/images/maquette/picture.png" alt="image">
+                </div>
+                <div class="itemserviced">
+                    <img id="myimgrecto" src="./design_files/images/maquette/recto.png" alt="image">
+                </div>
+                <div class="itemserviced">
+                    <img id="myimgverso" src="./design_files/images/maquette/verso.png" alt="image">
+                </div>
+            </div>
+
+        </section>
+
+
             <div class="devisbloc">
 
                 <section class="profil">
-                    <img id="myimg"> <label id="upprogress"></label> <br><br>
+
+                     <label id="upprogress"></label> <br><br>
+                    
                     <div class="blocknameimage">
                         <a >Ajouter une photo de face de preférence avec un fond blanc *</a>
-                        <label style="font-size: 10px; margin-top: 29px; margin-left: 20px; color: white; font-style: italic; font-family: 'Poppins', sans-serif;" >Image Name</label> 
                         <input style="width: 100px;" type="text" id="namebox"> <label id="extlab"></label> <br><br>
                     </div>
+
                 </section>
 
                 <section class="pictureblock"  id="pictureblock">
@@ -205,6 +233,98 @@
     
        
     <script>
+
+        var files = [];
+        var imgphoto;
+        var imgrecto;
+        var imgverso;
+        var txtphoto = "nul";
+        var txtrecto = "nul";
+        var txtverso = "nul";
+        var reader = new FileReader();
+        var namebox = document.getElementById('namebox');
+        var extlab = document.getElementById('extlab');
+        var myimg = document.getElementById('myimg');
+        var myimgrecto = document.getElementById('myimgrecto');
+        var myimgverso = document.getElementById('myimgverso');
+        var input = document.createElement('input');
+        var i = 0;
+
+
+        input.type = 'file';
+        input.onchange = e => {
+
+            files = e.target.files;
+            var extention = GetFileExt(files[0]);
+            var name = GetFileName(files[0]);
+            namebox.value=name;
+            extlab.innerHTML = extention;
+            reader.readAsDataURL(files[0]);
+
+            if (i==1) {
+                imgphoto = files[0];
+                txtphoto = name+extention;
+            }
+
+            if (i==2) {
+                imgrecto = files[0];
+                txtrecto = name+extention;
+            }
+
+            if (i==3) {
+                imgverso = files[0];
+                txtverso = name+extention;
+            }
+            
+        }
+
+        reader.onload = function(){
+            if (i==1) {
+                myimg.src = reader.result;
+            }
+            if (i==2) {
+                myimgrecto.src = reader.result;
+            }
+            if (i==3) {
+                myimgverso.src = reader.result;
+            }
+        }
+
+        myimg.onclick = function() {
+            i=1;
+            input.click();
+        }
+        myimgrecto.onclick = function() {
+            i=2;
+            input.click();
+        }
+        myimgverso.onclick = function() {
+            i=3;
+            input.click();
+        }
+
+        function GetFileExt(file) {
+            var temp = file.name.split('.');
+            var ext = temp.slice((temp.length-1),(temp.length));
+            return '.' + ext[0];
+        }
+        function GetFileName(file) {
+            var temp = file.name.split('.');
+            var fname = temp.slice(0,-1).join('.');
+            return fname;
+        }
+
+
+        
+
+
+
+
+
+
+
+
+
 
         function savoirplus() {
             window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
