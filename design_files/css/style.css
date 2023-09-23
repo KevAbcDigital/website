@@ -226,24 +226,56 @@ header {
 
   
   .formulairelicence {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.096) , rgba(0, 0, 0, 0.63)), 
-    url(../images/maquette/licencefond.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.479) , rgba(0, 0, 0, 0)), 
+    url(../images/images/fondbleu.jpeg);
     background-size: cover;
     background-position: center;
     margin-top: 0px;
     display: block;
   }
+  .formulairelicence .profil {
+    display: flex;
+    margin-top: 130px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .formulairelicence .profil img {
+    display: block;
+    width: 300px;
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0)), 
+    url(../images/maquette/picture.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .formulairelicence .profil .blocknameimage {
+    display: block;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .formulairelicence .profil a {
+    display: block;
+    padding: 0px 10px;
+    color: rgb(29, 41, 95);
+    font-weight: 600;
+    font-size: 14px;
+    font-style: normal;
+    font-family: 'Poppins', sans-serif;
+  }
   .formulairelicence .pictureblock {
     display: flex;
-    margin-top: 110px;
+    margin-top: 30px;
   }
   .formulairelicence .pictureblock .imgbloc {
     display: flex;
-    width: 30%;
+    width: 44%;
+    height: 100px;
     margin-left: 3%;
     background-color: white;
   }
- 
   .formulairelicence .devisbloc .lottiescript {
     position: relative;
     display: none;
@@ -514,7 +546,7 @@ header {
     width: 100%;
     height: 250px;
     background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-    url(../images/maquette/maquette.jpeg);
+    url(../images/maquette/maquette.jpg);
     background-size: cover;
     background-position: center;
   }
