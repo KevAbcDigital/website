@@ -564,7 +564,6 @@ header {
     position: relative;
     width: 100%;
     padding-top: 10px;
-    padding-left: 30px;
     background-color: rgb(7, 7, 47);
     display: block;
     background-size: cover;
@@ -577,6 +576,7 @@ header {
   .partenaire .box {
     display: block;
     margin-top: 15px;
+    margin-left: 30px;
     position: relative;
   }
   .partenaire .box b {
@@ -635,7 +635,7 @@ header {
     object-fit: cover;
     overflow: auto;
     scroll-behavior: smooth;
-    box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
+    box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.144);
   }
   .partenaire .itemserviced{
     display: inline-block;
