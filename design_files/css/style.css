@@ -378,8 +378,8 @@ header {
 
 
   .formulaire {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.658) , rgb(0, 0, 0)), 
-    url(../images/garoua/affichetournoi2.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.582) , rgb(0, 0, 0)), 
+    url(../images/garoua/afficheformulaire.jpg);
     background-size: cover;
     background-position: center;
     margin-top: 60px;
