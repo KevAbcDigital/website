@@ -89,6 +89,9 @@ header {
 .formulairelicence {
   display: none;
 }
+.imgtkids {
+  display: none;
+}
 
 
 
@@ -662,6 +665,12 @@ header {
 }
 
 .contenuhomeab {
+  display: block;
+}
+
+
+
+.imgtkids {
   display: block;
 }
 
