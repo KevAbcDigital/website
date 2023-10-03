@@ -50,7 +50,7 @@
                         width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
 
-                    <li class="boutonm" > <img style="width: 94%; margin-left: 3%; ; height: 2px;" src="./design_files/images/images/afficheGsahel.jpeg" alt="image"> </li>
+                    <li class="boutonm" > <img style="width: 94%; margin-left: 3%; ; height: 2px;" src="./design_files/images/garoua/affichegaroua.jpg" alt="image"> </li>
 
                     <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; font-weight: 700; padding : 2px 20px; 
                     font-family: 'Poppins', sans-serif; cursor: pointer; "
@@ -109,8 +109,7 @@
 
         </section>
 
-
-            <div class="devisbloc">
+        <div class="devisbloc">
 
 
                 <form name="formweb" action="">
@@ -134,13 +133,13 @@
 
                     <div class="form-wrapper">
                         <a class="titleform">Type de licence * </a>
-                        <select id="selectsexe" style="border-radius: 4px; margin-bottom: 20px; width: 100%;
+                        <select id="selecttype" style="border-radius: 4px; margin-bottom: 20px; width: 100%;
                         height: 35px;" onchange="addcat() ">
                             <option value="Choisissez">Choisissez votre categorie ici ...</option>
-                            <option value="garcon">Joueur</option>
-                            <option value="fille">Arbitre</option>
-                            <option value="fille">Entraineur</option>
-                            <option value="fille">Adherent</option>
+                            <option value="joueur">Joueur</option>
+                            <option value="arbitre">Arbitre</option>
+                            <option value="entraineur">Entraineur</option>
+                            <option value="ad">Adherent</option>
 
                         </select>    
                     </div>
@@ -148,7 +147,7 @@
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
                         <button style="background-color: rgb(255, 238, 3); box-shadow: -1px 1px 9px #f4fa9bb6; 
-                        border-radius: 6px; color: black; " id="valider" type="button" onclick="indisponible()">
+                        border-radius: 6px; color: black; " id="valider" type="button" onclick="send()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
                         </button>
@@ -162,7 +161,9 @@
                      background="transparent" speed="1"  loop autoplay></lottie-player>
 
 
-            </div>
+
+        </div>
+        
         </section>
 
         <footer style="background-color: rgb(8, 67, 90);" class="footer" id="footer">
@@ -207,9 +208,9 @@
           
         });
     </script>
-    
-       
+           
     <script>
+
 
         var files = [];
         var imgphoto;
@@ -219,8 +220,6 @@
         var txtrecto = "nul";
         var txtverso = "nul";
         var reader = new FileReader();
-        var namebox = document.getElementById('namebox');
-        var extlab = document.getElementById('extlab');
         var myimg = document.getElementById('myimg');
         var myimgrecto = document.getElementById('myimgrecto');
         var myimgverso = document.getElementById('myimgverso');
@@ -234,8 +233,6 @@
             files = e.target.files;
             var extention = GetFileExt(files[0]);
             var name = GetFileName(files[0]);
-            namebox.value=name;
-            extlab.innerHTML = extention;
             reader.readAsDataURL(files[0]);
 
             if (i==1) {
@@ -254,7 +251,6 @@
             }
             
         }
-
         reader.onload = function(){
             if (i==1) {
                 myimg.src = reader.result;
@@ -266,7 +262,6 @@
                 myimgverso.src = reader.result;
             }
         }
-
         myimg.onclick = function() {
             i=1;
             input.click();
@@ -279,7 +274,6 @@
             i=3;
             input.click();
         }
-
         function GetFileExt(file) {
             var temp = file.name.split('.');
             var ext = temp.slice((temp.length-1),(temp.length));
@@ -293,14 +287,6 @@
 
 
         
-
-
-
-
-
-
-
-
 
 
         function savoirplus() {
@@ -322,12 +308,156 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+        const firebaseConfig = {
+        databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+        apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+        authDomain: "nlogagolf-ed63e.firebaseapp.com",
+        projectId: "nlogagolf-ed63e",
+        storageBucket: "nlogagolf-ed63e.appspot.com",
+        messagingSenderId: "104686743459",
+        appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+        measurementId: "G-6BW97RHV89"
+    };
+    firebase.initializeApp(firebaseConfig)
+   
+   
+    const database = firebase.database();
+
         function indisponible(){
             window.alert('DESOLE ! Ce formulaire sera opérationnel à partir du 15 Novembre 2023.');
         }
 
 
+        function containsOnlyNumbers(str) {
+            return /^\d+$/.test(str);
+        }
+
+        var typtxt = "choisissez";
+        var load = document.getElementById("lottieload");
+
+        function addcat(){
+            var gettyp = document.getElementById("selecttype").value;
+            typtxt = gettyp;
+        }
+
+        function send(){
+
+        var nom = $('#nomuser').val().toLowerCase().trim();
+        var tel = $('#teluser').val();
+        var club = $('#clubuser').val();
+        var i = 0;
+        var n = 0;
+        var dataRef = firebase.database().ref("players");
+
+        if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) 
+             & typtxt != "choisissez" & txtphoto != "nul" & txtrecto != "nul" & txtverso != "nul" ) {
+
         
+            window.alert('systeme indisponible ... les enroulements débuteront à partir du 15 Octobre 2023')
+
+
+         /*   
+var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel 
+            + " ( " + (typtxt) + " ) ";
+
+            load.style.display = "block";
+            dataRef.on("value" , function(snapshot){
+                snapshot.forEach(function(element){
+                    if(element.key == nom.toLowerCase().trim() ) {
+                        i = 1;
+                        load.style.display = "none";
+                        window.alert("cet enregistrement a déjà été effectué. Nous vous contacterons dans un instant");
+                        window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                    }
+                });
+                if ( i == 0 ) {
+                    var dataRefb = firebase.database().ref("liste").child(play);
+                    dataRefb.set({
+                                'info' : (play)
+                        }).then(()=>{
+
+                            (dataRef.child(nom.toLowerCase().trim())).set({
+                                'info' : (play)
+
+                            }).then(()=>{
+                                load.style.display = 'none';
+                                window.alert("enregistrement reuissi. nous vous contacterons pour la suite.");
+                                window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+                            
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+                }
+            });
+         */
+        
+        /*
+            if ( n == 0 ) {
+                    dataRef.child( " 0 ) " + play).set({
+                                'info' : (nom.toLowerCase().trim())
+                        }).then(()=>{
+                                load.style.display = 'none';
+                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                        });
+                } else {
+                    dataRef.child( n.toString() + " ) " + play).set({
+                        
+                                'info' : (nom.toLowerCase().trim())
+                        }).then(()=>{
+                                load.style.display = 'none';
+                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                        });
+                }
+        */              
+        } else if ( txtphoto == "nul" ) {
+        window.alert("Veuillez ajouter votre photo de profil");
+        } else if ( txtrecto == "nul" ) {
+        window.alert("Veuillez ajouter une photo recto de la CNI , acte , passport ou autre piece d'identité");
+        } else if ( txtverso == "nul" ) {
+        window.alert("Veuillez ajouter une photo verso de la CNI , passport , autre piece d'identité ou une autre photo verso de l'acte");
+        } else if ( nom == "" ) {
+        window.alert("veuillez entrer votre nom complet comme ecrit sur l'acte de naissance...");
+        } else if ( tel == "" ) {
+        window.alert("Veuillez entrer votre numero de téléphone pour la suite des instructions...");
+        } else if ( containsOnlyNumbers(tel) == false ) {
+        window.alert("Veuillez entrer numero de téléphone correct et sans espace ...");
+        } else if ( tel.length != 9 ) {
+        window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
+        } else if ( club == "" ) {
+            window.alert("Veuillez entrer votre club d'appartenance");
+        } else if ( typtxt == "choisissez" ) {
+            window.alert("Veuillez selectionner une catégorie");
+        }
+
+}
+
+
+        
+
+
     </script>
     
    
