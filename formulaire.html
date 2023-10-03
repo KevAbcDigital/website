@@ -112,7 +112,7 @@
                     </div>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                        <button id="valider" style="border-radius: 6px; margin-top: 25px; background-color: rgb(10, 83, 28); color: rgb(239, 255, 17);
+                        <button id="valider" style="border-radius: 6px; margin-top: 35px; background-color: rgb(10, 83, 28); color: rgb(239, 255, 17);
                               box-shadow: -1px 1px 9px #f4fa9bd2; " type="button" onclick="send()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
@@ -188,6 +188,7 @@
 
     <script>
 
+
             var files = [];
             var imgphoto;
             var txtphoto = "nul";
@@ -259,127 +260,110 @@
         };
         firebase.initializeApp(firebaseConfig)
     
-    
         const database = firebase.database();
-
-        var load = document.getElementById("lottieload");
     
         function containsOnlyNumbers(str) {
             return /^\d+$/.test(str); 
         }
 
         function send(){
-
+            
+            var load = document.getElementById("lottieload");                
             var nom = $('#nomuser').val().toLowerCase().trim();
             var tel = $('#teluser').val();
             var club = $('#clubuser').val();
-            var i = 0;
-            var n = 0;
             var p = 0;
             var dataRef = firebase.database().ref("players");
 
             if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) 
-                    & txtphoto != "nul" & photourl != "nul" ) {
+                    & txtphoto != "nul") {
 
-                var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel ;
 
                 load.style.display = "block";
+                var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel ;
+
+
+
 
                 let storageRef = firebase.storage().ref("images/"+(nom.toLowerCase().trim()));
                 let uploadTask = storageRef.put(imgphoto);
                 uploadTask.on("state_changed",(snapshot)=>{
-                    window.alert(snapshot);   
-                    load.style.display = "block";                 
+                    console.log("patientez s'il vous plait");
                 },(error)=>{
+                    load.style.display = "none";
                     window.alert("error ");
                 },()=>{
                     uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
                         if(url != "") {
                             photourl = url;
-                            P=1;
-                        }
 
+                            dataRef.on("value" , function(snapshot){
+                                var i = 0;
+                                snapshot.forEach(function(element){
+                                    if(element.key == nom.toLowerCase().trim() ) {
+                                        i = 1;
+                                    }
+                                });
+                                if ( i == 1 ) {
+                                    load.style.display = "none";
+                                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
+                                    window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                                } else {
+                                    i = 2;
+                                    var dataRefb = firebase.database().ref("liste").child(play);
+                                    dataRefb.set({
+                                        'info' : (play) ,
+                                        'url' : (photourl)
+                                    }).then(()=>{
+
+                                        (dataRef.child(nom.toLowerCase().trim())).set({
+                                            'info' : (play) ,
+                                            'url' : (photourl)
+                                        }).then(()=>{
+                                            load.style.display = 'none';
+                                            window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+                                        }).catch((error)=>{
+                                            load.style.display = 'none';
+                                            window.alert("erreur survenue : "+ error);
+                                        });
+                                                
+                                    }).catch((error)=>{
+                                        load.style.display = 'none';
+                                        window.alert("erreur survenue : "+ error);
+                                    });
+                                }
+                            });
+                        }
                     })
                 });
 
-                if (p == 1) {
-                    dataRef.on("value" , function(snapshot){
-                    snapshot.forEach(function(element){
-                        if(element.key == nom.toLowerCase().trim() ) {
-                            if ( i != 2 ) {
-                                i = 1;
-                                load.style.display = "none";
-                                window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
-                                window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
-                            }
-                        }
-                    });
-                    if ( i == 0 ) {
-                        var dataRefb = firebase.database().ref("liste").child(play);
-                        dataRefb.set({
-                                    'info' : (play) ,
-                                    'url' : (photourl)
-                            }).then(()=>{
 
-                                (dataRef.child(nom.toLowerCase().trim())).set({
-                                    'info' : (play) ,
-                                    'url' : (photourl)
-                                }).then(()=>{
-                                    i = 2;
-                                    load.style.display = 'none';
-                                    window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                    window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
-                                }).catch((error)=>{
-                                    load.style.display = 'none';
-                                    window.alert("erreur survenue : "+ error);
-                                });
-                                
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                            });
-                    }
-                });
-                }
+
+
+                
+                
+
+
+
+                
             
-    /*
-                if ( n == 0 ) {
-                        dataRef.child( " 0 ) " + play).set({
-                                    'info' : (nom.toLowerCase().trim())
-                            }).then(()=>{
-                                    load.style.display = 'none';
-                                    window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                    window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
-                                }).catch((error)=>{
-                                    load.style.display = 'none';
-                                    window.alert("erreur survenue : "+ error);
-                            });
-                    } else {
-                        dataRef.child( n.toString() + " ) " + play).set({
-                            
-                                    'info' : (nom.toLowerCase().trim())
-                            }).then(()=>{
-                                    load.style.display = 'none';
-                                    window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                    window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
-                                }).catch((error)=>{
-                                    load.style.display = 'none';
-                                    window.alert("erreur survenue : "+ error);
-                            });
-                    }
-    */              
+
+
+
+
+
+   
             } else if ( txtphoto == "nul" ) {
-            window.alert("Veuillez ajouter votre photo de profil");
+                window.alert("Veuillez ajouter votre photo de profil");
             } else if ( nom == "" ) {
-            window.alert("veuillez entrer le nom complet du joueur...");
-            } else if ( photourl == "" ) {
-            window.alert("La photo n'a pas été chargée correctement...");
+                window.alert("veuillez entrer le nom complet du joueur...");
             } else if ( tel == "" ) {
-            window.alert("Veuillez entrer numero de téléphone du responsable...");
+                window.alert("Veuillez entrer numero de téléphone du responsable...");
             } else if ( containsOnlyNumbers(tel) == false ) {
-            window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
+                window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
             } else if ( tel.length != 9 ) {
-            window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
+                window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
             } else if ( club == "" ) {
                 window.alert("Veuillez saisir le club de " + nom);
             }
