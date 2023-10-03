@@ -24,21 +24,16 @@
 
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
 
     </head>
 
-    <body style="background-color: black;">
-
+    <body style="background-color: rgb(4, 70, 4);">
         
-        <header style="background-image: linear-gradient(rgba(0, 0, 0, 0) , rgb(0, 0, 0)), 
+        <header style="background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0)), 
         url(./design_files/images/images/affichejoueur.jpg); background-size: cover; background-position: top; width: 100%;
-        box-shadow: -1px 1px 9px #0000005b; position: fixed; top: 0; left: 0; right: 0; z-index: 1050; align-items: center;
+        box-shadow: -1px 1px 9px #ffffff00; position: fixed; top: 0; left: 0; right: 0; z-index: 1050; align-items: center;
         justify-content: center;" >
-
-
-            <div class="logo">
-                <img  onclick="openhome();" src="./design_files/images/images/logokevdesign.png" alt="image">
-            </div>
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">
@@ -54,7 +49,7 @@
                         width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
 
-                    <li class="boutonm" > <img style="width: 94%; margin-left: 3%; ; height: 2px;" src="./design_files/images/images/afficheGsahel.jpeg" alt="image"> </li>
+                    <li class="boutonm" > <img style="width: 94%; margin-left: 3%; ; height: 2px;" src="./design_files/images/garoua/affichegaroua.jpg" alt="image"> </li>
 
                     <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; font-weight: 700; padding : 2px 20px; 
                     font-family: 'Poppins', sans-serif; cursor: pointer; "
@@ -72,7 +67,7 @@
                     </li>
 
 
-                    <li class="boutonm"><a style="cursor: pointer; background-color: rgba(41, 161, 25, 0.932); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
+                    <li class="boutonm"><a style="cursor: pointer; background-color: rgba(4, 70, 4); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
                         color: white; font-size: 16px; margin: 7px 12px; padding : 8px 20px; font-family: 'Poppins', sans-serif; border-radius: 8px;"
                         onclick="openhome();">+ Espace Licencié</a>
                     </li>
@@ -86,12 +81,18 @@
             <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
 
+        <img class="addpic" id="myimg" src="./design_files/images/garoua/fondadd.jpeg" alt="image">
+
+        <div class="picblock">
+            <img class="addbtn" id="addphoto" src="./design_files/images/garoua/addprofilebtn.png" alt="image">        
+        </div>
+
         <section class="formulaire" id="formulaire">
             <div class="devisbloc">
 
                 <form name="formweb" action="">
 
-                    <h1 style="margin-top: 50px; font-weight: 600; color: rgb(80, 202, 69);">Inscrivez vous</h1>
+                    <h1 style="font-weight: 600; color: rgb(231, 247, 13);">Inscrivez vous</h1>
                     <h3 class="textcontenu">NB: Date limite des inscriptions : Mardi 21 Novembre 2023 à 15H . </h3>
 
                     <div class="form-wrapper">
@@ -99,7 +100,7 @@
                         <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Entrez votre nom complet ..." class="form-controla">
                     </div>
 
-                    <div class="form-wrapper">
+                    <div class="form-wrapper" style="margin-bottom: 1px;">
                         <a class="titleform">Telephone * ( Ex : 698328283 )</a>
                         <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Entrez votre numéro de téléphone ..." class="form-controla">
                         <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
@@ -110,9 +111,9 @@
                         <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC ASECNA " class="form-controla">
                     </div>
 
-                    <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
-                        <button id="valider" style="border-radius: 6px; background-color: rgb(10, 83, 28); color: rgb(239, 255, 17);
-                        box-shadow: -1px 1px 9px #f4fa9bd2; " type="button" onclick="send()">
+                    <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                        <button id="valider" style="border-radius: 6px; margin-top: 25px; background-color: rgb(10, 83, 28); color: rgb(239, 255, 17);
+                              box-shadow: -1px 1px 9px #f4fa9bd2; " type="button" onclick="send()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
                         </button>
@@ -129,24 +130,18 @@
             </div>
         </section>
 
-        <section class="contenulist">
-
-            <b class="txtcontenuhomea" style="width: 100%; display: block; text-align: center; 
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 21px; 
-            padding-top: 10px; padding-left: 0px; color: beige;">
-                GAROUA SAHEL
-            </b>
-            <b class="txtcontenuhomea" style="width: 100%; display: block; text-align: center; 
-            font-size: 11px; padding-top: 0px; padding-left: 0px; color: rgb(185, 236, 185);" >
-                Liste Des Participants
-            </b>
-
-            <b class="listplayer" id="listplayer" style="width: 100%; color: white; display: block; text-align: center; 
-            font-size: 10px; padding: 30px 15px;"></b>
+        <section style="background-color: transparent; margin-bottom: 80px;" class="partenaire" id="partenaire">
+            
+            <div style="margin-top: 90px;" class="box">
+                <b style="margin-top: 50px; font-size: 20px; width: 100%; text-align: center;">GAROUA SAHEL</b>
+                <b style="margin-top: 2px; width: 100%; text-align: center; font-size: 12px; color: rgb(251, 255, 25);" >Liste des participants ...</b>
+                <b class="listplayer" id="listplayer" style="width: 100%; color: white; display: block; text-align: center; 
+                font-size: 10px; padding: 30px 1px;"></b>
+            </div>
 
         </section>
 
-        <footer class="footer" id="footer" style="background-color: rgb(10, 83, 28);" >
+        <footer style="background-color: transparent;" class="footer" id="footer">
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
@@ -163,10 +158,10 @@
                 
                 </div>
             </div>
-            <p class="copyrigth">Copyright © Tous droits réservés - TennisCamer</p>
+            <p class="copyrigth">Copyright © Tous droits réservés - TennisKids</p>
 
         </footer>
-  
+
         <div class="whatsappid" id="myDiv"></div>
 
     </body>
@@ -188,160 +183,226 @@
         });
 
         
+    
     </script>
 
+    <script>
 
-<script>
+            var files = [];
+            var imgphoto;
+            var txtphoto = "nul";
+            var photourl = "nul";
+            var reader = new FileReader();
+            var myimg = document.getElementById('myimg');
+            var addphoto = document.getElementById('addphoto');
+            var input = document.createElement('input');
 
-        function savoirplus() {
-            window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
-        }
-        function j30douala() {
-            window.alert('page momentenément indisponible')
-            // window.location.href = 'https://kevabcdigital.github.io/website/j30douala.html';
-        }
-        function opengaroua() {
-            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
-        }
-        function opentk() {
-            window.location.href = 'https://kevabcdigital.github.io/website/tenniskids.html';
-        }
-        function openhome() {
-            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
-        }
-    
+            input.type = 'file';
+            input.onchange = e => {
+                files = e.target.files;
+                var extention = GetFileExt(files[0]);
+                var name = GetFileName(files[0]);
+                reader.readAsDataURL(files[0]);
+                imgphoto = files[0];
+                txtphoto = name+extention;
+            }
+            reader.onload = function(){
+                myimg.src = reader.result;
+            }
+            addphoto.onclick = function() {
+                input.click();
+            }
+            myimg.onclick = function() {
+                input.click();
+            }
+            function GetFileExt(file) {
+                var temp = file.name.split('.');
+                var ext = temp.slice((temp.length-1),(temp.length));
+                return '.' + ext[0];
+            }
+            function GetFileName(file) {
+                var temp = file.name.split('.');
+                var fname = temp.slice(0,-1).join('.');
+                return fname;
+            }
+
+
+
+            function savoirplus() {
+                window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
+            }
+            function j30douala() {
+                window.alert('page momentenément indisponible')
+                // window.location.href = 'https://kevabcdigital.github.io/website/j30douala.html';
+            }
+            function opengaroua() {
+                window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+            }
+            function opentk() {
+                window.location.href = 'https://kevabcdigital.github.io/website/tenniskids.html';
+            }
+            function openhome() {
+                window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+            }
         
-
-    const firebaseConfig = {
-        databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
-        apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
-        authDomain: "nlogagolf-ed63e.firebaseapp.com",
-        projectId: "nlogagolf-ed63e",
-        storageBucket: "nlogagolf-ed63e.appspot.com",
-        messagingSenderId: "104686743459",
-        appId: "1:104686743459:web:c380b6e47ebb21d413f416",
-        measurementId: "G-6BW97RHV89"
-    };
-    firebase.initializeApp(firebaseConfig)
-   
-   
-    const database = firebase.database();
-
-    var load = document.getElementById("lottieload");
- 
-    function containsOnlyNumbers(str) {
-        return /^\d+$/.test(str); 
-    }
-
-    function send(){
-
-        var nom = $('#nomuser').val().toLowerCase().trim();
-        var tel = $('#teluser').val();
-        var club = $('#clubuser').val();
-        var i = 0;
-        var n = 0;
-        var dataRef = firebase.database().ref("players");
-
-        if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) ) {
-
-            var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel ;
-
-            load.style.display = "block";
             
-            dataRef.on("value" , function(snapshot){
-                snapshot.forEach(function(element){
-                    if(element.key == nom.toLowerCase().trim() ) {
-                        i = 1;
-                        load.style.display = "none";
-                        window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
-                        window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
-                    }
+
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+    
+    
+        const database = firebase.database();
+
+        var load = document.getElementById("lottieload");
+    
+        function containsOnlyNumbers(str) {
+            return /^\d+$/.test(str); 
+        }
+
+        function send(){
+
+            var nom = $('#nomuser').val().toLowerCase().trim();
+            var tel = $('#teluser').val();
+            var club = $('#clubuser').val();
+            var i = 0;
+            var n = 0;
+            var p = 0;
+            var dataRef = firebase.database().ref("players");
+
+            if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) 
+                    & txtphoto != "nul" & photourl != "nul" ) {
+
+                var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel ;
+
+                load.style.display = "block";
+
+                let storageRef = firebase.storage().ref("images/"+(nom.toLowerCase().trim()));
+                let uploadTask = storageRef.put(imgphoto);
+                uploadTask.on("state_changed",(snapshot)=>{
+                    window.alert(snapshot);   
+                    load.style.display = "block";                 
+                },(error)=>{
+                    window.alert("error ");
+                },()=>{
+                    uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
+                        if(url != "") {
+                            photourl = url;
+                            P=1;
+                        }
+
+                    })
                 });
-                if ( i == 0 ) {
-                    var dataRefb = firebase.database().ref("liste").child(play);
-                    dataRefb.set({
-                                'info' : (play)
-                        }).then(()=>{
 
-                            (dataRef.child(nom.toLowerCase().trim())).set({
-                                'info' : (play)
-
+                if (p == 1) {
+                    dataRef.on("value" , function(snapshot){
+                    snapshot.forEach(function(element){
+                        if(element.key == nom.toLowerCase().trim() ) {
+                            if ( i != 2 ) {
+                                i = 1;
+                                load.style.display = "none";
+                                window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
+                                window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                            }
+                        }
+                    });
+                    if ( i == 0 ) {
+                        var dataRefb = firebase.database().ref("liste").child(play);
+                        dataRefb.set({
+                                    'info' : (play) ,
+                                    'url' : (photourl)
                             }).then(()=>{
-                                load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
+
+                                (dataRef.child(nom.toLowerCase().trim())).set({
+                                    'info' : (play) ,
+                                    'url' : (photourl)
+                                }).then(()=>{
+                                    i = 2;
+                                    load.style.display = 'none';
+                                    window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                    window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                                });
+                                
                             }).catch((error)=>{
                                 load.style.display = 'none';
                                 window.alert("erreur survenue : "+ error);
                             });
+                    }
+                });
+                }
+            
+    /*
+                if ( n == 0 ) {
+                        dataRef.child( " 0 ) " + play).set({
+                                    'info' : (nom.toLowerCase().trim())
+                            }).then(()=>{
+                                    load.style.display = 'none';
+                                    window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                    window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                            });
+                    } else {
+                        dataRef.child( n.toString() + " ) " + play).set({
                             
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
-                }
-            });
-  
-           
-/*
-            if ( n == 0 ) {
-                    dataRef.child( " 0 ) " + play).set({
-                                'info' : (nom.toLowerCase().trim())
-                        }).then(()=>{
-                                load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                        });
-                } else {
-                    dataRef.child( n.toString() + " ) " + play).set({
-                        
-                                'info' : (nom.toLowerCase().trim())
-                        }).then(()=>{
-                                load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                        });
-                }
-  */              
-        } else if ( nom == "" ) {
-          window.alert("veuillez entrer le nom complet du joueur...");
-        } else if ( tel == "" ) {
-          window.alert("Veuillez entrer numero de téléphone du responsable...");
-        } else if ( containsOnlyNumbers(tel) == false ) {
-          window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
-        } else if ( tel.length != 9 ) {
-          window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
-        } else if ( club == "" ) {
-            window.alert("Veuillez saisir le club de " + nom);
-        }
-  
-    }
-
-    function invalid() {
-        window.alert("Desolé ce formulaire est indisponible pour le moment.");
-        window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
-    }
-
-
+                                    'info' : (nom.toLowerCase().trim())
+                            }).then(()=>{
+                                    load.style.display = 'none';
+                                    window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                    window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                            });
+                    }
+    */              
+            } else if ( txtphoto == "nul" ) {
+            window.alert("Veuillez ajouter votre photo de profil");
+            } else if ( nom == "" ) {
+            window.alert("veuillez entrer le nom complet du joueur...");
+            } else if ( photourl == "" ) {
+            window.alert("La photo n'a pas été chargée correctement...");
+            } else if ( tel == "" ) {
+            window.alert("Veuillez entrer numero de téléphone du responsable...");
+            } else if ( containsOnlyNumbers(tel) == false ) {
+            window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
+            } else if ( tel.length != 9 ) {
+            window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
+            } else if ( club == "" ) {
+                window.alert("Veuillez saisir le club de " + nom);
+            }
     
+        }
 
-var datagarcon = firebase.database().ref("liste");
-var i = 0 ;
-datagarcon.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        i = i + 1;
-        document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
-    });
-});
+        function invalid() {
+            window.alert("Desolé ce formulaire est indisponible pour le moment.");
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+
+        
+        var datagarcon = firebase.database().ref("liste");
+        var i = 0 ;
+        datagarcon.on("value" , function(snapshot){
+            snapshot.forEach(function(element){
+                i = i + 1;
+                document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
+            });
+        });
 
 
-</script>
+    </script>
     
 
 </html>
