@@ -24,7 +24,7 @@
 
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-        
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
      
     </head>
 
@@ -208,6 +208,9 @@
         var txtphoto = "nul";
         var txtrecto = "nul";
         var txtverso = "nul";
+        var rectourl = "nul";
+        var versourl = "nul";
+        var photourl = "nul";
         var reader = new FileReader();
         var myimg = document.getElementById('myimg');
         var myimgrecto = document.getElementById('myimgrecto');
@@ -346,81 +349,116 @@
         var club = $('#clubuser').val();
         var i = 0;
         var n = 0;
-        var dataRef = firebase.database().ref("players");
+        var dataRef = firebase.database().ref("licences");
 
         if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) 
              & typtxt != "choisissez" & txtphoto != "nul" & txtrecto != "nul" & txtverso != "nul" ) {
 
         
-            window.alert('systeme indisponible ... les enroulements débuteront à partir du 15 Octobre 2023')
+            // window.alert('systeme indisponible ... les enroulements débuteront à partir du 15 Octobre 2023');
+    
+                load.style.display = "block";
+                var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - cat : " + typtxt ;
 
 
-         /*   
-var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel 
-            + " ( " + (typtxt) + " ) ";
 
-            load.style.display = "block";
-            dataRef.on("value" , function(snapshot){
-                snapshot.forEach(function(element){
-                    if(element.key == nom.toLowerCase().trim() ) {
-                        i = 1;
-                        load.style.display = "none";
-                        window.alert("cet enregistrement a déjà été effectué. Nous vous contacterons dans un instant");
-                        window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
-                    }
-                });
-                if ( i == 0 ) {
-                    var dataRefb = firebase.database().ref("liste").child(play);
-                    dataRefb.set({
-                                'info' : (play)
-                        }).then(()=>{
 
-                            (dataRef.child(nom.toLowerCase().trim())).set({
-                                'info' : (play)
+                let storageRef = firebase.storage().ref("imageslicences/"+(nom.toLowerCase().trim()));
+                let uploadTask = storageRef.put(imgphoto);
+                let uploadTaskrecto = storageRef.put(imgrecto);
+                let uploadTaskverso = storageRef.put(imgverso);
 
-                            }).then(()=>{
-                                load.style.display = 'none';
-                                window.alert("enregistrement reuissi. nous vous contacterons pour la suite.");
-                                window.location.href = 'https://kevabcdigital.github.io/website/home.html';
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
+                uploadTask.on("state_changed",(snapshot)=>{
+                    console.log("patientez un instant");
+                },(error)=>{
+                    load.style.display = "none";
+                    window.alert("error ");
+                },()=>{
+                    uploadTask.snapshot.ref.getDownloadURL().then((urla)=>{
+                        if(urla != "") {
+                            photourl = urla;
+
+
+
+
+
+                            uploadTaskrecto.on("state_changed",(snapshot)=>{
+                                console.log("patientez un instant");
+                            },(error)=>{
+                                load.style.display = "none";
+                                window.alert("error ");
+                            },()=>{
+                                uploadTaskrecto.snapshot.ref.getDownloadURL().then((urlb)=>{
+                                    if(urlb != "") {
+                                        rectourl = urlb;
+
+                                        
+                                    
+
+                                        uploadTaskverso.on("state_changed",(snapshot)=>{
+                                            console.log("patientez un instant");
+                                        },(error)=>{
+                                            load.style.display = "none";
+                                            window.alert("error ");
+                                        },()=>{
+                                            uploadTaskverso.snapshot.ref.getDownloadURL().then((urlc)=>{
+                                                if(urlc != "") {
+                                                    versourl = urlc;
+
+                                                    var dataRefb = firebase.database().ref("listelicences").child(play);
+                                                            dataRefb.set({
+                                                                'info' : (play) ,
+                                                                'urluser' : (photourl) ,
+                                                                'urlrecto' : (rectourl) ,
+                                                                'urlverso' : (versourl)
+
+                                                            }).then(()=>{
+
+                                                                load.style.display = 'none';
+                                                                window.alert("enregistrement reuissi. nous vous contacterons dans une date ulterieure au (" + tel + ") pour la suite des instructions et le paiement. Merci pour votre confiance !");
+                                                                window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
+                                                                
+                                                                        
+                                                            }).catch((error)=>{
+                                                                load.style.display = 'none';
+                                                                window.alert("erreur survenue : "+ error);
+                                                            });
+                                                
+                                                
+                                                
+                                                }
+                                            })
+                                        });
+
+
+
+
+                
+                                    }
+                                })
                             });
-                            
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
-                }
-            });
-         */
-        
-        /*
-            if ( n == 0 ) {
-                    dataRef.child( " 0 ) " + play).set({
-                                'info' : (nom.toLowerCase().trim())
-                        }).then(()=>{
-                                load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                        });
-                } else {
-                    dataRef.child( n.toString() + " ) " + play).set({
-                        
-                                'info' : (nom.toLowerCase().trim())
-                        }).then(()=>{
-                                load.style.display = 'none';
-                                window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                window.location.href = 'https://kevabcdigital.github.io/website/programme.html #listplayer';
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                        });
-                }
-        */              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        }
+                    })
+                });
+
+
+
+
+
         } else if ( txtphoto == "nul" ) {
         window.alert("Veuillez ajouter votre photo de profil");
         } else if ( txtrecto == "nul" ) {
