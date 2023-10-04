@@ -81,38 +81,36 @@
             <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
 
-        <img class="addpic" id="myimg" src="./design_files/images/garoua/fondadd.jpeg" alt="image">
+        <img class="addpic" id="myimg" src="./design_files/images/garoua/profileimg.png" alt="image">
+             
+        <section style="border-radius: 13px; margin-top: -10px; margin-left: 20px; margin-right: 20px; background-color: rgb(239, 243, 4);" class="formulaire" id="formulaire">
+            <div style="padding-top: 17px;" class="devisbloc ">
 
-        <div class="picblock">
-            <img class="addbtn" id="addphoto" src="./design_files/images/garoua/addprofilebtn.png" alt="image">        
-        </div>
-
-        <section class="formulaire" id="formulaire">
-            <div class="devisbloc">
+                <img class="addbtn" id="addphoto" src="./design_files/images/garoua/addprofilebtn.png" alt="image">        
 
                 <form name="formweb" action="">
 
-                    <h1 style="font-weight: 600; color: rgb(231, 247, 13);">Inscrivez vous</h1>
-                    <h3 class="textcontenu">NB: Date limite des inscriptions : Mardi 21 Novembre 2023 à 15H . </h3>
+                    <h1 style="font-weight: 600; color: rgb(4, 70, 4);">Inscrivez vous</h1>
+                    <h3 style="color: rgb(4, 70, 4);" class="textcontenu">NB: Date limite des inscriptions : Mardi 21 Novembre 2023 à 15H . </h3>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Noms et prénoms du joueur *</a>
-                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Entrez votre nom complet ..." class="form-controla">
+                        <a style="color: rgb(4, 70, 4);" class="titleform">Noms et prénoms du joueur *</a>
+                        <input id="nomuser" style="border: 1px solid #008006ab; padding-left: 15px;" type="email" placeholder="Entrez votre nom complet ..." class="form-controla">
                     </div>
 
                     <div class="form-wrapper" style="margin-bottom: 1px;">
-                        <a class="titleform">Telephone * ( Ex : 698328283 )</a>
-                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Entrez votre numéro de téléphone ..." class="form-controla">
+                        <a style="color: rgb(3, 53, 12);" class="titleform">Telephone * ( Ex : 698328283 )</a>
+                        <input id="teluser" style="border: 1px solid #0cca057a; padding-left: 15px;" type="email" placeholder="Entrez votre numéro de téléphone ..." class="form-controla">
                         <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Club d'appartenance *</a>
-                        <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC ASECNA " class="form-controla">
+                        <a style="color: rgb(4, 70, 7);" class="titleform">Club d'appartenance *</a>
+                        <input id="clubuser" style=" border: 1px solid #03b60381; padding-left: 15px;" type="email" placeholder="Ex: TC YAOUNDE " class="form-controla">
                     </div>
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                        <button id="valider" style="border-radius: 6px; margin-top: 35px; background-color: rgb(10, 83, 28); color: rgb(239, 255, 17);
+                        <button id="valider" style="border-radius: 6px; margin-top: 35px; background-color: rgb(4, 70, 4); color: rgb(255, 255, 255);
                               box-shadow: -1px 1px 9px #f4fa9bd2; " type="button" onclick="send()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
@@ -123,7 +121,7 @@
 
                     </lottie-player>
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                    <lottie-player style="color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
                      background="transparent" speed="1"  loop autoplay></lottie-player>
 
 
@@ -357,15 +355,15 @@
             } else if ( txtphoto == "nul" ) {
                 window.alert("Veuillez ajouter votre photo de profil");
             } else if ( nom == "" ) {
-                window.alert("veuillez entrer le nom complet du joueur...");
+                window.alert("veuillez entrer votre nom complet dans l'ordre...");
             } else if ( tel == "" ) {
-                window.alert("Veuillez entrer numero de téléphone du responsable...");
+                window.alert("Veuillez entrer votre numero de téléphone ...");
             } else if ( containsOnlyNumbers(tel) == false ) {
                 window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
             } else if ( tel.length != 9 ) {
                 window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
             } else if ( club == "" ) {
-                window.alert("Veuillez saisir le club de " + nom);
+                window.alert("Veuillez saisir le nom de votre club");
             }
     
         }

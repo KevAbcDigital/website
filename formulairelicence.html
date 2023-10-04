@@ -28,13 +28,9 @@
      
     </head>
 
-    <body>
+    <body style="background-color: rgb(43, 43, 33);">
 
         <header>
-
-            <div class="logo">
-                <img  onclick="openhome();" src="./design_files/images/images/logokevdesign.png" alt="image">
-            </div>
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">
@@ -78,20 +74,12 @@
             
         </header>
 
-        
-        <section class="indisponibletxt">
-            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
-        </section>
-
-        <section class="formulairelicence" id="formulairelicence">
-
-            
-        <section style="background-color: rgba(245, 245, 220, 0);" class="partenaire" id="partenaire">
+        <section style="background-color: rgb(43, 43, 33); padding-bottom: 35px;" class="partenaire" id="partenaire">
             
 
             <div class="box">
-                <b style="margin-top: 100px;">DOSSIER</b>
-                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >PHOTO 4x4 / CNI, passport Recto-Verso >>> </b>
+                <b style="margin-top: 100px;">DOSSIER A FOURNIR</b>
+                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >PHOTO 4x4 / Recto CNI, passport / Verso ... </b>
             </div>
 
 
@@ -108,32 +96,31 @@
             </div>
 
         </section>
-
-        <div class="devisbloc">
-
+     
+        <section style="border-radius: 13px; margin: 20px; background-color: white;" class="formulaire" id="formulaire" >
+            <div style="padding-top: 17px;" class="devisbloc ">
 
                 <form name="formweb" action="">
 
-
                     <div class="form-wrapper">
-                        <a class="titleform" style="color: white;">Noms et prénoms *</a>
-                        <input id="nomuser" style="padding-left: 15px;" type="email" placeholder="Comme sur l'acte de naissance ..." class="form-controla">
+                        <a style="color: rgb(2, 2, 32);" class="titleform">Noms et prénoms du joueur *</a>
+                        <input id="nomuser" style="border: 1px solid #d3d3d3; padding-left: 15px;" type="email" placeholder="Entrez votre nom complet ..." class="form-controla">
                     </div>
 
-                    <div class="form-wrapper">
-                        <a class="titleform">Telephone * ( Ex : 698328283 )</a>
-                        <input id="teluser" style="padding-left: 15px;" type="email" placeholder="Entrez votre contact ici ..." class="form-controla">
+                    <div class="form-wrapper" style="margin-bottom: 1px;">
+                        <a style="color: rgb(3, 53, 12);" class="titleform">Telephone * ( Ex : 698328283 )</a>
+                        <input id="teluser" style="border: 1px solid #d3d3d3; padding-left: 15px;" type="email" placeholder="Entrez votre numéro de téléphone ..." class="form-controla">
                         <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Club d'appartenance *</a>
-                        <input id="clubuser" style="padding-left: 15px;" type="email" placeholder="Ex: TC Yaoundé" class="form-controla">
+                        <a style="color: rgb(4, 4, 77);" class="titleform">Club d'appartenance *</a>
+                        <input id="clubuser" style=" border: 1px solid #d3d3d3; padding-left: 15px;" type="email" placeholder="Ex: TC YAOUNDE " class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
-                        <a class="titleform">Type de licence * </a>
-                        <select id="selecttype" style="border-radius: 4px; margin-bottom: 20px; width: 100%;
+                        <a style="color: rgb(110, 36, 6);" class="titleform">Type de licence * </a>
+                        <select id="selecttype" style="border-radius: 4px; margin-top: 10px; margin-bottom: 20px; width: 100%;
                         height: 35px;" onchange="addcat() ">
                             <option value="Choisissez">Choisissez votre categorie ici ...</option>
                             <option value="joueur">Joueur</option>
@@ -144,10 +131,9 @@
                         </select>    
                     </div>
 
-
-                    <div class="form-group container-login100-form-btn" style="margin-bottom: 90px;">
-                        <button style="background-color: rgb(255, 238, 3); box-shadow: -1px 1px 9px #f4fa9bb6; 
-                        border-radius: 6px; color: black; " id="valider" type="button" onclick="send()">
+                    <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                        <button id="valider" style="border-radius: 6px; margin-top: 35px; background-color: rgb(8, 70, 90); color: rgb(255, 255, 255);
+                              box-shadow: -1px 1px 9px #f4fa9bd2; " type="button" onclick="send()">
                             Envoyer
                             <i class="zmdi zmdi-arrow-right"></i>
                         </button>
@@ -157,16 +143,14 @@
 
                     </lottie-player>
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                    <lottie-player style=" margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
                      background="transparent" speed="1"  loop autoplay></lottie-player>
 
 
-
-        </div>
-        
+            </div>
         </section>
 
-        <footer style="background-color: rgb(8, 67, 90);" class="footer" id="footer">
+        <footer style="background-color: rgb(8, 70, 90);" class="footer" id="footer">
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
@@ -187,6 +171,11 @@
 
         </footer>
   
+        <section class="indisponibletxt">
+            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+
+
         <div class="whatsappid" id="myDiv"></div>
 
     </body>
