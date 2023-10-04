@@ -414,18 +414,6 @@ header {
     background-size: cover;
     background-position: center;
   }
-  .entete .enteteimg1 {
-    position: relative;
-    display: block;
-    width: 94%;
-    margin-left: 3%;
-    border-radius: 8px;
-    height: 250px;
-    background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-    url(../images/maquette/aa.jpeg);
-    background-size: cover;
-    background-position: center;
-  }
   .entete .enteteimg2 {
     position: relative;
     display: block;
