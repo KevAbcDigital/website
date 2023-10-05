@@ -103,8 +103,13 @@
                 <form name="formweb" action="">
 
                     <div class="form-wrapper">
-                        <a style="color: rgb(2, 2, 32);" class="titleform">Noms et prénoms dans l'ordre *</a>
+                        <a style="color: rgb(2, 2, 32);" class="titleform">Nom(s) dans l'ordre *</a>
                         <input id="nomuser" style="border: 1px solid #d3d3d3; padding-left: 15px;" type="email" placeholder="Comme sur votre CNI" class="form-controla">
+                    </div>
+
+                    <div class="form-wrapper">
+                        <a style="color: rgb(2, 2, 32);" class="titleform">prénom(s) dans l'ordre *</a>
+                        <input id="prenomuser" style="border: 1px solid #d3d3d3; padding-left: 15px;" type="email" placeholder="Comme sur votre CNI" class="form-controla">
                     </div>
 
                     <div class="form-wrapper" style="margin-bottom: 1px;">
@@ -124,9 +129,9 @@
                         height: 35px;" onchange="addcat() ">
                             <option value="Choisissez">Choisissez votre categorie ici ...</option>
                             <option value="joueur">Joueur</option>
+                            <option value="joueur">Joueuse</option>
                             <option value="arbitre">Arbitre</option>
                             <option value="entraineur">Entraineur</option>
-                            <option value="ad">Adherent</option>
 
                         </select>    
                     </div>
@@ -167,7 +172,7 @@
                 
                 </div>
             </div>
-            <p class="copyrigth">Copyright © Tous droits réservés - TennisKids</p>
+            <p class="copyrigth">Copyright © Tous droits réservés - KevDesign</p>
 
         </footer>
   
@@ -344,25 +349,23 @@
         function send(){
 
         var nom = $('#nomuser').val().toLowerCase().trim();
+        var prenom = $('#prenomuser').val().toLowerCase().trim();
         var tel = $('#teluser').val();
-        var club = $('#clubuser').val();
+        var club = $('#clubuser').val().toLowerCase().trim();
         var i = 0;
         var n = 0;
-        var dataRef = firebase.database().ref("licences");
 
         if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) 
              & typtxt != "choisissez" & txtphoto != "nul" & txtrecto != "nul" & txtverso != "nul" ) {
 
-        
-            // window.alert('systeme indisponible ... les enroulements débuteront à partir du 15 Octobre 2023');
-    
+            
                 load.style.display = "block";
-                var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - cat : " + typtxt ;
+                var play = (nom + " " + prenom) + " ( " + club + " ) " + " - cat : " + typtxt ;
+                var dataRef = firebase.database().ref("licences").child(nom + " " + prenom);
 
 
 
-
-                let storageRef = firebase.storage().ref("imageslicences/"+(nom.toLowerCase().trim()));
+                let storageRef = firebase.storage().ref("imageslicences/"+(nom + " " + prenom));
                 let uploadTask = storageRef.put(imgphoto);
                 let uploadTaskrecto = storageRef.put(imgrecto);
                 let uploadTaskverso = storageRef.put(imgverso);
@@ -404,25 +407,30 @@
                                                 if(urlc != "") {
                                                     versourl = urlc;
 
-                                                    var dataRefb = firebase.database().ref("listelicences").child(play);
-                                                            dataRefb.set({
-                                                                'info' : (play) ,
-                                                                'urluser' : (photourl) ,
-                                                                'urlrecto' : (rectourl) ,
-                                                                'urlverso' : (versourl)
+                                                                dataRef.set({
+                                                                    'numero' : ("N° : Non Activé ...") ,
+                                                                    'nom' : ("Noms : " + nom.toUpperCase()) ,
+                                                                    'prenoms' : ("Prénoms : " + prenom) ,
+                                                                    'club' : ("Club / Ligue : " + club) ,
+                                                                    'born' : ("Né(e) le : En attente ...") ,
+                                                                    'qualite' : ("Qualité : " + typtxt) ,
+                                                                    'cni' : ("CNI : Non Activé ...") ,
+                                                                    'info' : (play) ,
+                                                                    'urluser' : (photourl) ,
+                                                                    'urlrecto' : (rectourl) ,
+                                                                    'urlverso' : (versourl)
 
-                                                            }).then(()=>{
+                                                                }).then(()=>{
 
-                                                                load.style.display = 'none';
-                                                                window.alert("enregistrement reuissi. nous vous contacterons dans une date ulterieure au (" + tel + ") pour la suite des instructions et le paiement. Merci pour votre confiance !");
-                                                                window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
-                                                                
-                                                                        
-                                                            }).catch((error)=>{
-                                                                load.style.display = 'none';
-                                                                window.alert("erreur survenue : "+ error);
-                                                            });
-                                                
+                                                                    load.style.display = 'none';
+                                                                    window.alert("enregistrement reuissi. nous vous contacterons dans une date ulterieure au (" + tel + ") pour la suite des instructions et le paiement. Merci pour votre confiance !");
+                                                                    window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
+                                                                    
+                                                                            
+                                                                }).catch((error)=>{
+                                                                    load.style.display = 'none';
+                                                                    window.alert("erreur survenue : "+ error);
+                                                                });
                                                 
                                                 
                                                 }

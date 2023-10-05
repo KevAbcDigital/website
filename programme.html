@@ -94,7 +94,7 @@
                 à un tournoi suite à la validation de la souscription en ligne via un matricule (personnel) inscrit sur la licence.</p></br>
             
 
-            <div class="enteteimg2" style="margin-top: 70px;"></div>
+            <div class="enteteimg2" style="margin-top: 40px;"></div>
             <p style=" margin-top: 15px; color: rgb(15, 25, 75);"> LA LICENCE ACTIVE </p>
             <div class="enteteligne" style="margin-top: 10px; height: 2px;"></div>
             <p style="font-size: 12px; margin-top: 30px; color: rgb(100, 104, 109);"> Vous etes oui ou non membre d'un
@@ -109,15 +109,69 @@
            
         </section>
 
-        <b class="txtcontenuhomea" style="width: 100%; text-align: center; font-size: 17px; padding-top: 30px; padding-left: 0px;">
-            GALLERIE PHOTO
-        </b>
 
         <section style="margin-top: 73px; padding-top: 40px; border-top-left-radius: 10px; border-top-right-radius: 10px;"
          class="partenaire" id="partenaire">
             
+
+         <section style="border-radius: 13px; margin-top: -10px; margin-left: 20px; margin-right: 20px; background-color: rgb(239, 243, 4);" class="formulaire" id="formulaire">
+            <div style="padding-top: 17px;" class="devisbloc ">
+
+                <div class="lico">
+                    <b class="listplayer" id="numerouser" style=" width: 25%; color: rgb(255, 255, 255);
+                    display: block; text-align: start; margin-left: 68%; font-size: 10px; padding-right: 1px;">N° : Etat ...</b>
+
+                    <div class="imageuser" id="imageuser"></div>
+            
+                    <b class="listplayer" id="nomsuser" style="width: 91%; color: rgb(0, 0, 0);
+                    display: block; text-align: start; font-weight: 800; margin-left: 9%; font-size: 12px; margin-top: -81px;">Noms : En attente ...</b>
+                    <b class="listplayer" id="prenomuser" style="width: 91%; color: rgba(4, 4, 5, 0.95);
+                    display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top: 4px;">Prénoms : En attente ...</b>
+                    <b class="listplayer" id="dateuser" style="width: 91%; color: rgba(4, 4, 4, 0.950);
+                    display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top: 4px;">Né(e) le : En attente ...</b>
+                    <b class="listplayer" id="categorieuser" style="width: 91%; color: rgb(4, 4, 4, 0.950);
+                    display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top: 4px;">Qualité : En attente ...</b>
+                    <b class="listplayer" id="clubuser" style="width: 91%; color: rgb(4, 4, 4, 0.950);
+                    display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top: 4px;">Club / Ligue : En attente ...</b>
+
+                    <b class="listplayer" id="cniuser" style="width: 89%; color: rgb(255, 255, 255);
+                    display: block; text-align: start; margin-left: 11%; font-size: 10px; padding-top: 13px;">CNI : Etat ...</b>
+
+                </div>
+
+                </lottie-player>
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player style="color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                background="transparent" speed="1"  loop autoplay></lottie-player>
+
+                <form name="formweb" action="">
+
+                    <h1 style=" padding-top: 14px; margin-bottom: 10px; font-weight: 600; color: rgb(4, 70, 4);">MA LICENCE </h1>
+                    <h3 style="color: rgb(4, 70, 4);" class="textcontenu">NB: Si vous etes déjà inscrit en ligne, entrez votre nom comme indiqué et verifiez l'etat de votre licence . </h3>
+
+                    <div class="form-wrapper">
+                        <input id="nomtest" style="border: 1px solid #008006ab; padding-left: 15px;" type="email" placeholder="Entrez votre nom et prenoms dans l'ordre ..." class="form-controla">
+                    </div>
+
+                    <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(4, 70, 4); color: rgb(255, 255, 255);
+                              box-shadow: -1px 1px 9px #f4fa9bd2; height: 33px;" type="button" onclick="search()">
+                            Chercher
+                            <i class="zmdi zmdi-arrow-right"></i>
+                        </button>
+                    </div>
+        
+                </form>
+
+            </div>
+        </section>
+
+
+
+
+
             <div class="box">
-                <b style="margin-top: 10px;">CLASSEMENT 2023</b>
+                <b style="margin-top: 110px;">CLASSEMENT 2023</b>
                 <b style="margin-top: 2px; font-size: 12px; font-weight: 800; color: rgb(184, 197, 8);" >SENIORS ET JEUNES >>> </b>
             </div>
             
@@ -204,10 +258,10 @@
 
         </section>
 
-        <section class="partenaire" id="partenaire">
+        <section style="padding-bottom: 60px;" class="partenaire" id="partenaire">
             
             <div class="box">
-                <b style="margin-top: 10px;">TENNIS STORIES</b>
+                <b style="margin-top: 110px;">TENNIS STORIES</b>
                 <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >MORE >>> </b>
             </div>
             
@@ -341,23 +395,103 @@
             window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
         }
 
+        
+
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+   
+        const database = firebase.database();
+
+        function search(){
+
+            var numerouser = document.getElementById("numerouser");                
+            var nomsuser = document.getElementById("nomsuser");                
+            var prenomuser = document.getElementById("prenomuser");                
+            var dateuser = document.getElementById("dateuser");                
+            var categorieuser = document.getElementById("categorieuser");                
+            var clubuser = document.getElementById("clubuser");                
+            var cniuser = document.getElementById("cniuser");                
+            var imageuser = document.getElementById("imageuser");                
+
+            var load = document.getElementById("lottieload");                
+            var nom = $('#nomtest').val().toLowerCase().trim();
+            var p = 0;
+            var dataRef = firebase.database().ref("licences");
+
+            if ( nom != "" ) {
+
+                load.style.display = "block";
+
+                      
+                dataRef.on("value" , function(snapshot){
+                    var i = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == nom.toLowerCase().trim() ) {
+                            i=1;
+                            load.style.display = "none";
+                            window.alert("Licence trouvée");
 
 
-        var firstindexa=0;
-        function automaticslidea(){
-            setTimeout(automaticslidea, 5000);
-            var pics;
-            const img = document.getElementsByClassName('slideidaaa');
-            for(pics=0; pics<img.length; pics++) {
-                img[pics].style.display="none";
+                            var dataRefb = firebase.database().ref("licences").child(nom.toLowerCase().trim());
+                            dataRefb.on("value" , function(snapshot){
+                                snapshot.forEach(function(element){
+                                    if(element.key == "numero" ) {
+                                        if(element.val() == "N° : Non Activé ...") {
+                                            numerouser.style.color='red';
+                                        } else {
+                                            numerouser.style.color='white';
+                                        }
+                                        numerouser.innerHTML=element.val();
+                                    }if(element.key == "nom" ) {
+                                        nomsuser.innerHTML=element.val();
+                                    }if(element.key == "prenoms" ) {
+                                        prenomuser.innerHTML=element.val();
+                                    }if(element.key == "club" ) {
+                                        clubuser.innerHTML=element.val();
+                                    }if(element.key == "born" ) {
+                                        dateuser.innerHTML=element.val();
+                                    }if(element.key == "qualite" ) {
+                                        categorieuser.innerHTML=element.val();
+                                    }if(element.key == "cni" ) {
+                                        if(element.val() == "CNI : Non Activé ...") {
+                                            cniuser.style.color='red';
+                                        } else {
+                                            cniuser.style.color='white';
+                                        }
+                                        cniuser.innerHTML=element.val();
+                                    }if(element.key == "urluser" ) {
+                                        imageuser.style.backgroundImage= "url("+element.val()+")";
+                                    }
+                                });
+                            });
+
+
+                        }
+                    });
+                   
+                    if ( i == 0 ) {
+                        load.style.display = "none";
+                        window.alert("aucune licence trouvée au nom de : " + (nom.toLowerCase().trim()));
+                    }
+                
+                });
+  
+
+   
+            } else if ( nom == "" ) {
+                window.alert("veuillez entrer votre nom complet ...");
             }
-            firstindexa++;
-            if(firstindexa > img.length) {
-                firstindexa = 1;
-            }
-            img[firstindexa - 1].style.display="block";
+    
         }
-        automaticslidea();
 
 
     </script>
