@@ -206,16 +206,15 @@
     <script>
 
 
-        var files = [];
+        var filesphoto = [];
+        var filesrecto = [];
+        var filesverso = [];
         var imgphoto;
         var imgrecto;
         var imgverso;
         var txtphoto = "nul";
         var txtrecto = "nul";
         var txtverso = "nul";
-        var rectourl = "nul";
-        var versourl = "nul";
-        var photourl = "nul";
         var reader = new FileReader();
         var myimg = document.getElementById('myimg');
         var myimgrecto = document.getElementById('myimgrecto');
@@ -227,23 +226,30 @@
         input.type = 'file';
         input.onchange = e => {
 
-            files = e.target.files;
-            var extention = GetFileExt(files[0]);
-            var name = GetFileName(files[0]);
-            reader.readAsDataURL(files[0]);
-
             if (i==1) {
-                imgphoto = files[0];
+                filesphoto = e.target.files;
+                var extention = GetFileExt(filesphoto[0]);
+                var name = GetFileName(filesphoto[0]);
+                reader.readAsDataURL(filesphoto[0]);
+                imgphoto = filesphoto[0];
                 txtphoto = name+extention;
             }
 
             if (i==2) {
-                imgrecto = files[0];
+                filesrecto = e.target.files;
+                var extention = GetFileExt(filesrecto[0]);
+                var name = GetFileName(filesrecto[0]);
+                reader.readAsDataURL(filesrecto[0]);
+                imgrecto = filesrecto[0];
                 txtrecto = name+extention;
             }
 
             if (i==3) {
-                imgverso = files[0];
+                filesverso = e.target.files;
+                var extention = GetFileExt(filesverso[0]);
+                var name = GetFileName(filesverso[0]);
+                reader.readAsDataURL(filesverso[0]);
+                imgverso = filesverso[0];
                 txtverso = name+extention;
             }
             
@@ -347,6 +353,7 @@
         }
 
         function send(){
+            
 
         var nom = $('#nomuser').val().toLowerCase().trim();
         var prenom = $('#prenomuser').val().toLowerCase().trim();
@@ -363,76 +370,78 @@
                 var play = (nom + " " + prenom) + " ( " + club + " ) " + " - cat : " + typtxt ;
                 var dataRef = firebase.database().ref("licences").child(nom + " " + prenom);
 
-
+                var rectourl = "nul";
+                var versourl = "nul";
+                var photourl = "nul";
 
                 let storageRef = firebase.storage().ref("imageslicences/"+(nom + " " + prenom));
-                let uploadTask = storageRef.put(imgphoto);
-                let uploadTaskrecto = storageRef.put(imgrecto);
-                let uploadTaskverso = storageRef.put(imgverso);
+                let uploadTask = storageRef.child("photo").put(imgphoto);
+                let uploadTaskrecto = storageRef.child("recto").put(imgrecto);
+                let uploadTaskverso = storageRef.child("verso").put(imgverso);
+
 
                 uploadTask.on("state_changed",(snapshot)=>{
-                    console.log("patientez un instant");
+                    console.log("photo add");
                 },(error)=>{
                     load.style.display = "none";
                     window.alert("error ");
                 },()=>{
-                    uploadTask.snapshot.ref.getDownloadURL().then((urla)=>{
-                        if(urla != "") {
-                            photourl = urla;
-
-
+                    uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
+                        if(url != "") {
+                            photourl = url;
+                            console.log(photourl);
+                            
 
 
 
                             uploadTaskrecto.on("state_changed",(snapshot)=>{
-                                console.log("patientez un instant");
+                                console.log("recto add");
                             },(error)=>{
                                 load.style.display = "none";
                                 window.alert("error ");
                             },()=>{
-                                uploadTaskrecto.snapshot.ref.getDownloadURL().then((urlb)=>{
-                                    if(urlb != "") {
-                                        rectourl = urlb;
+                                uploadTaskrecto.snapshot.ref.getDownloadURL().then((url)=>{
+                                    if(url != "") {
+                                        rectourl = url;
+                                        console.log(rectourl);
 
-                                        
-                                    
+
+
 
                                         uploadTaskverso.on("state_changed",(snapshot)=>{
-                                            console.log("patientez un instant");
+                                            console.log("verso add");
                                         },(error)=>{
                                             load.style.display = "none";
                                             window.alert("error ");
                                         },()=>{
-                                            uploadTaskverso.snapshot.ref.getDownloadURL().then((urlc)=>{
-                                                if(urlc != "") {
-                                                    versourl = urlc;
-
-                                                                dataRef.set({
-                                                                    'numero' : ("N° : Non Activé ...") ,
-                                                                    'nom' : ("Noms : " + nom.toUpperCase()) ,
-                                                                    'prenoms' : ("Prénoms : " + prenom) ,
-                                                                    'club' : ("Club / Ligue : " + club) ,
-                                                                    'born' : ("Né(e) le : En attente ...") ,
-                                                                    'qualite' : ("Qualité : " + typtxt) ,
-                                                                    'cni' : ("CNI : Non Activé ...") ,
-                                                                    'info' : (play) ,
-                                                                    'urluser' : (photourl) ,
-                                                                    'urlrecto' : (rectourl) ,
-                                                                    'urlverso' : (versourl)
-
-                                                                }).then(()=>{
-
-                                                                    load.style.display = 'none';
-                                                                    window.alert("enregistrement reuissi. nous vous contacterons dans une date ulterieure au (" + tel + ") pour la suite des instructions et le paiement. Merci pour votre confiance !");
-                                                                    window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
-                                                                    
-                                                                            
-                                                                }).catch((error)=>{
-                                                                    load.style.display = 'none';
-                                                                    window.alert("erreur survenue : "+ error);
-                                                                });
-                                                
-                                                
+                                            uploadTaskverso.snapshot.ref.getDownloadURL().then((url)=>{
+                                                if(url != "") {
+                                                    versourl = url;
+                                                    console.log(versourl);
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    dataRef.set({
+                                                        'numero' : ("N° : Non Activé ...") ,
+                                                        'nom' : ("Noms : " + nom.toUpperCase()) ,
+                                                        'prenoms' : ("Prénoms : " + prenom) ,
+                                                        'club' : ("Club / Ligue : " + club) ,
+                                                        'born' : ("Né(e) le : Vérification en cours ...") ,
+                                                        'qualite' : ("Qualité : " + typtxt) ,
+                                                        'cni' : ("CNI : Non Activé ...") ,
+                                                        'info' : (play) ,
+                                                        'urluser' : (photourl) ,
+                                                        'urlrecto' : (rectourl) ,
+                                                        'urlverso' : (versourl)
+                                                    }).then(()=>{
+                                                        load.style.display = 'none';
+                                                        window.alert("enregistrement reuissi. nous vous contacterons dans une date ulterieure au (" + tel + ") pour la suite des instructions et le paiement. Merci pour votre confiance !");
+                                                        window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';                                                                                     
+                                                    }).catch((error)=>{
+                                                        load.style.display = 'none';
+                                                        window.alert("erreur survenue : "+ error);
+                                                    });
                                                 }
                                             })
                                         });
@@ -440,7 +449,12 @@
 
 
 
-                
+
+
+
+
+
+                                            
                                     }
                                 })
                             });
@@ -452,16 +466,11 @@
 
 
 
-
-
-
-
-
-
+                                
                         }
                     })
                 });
-
+                
 
 
 

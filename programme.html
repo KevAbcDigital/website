@@ -115,7 +115,7 @@
             
 
          <section style="border-radius: 13px; margin-top: -10px; margin-left: 20px; margin-right: 20px; 
-         background-color: rgb(248, 252, 193);" class="formulaire" id="formulaire">
+         background-color: rgb(241, 247, 157);" class="formulaire" id="formulaire">
             <div style="padding-top: 17px;" class="devisbloc ">
 
                 <div class="lico">
@@ -135,8 +135,8 @@
                     <b class="listplayer" id="clubuser" style="width: 91%; color: rgb(4, 4, 4, 0.950);
                     display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top: 4px;">Club / Ligue : En attente ...</b>
 
-                    <b class="listplayer" id="cniuser" style="width: 89%; color: rgb(255, 255, 255);
-                    display: block; text-align: start; margin-left: 11%; font-size: 10px; padding-top: 13px;">CNI : Etat ...</b>
+                    <b class="listplayer" id="cniuser" style="width: 91%; color: rgb(255, 255, 255);
+                    display: block; text-align: start; margin-left: 9%; font-size: 10px; padding-top: 16px;">CNI : Etat ...</b>
 
                 </div>
 
@@ -459,6 +459,11 @@
                                     }if(element.key == "club" ) {
                                         clubuser.innerHTML=element.val();
                                     }if(element.key == "born" ) {
+                                        if(element.val() == "Né(e) le : Vérification en cours ...") {
+                                            dateuser.style.color='red';
+                                        } else {
+                                            dateuser.style.color='white';
+                                        }
                                         dateuser.innerHTML=element.val();
                                     }if(element.key == "qualite" ) {
                                         categorieuser.innerHTML=element.val();
@@ -481,7 +486,7 @@
                    
                     if ( i == 0 ) {
                         load.style.display = "none";
-                        window.alert("aucune licence trouvée au nom de : " + (nom.toLowerCase().trim()));
+                        window.alert("aucune licence trouvée au nom de : " + (nom.toLowerCase().trim()) + " veuillez saisir vos noms et prenoms dans l'ordre correct comme sur la CNI");
                     }
                 
                 });
