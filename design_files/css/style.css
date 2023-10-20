@@ -101,6 +101,12 @@ header {
 .pdf {
   display: none;
 }
+.sliderabc {
+  display: none;
+}
+.imgtableaux {
+  display: none;
+}
 
 
 
@@ -631,6 +637,13 @@ header {
   margin-top: -120px;
 }
 .contenuhomeab {
+  display: block;
+}
+
+.sliderabc {
+  display: block;
+}
+.imgtableaux {
   display: block;
 }
 
