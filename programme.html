@@ -51,9 +51,15 @@
 
                     <li class="boutonm" > <img style="width: 94%; margin-left: 3%; ; height: 2px;" src="./design_files/images/garoua/affichegaroua.jpg" alt="image"> </li>
 
+                
                     <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; font-weight: 700; padding : 2px 20px; 
                     font-family: 'Poppins', sans-serif; cursor: pointer; "
                         onclick="j30douala();">+ J30 DOUALA</a>
+                    </li>
+                
+                    <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; font-weight: 700; padding : 2px 20px; 
+                        font-family: 'Poppins', sans-serif; cursor: pointer; "
+                        onclick="j30douala();">+ Ebolowa</a>
                     </li>
 
                     <li class="boutonm"><a style=" color: rgb(0, 0, 0); font-size: 15px; font-weight: 700; padding : 2px 20px; 
@@ -128,7 +134,7 @@
                     display: block; text-align: start; font-weight: 800; margin-left: 9%; font-size: 10px; margin-top: -80px;">Noms : En attente ...</b>
                     <b class="listplayer" id="prenomuser" style="width: 91%; color: rgba(4, 4, 5, 0.95);
                     display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top:5px;">Prénoms : En attente ...</b>
-                    <b class="listplayer" id="dateuser" style="width: 91%; color: black;
+                    <b class="listplayer" id="dateuser" style="width: 91%; color: rgba(4, 4, 4, 0.950);
                     display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top: 4px;">Né(e) le : En attente ...</b>
                     <b class="listplayer" id="categorieuser" style="width: 91%; color: rgb(4, 4, 4, 0.950);
                     display: block; text-align: start; margin-left: 9%; font-size: 9px; padding-top: 4px;">Qualité : En attente ...</b>
@@ -462,7 +468,7 @@
                                         if(element.val() == "Né(e) le : Vérification en cours ...") {
                                             dateuser.style.color='red';
                                         } else {
-                                            dateuser.style.color='black';
+                                            dateuser.style.color='white';
                                         }
                                         dateuser.innerHTML=element.val();
                                     }if(element.key == "qualite" ) {

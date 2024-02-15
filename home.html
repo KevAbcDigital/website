@@ -49,12 +49,17 @@
                         width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
 
-                    <li class="boutonm" onclick="opentk();" >
-                         <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxa.png" alt="image">
-                    </li>
 
                     <li class="boutonm" onclick="opentk();" >
-                        <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxb.png" alt="image">
+                         <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxa.png" alt="image">
+                    </li>
+
+                    <li class="boutonm" onclick="openamical();" >
+                        <img style="width: 94%; margin-left: 3%; margin-top: 2px; height: auto;" src="./design_files/images/boxb.png" alt="image">
+                   </li>
+
+                   <li class="boutonm" onclick="openhome();" >
+                        <img style="width: 94%; margin-top: 5px; margin-left: 3%; height: auto;" src="./design_files/images/boxd.png" alt="image">
                    </li>
 
                    <li class="boutonm"><a> </a></li>
@@ -83,10 +88,10 @@
             <div class="slider_container">
 
                 <div style="margin-left: 17px;" class="itemservice">
-                    <img src="./design_files/images/opena.jpg" alt="image">
+                    <img onclick="opena()" src="./design_files/images/opena.jpg" alt="image">
                 </div>
                 <div class="itemservice">
-                    <img src="./design_files/images/openb.jpg" alt="image">
+                    <img onclick="openb()" src="./design_files/images/openb.jpg" alt="image">
                 </div>
 
 
@@ -153,12 +158,21 @@
     <script>
 
 
-    
+
+        function opena() {
+            window.alert('aucune information disponible pour le moment')
+        }
+        function openb() {
+            window.alert('aucune information disponible pour le moment')
+        }
         function opentk() {
             window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
         }
         function openhome() {
             window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+        function openamical() {
+            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
         }
 
         

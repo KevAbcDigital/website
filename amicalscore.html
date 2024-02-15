@@ -38,10 +38,7 @@
                 <img class="imgmenu" src="./design_files/images/images/menubtnblanc.png" alt="image">
             </label>
             
-            <div class="logo">
-                <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
-            </div>
-
+           
             <div class="menutop">
                 <ul>
 
@@ -51,13 +48,19 @@
                         width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
 
-                    <li class="boutonm" onclick="opentk();" >
-                         <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxa.png" alt="image">
-                    </li>
+                    <li class="boutonm" onclick="openhome();" >
+                        <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxd.png" alt="image">
+                   </li>
 
                     <li class="boutonm" onclick="opentk();" >
-                        <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxb.png" alt="image">
+                         <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxa.png" alt="image">
+                    </li>
+
+                    <li class="boutonm" onclick="openamical();" >
+                        <img style="width: 94%; margin-left: 3%; margin-top: 5px; height: auto;" src="./design_files/images/boxb.png" alt="image">
                    </li>
+
+                   
 
                    <li class="boutonm"><a> </a></li>
                    <li class="boutonm"><a> </a></li>
@@ -68,10 +71,46 @@
             
         </header>
 
+        <img name="imgid" class="fondscore" src="./design_files/images/swing.jpg" alt="image">
+
+
+        <section style="border-radius: 15px; margin-top: -15px; margin-left: 20px; margin-right: 20px; 
+         background-color: rgb(7, 7, 47); position: relative; display: block; z-index: 1500;
+         box-shadow: -1px 1px 9px #f4fa9bd2;">
+            <div style="padding-top: 17px;" class="devisbloc ">
+
+                <form name="formweb" action="">
+
+                    <div class="form-wrapper">
+                        <input id="codesearch" style="border: 1px solid #008006ab; text-align: center;" 
+                        type="email" placeholder="Entrez le code de votre partie" class="form-controla">
+                    </div>
+
+                    <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(248, 227, 0); color: rgb(255, 255, 255);
+                              box-shadow: -1px 1px 9px #f4fa9bd2; height: 33px;" type="button" onclick="search()">
+                            Chercher
+                            <i class="zmdi zmdi-arrow-right"></i>
+                        </button>
+                    </div>
+        
+                </form>
+
+            </lottie-player>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player style="color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+            background="transparent" speed="1"  loop autoplay></lottie-player>
+
+            </div>
+        </section>
+
+
+
+
         <section style="padding-bottom: 60px;" class="partenaire" id="partenaire">
             <div class="box">
-                <b style="margin-top: 110px;">PARTIE n° 123545 </b>
-                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >Ce code permettra à vos amis de suivre votre partie ... </b>
+                <b style="margin-top: 70px;">PARTIE n° ... </b>
+                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >En attente de validation ...</b>
             </div>
         </section>
 
@@ -80,38 +119,44 @@
             <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
 
-        <section class="card" >
+        <section class="card" style="background-color: rgb(7, 7, 47);">
 
             <section style=" width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 7, 47);" class="formulaire" id="formulaire">
           
           
                 <div style="padding-top: 17px; display: block;" class="devisbloc ">
     
-                    <a style="color: white; font-size: 16px;" class="txtindis"> Player 1</a>
+                    <a style="color: white; font-size: 16px;" class="txtindis"> Joueur 1</a>
 
                     <form name="formweb" style="display: flex;" action="">
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
                             <input id="ahole1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="1"  class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
                             <input id="ahole2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="2" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
                             <input id="ahole3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="3" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
                             <input id="ahole4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="4" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
                             <input id="ahole5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="5" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
                             <input id="ahole6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="6" class="form-controla">
                         </div>
 
@@ -120,75 +165,70 @@
                     <form name="formweb" style="display: flex;" action="">
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
                             <input id="ahole7" style="height: 30px; width: 44px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="7" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
                             <input id="ahole8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="8" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
                             <input id="ahole9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="9" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
                             <input id="ahole10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="10"  class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
                             <input id="ahole11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="11" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
                             <input id="ahole12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="12" class="form-controla">
                         </div>
                     
                     </form>
 
-
                     <form name="formweb" style="display: flex;" action="">
 
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
                             <input id="ahole13" style="height: 30px; width: 44px ;border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="13" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
                             <input id="ahole14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="14" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
                             <input id="ahole15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="15" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
                             <input id="ahole16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="16" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
                             <input id="ahole17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="17" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
                             <input id="ahole18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="18" class="form-controla">
                         </div>
                     
                     </form>
-    
-                        <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                            <button id="valider" style=" margin-left: 3%; margin-right: 3%; border-radius: 6px; margin-top: 20px; background-color: rgb(238, 255, 0); color: rgb(0, 0, 0);
-                                  box-shadow: -1px 1px 9px #1c0983d2; " type="button" onclick="send()">
-                                Ok
-                                <i class="zmdi zmdi-arrow-right"></i>
-                            </button>
-                        </div>
-            
-                    </form>
-    
-                        </lottie-player>
-                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                        <lottie-player style="color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                         background="transparent" speed="1"  loop autoplay></lottie-player>
-    
     
                 </div>
             </section>
@@ -198,32 +238,38 @@
           
                 <div style="padding-top: 17px; display: block;" class="devisbloc ">
     
-                    <a style="color: white; font-size: 13px;" class="txtindis"> Player 2</a>
+                    <a style="color: white; font-size: 16px;" class="txtindis"> Joueur 2</a>
 
                     <form name="formweb" style="display: flex;" action="">
     
                         <div class="form-wrapper">
-                            <input id="hole1" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole1"  class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
+                            <input id="bhole1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="1"  class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole2" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole2" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
+                            <input id="bhole2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="2" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole3" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole3" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
+                            <input id="bhole3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="3" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
-                            <input id="hole4" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole4" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
+                            <input id="bhole4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="4" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole5" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole5" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
+                            <input id="bhole5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="5" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
-                            <input id="hole6" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole6" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
+                            <input id="bhole6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="6" class="form-controla">
                         </div>
 
                     </form>
@@ -231,64 +277,187 @@
                     <form name="formweb" style="display: flex;" action="">
     
                         <div class="form-wrapper">
-                            <input id="hole7" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole7" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
+                            <input id="bhole7" style="height: 30px; width: 44px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="7" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
-                            <input id="hole8" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole8" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
+                            <input id="bhole8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="8" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole9" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole9" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
+                            <input id="bhole9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="9" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
-                            <input id="hole10" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole10"  class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
+                            <input id="bhole10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="10"  class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole11" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole11" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
+                            <input id="bhole11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="11" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole12" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole12" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
+                            <input id="bhole12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="12" class="form-controla">
                         </div>
                     
                     </form>
 
+                    <form name="formweb" style="display: flex;" action="">
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
+                            <input id="bhole13" style="height: 30px; width: 44px ;border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="13" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
+                            <input id="bhole14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="14" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
+                            <input id="bhole15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="15" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
+                            <input id="bhole16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="16" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
+                            <input id="bhole17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="17" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
+                            <input id="bhole18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="18" class="form-controla">
+                        </div>
+                    
+                    </form>
+    
+                </div>
+            </section>
+
+            <section style=" width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 7, 47);" class="formulaire" id="formulaire">
+          
+          
+                <div style="padding-top: 17px; display: block;" class="devisbloc ">
+    
+                    <a style="color: white; font-size: 16px;" class="txtindis"> Joueur 3</a>
+
+                    <form name="formweb" style="display: flex;" action="">
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
+                            <input id="chole1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="1"  class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
+                            <input id="chole2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="2" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
+                            <input id="chole3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="3" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
+                            <input id="chole4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="4" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
+                            <input id="chole5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="5" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
+                            <input id="chole6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="6" class="form-controla">
+                        </div>
+
+                    </form>
+
+                    <form name="formweb" style="display: flex;" action="">
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
+                            <input id="chole7" style="height: 30px; width: 44px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="7" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
+                            <input id="chole8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="8" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
+                            <input id="chole9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="9" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
+                            <input id="chole10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="10"  class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
+                            <input id="chole11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="11" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
+                            <input id="chole12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="12" class="form-controla">
+                        </div>
+                    
+                    </form>
 
                     <form name="formweb" style="display: flex;" action="">
 
                         <div class="form-wrapper">
-                            <input id="hole13" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole13" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
+                            <input id="chole13" style="height: 30px; width: 44px ;border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="13" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole14" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole14" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
+                            <input id="chole14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="14" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
-                            <input id="hole15" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole15" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
+                            <input id="chole15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="15" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole16" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole16" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
+                            <input id="chole16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="16" class="form-controla">
                         </div>
 
                         <div class="form-wrapper">
-                            <input id="hole17" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole17" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
+                            <input id="chole17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="17" class="form-controla">
                         </div>
     
                         <div class="form-wrapper">
-                            <input id="hole18" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole18" class="form-controla">
+                            <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
+                            <input id="chole18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="18" class="form-controla">
                         </div>
                     
                     </form>
     
                         <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                            <button id="valider" style=" margin-left: 3%; margin-right: 3%; border-radius: 6px; margin-top: 20px; background-color: rgb(238, 255, 0); color: rgb(0, 0, 0);
+                            <button id="valider" style=" margin-left: 3%; margin-right: 3%; border-radius: 6px; margin-top: 40px; background-color: rgb(238, 255, 0); color: rgb(0, 0, 0);
                                   box-shadow: -1px 1px 9px #1c0983d2; " type="button" onclick="send()">
-                                Ok
+                                Enregistrer
                                 <i class="zmdi zmdi-arrow-right"></i>
                             </button>
                         </div>
@@ -309,6 +478,26 @@
       
         
 
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>follow us : 6 94 93 76 01</h4>
+               
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-likedin-in"></i></a>
+                                
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <p class="copyrigth">Copyright © Tous droits réservés - PNPN Golf</p>
+
+        </footer>
 
 
         <div class="whatsappid" id="myDiv"></div>
@@ -340,12 +529,15 @@
 
 
          
-            function opentk() {
-                window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-            }
-            function openhome() {
-                window.location.href = 'https://kevabcdigital.github.io/website/home.html';
-            }
+        function opentk() {
+            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+        }
+        function openhome() {
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+        function openamical() {
+            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+        }
         
             
 

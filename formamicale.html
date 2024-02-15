@@ -45,6 +45,7 @@
                 <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
             </div>
 
+            
             <div class="menutop">
                 <ul>
 
@@ -54,12 +55,17 @@
                         width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
 
-                    <li class="boutonm" onclick="opentk();" >
-                         <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxa.png" alt="image">
-                    </li>
 
                     <li class="boutonm" onclick="opentk();" >
-                        <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxb.png" alt="image">
+                         <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxa.png" alt="image">
+                    </li>
+
+                   <li class="boutonm" onclick="openhome();" >
+                        <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxd.png" alt="image">
+                   </li>
+
+                   <li class="boutonm" onclick="openamical();" >
+                        <img style="width: 94%; margin-left: 3%; margin-top: 5px; height: auto;" src="./design_files/images/boxb.png" alt="image">
                    </li>
 
                    <li class="boutonm"><a> </a></li>
@@ -68,7 +74,7 @@
                     
                 </ul>
             </div>
-            
+
         </header>
 
         <section class="indisponibletxt">
@@ -76,8 +82,8 @@
         </section>
 
       
-        <section style=" position: absolute; bottom: 0 ; left: 0; right: 0; margin: 14px; border-radius: 20px;
-        background-color: rgb(7, 47, 22);" class="formulaire" id="formulaire">
+        <section style=" position: absolute; bottom: 0 ; left: 0; right: 0; margin-left: 14px; margin-right: 14px;
+         margin-bottom: 40px; border-radius: 20px; background-color: rgb(7, 47, 22);" class="formulaire" id="formulaire">
             <div style="padding-top: 17px;" class="devisbloc ">
 
                 <form name="formweb" style="padding: 0 35px;" action="">
@@ -127,41 +133,21 @@
         </section>
 
 
-        <div class="whatsappid" id="myDiv"></div>
-
     </body>
 
-    <script type="text/javascript">
-        $(function () {
-          $('#myDiv').floatingWhatsApp({
-            phone: '237694937601',
-            popupMessage: 'Comment pouvons nous vous aider?',
-            showPopup: true,
-            showOnIE: false,
-            headerTitle: 'PNPN Golf!',
-            headerColor: 'blue',
-            backgroundColor: 'green',
-            position: 'right' ,
-            size: '50px'
-          });
-          
-        });
-
-        
     
-    </script>
-
     <script>
 
-
-
          
-            function opentk() {
-                window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-            }
-            function openhome() {
-                window.location.href = 'https://kevabcdigital.github.io/website/home.html';
-            }
+        function opentk() {
+            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+        }
+        function openhome() {
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+        function openamical() {
+            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+        }
         
             
 
@@ -188,7 +174,7 @@
             var joueur3 = $('#joueur3').val().toLowerCase().trim();
             var codepass = $('#codepass').val();
             var p = 0;
-            // var dataRef = firebase.database().ref("amical");
+            var dataRef = firebase.database().ref("amical");
 
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
                & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 6) {
@@ -198,62 +184,49 @@
                 nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
                 window.alert(nbr);
 
+                            
                 
-            /*
-
-            
-                let storageRef = firebase.storage().ref("images/"+(nom.toLowerCase().trim()));
-                let uploadTask = storageRef.put(imgphoto);
-                uploadTask.on("state_changed",(snapshot)=>{
-                    console.log("patientez s'il vous plait");
-                },(error)=>{
-                    load.style.display = "none";
-                    window.alert("error ");
-                },()=>{
-                    uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
-                        if(url != "") {
-                            photourl = url;
-
-                            dataRef.on("value" , function(snapshot){
-                                var i = 0;
-                                snapshot.forEach(function(element){
-                                    if(element.key == nom.toLowerCase().trim() ) {
-                                        i = 1;
-                                    }
-                                });
-                                if ( i == 1 ) {
-                                    load.style.display = "none";
-                                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
-                                    window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
-                                } else {
-                                    i = 2;
-                                    var dataRefb = firebase.database().ref("liste").child(play);
-                                    dataRefb.set({
-                                        'info' : (play) ,
-                                        'url' : (photourl)
-                                    }).then(()=>{
-
-                                        (dataRef.child(nom.toLowerCase().trim())).set({
-                                            'info' : (play) ,
-                                            'url' : (photourl)
-                                        }).then(()=>{
-                                            load.style.display = 'none';
-                                            window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
-                                        }).catch((error)=>{
-                                            load.style.display = 'none';
-                                            window.alert("erreur survenue : "+ error);
-                                        });
-                                                
-                                    }).catch((error)=>{
-                                        load.style.display = 'none';
-                                        window.alert("erreur survenue : "+ error);
-                                    });
-                                }
-                            });
+                dataRef.on("value" , function(snapshot){
+                    var i = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == codepass) {
+                            i = 1;
                         }
-                    })
+                    });
+                                
+                
+                    if ( i == 0 ) {
+                        i = 2;
+                        var dataRefb = firebase.database().ref("liste").child(play);
+                        dataRefb.set({
+                            'info' : (play) ,
+                            'url' : (photourl)
+                        }).then(()=>{
+
+                        (dataRef.child(nom.toLowerCase().trim())).set({
+                            'info' : (play) ,
+                            'url' : (photourl)
+                        }).then(()=>{
+                            load.style.display = 'none';
+                            window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+                                                
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+                    
+                    } else {
+                        load.style.display = "none";
+                        window.alert("le code " + codepass + " a déjà été utilisé pour une partie .");
+                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                    }
                 });
+                       
 
 
 
@@ -264,8 +237,7 @@
 
 
 
-            */
-   
+               
             } else if ( joueur1 == "" ) {
                 window.alert("veuillez entrer le nom du joueur 1 ...");
             } else if ( joueur1.length > 20 ) {
