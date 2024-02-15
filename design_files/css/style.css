@@ -13,7 +13,7 @@ p{
   color: #fff;
 }
 body {
-  background-color: #492424;
+  background-color: #492424; 
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -107,6 +107,9 @@ header {
 .imgtableaux {
   display: none;
 }
+.card {
+  display: none;
+}
 
 
 
@@ -167,15 +170,14 @@ header {
   header {
     background-image: none;
     background-size: cover;
+    background-color: transparent;
     background-position: center;
     width: 100%;
-    box-shadow: -1px 1px 9px #00000000;
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 90px;
     z-index: 1300;
     align-items: center;
-    justify-content: center;
     display: flex;
   }
   header label {
@@ -184,9 +186,10 @@ header {
   header .menutop {
     position: absolute;
     margin-top: 0px;
+    width: 90%;
     z-index: 900;
     top: 0; left:0; right: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(7, 7, 47, 0.511);
     display: none;
   }
   header .menutop ul li {
@@ -208,23 +211,22 @@ header {
   }
   .logo img{
     cursor: pointer;
-    height: 40px;
-    width: 135px;
-    margin-left: 0px;
-    margin-top: 0px;
-    float: none;
-    z-index: 1200;
+    position: absolute;
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    right: 0;
+    margin-right: 30px;
+    margin-top: -15px;
+    z-index: 800;
   }
 
-
-
   .headerbtn {
-    background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(14, 13, 13, 0.61)), 
-    url(../images/images/fondmenua.jpeg);
+    background-image: none;
     background-size: cover;
     background-position: top;
     width: 100%;
-    box-shadow: -1px 1px 9px #0000005b;
+    box-shadow: none;
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 80px;
@@ -233,13 +235,31 @@ header {
     justify-content: center;
     display: flex;
   }
-
+  .topm {
+    display: block;
+    position: relative;
+    width: 90%;
+    border-radius: 13px;
+    height: 86px;
+    justify-content: center;
+    z-index: 1000;
+    padding: 30px;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
 
 
   
 
 
+  .card {
+    display: block;
+    z-index: 1010;
+    margin-top: 100px;
+    position: relative;
+  }
 
 
 
@@ -621,21 +641,6 @@ header {
 
 
 
-
-  
-.topm {
-  display: block;
-  position: relative;
-  width: 90%;
-  border-radius: 13px;
-  height: 86px;
-  background-color: rgba(170, 248, 163, 0.521);
-  justify-content: center;
-  z-index: 1000;
-  padding: 20px;
-  margin-left: 5%;
-  margin-top: -120px;
-}
 .contenuhomeab {
   display: block;
 }
@@ -758,7 +763,7 @@ a:hover {
   outline: none; }
 
 .wrapper {
-  min-height: 100vh;
+  min-height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

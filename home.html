@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    
+    </head>
+
+    <body style="background-color: rgb(7, 7, 47);">
+ 
+        <header style="background-color: rgb(7, 7, 47);">
+
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">
+                <img class="imgmenu" src="./design_files/images/images/menubtnblanc.png" alt="image">
+            </label>
+            
+            <div class="logo">
+                <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
+            </div>
+
+            <div class="menutop">
+                <ul>
+
+                    <li class="boutonm" > <img style="width: 100%; height: max-content;" src="./design_files/images/menushow.jpg" alt="image"> </li>
+                    
+                    <li class="boutonm"><a style=" color: rgb(255, 255, 255); font-size: 7px; font-weight: 300; text-align: center;
+                        width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
+                    </li>
+
+                    <li class="boutonm" onclick="opentk();" >
+                         <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxa.png" alt="image">
+                    </li>
+
+                    <li class="boutonm" onclick="opentk();" >
+                        <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxb.png" alt="image">
+                   </li>
+
+                   <li class="boutonm"><a> </a></li>
+                   <li class="boutonm"><a> </a></li>
+                   <li class="boutonm"><a> </a></li>
+                    
+                </ul>
+            </div>
+            
+        </header>
+        
+        <section class="headerbtn"></section>
+
+    
+   
+       
+        <section style="padding-bottom: 60px;" class="partenaire" id="partenaire">
+            
+            <div class="box">
+                <b style="margin-top: 110px;">HELLO, User !</b>
+                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >Retour sur toute l'actualité ... </b>
+            </div>
+            
+
+            
+            <div class="slider_container">
+
+                <div style="margin-left: 17px;" class="itemservice">
+                    <img src="./design_files/images/opena.jpg" alt="image">
+                </div>
+                <div class="itemservice">
+                    <img src="./design_files/images/openb.jpg" alt="image">
+                </div>
+
+
+                <div style=" width: 100%;padding: 50px; margin-top: 10px;">
+                    <img onclick="opentk()" src="./design_files/images/commencer.png" alt="image">
+                </div>
+
+            </div>
+
+        </section>
+
+        
+
+
+        <section class="indisponibletxt">
+            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+  
+
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>follow us : 6 94 93 76 01</h4>
+               
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-likedin-in"></i></a>
+                                
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <p class="copyrigth">Copyright © Tous droits réservés - PNPN Golf</p>
+
+        </footer>
+  
+        <div class="whatsappid" id="myDiv"></div>
+  
+  
+    </body>
+
+    <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237694937601',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'PNPN Golf!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            position: 'right' ,
+            size: '50px'
+          });
+          
+        });
+    </script>
+    
+       
+    <script>
+
+
+    
+        function opentk() {
+            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+        }
+        function openhome() {
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+
+        
+
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+   
+        const database = firebase.database();
+
+    </script>
+        
+    
+
+</html>

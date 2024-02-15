@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>scoreboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+    
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+
+    </head>
+
+    <body style="background-color: rgb(7, 7, 47);">
+        
+        
+        <header style="background-color: rgb(7, 7, 47);">
+
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">
+                <img class="imgmenu" src="./design_files/images/images/menubtnblanc.png" alt="image">
+            </label>
+            
+            <div class="logo">
+                <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
+            </div>
+
+            <div class="menutop">
+                <ul>
+
+                    <li class="boutonm" > <img style="width: 100%; height: max-content;" src="./design_files/images/menushow.jpg" alt="image"> </li>
+                    
+                    <li class="boutonm"><a style=" color: rgb(255, 255, 255); font-size: 7px; font-weight: 300; text-align: center;
+                        width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
+                    </li>
+
+                    <li class="boutonm" onclick="opentk();" >
+                         <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxa.png" alt="image">
+                    </li>
+
+                    <li class="boutonm" onclick="opentk();" >
+                        <img style="width: 94%; margin-left: 3%; ; height: auto;" src="./design_files/images/boxb.png" alt="image">
+                   </li>
+
+                   <li class="boutonm"><a> </a></li>
+                   <li class="boutonm"><a> </a></li>
+                   <li class="boutonm"><a> </a></li>
+                    
+                </ul>
+            </div>
+            
+        </header>
+
+        <section style="padding-bottom: 60px;" class="partenaire" id="partenaire">
+            <div class="box">
+                <b style="margin-top: 110px;">PARTIE n° 123545 </b>
+                <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" >Ce code permettra à vos amis de suivre votre partie ... </b>
+            </div>
+        </section>
+
+
+        <section class="indisponibletxt">
+            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+
+        <section class="card" >
+
+            <section style=" width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 7, 47);" class="formulaire" id="formulaire">
+          
+          
+                <div style="padding-top: 17px; display: block;" class="devisbloc ">
+    
+                    <a style="color: white; font-size: 16px;" class="txtindis"> Player 1</a>
+
+                    <form name="formweb" style="display: flex;" action="">
+    
+                        <div class="form-wrapper">
+                            <input id="ahole1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="1"  class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="2" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="3" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="ahole4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="4" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="5" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="ahole6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="6" class="form-controla">
+                        </div>
+
+                    </form>
+
+                    <form name="formweb" style="display: flex;" action="">
+    
+                        <div class="form-wrapper">
+                            <input id="ahole7" style="height: 30px; width: 44px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="7" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="ahole8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="8" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="9" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="ahole10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="10"  class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="11" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="12" class="form-controla">
+                        </div>
+                    
+                    </form>
+
+
+                    <form name="formweb" style="display: flex;" action="">
+
+                        <div class="form-wrapper">
+                            <input id="ahole13" style="height: 30px; width: 44px ;border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="13" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="14" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="ahole15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="15" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="16" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="ahole17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="17" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="ahole18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="18" class="form-controla">
+                        </div>
+                    
+                    </form>
+    
+                        <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                            <button id="valider" style=" margin-left: 3%; margin-right: 3%; border-radius: 6px; margin-top: 20px; background-color: rgb(238, 255, 0); color: rgb(0, 0, 0);
+                                  box-shadow: -1px 1px 9px #1c0983d2; " type="button" onclick="send()">
+                                Ok
+                                <i class="zmdi zmdi-arrow-right"></i>
+                            </button>
+                        </div>
+            
+                    </form>
+    
+                        </lottie-player>
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player style="color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                         background="transparent" speed="1"  loop autoplay></lottie-player>
+    
+    
+                </div>
+            </section>
+    
+            <section style=" width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 7, 47);" class="formulaire" id="formulaire">
+          
+          
+                <div style="padding-top: 17px; display: block;" class="devisbloc ">
+    
+                    <a style="color: white; font-size: 13px;" class="txtindis"> Player 2</a>
+
+                    <form name="formweb" style="display: flex;" action="">
+    
+                        <div class="form-wrapper">
+                            <input id="hole1" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole1"  class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole2" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole2" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole3" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole3" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="hole4" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole4" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole5" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole5" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="hole6" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole6" class="form-controla">
+                        </div>
+
+                    </form>
+
+                    <form name="formweb" style="display: flex;" action="">
+    
+                        <div class="form-wrapper">
+                            <input id="hole7" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole7" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="hole8" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole8" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole9" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole9" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="hole10" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole10"  class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole11" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole11" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole12" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole12" class="form-controla">
+                        </div>
+                    
+                    </form>
+
+
+                    <form name="formweb" style="display: flex;" action="">
+
+                        <div class="form-wrapper">
+                            <input id="hole13" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole13" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole14" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole14" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="hole15" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole15" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole16" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole16" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <input id="hole17" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole17" class="form-controla">
+                        </div>
+    
+                        <div class="form-wrapper">
+                            <input id="hole18" style="height: 30px; border: 1px solid #008006ab; padding-left: 7px;" type="number" placeholder="Hole18" class="form-controla">
+                        </div>
+                    
+                    </form>
+    
+                        <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                            <button id="valider" style=" margin-left: 3%; margin-right: 3%; border-radius: 6px; margin-top: 20px; background-color: rgb(238, 255, 0); color: rgb(0, 0, 0);
+                                  box-shadow: -1px 1px 9px #1c0983d2; " type="button" onclick="send()">
+                                Ok
+                                <i class="zmdi zmdi-arrow-right"></i>
+                            </button>
+                        </div>
+            
+                    </form>
+    
+                        </lottie-player>
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player style="color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                         background="transparent" speed="1"  loop autoplay></lottie-player>
+    
+    
+                </div>
+            </section>
+
+
+        </section>
+      
+        
+
+
+
+        <div class="whatsappid" id="myDiv"></div>
+
+    </body>
+
+    <script type="text/javascript">
+        $(function () {
+          $('#myDiv').floatingWhatsApp({
+            phone: '237694937601',
+            popupMessage: 'Comment pouvons nous vous aider?',
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'PNPN Golf!',
+            headerColor: 'blue',
+            backgroundColor: 'green',
+            position: 'right' ,
+            size: '50px'
+          });
+          
+        });
+
+        
+    
+    </script>
+
+    <script>
+
+
+
+         
+            function opentk() {
+                window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+            }
+            function openhome() {
+                window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+            }
+        
+            
+
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+    
+        const database = firebase.database();
+
+        function send(){
+            
+            
+            // var load = document.getElementById("lottieload");                
+            var joueur1 = $('#joueur1').val().toLowerCase().trim();
+            var joueur2 = $('#joueur2').val().toLowerCase().trim();
+            var joueur3 = $('#joueur3').val().toLowerCase().trim();
+            var p = 0;
+            // var dataRef = firebase.database().ref("amical");
+
+            if ( joueur1 != "" & joueur3 != "" & joueur2 != "" ) {
+
+
+                // load.style.display = "block";
+                var nbr = 0;            
+                nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
+                window.alert(nbr);
+
+
+                
+            /*
+
+            
+                let storageRef = firebase.storage().ref("images/"+(nom.toLowerCase().trim()));
+                let uploadTask = storageRef.put(imgphoto);
+                uploadTask.on("state_changed",(snapshot)=>{
+                    console.log("patientez s'il vous plait");
+                },(error)=>{
+                    load.style.display = "none";
+                    window.alert("error ");
+                },()=>{
+                    uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
+                        if(url != "") {
+                            photourl = url;
+
+                            dataRef.on("value" , function(snapshot){
+                                var i = 0;
+                                snapshot.forEach(function(element){
+                                    if(element.key == nom.toLowerCase().trim() ) {
+                                        i = 1;
+                                    }
+                                });
+                                if ( i == 1 ) {
+                                    load.style.display = "none";
+                                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
+                                    window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                                } else {
+                                    i = 2;
+                                    var dataRefb = firebase.database().ref("liste").child(play);
+                                    dataRefb.set({
+                                        'info' : (play) ,
+                                        'url' : (photourl)
+                                    }).then(()=>{
+
+                                        (dataRef.child(nom.toLowerCase().trim())).set({
+                                            'info' : (play) ,
+                                            'url' : (photourl)
+                                        }).then(()=>{
+                                            load.style.display = 'none';
+                                            window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+                                        }).catch((error)=>{
+                                            load.style.display = 'none';
+                                            window.alert("erreur survenue : "+ error);
+                                        });
+                                                
+                                    }).catch((error)=>{
+                                        load.style.display = 'none';
+                                        window.alert("erreur survenue : "+ error);
+                                    });
+                                }
+                            });
+                        }
+                    })
+                });
+
+
+
+
+                
+                
+
+
+
+
+            */
+   
+            } else if ( joueur1 == "" ) {
+                window.alert("veuillez entrer votre nom du joueur 1 ...");
+            } else if ( joueur2 == "" ) {
+                window.alert("veuillez entrer votre nom du joueur 2 ...");
+            } else if ( joueur3 == "" ) {
+                window.alert("veuillez entrer votre nom du joueur 3 ...");
+            } 
+    
+        }
+
+        function invalid() {
+            window.alert("Desolé ce formulaire est indisponible pour le moment.");
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+
+ /*       
+        var datagarcon = firebase.database().ref("liste");
+        var i = 0 ;
+        datagarcon.on("value" , function(snapshot){
+            snapshot.forEach(function(element){
+                i = i + 1;
+                document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
+            });
+        });
+*/
+
+    </script>
+    
+
+</html>
