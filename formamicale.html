@@ -168,7 +168,7 @@
         function send(){
             
             
-            // var load = document.getElementById("lottieload");                
+            var load = document.getElementById("lottieload");                
             var joueur1 = $('#joueur1').val().toLowerCase().trim();
             var joueur2 = $('#joueur2').val().toLowerCase().trim();
             var joueur3 = $('#joueur3').val().toLowerCase().trim();
@@ -179,7 +179,7 @@
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
                & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 6) {
 
-                // load.style.display = "block";
+                load.style.display = "block";
                 var nbr = 0;            
                 nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
                 window.alert(nbr);
@@ -197,23 +197,16 @@
                 
                     if ( i == 0 ) {
                         i = 2;
-                        var dataRefb = firebase.database().ref("liste").child(play);
+                        var dataRefb = firebase.database().ref("amical").child(code);
                         dataRefb.set({
-                            'info' : (play) ,
-                            'url' : (photourl)
+                            'joueur1' : (joueur1) ,
+                            'joueur2' : (joueur2) ,
+                            'joueur3' : (joueur3)
                         }).then(()=>{
 
-                        (dataRef.child(nom.toLowerCase().trim())).set({
-                            'info' : (play) ,
-                            'url' : (photourl)
-                        }).then(()=>{
                             load.style.display = 'none';
-                            window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
-                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
+                            window.alert("enregistrement reuissi. le joueur , Bonne Partie !");
+                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';                    
                                                 
                         }).catch((error)=>{
                             load.style.display = 'none';
@@ -223,7 +216,7 @@
                     } else {
                         load.style.display = "none";
                         window.alert("le code " + codepass + " a déjà été utilisé pour une partie .");
-                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                       // window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
                     }
                 });
                        
