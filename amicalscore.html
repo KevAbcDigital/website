@@ -76,7 +76,6 @@
 
         <section class="sliderabc">
             <img name="imgid" class="slideidaaab" src="./design_files/images/swing.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/swingb.jpeg" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/swingd.jpg" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/swingg.webp" alt="image">
 
@@ -647,8 +646,6 @@
             var c17 = document.getElementById("c17");                
             var c18 = document.getElementById("c18");
 
-
-
             var load = document.getElementById("lottieloadb");                
             var nompart = document.getElementById("nompart");                
             var conseil = document.getElementById("conseil");                
@@ -658,10 +655,9 @@
 
             var dataRef = firebase.database().ref("amical");
 
-                if ( codesearch != "" & codesearch.length == 6) {
+            if ( codesearch != "" & codesearch.length == 6) {
 
                     load.style.display = "block";
-
 
                     dataRef.on("value" , function(snapshot){
                         var i = 0;
@@ -1065,18 +1061,18 @@
                                             }
                                             a14.value=element.val();
                                         }
-                                    
+
                                         if(element.key == "a15" ) {
-                                            if( element.val() == "1") {
+                                            if( element.val() == "2") {
                                                 a15.style.backgroundColor='orange';
                                                 a15.style.color='black';
-                                            } else if( element.val() == "2") {
+                                            } else if( element.val() == "3") {
                                                 a15.style.backgroundColor='red';
                                                 a15.style.color='white';
-                                            } else if( element.val() == "3") {
+                                            } else if( element.val() == "4") {
                                                 a15.style.backgroundColor='darkgreen';
                                                 a15.style.color='white';
-                                            } else if( element.val() == "4") {
+                                            } else if( element.val() == "5") {
                                                 a15.style.borderColor='grey';
                                                 a15.style.backgroundColor='transparent';
                                                 a15.style.color='white';
@@ -1091,18 +1087,18 @@
                                             }
                                             a15.value=element.val();
                                         }
-
+                                       
                                         if(element.key == "a16" ) {
-                                            if( element.val() == "2") {
+                                            if( element.val() == "1") {
                                                 a16.style.backgroundColor='orange';
                                                 a16.style.color='black';
-                                            } else if( element.val() == "3") {
+                                            } else if( element.val() == "2") {
                                                 a16.style.backgroundColor='red';
                                                 a16.style.color='white';
-                                            } else if( element.val() == "4") {
+                                            } else if( element.val() == "3") {
                                                 a16.style.backgroundColor='darkgreen';
                                                 a16.style.color='white';
-                                            } else if( element.val() == "5") {
+                                            } else if( element.val() == "4") {
                                                 a16.style.borderColor='grey';
                                                 a16.style.backgroundColor='transparent';
                                                 a16.style.color='white';
@@ -1117,7 +1113,7 @@
                                             }
                                             a16.value=element.val();
                                         }
-                                       
+
                                         if(element.key == "a17" ) {
                                             if( element.val() == "1") {
                                                 a17.style.backgroundColor='red';
@@ -1533,16 +1529,16 @@
                                         }
                                     
                                         if(element.key == "b15" ) {
-                                            if( element.val() == "1") {
+                                            if( element.val() == "2") {
                                                 b15.style.backgroundColor='orange';
                                                 b15.style.color='black';
-                                            } else if( element.val() == "2") {
+                                            } else if( element.val() == "3") {
                                                 b15.style.backgroundColor='red';
                                                 b15.style.color='white';
-                                            } else if( element.val() == "3") {
+                                            } else if( element.val() == "4") {
                                                 b15.style.backgroundColor='darkgreen';
                                                 b15.style.color='white';
-                                            } else if( element.val() == "4") {
+                                            } else if( element.val() == "5") {
                                                 b15.style.borderColor='grey';
                                                 b15.style.backgroundColor='transparent';
                                                 b15.style.color='white';
@@ -1559,19 +1555,19 @@
                                         }
 
                                         if(element.key == "b16" ) {
-                                            if( element.val() == "2") {
+                                            if( element.val() == "1") {
                                                 b16.style.backgroundColor='orange';
                                                 b16.style.color='black';
-                                            } else if( element.val() == "3") {
+                                            } else if( element.val() == "2") {
                                                 b16.style.backgroundColor='red';
                                                 b16.style.color='white';
-                                            } else if( element.val() == "4") {
+                                            } else if( element.val() == "3") {
                                                 b16.style.backgroundColor='darkgreen';
                                                 b16.style.color='white';
-                                            } else if( element.val() == "5") {
+                                            } else if( element.val() == "4") {
                                                 b16.style.borderColor='grey';
                                                 b16.style.backgroundColor='transparent';
-                                                b16.style.color='white'
+                                                b16.style.color='white';
                                             } else if( element.val() == "") {
                                                 b16.style.borderColor='grey';
                                                 b16.style.backgroundColor='white';
@@ -1583,7 +1579,8 @@
                                             }
                                             b16.value=element.val();
                                         }
-                                       
+
+
                                         if(element.key == "b17" ) {
                                             if( element.val() == "1") {
                                                 b17.style.backgroundColor='red';
@@ -1999,16 +1996,16 @@
                                         }
                                     
                                         if(element.key == "c15" ) {
-                                            if( element.val() == "1") {
+                                            if( element.val() == "2") {
                                                 c15.style.backgroundColor='orange';
                                                 c15.style.color='black';
-                                            } else if( element.val() == "2") {
+                                            } else if( element.val() == "3") {
                                                 c15.style.backgroundColor='red';
                                                 c15.style.color='white';
-                                            } else if( element.val() == "3") {
+                                            } else if( element.val() == "4") {
                                                 c15.style.backgroundColor='darkgreen';
                                                 c15.style.color='white';
-                                            } else if( element.val() == "4") {
+                                            } else if( element.val() == "5") {
                                                 c15.style.borderColor='grey';
                                                 c15.style.backgroundColor='transparent';
                                                 c15.style.color='white';
@@ -2025,19 +2022,19 @@
                                         }
 
                                         if(element.key == "c16" ) {
-                                            if( element.val() == "2") {
+                                            if( element.val() == "1") {
                                                 c16.style.backgroundColor='orange';
                                                 c16.style.color='black';
-                                            } else if( element.val() == "3") {
+                                            } else if( element.val() == "2") {
                                                 c16.style.backgroundColor='red';
                                                 c16.style.color='white';
-                                            } else if( element.val() == "4") {
+                                            } else if( element.val() == "3") {
                                                 c16.style.backgroundColor='darkgreen';
                                                 c16.style.color='white';
-                                            } else if( element.val() == "5") {
+                                            } else if( element.val() == "4") {
                                                 c16.style.borderColor='grey';
                                                 c16.style.backgroundColor='transparent';
-                                                c16.style.color='white'
+                                                c16.style.color='white';
                                             } else if( element.val() == "") {
                                                 c16.style.borderColor='grey';
                                                 c16.style.backgroundColor='white';
@@ -2124,7 +2121,7 @@
                     window.alert("le mot de passe doit contenir exactement 6 caracteres");
                 }
 
-            }
+        }
 
 
         function containsOnlyNumbers(str) {
@@ -2265,9 +2262,6 @@
 
             if ( linked != "non" ) {
 
-
-                load.style.display = "block";
-
                 var dataRefb = firebase.database().ref("amical").child(linked);
 
                 var ja = "non";
@@ -2278,7 +2272,7 @@
                     snapshot.forEach(function(element){
 
                         if(element.key == "joueur1" ) {
-                            ja = joueur1;
+                            ja = element.val();
                         }
 
                         if(element.key == "joueur2" ) {
@@ -2286,7 +2280,7 @@
                                 joueur2.style.display = "none";
                                 formulaireb.style.display = "none";
                             } else {
-                                jb = joueur2;
+                                jb = element.val();;
                             }
                         }
 
@@ -2295,7 +2289,7 @@
                                 joueur3.style.display = "none";
                                 formulairec.style.display = "none";
                             } else {
-                                jc = joueur3;
+                                jc = element.val();;
                             }
                         }
 
