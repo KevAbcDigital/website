@@ -546,6 +546,10 @@
             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
         }
         var linked = "non";
+        var ja = "non";
+        var jb = "non";
+        var jc = "non";
+
         function delet() {
             var dataRef = firebase.database().ref("amical");
             if (linked != "non") {
@@ -668,7 +672,7 @@
                             if(element.key == codesearch ) {
                                 i=1;
 
-                                del.style.display = "block";
+                                del.style.display = "none";
 
                                 nompart.innerHTML="Partie n° " + codesearch;
                                 conseil.innerHTML="Votre partie a été trouvée";
@@ -680,6 +684,7 @@
 
                                         if(element.key == "joueur1" ) {
                                             joueur1.innerHTML= "Joueur 1 :   " + element.val();
+                                            ja = joueur1;
                                         }
 
                                         if(element.key == "joueur2" ) {
@@ -688,6 +693,7 @@
                                                 formulaireb.style.display = "none";
                                             } else {
                                                 joueur2.innerHTML= "Joueur 2 : " + element.val();
+                                                jb = joueur2;
                                             }
                                         }
 
@@ -697,6 +703,7 @@
                                                 formulairec.style.display = "none";
                                             } else {
                                                 joueur3.innerHTML= "Joueur 3 : " + element.val();
+                                                jc = joueur3;
                                             }
                                         }
 
@@ -2325,9 +2332,9 @@
                             'c17' : (c17) ,
                             'c18' : (c18) ,
 
-                            'joueur1' : (joueur1) ,
-                            'joueur2' : (joueur2) ,
-                            'joueur3' : (joueur3)
+                            'joueur1' : (ja) ,
+                            'joueur2' : (jb) ,
+                            'joueur3' : (jc)
 
                         }).then(()=>{
                             load.style.display = 'none';
