@@ -2307,6 +2307,1413 @@
                         }).then(()=>{
                             load.style.display = 'none';
                             window.alert("Sauvegarde reuissie.");
+
+
+
+
+                            var dataRefb = firebase.database().ref("amical").child(linked);
+                                dataRefb.on("value" , function(snapshot){
+                                    snapshot.forEach(function(element){
+
+                        
+                                        if(element.key == "a1" ) {
+                                            if( element.val() == "1") {
+                                                a1.style.backgroundColor='red';
+                                                a1.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                a1.style.backgroundColor='darkgreen';
+                                                a1.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a1.style.borderColor='grey';
+                                                a1.style.backgroundColor='transparent';
+                                                a1.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a1.style.borderColor='grey';
+                                                a1.style.backgroundColor='white';
+                                                a1.style.color='black';
+                                            } else {
+                                                a1.style.borderColor='white';
+                                                a1.style.backgroundColor='thistle';
+                                                a1.style.color='black';
+                                            }
+                                            a1.value=element.val();
+                                        }
+
+                                        if(element.key == "a2" ) {
+                                            if( element.val() == "2") {
+                                                a2.style.backgroundColor='orange';
+                                                a2.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                a2.style.backgroundColor='red';
+                                                a2.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a2.style.backgroundColor='darkgreen';
+                                                a2.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                a2.style.borderColor='grey';
+                                                a2.style.backgroundColor='transparent';
+                                                a2.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a2.style.borderColor='grey';
+                                                a2.style.backgroundColor='white';
+                                                a2.style.color='black';
+                                            } else {
+                                                a2.style.borderColor='white';
+                                                a2.style.backgroundColor='thistle';
+                                                a2.style.color='black';
+                                            }
+                                            a2.value=element.val();
+                                        }
+
+                                        if(element.key == "a3" ) {
+                                            if( element.val() == "1") {
+                                                a3.style.backgroundColor='orange';
+                                                a3.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a3.style.backgroundColor='red';
+                                                a3.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a3.style.backgroundColor='darkgreen';
+                                                a3.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a3.style.borderColor='grey';
+                                                a3.style.backgroundColor='transparent';
+                                                a3.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a3.style.borderColor='grey';
+                                                a3.style.backgroundColor='white';
+                                                a3.style.color='black';
+                                            } else {
+                                                a3.style.borderColor='white';
+                                                a3.style.backgroundColor='thistle';
+                                                a3.style.color='black';
+                                            }
+                                            a3.value=element.val();
+                                        }
+
+                                        if(element.key == "a4" ) {
+                                            if( element.val() == "2") {
+                                                a4.style.backgroundColor='orange';
+                                                a4.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                a4.style.backgroundColor='red';
+                                                a4.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a4.style.backgroundColor='darkgreen';
+                                                a4.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                a4.style.borderColor='grey';
+                                                a4.style.backgroundColor='transparent';
+                                                a4.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a4.style.borderColor='grey';
+                                                a4.style.backgroundColor='white';
+                                                a4.style.color='black';
+                                            } else {
+                                                a4.style.borderColor='white';
+                                                a4.style.backgroundColor='thistle';
+                                                a4.style.color='black';
+                                            }
+                                            a4.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "a5" ) {
+                                            if( element.val() == "1") {
+                                                a5.style.backgroundColor='orange';
+                                                a5.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a5.style.backgroundColor='red';
+                                                a5.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a5.style.backgroundColor='darkgreen';
+                                                a5.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a5.style.borderColor='grey';
+                                                a5.style.backgroundColor='transparent';
+                                                a5.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a5.style.borderColor='grey';
+                                                a5.style.backgroundColor='white';
+                                                a5.style.color='black';
+                                            } else {
+                                                a5.style.borderColor='white';
+                                                a5.style.backgroundColor='thistle';
+                                                a5.style.color='black';
+                                            }
+                                            a5.value=element.val();
+                                        }
+
+                                        if(element.key == "a6" ) {
+                                            if( element.val() == "1") {
+                                                a6.style.backgroundColor='red';
+                                                a6.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                a6.style.backgroundColor='darkgreen';
+                                                a6.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a6.style.borderColor='grey';
+                                                a6.style.backgroundColor='transparent';
+                                                a6.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a6.style.borderColor='grey';
+                                                a6.style.backgroundColor='white';
+                                                a6.style.color='black';
+                                            } else {
+                                                a6.style.borderColor='white';
+                                                a6.style.backgroundColor='thistle';
+                                                a6.style.color='black';
+                                            }
+                                            a6.value=element.val();
+                                        }
+
+                                        if(element.key == "a7" ) {
+                                            if( element.val() == "1") {
+                                                a7.style.backgroundColor='orange';
+                                                a7.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a7.style.backgroundColor='red';
+                                                a7.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a7.style.backgroundColor='darkgreen';
+                                                a7.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a7.style.borderColor='grey';
+                                                a7.style.backgroundColor='transparent';
+                                                a7.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a7.style.borderColor='grey';
+                                                a7.style.backgroundColor='white';
+                                                a7.style.color='black';
+                                            } else {
+                                                a7.style.borderColor='white';
+                                                a7.style.backgroundColor='thistle';
+                                                a7.style.color='black';
+                                            }
+                                            a7.value=element.val();
+                                        }
+
+                                        if(element.key == "a8" ) {
+                                            if( element.val() == "1") {
+                                                a8.style.backgroundColor='orange';
+                                                a8.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a8.style.backgroundColor='red';
+                                                a8.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a8.style.backgroundColor='darkgreen';
+                                                a8.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a8.style.borderColor='grey';
+                                                a8.style.backgroundColor='transparent';
+                                                a8.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a8.style.borderColor='grey';
+                                                a8.style.backgroundColor='white';
+                                                a8.style.color='black';
+                                            } else {
+                                                a8.style.borderColor='white';
+                                                a8.style.backgroundColor='thistle';
+                                                a8.style.color='black';
+                                            }
+                                            a8.value=element.val();
+                                        }
+
+                                        if(element.key == "a9" ) {
+                                            if( element.val() == "1") {
+                                                a9.style.backgroundColor='orange';
+                                                a9.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a9.style.backgroundColor='red';
+                                                a9.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a9.style.backgroundColor='darkgreen';
+                                                a9.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a9.style.borderColor='grey';
+                                                a9.style.backgroundColor='transparent';
+                                                a9.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a9.style.borderColor='grey';
+                                                a9.style.backgroundColor='white';
+                                                a9.style.color='black';
+                                            } else {
+                                                a9.style.borderColor='white';
+                                                a9.style.backgroundColor='thistle';
+                                                a9.style.color='black';
+                                            }
+                                            a9.value=element.val();
+                                        }
+                                       
+                                        if(element.key == "a10" ) {
+                                            if( element.val() == "1") {
+                                                a10.style.backgroundColor='orange';
+                                                a10.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a10.style.backgroundColor='red';
+                                                a10.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a10.style.backgroundColor='darkgreen';
+                                                a10.style.color='beige';
+                                            } else if( element.val() == "4") {
+                                                a10.style.borderColor='grey';
+                                                a10.style.backgroundColor='transparent';
+                                                a10.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a10.style.borderColor='grey';
+                                                a10.style.backgroundColor='white';
+                                                a10.style.color='black';
+                                            } else {
+                                                a10.style.borderColor='white';
+                                                a10.style.backgroundColor='thistle';
+                                                a10.style.color='black';
+                                            }
+                                            a10.value=element.val();
+                                        }
+
+                                        if(element.key == "a11" ) {
+                                            if( element.val() == "1") {
+                                                a11.style.backgroundColor='orange';
+                                                a11.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a11.style.backgroundColor='red';
+                                                a11.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a11.style.backgroundColor='darkgreen';
+                                                a11.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a11.style.borderColor='grey';
+                                                a11.style.backgroundColor='transparent';
+                                                a11.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a11.style.borderColor='grey';
+                                                a11.style.backgroundColor='white';
+                                                a11.style.color='black';
+                                            } else {
+                                                a11.style.borderColor='white';
+                                                a11.style.backgroundColor='thistle';
+                                                a11.style.color='black';
+                                            }
+                                            a11.value=element.val();
+                                        }
+
+                                        if(element.key == "a12" ) {
+                                            if( element.val() == "1") {
+                                                a12.style.backgroundColor='red';
+                                                a12.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                a12.style.backgroundColor='darkgreen';
+                                                a12.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a12.style.borderColor='grey';
+                                                a12.style.backgroundColor='transparent';
+                                                a12.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a12.style.borderColor='grey';
+                                                a12.style.backgroundColor='white';
+                                                a12.style.color='black';
+                                            } else {
+                                                a12.style.borderColor='white';
+                                                a12.style.backgroundColor='thistle';
+                                                a12.style.color='black';
+                                            }
+                                            a12.value=element.val();
+                                        }
+
+                                        if(element.key == "a13" ) {
+                                            if( element.val() == "2") {
+                                                a13.style.backgroundColor='orange';
+                                                a13.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                a13.style.backgroundColor='red';
+                                                a13.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a13.style.backgroundColor='darkgreen';
+                                                a13.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                a13.style.borderColor='grey';
+                                                a13.style.backgroundColor='transparent';
+                                                a13.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a13.style.borderColor='grey';
+                                                a13.style.backgroundColor='white';
+                                                a13.style.color='black';
+                                            } else {
+                                                a13.style.borderColor='white';
+                                                a13.style.backgroundColor='thistle';
+                                                a13.style.color='black';
+                                            }
+                                            a13.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "a14" ) {
+                                            if( element.val() == "1") {
+                                                a14.style.backgroundColor='orange';
+                                                a14.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a14.style.backgroundColor='red';
+                                                a14.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a14.style.backgroundColor='darkgreen';
+                                                a14.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a14.style.borderColor='grey';
+                                                a14.style.backgroundColor='transparent';
+                                                a14.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a14.style.borderColor='grey';
+                                                a14.style.backgroundColor='white';
+                                                a14.style.color='black';
+                                            } else {
+                                                a14.style.borderColor='white';
+                                                a14.style.backgroundColor='thistle';
+                                                a14.style.color='black';
+                                            }
+                                            a14.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "a15" ) {
+                                            if( element.val() == "1") {
+                                                a15.style.backgroundColor='orange';
+                                                a15.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a15.style.backgroundColor='red';
+                                                a15.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a15.style.backgroundColor='darkgreen';
+                                                a15.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a15.style.borderColor='grey';
+                                                a15.style.backgroundColor='transparent';
+                                                a15.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a15.style.borderColor='grey';
+                                                a15.style.backgroundColor='white';
+                                                a15.style.color='black';
+                                            } else {
+                                                a15.style.borderColor='white';
+                                                a15.style.backgroundColor='thistle';
+                                                a15.style.color='black';
+                                            }
+                                            a15.value=element.val();
+                                        }
+
+                                        if(element.key == "a16" ) {
+                                            if( element.val() == "2") {
+                                                a16.style.backgroundColor='orange';
+                                                a16.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                a16.style.backgroundColor='red';
+                                                a16.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a16.style.backgroundColor='darkgreen';
+                                                a16.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                a16.style.borderColor='grey';
+                                                a16.style.backgroundColor='transparent';
+                                                a16.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a16.style.borderColor='grey';
+                                                a16.style.backgroundColor='white';
+                                                a16.style.color='black';
+                                            } else {
+                                                a16.style.borderColor='white';
+                                                a16.style.backgroundColor='thistle';
+                                                a16.style.color='black';
+                                            }
+                                            a16.value=element.val();
+                                        }
+                                       
+                                        if(element.key == "a17" ) {
+                                            if( element.val() == "1") {
+                                                a17.style.backgroundColor='red';
+                                                a17.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                a17.style.backgroundColor='darkgreen';
+                                                a17.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a17.style.borderColor='grey';
+                                                a17.style.backgroundColor='transparent';
+                                                a17.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a17.style.borderColor='grey';
+                                                a17.style.backgroundColor='white';
+                                                a17.style.color='black';
+                                            } else {
+                                                a17.style.borderColor='white';
+                                                a17.style.backgroundColor='thistle';
+                                                a17.style.color='black';
+                                            }
+                                            a17.value=element.val();
+                                        }
+
+                                        if(element.key == "a18" ) {
+                                            if( element.val() == "1") {
+                                                a18.style.backgroundColor='orange';
+                                                a18.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                a18.style.backgroundColor='red';
+                                                a18.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                a18.style.backgroundColor='darkgreen';
+                                                a18.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                a18.style.borderColor='grey';
+                                                a18.style.backgroundColor='transparent';
+                                                a18.style.color='white';
+                                            } else if( element.val() == "") {
+                                                a18.style.borderColor='grey';
+                                                a18.style.backgroundColor='white';
+                                                a18.style.color='black';
+                                            } else {
+                                                a18.style.borderColor='white';
+                                                a18.style.backgroundColor='thistle';
+                                                a18.style.color='black';
+                                            }
+                                            a18.value=element.val();
+                                        }
+
+
+
+
+
+
+
+
+
+
+
+                                        if(element.key == "b1" ) {
+                                            if( element.val() == "1") {
+                                                b1.style.backgroundColor='red';
+                                                b1.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                b1.style.backgroundColor='darkgreen';
+                                                b1.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b1.style.borderColor='grey';
+                                                b1.style.backgroundColor='transparent';
+                                                b1.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b1.style.borderColor='grey';
+                                                b1.style.backgroundColor='white';
+                                                b1.style.color='black';
+                                            } else {
+                                                b1.style.borderColor='white';
+                                                b1.style.backgroundColor='thistle';
+                                                b1.style.color='black';
+                                            }
+                                            b1.value=element.val();
+                                        }
+
+                                        if(element.key == "b2" ) {
+                                            if( element.val() == "2") {
+                                                b2.style.backgroundColor='orange';
+                                                b2.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                b2.style.backgroundColor='red';
+                                                b2.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b2.style.backgroundColor='darkgreen';
+                                                b2.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                b2.style.borderColor='grey';
+                                                b2.style.backgroundColor='transparent';
+                                                b2.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b2.style.borderColor='grey';
+                                                b2.style.backgroundColor='white';
+                                                b2.style.color='black';
+                                            } else {
+                                                b2.style.borderColor='white';
+                                                b2.style.backgroundColor='thistle';
+                                                b2.style.color='black';
+                                            }
+                                            b2.value=element.val();
+                                        }
+
+                                        if(element.key == "b3" ) {
+                                            if( element.val() == "1") {
+                                                b3.style.backgroundColor='orange';
+                                                b3.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b3.style.backgroundColor='red';
+                                                b3.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b3.style.backgroundColor='darkgreen';
+                                                b3.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b3.style.borderColor='grey';
+                                                b3.style.backgroundColor='transparent';
+                                                b3.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b3.style.borderColor='grey';
+                                                b3.style.backgroundColor='white';
+                                                b3.style.color='black';
+                                            } else {
+                                                b3.style.borderColor='white';
+                                                b3.style.backgroundColor='thistle';
+                                                b3.style.color='black';
+                                            }
+                                            b3.value=element.val();
+                                        }
+
+                                        if(element.key == "b4" ) {
+                                            if( element.val() == "2") {
+                                                b4.style.backgroundColor='orange';
+                                                b4.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                b4.style.backgroundColor='red';
+                                                b4.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b4.style.backgroundColor='darkgreen';
+                                                b4.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                b4.style.borderColor='grey';
+                                                b4.style.backgroundColor='transparent';
+                                                b4.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b4.style.borderColor='grey';
+                                                b4.style.backgroundColor='white';
+                                                b4.style.color='black';
+                                            } else {
+                                                b4.style.borderColor='white';
+                                                b4.style.backgroundColor='thistle';
+                                                b4.style.color='black';
+                                            }
+                                            b4.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "b5" ) {
+                                            if( element.val() == "1") {
+                                                b5.style.backgroundColor='orange';
+                                                b5.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b5.style.backgroundColor='red';
+                                                b5.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b5.style.backgroundColor='darkgreen';
+                                                b5.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b5.style.borderColor='grey';
+                                                b5.style.backgroundColor='transparent';
+                                                b5.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b5.style.borderColor='grey';
+                                                b5.style.backgroundColor='white';
+                                                b5.style.color='black';
+                                            } else {
+                                                b5.style.borderColor='white';
+                                                b5.style.backgroundColor='thistle';
+                                                b5.style.color='black';
+                                            }
+                                            b5.value=element.val();
+                                        }
+
+                                        if(element.key == "b6" ) {
+                                            if( element.val() == "1") {
+                                                b6.style.backgroundColor='red';
+                                                b6.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                b6.style.backgroundColor='darkgreen';
+                                                b6.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b6.style.borderColor='grey';
+                                                b6.style.backgroundColor='transparent';
+                                                b6.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b6.style.borderColor='grey';
+                                                b6.style.backgroundColor='white';
+                                                b6.style.color='black';
+                                            } else {
+                                                b6.style.borderColor='white';
+                                                b6.style.backgroundColor='thistle';
+                                                b6.style.color='black';
+                                            }
+                                            b6.value=element.val();
+                                        }
+
+                                        if(element.key == "b7" ) {
+                                            if( element.val() == "1") {
+                                                b7.style.backgroundColor='orange';
+                                                b7.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b7.style.backgroundColor='red';
+                                                b7.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b7.style.backgroundColor='darkgreen';
+                                                b7.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b7.style.borderColor='grey';
+                                                b7.style.backgroundColor='transparent';
+                                                b7.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b7.style.borderColor='grey';
+                                                b7.style.backgroundColor='white';
+                                                b7.style.color='black';
+                                            } else {
+                                                b7.style.borderColor='white';
+                                                b7.style.backgroundColor='thistle';
+                                                b7.style.color='black';
+                                            }
+                                            b7.value=element.val();
+                                        }
+
+                                        if(element.key == "b8" ) {
+                                            if( element.val() == "1") {
+                                                b8.style.backgroundColor='orange';
+                                                b8.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b8.style.backgroundColor='red';
+                                                b8.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b8.style.backgroundColor='darkgreen';
+                                                b8.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b8.style.borderColor='grey';
+                                                b8.style.backgroundColor='transparent';
+                                                b8.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b8.style.borderColor='grey';
+                                                b8.style.backgroundColor='white';
+                                                b8.style.color='black';
+                                            } else {
+                                                b8.style.borderColor='white';
+                                                b8.style.backgroundColor='thistle';
+                                                b8.style.color='black';
+                                            }
+                                            b8.value=element.val();
+                                        }
+
+                                        if(element.key == "b9" ) {
+                                            if( element.val() == "1") {
+                                                b9.style.backgroundColor='orange';
+                                                b9.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b9.style.backgroundColor='red';
+                                                b9.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b9.style.backgroundColor='darkgreen';
+                                                b9.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b9.style.borderColor='grey';
+                                                b9.style.backgroundColor='transparent';
+                                                b9.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b9.style.borderColor='grey';
+                                                b9.style.backgroundColor='white';
+                                                b9.style.color='black';
+                                            } else {
+                                                b9.style.borderColor='white';
+                                                b9.style.backgroundColor='thistle';
+                                                b9.style.color='black';
+                                            }
+                                            b9.value=element.val();
+                                        }
+                                       
+                                        if(element.key == "b10" ) {
+                                            if( element.val() == "1") {
+                                                b10.style.backgroundColor='orange';
+                                                b10.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b10.style.backgroundColor='red';
+                                                b10.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b10.style.backgroundColor='darkgreen';
+                                                b10.style.color='beige';
+                                            } else if( element.val() == "4") {
+                                                b10.style.borderColor='grey';
+                                                b10.style.backgroundColor='transparent';
+                                                b10.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b10.style.borderColor='grey';
+                                                b10.style.backgroundColor='white';
+                                                b10.style.color='black';
+                                            } else {
+                                                b10.style.borderColor='white';
+                                                b10.style.backgroundColor='thistle';
+                                                b10.style.color='black';
+                                            }
+                                            b10.value=element.val();
+                                        }
+
+                                        if(element.key == "b11" ) {
+                                            if( element.val() == "1") {
+                                                b11.style.backgroundColor='orange';
+                                                b11.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b11.style.backgroundColor='red';
+                                                b11.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b11.style.backgroundColor='darkgreen';
+                                                b11.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b11.style.borderColor='grey';
+                                                b11.style.backgroundColor='transparent';
+                                                b11.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b11.style.borderColor='grey';
+                                                b11.style.backgroundColor='white';
+                                                b11.style.color='black';
+                                            } else {
+                                                b11.style.borderColor='white';
+                                                b11.style.backgroundColor='thistle';
+                                                b11.style.color='black';
+                                            }
+                                            b11.value=element.val();
+                                        }
+
+                                        if(element.key == "b12" ) {
+                                            if( element.val() == "1") {
+                                                b12.style.backgroundColor='red';
+                                                b12.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                b12.style.backgroundColor='darkgreen';
+                                                b12.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b12.style.borderColor='grey';
+                                                b12.style.backgroundColor='transparent';
+                                                b12.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b12.style.borderColor='grey';
+                                                b12.style.backgroundColor='white';
+                                                b12.style.color='black';
+                                            } else {
+                                                b12.style.borderColor='white';
+                                                b12.style.backgroundColor='thistle';
+                                                b12.style.color='black';
+                                            }
+                                            b12.value=element.val();
+                                        }
+
+                                        if(element.key == "b13" ) {
+                                            if( element.val() == "2") {
+                                                b13.style.backgroundColor='orange';
+                                                b13.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                b13.style.backgroundColor='red';
+                                                b13.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b13.style.backgroundColor='darkgreen';
+                                                b13.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                b13.style.borderColor='grey';
+                                                b13.style.backgroundColor='transparent';
+                                                b13.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b13.style.borderColor='grey';
+                                                b13.style.backgroundColor='white';
+                                                b13.style.color='black';
+                                            } else {
+                                                b13.style.borderColor='white';
+                                                b13.style.backgroundColor='thistle';
+                                                b13.style.color='black';
+                                            }
+                                            b13.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "b14" ) {
+                                            if( element.val() == "1") {
+                                                b14.style.backgroundColor='orange';
+                                                b14.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b14.style.backgroundColor='red';
+                                                b14.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b14.style.backgroundColor='darkgreen';
+                                                b14.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b14.style.borderColor='grey';
+                                                b14.style.backgroundColor='transparent';
+                                                b14.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b14.style.borderColor='grey';
+                                                b14.style.backgroundColor='white';
+                                                b14.style.color='black';
+                                            } else {
+                                                b14.style.borderColor='white';
+                                                b14.style.backgroundColor='thistle';
+                                                b14.style.color='black';
+                                            }
+                                            b14.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "b15" ) {
+                                            if( element.val() == "1") {
+                                                b15.style.backgroundColor='orange';
+                                                b15.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b15.style.backgroundColor='red';
+                                                b15.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b15.style.backgroundColor='darkgreen';
+                                                b15.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b15.style.borderColor='grey';
+                                                b15.style.backgroundColor='transparent';
+                                                b15.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b15.style.borderColor='grey';
+                                                b15.style.backgroundColor='white';
+                                                b15.style.color='black';
+                                            } else {
+                                                b15.style.borderColor='white';
+                                                b15.style.backgroundColor='thistle';
+                                                b15.style.color='black';
+                                            }
+                                            b15.value=element.val();
+                                        }
+
+                                        if(element.key == "b16" ) {
+                                            if( element.val() == "2") {
+                                                b16.style.backgroundColor='orange';
+                                                b16.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                b16.style.backgroundColor='red';
+                                                b16.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b16.style.backgroundColor='darkgreen';
+                                                b16.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                b16.style.borderColor='grey';
+                                                b16.style.backgroundColor='transparent';
+                                                b16.style.color='white'
+                                            } else if( element.val() == "") {
+                                                b16.style.borderColor='grey';
+                                                b16.style.backgroundColor='white';
+                                                b16.style.color='black';
+                                            } else {
+                                                b16.style.borderColor='white';
+                                                b16.style.backgroundColor='thistle';
+                                                b16.style.color='black';
+                                            }
+                                            b16.value=element.val();
+                                        }
+                                       
+                                        if(element.key == "b17" ) {
+                                            if( element.val() == "1") {
+                                                b17.style.backgroundColor='red';
+                                                b17.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                b17.style.backgroundColor='darkgreen';
+                                                b17.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b17.style.borderColor='grey';
+                                                b17.style.backgroundColor='transparent';
+                                                b17.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b17.style.borderColor='grey';
+                                                b17.style.backgroundColor='white';
+                                                b17.style.color='black';
+                                            } else {
+                                                b17.style.borderColor='white';
+                                                b17.style.backgroundColor='thistle';
+                                                b17.style.color='black';
+                                            }
+                                            b17.value=element.val();
+                                        }
+
+                                        if(element.key == "b18" ) {
+                                            if( element.val() == "1") {
+                                                b18.style.backgroundColor='orange';
+                                                b18.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                b18.style.backgroundColor='red';
+                                                b18.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                b18.style.backgroundColor='darkgreen';
+                                                b18.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                b18.style.borderColor='grey';
+                                                b18.style.backgroundColor='transparent';
+                                                b18.style.color='white';
+                                            } else if( element.val() == "") {
+                                                b18.style.borderColor='grey';
+                                                b18.style.backgroundColor='white';
+                                                b18.style.color='black';
+                                            } else {
+                                                b18.style.borderColor='white';
+                                                b18.style.backgroundColor='thistle';
+                                                b18.style.color='black';
+                                            }
+                                            b18.value=element.val();
+                                        }
+
+
+
+
+
+
+
+
+
+
+
+                                        if(element.key == "c1" ) {
+                                            if( element.val() == "1") {
+                                                c1.style.backgroundColor='red';
+                                                c1.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                c1.style.backgroundColor='darkgreen';
+                                                c1.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c1.style.borderColor='grey';
+                                                c1.style.backgroundColor='transparent';
+                                                c1.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c1.style.borderColor='grey';
+                                                c1.style.backgroundColor='white';
+                                                c1.style.color='black';
+                                            } else {
+                                                c1.style.borderColor='white';
+                                                c1.style.backgroundColor='thistle';
+                                                c1.style.color='black';
+                                            }
+                                            c1.value=element.val();
+                                        }
+
+                                        if(element.key == "c2" ) {
+                                            if( element.val() == "2") {
+                                                c2.style.backgroundColor='orange';
+                                                c2.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                c2.style.backgroundColor='red';
+                                                c2.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c2.style.backgroundColor='darkgreen';
+                                                c2.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                c2.style.borderColor='grey';
+                                                c2.style.backgroundColor='transparent';
+                                                c2.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c2.style.borderColor='grey';
+                                                c2.style.backgroundColor='white';
+                                                c2.style.color='black';
+                                            } else {
+                                                c2.style.borderColor='white';
+                                                c2.style.backgroundColor='thistle';
+                                                c2.style.color='black';
+                                            }
+                                            c2.value=element.val();
+                                        }
+
+                                        if(element.key == "c3" ) {
+                                            if( element.val() == "1") {
+                                                c3.style.backgroundColor='orange';
+                                                c3.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c3.style.backgroundColor='red';
+                                                c3.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c3.style.backgroundColor='darkgreen';
+                                                c3.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c3.style.borderColor='grey';
+                                                c3.style.backgroundColor='transparent';
+                                                c3.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c3.style.borderColor='grey';
+                                                c3.style.backgroundColor='white';
+                                                c3.style.color='black';
+                                            } else {
+                                                c3.style.borderColor='white';
+                                                c3.style.backgroundColor='thistle';
+                                                c3.style.color='black';
+                                            }
+                                            c3.value=element.val();
+                                        }
+
+                                        if(element.key == "c4" ) {
+                                            if( element.val() == "2") {
+                                                c4.style.backgroundColor='orange';
+                                                c4.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                c4.style.backgroundColor='red';
+                                                c4.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c4.style.backgroundColor='darkgreen';
+                                                c4.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                c4.style.borderColor='grey';
+                                                c4.style.backgroundColor='transparent';
+                                                c4.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c4.style.borderColor='grey';
+                                                c4.style.backgroundColor='white';
+                                                c4.style.color='black';
+                                            } else {
+                                                c4.style.borderColor='white';
+                                                c4.style.backgroundColor='thistle';
+                                                c4.style.color='black';
+                                            }
+                                            c4.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "c5" ) {
+                                            if( element.val() == "1") {
+                                                c5.style.backgroundColor='orange';
+                                                c5.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c5.style.backgroundColor='red';
+                                                c5.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c5.style.backgroundColor='darkgreen';
+                                                c5.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c5.style.borderColor='grey';
+                                                c5.style.backgroundColor='transparent';
+                                                c5.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c5.style.borderColor='grey';
+                                                c5.style.backgroundColor='white';
+                                                c5.style.color='black';
+                                            } else {
+                                                c5.style.borderColor='white';
+                                                c5.style.backgroundColor='thistle';
+                                                c5.style.color='black';
+                                            }
+                                            c5.value=element.val();
+                                        }
+
+                                        if(element.key == "c6" ) {
+                                            if( element.val() == "1") {
+                                                c6.style.backgroundColor='red';
+                                                c6.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                c6.style.backgroundColor='darkgreen';
+                                                c6.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c6.style.borderColor='grey';
+                                                c6.style.backgroundColor='transparent';
+                                                c6.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c6.style.borderColor='grey';
+                                                c6.style.backgroundColor='white';
+                                                c6.style.color='black';
+                                            } else {
+                                                c6.style.borderColor='white';
+                                                c6.style.backgroundColor='thistle';
+                                                c6.style.color='black';
+                                            }
+                                            c6.value=element.val();
+                                        }
+
+                                        if(element.key == "c7" ) {
+                                            if( element.val() == "1") {
+                                                c7.style.backgroundColor='orange';
+                                                c7.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c7.style.backgroundColor='red';
+                                                c7.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c7.style.backgroundColor='darkgreen';
+                                                c7.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c7.style.borderColor='grey';
+                                                c7.style.backgroundColor='transparent';
+                                                c7.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c7.style.borderColor='grey';
+                                                c7.style.backgroundColor='white';
+                                                c7.style.color='black';
+                                            } else {
+                                                c7.style.borderColor='white';
+                                                c7.style.backgroundColor='thistle';
+                                                c7.style.color='black';
+                                            }
+                                            c7.value=element.val();
+                                        }
+
+                                        if(element.key == "c8" ) {
+                                            if( element.val() == "1") {
+                                                c8.style.backgroundColor='orange';
+                                                c8.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c8.style.backgroundColor='red';
+                                                c8.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c8.style.backgroundColor='darkgreen';
+                                                c8.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c8.style.borderColor='grey';
+                                                c8.style.backgroundColor='transparent';
+                                                c8.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c8.style.borderColor='grey';
+                                                c8.style.backgroundColor='white';
+                                                c8.style.color='black';
+                                            } else {
+                                                c8.style.borderColor='white';
+                                                c8.style.backgroundColor='thistle';
+                                                c8.style.color='black';
+                                            }
+                                            c8.value=element.val();
+                                        }
+
+                                        if(element.key == "c9" ) {
+                                            if( element.val() == "1") {
+                                                c9.style.backgroundColor='orange';
+                                                c9.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c9.style.backgroundColor='red';
+                                                c9.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c9.style.backgroundColor='darkgreen';
+                                                c9.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c9.style.borderColor='grey';
+                                                c9.style.backgroundColor='transparent';
+                                                c9.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c9.style.borderColor='grey';
+                                                c9.style.backgroundColor='white';
+                                                c9.style.color='black';
+                                            } else {
+                                                c9.style.borderColor='white';
+                                                c9.style.backgroundColor='thistle';
+                                                c9.style.color='black';
+                                            }
+                                            c9.value=element.val();
+                                        }
+                                       
+                                        if(element.key == "c10" ) {
+                                            if( element.val() == "1") {
+                                                c10.style.backgroundColor='orange';
+                                                c10.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c10.style.backgroundColor='red';
+                                                c10.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c10.style.backgroundColor='darkgreen';
+                                                c10.style.color='beige';
+                                            } else if( element.val() == "4") {
+                                                c10.style.borderColor='grey';
+                                                c10.style.backgroundColor='transparent';
+                                                c10.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c10.style.borderColor='grey';
+                                                c10.style.backgroundColor='white';
+                                                c10.style.color='black';
+                                            } else {
+                                                c10.style.borderColor='white';
+                                                c10.style.backgroundColor='thistle';
+                                                c10.style.color='black';
+                                            }
+                                            c10.value=element.val();
+                                        }
+
+                                        if(element.key == "c11" ) {
+                                            if( element.val() == "1") {
+                                                c11.style.backgroundColor='orange';
+                                                c11.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c11.style.backgroundColor='red';
+                                                c11.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c11.style.backgroundColor='darkgreen';
+                                                c11.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c11.style.borderColor='grey';
+                                                c11.style.backgroundColor='transparent';
+                                                c11.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c11.style.borderColor='grey';
+                                                c11.style.backgroundColor='white';
+                                                c11.style.color='black';
+                                            } else {
+                                                c11.style.borderColor='white';
+                                                c11.style.backgroundColor='thistle';
+                                                c11.style.color='black';
+                                            }
+                                            c11.value=element.val();
+                                        }
+
+                                        if(element.key == "c12" ) {
+                                            if( element.val() == "1") {
+                                                c12.style.backgroundColor='red';
+                                                c12.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                c12.style.backgroundColor='darkgreen';
+                                                c12.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c12.style.borderColor='grey';
+                                                c12.style.backgroundColor='transparent';
+                                                c12.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c12.style.borderColor='grey';
+                                                c12.style.backgroundColor='white';
+                                                c12.style.color='black';
+                                            } else {
+                                                c12.style.borderColor='white';
+                                                c12.style.backgroundColor='thistle';
+                                                c12.style.color='black';
+                                            }
+                                            c12.value=element.val();
+                                        }
+
+                                        if(element.key == "c13" ) {
+                                            if( element.val() == "2") {
+                                                c13.style.backgroundColor='orange';
+                                                c13.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                c13.style.backgroundColor='red';
+                                                c13.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c13.style.backgroundColor='darkgreen';
+                                                c13.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                c13.style.borderColor='grey';
+                                                c13.style.backgroundColor='transparent';
+                                                c13.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c13.style.borderColor='grey';
+                                                c13.style.backgroundColor='white';
+                                                c13.style.color='black';
+                                            } else {
+                                                c13.style.borderColor='white';
+                                                c13.style.backgroundColor='thistle';
+                                                c13.style.color='black';
+                                            }
+                                            c13.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "c14" ) {
+                                            if( element.val() == "1") {
+                                                c14.style.backgroundColor='orange';
+                                                c14.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c14.style.backgroundColor='red';
+                                                c14.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c14.style.backgroundColor='darkgreen';
+                                                c14.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c14.style.borderColor='grey';
+                                                c14.style.backgroundColor='transparent';
+                                                c14.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c14.style.borderColor='grey';
+                                                c14.style.backgroundColor='white';
+                                                c14.style.color='black';
+                                            } else {
+                                                c14.style.borderColor='white';
+                                                c14.style.backgroundColor='thistle';
+                                                c14.style.color='black';
+                                            }
+                                            c14.value=element.val();
+                                        }
+                                    
+                                        if(element.key == "c15" ) {
+                                            if( element.val() == "1") {
+                                                c15.style.backgroundColor='orange';
+                                                c15.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c15.style.backgroundColor='red';
+                                                c15.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c15.style.backgroundColor='darkgreen';
+                                                c15.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c15.style.borderColor='grey';
+                                                c15.style.backgroundColor='transparent';
+                                                c15.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c15.style.borderColor='grey';
+                                                c15.style.backgroundColor='white';
+                                                c15.style.color='black';
+                                            } else {
+                                                c15.style.borderColor='white';
+                                                c15.style.backgroundColor='thistle';
+                                                c15.style.color='black';
+                                            }
+                                            c15.value=element.val();
+                                        }
+
+                                        if(element.key == "c16" ) {
+                                            if( element.val() == "2") {
+                                                c16.style.backgroundColor='orange';
+                                                c16.style.color='black';
+                                            } else if( element.val() == "3") {
+                                                c16.style.backgroundColor='red';
+                                                c16.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c16.style.backgroundColor='darkgreen';
+                                                c16.style.color='white';
+                                            } else if( element.val() == "5") {
+                                                c16.style.borderColor='grey';
+                                                c16.style.backgroundColor='transparent';
+                                                c16.style.color='white'
+                                            } else if( element.val() == "") {
+                                                c16.style.borderColor='grey';
+                                                c16.style.backgroundColor='white';
+                                                c16.style.color='black';
+                                            } else {
+                                                c16.style.borderColor='white';
+                                                c16.style.backgroundColor='thistle';
+                                                c16.style.color='black';
+                                            }
+                                            c16.value=element.val();
+                                        }
+                                       
+                                        if(element.key == "c17" ) {
+                                            if( element.val() == "1") {
+                                                c17.style.backgroundColor='red';
+                                                c17.style.color='white';
+                                            } else if( element.val() == "2") {
+                                                c17.style.backgroundColor='darkgreen';
+                                                c17.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c17.style.borderColor='grey';
+                                                c17.style.backgroundColor='transparent';
+                                                c17.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c17.style.borderColor='grey';
+                                                c17.style.backgroundColor='white';
+                                                c17.style.color='black';
+                                            } else {
+                                                c17.style.borderColor='white';
+                                                c17.style.backgroundColor='thistle';
+                                                c17.style.color='black';
+                                            }
+                                            c17.value=element.val();
+                                        }
+
+                                        if(element.key == "c18" ) {
+                                            if( element.val() == "1") {
+                                                c18.style.backgroundColor='orange';
+                                                c18.style.color='black';
+                                            } else if( element.val() == "2") {
+                                                c18.style.backgroundColor='red';
+                                                c18.style.color='white';
+                                            } else if( element.val() == "3") {
+                                                c18.style.backgroundColor='darkgreen';
+                                                c18.style.color='white';
+                                            } else if( element.val() == "4") {
+                                                c18.style.borderColor='grey';
+                                                c18.style.backgroundColor='transparent';
+                                                c18.style.color='white';
+                                            } else if( element.val() == "") {
+                                                c18.style.borderColor='grey';
+                                                c18.style.backgroundColor='white';
+                                                c18.style.color='black';
+                                            } else {
+                                                c18.style.borderColor='white';
+                                                c18.style.backgroundColor='thistle';
+                                                c18.style.color='black';
+                                            }
+                                            c18.value=element.val();
+                                        }
+
+
+
+                                    });
+                                });
+
+
+
+
+
+
                                                 
                         }).catch((error)=>{
                             load.style.display = 'none';
