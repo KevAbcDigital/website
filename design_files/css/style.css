@@ -125,10 +125,6 @@ header {
 
 
 
-
-
-
-
 @media(max-width:991px){
 
   .indisponibletxt {
@@ -406,8 +402,6 @@ header {
 
 
 
-
-
   .fondscore {
     display: block;
     position: relative;
@@ -502,13 +496,6 @@ header {
   }
 
 
-
-
-
-
-
-  
-  
   .pdf {
     position: relative;
     display: block;
@@ -537,16 +524,6 @@ header {
     font-size: 22px;
     font-family: 'Poppins', sans-serif;
   }
-
-
-
-
-
-
-
-
-
-
 
 
   .partenaire{
@@ -639,20 +616,15 @@ header {
   }
 
 
-
 .contenuhomeab {
   display: block;
 }
-
 .sliderabc {
   display: block;
 }
 .imgtableaux {
   display: block;
 }
-
-
-
 .imgtkids {
   display: block;
 }
@@ -750,17 +722,13 @@ p, h1, h2, h3, h4, h5, h6 {
 
 img {
   max-width: 100%; }
-
 image-holder {
   border-radius: 15px;
 }
-
 a:hover {
   text-decoration: none; }
-
 :focus {
   outline: none; }
-
 .wrapper {
   min-height: 50vh;
   background-size: cover;
@@ -791,7 +759,8 @@ a:hover {
 .form-group {
   display: flex; }
   .form-group input {
-    width: 50%; }
+    width: 50%;
+   }
     .form-group input:first-child {
       margin-right: 25px; }
 

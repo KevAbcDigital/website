@@ -106,8 +106,8 @@
                         <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
                     <div class="form-wrapper">
-                        <a style="color: rgb(208, 228, 255);" class="titleform">Entrez un code pour votre partie privée *</a>
-                        <input id="codepass" style="height: 30px; width: 200px; border: 1px solid #008006ab; padding-left: 15px;" type="number" placeholder="Entrez un code à 6 Chiffres" class="form-controla">
+                        <a style="color: rgb(208, 228, 255);" class="titleform">Créez un mot de passe pour votre partie *</a>
+                        <input id="codepass" style="height: 30px; width: 300px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un code à 6 Caractères" class="form-controla">
                         <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
 
@@ -165,6 +165,10 @@
     
         const database = firebase.database();
 
+        function indisponible(){
+            window.alert('DESOLE ! Ce formulaire est momentanement indisponible.');
+        }
+
         function send(){
             
             
@@ -177,15 +181,15 @@
             var dataRef = firebase.database().ref("amical");
 
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
-               & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 6) {
+               & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 6
+               & joueur1 != "aucun" ) {
 
                 load.style.display = "block";
-                var nbr = 0;            
-                nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
-                window.alert(nbr);
+                // var nbr = 0;            
+                // nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
+                // window.alert(nbr);
 
-                            
-                
+                var l = 0;
                 dataRef.on("value" , function(snapshot){
                     var i = 0;
                     snapshot.forEach(function(element){
@@ -196,27 +200,88 @@
                                 
                 
                     if ( i == 0 ) {
-                        i = 2;
-                        var dataRefb = firebase.database().ref("amical").child(code);
+                        var dataRefb = firebase.database().ref("amical").child(codepass);
+                        l = 1;
                         dataRefb.set({
+                            'a1' : ("") ,
+                            'a2' : ("") ,
+                            'a3' : ("") ,
+                            'a4' : ("") ,
+                            'a5' : ("") ,
+                            'a6' : ("") ,
+                            'a7' : ("") ,
+                            'a8' : ("") ,
+                            'a9' : ("") ,
+                            'a10' : ("") ,
+                            'a11' : ("") ,
+                            'a12' : ("") ,
+                            'a13' : ("") ,
+                            'a14' : ("") ,
+                            'a15' : ("") ,
+                            'a16' : ("") ,
+                            'a17' : ("") ,
+                            'a18' : ("") ,
+
+
+                            'b1' : ("") ,
+                            'b2' : ("") ,
+                            'b3' : ("") ,
+                            'b4' : ("") ,
+                            'b5' : ("") ,
+                            'b6' : ("") ,
+                            'b7' : ("") ,
+                            'b8' : ("") ,
+                            'b9' : ("") ,
+                            'b10' : ("") ,
+                            'b11' : ("") ,
+                            'b12' : ("") ,
+                            'b13' : ("") ,
+                            'b14' : ("") ,
+                            'b15' : ("") ,
+                            'b16' : ("") ,
+                            'b17' : ("") ,
+                            'b18' : ("") ,
+
+
+                            'c1' : ("") ,
+                            'c2' : ("") ,
+                            'c3' : ("") ,
+                            'c4' : ("") ,
+                            'c5' : ("") ,
+                            'c6' : ("") ,
+                            'c7' : ("") ,
+                            'c8' : ("") ,
+                            'c9' : ("") ,
+                            'c10' : ("") ,
+                            'c11' : ("") ,
+                            'c12' : ("") ,
+                            'c13' : ("") ,
+                            'c14' : ("") ,
+                            'c15' : ("") ,
+                            'c16' : ("") ,
+                            'c17' : ("") ,
+                            'c18' : ("") ,
+
                             'joueur1' : (joueur1) ,
                             'joueur2' : (joueur2) ,
                             'joueur3' : (joueur3)
-                        }).then(()=>{
 
+                        }).then(()=>{
                             load.style.display = 'none';
-                            window.alert("enregistrement reuissi. le joueur , Bonne Partie !");
-                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';                    
+                            window.alert("enregistrement reuissi. , Bonne Partie !");
+                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';                    
                                                 
                         }).catch((error)=>{
                             load.style.display = 'none';
                             window.alert("erreur survenue : "+ error);
                         });
                     
-                    } else {
+                    }
+                    
+                    if ( ( i == 1 ) & ( l == 0 ) ) {
                         load.style.display = "none";
                         window.alert("le code " + codepass + " a déjà été utilisé pour une partie .");
-                       // window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
                     }
                 });
                        
@@ -231,6 +296,8 @@
 
 
                
+            } else if ( joueur1 == "aucun" ) {
+                window.alert("veuillez attribuer un nom correct au joueur 1 ...");
             } else if ( joueur1 == "" ) {
                 window.alert("veuillez entrer le nom du joueur 1 ...");
             } else if ( joueur1.length > 20 ) {
@@ -244,9 +311,9 @@
             } else if ( joueur3.length > 20 ) {
                 window.alert("le nom du joueur3 doit contenir 20 lettres maximum");
             } else if ( codepass == "" ) {
-                window.alert("Entrer mot de passe pour votre partie privée ...");
-            } else if ( joueur3.length > 20 ) {
-                window.alert("le mot de passe doit contenir exactement 6 chiffres");
+                window.alert("Entrer un mot de passe pour votre partie privée ...");
+            } else if ( codepass.length != 6 ) {
+                window.alert("le mot de passe doit contenir exactement 6 caracteres");
             }
     
         }
@@ -255,17 +322,6 @@
             window.alert("Desolé ce formulaire est indisponible pour le moment.");
             window.location.href = 'https://kevabcdigital.github.io/website/home.html';
         }
-
- /*       
-        var datagarcon = firebase.database().ref("liste");
-        var i = 0 ;
-        datagarcon.on("value" , function(snapshot){
-            snapshot.forEach(function(element){
-                i = i + 1;
-                document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
-            });
-        });
-*/
 
     </script>
     
