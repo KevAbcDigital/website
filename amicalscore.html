@@ -546,9 +546,6 @@
             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
         }
         var linked = "non";
-        var ja = "non";
-        var jb = "non";
-        var jc = "non";
 
         function delet() {
             var dataRef = firebase.database().ref("amical");
@@ -684,7 +681,7 @@
 
                                         if(element.key == "joueur1" ) {
                                             joueur1.innerHTML= "Joueur 1 :   " + element.val();
-                                            ja = joueur1;
+                                            // ja = joueur1;
                                         }
 
                                         if(element.key == "joueur2" ) {
@@ -693,7 +690,7 @@
                                                 formulaireb.style.display = "none";
                                             } else {
                                                 joueur2.innerHTML= "Joueur 2 : " + element.val();
-                                                jb = joueur2;
+                                                // jb = joueur2;
                                             }
                                         }
 
@@ -703,7 +700,7 @@
                                                 formulairec.style.display = "none";
                                             } else {
                                                 joueur3.innerHTML= "Joueur 3 : " + element.val();
-                                                jc = joueur3;
+                                                // jc = joueur3;
                                             }
                                         }
 
@@ -2272,6 +2269,43 @@
                 load.style.display = "block";
 
                 var dataRefb = firebase.database().ref("amical").child(linked);
+
+                var ja = "non";
+                var jb = "non";
+                var jc = "non";
+
+                dataRefb.on("value" , function(snapshot){
+                    snapshot.forEach(function(element){
+
+                        if(element.key == "joueur1" ) {
+                            ja = joueur1;
+                        }
+
+                        if(element.key == "joueur2" ) {
+                            if (element.val == "aucun") {
+                                joueur2.style.display = "none";
+                                formulaireb.style.display = "none";
+                            } else {
+                                jb = joueur2;
+                            }
+                        }
+
+                        if(element.key == "joueur3" ) {
+                            if (element.val == "aucun") {
+                                joueur3.style.display = "none";
+                                formulairec.style.display = "none";
+                            } else {
+                                jc = joueur3;
+                            }
+                        }
+
+                    });
+                });
+
+
+
+
+
                 if ( ja != "non" ) {
                     dataRefb.set({
                             
@@ -2333,7 +2367,6 @@
                             'c16' : (c16) ,
                             'c17' : (c17) ,
                             'c18' : (c18) ,
-
                             'joueur1' : (ja) ,
                             'joueur2' : (jb) ,
                             'joueur3' : (jc)
