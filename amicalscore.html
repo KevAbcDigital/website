@@ -73,8 +73,14 @@
 
 
 
-        <img name="imgid" class="fondscore" src="./design_files/images/swing.jpg" alt="image">
 
+        <section class="sliderabc">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swing.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swingb.jpeg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swingd.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swingg.webp" alt="image">
+
+        </section>
 
         <section style="border-radius: 15px; margin-top: -15px; margin-left: 20px; margin-right: 20px; 
          background-color: rgb(7, 7, 47); position: relative; display: block; z-index: 1500;
@@ -513,6 +519,21 @@
     <script>
 
 
+        var firstindex=0;
+        function automaticslide(){
+            setTimeout(automaticslide, 4000);
+            var pics;
+            const img = document.getElementsByClassName('slideidaaab');
+            for(pics=0; pics<img.length; pics++) {
+                img[pics].style.display="none";
+            }
+            firstindex++;
+            if(firstindex > img.length) {
+                firstindex = 1;
+            }
+            img[firstindex - 1].style.display="block";
+        }
+        automaticslide();
 
         
         function opentk() {
@@ -2326,23 +2347,12 @@
         }
 
 
-   
-
         function invalid() {
             window.alert("Desolé ce formulaire est indisponible pour le moment.");
             window.location.href = 'https://kevabcdigital.github.io/website/home.html';
         }
 
- /*       
-        var datagarcon = firebase.database().ref("liste");
-        var i = 0 ;
-        datagarcon.on("value" , function(snapshot){
-            snapshot.forEach(function(element){
-                i = i + 1;
-                document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
-            });
-        });
-*/
+     
 
     </script>
     
