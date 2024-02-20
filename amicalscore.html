@@ -672,7 +672,7 @@
                             if(element.key == codesearch ) {
                                 i=1;
 
-                                del.style.display = "none";
+                                del.style.display = "block";
 
                                 nompart.innerHTML="Partie n° " + codesearch;
                                 conseil.innerHTML="Votre partie a été trouvée";
@@ -2271,8 +2271,9 @@
                 load.style.display = "block";
 
                 var dataRefb = firebase.database().ref("amical").child(linked);
-                        
-                        dataRefb.set({
+                if ( ja != "non" ) {
+                    dataRefb.set({
+                            
                             'a1' : (a1) ,
                             'a2' : (a2) ,
                             'a3' : (a3) ,
@@ -2344,7 +2345,11 @@
                             load.style.display = 'none';
                             window.alert("erreur survenue : "+ error);
                         });
-
+    
+                } else {
+                    window.alert("actualisez la page et reinserez votre code ");
+                }
+                       
    
             } else if ( linked == "non" ) {
                 window.alert("Aucune partie en cours ... Veuillez saisir le code de votre partie et lancer la partie");
