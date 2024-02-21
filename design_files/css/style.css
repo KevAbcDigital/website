@@ -138,9 +138,17 @@ header {
   position: absolute;
   padding: 10px;
 }
-.score b {
-  display: block;
+.score .entete {
+  display: flex;
   position: relative;
+}
+.score .entete .boxentete {
+  width: 38px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: rgb(19, 138, 15);
+  color: white;
+
 }
 
 
