@@ -76,13 +76,14 @@
 
         <section class="sliderabc">
             <img name="imgid" class="slideidaaab" src="./design_files/images/swing.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/swingd.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swingb.jpg" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/swingg.webp" alt="image">
-
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swingc.webp" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swingd.webp" alt="image">
         </section>
 
         <section style="border-radius: 15px; margin-top: -15px; margin-left: 20px; margin-right: 20px; 
-         background-color: rgb(7, 7, 47); position: relative; display: block; z-index: 1500;
+         background-color: rgb(7, 7, 47); position: relative; z-index: 1500;
          box-shadow: -1px 1px 9px #f4fa9bd2;" class="searchcode">
             <div style="padding-top: 17px;" class="devisbloc ">
 
@@ -520,7 +521,7 @@
 
         var firstindex=0;
         function automaticslide(){
-            setTimeout(automaticslide, 4000);
+            setTimeout(automaticslide, 8000);
             var pics;
             const img = document.getElementsByClassName('slideidaaab');
             for(pics=0; pics<img.length; pics++) {
@@ -2262,13 +2263,14 @@
 
             if ( linked != "non" ) {
 
-                var dataRefb = firebase.database().ref("amical").child(linked);
+                load.style.display = 'block';
 
+                var dataRefb = firebase.database().ref("amical").child(linked);
                 var ja = "non";
                 var jb = "non";
                 var jc = "non";
 
-                dataRefb.on("value" , function(snapshot){
+                dataRefb.on("value" , function(snapshot){             
                     snapshot.forEach(function(element){
 
                         if(element.key == "joueur1" ) {
@@ -2297,12 +2299,10 @@
                 });
 
 
+/*
+                if ( ja != "non") {
 
-
-
-                if ( ja != "non" ) {
                     dataRefb.set({
-                            
                             'a1' : (a1) ,
                             'a2' : (a2) ,
                             'a3' : (a3) ,
@@ -2374,12 +2374,150 @@
                             window.alert("erreur survenue : "+ error);
                         });
     
-                } else {
+                } else if (ja == "non") {
+                    load.style.display = 'none';
                     window.alert("actualisez la page et reinserez votre code ");
                 }
-                       
+*/
+
+                if ( ( ja != "non" ) & ( containsOnlyNumbers(a1) == true || a1 == "" ) & ( containsOnlyNumbers(b1) == true || b1 == "" ) & ( containsOnlyNumbers(c1) == true || c1 == "" )
+                & ( containsOnlyNumbers(a2) == true || a2 == "" ) & ( containsOnlyNumbers(b2) == true || b2 == "" )
+                & ( containsOnlyNumbers(a3) == true || a3 == "" ) & ( containsOnlyNumbers(b3) == true || b3 == ""  )
+                & ( containsOnlyNumbers(a4) == true || a4 == "" ) & ( containsOnlyNumbers(b4) == true || b4 == ""  )
+                & ( containsOnlyNumbers(a5) == true || a5 == "" ) & ( containsOnlyNumbers(b5) == true || b5 == ""  )
+                & ( containsOnlyNumbers(a6) == true || a6 == "" ) & ( containsOnlyNumbers(b6) == true || b6 == ""  )
+                & ( containsOnlyNumbers(a7) == true || a7 == "" ) & ( containsOnlyNumbers(b7) == true || b7 == ""  )
+                & ( containsOnlyNumbers(a8) == true || a8 == "" ) & ( containsOnlyNumbers(b8) == true || b8 == ""  )
+                & ( containsOnlyNumbers(a9) == true || a9 == "" ) & ( containsOnlyNumbers(b9) == true || b9 == ""  )
+                & ( containsOnlyNumbers(a10) == true || a10 == "" ) & ( containsOnlyNumbers(b10) == true || b10 == ""  )
+                & ( containsOnlyNumbers(a11) == true || a11 == "" ) & ( containsOnlyNumbers(b11) == true || b11 == ""  )
+                & ( containsOnlyNumbers(a12) == true || a12 == "" ) & ( containsOnlyNumbers(b12) == true || b12 == ""  )
+                & ( containsOnlyNumbers(a13) == true || a13 == "" ) & ( containsOnlyNumbers(b13) == true || b13 == ""  ) 
+                & ( containsOnlyNumbers(a14) == true || a14 == "" ) & ( containsOnlyNumbers(b14) == true || b14 == ""  )
+                & ( containsOnlyNumbers(a15) == true || a15 == "" ) & ( containsOnlyNumbers(b15) == true || b15 == ""  )
+                & ( containsOnlyNumbers(a16) == true || a16 == "" ) & ( containsOnlyNumbers(b16) == true || b16 == ""  )
+                & ( containsOnlyNumbers(a17) == true || a17 == "" ) & ( containsOnlyNumbers(b17) == true || b17 == ""  )
+                & ( containsOnlyNumbers(a18) == true || a18 == "" ) & ( containsOnlyNumbers(b18) == true || b18 == ""  )
+                & ( containsOnlyNumbers(c2) == true || c2 == "" ) & ( containsOnlyNumbers(c11) == true || c11 == "" )
+                & ( containsOnlyNumbers(c3) == true || c3 == "" ) & ( containsOnlyNumbers(c12) == true || c12 == "" )
+                & ( containsOnlyNumbers(c4) == true || c4 == "" ) & ( containsOnlyNumbers(c13) == true || c13 == "" )
+                & ( containsOnlyNumbers(c5) == true || c5 == "" ) & ( containsOnlyNumbers(c14) == true || c14 == "" )
+                & ( containsOnlyNumbers(c6) == true || c6 == "" ) & ( containsOnlyNumbers(c15) == true || c15 == "" )
+                & ( containsOnlyNumbers(c7) == true || c7 == "" ) & ( containsOnlyNumbers(c16) == true || c16 == "" )
+                & ( containsOnlyNumbers(c8) == true || c8 == "" ) & ( containsOnlyNumbers(c17) == true || c17 == "" )
+                & ( containsOnlyNumbers(c9) == true || c9 == "" ) & ( containsOnlyNumbers(c18) == true || c18 == "" )
+                & ( containsOnlyNumbers(c10) == true || c10 == "" ) ) {
+
+                    dataRefb.set({
+
+                            'a1' : (a1) ,
+                            'a2' : (a2) ,
+                            'a3' : (a3) ,
+                            'a4' : (a4) ,
+                            'a5' : (a5) ,
+                            'a6' : (a6) ,
+                            'a7' : (a7) ,
+                            'a8' : (a8) ,
+                            'a9' : (a9) ,
+                            'a10' : (a10) ,
+                            'a11' : (a11) ,
+                            'a12' : (a12) ,
+                            'a13' : (a13) ,
+                            'a14' : (a14) ,
+                            'a15' : (a15) ,
+                            'a16' : (a16) ,
+                            'a17' : (a17) ,
+                            'a18' : (a18) ,
+
+
+                            'b1' : (b1) ,
+                            'b2' : (b2) ,
+                            'b3' : (b3) ,
+                            'b4' : (b4) ,
+                            'b5' : (b5) ,
+                            'b6' : (b6) ,
+                            'b7' : (b7) ,
+                            'b8' : (b8) ,
+                            'b9' : (b9) ,
+                            'b10' : (b10) ,
+                            'b11' : (b11) ,
+                            'b12' : (b12) ,
+                            'b13' : (b13) ,
+                            'b14' : (b14) ,
+                            'b15' : (b15) ,
+                            'b16' : (b16) ,
+                            'b17' : (b17) ,
+                            'b18' : (b18) ,
+
+
+                            'c1' : (c1) ,
+                            'c2' : (c2) ,
+                            'c3' : (c3) ,
+                            'c4' : (c4) ,
+                            'c5' : (c5) ,
+                            'c6' : (c6) ,
+                            'c7' : (c7) ,
+                            'c8' : (c8) ,
+                            'c9' : (c9) ,
+                            'c10' : (c10) ,
+                            'c11' : (c11) ,
+                            'c12' : (c12) ,
+                            'c13' : (c13) ,
+                            'c14' : (c14) ,
+                            'c15' : (c15) ,
+                            'c16' : (c16) ,
+                            'c17' : (c17) ,
+                            'c18' : (c18) ,
+                            'joueur1' : (ja) ,
+                            'joueur2' : (jb) ,
+                            'joueur3' : (jc)
+
+                        }).then(()=>{
+                            load.style.display = 'none';
+                            window.alert("Sauvegarde reuissie.");
+                                          
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+    
+                } else if (ja == "non") {
+                    load.style.display = 'none';
+                    window.alert("actualisez la page et reinserez votre code ");
+                } else if ( ( containsOnlyNumbers(a1) != true && a1 != "" ) || ( containsOnlyNumbers(b1) != true && b1 != "" ) || ( containsOnlyNumbers(c1) != true && c1 != "" )
+                & ( containsOnlyNumbers(a2) != true & a2 != "" ) || ( containsOnlyNumbers(b2) != true || b2 != "" )
+                & ( containsOnlyNumbers(a3) != true & a3 != "" ) || ( containsOnlyNumbers(b3) != true || b3 != ""  )
+                & ( containsOnlyNumbers(a4) != true & a4 != "" ) || ( containsOnlyNumbers(b4) != true || b4 != ""  )
+                & ( containsOnlyNumbers(a5) != true & a5 != "" ) || ( containsOnlyNumbers(b5) != true || b5 != ""  )
+                & ( containsOnlyNumbers(a6) != true & a6 != "" ) || ( containsOnlyNumbers(b6) != true || b6 != ""  )
+                & ( containsOnlyNumbers(a7) != true & a7 != "" ) || ( containsOnlyNumbers(b7) != true || b7 != ""  )
+                & ( containsOnlyNumbers(a8) != true & a8 != "" ) || ( containsOnlyNumbers(b8) != true || b8 != ""  )
+                & ( containsOnlyNumbers(a9) != true & a9 != "" ) || ( containsOnlyNumbers(b9) != true || b9 != ""  )
+                & ( containsOnlyNumbers(a10) != true & a10 != "" ) || ( containsOnlyNumbers(b10) != true || b10 != ""  )
+                & ( containsOnlyNumbers(a11) != true & a11 != "" ) || ( containsOnlyNumbers(b11) != true || b11 != ""  )
+                & ( containsOnlyNumbers(a12) != true & a12 != "" ) || ( containsOnlyNumbers(b12) != true || b12 != ""  )
+                & ( containsOnlyNumbers(a13) != true & a13 != "" ) || ( containsOnlyNumbers(b13) != true || b13 != ""  ) 
+                & ( containsOnlyNumbers(a14) != true & a14 != "" ) || ( containsOnlyNumbers(b14) != true || b14 != ""  )
+                & ( containsOnlyNumbers(a15) != true & a15 != "" ) || ( containsOnlyNumbers(b15) != true || b15 != ""  )
+                & ( containsOnlyNumbers(a16) != true & a16 != "" ) || ( containsOnlyNumbers(b16) != true || b16 != ""  )
+                & ( containsOnlyNumbers(a17) != true & a17 != "" ) || ( containsOnlyNumbers(b17) != true || b17 != ""  )
+                & ( containsOnlyNumbers(a18) != true & a18 != "" ) || ( containsOnlyNumbers(b18) != true || b18 != ""  )
+                & ( containsOnlyNumbers(c2) != true & c2 != "" ) || ( containsOnlyNumbers(c11) != true || c11 != "" )
+                & ( containsOnlyNumbers(c3) != true & c3 != "" ) || ( containsOnlyNumbers(c12) != true || c12 != "" )
+                & ( containsOnlyNumbers(c4) != true & c4 != "" ) || ( containsOnlyNumbers(c13) != true || c13 != "" )
+                & ( containsOnlyNumbers(c5) != true & c5 != "" ) || ( containsOnlyNumbers(c14) != true || c14 != "" )
+                & ( containsOnlyNumbers(c6) != true & c6 != "" ) || ( containsOnlyNumbers(c15) != true || c15 != "" )
+                & ( containsOnlyNumbers(c7) != true & c7 != "" ) || ( containsOnlyNumbers(c16) != true || c16 != "" )
+                & ( containsOnlyNumbers(c8) != true & c8 != "" ) || ( containsOnlyNumbers(c17) != true || c17 != "" )
+                & ( containsOnlyNumbers(c9) != true & c9 != "" ) || ( containsOnlyNumbers(c18) != true || c18 != "" )
+                & ( containsOnlyNumbers(c10) != true & c10 != "" ) ) {
+                    load.style.display = 'none';
+                    window.alert("score incorect. Les caractères autres que les chiffres ne sont pas acceptés sur la carte de score. Rassurez vous d'avoir entré uniquement des chiffres ou nombres par trous");
+                }
+                      
    
             } else if ( linked == "non" ) {
+                load.style.display = 'none';
                 window.alert("Aucune partie en cours ... Veuillez saisir le code de votre partie et lancer la partie");
             }
     
