@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>scoreboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+    
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+
+    </head>
+
+    <body >
+            
+        <section class="toursliderabc">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tour.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/toura.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourb.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourc.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourd.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/toure.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourf.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourg.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourh.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/touri.jpg" alt="image">
+        
+        
+        
+            
+            <section class="score">
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>                
+                <b style="color: white; font-size: 5px; margin-top: 5px;" id="nompart">PARTIE n° ...</b>
+               
+            </section>
+
+
+
+
+        
+        </section>
+
+
+  
+
+
+    </body>
+
+
+    <script>
+
+
+        var firstindex=0;
+        function automaticslide(){
+            setTimeout(automaticslide, 4000);
+            var pics;
+            const img = document.getElementsByClassName('slideidaaab');
+            for(pics=0; pics<img.length; pics++) {
+                img[pics].style.display="none";
+            }
+            firstindex++;
+            if(firstindex > img.length) {
+                firstindex = 1;
+            }
+            img[firstindex - 1].style.display="block";
+        }
+        automaticslide();
+
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+    
+        const database = firebase.database();
+
+
+    </script>
+    
+
+</html>
