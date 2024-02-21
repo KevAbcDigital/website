@@ -137,6 +137,7 @@ header {
   background-color: #000b2df5;
   position: absolute;
   padding: 10px;
+  overflow-y: scroll;
 }
 .score .entete {
   display: flex;
@@ -146,7 +147,16 @@ header {
   width: 38px;
   text-align: center;
   margin-top: 14px;
+  margin-bottom: 10px;
   background-color: rgb(19, 138, 15);
+  color: white;
+}
+.score .entete .boxentetej {
+  width: 38px;
+  font-size: 9px;
+  text-align: center;
+  margin-top: 4px;
+  background-color: transparent;
   color: white;
 
 }
