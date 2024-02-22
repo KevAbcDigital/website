@@ -93,9 +93,9 @@
                     <b class="boxentete" style="background-color: rgb(189, 176, 0); border-radius: 5px; width: 50px; margin-left: 5px;" >score</b>                
                 </div>
                 <div class="entete">
-                    <b class="boxentete" id="total" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
+                    <b class="boxentetej" id="total" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
                     padding-left: 15px; width: 50px; margin-left: 15px; background-color: transparent;" onclick="play()" ></b>                
-                    <b class="boxentete" id="players" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
+                    <b class="boxentetej" id="players" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
                     padding-left: 15px; width: 230px; margin-left: 15px; background-color: transparent; " ></b>                
                     <b class="boxentetej" style="margin-left: 5px;" id="h1" ></b>
                     <b class="boxentetej" id="h2" ></b>
@@ -116,7 +116,7 @@
                     <b class="boxentetej" id="h17" ></b>
                     <b class="boxentetej" id="h18" ></b>
                                
-                    <b class="boxentete" id="net" style="background-color: rgb(189, 176, 0); border-radius: 5px; width: 50px; margin-left: 13px;" ></b>                
+                    <b class="boxentetej" id="net" style="background-color: rgb(189, 176, 0); border-radius: 5px; width: 50px; margin-left: 13px;" ></b>                
                 </div>
                                 
             </section>
@@ -217,11 +217,11 @@
 
 
 
-        if ( ( nameopen == "" ) & ( nameopensearc == "aucun" ) ) {
+        if (nameopen == "" & nameopensearc == "aucun") {
             window.alert("Entrez le code de la partie en haut à droite !")
         } 
 
-        else if ( ( nameopen == "" ) & ( nameopensearc != "aucun" ) ) {
+        if (nameopen == "" & nameopensearc != "aucun") {
 
             window.alert(nameopensearc);
             var nompart = document.getElementById("nompart");                
@@ -280,7 +280,7 @@
         
         }
 
-        else if ( (nameopen != "nul" ) & ( nameopensearc == "aucun" ) ) {
+        if (nameopen != "") {
 
             window.alert(nameopen);
             var nompart = document.getElementById("nompart");                
