@@ -129,7 +129,6 @@ header {
 }
 .score {
   display: block;
-  position: fixed;
   z-index: 1000;
   width: 90%;
   height: 90%;
@@ -152,13 +151,25 @@ header {
   color: white;
 }
 .score .entete .boxentetej {
-  width: 38px;
-  font-size: 9px;
+  width: 30px;
   text-align: center;
-  margin-top: 4px;
+  margin-top: 14px;
+  margin-bottom: 10px;
   background-color: transparent;
+  border: 1px solid #008006ab;
+  margin-left: 8px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
   color: white;
-
+}
+.lottiescriptc {
+  position: relative;
+  display: none;
+  width: 100%;
+  padding-left: 30%;
+  padding-right: 30%;
+  margin-top: -80px;
 }
 
 
