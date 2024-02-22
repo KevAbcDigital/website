@@ -35,6 +35,12 @@
         </audio>
 
         <section class="toursliderabc">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/swingb.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/toura.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourc.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/toure.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourf.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/testfond.jpg" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/fondscored.gif" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/fondscoree.gif" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/fondscoreg.gif" alt="image">
@@ -45,8 +51,28 @@
      
                 <b style="font-size: 30px; margin-left: 10px; color: bisque; " >SCOREBOARD LIFE</b>
                 <b style="font-size: 10px; color: rgb(136, 253, 69);" id="nompart" >SCOREBOARD LIFE</b>
+                <div style="display: block; position: relative;">
+                    <b style="font-size: 8px; margin-left: 323px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
+                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
+
+                </div>
                 
-               
 
                 <div class="entete">
                     <b class="boxentete" id="listplayer" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
@@ -128,7 +154,7 @@
 
         var firstindex=0;
         function automaticslide(){
-            setTimeout(automaticslide, 10000);
+            setTimeout(automaticslide, 15000);
             var pics;
             const img = document.getElementsByClassName('slideidaaab');
             for(pics=0; pics<img.length; pics++) {
@@ -753,7 +779,8 @@
                 
                 snapshot.forEach(function(element){ 
 
-
+                    
+/*
 
                     if( ( ( (element.key).split(" ") ) [3] ) == "1") {
                         document.querySelector('#h1').style.borderColor='darkgreen';
@@ -1254,7 +1281,7 @@
                         document.querySelector('#h18').style.backgroundColor='darkblue';
                         document.querySelector('#h18').style.color='white';
                     }
-
+*/
 
 
                     document.querySelector('#total').innerHTML+=`<div>${ ( (element.key).substring(0, 4) ) }</div>`
