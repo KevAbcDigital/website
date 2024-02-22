@@ -26,6 +26,9 @@ body {
   justify-content: center;
   font-family: 'Poppins', sans-serif;
 }
+:root {
+  --adoblue: #000b2df5;
+}
 
 /* sms indisponible */
 
@@ -154,9 +157,9 @@ header {
   width: 30px;
   text-align: center;
   margin-top: 14px;
-  margin-bottom: 10px;
   background-color: transparent;
   border: 1px solid #008006ab;
+  border-radius: 4px;
   margin-left: 8px;
   height: 20px;
   text-align: center;
