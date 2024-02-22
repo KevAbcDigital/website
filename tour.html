@@ -46,24 +46,7 @@
                 <b style="font-size: 30px; margin-left: 10px; color: bisque; " >SCOREBOARD LIFE</b>
                 <b style="font-size: 10px; color: rgb(136, 253, 69);" id="nompart" >SCOREBOARD LIFE</b>
                 
-                <div class="form-group container-login100-form-btn" style="position: absolute; right: 0; margin-right: 195px;">
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player id="lottieloadc" class="lottiescriptc" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                        background="transparent" speed="1"  loop autoplay></lottie-player>
-                </div>
-
-                <div class="form-group container-login100-form-btn" style="position: absolute; right: 0; margin-right: 40px; height: 24px; margin-top: -32px;">
-                    <input id="codesearch" style=" border: 1px solid #03b60381; padding-left: 15px; font-size: 10px; width: 240px; "  type="text" placeholder="Entrez le code du tournoi " class="form-controla">
-                </div>
-
-                
-
-                <button id="valider" style=" width: 100px; height: 30px; position: absolute; right: 0; border-radius: 6px; margin-top: 20px; 
-                    background-color: rgb(0, 255, 166); color: rgb(0, 0, 0); margin-right: 40px;
-                   top: 0; box-shadow: -1px 1px 9px #838109d2; font-size: 10px;" type="button" onclick="send()">
-                        chercher
-                    <i class="zmdi zmdi-arrow-right"></i>
-                </button>
+               
 
                 <div class="entete">
                     <b class="boxentete" id="listplayer" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
@@ -90,7 +73,7 @@
                     <b class="boxentete" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;
                     width: 45px;" >18</b>                
                     
-                    <b class="boxentete" style="background-color: rgb(189, 176, 0); border-radius: 5px; width: 50px; margin-left: 5px;" >score</b>                
+                    <b class="boxentete" style="background-color: rgb(0, 4, 47); border-radius: 5px; width: 50px; margin-left: 5px;" >score</b>                
                 </div>
                 <div class="entete">
                     <b class="boxentetej" id="total" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
@@ -116,7 +99,7 @@
                     <b class="boxentetej" id="h17" ></b>
                     <b class="boxentetej" id="h18" ></b>
                                
-                    <b class="boxentetej" id="net" style="background-color: rgb(189, 176, 0); border-radius: 5px; width: 50px; margin-left: 13px;" ></b>                
+                    <b class="boxentetej" id="net" style="background-color: red; border-radius: 5px; width: 50px; margin-left: 13px;" ></b>                
                 </div>
                                 
             </section>
@@ -135,8 +118,7 @@
 
 
     <script>
-        
-        var nameopensearc = "aucun";
+
         const nameopen = localStorage.getItem('openname');
         
         function play(){
@@ -178,115 +160,575 @@
 
         
         function send(){                           
-
             play();
-            var load = document.getElementById("lottieloadc");                
-            var p = 0;
-            var codesearch = $('#codesearch').val();
 
-            if (codesearch != "") {
-
-                var dataRef = firebase.database().ref("open");
-                load.style.display = "block";
-                dataRef.on("value" , function(snapshot){
-                    var i = 0;
-                    snapshot.forEach(function(element){
-                        if(element.key == codesearch ) {
-                            load.style.display = "none";
-                            i=1;
-                            nompart.innerHTML=codesearch;
-                            nameopensearc = codesearch;                                     
-
-                        }
-                    });
-                        
-                    if ( i == 0 ) {
-                        load.style.display = "none";
-                        window.alert("aucune Partie trouvée au code : " + codesearch + " veuillez saisir votre mot de passe comme lors de l'enregistrement");
-                    }
-                        
-                });
-            
-            }
-
-        }
-
-
-
-
-
-
-
-        if (nameopen == "" & nameopensearc == "aucun") {
-            window.alert("Entrez le code de la partie en haut à droite !")
-        } 
-
-        if (nameopen == "" & nameopensearc != "aucun") {
-
-            window.alert(nameopensearc);
-            var nompart = document.getElementById("nompart");                
-            nompart.innerHTML= nameopensearc;
-            var dataRefauto = firebase.database().ref("open").child(nameopensearc);
-            dataRefauto.on("value" , function(snapshot){
-                document.querySelector('#total').innerHTML = "";
-                document.querySelector('#players').innerHTML = "";
-                document.querySelector('#h1').innerHTML = "";
-                document.querySelector('#h2').innerHTML = "";
-                document.querySelector('#h3').innerHTML = "";
-                document.querySelector('#h4').innerHTML = "";
-                document.querySelector('#h5').innerHTML = "";
-                document.querySelector('#h6').innerHTML = "";
-                document.querySelector('#h7').innerHTML = "";
-                document.querySelector('#h8').innerHTML = "";
-                document.querySelector('#h9').innerHTML = "";
-                document.querySelector('#h10').innerHTML = "";
-                document.querySelector('#h11').innerHTML = "";
-                document.querySelector('#h12').innerHTML = "";
-                document.querySelector('#h13').innerHTML = "";
-                document.querySelector('#h14').innerHTML = "";
-                document.querySelector('#h15').innerHTML = "";
-                document.querySelector('#h16').innerHTML = "";
-                document.querySelector('#h17').innerHTML = "";
-                document.querySelector('#h18').innerHTML = "";
-                document.querySelector('#net').innerHTML = "";
-                
-                snapshot.forEach(function(element){ 
-                    document.querySelector('#total').innerHTML+=`<div>${ ( (element.key).substring(0, 4) ) }</div>`
-                    document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) + " " + " " +  ( ( (element.key).split(" ") ) [2] )   }</div>`
-                    document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [3] ) }</div>`
-                    document.querySelector('#h2').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [4] ) }</div>`
-                    document.querySelector('#h3').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [5] ) }</div>`
-                    document.querySelector('#h4').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [6] ) }</div>`
-                    document.querySelector('#h5').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [7] ) }</div>`
-                    document.querySelector('#h6').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [8] ) }</div>`
-                    document.querySelector('#h7').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [9] ) }</div>`
-                    document.querySelector('#h8').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [10] ) }</div>`
-                    document.querySelector('#h9').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [11] ) }</div>`
-                    document.querySelector('#h10').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [12] ) }</div>`
-                    document.querySelector('#h11').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [13] ) }</div>`
-                    document.querySelector('#h12').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [14] ) }</div>`
-                    document.querySelector('#h13').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [15] ) }</div>`
-                    document.querySelector('#h14').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [16] ) }</div>`
-                    document.querySelector('#h15').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [17] ) }</div>`
-                    document.querySelector('#h16').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [18] ) }</div>`
-                    document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [19] ) }</div>`
-                    document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
-                    document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
-
-                    
-                });
-            });
-        
-        
-        }
-
-        if (nameopen != "") {
-
-            window.alert(nameopen);
             var nompart = document.getElementById("nompart");                
             nompart.innerHTML= nameopen;
             var dataRefauto = firebase.database().ref("open").child(nameopen);
+
             dataRefauto.on("value" , function(snapshot){
+                    document.querySelector('#total').innerHTML = "";
+                    document.querySelector('#players').innerHTML = "";
+                    document.querySelector('#h1').innerHTML = "";
+                    document.querySelector('#h2').innerHTML = "";
+                    document.querySelector('#h3').innerHTML = "";
+                    document.querySelector('#h4').innerHTML = "";
+                    document.querySelector('#h5').innerHTML = "";
+                    document.querySelector('#h6').innerHTML = "";
+                    document.querySelector('#h7').innerHTML = "";
+                    document.querySelector('#h8').innerHTML = "";
+                    document.querySelector('#h9').innerHTML = "";
+                    document.querySelector('#h10').innerHTML = "";
+                    document.querySelector('#h11').innerHTML = "";
+                    document.querySelector('#h12').innerHTML = "";
+                    document.querySelector('#h13').innerHTML = "";
+                    document.querySelector('#h14').innerHTML = "";
+                    document.querySelector('#h15').innerHTML = "";
+                    document.querySelector('#h16').innerHTML = "";
+                    document.querySelector('#h17').innerHTML = "";
+                    document.querySelector('#h18').innerHTML = "";
+                    document.querySelector('#net').innerHTML = "";
+                    
+                    snapshot.forEach(function(element){ 
+
+
+
+                        if( ( ( (element.key).split(" ") ) [3] ) == "1") {
+                            document.querySelector('#h1').style.borderColor='darkgreen';
+                            document.querySelector('#h1').style.backgroundColor='darkgreen';
+                            document.querySelector('#h1').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [3] ) == "2") {
+                            document.querySelector('#h1').style.borderColor='red';
+                            document.querySelector('#h1').style.backgroundColor='red';
+                            document.querySelector('#h1').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [3] ) == "3") {
+                            document.querySelector('#h1').style.borderColor='transparent';
+                            document.querySelector('#h1').style.backgroundColor='transparent';
+                            document.querySelector('#h1').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [3] ) == "0") {
+                            document.querySelector('#h1').style.borderColor='transparent';
+                            document.querySelector('#h1').style.backgroundColor='transparent';
+                            document.querySelector('#h1').style.color='transparent';
+                        } else {
+                            document.querySelector('#h1').style.borderColor='darkblue';
+                            document.querySelector('#h1').style.backgroundColor='darkblue';
+                            document.querySelector('#h1').style.color='white';
+                        }
+
+                        
+                        
+                        
+                        
+                        if( ( ( (element.key).split(" ") ) [4] ) == "2") {
+                            document.querySelector('#h2').style.borderColor='orange';
+                            document.querySelector('#h2').style.backgroundColor='orange';
+                            document.querySelector('#h2').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [4] ) == "3") {
+                            document.querySelector('#h2').style.borderColor='darkgreen';
+                            document.querySelector('#h2').style.backgroundColor='darkgreen';
+                            document.querySelector('#h2').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [4] ) == "4") {
+                            document.querySelector('#h2').style.borderColor='red';
+                            document.querySelector('#h2').style.backgroundColor='red';
+                            document.querySelector('#h2').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [4] ) == "5") {
+                            document.querySelector('#h2').style.borderColor='transparent';
+                            document.querySelector('#h2').style.backgroundColor='transparent';
+                            document.querySelector('#h2').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [4] ) == "0") {
+                            document.querySelector('#h2').style.borderColor='transparent';
+                            document.querySelector('#h2').style.backgroundColor='transparent';
+                            document.querySelector('#h2').style.color='transparent';
+                        } else {
+                            document.querySelector('#h2').style.borderColor='darkblue';
+                            document.querySelector('#h2').style.backgroundColor='darkblue';
+                            document.querySelector('#h2').style.color='white';
+                        }
+
+
+
+                        if( ( ( (element.key).split(" ") ) [5] ) == "1") {
+                            document.querySelector('#h3').style.borderColor='orange';
+                            document.querySelector('#h3').style.backgroundColor='orange';
+                            document.querySelector('#h3').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [5] ) == "2") {
+                            document.querySelector('#h3').style.borderColor='darkgreen';
+                            document.querySelector('#h3').style.backgroundColor='darkgreen';
+                            document.querySelector('#h3').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [5] ) == "3") {
+                            document.querySelector('#h3').style.borderColor='red';
+                            document.querySelector('#h3').style.backgroundColor='red';
+                            document.querySelector('#h3').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [5] ) == "4") {
+                            document.querySelector('#h3').style.borderColor='transparent';
+                            document.querySelector('#h3').style.backgroundColor='transparent';
+                            document.querySelector('#h3').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [5] ) == "0") {
+                            document.querySelector('#h3').style.borderColor='transparent';
+                            document.querySelector('#h3').style.backgroundColor='transparent';
+                            document.querySelector('#h3').style.color='transparent';
+                        } else {
+                            document.querySelector('#h3').style.borderColor='darkblue';
+                            document.querySelector('#h3').style.backgroundColor='darkblue';
+                            document.querySelector('#h3').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [6] ) == "2") {
+                            document.querySelector('#h4').style.borderColor='orange';
+                            document.querySelector('#h4').style.backgroundColor='orange';
+                            document.querySelector('#h4').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [6] ) == "3") {
+                            document.querySelector('#h4').style.borderColor='darkgreen';
+                            document.querySelector('#h4').style.backgroundColor='darkgreen';
+                            document.querySelector('#h4').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [6] ) == "4") {
+                            document.querySelector('#h4').style.borderColor='red';
+                            document.querySelector('#h4').style.backgroundColor='red';
+                            document.querySelector('#h4').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [6] ) == "5") {
+                            document.querySelector('#h4').style.borderColor='transparent';
+                            document.querySelector('#h4').style.backgroundColor='transparent';
+                            document.querySelector('#h4').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [6] ) == "0") {
+                            document.querySelector('#h4').style.borderColor='transparent';
+                            document.querySelector('#h4').style.backgroundColor='transparent';
+                            document.querySelector('#h4').style.color='transparent';
+                        } else {
+                            document.querySelector('#h4').style.borderColor='darkblue';
+                            document.querySelector('#h4').style.backgroundColor='darkblue';
+                            document.querySelector('#h4').style.color='white';
+                        }
+
+
+                        
+                        
+                        if( ( ( (element.key).split(" ") ) [7] ) == "1") {
+                            document.querySelector('#h5').style.borderColor='orange';
+                            document.querySelector('#h5').style.backgroundColor='orange';
+                            document.querySelector('#h5').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [7] ) == "2") {
+                            document.querySelector('#h5').style.borderColor='darkgreen';
+                            document.querySelector('#h5').style.backgroundColor='darkgreen';
+                            document.querySelector('#h5').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [7] ) == "3") {
+                            document.querySelector('#h5').style.borderColor='red';
+                            document.querySelector('#h5').style.backgroundColor='red';
+                            document.querySelector('#h5').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [7] ) == "4") {
+                            document.querySelector('#h5').style.borderColor='transparent';
+                            document.querySelector('#h5').style.backgroundColor='transparent';
+                            document.querySelector('#h5').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [7] ) == "0") {
+                            document.querySelector('#h5').style.borderColor='transparent';
+                            document.querySelector('#h5').style.backgroundColor='transparent';
+                            document.querySelector('#h5').style.color='transparent';
+                        } else {
+                            document.querySelector('#h5').style.borderColor='darkblue';
+                            document.querySelector('#h5').style.backgroundColor='darkblue';
+                            document.querySelector('#h5').style.color='white';
+                        }
+
+
+
+                        if( ( ( (element.key).split(" ") ) [8] ) == "1") {
+                            document.querySelector('#h6').style.borderColor='darkgreen';
+                            document.querySelector('#h6').style.backgroundColor='darkgreen';
+                            document.querySelector('#h6').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [8] ) == "2") {
+                            document.querySelector('#h6').style.borderColor='red';
+                            document.querySelector('#h6').style.backgroundColor='red';
+                            document.querySelector('#h6').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [8] ) == "3") {
+                            document.querySelector('#h6').style.borderColor='transparent';
+                            document.querySelector('#h6').style.backgroundColor='transparent';
+                            document.querySelector('#h6').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [8] ) == "0") {
+                            document.querySelector('#h6').style.borderColor='transparent';
+                            document.querySelector('#h6').style.backgroundColor='transparent';
+                            document.querySelector('#h6').style.color='transparent';
+                        } else {
+                            document.querySelector('#h6').style.borderColor='darkblue';
+                            document.querySelector('#h6').style.backgroundColor='darkblue';
+                            document.querySelector('#h6').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [9] ) == "1") {
+                            document.querySelector('#h7').style.borderColor='orange';
+                            document.querySelector('#h7').style.backgroundColor='orange';
+                            document.querySelector('#h7').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [9] ) == "2") {
+                            document.querySelector('#h7').style.borderColor='darkgreen';
+                            document.querySelector('#h7').style.backgroundColor='darkgreen';
+                            document.querySelector('#h7').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [9] ) == "3") {
+                            document.querySelector('#h7').style.borderColor='red';
+                            document.querySelector('#h7').style.backgroundColor='red';
+                            document.querySelector('#h7').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [9] ) == "4") {
+                            document.querySelector('#h7').style.borderColor='transparent';
+                            document.querySelector('#h7').style.backgroundColor='transparent';
+                            document.querySelector('#h7').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [9] ) == "0") {
+                            document.querySelector('#h7').style.borderColor='transparent';
+                            document.querySelector('#h7').style.backgroundColor='transparent';
+                            document.querySelector('#h7').style.color='transparent';
+                        } else {
+                            document.querySelector('#h7').style.borderColor='darkblue';
+                            document.querySelector('#h7').style.backgroundColor='darkblue';
+                            document.querySelector('#h7').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [10] ) == "1") {
+                            document.querySelector('#h8').style.borderColor='orange';
+                            document.querySelector('#h8').style.backgroundColor='orange';
+                            document.querySelector('#h8').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [10] ) == "2") {
+                            document.querySelector('#h8').style.borderColor='darkgreen';
+                            document.querySelector('#h8').style.backgroundColor='darkgreen';
+                            document.querySelector('#h8').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [10] ) == "3") {
+                            document.querySelector('#h8').style.borderColor='red';
+                            document.querySelector('#h8').style.backgroundColor='red';
+                            document.querySelector('#h8').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [10] ) == "4") {
+                            document.querySelector('#h8').style.borderColor='transparent';
+                            document.querySelector('#h8').style.backgroundColor='transparent';
+                            document.querySelector('#h8').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [10] ) == "0") {
+                            document.querySelector('#h8').style.borderColor='transparent';
+                            document.querySelector('#h8').style.backgroundColor='transparent';
+                            document.querySelector('#h8').style.color='transparent';
+                        } else {
+                            document.querySelector('#h8').style.borderColor='darkblue';
+                            document.querySelector('#h8').style.backgroundColor='darkblue';
+                            document.querySelector('#h8').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [11] ) == "1") {
+                            document.querySelector('#h9').style.borderColor='orange';
+                            document.querySelector('#h9').style.backgroundColor='orange';
+                            document.querySelector('#h9').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [11] ) == "2") {
+                            document.querySelector('#h9').style.borderColor='darkgreen';
+                            document.querySelector('#h9').style.backgroundColor='darkgreen';
+                            document.querySelector('#h9').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [11] ) == "3") {
+                            document.querySelector('#h9').style.borderColor='red';
+                            document.querySelector('#h9').style.backgroundColor='red';
+                            document.querySelector('#h9').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [11] ) == "4") {
+                            document.querySelector('#h9').style.borderColor='transparent';
+                            document.querySelector('#h9').style.backgroundColor='transparent';
+                            document.querySelector('#h9').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [11] ) == "0") {
+                            document.querySelector('#h9').style.borderColor='transparent';
+                            document.querySelector('#h9').style.backgroundColor='transparent';
+                            document.querySelector('#h9').style.color='transparent';
+                        } else {
+                            document.querySelector('#h9').style.borderColor='darkblue';
+                            document.querySelector('#h9').style.backgroundColor='darkblue';
+                            document.querySelector('#h9').style.color='white';
+                        }
+
+
+
+                        if( ( ( (element.key).split(" ") ) [12] ) == "1") {
+                            document.querySelector('#h10').style.borderColor='orange';
+                            document.querySelector('#h10').style.backgroundColor='orange';
+                            document.querySelector('#h10').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [12] ) == "2") {
+                            document.querySelector('#h10').style.borderColor='darkgreen';
+                            document.querySelector('#h10').style.backgroundColor='darkgreen';
+                            document.querySelector('#h10').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [12] ) == "3") {
+                            document.querySelector('#h10').style.borderColor='red';
+                            document.querySelector('#h10').style.backgroundColor='red';
+                            document.querySelector('#h10').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [12] ) == "4") {
+                            document.querySelector('#h10').style.borderColor='transparent';
+                            document.querySelector('#h10').style.backgroundColor='transparent';
+                            document.querySelector('#h10').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [12] ) == "0") {
+                            document.querySelector('#h10').style.borderColor='transparent';
+                            document.querySelector('#h10').style.backgroundColor='transparent';
+                            document.querySelector('#h10').style.color='transparent';
+                        } else {
+                            document.querySelector('#h10').style.borderColor='darkblue';
+                            document.querySelector('#h10').style.backgroundColor='darkblue';
+                            document.querySelector('#h10').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [13] ) == "1") {
+                            document.querySelector('#h11').style.borderColor='orange';
+                            document.querySelector('#h11').style.backgroundColor='orange';
+                            document.querySelector('#h11').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [13] ) == "2") {
+                            document.querySelector('#h11').style.borderColor='darkgreen';
+                            document.querySelector('#h11').style.backgroundColor='darkgreen';
+                            document.querySelector('#h11').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [13] ) == "3") {
+                            document.querySelector('#h11').style.borderColor='red';
+                            document.querySelector('#h11').style.backgroundColor='red';
+                            document.querySelector('#h11').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [13] ) == "4") {
+                            document.querySelector('#h11').style.borderColor='transparent';
+                            document.querySelector('#h11').style.backgroundColor='transparent';
+                            document.querySelector('#h11').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [13] ) == "0") {
+                            document.querySelector('#h11').style.borderColor='transparent';
+                            document.querySelector('#h11').style.backgroundColor='transparent';
+                            document.querySelector('#h11').style.color='transparent';
+                        } else {
+                            document.querySelector('#h11').style.borderColor='darkblue';
+                            document.querySelector('#h11').style.backgroundColor='darkblue';
+                            document.querySelector('#h11').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [14] ) == "1") {
+                            document.querySelector('#h12').style.borderColor='darkgreen';
+                            document.querySelector('#h12').style.backgroundColor='darkgreen';
+                            document.querySelector('#h12').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [14] ) == "2") {
+                            document.querySelector('#h12').style.borderColor='red';
+                            document.querySelector('#h12').style.backgroundColor='red';
+                            document.querySelector('#h12').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [14] ) == "3") {
+                            document.querySelector('#h12').style.borderColor='transparent';
+                            document.querySelector('#h12').style.backgroundColor='transparent';
+                            document.querySelector('#h12').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [14] ) == "0") {
+                            document.querySelector('#h12').style.borderColor='transparent';
+                            document.querySelector('#h12').style.backgroundColor='transparent';
+                            document.querySelector('#h12').style.color='transparent';
+                        } else {
+                            document.querySelector('#h12').style.borderColor='darkblue';
+                            document.querySelector('#h12').style.backgroundColor='darkblue';
+                            document.querySelector('#h12').style.color='white';
+                        }
+
+                        
+                        
+                        
+                        
+                        if( ( ( (element.key).split(" ") ) [15] ) == "2") {
+                            document.querySelector('#h13').style.borderColor='orange';
+                            document.querySelector('#h13').style.backgroundColor='orange';
+                            document.querySelector('#h13').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [15] ) == "3") {
+                            document.querySelector('#h13').style.borderColor='darkgreen';
+                            document.querySelector('#h13').style.backgroundColor='darkgreen';
+                            document.querySelector('#h13').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [15] ) == "4") {
+                            document.querySelector('#h13').style.borderColor='red';
+                            document.querySelector('#h13').style.backgroundColor='red';
+                            document.querySelector('#h13').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [15] ) == "5") {
+                            document.querySelector('#h13').style.borderColor='transparent';
+                            document.querySelector('#h13').style.backgroundColor='transparent';
+                            document.querySelector('#h13').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [15] ) == "0") {
+                            document.querySelector('#h13').style.borderColor='transparent';
+                            document.querySelector('#h13').style.backgroundColor='transparent';
+                            document.querySelector('#h13').style.color='transparent';
+                        } else {
+                            document.querySelector('#h13').style.borderColor='darkblue';
+                            document.querySelector('#h13').style.backgroundColor='darkblue';
+                            document.querySelector('#h13').style.color='white';
+                        }
+
+
+
+                        if( ( ( (element.key).split(" ") ) [16] ) == "1") {
+                            document.querySelector('#h14').style.borderColor='orange';
+                            document.querySelector('#h14').style.backgroundColor='orange';
+                            document.querySelector('#h14').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [16] ) == "2") {
+                            document.querySelector('#h14').style.borderColor='darkgreen';
+                            document.querySelector('#h14').style.backgroundColor='darkgreen';
+                            document.querySelector('#h14').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [16] ) == "3") {
+                            document.querySelector('#h14').style.borderColor='red';
+                            document.querySelector('#h14').style.backgroundColor='red';
+                            document.querySelector('#h14').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [16] ) == "4") {
+                            document.querySelector('#h14').style.borderColor='transparent';
+                            document.querySelector('#h14').style.backgroundColor='transparent';
+                            document.querySelector('#h14').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [16] ) == "0") {
+                            document.querySelector('#h14').style.borderColor='transparent';
+                            document.querySelector('#h14').style.backgroundColor='transparent';
+                            document.querySelector('#h14').style.color='transparent';
+                        } else {
+                            document.querySelector('#h14').style.borderColor='darkblue';
+                            document.querySelector('#h14').style.backgroundColor='darkblue';
+                            document.querySelector('#h14').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [17] ) == "2") {
+                            document.querySelector('#h15').style.borderColor='orange';
+                            document.querySelector('#h15').style.backgroundColor='orange';
+                            document.querySelector('#h15').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [17] ) == "3") {
+                            document.querySelector('#h15').style.borderColor='darkgreen';
+                            document.querySelector('#h15').style.backgroundColor='darkgreen';
+                            document.querySelector('#h15').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [17] ) == "4") {
+                            document.querySelector('#h15').style.borderColor='red';
+                            document.querySelector('#h15').style.backgroundColor='red';
+                            document.querySelector('#h15').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [17] ) == "5") {
+                            document.querySelector('#h15').style.borderColor='transparent';
+                            document.querySelector('#h15').style.backgroundColor='transparent';
+                            document.querySelector('#h15').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [17] ) == "0") {
+                            document.querySelector('#h15').style.borderColor='transparent';
+                            document.querySelector('#h15').style.backgroundColor='transparent';
+                            document.querySelector('#h15').style.color='transparent';
+                        } else {
+                            document.querySelector('#h15').style.borderColor='darkblue';
+                            document.querySelector('#h15').style.backgroundColor='darkblue';
+                            document.querySelector('#h15').style.color='white';
+                        }
+
+
+                        
+                        
+                        if( ( ( (element.key).split(" ") ) [18] ) == "1") {
+                            document.querySelector('#h16').style.borderColor='orange';
+                            document.querySelector('#h16').style.backgroundColor='orange';
+                            document.querySelector('#h16').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [18] ) == "2") {
+                            document.querySelector('#h16').style.borderColor='darkgreen';
+                            document.querySelector('#h16').style.backgroundColor='darkgreen';
+                            document.querySelector('#h16').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [18] ) == "3") {
+                            document.querySelector('#h16').style.borderColor='red';
+                            document.querySelector('#h16').style.backgroundColor='red';
+                            document.querySelector('#h16').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [18] ) == "4") {
+                            document.querySelector('#h16').style.borderColor='transparent';
+                            document.querySelector('#h16').style.backgroundColor='transparent';
+                            document.querySelector('#h16').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [18] ) == "0") {
+                            document.querySelector('#h16').style.borderColor='transparent';
+                            document.querySelector('#h16').style.backgroundColor='transparent';
+                            document.querySelector('#h16').style.color='transparent';
+                        } else {
+                            document.querySelector('#h16').style.borderColor='darkblue';
+                            document.querySelector('#h16').style.backgroundColor='darkblue';
+                            document.querySelector('#h16').style.color='white';
+                        }
+
+
+
+                        if( ( ( (element.key).split(" ") ) [19] ) == "1") {
+                            document.querySelector('#h17').style.borderColor='darkgreen';
+                            document.querySelector('#h17').style.backgroundColor='darkgreen';
+                            document.querySelector('#h17').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [19] ) == "2") {
+                            document.querySelector('#h17').style.borderColor='red';
+                            document.querySelector('#h17').style.backgroundColor='red';
+                            document.querySelector('#h17').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [19] ) == "3") {
+                            document.querySelector('#h17').style.borderColor='transparent';
+                            document.querySelector('#h17').style.backgroundColor='transparent';
+                            document.querySelector('#h17').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [19] ) == "0") {
+                            document.querySelector('#h17').style.borderColor='transparent';
+                            document.querySelector('#h17').style.backgroundColor='transparent';
+                            document.querySelector('#h17').style.color='transparent';
+                        } else {
+                            document.querySelector('#h17').style.borderColor='darkblue';
+                            document.querySelector('#h17').style.backgroundColor='darkblue';
+                            document.querySelector('#h17').style.color='white';
+                        }
+
+
+
+
+                        if( ( ( (element.key).split(" ") ) [20] ) == "1") {
+                            document.querySelector('#h18').style.borderColor='orange';
+                            document.querySelector('#h18').style.backgroundColor='orange';
+                            document.querySelector('#h18').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [20] ) == "2") {
+                            document.querySelector('#h18').style.borderColor='darkgreen';
+                            document.querySelector('#h18').style.backgroundColor='darkgreen';
+                            document.querySelector('#h18').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [20] ) == "3") {
+                            document.querySelector('#h18').style.borderColor='red';
+                            document.querySelector('#h18').style.backgroundColor='red';
+                            document.querySelector('#h18').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [20] ) == "4") {
+                            document.querySelector('#h18').style.borderColor='transparent';
+                            document.querySelector('#h18').style.backgroundColor='transparent';
+                            document.querySelector('#h18').style.color='white';
+                        } else if( ( ( (element.key).split(" ") ) [20] ) == "0") {
+                            document.querySelector('#h18').style.borderColor='transparent';
+                            document.querySelector('#h18').style.backgroundColor='transparent';
+                            document.querySelector('#h18').style.color='transparent';
+                        } else {
+                            document.querySelector('#h18').style.borderColor='darkblue';
+                            document.querySelector('#h18').style.backgroundColor='darkblue';
+                            document.querySelector('#h18').style.color='white';
+                        }
+
+
+
+                        document.querySelector('#total').innerHTML+=`<div>${ ( (element.key).substring(0, 4) ) }</div>`
+                        document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) + " " + " " +  ( ( (element.key).split(" ") ) [2] )   }</div>`
+                        document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [3] ) }</div>`
+                        document.querySelector('#h2').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [4] ) }</div>`
+                        document.querySelector('#h3').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [5] ) }</div>`
+                        document.querySelector('#h4').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [6] ) }</div>`
+                        document.querySelector('#h5').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [7] ) }</div>`
+                        document.querySelector('#h6').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [8] ) }</div>`
+                        document.querySelector('#h7').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [9] ) }</div>`
+                        document.querySelector('#h8').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [10] ) }</div>`
+                        document.querySelector('#h9').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [11] ) }</div>`
+                        document.querySelector('#h10').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [12] ) }</div>`
+                        document.querySelector('#h11').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [13] ) }</div>`
+                        document.querySelector('#h12').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [14] ) }</div>`
+                        document.querySelector('#h13').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [15] ) }</div>`
+                        document.querySelector('#h14').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [16] ) }</div>`
+                        document.querySelector('#h15').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [17] ) }</div>`
+                        document.querySelector('#h16').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [18] ) }</div>`
+                        document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [19] ) }</div>`
+                        document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
+                        document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
+
+                        
+                    });
+                });   
+
+        }
+
+
+        var nompart = document.getElementById("nompart");                
+        nompart.innerHTML= nameopen;
+        var dataRefauto = firebase.database().ref("open").child(nameopen);
+
+        dataRefauto.on("value" , function(snapshot){
                 document.querySelector('#total').innerHTML = "";
                 document.querySelector('#players').innerHTML = "";
                 document.querySelector('#h1').innerHTML = "";
@@ -310,6 +752,511 @@
                 document.querySelector('#net').innerHTML = "";
                 
                 snapshot.forEach(function(element){ 
+
+
+
+                    if( ( ( (element.key).split(" ") ) [3] ) == "1") {
+                        document.querySelector('#h1').style.borderColor='darkgreen';
+                        document.querySelector('#h1').style.backgroundColor='darkgreen';
+                        document.querySelector('#h1').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [3] ) == "2") {
+                        document.querySelector('#h1').style.borderColor='red';
+                        document.querySelector('#h1').style.backgroundColor='red';
+                        document.querySelector('#h1').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [3] ) == "3") {
+                        document.querySelector('#h1').style.borderColor='transparent';
+                        document.querySelector('#h1').style.backgroundColor='transparent';
+                        document.querySelector('#h1').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [3] ) == "0") {
+                        document.querySelector('#h1').style.borderColor='transparent';
+                        document.querySelector('#h1').style.backgroundColor='transparent';
+                        document.querySelector('#h1').style.color='transparent';
+                    } else {
+                        document.querySelector('#h1').style.borderColor='darkblue';
+                        document.querySelector('#h1').style.backgroundColor='darkblue';
+                        document.querySelector('#h1').style.color='white';
+                    }
+
+                    
+                    
+                    
+                    
+                    if( ( ( (element.key).split(" ") ) [4] ) == "2") {
+                        document.querySelector('#h2').style.borderColor='orange';
+                        document.querySelector('#h2').style.backgroundColor='orange';
+                        document.querySelector('#h2').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [4] ) == "3") {
+                        document.querySelector('#h2').style.borderColor='darkgreen';
+                        document.querySelector('#h2').style.backgroundColor='darkgreen';
+                        document.querySelector('#h2').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [4] ) == "4") {
+                        document.querySelector('#h2').style.borderColor='red';
+                        document.querySelector('#h2').style.backgroundColor='red';
+                        document.querySelector('#h2').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [4] ) == "5") {
+                        document.querySelector('#h2').style.borderColor='transparent';
+                        document.querySelector('#h2').style.backgroundColor='transparent';
+                        document.querySelector('#h2').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [4] ) == "0") {
+                        document.querySelector('#h2').style.borderColor='transparent';
+                        document.querySelector('#h2').style.backgroundColor='transparent';
+                        document.querySelector('#h2').style.color='transparent';
+                    } else {
+                        document.querySelector('#h2').style.borderColor='darkblue';
+                        document.querySelector('#h2').style.backgroundColor='darkblue';
+                        document.querySelector('#h2').style.color='white';
+                    }
+
+
+
+                    if( ( ( (element.key).split(" ") ) [5] ) == "1") {
+                        document.querySelector('#h3').style.borderColor='orange';
+                        document.querySelector('#h3').style.backgroundColor='orange';
+                        document.querySelector('#h3').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [5] ) == "2") {
+                        document.querySelector('#h3').style.borderColor='darkgreen';
+                        document.querySelector('#h3').style.backgroundColor='darkgreen';
+                        document.querySelector('#h3').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [5] ) == "3") {
+                        document.querySelector('#h3').style.borderColor='red';
+                        document.querySelector('#h3').style.backgroundColor='red';
+                        document.querySelector('#h3').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [5] ) == "4") {
+                        document.querySelector('#h3').style.borderColor='transparent';
+                        document.querySelector('#h3').style.backgroundColor='transparent';
+                        document.querySelector('#h3').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [5] ) == "0") {
+                        document.querySelector('#h3').style.borderColor='transparent';
+                        document.querySelector('#h3').style.backgroundColor='transparent';
+                        document.querySelector('#h3').style.color='transparent';
+                    } else {
+                        document.querySelector('#h3').style.borderColor='darkblue';
+                        document.querySelector('#h3').style.backgroundColor='darkblue';
+                        document.querySelector('#h3').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [6] ) == "2") {
+                        document.querySelector('#h4').style.borderColor='orange';
+                        document.querySelector('#h4').style.backgroundColor='orange';
+                        document.querySelector('#h4').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [6] ) == "3") {
+                        document.querySelector('#h4').style.borderColor='darkgreen';
+                        document.querySelector('#h4').style.backgroundColor='darkgreen';
+                        document.querySelector('#h4').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [6] ) == "4") {
+                        document.querySelector('#h4').style.borderColor='red';
+                        document.querySelector('#h4').style.backgroundColor='red';
+                        document.querySelector('#h4').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [6] ) == "5") {
+                        document.querySelector('#h4').style.borderColor='transparent';
+                        document.querySelector('#h4').style.backgroundColor='transparent';
+                        document.querySelector('#h4').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [6] ) == "0") {
+                        document.querySelector('#h4').style.borderColor='transparent';
+                        document.querySelector('#h4').style.backgroundColor='transparent';
+                        document.querySelector('#h4').style.color='transparent';
+                    } else {
+                        document.querySelector('#h4').style.borderColor='darkblue';
+                        document.querySelector('#h4').style.backgroundColor='darkblue';
+                        document.querySelector('#h4').style.color='white';
+                    }
+
+
+                    
+                    
+                    if( ( ( (element.key).split(" ") ) [7] ) == "1") {
+                        document.querySelector('#h5').style.borderColor='orange';
+                        document.querySelector('#h5').style.backgroundColor='orange';
+                        document.querySelector('#h5').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [7] ) == "2") {
+                        document.querySelector('#h5').style.borderColor='darkgreen';
+                        document.querySelector('#h5').style.backgroundColor='darkgreen';
+                        document.querySelector('#h5').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [7] ) == "3") {
+                        document.querySelector('#h5').style.borderColor='red';
+                        document.querySelector('#h5').style.backgroundColor='red';
+                        document.querySelector('#h5').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [7] ) == "4") {
+                        document.querySelector('#h5').style.borderColor='transparent';
+                        document.querySelector('#h5').style.backgroundColor='transparent';
+                        document.querySelector('#h5').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [7] ) == "0") {
+                        document.querySelector('#h5').style.borderColor='transparent';
+                        document.querySelector('#h5').style.backgroundColor='transparent';
+                        document.querySelector('#h5').style.color='transparent';
+                    } else {
+                        document.querySelector('#h5').style.borderColor='darkblue';
+                        document.querySelector('#h5').style.backgroundColor='darkblue';
+                        document.querySelector('#h5').style.color='white';
+                    }
+
+
+
+                    if( ( ( (element.key).split(" ") ) [8] ) == "1") {
+                        document.querySelector('#h6').style.borderColor='darkgreen';
+                        document.querySelector('#h6').style.backgroundColor='darkgreen';
+                        document.querySelector('#h6').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [8] ) == "2") {
+                        document.querySelector('#h6').style.borderColor='red';
+                        document.querySelector('#h6').style.backgroundColor='red';
+                        document.querySelector('#h6').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [8] ) == "3") {
+                        document.querySelector('#h6').style.borderColor='transparent';
+                        document.querySelector('#h6').style.backgroundColor='transparent';
+                        document.querySelector('#h6').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [8] ) == "0") {
+                        document.querySelector('#h6').style.borderColor='transparent';
+                        document.querySelector('#h6').style.backgroundColor='transparent';
+                        document.querySelector('#h6').style.color='transparent';
+                    } else {
+                        document.querySelector('#h6').style.borderColor='darkblue';
+                        document.querySelector('#h6').style.backgroundColor='darkblue';
+                        document.querySelector('#h6').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [9] ) == "1") {
+                        document.querySelector('#h7').style.borderColor='orange';
+                        document.querySelector('#h7').style.backgroundColor='orange';
+                        document.querySelector('#h7').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [9] ) == "2") {
+                        document.querySelector('#h7').style.borderColor='darkgreen';
+                        document.querySelector('#h7').style.backgroundColor='darkgreen';
+                        document.querySelector('#h7').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [9] ) == "3") {
+                        document.querySelector('#h7').style.borderColor='red';
+                        document.querySelector('#h7').style.backgroundColor='red';
+                        document.querySelector('#h7').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [9] ) == "4") {
+                        document.querySelector('#h7').style.borderColor='transparent';
+                        document.querySelector('#h7').style.backgroundColor='transparent';
+                        document.querySelector('#h7').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [9] ) == "0") {
+                        document.querySelector('#h7').style.borderColor='transparent';
+                        document.querySelector('#h7').style.backgroundColor='transparent';
+                        document.querySelector('#h7').style.color='transparent';
+                    } else {
+                        document.querySelector('#h7').style.borderColor='darkblue';
+                        document.querySelector('#h7').style.backgroundColor='darkblue';
+                        document.querySelector('#h7').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [10] ) == "1") {
+                        document.querySelector('#h8').style.borderColor='orange';
+                        document.querySelector('#h8').style.backgroundColor='orange';
+                        document.querySelector('#h8').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [10] ) == "2") {
+                        document.querySelector('#h8').style.borderColor='darkgreen';
+                        document.querySelector('#h8').style.backgroundColor='darkgreen';
+                        document.querySelector('#h8').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [10] ) == "3") {
+                        document.querySelector('#h8').style.borderColor='red';
+                        document.querySelector('#h8').style.backgroundColor='red';
+                        document.querySelector('#h8').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [10] ) == "4") {
+                        document.querySelector('#h8').style.borderColor='transparent';
+                        document.querySelector('#h8').style.backgroundColor='transparent';
+                        document.querySelector('#h8').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [10] ) == "0") {
+                        document.querySelector('#h8').style.borderColor='transparent';
+                        document.querySelector('#h8').style.backgroundColor='transparent';
+                        document.querySelector('#h8').style.color='transparent';
+                    } else {
+                        document.querySelector('#h8').style.borderColor='darkblue';
+                        document.querySelector('#h8').style.backgroundColor='darkblue';
+                        document.querySelector('#h8').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [11] ) == "1") {
+                        document.querySelector('#h9').style.borderColor='orange';
+                        document.querySelector('#h9').style.backgroundColor='orange';
+                        document.querySelector('#h9').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [11] ) == "2") {
+                        document.querySelector('#h9').style.borderColor='darkgreen';
+                        document.querySelector('#h9').style.backgroundColor='darkgreen';
+                        document.querySelector('#h9').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [11] ) == "3") {
+                        document.querySelector('#h9').style.borderColor='red';
+                        document.querySelector('#h9').style.backgroundColor='red';
+                        document.querySelector('#h9').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [11] ) == "4") {
+                        document.querySelector('#h9').style.borderColor='transparent';
+                        document.querySelector('#h9').style.backgroundColor='transparent';
+                        document.querySelector('#h9').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [11] ) == "0") {
+                        document.querySelector('#h9').style.borderColor='transparent';
+                        document.querySelector('#h9').style.backgroundColor='transparent';
+                        document.querySelector('#h9').style.color='transparent';
+                    } else {
+                        document.querySelector('#h9').style.borderColor='darkblue';
+                        document.querySelector('#h9').style.backgroundColor='darkblue';
+                        document.querySelector('#h9').style.color='white';
+                    }
+
+
+
+                    if( ( ( (element.key).split(" ") ) [12] ) == "1") {
+                        document.querySelector('#h10').style.borderColor='orange';
+                        document.querySelector('#h10').style.backgroundColor='orange';
+                        document.querySelector('#h10').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [12] ) == "2") {
+                        document.querySelector('#h10').style.borderColor='darkgreen';
+                        document.querySelector('#h10').style.backgroundColor='darkgreen';
+                        document.querySelector('#h10').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [12] ) == "3") {
+                        document.querySelector('#h10').style.borderColor='red';
+                        document.querySelector('#h10').style.backgroundColor='red';
+                        document.querySelector('#h10').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [12] ) == "4") {
+                        document.querySelector('#h10').style.borderColor='transparent';
+                        document.querySelector('#h10').style.backgroundColor='transparent';
+                        document.querySelector('#h10').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [12] ) == "0") {
+                        document.querySelector('#h10').style.borderColor='transparent';
+                        document.querySelector('#h10').style.backgroundColor='transparent';
+                        document.querySelector('#h10').style.color='transparent';
+                    } else {
+                        document.querySelector('#h10').style.borderColor='darkblue';
+                        document.querySelector('#h10').style.backgroundColor='darkblue';
+                        document.querySelector('#h10').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [13] ) == "1") {
+                        document.querySelector('#h11').style.borderColor='orange';
+                        document.querySelector('#h11').style.backgroundColor='orange';
+                        document.querySelector('#h11').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [13] ) == "2") {
+                        document.querySelector('#h11').style.borderColor='darkgreen';
+                        document.querySelector('#h11').style.backgroundColor='darkgreen';
+                        document.querySelector('#h11').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [13] ) == "3") {
+                        document.querySelector('#h11').style.borderColor='red';
+                        document.querySelector('#h11').style.backgroundColor='red';
+                        document.querySelector('#h11').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [13] ) == "4") {
+                        document.querySelector('#h11').style.borderColor='transparent';
+                        document.querySelector('#h11').style.backgroundColor='transparent';
+                        document.querySelector('#h11').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [13] ) == "0") {
+                        document.querySelector('#h11').style.borderColor='transparent';
+                        document.querySelector('#h11').style.backgroundColor='transparent';
+                        document.querySelector('#h11').style.color='transparent';
+                    } else {
+                        document.querySelector('#h11').style.borderColor='darkblue';
+                        document.querySelector('#h11').style.backgroundColor='darkblue';
+                        document.querySelector('#h11').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [14] ) == "1") {
+                        document.querySelector('#h12').style.borderColor='darkgreen';
+                        document.querySelector('#h12').style.backgroundColor='darkgreen';
+                        document.querySelector('#h12').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [14] ) == "2") {
+                        document.querySelector('#h12').style.borderColor='red';
+                        document.querySelector('#h12').style.backgroundColor='red';
+                        document.querySelector('#h12').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [14] ) == "3") {
+                        document.querySelector('#h12').style.borderColor='transparent';
+                        document.querySelector('#h12').style.backgroundColor='transparent';
+                        document.querySelector('#h12').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [14] ) == "0") {
+                        document.querySelector('#h12').style.borderColor='transparent';
+                        document.querySelector('#h12').style.backgroundColor='transparent';
+                        document.querySelector('#h12').style.color='transparent';
+                    } else {
+                        document.querySelector('#h12').style.borderColor='darkblue';
+                        document.querySelector('#h12').style.backgroundColor='darkblue';
+                        document.querySelector('#h12').style.color='white';
+                    }
+
+                    
+                    
+                    
+                    
+                    if( ( ( (element.key).split(" ") ) [15] ) == "2") {
+                        document.querySelector('#h13').style.borderColor='orange';
+                        document.querySelector('#h13').style.backgroundColor='orange';
+                        document.querySelector('#h13').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [15] ) == "3") {
+                        document.querySelector('#h13').style.borderColor='darkgreen';
+                        document.querySelector('#h13').style.backgroundColor='darkgreen';
+                        document.querySelector('#h13').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [15] ) == "4") {
+                        document.querySelector('#h13').style.borderColor='red';
+                        document.querySelector('#h13').style.backgroundColor='red';
+                        document.querySelector('#h13').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [15] ) == "5") {
+                        document.querySelector('#h13').style.borderColor='transparent';
+                        document.querySelector('#h13').style.backgroundColor='transparent';
+                        document.querySelector('#h13').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [15] ) == "0") {
+                        document.querySelector('#h13').style.borderColor='transparent';
+                        document.querySelector('#h13').style.backgroundColor='transparent';
+                        document.querySelector('#h13').style.color='transparent';
+                    } else {
+                        document.querySelector('#h13').style.borderColor='darkblue';
+                        document.querySelector('#h13').style.backgroundColor='darkblue';
+                        document.querySelector('#h13').style.color='white';
+                    }
+
+
+
+                    if( ( ( (element.key).split(" ") ) [16] ) == "1") {
+                        document.querySelector('#h14').style.borderColor='orange';
+                        document.querySelector('#h14').style.backgroundColor='orange';
+                        document.querySelector('#h14').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [16] ) == "2") {
+                        document.querySelector('#h14').style.borderColor='darkgreen';
+                        document.querySelector('#h14').style.backgroundColor='darkgreen';
+                        document.querySelector('#h14').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [16] ) == "3") {
+                        document.querySelector('#h14').style.borderColor='red';
+                        document.querySelector('#h14').style.backgroundColor='red';
+                        document.querySelector('#h14').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [16] ) == "4") {
+                        document.querySelector('#h14').style.borderColor='transparent';
+                        document.querySelector('#h14').style.backgroundColor='transparent';
+                        document.querySelector('#h14').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [16] ) == "0") {
+                        document.querySelector('#h14').style.borderColor='transparent';
+                        document.querySelector('#h14').style.backgroundColor='transparent';
+                        document.querySelector('#h14').style.color='transparent';
+                    } else {
+                        document.querySelector('#h14').style.borderColor='darkblue';
+                        document.querySelector('#h14').style.backgroundColor='darkblue';
+                        document.querySelector('#h14').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [17] ) == "2") {
+                        document.querySelector('#h15').style.borderColor='orange';
+                        document.querySelector('#h15').style.backgroundColor='orange';
+                        document.querySelector('#h15').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [17] ) == "3") {
+                        document.querySelector('#h15').style.borderColor='darkgreen';
+                        document.querySelector('#h15').style.backgroundColor='darkgreen';
+                        document.querySelector('#h15').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [17] ) == "4") {
+                        document.querySelector('#h15').style.borderColor='red';
+                        document.querySelector('#h15').style.backgroundColor='red';
+                        document.querySelector('#h15').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [17] ) == "5") {
+                        document.querySelector('#h15').style.borderColor='transparent';
+                        document.querySelector('#h15').style.backgroundColor='transparent';
+                        document.querySelector('#h15').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [17] ) == "0") {
+                        document.querySelector('#h15').style.borderColor='transparent';
+                        document.querySelector('#h15').style.backgroundColor='transparent';
+                        document.querySelector('#h15').style.color='transparent';
+                    } else {
+                        document.querySelector('#h15').style.borderColor='darkblue';
+                        document.querySelector('#h15').style.backgroundColor='darkblue';
+                        document.querySelector('#h15').style.color='white';
+                    }
+
+
+                    
+                    
+                    if( ( ( (element.key).split(" ") ) [18] ) == "1") {
+                        document.querySelector('#h16').style.borderColor='orange';
+                        document.querySelector('#h16').style.backgroundColor='orange';
+                        document.querySelector('#h16').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [18] ) == "2") {
+                        document.querySelector('#h16').style.borderColor='darkgreen';
+                        document.querySelector('#h16').style.backgroundColor='darkgreen';
+                        document.querySelector('#h16').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [18] ) == "3") {
+                        document.querySelector('#h16').style.borderColor='red';
+                        document.querySelector('#h16').style.backgroundColor='red';
+                        document.querySelector('#h16').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [18] ) == "4") {
+                        document.querySelector('#h16').style.borderColor='transparent';
+                        document.querySelector('#h16').style.backgroundColor='transparent';
+                        document.querySelector('#h16').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [18] ) == "0") {
+                        document.querySelector('#h16').style.borderColor='transparent';
+                        document.querySelector('#h16').style.backgroundColor='transparent';
+                        document.querySelector('#h16').style.color='transparent';
+                    } else {
+                        document.querySelector('#h16').style.borderColor='darkblue';
+                        document.querySelector('#h16').style.backgroundColor='darkblue';
+                        document.querySelector('#h16').style.color='white';
+                    }
+
+
+
+                    if( ( ( (element.key).split(" ") ) [19] ) == "1") {
+                        document.querySelector('#h17').style.borderColor='darkgreen';
+                        document.querySelector('#h17').style.backgroundColor='darkgreen';
+                        document.querySelector('#h17').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [19] ) == "2") {
+                        document.querySelector('#h17').style.borderColor='red';
+                        document.querySelector('#h17').style.backgroundColor='red';
+                        document.querySelector('#h17').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [19] ) == "3") {
+                        document.querySelector('#h17').style.borderColor='transparent';
+                        document.querySelector('#h17').style.backgroundColor='transparent';
+                        document.querySelector('#h17').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [19] ) == "0") {
+                        document.querySelector('#h17').style.borderColor='transparent';
+                        document.querySelector('#h17').style.backgroundColor='transparent';
+                        document.querySelector('#h17').style.color='transparent';
+                    } else {
+                        document.querySelector('#h17').style.borderColor='darkblue';
+                        document.querySelector('#h17').style.backgroundColor='darkblue';
+                        document.querySelector('#h17').style.color='white';
+                    }
+
+
+
+
+                    if( ( ( (element.key).split(" ") ) [20] ) == "1") {
+                        document.querySelector('#h18').style.borderColor='orange';
+                        document.querySelector('#h18').style.backgroundColor='orange';
+                        document.querySelector('#h18').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [20] ) == "2") {
+                        document.querySelector('#h18').style.borderColor='darkgreen';
+                        document.querySelector('#h18').style.backgroundColor='darkgreen';
+                        document.querySelector('#h18').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [20] ) == "3") {
+                        document.querySelector('#h18').style.borderColor='red';
+                        document.querySelector('#h18').style.backgroundColor='red';
+                        document.querySelector('#h18').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [20] ) == "4") {
+                        document.querySelector('#h18').style.borderColor='transparent';
+                        document.querySelector('#h18').style.backgroundColor='transparent';
+                        document.querySelector('#h18').style.color='white';
+                    } else if( ( ( (element.key).split(" ") ) [20] ) == "0") {
+                        document.querySelector('#h18').style.borderColor='transparent';
+                        document.querySelector('#h18').style.backgroundColor='transparent';
+                        document.querySelector('#h18').style.color='transparent';
+                    } else {
+                        document.querySelector('#h18').style.borderColor='darkblue';
+                        document.querySelector('#h18').style.backgroundColor='darkblue';
+                        document.querySelector('#h18').style.color='white';
+                    }
+
+
+
                     document.querySelector('#total').innerHTML+=`<div>${ ( (element.key).substring(0, 4) ) }</div>`
                     document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) + " " + " " +  ( ( (element.key).split(" ") ) [2] )   }</div>`
                     document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [3] ) }</div>`
@@ -336,8 +1283,7 @@
                 });
             });
         
-        }
-
+        
     </script>
     
 
