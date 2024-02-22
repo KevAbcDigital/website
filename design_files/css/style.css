@@ -287,55 +287,6 @@ header {
 }
 
 
-.besoin{
-  position: relative;
-  width: 50%;
-  padding-left: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
-  display: block;
-  box-sizing: border-box;
-}
-.besoin .titleactu {
-  display: block;
-  position: relative;
-  color: rgb(170, 203, 60);
-  margin-top: 15px;
-  font-size: 20px;
-  position: absolute;
-  right: 0;
-  font-weight: 600;
-  width: 400px;
-}
-.besoin .slider_container {
-  position: absolute;
-  right: 0;
-  padding-right: 50px;
-  display: block;
-}
-.besoin .itemservice{
-  display: block;
-  margin-right: 35px;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  cursor: pointer;
-  object-fit: cover;
-  margin-top: 50px;
-  transition: 0.8s ease;
-  overflow: auto;
-  scroll-behavior: smooth;
-}
-
-.besoin .slider_container .itemservice:hover {
-  width: 220px;
-  height: 220px;
-  margin-top: 20px;
-  margin-left: 10px;
-}
-
-
-
 
 
 
