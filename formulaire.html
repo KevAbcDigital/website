@@ -79,7 +79,7 @@
 
         
         <section style=" position: absolute; bottom: 0 ; left: 0; right: 0; margin-left: 14px; margin-right: 14px;
-        margin-bottom: 110px; border-radius: 20px; background-color: transparent;" class="formulaire" id="formulaire">
+        margin-bottom: 150px; border-radius: 20px; background-color: transparent;" class="formulaire" id="formulaire">
            <div style="padding-top: 17px;" class="devisbloc ">
 
                <form name="formweb" style="padding: 0 35px;" action="">
@@ -87,14 +87,8 @@
                 <h1 style="font-weight: 600; margin-bottom: 50px; font-size: 30px; color: rgb(238, 255, 0);">Inscrivez vous</h1>
 
                 <div class="form-wrapper">
-                    <a style="color: rgb(234, 254, 117);" class="titleform">Noms et prénoms du joueur *</a>
-                    <input id="nomuser" style="border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez le nom complet du joueur ..." class="form-controla">
-                </div>
-
-                <div class="form-wrapper" style="margin-bottom: 1px;">
-                    <a style="color: rgb(234, 254, 117);" class="titleform">Telephone * ( Ex : 6xxxxxxxx )</a>
-                    <input id="teluser" style="border: 1px solid #0cca057a; padding-left: 15px;" type="number" placeholder="Entrez le numéro de téléphone ..." class="form-controla">
-                    <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
+                    <a style="color: rgb(234, 254, 117);" class="titleform">Noms et prénom du joueur *</a>
+                    <input id="nomuser" style="border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Un nom et un des prenoms du joueur" class="form-controla">
                 </div>
 
                 <div class="form-wrapper">
@@ -159,24 +153,19 @@
     
         const database = firebase.database();
     
-        function containsOnlyNumbers(str) {
-            return /^\d+$/.test(str); 
-        }
-
         function send(){
             
             var load = document.getElementById("lottieload");                
             var nom = $('#nomuser').val().toLowerCase().trim();
-            var tel = $('#teluser').val();
             var codeopen = $('#codeopen').val();
             var p = 0;
             var dataRef = firebase.database().ref("open");
 
-            if ( nom != "" & tel != "" & codeopen != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) ) {
+            var verifie = (nom.split(" ")[0] + " " + nom.split(" ")[1])
+
+            if ( verifie != "" & codeopen != "" ) {
 
                 load.style.display = "block";
-                var play = (nom.toLowerCase().trim()) ;
-
 
                 var c = 0;
                 dataRef.on("value" , function(snapshot){
@@ -188,44 +177,28 @@
                     });
                     if ( ( i == 1 ) & ( c == 0 ) ) {
                         c = 1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         
                         var l = 0;
                         dataRef.child(codeopen).on("value" , function(snapshot){
                             var j = 0;
+                            var nomcode = ("-288 " + verifie + " 1" + " 2" + " 3" + " 4" + " 5" + " 6" + " 7" + " 8" + " 9" + " 10" + " 11" + " 12" + " 13" + " 14" + " 15" + " 16" + " 17" + " 18" + " 000");
                             snapshot.forEach(function(element){
-                                if(element.key == nom) {
+                                if(element.key == nomcode ) {
                                     j = 1;
                                 }
                             });
 
                             if ( j == 0 ) {
-                                var dataRefb = firebase.database().ref("open").child(codeopen).child(nom);
+                                var dataRefb = firebase.database().ref("open").child(codeopen)
+                                .child(nomcode);
                                 l = 1;
                                 dataRefb.set({  
-                                    'nom' : (nom) ,
+                                    'nom' : (verifie) ,
+                                    'total' : ("total") 
                                 }).then(()=>{
                                     load.style.display = 'none';
                                     window.alert("enregistrement reuissi. !");
-                                    window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';                    
+                                    // window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';                    
                                                         
                                 }).catch((error)=>{
                                     load.style.display = 'none';
@@ -239,26 +212,6 @@
                                 window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
                             }
                         });
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     }
                     if ( ( i == 0 ) & ( c == 0 ) ) {
@@ -270,20 +223,10 @@
 
                 });
                 
-
-
-
-                
    
-            } else if ( nom == "" ) {
-                window.alert("veuillez entrer le nom complet dans l'ordre...");
-            } else if ( tel == "" ) {
-                window.alert("Veuillez entrer le numero de téléphone du joueur ...");
-            } else if ( containsOnlyNumbers(tel) == false ) {
-                window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
-            } else if ( tel.length != 9 ) {
-                window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
-            } else if ( club == "" ) {
+            } else if ( verifie == "" ) {
+                window.alert("veuillez entrer uniquement un nom et un prénoms au joueur.");
+            } else if ( codeopen == "" ) {
                 window.alert("Veuillez saisir le code du tournoi");
             }
     

@@ -107,7 +107,7 @@
 
 
         <section class="indisponibletxt">
-            <a class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
   
 
@@ -160,10 +160,15 @@
 
 
         function opena() {
-            window.alert('aucune information disponible pour le moment')
+            const touropen = "opena";
+            localStorage.setItem('openname' , touropen );
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+
         }
         function openb() {
-            window.alert('aucune information disponible pour le moment')
+            const touropen = "openb";
+            localStorage.setItem('openname' , touropen );
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
         function opentk() {
             window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
