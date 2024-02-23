@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>scoreboard</title>
+        <title>scorenote</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
@@ -117,7 +117,12 @@
                 <b style="margin-top: 2px; font-size: 12px; color: rgb(25, 255, 167);" id="conseil" >En attente de validation ...</b>
                 <b style="background-color: rgb(90, 7, 7); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
                 color: white; font-size: 12px; width: fit-content ; margin-top: 5px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                 border-radius: 8px; display: none;" onclick="delet();" id="del" >Supprimer cette partie </b>
+                 border-radius: 8px; display: none;" onclick="delet();" id="del" >Supprimer cette partie 
+                </b>
+                <b style="background-color: rgb(90, 7, 7); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
+                color: white; font-size: 12px; width: fit-content ; margin-top: 5px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
+                 border-radius: 8px; display: none;" onclick="ecraser();" id="ecr" >Ecaser la partie 
+                </b>
             </div>
         </section>
 
@@ -551,7 +556,294 @@
             }
             
         }
-        
+
+
+/*
+        function ecr() {
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var load = document.getElementById("lottieloadb");                
+            
+            var dataRef = firebase.database().ref("amical");
+
+
+            if ( linked != "non" ) {
+
+                load.style.display = 'block';
+
+                var dataRefb = firebase.database().ref("amical").child(linked);
+                var ja = "non";
+                var jb = "non";
+                var jc = "non";
+                var jaa = "non";
+                var jbb = "non";
+                var jcc = "non";
+
+                dataRefb.on("value" , function(snapshot){             
+                    snapshot.forEach(function(element){
+
+                        
+                        if(element.key == "joueur1" ) {
+                            ja = element.val();
+                        }
+
+                        if(element.key == "joueur2" ) {
+                            if (element.val == "aucun") {
+                                joueur2.style.display = "none";
+                                formulaireb.style.display = "none";
+                            } else {
+                                jb = element.val();;
+                            }
+                        }
+
+                        if(element.key == "joueur3" ) {
+                            if (element.val == "aucun") {
+                                joueur3.style.display = "none";
+                                formulairec.style.display = "none";
+                            } else {
+                                jc = element.val();;
+                            }
+                        }
+                        
+
+                        if(element.key == "noma" ) {
+                            jaa = element.val();
+                        }
+                        if(element.key == "nomb" ) {
+                            jbb = element.val();
+                        }
+                        if(element.key == "nomc" ) {
+                            jcc = element.val();
+                        }
+                    });
+                });
+
+
+                if ( jaa != "") {
+
+                    dataRefb.set({
+                        'a1' : ("0") ,
+                                'a2' : ("0") ,
+                                'a3' : ("0") ,
+                                'a4' : ("0") ,
+                                'a5' : ("0") ,
+                                'a6' : ("0") ,
+                                'a7' : ("0") ,
+                                'a8' : ("0") ,
+                                'a9' : ("0") ,
+                                'a10' : ("0") ,
+                                'a11' : ("0") ,
+                                'a12' : ("0") ,
+                                'a13' : ("0") ,
+                                'a14' : ("0") ,
+                                'a15' : ("0") ,
+                                'a16' : ("0") ,
+                                'a17' : ("0") ,
+                                'a18' : ("0") ,
+
+
+                                'b1' : ("0") ,
+                                'b2' : ("0") ,
+                                'b3' : ("0") ,
+                                'b4' : ("0") ,
+                                'b5' : ("0") ,
+                                'b6' : ("0") ,
+                                'b7' : ("0") ,
+                                'b8' : ("0") ,
+                                'b9' : ("0") ,
+                                'b10' : ("0") ,
+                                'b11' : ("0") ,
+                                'b12' : ("0") ,
+                                'b13' : ("0") ,
+                                'b14' : ("0") ,
+                                'b15' : ("0") ,
+                                'b16' : ("0") ,
+                                'b17' : ("0") ,
+                                'b18' : ("0") ,
+
+
+                                'c1' : ("0") ,
+                                'c2' : ("0") ,
+                                'c3' : ("0") ,
+                                'c4' : ("0") ,
+                                'c5' : ("0") ,
+                                'c6' : ("0") ,
+                                'c7' : ("0") ,
+                                'c8' : ("0") ,
+                                'c9' : ("0") ,
+                                'c10' : ("0") ,
+                                'c11' : ("0") ,
+                                'c12' : ("0") ,
+                                'c13' : ("0") ,
+                                'c14' : ("0") ,
+                                'c15' : ("0") ,
+                                'c16' : ("0") ,
+                                'c17' : ("0") ,
+                                'c18' : ("0") ,
+
+                            'joueur1' : (ja) ,
+                            'joueur2' : (jb) ,
+                            'joueur3' : (jc),
+
+                            'noma' : ( ( (jaa.split(" ") ) [0] ) + " " + ja + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000"),
+                            'nomb' : ( ( (jbb.split(" ") ) [0] ) + " " + jb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000"),
+                            'nomc' : ( ( (jcc.split(" ") ) [0] ) + " " + jc + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000"),
+
+                        }).then(()=>{
+                            
+                            
+
+
+
+
+
+
+                        var dataReffinal = firebase.database().ref("open").child("opena");
+                        dataReffinal.on("value" , function(snapshot){             
+                            snapshot.forEach(function(element){
+                                if( ( ( ( (element.key).split(" ") ) [1] ) + " " + ( ( (element.key).split(" ") ) [2] ) )  == ja ) {
+                                    var s = element.key;
+                                    dataReffinal.s.remove();
+                                }
+                            });
+                        });
+
+                        dataReffinal.child(jaa).set({
+                            'noma' : (jaa)
+                        }).then(()=>{
+                            
+                           
+                            
+
+
+                            var dataReffinal = firebase.database().ref("open").child("opena");
+                            dataReffinal.on("value" , function(snapshot){             
+                                snapshot.forEach(function(element){
+                                    if( ( ( ( (element.key).split(" ") ) [1] ) + " " + ( ( (element.key).split(" ") ) [2] ) )  == jb ) {
+                                        var s = element.key;
+                                        dataReffinal.s.remove();
+                                    }
+                                });
+                            });
+
+                            dataReffinal.child(jbb).set({
+                                'nomb' : (jbb)
+                            }).then(()=>{
+                                
+                                var dataReffinal = firebase.database().ref("open").child("opena");
+                                dataReffinal.on("value" , function(snapshot){             
+                                    snapshot.forEach(function(element){
+                                        if( ( ( ( (element.key).split(" ") ) [1] ) + " " + ( ( (element.key).split(" ") ) [2] ) )  == jc ) {
+                                            var s = element.key;
+                                            dataReffinal.s.remove();
+                                        }
+                                    });
+                                });
+
+                                dataReffinal.child(jcc).set({
+                                    'nomc' : (jcc)
+                                }).then(()=>{
+                                    load.style.display = 'none';
+                                    window.alert("Sauvegarde pro reuissie.");               
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                                });
+                            
+                            
+
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+
+
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+
+
+
+
+
+
+
+
+                                          
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+    
+                } else if (ja == "non") {
+                    load.style.display = 'none';
+                    window.alert("actualisez la page et reinserez votre code ");
+                }
+
+                    
+            } else if ( linked == "non" ) {
+                load.style.display = 'none';
+                window.alert("Aucune partie en cours ... Veuillez saisir le code de votre partie et lancer la partie");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        }
+*/        
             
 
         const firebaseConfig = {
@@ -569,13 +861,10 @@
         const database = firebase.database();
 
         var del = document.getElementById("del");                
+        var ecr = document.getElementById("ecr");                
+
 
         function search(){                           
-
-            var formulairea = document.getElementById("formulairea");                
-            var formulaireb = document.getElementById("formulaireb");                
-            var formulairec = document.getElementById("formulairec");                
-
 
             var joueur1 = document.getElementById("joueur1");                
             var joueur2 = document.getElementById("joueur2");                
@@ -649,7 +938,7 @@
 
             var dataRef = firebase.database().ref("amical");
 
-            if ( codesearch != "" & codesearch.length == 6) {
+            if ( codesearch != "" & codesearch.length == 8) {
 
                     load.style.display = "block";
 
@@ -659,7 +948,27 @@
                             if(element.key == codesearch ) {
                                 i=1;
 
-                                del.style.display = "block";
+                                if ( (codesearch == "22222222") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "33333333") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "44444444") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "55555555") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "66666666") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "77777777") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "88888888") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "99999999") ) {
+                                    ecr.style.display = "block";
+                                } else {
+                                    del.style.display = "block";
+                                }
+                                
+                                
 
                                 nompart.innerHTML="Partie n° " + codesearch;
                                 conseil.innerHTML="Votre partie a été trouvée";
@@ -2102,7 +2411,7 @@
                     
                         if ( i == 0 ) {
                             load.style.display = "none";
-                            window.alert("aucune Partie trouvée au code : " + codesearch + " veuillez saisir votre mot de passe comme lors de l'enregistrement");
+                            window.alert("aucune Partie trouvée au code : " + codesearch + " veuillez saisir votre mot de passe comme lors de l'enregistrement");                        
                         }
                     
                     });
@@ -2111,8 +2420,8 @@
 
                 }  else if ( codesearch == "" ) {
                     window.alert("Entrer le mot de passe de votre partie ...");
-                } else if ( codesearch.length != 6 ) {
-                    window.alert("le mot de passe doit contenir exactement 6 caracteres");
+                } else if ( codesearch.length != 8 ) {
+                    window.alert("le mot de passe doit contenir exactement 8 caracteres");
                 }
 
         }
@@ -2263,9 +2572,25 @@
                 var jb = "non";
                 var jc = "non";
 
+                var lasta = "non";
+                var lastb = "non";
+                var lastc = "non";
+
                 dataRefb.on("value" , function(snapshot){             
                     snapshot.forEach(function(element){
 
+                        if(element.key == "noma" ) {
+                            lasta = element.val();
+                        }
+
+                        if(element.key == "nomb" ) {
+                            lastb = element.val();
+                        }
+
+                        if(element.key == "nomc" ) {
+                            lastc = element.val();
+                        }
+                
                         if(element.key == "joueur1" ) {
                             ja = element.val();
                         }
@@ -2294,6 +2619,77 @@
 
 
                 if ( ja != "non") {
+
+                    var totala = ( parseInt(a1) + parseInt(a2) +parseInt(a3) +parseInt(a4) + parseInt(a5) +parseInt(a6) +
+                    parseInt(a7) + parseInt(a8) +parseInt(a9) +parseInt(a10) + parseInt(a11) +parseInt(a12) +
+                    parseInt(a13) + parseInt(a14) +parseInt(a15) + parseInt(a16) + parseInt(a17) +parseInt(a18) );
+                    var noma = ( ( totala + 100 ) + " " + ( totala - 288 ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
+                    + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
+                    + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totala - 72 ) );
+
+
+                    var totalb = ( parseInt(b1) + parseInt(b2) +parseInt(b3) +parseInt(b4) + parseInt(b5) +parseInt(b6) +
+                    parseInt(b7) + parseInt(b8) +parseInt(b9) +parseInt(b10) + parseInt(b11) +parseInt(b12) +
+                    parseInt(b13) + parseInt(b14) +parseInt(b15) + parseInt(b16) + parseInt(b17) +parseInt(b18) );
+                    var nomb = ( ( totalb + 100 ) + " " + ( totalb - 288 ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                    + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
+                    + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalb - 72 ) );
+
+
+                    var totalc = ( parseInt(c1) + parseInt(c2) +parseInt(c3) +parseInt(c4) + parseInt(c5) +parseInt(c6) +
+                    parseInt(c7) + parseInt(c8) +parseInt(c9) +parseInt(c10) + parseInt(c11) +parseInt(c12) +
+                    parseInt(c13) + parseInt(c14) +parseInt(c15) + parseInt(c16) + parseInt(c17) +parseInt(c18) );
+                    var nomc = ( ( totalc + 100 ) + " " + ( totalc - 288 ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                    + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
+                    + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalc - 72 ) );
+
+
+
+
+                    if ( (linked == "22222222") || (linked == "33333333") || (linked == "44444444") || (linked == "55555555") ) {
+                        
+
+                        var dataReffinal = firebase.database().ref("open").child("opena");
+                        dataReffinal.child(lasta).remove();
+                        dataReffinal.child(lastb).remove();
+                        dataReffinal.child(lastc).remove();
+
+                                
+                        dataReffinal.child(noma).set({
+                            'noma' : (noma)
+                        }).then(()=>{
+                            dataReffinal.child(nomb).set({
+                                'nomb' : (nomb)
+                            }).then(()=>{
+                                dataReffinal.child(nomc).set({
+                                    'nomc' : (nomc)
+                                }).then(()=>{
+                                    load.style.display = 'none';
+                                    window.alert("Sauvegarde pro reuissie.");               
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                                });        
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+
+
+
+
+
+
+
+
+
+                        
+                    }
 
                     dataRefb.set({
                             'a1' : (a1) ,
@@ -2356,9 +2752,12 @@
                             'c18' : (c18) ,
                             'joueur1' : (ja) ,
                             'joueur2' : (jb) ,
-                            'joueur3' : (jc)
+                            'joueur3' : (jc),
 
-                            
+                            'noma' : (noma),
+                            'nomb' : (nomb),
+                            'nomc' : (nomc)
+
                         }).then(()=>{
                             load.style.display = 'none';
                             window.alert("Sauvegarde reuissie.");

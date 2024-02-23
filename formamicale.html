@@ -90,24 +90,24 @@
 
                     <div class="form-wrapper">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 1 *</a>
-                        <input id="joueur1" style=" height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez le nom du joueur 1 ..." class="form-controla">
+                        <input id="joueur1" style=" height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
                         <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 2 *</a>
-                        <input id="joueur2" style="height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez le nom du joueur 2 ..." class="form-controla">
+                        <input id="joueur2" style="height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
                         <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 3 *</a>
-                        <input id="joueur3" style="height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez le nom du joueur 3 ..." class="form-controla">
+                        <input id="joueur3" style="height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
                         <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
                     <div class="form-wrapper">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Créez un mot de passe pour votre partie *</a>
-                        <input id="codepass" style="height: 30px; width: 300px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un code à 6 Caractères" class="form-controla">
+                        <input id="codepass" style="height: 30px; width: 300px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
                         <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
 
@@ -181,7 +181,7 @@
             var dataRef = firebase.database().ref("amical");
 
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
-               & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 6
+               & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 8
                & joueur1 != "aucun" ) {
 
                 load.style.display = "block";
@@ -202,79 +202,159 @@
                     if ( i == 0 ) {
                         var dataRefb = firebase.database().ref("amical").child(codepass);
                         l = 1;
-                        dataRefb.set({
-                            'a1' : ("") ,
-                            'a2' : ("") ,
-                            'a3' : ("") ,
-                            'a4' : ("") ,
-                            'a5' : ("") ,
-                            'a6' : ("") ,
-                            'a7' : ("") ,
-                            'a8' : ("") ,
-                            'a9' : ("") ,
-                            'a10' : ("") ,
-                            'a11' : ("") ,
-                            'a12' : ("") ,
-                            'a13' : ("") ,
-                            'a14' : ("") ,
-                            'a15' : ("") ,
-                            'a16' : ("") ,
-                            'a17' : ("") ,
-                            'a18' : ("") ,
+                        var verifiea = (joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
+                        var verifieb = (joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
+                        var verifiec = (joueur3.split(" ")[0] + " " + joueur3.split(" ")[1]);
+
+                        var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000";
+                        var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000";
+                        var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000";
 
 
-                            'b1' : ("") ,
-                            'b2' : ("") ,
-                            'b3' : ("") ,
-                            'b4' : ("") ,
-                            'b5' : ("") ,
-                            'b6' : ("") ,
-                            'b7' : ("") ,
-                            'b8' : ("") ,
-                            'b9' : ("") ,
-                            'b10' : ("") ,
-                            'b11' : ("") ,
-                            'b12' : ("") ,
-                            'b13' : ("") ,
-                            'b14' : ("") ,
-                            'b15' : ("") ,
-                            'b16' : ("") ,
-                            'b17' : ("") ,
-                            'b18' : ("") ,
+                        if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) & ( ( joueur3.split(" ")[1]) != undefined )  ) {
+                           
+                            dataRefb.set({
+                                'a1' : ("0") ,
+                                'a2' : ("0") ,
+                                'a3' : ("0") ,
+                                'a4' : ("0") ,
+                                'a5' : ("0") ,
+                                'a6' : ("0") ,
+                                'a7' : ("0") ,
+                                'a8' : ("0") ,
+                                'a9' : ("0") ,
+                                'a10' : ("0") ,
+                                'a11' : ("0") ,
+                                'a12' : ("0") ,
+                                'a13' : ("0") ,
+                                'a14' : ("0") ,
+                                'a15' : ("0") ,
+                                'a16' : ("0") ,
+                                'a17' : ("0") ,
+                                'a18' : ("0") ,
 
 
-                            'c1' : ("") ,
-                            'c2' : ("") ,
-                            'c3' : ("") ,
-                            'c4' : ("") ,
-                            'c5' : ("") ,
-                            'c6' : ("") ,
-                            'c7' : ("") ,
-                            'c8' : ("") ,
-                            'c9' : ("") ,
-                            'c10' : ("") ,
-                            'c11' : ("") ,
-                            'c12' : ("") ,
-                            'c13' : ("") ,
-                            'c14' : ("") ,
-                            'c15' : ("") ,
-                            'c16' : ("") ,
-                            'c17' : ("") ,
-                            'c18' : ("") ,
+                                'b1' : ("0") ,
+                                'b2' : ("0") ,
+                                'b3' : ("0") ,
+                                'b4' : ("0") ,
+                                'b5' : ("0") ,
+                                'b6' : ("0") ,
+                                'b7' : ("0") ,
+                                'b8' : ("0") ,
+                                'b9' : ("0") ,
+                                'b10' : ("0") ,
+                                'b11' : ("0") ,
+                                'b12' : ("0") ,
+                                'b13' : ("0") ,
+                                'b14' : ("0") ,
+                                'b15' : ("0") ,
+                                'b16' : ("0") ,
+                                'b17' : ("0") ,
+                                'b18' : ("0") ,
 
-                            'joueur1' : (joueur1) ,
-                            'joueur2' : (joueur2) ,
-                            'joueur3' : (joueur3)
 
-                        }).then(()=>{
-                            load.style.display = 'none';
-                            window.alert("enregistrement reuissi. , Bonne Partie !");
-                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';                    
-                                                
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
+                                'c1' : ("0") ,
+                                'c2' : ("0") ,
+                                'c3' : ("0") ,
+                                'c4' : ("0") ,
+                                'c5' : ("0") ,
+                                'c6' : ("0") ,
+                                'c7' : ("0") ,
+                                'c8' : ("0") ,
+                                'c9' : ("0") ,
+                                'c10' : ("0") ,
+                                'c11' : ("0") ,
+                                'c12' : ("0") ,
+                                'c13' : ("0") ,
+                                'c14' : ("0") ,
+                                'c15' : ("0") ,
+                                'c16' : ("0") ,
+                                'c17' : ("0") ,
+                                'c18' : ("0") ,
+
+                                'joueur1' : (verifiea) ,
+                                'joueur2' : (verifieb) ,
+                                'joueur3' : (verifiec) ,
+
+                                'noma' : (noma) ,
+                                'nomb' : (nomb) ,
+                                'nomc' : (nomc) 
+
+
+                            }).then(()=>{
+                                
+                                
+
+
+
+
+
+
+
+
+                                if ( (codepass == "22222222") || (codepass == "33333333") || (codepass == "44444444") || (codepass == "55555555") 
+                                     || (codepass == "66666666") || (codepass == "77777777") || (codepass == "88888888") || (codepass == "99999999") ) {
+                                    
+                                    var dataReffinal = firebase.database().ref("open").child("opena");
+                                    dataReffinal.child(noma).set({
+                                        'noma' : (noma)
+                                    }).then(()=>{
+                                        
+                                        var dataReffinal = firebase.database().ref("open").child("opena");
+                                        dataReffinal.child(nomb).set({
+                                            'nomb' : (nomb)
+                                        }).then(()=>{
+                                            
+                                            var dataReffinal = firebase.database().ref("open").child("opena");
+                                            dataReffinal.child(nomc).set({
+                                                'nomc' : (nomc)
+                                            }).then(()=>{
+                                                load.style.display = 'none';
+                                                window.alert("Sauvegarde pro reuissie.");               
+                                            }).catch((error)=>{
+                                                load.style.display = 'none';
+                                                window.alert("erreur survenue : "+ error);
+                                            });
+
+                                        }).catch((error)=>{
+                                            load.style.display = 'none';
+                                            window.alert("erreur survenue : "+ error);
+                                        });
+
+                                    }).catch((error)=>{
+                                        load.style.display = 'none';
+                                        window.alert("erreur survenue : "+ error);
+                                    });
+
+
+                                } else {
+                                    load.style.display = 'none';
+                                    window.alert("Votre partie amicale a été crée avec succès."); 
+                                }
+
+                                
+
+
+
+
+
+
+
+
+
+
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+
+
+                        } else {
+                            load.style.display = "none";
+                            window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom sans espaces ou accents')
+                        }
+                           
                     
                     }
                     
@@ -312,8 +392,8 @@
                 window.alert("le nom du joueur3 doit contenir 20 lettres maximum");
             } else if ( codepass == "" ) {
                 window.alert("Entrer un mot de passe pour votre partie privée ...");
-            } else if ( codepass.length != 6 ) {
-                window.alert("le mot de passe doit contenir exactement 6 caracteres");
+            } else if ( codepass.length != 8 ) {
+                window.alert("le mot de passe doit contenir exactement 8 caracteres");
             }
     
         }
