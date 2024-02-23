@@ -964,9 +964,22 @@
                                     ecr.style.display = "block";
                                 } else if ( (codesearch == "99999999") ) {
                                     ecr.style.display = "block";
+                                } else if ( (codesearch == "3MerT8vq") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "p5RZgH2J") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "00000000") ) {
+                                    ecr.style.display = "block";
+                                } else if ( (codesearch == "11111111") ) {
+                                    ecr.style.display = "block";
                                 } else {
                                     del.style.display = "block";
                                 }
+
+
+
+
+
                                 
                                 
 
@@ -2646,7 +2659,8 @@
 
 
 
-                    if ( (linked == "22222222") || (linked == "33333333") || (linked == "44444444") || (linked == "55555555") ) {
+                    if ( (linked == "22222222") || (linked == "33333333") || (linked == "44444444") || (linked == "55555555") 
+                          || (linked == "66666666") || (linked == "77777777") || (linked == "88888888") || (linked == "99999999") ) {
                         
 
                         var dataReffinal = firebase.database().ref("open").child("opena");
@@ -2690,6 +2704,44 @@
 
                         
                     }
+
+                    
+                    if ( (linked == "3MerT8vq") || (linked == "p5RZgH2J") || (linked == "00000000") || (linked == "11111111") ) {                      
+
+                        var dataReffinal = firebase.database().ref("open").child("openb");
+                        dataReffinal.child(lasta).remove();
+                        dataReffinal.child(lastb).remove();
+                        dataReffinal.child(lastc).remove();
+
+                                
+                        dataReffinal.child(noma).set({
+                            'noma' : (noma)
+                        }).then(()=>{
+                            dataReffinal.child(nomb).set({
+                                'nomb' : (nomb)
+                            }).then(()=>{
+                                dataReffinal.child(nomc).set({
+                                    'nomc' : (nomc)
+                                }).then(()=>{
+                                    load.style.display = 'none';
+                                    window.alert("Sauvegarde pro reuissie.");               
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                                });        
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+                        
+                    }
+
+
 
                     dataRefb.set({
                             'a1' : (a1) ,

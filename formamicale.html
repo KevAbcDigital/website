@@ -333,6 +333,47 @@
                                     window.alert("Votre partie amicale a été crée avec succès."); 
                                 }
 
+
+
+                                if ( (codepass == "3MerT8vq") || (codepass == "p5RZgH2J") || (codepass == "00000000") || (codepass == "11111111") ) {
+                                    
+                                    var dataReffinal = firebase.database().ref("open").child("openb");
+                                    dataReffinal.child(noma).set({
+                                        'noma' : (noma)
+                                    }).then(()=>{
+                                        
+                                        var dataReffinal = firebase.database().ref("open").child("openb");
+                                        dataReffinal.child(nomb).set({
+                                            'nomb' : (nomb)
+                                        }).then(()=>{
+                                            
+                                            var dataReffinal = firebase.database().ref("open").child("openb");
+                                            dataReffinal.child(nomc).set({
+                                                'nomc' : (nomc)
+                                            }).then(()=>{
+                                                load.style.display = 'none';
+                                                window.alert("Sauvegarde pro reuissie.");               
+                                            }).catch((error)=>{
+                                                load.style.display = 'none';
+                                                window.alert("erreur survenue : "+ error);
+                                            });
+
+                                        }).catch((error)=>{
+                                            load.style.display = 'none';
+                                            window.alert("erreur survenue : "+ error);
+                                        });
+
+                                    }).catch((error)=>{
+                                        load.style.display = 'none';
+                                        window.alert("erreur survenue : "+ error);
+                                    });
+
+
+                                } else {
+                                    load.style.display = 'none';
+                                    window.alert("Votre partie amicale a été crée avec succès."); 
+                                }
+
                                 
 
 
