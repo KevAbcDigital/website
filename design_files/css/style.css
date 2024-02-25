@@ -126,9 +126,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-.toursliderabca {
-  display: none;
-}
 .toursliderabc img {
   width: 100%;
   height: 100vh;
@@ -926,6 +923,13 @@ header {
 .rotate {
   display: block;
   margin-top: 200px;
+}
+.toursliderabc {
+  display: none;
+  z-index: 100;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 .score .ttta{
   display: none;
