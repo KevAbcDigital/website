@@ -937,41 +937,23 @@
 
                                 nompart.innerHTML="Partie n° " + codesearch;
                                 linked=codesearch;
-                                
+
                                 var dataRefb = firebase.database().ref("amical").child(codesearch);
                                 dataRefb.on("value" , function(snapshot){
                                     snapshot.forEach(function(element){
 
-                                        if(element.key == "joueur1" ) {
-                                            joueur1.innerHTML= "Joueur 1 :   " + element.val();
-                                            // ja = joueur1;
+                                        if(element.key == "noma" ) {
+                                            joueur1.innerHTML= "Joueur 1 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
                                         }
 
-                                        if(element.key == "joueur2" ) {
-                                            if (element.val == "aucun") {
-                                                joueur2.style.display = "none";
-                                                formulaireb.style.display = "none";
-                                            } else {
-                                                joueur2.innerHTML= "Joueur 2 : " + element.val();
-                                                // jb = joueur2;
-                                            }
+                                        if(element.key == "nomb" ) {
+                                            joueur2.innerHTML= "Joueur 2 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
                                         }
 
-                                        if(element.key == "joueur3" ) {
-                                            if (element.val == "aucun") {
-                                                joueur3.style.display = "none";
-                                                formulairec.style.display = "none";
-                                            } else {
-                                                joueur3.innerHTML= "Joueur 3 : " + element.val();
-                                                // jc = joueur3;
-                                            }
+                                        if(element.key == "nomc" ) {
+                                            joueur3.innerHTML= "Joueur 3 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
                                         }
-
-
-
-
-
-
+                                       
 
 
                                         if(element.key == "a1" ) {
@@ -2400,6 +2382,10 @@
             var load = document.getElementById("lottieload");                
             
             var dataRef = firebase.database().ref("amical");
+
+            var formulairea= document.getElementById("formulairea");                
+            var formulaireb= document.getElementById("formulaireb");                
+            var formulairec= document.getElementById("formulairec");                
 
             var a1 = document.getElementById("a1");                
             var a2 = document.getElementById("a2");                
