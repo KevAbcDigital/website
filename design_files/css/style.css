@@ -116,12 +116,18 @@ header {
 }
 
 
+.rotate {
+  display: none;
+}
 .toursliderabc {
   display: flex;
   z-index: 100;
   position: relative;
   align-items: center;
   justify-content: center;
+}
+.toursliderabca {
+  display: none;
 }
 .toursliderabc img {
   width: 100%;
@@ -137,6 +143,19 @@ header {
   position: absolute;
   padding: 10px;
   overflow-y: scroll;
+}
+.score .tt{
+  font-size: 30px;
+  margin-left: 10px;
+  color: bisque;
+}
+.score .tta{
+  font-size: 10px;
+  color: rgb(136, 253, 69);
+}
+.score .ttta{
+  display: block;
+  position: relative;
 }
 .score .entete {
   display: flex;
@@ -163,6 +182,32 @@ header {
   font-size: 13px;
   color: white;
 }
+.score .entete .boxentetejz {
+  width: 30px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-left: 30px;
+  height: max-content;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+}
+.score .entete .boxenteteje {
+  width: 50px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-left: 10px;
+  height: max-content;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+}
+
+
 .lottiescriptc {
   position: relative;
   display: none;
@@ -293,6 +338,57 @@ header {
 .fondgif {
   display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -453,6 +549,8 @@ header {
     top: 0; 
     width: 100%;
     height: 390px;
+    filter: contrast(70%);
+    filter: brightness(0.90);
   }
 
   .formulaire {
@@ -709,7 +807,7 @@ header {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    background-image: url(../images/azsq.jpg);
+    background-image: url(../images/fondscoreabc.gif);
     background-size: cover;
     background-position: center;
   }
@@ -820,6 +918,36 @@ header {
 .imgtkids {
   display: block;
 }
+
+
+
+
+
+.rotate {
+  display: block;
+  margin-top: 200px;
+}
+.score .ttta{
+  display: none;
+}
+.score .entete .boxenteteje {
+  width: 50px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-left: 0px;
+  height: max-content;
+  text-align: center;
+  font-size: 13px;
+  color: rgb(242, 255, 0);
+}
+
+
+
+
+
+
 
 
 

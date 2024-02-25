@@ -81,36 +81,34 @@
 
         <section class="fondgif">
 
-            <section style="padding-bottom: 60px;" class="partenaire" id="partenaire">
-                <div class="box">
-                    <b style="margin-top: 70px;" id="nompart">PARTIE n° ...</b>
-                    <b style="margin-top: 2px; font-size: 12px; color: rgb(255, 25, 25);" id="conseil" >En attente de validation ...</b>
-                    <b style="background-color: rgb(90, 7, 7); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
-                    color: white; font-size: 12px; width: fit-content ; margin-top: 5px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                    border-radius: 8px; display: none;" onclick="delet();" id="del" >Supprimer cette partie 
-                    </b>
-                    <b style="background-color: rgb(90, 7, 7); box-shadow: -1px 1px 9px rgba(42, 168, 48, 0.233);
-                    color: white; font-size: 12px; width: fit-content ; margin-top: 5px; padding : 8px 20px; font-family: 'Poppins', sans-serif;
-                    border-radius: 8px; display: none;" onclick="ecraser();" id="ecr" >Ecaser la partie 
-                    </b>
-                </div>
-            </section>
+            <b style="font-size: 17px; font-weight: 700; color: rgb(219, 251, 211);
+            position: absolute; right: 0; margin-right: 20px; margin-top: 30px;" id="nompart">PARTIE n° .XXXXXXXX..</b>
+
+            <b style="background-color: rgb(7, 90, 29); box-shadow: -1px 1px 9px rgba(201, 255, 204);
+            color: white; font-size: 12px; width: fit-content ; margin-top: 65px; font-family: 'Poppins', sans-serif;
+            border-radius: 8px; display: none; font-size: 15px; font-weight: 700; padding: 10px; 
+            position: absolute; right: 0; margin-right: 20px;" onclick="delet();" id="del" >Supprimer cette partie </b>
+
+            <b style="background-color: rgb(7, 90, 29); box-shadow: -1px 1px 9px rgb(201, 255, 204);
+            color: white; font-size: 12px; width: fit-content ; margin-top: 65px; font-family: 'Poppins', sans-serif;
+            border-radius: 8px; display: none; font-size: 15px; font-weight: 700; padding: 10px; 
+            position: absolute; right: 0; margin-right: 20px;" onclick="ecraser();" id="ecr" >Ecaser la partie </b>
 
 
-            <section style="border-radius: 15px; margin-top: -15px; margin-left: 20px; margin-right: 20px; 
+            <section style="border-radius: 15px; margin-top: 130px; margin-left: 20px; margin-right: 20px; 
                 background-color: transparent; position: relative; z-index: 1500;" class="searchcode">
                     <div style="padding-top: 17px;" class="devisbloc ">
 
                         <form name="formweb" action="">
 
                             <div class="form-wrapper">
-                                <input id="codesearch" style="border: 1px solid #008006ab; text-align: center;" 
+                                <input id="codesearch" style="box-shadow: -1px 1px 9px rgb(78, 162, 82); text-align: center;" 
                                 type="email" placeholder="Entrez le code de votre partie" class="form-controla">
                             </div>
 
                             <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                                <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(248, 227, 0); color: rgb(70, 36, 223);
-                                    box-shadow: -1px 1px 9px #f4fa9bd2; height: 33px;" type="button" onclick="search()">
+                                <button id="valider" style="border-radius: 6px; margin-top: 20px;background-color: rgb(0, 82, 24); 
+                                box-shadow: -1px 1px 9px rgba(221, 255, 1, 0.733); color: rgb(198, 255, 200);height: 33px;font-weight: 600; " type="button" onclick="search()">
                                     Chercher
                                     <i class="zmdi zmdi-arrow-right"></i>
                                 </button>
@@ -127,7 +125,7 @@
 
             <section class="card">
 
-                <section style=" margin: 20px; border-radius: 20px; background-color: rgb(7, 7, 47);" class="formulaire" id="formulairea">
+                <section style=" margin: 20px; border-radius: 20px; background-color: rgb(7, 47, 17);" class="formulaire" id="formulairea">
             
             
                     <div style="padding-top: 17px; display: block;" class="devisbloc ">
@@ -168,7 +166,7 @@
 
                         </form>
 
-                        <form name="formweb" style="display: flex;" action="">
+                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
         
                             <div class="form-wrapper">
                                 <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
@@ -202,7 +200,7 @@
                         
                         </form>
 
-                        <form name="formweb" style="display: flex;" action="">
+                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
 
                             <div class="form-wrapper">
                                 <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
@@ -239,7 +237,7 @@
                     </div>
                 </section>
         
-                <section style=" margin: 20px; width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 7, 47);" class="formulaire" id="formulaireb">
+                <section style=" margin: 20px; width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 47, 17);" class="formulaire" id="formulaireb">
                      
                     <div style="padding-top: 17px; display: block;" class="devisbloc ">
         
@@ -279,7 +277,7 @@
 
                         </form>
 
-                        <form name="formweb" style="display: flex;" action="">
+                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
         
                             <div class="form-wrapper">
                                 <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
@@ -313,7 +311,7 @@
                         
                         </form>
 
-                        <form name="formweb" style="display: flex;" action="">
+                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
 
                             <div class="form-wrapper">
                                 <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
@@ -350,7 +348,7 @@
                     </div>
                 </section>
 
-                <section style=" margin: 20px; width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 7, 47);" class="formulaire" id="formulairec">
+                <section style=" margin: 20px; width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 47, 17);" class="formulaire" id="formulairec">
             
             
                     <div style="padding-top: 17px; display: block;" class="devisbloc ">
@@ -391,7 +389,7 @@
 
                         </form>
 
-                        <form name="formweb" style="display: flex;" action="">
+                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
         
                             <div class="form-wrapper">
                                 <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
@@ -425,7 +423,7 @@
                         
                         </form>
 
-                        <form name="formweb" style="display: flex;" action="">
+                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
 
                             <div class="form-wrapper">
                                 <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
@@ -459,7 +457,7 @@
                         
                         </form>
         
-                            <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                            <div class="form-group container-login100-form-btn" style="margin-top: -20px;">
                                 <button id="valider" style=" margin-left: 3%; margin-right: 3%; border-radius: 6px; margin-top: 40px; background-color: rgb(238, 255, 0); color: rgb(0, 0, 0);
                                     box-shadow: -1px 1px 9px #1c0983d2; " type="button" onclick="send()">
                                     Enregistrer
@@ -888,7 +886,6 @@
 
             var load = document.getElementById("lottieloadb");                
             var nompart = document.getElementById("nompart");                
-            var conseil = document.getElementById("conseil");                
 
             var codesearch = $('#codesearch').val();
             var p = 0;
@@ -941,7 +938,6 @@
                                 
 
                                 nompart.innerHTML="Partie n° " + codesearch;
-                                conseil.innerHTML="Votre partie a été trouvée";
                                 linked=codesearch;
                                 
                                 var dataRefb = firebase.database().ref("amical").child(codesearch);
