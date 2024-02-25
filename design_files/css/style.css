@@ -846,50 +846,10 @@ header {
   }
   .partenaire .itemservice img{
     width: 240px;
-    height: 360px;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    height: 250px;
+    border-radius: 15px;
     cursor: pointer;
     object-fit: cover;
-    overflow: auto;
-    scroll-behavior: smooth;
-  }
-  .partenaire .itemserviceb{
-    display: inline-block;
-    margin-right: 15px;
-  }
-  .partenaire .itemserviceb img{
-    width: 320px;
-    border-radius: 5px;
-    cursor: pointer;
-    object-fit: cover;
-    overflow: auto;
-    scroll-behavior: smooth;
-    box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.74);
-  }
-  .partenaire .itemservicec{
-    display: inline-block;
-    margin-right: 15px;
-  }
-  .partenaire .itemservicec img{
-    width: 320px;
-    border-radius: 5px;
-    cursor: pointer;
-    object-fit: cover;
-    overflow: auto;
-    scroll-behavior: smooth;
-    box-shadow: -1px 1px 9px rgba(42, 55, 168, 0.144);
-  }
-  .partenaire .itemserviced{
-    display: inline-block;
-    margin-right: 35px;
-  }
-  .partenaire .itemserviced img{
-    width: auto;
-    height: 200px;
-    border-radius: 5px;
-    cursor: pointer;
-    object-fit: contain;
     overflow: auto;
     scroll-behavior: smooth;
   }
@@ -915,6 +875,7 @@ header {
 .imgtkids {
   display: block;
 }
+
 
 
 
