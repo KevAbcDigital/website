@@ -27,9 +27,13 @@
     
     </head>
 
-    <body style="background-color: rgb(7, 7, 47);">
+    <body style="background-color: rgb(96, 123, 106);">
  
-        <header style="background-color: rgb(7, 7, 47);">
+        <audio loop autoplay id="autoplay">
+            <source src="sona.mp3" type="audio/mpeg">
+        </audio>
+
+        <header >
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">
@@ -43,13 +47,14 @@
             <div class="menutop">
                 <ul>
 
-                    <li class="boutonm" > <img style="width: 100%; height: auto;" src="./design_files/images/menushow.jpg" alt="image"> </li>
-                    
-                    <li class="boutonm"><a style=" color: rgb(255, 255, 255); font-size: 7px; font-weight: 300; text-align: center;
-                        width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
+                    <li class="boutonm" > <img style="width: 100%; height: auto; " src="./design_files/images/gifgolf.gif" alt="image"> </li>
+
+                    <li class="boutonm" > <img style="width: 100%; height: auto; margin-top: -24px; " src="./design_files/images/barjaune.png" alt="image"> </li>
+
+                    <li class="boutonm"><a style="font-size: 7px; font-weight: 300; text-align: center;
+                        color: rgb(255, 255, 255); width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
-
-
+                    
                     <li class="boutonm" onclick="opentk();" >
                          <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxa.png" alt="image">
                     </li>
@@ -91,7 +96,7 @@
             
         </section>
 
-        <section class="headerbtn"></section>
+        <img name="imgid" class="sli" src="./design_files/images/gifswingb.gif" alt="image">
 
         <section style="padding-bottom: 60px;" class="partenaire" id="partenaire">
             
@@ -102,7 +107,7 @@
             
 
             
-            <div class="slider_container">
+            <div class="slider_container" style="margin-top: 200px;" >
 
                 <div style="margin-left: 17px;" class="itemservice">
                     <img onclick="opena()" src="./design_files/images/opena.jpg" alt="image">
@@ -139,25 +144,8 @@
         
 
 
-        <footer class="footer" id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>follow us : 6 94 93 76 01</h4>
-               
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-likedin-in"></i></a>
-                                
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
-            <p class="copyrigth">Copyright © Tous droits réservés - PNPN Golf</p>
-
+        <footer class="footer" style="background-color: transparent;" id="footer">
+            <p style="color: rgb(0, 43, 81);" class="copyrigth">Copyright © Tous droits réservés - PNPN Golf</p>
         </footer>
   
         <div class="whatsappid" id="myDiv"></div>
@@ -184,6 +172,11 @@
     
        
     <script>
+
+
+        function play(){
+            document.getElementById('autoplay').play();
+        }
 
 
 

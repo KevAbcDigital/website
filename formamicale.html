@@ -28,12 +28,8 @@
 
     </head>
 
-    <body style="background-image: linear-gradient(rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0)), 
-    url(./design_files/images/fondforma.jpg); background-size: cover; background-position: top; width: 100%;
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1050; align-items: center;
-    justify-content: center;">
-        
-        
+    <body >
+    
         <header style="background-color: transparent">
 
             <input type="checkbox" id="menu-bar">
@@ -49,8 +45,10 @@
             <div class="menutop">
                 <ul>
 
-                    <li class="boutonm" > <img style="width: 100%; height: auto;" src="./design_files/images/menushow.jpg" alt="image"> </li>
-                    
+                    <li class="boutonm" > <img style="width: 100%; height: auto; " src="./design_files/images/gifgolf.gif" alt="image"> </li>
+
+                    <li class="boutonm" > <img style="width: 100%; height: auto; margin-top: -24px; " src="./design_files/images/barjaune.png" alt="image"> </li>
+
                     <li class="boutonm"><a style=" color: rgb(255, 255, 255); font-size: 7px; font-weight: 300; text-align: center;
                         width: 100%; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
                     </li>
@@ -77,44 +75,60 @@
 
         </header>
 
-        <section class="indisponibletxt">
-            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        <section class="headerb">
+ 
+            <div class="logo">
+                <img  href="index.html" src="./design_files/images/pngolf.png" alt="image">
+            </div>
+
+
+            <div class="menutop">
+                <ul>
+                    <li><a onclick="openhome();">Home</a></li>
+                    <li><a onclick="openamical();">Suivre ma partie</a></li>
+                    <li><a onclick="opena();">Open KRIBI</a></li>
+                    <li><a onclick="openb();">Open Cameroun</a></li>
+                    <li><a onclick="opentk();">Commencer une partie</a></li>
+                   
+                </ul>
+            </div>
+            
         </section>
 
-      
-        <section style=" position: absolute; bottom: 0 ; left: 0; right: 0; margin-left: 14px; margin-right: 14px;
-         margin-bottom: 110px; border-radius: 20px; background-color: transparent;" class="formulaire" id="formulaire">
+        <img name="imgid" class="sli" src="./design_files/images/fondinscription.gif" alt="image">
+ 
+        <section style=" position: relative; margin-top: 375px; height: 100vh;
+         margin-bottom: 110px; width: 100%; border-radius: 15px; background-color: rgb(70, 170, 0);" 
+         class="formulaire" id="formulaire">
+            
             <div style="padding-top: 17px;" class="devisbloc ">
 
-                <form name="formweb" style="padding: 0 35px;" action="">
+                <form name="formweb" style="padding: 0 45px;" action="">
 
-                    <div class="form-wrapper">
+                    <div class="form-wrapper" style="margin-top: 30px;">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 1 *</a>
                         <input id="joueur1" style=" height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
-                        <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 2 *</a>
                         <input id="joueur2" style="height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
-                        <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
 
                     <div class="form-wrapper">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 3 *</a>
                         <input id="joueur3" style="height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
-                        <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
                     </div>
                     <div class="form-wrapper">
                         <a style="color: rgb(208, 228, 255);" class="titleform">Créez un mot de passe pour votre partie *</a>
-                        <input id="codepass" style="height: 30px; width: 300px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
-                        <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
+                        <input id="codepass" style="height: 30px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
                     </div>
 
                     
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(255, 208, 0); color: rgb(0, 0, 0);
+                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(2, 107, 16);
+                         color: rgb(255, 255, 255);
                               box-shadow: -1px 1px 9px #838109d2; " type="button" onclick="send()">
                             C'est parti 
                             <i class="zmdi zmdi-arrow-right"></i>
@@ -132,6 +146,57 @@
             </div>
         </section>
 
+        <section class="banniereb" id="banniereb">
+            
+            <form name="formweb" style="padding: 0 35px;" action="">
+
+                <div class="form-wrapper">
+                    <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 1 *</a>
+                    <input id="joueur1" style=" border-radius: 7px; height: 30px; text-align: center; width: 50%; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
+                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
+                </div>
+
+                <div class="form-wrapper" style="margin-top: 10px;">
+                    <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 2 *</a>
+                    <input id="joueur2" style=" border-radius: 7px; height: 30px; text-align: center; width: 50%; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
+                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
+                </div>
+
+                <div class="form-wrapper" style="margin-top: 10px;">
+                    <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 3 *</a>
+                    <input id="joueur3" style=" border-radius: 7px; height: 30px; text-align: center; width: 50%; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
+                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
+                </div>
+                <div class="form-wrapper" style="margin-top: 20px;">
+                    <a style="color: rgb(208, 228, 255);" class="titleform">Créez un mot de passe *</a>
+                    <input id="codepass" style=" border-radius: 7px; height: 30px; text-align: center; width: 40%; width: 300px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
+                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
+                </div>
+
+                
+
+                <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                    <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(255, 208, 0); color: rgb(0, 0, 0);
+                        box-shadow: -1px 1px 9px #838109d2; " type="button" onclick="send()">
+                        C'est parti 
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </button>
+                </div>
+    
+            </form>
+
+            </lottie-player>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player style="display: none; color: #008006ab; margin-top: -15px; width: 40%; " class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+             background="transparent" speed="1"  loop autoplay></lottie-player>
+        
+        </section>
+
+
+            
+
+        </section>
+    
 
     </body>
 
