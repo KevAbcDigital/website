@@ -499,105 +499,134 @@
         var linked = "non";
 
         function delet() {
-            var dataRef = firebase.database().ref("amical");
-            if (linked != "non") {
-                dataRef.child(linked).remove();
-                window.alert("Partie supprimée avec succès");
-                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+            var result = confirm('voulez vous supprimer cette partie ?');
+            var load = document.getElementById("lottieloadb");             
+            load.style.display = "block";   
+            if (result == false) {
+                event.preventDefault();
+                load.style.display = "none";
             } else {
-                window.alert(linked);
+                var dataRef = firebase.database().ref("amical");
+                if (linked != "non") {
+                    dataRef.child(linked).remove();
+                    window.alert("Partie supprimée avec succès");
+                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                } else {
+                    window.alert("aucune partie ouverte");
+                }
             }
             
         }
 
 
-/*
-        function ecr() {
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            var load = document.getElementById("lottieloadb");                
-            
-            var dataRef = firebase.database().ref("amical");
-
-
-            if ( linked != "non" ) {
-
-                load.style.display = 'block';
+        function ecraser() {
+            var result = confirm('voulez vous sauvergarder les scores et creer une nouvelle carte ?');
+            var load = document.getElementById("lottieloadb");             
+            load.style.display = "block"; 
+            if (result == false) {
+                event.preventDefault();
+            } else {
 
                 var dataRefb = firebase.database().ref("amical").child(linked);
-                var ja = "non";
-                var jb = "non";
-                var jc = "non";
-                var jaa = "non";
-                var jbb = "non";
-                var jcc = "non";
+
+                var lastaa = "non";
+                var lastbb = "non";
+                var lastcc = "non";
 
                 dataRefb.on("value" , function(snapshot){             
                     snapshot.forEach(function(element){
 
-                        
-                        if(element.key == "joueur1" ) {
-                            ja = element.val();
-                        }
-
-                        if(element.key == "joueur2" ) {
-                            if (element.val == "aucun") {
-                                joueur2.style.display = "none";
-                                formulaireb.style.display = "none";
-                            } else {
-                                jb = element.val();;
-                            }
-                        }
-
-                        if(element.key == "joueur3" ) {
-                            if (element.val == "aucun") {
-                                joueur3.style.display = "none";
-                                formulairec.style.display = "none";
-                            } else {
-                                jc = element.val();;
-                            }
-                        }
-                        
-
                         if(element.key == "noma" ) {
-                            jaa = element.val();
+                            lastaa = element.val();
                         }
+
                         if(element.key == "nomb" ) {
-                            jbb = element.val();
+                            lastbb = element.val();
                         }
+
                         if(element.key == "nomc" ) {
-                            jcc = element.val();
+                            lastcc = element.val();
                         }
+                    
                     });
                 });
 
 
-                if ( jaa != "") {
+
+                if ( ((lastaa.split(" ")).includes("0") == false) & ((lastbb.split(" ")).includes("0")  == false) & ((lastcc.split(" ")).includes("0")  == false) ) { 
+
+
+                    if ( (linked == "22222222") || (linked == "33333333") || (linked == "44444444") || (linked == "55555555") 
+                        || (linked == "66666666") || (linked == "77777777") || (linked == "88888888") || (linked == "99999999") ) {
+                        
+                        var dataReffinal = firebase.database().ref("open").child("opena");
+                        dataReffinal.child(lastaa).remove();
+                        dataReffinal.child(lastbb).remove();
+                        dataReffinal.child(lastcc).remove();
+                                
+                        dataReffinal.child(lastaa).set({
+                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                        }).then(()=>{
+                            dataReffinal.child(lastbb).set({
+                                'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                            }).then(()=>{
+                                dataReffinal.child(lastcc).set({
+                                    'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                                }).then(()=>{
+                                    load.style.display = 'none';
+                                    window.alert("Sauvegarde pro reuissie.");               
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                                });        
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+
+                        }).catch((error)=>{
+                            load.style.display = 'none';
+                            window.alert("erreur survenue : "+ error);
+                        });
+                        
+                    }
+
+                    if ( (linked == "3MerT8vq") || (linked == "p5RZgH2J") || (linked == "00000000") || (linked == "11111111") ) {                      
+
+                        var dataReffinal = firebase.database().ref("open").child("openb");
+                                            dataReffinal.child(lastaa).remove();
+                                            dataReffinal.child(lastbb).remove();
+                                            dataReffinal.child(lastcc).remove();
+                                                    
+                                            dataReffinal.child(lastaa).set({
+                                                'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                                            }).then(()=>{
+                                                dataReffinal.child(lastbb).set({
+                                                    'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                                                }).then(()=>{
+                                                    dataReffinal.child(lastcc).set({
+                                                        'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                                                    }).then(()=>{
+                                                        load.style.display = 'none';
+                                                        window.alert("Sauvegarde pro reuissie.");               
+                                                    }).catch((error)=>{
+                                                        load.style.display = 'none';
+                                                        window.alert("erreur survenue : "+ error);
+                                                    });        
+                                                }).catch((error)=>{
+                                                    load.style.display = 'none';
+                                                    window.alert("erreur survenue : "+ error);
+                                                });
+
+                                            }).catch((error)=>{
+                                                load.style.display = 'none';
+                                                window.alert("erreur survenue : "+ error);
+                                            });
+                                            
+                        
+                    }
+
+
 
                     dataRefb.set({
                         'a1' : ("0") ,
@@ -659,145 +688,29 @@
                                 'c17' : ("0") ,
                                 'c18' : ("0") ,
 
-                            'joueur1' : (ja) ,
-                            'joueur2' : (jb) ,
-                            'joueur3' : (jc),
+                            'joueur1' : ( (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) ) ,
+                            'joueur2' : ( (((lastbb).split(" ") ) [2] ) +  " " + (((lastbb).split(" ") ) [3] ) ) ,
+                            'joueur3' : ( (((lastcc).split(" ") ) [2] ) +  " " + (((lastcc).split(" ") ) [3] ) ),
 
-                            'noma' : ( ( (jaa.split(" ") ) [0] ) + " " + ja + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000"),
-                            'nomb' : ( ( (jbb.split(" ") ) [0] ) + " " + jb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000"),
-                            'nomc' : ( ( (jcc.split(" ") ) [0] ) + " " + jc + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000"),
+                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" ),
+                            'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" ),
+                            'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
 
                         }).then(()=>{
-                            
-                            
-
-
-
-
-
-
-                        var dataReffinal = firebase.database().ref("open").child("opena");
-                        dataReffinal.on("value" , function(snapshot){             
-                            snapshot.forEach(function(element){
-                                if( ( ( ( (element.key).split(" ") ) [1] ) + " " + ( ( (element.key).split(" ") ) [2] ) )  == ja ) {
-                                    var s = element.key;
-                                    dataReffinal.s.remove();
-                                }
-                            });
-                        });
-
-                        dataReffinal.child(jaa).set({
-                            'noma' : (jaa)
-                        }).then(()=>{
-                            
-                           
-                            
-
-
-                            var dataReffinal = firebase.database().ref("open").child("opena");
-                            dataReffinal.on("value" , function(snapshot){             
-                                snapshot.forEach(function(element){
-                                    if( ( ( ( (element.key).split(" ") ) [1] ) + " " + ( ( (element.key).split(" ") ) [2] ) )  == jb ) {
-                                        var s = element.key;
-                                        dataReffinal.s.remove();
-                                    }
-                                });
-                            });
-
-                            dataReffinal.child(jbb).set({
-                                'nomb' : (jbb)
-                            }).then(()=>{
-                                
-                                var dataReffinal = firebase.database().ref("open").child("opena");
-                                dataReffinal.on("value" , function(snapshot){             
-                                    snapshot.forEach(function(element){
-                                        if( ( ( ( (element.key).split(" ") ) [1] ) + " " + ( ( (element.key).split(" ") ) [2] ) )  == jc ) {
-                                            var s = element.key;
-                                            dataReffinal.s.remove();
-                                        }
-                                    });
-                                });
-
-                                dataReffinal.child(jcc).set({
-                                    'nomc' : (jcc)
-                                }).then(()=>{
-                                    load.style.display = 'none';
-                                    window.alert("Sauvegarde pro reuissie.");               
-                                }).catch((error)=>{
-                                    load.style.display = 'none';
-                                    window.alert("erreur survenue : "+ error);
-                                });
-                            
-                            
-
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                            });
-
-
+                            load.style.display = 'none';
+                            window.alert("Sauvegarde reuissie.");
+                                        
                         }).catch((error)=>{
                             load.style.display = 'none';
                             window.alert("erreur survenue : "+ error);
                         });
 
-
-
-
-
-
-
-
-                                          
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
-    
-                } else if (ja == "non") {
-                    load.style.display = 'none';
-                    window.alert("actualisez la page et reinserez votre code ");
-                }
-
-                    
-            } else if ( linked == "non" ) {
-                load.style.display = 'none';
-                window.alert("Aucune partie en cours ... Veuillez saisir le code de votre partie et lancer la partie");
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
+                    }
+                
+            }   
         }
-*/        
-            
+
+  
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -818,6 +731,9 @@
 
 
         function search(){                           
+
+            var del = document.getElementById("del");                
+            var ecr = document.getElementById("ecr"); 
 
             var joueur1 = document.getElementById("joueur1");                
             var joueur2 = document.getElementById("joueur2");                
@@ -902,37 +818,45 @@
 
                                 if ( (codesearch == "22222222") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "33333333") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "44444444") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "55555555") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "66666666") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "77777777") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "88888888") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "99999999") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "3MerT8vq") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "p5RZgH2J") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "00000000") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else if ( (codesearch == "11111111") ) {
                                     ecr.style.display = "block";
+                                    del.style.display = "none";
                                 } else {
                                     del.style.display = "block";
+                                    ecr.style.display = "none";
                                 }
 
-
-
-
-
-                                
                                 
 
                                 nompart.innerHTML="Partie n° " + codesearch;

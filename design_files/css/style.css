@@ -852,6 +852,7 @@ header {
     object-fit: cover;
     overflow: auto;
     scroll-behavior: smooth;
+    box-shadow: -1px 1px 12px #83f6bbd2;
   }
 
 
