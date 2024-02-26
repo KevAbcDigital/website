@@ -626,8 +626,6 @@
                         
                     }
 
-
-
                     dataRefb.set({
                         'a1' : ("0") ,
                                 'a2' : ("0") ,
@@ -705,7 +703,11 @@
                             window.alert("erreur survenue : "+ error);
                         });
 
-                    }
+
+                } else {
+                    window.alert("votre partie n'est pas encore terminée! Vous avez encore des scores marquées à ZERO")
+                }
+                
                 
             }   
         }
@@ -2695,7 +2697,6 @@
                                     'nomc' : (nomc)
                                 }).then(()=>{
                                     load.style.display = 'none';
-                                    window.alert("Sauvegarde pro reuissie.");               
                                 }).catch((error)=>{
                                     load.style.display = 'none';
                                     window.alert("erreur survenue : "+ error);
@@ -2710,15 +2711,6 @@
                             window.alert("erreur survenue : "+ error);
                         });
 
-
-
-
-
-
-
-
-
-                        
                     }
 
                     
@@ -2740,7 +2732,6 @@
                                     'nomc' : (nomc)
                                 }).then(()=>{
                                     load.style.display = 'none';
-                                    window.alert("Sauvegarde pro reuissie.");               
                                 }).catch((error)=>{
                                     load.style.display = 'none';
                                     window.alert("erreur survenue : "+ error);
