@@ -154,6 +154,26 @@ header {
   display: block;
   position: relative;
 }
+.score .ttta .tttaa{
+  margin-left: 15px;
+  font-size: 8px;
+}
+.score .ttta .tttaaa{
+  margin-left: 35px;
+  font-size: 8px;
+}
+.score .ttta .tttaab{
+  margin-left: 267px;
+  font-size: 8px;
+}
+.score .ttta .tttaac{
+  margin-left: 15px;
+  font-size: 8px;
+}
+.score .ttta .tttaad{
+  margin-left: 15px;
+  font-size: 8px;
+}
 .score .entete {
   display: flex;
   position: relative;
@@ -163,7 +183,7 @@ header {
   text-align: center;
   margin-top: 14px;
   margin-bottom: 10px;
-  font-size: 17px;
+  font-size: 14px;
   background-color: rgb(19, 138, 15);
   color: white;
 }
@@ -177,7 +197,7 @@ header {
   margin-left: 8px;
   height: max-content;
   text-align: center;
-  font-size: 17px;
+  font-size: 14px;
   color: white;
 }
 .score .entete .boxentetejt {
@@ -190,7 +210,7 @@ header {
   margin-left: 0px;
   height: max-content;
   text-align: center;
-  font-size: 17px;
+  font-size: 14px;
   color: white;
 }
 .score .entete .boxentetejz {
@@ -202,7 +222,7 @@ header {
   margin-left: 30px;
   height: max-content;
   text-align: center;
-  font-size: 17px;
+  font-size: 14px;
   color: white;
 }
 .score .entete .boxenteteje {
@@ -214,7 +234,7 @@ header {
   margin-left: 10px;
   height: max-content;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
 }
 
@@ -349,6 +369,7 @@ header {
 .fondgif {
   display: none;
 }
+
 
 
 
@@ -847,10 +868,26 @@ header {
   align-items: center;
   justify-content: center;
 }
-.score .ttta{
-  display: none;
+.score .ttta .tttaa{
+  margin-left: 8px;
+  font-size: 6px;
 }
-
+.score .ttta .tttaaa{
+  margin-left: 35px;
+  font-size: 6px;
+}
+.score .ttta .tttaab{
+  margin-left: 239px;
+  font-size: 6px;
+}
+.score .ttta .tttaac{
+  margin-left: -2px;
+  font-size: 5px;
+}
+.score .ttta .tttaad{
+  margin-left: 17px;
+  font-size: 6px;
+}
 .score .entete .boxentete {
   width: 30px;
   text-align: center;
@@ -880,7 +917,7 @@ header {
   background-color: transparent;
   border: 1px solid #008006ab;
   border-radius: 4px;
-  margin-left: 45px;
+  margin-left: 0px;
   height: max-content;
   text-align: center;
   font-size: 10px;
