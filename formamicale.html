@@ -346,15 +346,6 @@
 
 
                             }).then(()=>{
-                                
-                                
-
-
-
-
-
-
-
 
                                 if ( (codepass == "22222222") || (codepass == "33333333") || (codepass == "44444444") || (codepass == "55555555") 
                                      || (codepass == "66666666") || (codepass == "77777777") || (codepass == "88888888") || (codepass == "99999999") ) {
@@ -391,14 +382,9 @@
                                     });
 
 
-                                } else {
-                                    load.style.display = 'none';
-                                    window.alert("Votre partie amicale a été crée avec succès."); 
-                                }
+                                } 
 
-
-
-                                if ( (codepass == "3MerT8vq") || (codepass == "p5RZgH2J") || (codepass == "00000000") || (codepass == "11111111") ) {
+                                else if ( (codepass == "3MerT8vq") || (codepass == "p5RZgH2J") || (codepass == "00000000") || (codepass == "11111111") ) {
                                     
                                     var dataReffinal = firebase.database().ref("open").child("openb");
                                     dataReffinal.child(noma).set({
@@ -435,17 +421,8 @@
                                 } else {
                                     load.style.display = 'none';
                                     window.alert("Votre partie amicale a été crée avec succès."); 
+                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html'; 
                                 }
-
-                                
-
-
-
-
-
-
-
-
 
 
                             }).catch((error)=>{
@@ -456,7 +433,7 @@
 
                         } else {
                             load.style.display = "none";
-                            window.alert("chaque joueur doit avoir un nom espacé d'un prenom")
+                            window.alert("chaque joueur doit avoir (au minimum) un nom espacé d'un prenom")
                         }
                            
                     
