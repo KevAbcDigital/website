@@ -737,6 +737,9 @@
             var del = document.getElementById("del");                
             var ecr = document.getElementById("ecr"); 
 
+            var formulairec = document.getElementById("formulairec");
+            var formulaireb = document.getElementById("formulaireb");
+            
             var joueur1 = document.getElementById("joueur1");                
             var joueur2 = document.getElementById("joueur2");                
             var joueur3 = document.getElementById("joueur3");
@@ -873,10 +876,16 @@
                                         }
 
                                         if(element.key == "nomb" ) {
+                                            if ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur") {
+                                                formulaireb.style.display = "none";
+                                            }
                                             joueur2.innerHTML= "Joueur 2 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
                                         }
 
                                         if(element.key == "nomc" ) {
+                                            if ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur") {
+                                                formulairec.style.display = "none";
+                                            }
                                             joueur3.innerHTML= "Joueur 3 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
                                         }
                                        
