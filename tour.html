@@ -28,106 +28,10 @@
 
     </head>
 
-    <body style="background-color: black;">
+    <body>
 
-        <audio loop autoplay id="autoplay">
-            <source src="sona.mp3" type="audio/mpeg">
-        </audio>
-
-        <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
-
-        <video autoplay loop plays-inline>
-            <source src="video.mp4" type="video/mp4">
-        </video>
-            
-
-            <section class="score">
-     
-                <b class="tt" >SCOREBOARD LIFE</b>
-                <b class="tta" id="nompart" >SCOREBOARD LIFE</b>
-                <div class="ttta">
-                    <b style="font-size: 8px; margin-left: 35px; color: rgb(0, 255, 195);" id="nompart" >Brut</b>
-                    <b style="font-size: 8px; margin-left: 267px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(255, 183, 0);" id="nompart" >par5</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(0, 255, 195);" id="nompart" >par3</b>
-                    <b style="font-size: 8px; margin-left: 15px; color: rgb(239, 248, 189);" id="nompart" >par4</b>
-
-                    <b style="font-size: 8px; margin-left: 24px; color: rgb(255, 125, 125);" id="nompart" >par(72)</b>
-
-
-                </div>
-                
-
-                <div class="entete">
-                    <b class="boxentete"  style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
-                    padding-left: 15px; width: 50px; margin-left: 15px; background-color: transparent;" onclick="play()" >total</b>                
-                    <b class="boxentete" id="listplayer" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
-                    padding-left: 15px; width: 230px; margin-left: 15px; " onclick="play()" >Players ...</b>                
-                    <b class="boxentete" >1</b>
-                    <b class="boxentete" >2</b>                
-                    <b class="boxentete" >3</b>                
-                    <b class="boxentete" >4</b>                
-                    <b class="boxentete" >5</b>                
-                    <b class="boxentete" >6</b> 
-                    <b class="boxentete" >7</b>                
-                    <b class="boxentete" >8</b>                
-                    <b class="boxentete" >9</b>                
-                    <b class="boxentete" >10</b>                
-                    <b class="boxentete" >11</b>                
-                    <b class="boxentete" >12</b> 
-                    <b class="boxentete" >13</b>                
-                    <b class="boxentete" >14</b>                
-                    <b class="boxentete" >15</b>                
-                    <b class="boxentete" >16</b>                
-                    <b class="boxentete" >17</b>                
-                    <b class="boxentete" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;
-                    width: 45px;" >18</b>                
-                    
-                    <b class="boxentete" style="background-color: transparent; border-radius: 5px; width: 50px; margin-left: 5px;" >score</b>                
-                </div>
-                <div class="entete">
-                    <b class="boxentetejz" id="total"onclick="play()" ></b>                
-                    <b class="boxentetej" id="players" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
-                      border: none; padding-left: 9px; width: 230px; margin-left: 24px; background-color: transparent; " ></b>                
-                    <b class="boxentetejt"  id="h1" ></b>
-                    <b class="boxentetej" id="h2" ></b>
-                    <b class="boxentetej" id="h3" ></b>
-                    <b class="boxentetej" id="h4" ></b>
-                    <b class="boxentetej" id="h5" ></b>
-                    <b class="boxentetej" id="h6" ></b>
-                    <b class="boxentetej" id="h7" ></b>
-                    <b class="boxentetej" id="h8" ></b>
-                    <b class="boxentetej" id="h9" ></b>
-                    <b class="boxentetej" id="h10" ></b>
-                    <b class="boxentetej" id="h11" ></b>
-                    <b class="boxentetej" id="h12" ></b>
-                    <b class="boxentetej" id="h13" ></b>
-                    <b class="boxentetej" id="h14" ></b>
-                    <b class="boxentetej" id="h15" ></b>
-                    <b class="boxentetej" id="h16" ></b>
-                    <b class="boxentetej" id="h17" ></b>
-                    <b class="boxentetej" style="margin-left: 14px;"  id="h18" ></b>
-                               
-                    <b class="boxenteteje" id="net"></b>                
-                </div>
-
+        <video autoplay loop src="video.mp4"></video>
         
-        </section>
-
     </body>
 
 
@@ -137,22 +41,6 @@
        
 
         const nameopen = localStorage.getItem('openname');
-
-        const firebaseConfig = {
-            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
-            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
-            authDomain: "nlogagolf-ed63e.firebaseapp.com",
-            projectId: "nlogagolf-ed63e",
-            storageBucket: "nlogagolf-ed63e.appspot.com",
-            messagingSenderId: "104686743459",
-            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
-            measurementId: "G-6BW97RHV89"
-        };
-        firebase.initializeApp(firebaseConfig)
-    
-        const database = firebase.database();
-
-
 
         
         function send(){                           
