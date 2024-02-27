@@ -36,17 +36,9 @@
 
         <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
 
-        <section id="toursliderabc" class="toursliderabc">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/swingb.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/toura.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/tourc.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/toure.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/tourf.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/testfond.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscored.gif" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscoree.gif" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscoreg.gif" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscorec.gif" alt="image">
+        <video autoplay loop plays-inline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
             
 
             <section class="score">
@@ -133,14 +125,6 @@
                     <b class="boxenteteje" id="net"></b>                
                 </div>
 
-
-                
-                                
-            </section>
-
-
-
-
         
         </section>
 
@@ -150,42 +134,9 @@
     <script>
 
 
-        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-            const portrait = e.matches;
-            var rotate = document.getElementById('rotate');
-            var toursliderabc = document.getElementById('toursliderabc');
-
-            if (portrait) {
-                rotate.style.display="block";
-                toursliderabc.style.display="none";
-            } else {
-                rotate.style.display="none";
-                toursliderabc.style.display="flex";
-            }
-        });
+       
 
         const nameopen = localStorage.getItem('openname');
-        
-        function play(){
-            document.getElementById('autoplay').play();
-        }
-
-
-        var firstindex=0;
-        function automaticslide(){
-            setTimeout(automaticslide, 15000);
-            var pics;
-            const img = document.getElementsByClassName('slideidaaab');
-            for(pics=0; pics<img.length; pics++) {
-                img[pics].style.display="none";
-            }
-            firstindex++;
-            if(firstindex > img.length) {
-                firstindex = 1;
-            }
-            img[firstindex - 1].style.display="block";
-        }
-        automaticslide();
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
