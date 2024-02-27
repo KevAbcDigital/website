@@ -907,6 +907,9 @@ header {
   align-items: center;
   justify-content: center;
 }
+.score {
+  background-color: transparent;
+}
 .score .ttta{
   display: none;
 }
