@@ -867,7 +867,7 @@ header {
   background-color: transparent;
   border: 1px solid #008006ab;
   border-radius: 4px;
-  margin-left: -2px;
+  margin-left: 0px;
   height: max-content;
   text-align: center;
   font-size: 10px;
