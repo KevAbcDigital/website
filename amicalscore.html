@@ -878,14 +878,14 @@
                                         }
 
                                         if(element.key == "nomb" ) {
-                                            if ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur") {
+                                            if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
                                                 formulaireb.style.display = "none";
                                             }
                                             joueur2.innerHTML= "Joueur 2 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
                                         }
 
                                         if(element.key == "nomc" ) {
-                                            if ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur") {
+                                            if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
                                                 formulairec.style.display = "none";
                                             }
                                             joueur3.innerHTML= "Joueur 3 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
@@ -2660,13 +2660,22 @@
                     var totalbnet = ( ( parseInt(bb1) - 3 ) + ( parseInt(bb2) - 5 ) + ( parseInt(bb3) - 4 ) + ( parseInt(bb4) - 5 ) + ( parseInt(bb5) - 4 ) + ( parseInt(bb6) - 3 ) +
                     ( parseInt(bb7) - 4 ) + ( parseInt(bb8) - 4 ) + ( parseInt(bb9) - 4 ) + ( parseInt(bb10) - 4 ) + ( parseInt(bb11) - 4 ) + ( parseInt(bb12) - 3 ) +
                     ( parseInt(bb13) - 5 ) + ( parseInt(bb14) - 4 ) + ( parseInt(bb15) - 5 ) + ( parseInt(bb16) - 4 ) + ( parseInt(bb17) - 3 ) + ( parseInt(bb18) - 4 ) );
-                    var nomb = ( ( totalbnet + 50 ) + " " + ( totalb ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
-                    + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                    + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalbnet ) );
+                    
                     if ( (b1 == 0 ) & (b2 == 0 ) & (b3 == 0 )) {
-                        var nomb = (  ( "new" ) + " " + ( "---" ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                        if ( ( jb == "aucun joueur" ) || ( jb == "--- ---" ) ) {
+                            var nomb = (  ( "new" ) + " " + ( "---" ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "---" ) );
+                        } else {
+                            var nomb = (  ( "new" ) + " " + ( "---" ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "---" ) );
+                        }
+                       
+                    } else {
+                        var nomb = ( ( totalbnet + 50 ) + " " + ( totalb ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                         + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "---" ) );
+                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalbnet ) );
                     }
 
 
@@ -2677,14 +2686,23 @@
                     var totalcnet = ( ( parseInt(cc1) - 3 ) + ( parseInt(cc2) - 5 ) + ( parseInt(cc3) - 4 ) + ( parseInt(cc4) - 5 ) + ( parseInt(cc5) - 4 ) + ( parseInt(cc6) - 3 ) +
                     ( parseInt(cc7) - 4 ) + ( parseInt(cc8) - 4 ) + ( parseInt(cc9) - 4 ) + ( parseInt(cc10) - 4 ) + ( parseInt(cc11) - 4 ) + ( parseInt(cc12) - 3 ) +
                     ( parseInt(cc13) - 5 ) + ( parseInt(cc14) - 4 ) + ( parseInt(cc15) - 5 ) + ( parseInt(cc16) - 4 ) + ( parseInt(cc17) - 3 ) + ( parseInt(cc18) - 4 ) );
-                    var nomc = ( ( totalcnet + 50 ) + " " + ( totalc ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                    
+                    if ( (c1 == 0) & (c2 == 0) & (c3 == 0) ) {
+                        if ( ( jc == "aucun joueur" ) || ( jc == "--- ---" ) ) {
+                            var nomc = ( ( "new" ) + " " + ( "---" ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "---" ) );
+                        } else {
+                            var nomc = ( ( "new" ) + " " + ( "---" ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "---" ) );
+                        }
+                    } else {
+                        var nomc = ( ( totalcnet + 50 ) + " " + ( totalc ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                     + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                     + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalcnet ) );
-                    if ( (c1 == 0) & (c2 == 0) & (c3 == 0) ) {
-                        var nomc = ( ( "new" ) + " " + ( "---" ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
-                        + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                        + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "---" ) );
                     }
+                    
 
 
 
