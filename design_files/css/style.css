@@ -180,6 +180,32 @@ header {
   font-size: 17px;
   color: white;
 }
+.score .entete .boxentetejr {
+  width: 30px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: transparent;
+  border: 1px solid #008006ab;
+  border-radius: 4px;
+  margin-left: 8px;
+  height: max-content;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+}
+.score .entete .boxentetejt {
+  width: 30px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: transparent;
+  border: 1px solid #008006ab;
+  border-radius: 4px;
+  margin-left: 8px;
+  height: max-content;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+}
 .score .entete .boxentetejz {
   width: 30px;
   text-align: center;
@@ -915,6 +941,32 @@ header {
   border: 1px solid #008006ab;
   border-radius: 4px;
   margin-left: 8px;
+  height: max-content;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+.score .entete .boxentetejr {
+  width: 30px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: transparent;
+  border: 1px solid #008006ab;
+  border-radius: 4px;
+  margin-left: 8px;
+  height: max-content;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+.score .entete .boxentetejt {
+  width: 30px;
+  text-align: center;
+  margin-top: 14px;
+  background-color: transparent;
+  border: 1px solid #008006ab;
+  border-radius: 4px;
+  margin-left: 13px;
   height: max-content;
   text-align: center;
   font-size: 14px;
