@@ -856,7 +856,7 @@ header {
   text-align: center;
   margin-top: 14px;
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 10px;
   background-color: rgb(19, 138, 15);
   color: white;
 }
@@ -867,10 +867,10 @@ header {
   background-color: transparent;
   border: 1px solid #008006ab;
   border-radius: 4px;
-  margin-left: 15px;
+  margin-left: 5px;
   height: max-content;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   color: white;
 }
 .score .entete .boxentetejt {
@@ -883,7 +883,7 @@ header {
   margin-left: 13px;
   height: max-content;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   color: white;
 }
 .score .entete .boxentetejz {
@@ -895,7 +895,7 @@ header {
   margin-left: 30px;
   height: max-content;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   color: white;
 }
 .score .entete .boxenteteje {
@@ -907,7 +907,7 @@ header {
   margin-left: 10px;
   height: max-content;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   color: white;
 }
 
