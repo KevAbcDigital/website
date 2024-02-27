@@ -176,7 +176,7 @@ header {
   margin-left: 8px;
   height: max-content;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   color: white;
 }
 .score .entete .boxentetejz {
@@ -188,7 +188,7 @@ header {
   margin-left: 30px;
   height: max-content;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   color: white;
 }
 .score .entete .boxenteteje {
@@ -200,7 +200,7 @@ header {
   margin-left: 10px;
   height: max-content;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   color: white;
 }
 
