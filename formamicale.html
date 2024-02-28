@@ -347,6 +347,8 @@
 
                             }).then(()=>{
 
+
+
                                 if ( (codepass == "22222222") || (codepass == "33333333") || (codepass == "44444444") || (codepass == "55555555") 
                                      || (codepass == "66666666") || (codepass == "77777777") || (codepass == "88888888") || (codepass == "99999999") ) {
                                     
@@ -365,8 +367,8 @@
                                                 'nomc' : (nomc)
                                             }).then(()=>{
                                                 load.style.display = 'none';
-                                                window.alert("insciption (type tour pro) terminée avec succès!."); 
-                                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                                                window.alert("Sauvegarde reuissie.");  
+                                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';             
                                             }).catch((error)=>{
                                                 load.style.display = 'none';
                                                 window.alert("erreur survenue : "+ error);
@@ -383,9 +385,8 @@
                                     });
 
 
-                                } 
-
-                                else if ( (codepass == "3MerT8vq") || (codepass == "p5RZgH2J") || (codepass == "00000000") || (codepass == "11111111") ) {
+                                }
+                                 else if ( (codepass == "3MerT8vq") || (codepass == "p5RZgH2J") || (codepass == "00000000") || (codepass == "11111111") ) {
                                     
                                     var dataReffinal = firebase.database().ref("open").child("openb");
                                     dataReffinal.child(noma).set({
@@ -402,8 +403,8 @@
                                                 'nomc' : (nomc)
                                             }).then(()=>{
                                                 load.style.display = 'none';
-                                                window.alert("insciption (type tour pro) terminée avec succès!."); 
-                                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                                                window.alert("Sauvegarde reuissie.");    
+                                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';           
                                             }).catch((error)=>{
                                                 load.style.display = 'none';
                                                 window.alert("erreur survenue : "+ error);
@@ -422,9 +423,19 @@
 
                                 } else {
                                     load.style.display = 'none';
-                                    window.alert("Votre partie ( amicale ) a été crée avec succès."); 
-                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html'; 
+                                    window.alert("Votre partie amicale a été crée avec succès."); 
+                                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                                 }
+
+                                
+
+
+
+
+
+
+
+
 
 
                             }).catch((error)=>{
@@ -435,7 +446,7 @@
 
                         } else {
                             load.style.display = "none";
-                            window.alert("chaque joueur doit avoir (au minimum) un nom et un prenom espacés")
+                            window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom sans espaces ou accents')
                         }
                            
                     
@@ -459,18 +470,18 @@
 
 
                
-            } else if ( joueur1 == "aucun joueur" ) {
+            } else if ( joueur1 == "aucun" ) {
                 window.alert("veuillez attribuer un nom correct au joueur 1 ...");
             } else if ( joueur1 == "" ) {
                 window.alert("veuillez entrer le nom du joueur 1 ...");
             } else if ( joueur1.length > 20 ) {
                 window.alert("le nom du joueur1 doit contenir 20 lettres maximum");
             } else if ( joueur2 == "" ) {
-                window.alert("Entrez le nom du deuxieme joueur ou encore entrez (aucun joueur) pour signifier qu'il nya pas de deuxieme joueur  ...");
+                window.alert("Entrez le nom du deuxieme joueur ou encore entrez le mot aucun pour signifier qu'il nya pas de deuxieme joueur  ...");
             } else if ( joueur2.length > 20 ) {
                 window.alert("le nom du joueur2 doit contenir 20 lettres maximum");
             } else if ( joueur3 == "" ) {
-                window.alert("Entrez le nom du troisieme joueur ou encore entrez (aucun joueur)  pour signifier qu'il nya pas de troisieme joueur  ...");
+                window.alert("Entrer le nom du troisieme joueur ou encore entrez le mot aucun pour signifier qu'il nya pas de troisieme joueur  ...");
             } else if ( joueur3.length > 20 ) {
                 window.alert("le nom du joueur3 doit contenir 20 lettres maximum");
             } else if ( codepass == "" ) {

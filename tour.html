@@ -43,10 +43,6 @@
             <img name="imgid" class="slideidaaab" src="./design_files/images/toure.jpg" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/tourf.jpg" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/testfond.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscored.gif" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscoree.gif" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscoreg.gif" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/fondscorec.gif" alt="image">
             
 
             <section class="score">
@@ -74,7 +70,7 @@
                     <b class="tttaa" style="color: rgb(0, 255, 195);" id="nompart" >par3</b>
                     <b class="tttaad" style="color: rgb(239, 248, 189);" id="nompart" >par4</b>
 
-                    <b class="tttaac" style="font-size: 8px; margin-left: 24px; color: rgb(255, 125, 125);" id="nompart" >par(72)</b>
+                    <b class="tttaac" style="color: rgb(255, 125, 125);" id="nompart" >par(72)</b>
 
 
                 </div>
@@ -173,7 +169,7 @@
 
         var firstindex=0;
         function automaticslide(){
-            setTimeout(automaticslide, 15000);
+            setTimeout(automaticslide, 10000);
             var pics;
             const img = document.getElementsByClassName('slideidaaab');
             for(pics=0; pics<img.length; pics++) {
@@ -256,7 +252,6 @@
                     document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
                     document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
                     document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`
-
                     
                 });
             });
@@ -268,7 +263,8 @@
         nompart.innerHTML= nameopen;
         var dataRefauto = firebase.database().ref("open").child(nameopen);
 
-        dataRefauto.on("value" , function(snapshot){
+        
+            dataRefauto.on("value" , function(snapshot){
                 document.querySelector('#total').innerHTML = "";
                 document.querySelector('#players').innerHTML = "";
                 document.querySelector('#h1').innerHTML = "";
@@ -313,13 +309,13 @@
                     document.querySelector('#h16').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [19] ) }</div>`
                     document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
                     document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
-                    document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`
+                    document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
 
-                    
-                });
+                });        
+
             });
         
-        
+
     </script>
     
 
