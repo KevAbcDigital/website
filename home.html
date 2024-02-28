@@ -44,10 +44,10 @@
                 <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
             </div>
 
-            <div class="menutop">
+            <div id="gifmenu" class="menutop">
                 <ul>
 
-                    <li class="boutonm" > <img style="width: 100%; height: auto; " src="./design_files/images/fondinscription.gif" alt="image"> </li>
+                    <li id="gifimg" class="boutonm" > <img style="width: 100%; height: auto; " src="./design_files/images/fondinscription.gif" alt="image"> </li>
 
                     <li class="boutonm"><a style=" color: rgb(255, 255, 255); font-size: 7px; font-weight: 300; text-align: center;
                         width: 100%; padding-top: 70px; padding-bottom: 20px; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
@@ -178,6 +178,20 @@
     
        
     <script>
+
+
+        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+            const portrait = e.matches;
+            var gifmenu = document.getElementById('gifmenu');
+            var gifimg = document.getElementById('gifimg');
+            if (portrait) {
+                gifmenu.style.width="90%";
+                gifimg.style.display="block";
+            } else {
+                gifmenu.style.width="50%";
+                gifimg.style.display="none";
+            }
+        });
 
 
         function play(){

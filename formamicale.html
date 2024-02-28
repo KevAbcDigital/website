@@ -201,6 +201,19 @@
     
     <script>
 
+
+        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+            const portrait = e.matches;
+            var gifmenu = document.getElementById('gifmenu');
+            var gifimg = document.getElementById('gifimg');
+            if (portrait) {
+                gifmenu.style.width="90%";
+                gifimg.style.display="block";
+            } else {
+                gifmenu.style.width="50%";
+                gifimg.style.display="none";
+            }
+        });
          
         function opentk() {
             window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
