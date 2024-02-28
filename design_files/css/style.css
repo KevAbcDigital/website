@@ -138,7 +138,7 @@ header {
   border-radius: 10px;
   background-color: #000b2df5;
   position: absolute;
-  padding: 10px;
+  padding: 7px;
   overflow-y: scroll;
 }
 .score .tt{
