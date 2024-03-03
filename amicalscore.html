@@ -70,12 +70,10 @@
             </div>
             
         </header>
-
         
         <section class="indisponibletxt">
             <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
-
 
         <section class="fondgif">
 
@@ -93,7 +91,9 @@
             position: absolute; right: 0; margin-right: 20px;" onclick="ecraser();" id="ecr" >Ecaser la partie </b>
 
 
-            <section style="border-radius: 15px; margin-top: 130px; margin-left: 20px; margin-right: 20px; 
+            <img name="imgid" style="width: 23%; height: auto; margin-left: 20px; margin-top: 80px;" src="./design_files/images/panel.png" alt="image">
+
+            <section style="border-radius: 15px; margin-top: 10px; margin-left: 20px; margin-right: 20px; 
                 background-color: transparent; position: relative; z-index: 1500;" class="searchcode">
                     <div style="padding-top: 17px;" class="devisbloc ">
 
@@ -482,7 +482,6 @@
 
         </section>
 
-
     </body>
 
 
@@ -504,12 +503,15 @@
         function opentk() {
             window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
         }
+     
         function openhome() {
             window.location.href = 'https://kevabcdigital.github.io/website/home.html';
         }
+     
         function openamical() {
             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
         }
+     
         var linked = "non";
 
         function delet() {
@@ -531,7 +533,6 @@
             }
             
         }
-
 
         function ecraser() {
             var result = confirm('voulez vous sauvergarder les scores et creer une nouvelle carte ?');
@@ -564,8 +565,6 @@
                     
                     });
                 });
-
-
 
                 if ( ((lastaa.split(" ")).includes("0") == false) & ((lastbb.split(" ")).includes("0")  == false) & ((lastcc.split(" ")).includes("0")  == false) ) { 
 
@@ -722,11 +721,8 @@
                     window.alert("votre partie n'est pas encore terminée! Vous avez encore des scores marquées à ZERO")
                 }
                 
-                
             }   
         }
-
-  
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -738,13 +734,14 @@
             appId: "1:104686743459:web:c380b6e47ebb21d413f416",
             measurementId: "G-6BW97RHV89"
         };
+       
         firebase.initializeApp(firebaseConfig)
     
         const database = firebase.database();
 
         var del = document.getElementById("del");                
+       
         var ecr = document.getElementById("ecr");                
-
 
         function search(){                           
 
@@ -2322,7 +2319,6 @@
 
         }
 
-
         function containsOnlyNumbers(str) {
             return /^\d+$/.test(str); 
         }
@@ -2890,13 +2886,10 @@
     
         }
 
-
         function invalid() {
             window.alert("Desolé ce formulaire est indisponible pour le moment.");
             window.location.href = 'https://kevabcdigital.github.io/website/home.html';
         }
-
-     
 
     </script>
     
