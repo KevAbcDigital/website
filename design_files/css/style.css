@@ -200,19 +200,6 @@ header {
   font-size: 14px;
   color: white;
 }
-.score .entete .boxentetejp {
-  width: 30px;
-  text-align: center;
-  margin-top: 14px;
-  background-color: transparent;
-  border: 1px solid #008006ab;
-  border-radius: 4px;
-  margin-left: 14px;
-  height: max-content;
-  text-align: center;
-  font-size: 14px;
-  color: white;
-}
 .score .entete .boxentetejt {
   width: 30px;
   text-align: center;
@@ -792,7 +779,7 @@ header {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    background-image: url(../images/fondscoreabc.gif);
+    background-image: url(../images/mapa.png);
     background-size: cover;
     background-position: center;
   }
@@ -882,24 +869,24 @@ header {
   justify-content: center;
 }
 .score .ttta .tttaa{
-  margin-left: 4px;
-  font-size: 6px;
+  margin-left: 7px;
+  font-size: 5px;
 }
 .score .ttta .tttaaa{
-  margin-left: 30px;
-  font-size: 6px;
+  margin-left: 35px;
+  font-size: 5px;
 }
 .score .ttta .tttaab{
-  margin-left: 204px;
-  font-size: 6px;
+  margin-left: 190px;
+  font-size: 5px;
 }
 .score .ttta .tttaac{
-  margin-left: 19px;
-  font-size: 6px;
+  margin-left: 14px;
+  font-size: 5px;
 }
 .score .ttta .tttaad{
-  margin-left: 9px;
-  font-size: 6px;
+  margin-left: 6px;
+  font-size: 5px;
 }
 .score .entete .boxentete {
   width: 30px;
@@ -917,7 +904,7 @@ header {
   background-color: transparent;
   border: 1px solid #008006ab;
   border-radius: 4px;
-  margin-left: 1px;
+  margin-left: 0px;
   height: max-content;
   text-align: center;
   font-size: 10px;
@@ -930,20 +917,7 @@ header {
   background-color: transparent;
   border: 1px solid #008006ab;
   border-radius: 4px;
-  margin-left: 9px;
-  height: max-content;
-  text-align: center;
-  font-size: 10px;
-  color: white;
-}
-.score .entete .boxentetejp {
-  width: 30px;
-  text-align: center;
-  margin-top: 14px;
-  background-color: transparent;
-  border: 1px solid #008006ab;
-  border-radius: 4px;
-  margin-left: 8px;
+  margin-left: 4px;
   height: max-content;
   text-align: center;
   font-size: 10px;
