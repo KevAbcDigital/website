@@ -93,39 +93,37 @@
             
         </section>
 
-        <img name="imgid" class="sli" src="./design_files/images/fondhome.gif" alt="image">
+        <img name="imgid" style="height: 100vh;" class="sli" src="./design_files/images/gifswing.gif" alt="image">
  
-        <section style=" position: relative; margin-top: 388px; height: 100vh;
-         margin-bottom: 110px; width: 100%; border-radius: 0px; background-color: rgb(215, 215, 209);" 
+        <section style="position: absolute; bottom: 0; margin-bottom: 90px; width: 84%;
+        background-color: #0119003e; margin-left: 8%; border-radius: 20px;"
          class="formulaire" id="formulaire">
             
             <div style="padding-top: 17px;" class="devisbloc ">
 
-                <form name="formweb" style="padding: 0 45px;" action="">
+                <form name="formweb" style="padding: 0 25px;" action="">
 
                     <div class="form-wrapper" style="margin-top: 30px;">
-                        <a style="color: rgb(63, 63, 63);" class="titleform">Noms et prénoms du joueur 1 *</a>
-                        <input id="joueur1" style=" height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
+                        <a style="color: rgb(234, 255, 230);" class="titleform"> Noms et prénoms des joueurs * *</a>
+                        <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px;" type="text" placeholder="Nom et prénom du 1er joueur" class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
-                        <a style="color: rgb(63, 63, 63);" class="titleform">Noms et prénoms du joueur 2 *</a>
-                        <input id="joueur2" style="height: 30px; border: 1px solid #ffffff; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
+                        <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Nom et prénom du 2ème joueur" class="form-controla">
                     </div>
 
                     <div class="form-wrapper">
-                        <a style="color: rgb(63, 63, 63);" class="titleform">Noms et prénoms du joueur 3 *</a>
-                        <input id="joueur3" style="height: 30px; border: 1px solid #ffffff; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
+                        <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Nom et prénom du 3ème joueur" class="form-controla">
                     </div>
                     <div class="form-wrapper">
-                        <a style="color: rgb(63, 63, 63);" class="titleform">Créez un mot de passe pour votre partie *</a>
-                        <input id="codepass" style="height: 30px; border: 1px solid #801100cf; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
+                        <a style="color: rgb(234, 255, 230);" class="titleform"> Créez un code pour votre partie * *</a>
+                        <input id="codepass" style=" text-align: center; height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
                     </div>
 
                     
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(43, 43, 43);
+                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgba(0, 61, 23, 0.518);
                          color: rgb(255, 255, 255);
                               box-shadow: -1px 1px 9px #03a700e2; " type="button" onclick="send()">
                             C'est parti 
@@ -249,6 +247,11 @@
             
             
             var load = document.getElementById("lottieload");                
+            var ja = document.getElementById("joueur1");                
+            var jb = document.getElementById("joueur2");                
+            var jc = document.getElementById("joueur3");                
+            var cc = document.getElementById("codepass");                
+
             var joueur1 = $('#joueur1').val().toLowerCase().trim();
             var joueur2 = $('#joueur2').val().toLowerCase().trim();
             var joueur3 = $('#joueur3').val().toLowerCase().trim();
@@ -260,10 +263,15 @@
                & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 8
                & joueur1 != "aucun" ) {
 
+                if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
+                if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
+
                 load.style.display = "block";
                 // var nbr = 0;            
                 // nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
                 // window.alert(nbr);
+
+                window.alert(joueur1 + joueur2 + joueur3);
 
                 var l = 0;
                 dataRef.on("value" , function(snapshot){
@@ -360,8 +368,6 @@
 
                             }).then(()=>{
 
-
-
                                 if ( (codepass == "22222222") || (codepass == "33333333") || (codepass == "44444444") || (codepass == "55555555") 
                                      || (codepass == "66666666") || (codepass == "77777777") || (codepass == "88888888") || (codepass == "99999999") ) {
                                     
@@ -440,17 +446,6 @@
                                     window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                                 }
 
-                                
-
-
-
-
-
-
-
-
-
-
                             }).catch((error)=>{
                                 load.style.display = 'none';
                                 window.alert("erreur survenue : "+ error);
@@ -459,7 +454,7 @@
 
                         } else {
                             load.style.display = "none";
-                            window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom sans espaces ou accents')
+                            window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom')
                         }
                            
                     
@@ -485,22 +480,58 @@
                
             } else if ( joueur1 == "aucun" ) {
                 window.alert("veuillez attribuer un nom correct au joueur 1 ...");
+                ja.style.backgroundColor="rgb(255, 220, 220)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+                cc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( joueur1 == "" ) {
                 window.alert("veuillez entrer le nom du joueur 1 ...");
+                ja.style.backgroundColor="rgb(255, 220, 220)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";
+                jc.style.backgroundColor="rgb(255, 255, 255)";   
+                cc.style.backgroundColor="rgb(255, 255, 255)";         
             } else if ( joueur1.length > 20 ) {
                 window.alert("le nom du joueur1 doit contenir 20 lettres maximum");
+                ja.style.backgroundColor="rgb(255, 220, 220)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+                cc.style.backgroundColor="rgb(255, 255, 255)";            
             } else if ( joueur2 == "" ) {
-                window.alert("Entrez le nom du deuxieme joueur ou encore entrez le mot aucun pour signifier qu'il nya pas de deuxieme joueur  ...");
+                window.alert("Entrez (aucun) pour signifier qu'il nya pas de deuxieme joueur  ...");
+                jb.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+                cc.style.backgroundColor="rgb(255, 255, 255)";            
             } else if ( joueur2.length > 20 ) {
                 window.alert("le nom du joueur2 doit contenir 20 lettres maximum");
+                jb.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+                cc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( joueur3 == "" ) {
-                window.alert("Entrer le nom du troisieme joueur ou encore entrez le mot aucun pour signifier qu'il nya pas de troisieme joueur  ...");
+                window.alert("Entrez (aucun) pour signifier qu'il nya pas de troisieme joueur  ...");
+                jc.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                cc.style.backgroundColor="rgb(255, 255, 255)";         
             } else if ( joueur3.length > 20 ) {
                 window.alert("le nom du joueur3 doit contenir 20 lettres maximum");
+                jc.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                cc.style.backgroundColor="rgb(255, 255, 255)";         
             } else if ( codepass == "" ) {
                 window.alert("Entrer un mot de passe pour votre partie privée ...");
+                cc.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( codepass.length != 8 ) {
                 window.alert("le mot de passe doit contenir exactement 8 caracteres");
+                cc.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
             }
     
         }
