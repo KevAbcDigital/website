@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Home</title>
+        <title>GolfShop</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-               
+
         <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="floating-wpp.min.js"></script>
         <link rel="stylesheet" href="floating-wpp.min.css">
@@ -19,29 +19,27 @@
                 
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="design_files/css/style.css">
-
+    
         <!-- javadev -->
 
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+        
     
     </head>
 
-    <body style="background-color: rgb(0, 49, 18);">
- 
-        <audio loop autoplay id="autoplay">
-            <source src="sona.mp3" type="audio/mpeg">
-        </audio>
+    <body style="background-color: rgb(255, 255, 255);" >
 
         <header >
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">
-                <img class="imgmenu" src="./design_files/images/images/menubtnblanc.png" alt="image">
+                <img class="imgmenu" src="./design_files/images/images/menunoir.png" alt="image">
             </label>
             
             <div class="logo">
-                <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
+                <img onclick="openhome();" style="width: 40px; height: 40px;" src="./design_files/images/pngolf.png" alt="image">
             </div>
 
             <div id="gifmenu" class="menutop">
@@ -55,7 +53,7 @@
 
                     
                     <li class="boutonm" onclick="openhome();" >
-                         <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxdd.png" alt="image">
+                         <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxd.png" alt="image">
                     </li>
 
                     <li class="boutonm" onclick="openamical();" >
@@ -67,9 +65,8 @@
                    </li>
 
                    <li class="boutonm" onclick="openshop();" >
-                        <img style="width: 94%; margin-top: 5px; margin-left: 3%; height: auto;" src="./design_files/images/boxee.png" alt="image">
+                        <img style="width: 94%; margin-top: 5px; margin-left: 3%; height: auto;" src="./design_files/images/boxe.png" alt="image">
                     </li>
-
                    <li class="boutonm"><a> </a></li>
                    <li class="boutonm"><a> </a></li>
                    <li class="boutonm"><a> </a></li>
@@ -78,141 +75,97 @@
             </div>
             
         </header>
-        
-        <section class="headerb">
- 
-            <div class="logo">
-                <img  href="index.html" src="./design_files/images/pngolf.png" alt="image">
-            </div>
 
-
-            <div class="menutop">
-                <ul>
-                    <li><a onclick="openhome();">Home</a></li>
-                    <li><a onclick="openamical();">Suivre ma partie</a></li>
-                    <li><a onclick="opena();">Open KRIBI</a></li>
-                    <li><a onclick="openb();">Open Cameroun</a></li>
-                    <li><a onclick="opentk();">Commencer une partie</a></li>
-                   
-                </ul>
-            </div>
-            
+        <section class="slideshop" style="margin-top: 100px; padding: 10px; ">
+            <img name="imgid" class="imgshop" style="border-radius: 15px; width: 100%; height: 260px;" src="./design_files/images/fondshopc.jpg" alt="image">
+            <img name="imgid" class="imgshop" style="border-radius: 15px; width: 100%; height: 260px;" src="./design_files/images/fondshop.jpg" alt="image">
         </section>
 
-        <img name="imgid" style="filter: blur(5px); height: 100vh; background-size: cover; background-position: center; " 
-        class="sli" src="./design_files/images/mape.png" alt="image">
 
-
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-       <lottie-player class="lottiescript" style="position: absolute; top: 0;"  src="https://assets2.lottiefiles.com/packages/lf20_yb7fmrm7.json"
-        background="transparent" speed="1"  loop autoplay></lottie-player>
-
-        
-        <section style="padding-bottom: 60px;" class="partenaire" id="partenaire">
+        <section style="padding-bottom: 10px;" class="partenaire" id="partenaire">
             
             <div class="box">
-                <b style="margin-top: 150px;">HELLO, User !</b>
-                <b style="margin-top: 2px; margin-right: 15px; font-size: 12px; color: rgb(221, 255, 224);" >Créez votre championnat en solo ou avec un groupe d'amis!</b>
-                <img style="width: 60%; margin-top: 25px;" onclick="opentk()" src="./design_files/images/bouton.png" alt="image">
+                <b style="margin-top: 2px; margin-right: 15px; font-size: 12px; color: rgb(0, 45, 4);" >Nos Drivers</b>
+                <img style="width: 90%; height: 2px; margin-top: 2px;" onclick="opentk()" src="./design_files/images/fondshop.jpg" alt="image">
             </div>
-
-            <div class="box" style="margin-top: 60px;">
-                <b style="margin-top: 2px; font-size: 14px; color: rgb(176, 255, 160);" >Championnats diffusées ... </b>
-            </div>
-            
             
             <div class="slider_container" style="margin-top: 10px;" >
 
-                <div style="margin-left: 17px;" class="itemservice">
-                    <img onclick="openb()" src="./design_files/images/fonda.jpg" alt="image">
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/drivers/db.jpg" alt="image">
+                    <b class="txtitem">80 000f ( 6 94 93 76 01 )</b>
+                </div>
+    
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/drivers/dd.jpeg" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
                 </div>
 
-                <div class="itemservice">
-                    <img onclick="opena()" src="./design_files/images/opena.jpg" alt="image">
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/drivers/de.png" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
                 </div>
 
-                <div class="itemservice">
-                    <img onclick="openc()" src="./design_files/images/openb.jpg" alt="image">
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/drivers/df.jpg" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
                 </div>
 
-                <div class="itemservice">
-                    <img onclick="opend()" src="./design_files/images/opend.jpg" alt="image">
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/drivers/dg.jpg" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
                 </div>
-
+    
             </div>
 
         </section>
 
-
-
-
-        
-        <section class="banniere" id="banniere">
+        <section style="padding-bottom: 10px;" class="partenaire" id="partenaire">
             
-            <div class="contenu">
-                <h1>SAY YES TO NEW <span style="font-weight: 900; font-size: 80px;">ADVENTURES</span> </h1>
-                <b class="ss" style="color: rgba(154, 185, 30, 0.479) ; padding-right: 10px;" href="#">Rejoignez nous</b>
-                <a class="sb" onclick="opentk()">Commencer une partie</a>
-
+            <div class="box">
+                <b style="margin-top: 2px; margin-right: 15px; font-size: 12px; color: rgb(0, 45, 4);" >Serie de fers</b>
+                <img style="width: 90%; height: 2px; margin-top: 2px;" onclick="opentk()" src="./design_files/images/fondshop.jpg" alt="image">
             </div>
+            
+            <div class="slider_container" style="margin-top: 10px;" >
 
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/fers/fa.jpg" alt="image">
+                    <b class="txtitem">80 000f ( 6 94 93 76 01 )</b>
+                </div>
+    
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/fers/fb.jpg" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
+                </div>
+
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/fers/fc.jpg" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
+                </div>
+
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/fers/fd.jpg" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
+                </div>
+
+                <div style="margin-left: 17px;" class="itemserviced">
+                    <img onclick="openb()" src="./design_files/images/fers/fe.jpeg" alt="image">
+                    <b class="txtitem">65 000f ( 6 95 77 27 24 )</b>
+                </div>
+    
+            </div>
 
         </section>
 
-        
-
-
-        <footer class="footer" style=" background-color: transparent;" id="footer">
-            <p style="color: rgb(255, 255, 255); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © Tous droits réservés - PNPN Golf</p>
-        </footer>
-  
-        <div class="whatsappid" id="myDiv"></div>
-  
-  
+       
     </body>
 
-    <script type="text/javascript">
-        $(function () {
-          $('#myDiv').floatingWhatsApp({
-            phone: '237694937601',
-            popupMessage: 'Comment pouvons nous vous aider?',
-            showPopup: true,
-            showOnIE: false,
-            headerTitle: 'PNPN Golf!',
-            headerColor: 'green',
-            backgroundColor: 'green',
-            position: 'right' ,
-            size: '50px'
-          });
-          
-        });
-    </script>
+
     
-       
     <script>
 
-
-        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-            const portrait = e.matches;
-            var gifmenu = document.getElementById('gifmenu');
-            var gifimg = document.getElementById('gifimg');
-            if (portrait) {
-                gifmenu.style.width="90%";
-                gifimg.style.display="block";
-            } else {
-                gifmenu.style.width="50%";
-                gifimg.style.display="none";
-            }
-        });
-
-
-        function play(){
-            document.getElementById('autoplay').play();
-        }
-
-
-
-        function opena() {
+function opena() {
             const touropen = "opena";
             localStorage.setItem('openname' , touropen );
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
@@ -249,7 +202,21 @@
             window.location.href = 'https://kevabcdigital.github.io/website/golfshop.html';
         }
 
-        
+        var firstindex=0;
+        function automaticslide(){
+            setTimeout(automaticslide, 20000);
+            var pics;
+            const img = document.getElementsByClassName('imgshop');
+            for(pics=0; pics<img.length; pics++) {
+                img[pics].style.display="none";
+            }
+            firstindex++;
+            if(firstindex > img.length) {
+                firstindex = 1;
+            }
+            img[firstindex - 1].style.display="block";
+        }
+        automaticslide();
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -262,11 +229,12 @@
             measurementId: "G-6BW97RHV89"
         };
         firebase.initializeApp(firebaseConfig)
-   
+    
         const database = firebase.database();
 
     </script>
-        
-    
+
+
+
 
 </html>

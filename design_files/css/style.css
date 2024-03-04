@@ -114,7 +114,9 @@ header {
 .searchcode {
   display: none;
 }
-
+.besoin {
+  display: none;
+}
 
 .rotate {
   display: none;
@@ -367,6 +369,9 @@ header {
   display: none;
 }
 .fondgif {
+  display: none;
+}
+.slideshop {
   display: none;
 }
 
@@ -829,6 +834,31 @@ header {
     scroll-behavior: smooth;
     box-shadow: -1px 1px 12px #83f6bbd2;
   }
+  .partenaire .itemserviced{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .partenaire .itemserviced img{
+    width: 240px;
+    height: 250px;
+    border-radius: 15px;
+    cursor: pointer;
+    object-fit: cover;
+    display: block;
+    overflow: auto;
+    scroll-behavior: smooth;
+    box-shadow: -1px 1px 12px #83f6bbd2;
+  }
+  .partenaire .itemserviced .txtitem{
+    background-color: rgb(42, 196, 86);
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    padding: 10px 22px;
+    border-top-left-radius: 10px;
+  }
 
 
 .contenuhomeab {
@@ -947,6 +977,29 @@ header {
   font-size: 10px;
   color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+.slideshop {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
 
 
 
