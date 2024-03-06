@@ -847,7 +847,7 @@ header {
     display: block;
     overflow: auto;
     scroll-behavior: smooth;
-    box-shadow: -1px 1px 12px #83f6bbd2;
+    box-shadow: -1px 1px 12px #9f9f9fd2;
   }
   .partenaire .itemserviced .txtitem{
     background-color: rgb(42, 196, 86);
