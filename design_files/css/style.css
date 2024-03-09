@@ -176,6 +176,17 @@ header {
   background-color: rgb(19, 138, 15);
   color: white;
 }
+.score .entete .boxenteteu {
+  width: 230px;
+  padding-left: 15px;
+  text-align: start;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #008006ab;
+  background-color: rgb(19, 138, 15);
+  color: white;
+}
 .score .entete .boxentetej {
   width: 30px;
   text-align: center;
@@ -887,15 +898,31 @@ header {
   font-size: 10px;
   color: rgb(136, 253, 69);
 }
+.score .entete {
+  display: flex;
+  position: relative;
+  padding-right: 50px;
+}
 .score .ttta {
   display: none;
 }
 .score .entete .boxentete {
-  width: 30px;
+  width: 28px;
   text-align: center;
   margin-top: 14px;
   margin-bottom: 10px;
   font-size: 10px;
+  background-color: rgb(19, 138, 15);
+  color: white;
+}
+.score .entete .boxenteteu {
+  width: 267px;
+  text-align: start;
+  padding-left: 10px;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  border: 1px solid #008006ab;
   background-color: rgb(19, 138, 15);
   color: white;
 }
@@ -938,7 +965,7 @@ header {
   color: white;
 }
 .score .entete .boxenteteje {
-  width: 50px;
+  width: 33px;
   text-align: center;
   margin-top: 14px;
   background-color: transparent;
