@@ -131,7 +131,7 @@
             
                     <div style="padding-top: 17px; display: block;" class="devisbloc ">
         
-                        <a style="color: white; font-size: 16px;" id="joueur1" class="txtindis"> Joueur 1</a>
+                        <a style="color: white; font-size: 12px;" id="joueur1" class="txtindis"> Joueur 1</a>
 
                         <form name="formweb" style="display: flex;" action="">
         
@@ -242,7 +242,7 @@
                      
                     <div style="padding-top: 17px; display: block;" class="devisbloc ">
         
-                        <a style="color: white; font-size: 16px;" id="joueur2" class="txtindis"> Joueur 2</a>
+                        <a style="color: white; font-size: 12px;" id="joueur2" class="txtindis"> Joueur 2</a>
 
                         <form name="formweb" style="display: flex;" action="">
         
@@ -354,7 +354,7 @@
             
                     <div style="padding-top: 17px; display: block;" class="devisbloc ">
         
-                        <a style="color: white; font-size: 16px;" id="joueur3" class="txtindis"> Joueur 3</a>
+                        <a style="color: white; font-size: 12px;" id="joueur3" class="txtindis"> Joueur 3</a>
 
                         <form name="formweb" style="display: flex;" action="">
         
@@ -489,19 +489,6 @@
 
 
     <script>
-
-        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-            const portrait = e.matches;
-            var gifmenu = document.getElementById('gifmenu');
-            var gifimg = document.getElementById('gifimg');
-            if (portrait) {
-                gifmenu.style.width="90%";
-                gifimg.style.display="block";
-            } else {
-                gifmenu.style.width="50%";
-                gifimg.style.display="none";
-            }
-        });
         
         function opentk() {
             window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
@@ -584,13 +571,13 @@
                         dataReffinal.child(lastcc).remove();
                                 
                         dataReffinal.child(lastaa).set({
-                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + (((lastaa).split(" ") ) [23] ) )
                         }).then(()=>{
                             dataReffinal.child(lastbb).set({
-                                'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                                'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + (((lastbb).split(" ") ) [23] ) )
                             }).then(()=>{
                                 dataReffinal.child(lastcc).set({
-                                    'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                                    'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + (((lastcc).split(" ") ) [23] ) )
                                 }).then(()=>{
                                     load.style.display = 'none';
                                     window.alert("Sauvegarde pro reuissie.");               
@@ -709,9 +696,17 @@
                             'joueur2' : ( (((lastbb).split(" ") ) [2] ) +  " " + (((lastbb).split(" ") ) [3] ) ) ,
                             'joueur3' : ( (((lastcc).split(" ") ) [2] ) +  " " + (((lastcc).split(" ") ) [3] ) ),
 
-                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" ),
-                            'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" ),
-                            'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
+                            'netj1' : ((((lastaa).split(" ") ) [1] )) ,
+                            'netj2' : ((((lastbb).split(" ") ) [1] )) ,
+                            'netj3' : ((((lastcc).split(" ") ) [1] )) ,
+
+                            'brut1' : ((((lastaa).split(" ") ) [24] )),
+                            'brut2' : ((((lastbb).split(" ") ) [24] )) ,
+                            'brut3' : ((((lastcc).split(" ") ) [24] )) ,
+
+                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) ),
+                            'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] )),
+                            'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ))
 
                         }).then(()=>{
                             load.style.display = 'none';
@@ -889,21 +884,21 @@
                                     snapshot.forEach(function(element){
 
                                         if(element.key == "noma" ) {
-                                            joueur1.innerHTML= "Joueur 1 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
+                                            joueur1.innerHTML= "Joueur 1 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [0] ) + " ) " ;
                                         }
 
                                         if(element.key == "nomb" ) {
                                             if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
                                                 formulaireb.style.display = "none";
                                             }
-                                            joueur2.innerHTML= "Joueur 2 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
+                                            joueur2.innerHTML= "Joueur 2 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [0] ) + " ) " ;
                                         }
 
                                         if(element.key == "nomc" ) {
                                             if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
                                                 formulairec.style.display = "none";
                                             }
-                                            joueur3.innerHTML= "Joueur 3 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
+                                            joueur3.innerHTML= "Joueur 3 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [0] ) + " ) " ;
                                         }
                                        
 
@@ -2478,6 +2473,18 @@
                 var lastb = "non";
                 var lastc = "non";
 
+                var ajoueur1 = "non";
+                var ajoueur2 = "non";
+                var ajoueur3 = "non";
+
+                var an1 = "non";
+                var an2 = "non";
+                var an3 = "non";
+
+                var br1 = "non";
+                var br2 = "non";
+                var br3 = "non";
+
                 dataRefb.on("value" , function(snapshot){             
                     snapshot.forEach(function(element){
 
@@ -2491,6 +2498,42 @@
 
                         if(element.key == "nomc" ) {
                             lastc = element.val();
+                        }
+
+                        if(element.key == "net1" ) {
+                            ajoueur1 = element.val();
+                        }
+
+                        if(element.key == "net2" ) {
+                            ajoueur2 = element.val();
+                        }
+
+                        if(element.key == "net3" ) {
+                            ajoueur3 = element.val();
+                        }
+
+                        if(element.key == "brut1" ) {
+                            br1 = element.val();
+                        }
+
+                        if(element.key == "brut2" ) {
+                            br2 = element.val();
+                        }
+
+                        if(element.key == "brut3" ) {
+                            br3 = element.val();
+                        }
+
+                        if(element.key == "netj1" ) {
+                            an1 = element.val();
+                        }
+
+                        if(element.key == "netj2" ) {
+                            an2 = element.val();
+                        }
+
+                        if(element.key == "netj3" ) {
+                            an3 = element.val();
                         }
                 
                         if(element.key == "joueur1" ) {
@@ -2657,13 +2700,13 @@
                     var totalanet = ( ( parseInt(aa1) - 3 ) + ( parseInt(aa2) - 5 ) + ( parseInt(aa3) - 4 ) + ( parseInt(aa4) - 5 ) + ( parseInt(aa5) - 4 ) + ( parseInt(aa6) - 3 ) +
                     ( parseInt(aa7) - 4 ) + ( parseInt(aa8) - 4 ) + ( parseInt(aa9) - 4 ) + ( parseInt(aa10) - 4 ) + ( parseInt(aa11) - 4 ) + ( parseInt(aa12) - 3 ) +
                     ( parseInt(aa13) - 5 ) + ( parseInt(aa14) - 4 ) + ( parseInt(aa15) - 5 ) + ( parseInt(aa16) - 4 ) + ( parseInt(aa17) - 3 ) + ( parseInt(aa18) - 4 ) );
-                    var noma = ( ( totalanet + 150 ) + " " + ( totala ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
+                    var noma = ( ( ( totalanet - parseInt(ajoueur1) ) + 250 ) + " " + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                     + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
-                    + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totalanet ) );
-                    if ( (a1 == 0 ) & (a2 == 0 ) & (a3 == 0 )) {
-                        var noma = ( ( "new" ) + " " + ( "-" ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
+                    + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totalanet ) + " " + parseInt(ajoueur1) + " " + ( parseInt(br1) + totalanet ) );
+                    if ( totala == 0 ) {
+                        var noma = ( ( "new" ) + " " + ( parseInt(an1)  ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                         + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
-                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "---" ) );
+                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "---" ) + " " + parseInt(ajoueur1) + " " + ( parseInt(br1) + totalanet ) );
                     }
 
 
@@ -2676,21 +2719,21 @@
                     ( parseInt(bb7) - 4 ) + ( parseInt(bb8) - 4 ) + ( parseInt(bb9) - 4 ) + ( parseInt(bb10) - 4 ) + ( parseInt(bb11) - 4 ) + ( parseInt(bb12) - 3 ) +
                     ( parseInt(bb13) - 5 ) + ( parseInt(bb14) - 4 ) + ( parseInt(bb15) - 5 ) + ( parseInt(bb16) - 4 ) + ( parseInt(bb17) - 3 ) + ( parseInt(bb18) - 4 ) );
                     
-                    if ( (b1 == 0 ) & (b2 == 0 ) & (b3 == 0 )) {
+                    if ( totalb == 0 ) {
                         if ( ( jb == "aucun joueur" ) || ( jb == "--- ---" ) ) {
-                            var nomb = (  ( "new" ) + " " + ( "-" ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            var nomb = (  ( "new" ) + " " + (  parseInt(an2) + ( totalbnet - parseInt(ajoueur2) )  ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "--" ) );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "--" ) + " " + parseInt(ajoueur2) + " " + ( parseInt(br2) + totalbnet ) );
                         } else {
-                            var nomb = (  ( "new" ) + " " + ( "-" ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            var nomb = (  ( "new" ) + " " + ( parseInt(an2) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "--" ) );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "--" ) + " " + parseInt(ajoueur2) + " " + ( parseInt(br2) + totalbnet ) );
                         }
                        
                     } else {
-                        var nomb = ( ( totalbnet + 150 ) + " " + ( totalb ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                        var nomb = ( ( ( totalbnet - + parseInt(ajoueur2) ) + 250 ) + " " + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                         + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalbnet ) );
+                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalbnet ) + " " + parseInt(ajoueur2) + " " + ( parseInt(br2) + totalbnet ) );
                     }
 
 
@@ -2702,20 +2745,20 @@
                     ( parseInt(cc7) - 4 ) + ( parseInt(cc8) - 4 ) + ( parseInt(cc9) - 4 ) + ( parseInt(cc10) - 4 ) + ( parseInt(cc11) - 4 ) + ( parseInt(cc12) - 3 ) +
                     ( parseInt(cc13) - 5 ) + ( parseInt(cc14) - 4 ) + ( parseInt(cc15) - 5 ) + ( parseInt(cc16) - 4 ) + ( parseInt(cc17) - 3 ) + ( parseInt(cc18) - 4 ) );
                     
-                    if ( (c1 == 0) & (c2 == 0) & (c3 == 0) ) {
+                    if ( totalc == 0 ) {
                         if ( ( jc == "aucun joueur" ) || ( jc == "--- ---" ) ) {
-                            var nomc = ( ( "rnew" ) + " " + ( "-" ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            var nomc = ( ( "rnew" ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "--" ) );
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "--" ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
                         } else {
-                            var nomc = ( ( "rnews" ) + " " + ( "-" ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            var nomc = ( ( "rnews" ) + " " + ( parseInt(an3) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "--" ) );
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "--" ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
                         }
                     } else {
-                        var nomc = ( ( totalcnet + 150 ) + " " + ( totalc ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                        var nomc = ( ( ( totalcnet - + parseInt(ajoueur3) ) + 250 ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                     + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                    + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalcnet ) );
+                    + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalcnet ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
                     }
                     
 
@@ -2862,6 +2905,18 @@
                             'joueur1' : (ja) ,
                             'joueur2' : (jb) ,
                             'joueur3' : (jc),
+
+                            'net1' : (ajoueur1) ,
+                            'net2' : (ajoueur2) ,
+                            'net3' : (ajoueur3) ,
+
+                            'netj1' : (an1) ,
+                            'netj2' : (an2) ,
+                            'netj3' : (an3) ,
+
+                            'brut1' : (br1) ,
+                            'brut2' : (br2) ,
+                            'brut3' : (br3) ,
 
                             'noma' : (noma),
                             'nomb' : (nomb),

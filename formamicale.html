@@ -97,28 +97,33 @@
             
         </section>
 
-        <img name="imgid" style="height: 100vh;" class="sli" src="./design_files/images/gifswing.gif" alt="image">
+        <img name="imgid" style="height: 100vh;" class="sli" src="./design_files/images/gifforma.gif" alt="image">
  
         <section style="position: absolute; bottom: 0; margin-bottom: 90px; width: 84%;
-        background-color: #0119003e; margin-left: 8%; border-radius: 20px;"
+        background-color: #011900c5; margin-left: 8%; border-radius: 20px;"
          class="formulaire" id="formulaire">
             
             <div style="padding-top: 17px;" class="devisbloc ">
 
                 <form name="formweb" style="padding: 0 25px;" action="">
 
-                    <div class="form-wrapper" style="margin-top: 30px;">
-                        <a style="color: rgb(234, 255, 230);" class="titleform"> Noms et prénoms des joueurs * *</a>
-                        <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px;" type="text" placeholder="Nom et prénom du 1er joueur" class="form-controla">
+                    <b style="color: white; font-size: 10px; text-align: center;">PS :Entrez les noms et prénoms des joueurs suivis de leurs handicaps</b>
+
+                    <div class="form-wrapper" style="display: flex; margin-top: 10px;">
+                        <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px; width: 78%; margin-right: 2%; " type="text" placeholder="Nom du 1er joueur" class="form-controla">
+                        <input id="ajoueur1" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px;width: 20%;" type="number" placeholder="0" class="form-controla">
                     </div>
 
-                    <div class="form-wrapper">
-                        <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Nom et prénom du 2ème joueur" class="form-controla">
+                    <div class="form-wrapper" style="display: flex; margin-top: -5px;">
+                        <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px; width: 78%; margin-right: 2%;" type="text" placeholder="Nom du 2eme joueur" class="form-controla">
+                        <input id="ajoueur2" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px;width: 20%;" type="number" placeholder="0" class="form-controla">
                     </div>
 
-                    <div class="form-wrapper">
-                        <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Nom et prénom du 3ème joueur" class="form-controla">
+                    <div class="form-wrapper" style="display: flex; margin-top: -5px;">
+                        <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px; width: 78%; margin-right: 2%; " type="text" placeholder="Nom du 3eme joueur" class="form-controla">
+                        <input id="ajoueur3" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px;width: 20%;" type="number" placeholder="0" class="form-controla">
                     </div>
+
                     <div class="form-wrapper">
                         <a style="color: rgb(234, 255, 230);" class="titleform"> Créez un code pour votre partie * *</a>
                         <input id="codepass" style=" text-align: center; height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
@@ -127,7 +132,7 @@
                     
 
                     <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgba(0, 61, 23, 0.518);
+                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgba(0, 61, 23, 0.82);
                          color: rgb(255, 255, 255);
                               box-shadow: -1px 1px 9px #03a700e2; " type="button" onclick="send()">
                             C'est parti 
@@ -249,6 +254,10 @@
             window.alert('DESOLE ! Ce formulaire est momentanement indisponible.');
         }
 
+        function containsOnlyNumbers(str) {
+            return /^\d+$/.test(str); 
+        }
+
         function send(){
             
             
@@ -256,18 +265,28 @@
             var ja = document.getElementById("joueur1");                
             var jb = document.getElementById("joueur2");                
             var jc = document.getElementById("joueur3");                
+            var aja = document.getElementById("ajoueur1");                
+            var ajb = document.getElementById("ajoueur2");                
+            var ajc = document.getElementById("ajoueur3");                
+
             var cc = document.getElementById("codepass");                
 
             var joueur1 = $('#joueur1').val().toLowerCase().trim();
             var joueur2 = $('#joueur2').val().toLowerCase().trim();
             var joueur3 = $('#joueur3').val().toLowerCase().trim();
+            var ajoueur1 = $('#ajoueur1').val().toLowerCase().trim();
+            var ajoueur2 = $('#ajoueur2').val().toLowerCase().trim();
+            var ajoueur3 = $('#ajoueur3').val().toLowerCase().trim();
+
             var codepass = $('#codepass').val();
             var p = 0;
             var dataRef = firebase.database().ref("amical");
 
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
                & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 8
-               & joueur1 != "aucun" ) {
+               & joueur1 != "aucun" & ajoueur1 != "" & ajoueur2 != "" & ajoueur3 != "" 
+               & ( containsOnlyNumbers(ajoueur1) == true ) & ( containsOnlyNumbers(ajoueur2) == true ) 
+               & ( containsOnlyNumbers(ajoueur3) == true )) {
 
                 if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
                 if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
@@ -285,18 +304,17 @@
                             i = 1;
                         }
                     });
-                                
-                
+                                                
                     if ( i == 0 ) {
                         var dataRefb = firebase.database().ref("amical").child(codepass);
                         l = 1;
-                        var verifiea = (joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
-                        var verifieb = (joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
-                        var verifiec = (joueur3.split(" ")[0] + " " + joueur3.split(" ")[1]);
+                        var verifiea = ( "(" + ajoueur1 + ")" + joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
+                        var verifieb = ( "(" + ajoueur2 + ")" + joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
+                        var verifiec = ( "(" + ajoueur3 + ")" + joueur3.split(" ")[0] + " " + joueur3.split(" ")[1]);
 
-                        var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000";
-                        var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000";
-                        var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000";
+                        var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + ajoueur1 + " 000";
+                        var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + ajoueur2 + " 000";
+                        var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + ajoueur3 + " 000";
 
 
                         if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) & ( ( joueur3.split(" ")[1]) != undefined )  ) {
@@ -364,6 +382,18 @@
                                 'joueur1' : (verifiea) ,
                                 'joueur2' : (verifieb) ,
                                 'joueur3' : (verifiec) ,
+
+                                'net1' : (ajoueur1) ,
+                                'net2' : (ajoueur2) ,
+                                'net3' : (ajoueur3) ,
+
+                                'netj1' : ("00") ,
+                                'netj2' : ("00") ,
+                                'netj3' : ("00") ,
+
+                                'brut1' : ("00") ,
+                                'brut2' : ("00") ,
+                                'brut3' : ("00") ,
 
                                 'noma' : (noma) ,
                                 'nomb' : (nomb) ,
@@ -500,8 +530,16 @@
                 jb.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
                 cc.style.backgroundColor="rgb(255, 255, 255)";            
+            } else if ( ajoueur1 == "" ) {
+                window.alert("Entrez l'handicap du 1er joueur");
+                cc.style.backgroundColor="rgb(255, 255, 255)";
+                ja.style.backgroundColor="rgb(255, 220, 220)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( containsOnlyNumbers(ajoueur1) == false ) {
+                window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
             } else if ( joueur2 == "" ) {
-                window.alert("Entrez (aucun) pour signifier qu'il nya pas de deuxieme joueur  ...");
+                window.alert("Entrez (aucun) pour signifier qu'il nya pas de deuxieme joueur et entrez 0 comme handicap ...");
                 jb.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
@@ -512,8 +550,16 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
                 cc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( ajoueur2 == "" ) {
+                window.alert("Entrez l'handicap du 2eme joueur");
+                cc.style.backgroundColor="rgb(255, 255, 255)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 220, 220)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( containsOnlyNumbers(ajoueur2) == false ) {
+                window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
             } else if ( joueur3 == "" ) {
-                window.alert("Entrez (aucun) pour signifier qu'il nya pas de troisieme joueur  ...");
+                window.alert("Entrez (aucun) pour signifier qu'il nya pas de troisieme joueur et entrez 0 comme handicap  ...");
                 jc.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
@@ -524,6 +570,14 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 cc.style.backgroundColor="rgb(255, 255, 255)";         
+            } else if ( ajoueur3 == "" ) {
+                window.alert("Entrez l'handicap du 3eme joueur");
+                cc.style.backgroundColor="rgb(255, 255, 255)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 220, 220)";
+            } else if ( containsOnlyNumbers(ajoueur3) == false ) {
+                window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
             } else if ( codepass == "" ) {
                 window.alert("Entrer un mot de passe pour votre partie privée ...");
                 cc.style.backgroundColor="rgb(255, 220, 220)";
