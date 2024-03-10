@@ -187,6 +187,16 @@ header {
   background-color: rgb(19, 138, 15);
   color: white;
 }
+.score .entete .bartab {
+  width: 52%;
+  height: 1px;
+  margin-left: 29%;
+  filter: opacity(0.1);
+  margin-top: 35px;
+  display: none;
+  position: absolute;
+  z-index: 1900;
+}
 .score .entete .boxentetej {
   width: 30px;
   text-align: center;
@@ -234,6 +244,9 @@ header {
   font-size: 14px;
   color: white;
 }
+
+
+
 
 
 .lottiescriptc {
@@ -894,9 +907,9 @@ header {
   justify-content: center;
 }
 .score .ttb{
-  display: block;
   font-size: 10px;
-  color: rgb(136, 253, 69);
+  background-color: rgb(1, 78, 35);
+  color: #fff;
 }
 .score .entete {
   display: flex;
@@ -905,6 +918,10 @@ header {
 }
 .score .ttta {
   display: none;
+}
+.score .entete .bartab {
+  display: none;
+  filter: opacity(0);
 }
 .score .entete .boxentete {
   width: 28px;
