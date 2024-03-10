@@ -188,9 +188,9 @@ header {
   color: white;
 }
 .score .entete .bartab {
-  width: 52%;
+  width: 72%;
   height: 1px;
-  margin-left: 29%;
+  margin-left: 9%;
   filter: opacity(0.1);
   margin-top: 35px;
   display: none;
