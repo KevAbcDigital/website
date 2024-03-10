@@ -85,7 +85,7 @@
             <b style="background-color: rgb(7, 90, 29); box-shadow: -1px 1px 9px rgba(201, 255, 204);
             color: white; font-size: 12px; width: fit-content ; margin-top: 65px; font-family: 'Poppins', sans-serif;
             border-radius: 8px; display: none; font-size: 15px; font-weight: 700; padding: 10px; 
-            position: absolute; right: 0; margin-right: 20px;" onclick="delet();" id="del" >Supprimer cette partie </b>
+            position: absolute; right: 0; margin-right: 20px;" onclick="delet();" id="del" >Supprimer la partie </b>
 
             <b style="background-color: rgb(7, 90, 29); box-shadow: -1px 1px 9px rgb(201, 255, 204);
             color: white; font-size: 12px; width: fit-content ; margin-top: 65px; font-family: 'Poppins', sans-serif;
@@ -103,8 +103,10 @@
                         <form name="formweb" action="">
 
                             <div class="form-wrapper">
+                                <input id="codeadmin" style="display: none; box-shadow: -1px 1px 9px rgb(78, 162, 82); text-align: center;" 
+                                type="text" placeholder="code administrateur" class="form-controla">
                                 <input id="codesearch" style="box-shadow: -1px 1px 9px rgb(78, 162, 82); text-align: center;" 
-                                type="email" placeholder="Entrez le code de votre partie" class="form-controla">
+                                type="text" placeholder="Entrez le code de votre partie" class="form-controla">
                             </div>
 
                             <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
@@ -509,17 +511,51 @@
 
         function delet() {
             var result = confirm('voulez vous supprimer cette partie ?');
-            var load = document.getElementById("lottieloadb");             
+            var load = document.getElementById("lottieloadb");            
+            var codead = $('#codeadmin').val().toLowerCase().trim();
+ 
             load.style.display = "block";   
             if (result == false) {
                 event.preventDefault();
                 load.style.display = "none";
             } else {
                 var dataRef = firebase.database().ref("amical");
+                var dataRefo = firebase.database().ref("open");
+
                 if (linked != "non") {
-                    dataRef.child(linked).remove();
-                    window.alert("Partie supprimée avec succès");
-                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                    
+                    if (linked == "22222222") {
+                        if (codead == "adminpass") {
+                            if (pa!="non" & pb!="non" & pc!="non")
+                            dataRefo.child("opena").child(pa).remove();
+                            dataRefo.child("opena").child(pb).remove();
+                            dataRefo.child("opena").child(pc).remove();
+                            dataRef.child(linked).remove();
+                            window.alert('Partie supprimée avec succès!');
+                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                        } else {
+                            window.alert('code administrateur incorrect');
+                            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+                        }
+                    }else if (linked == "33333333") {
+                        if (codead == "adminpass") {
+                            if (pa!="non" & pb!="non" & pc!="non")
+                            dataRefo.child("opena").child(pa).remove();
+                            dataRefo.child("opena").child(pb).remove();
+                            dataRefo.child("opena").child(pc).remove();
+                            dataRef.child(linked).remove();
+                            window.alert('Partie supprimée avec succès!');
+                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                        } else {
+                            window.alert('code administrateur incorrect');
+                            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+                        }
+                    } else {
+                        dataRef.child(linked).remove();
+                        window.alert('Partie supprimée avec succès!');
+                        window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                    }
+
                 } else {
                     window.alert("aucune partie ouverte");
                 }
@@ -528,6 +564,7 @@
         }
 
         function ecraser() {
+            var codead = $('#codeadmin').val().toLowerCase().trim();
             var result = confirm('voulez vous sauvergarder les scores et creer une nouvelle carte ?');
             var load = document.getElementById("lottieloadb");             
             load.style.display = "block"; 
@@ -535,193 +572,180 @@
                 event.preventDefault();
             } else {
 
-                var dataRefb = firebase.database().ref("amical").child(linked);
+                if (codead == "adminpass") {
+                    var dataRefb = firebase.database().ref("amical").child(linked);
 
-                var lastaa = "non";
-                var lastbb = "non";
-                var lastcc = "non";
+                    var lastaa = "non";
+                    var lastbb = "non";
+                    var lastcc = "non";
 
-                dataRefb.on("value" , function(snapshot){             
-                    snapshot.forEach(function(element){
+                    dataRefb.on("value" , function(snapshot){             
+                        snapshot.forEach(function(element){
 
-                        if(element.key == "noma" ) {
-                            lastaa = element.val();
-                        }
+                            if(element.key == "noma" ) {
+                                lastaa = element.val();
+                            }
 
-                        if(element.key == "nomb" ) {
-                            lastbb = element.val();
-                        }
+                            if(element.key == "nomb" ) {
+                                lastbb = element.val();
+                            }
 
-                        if(element.key == "nomc" ) {
-                            lastcc = element.val();
-                        }
-                    
-                    });
-                });
-
-                if ( ((lastaa.split(" ")).includes("0") == false) & ((lastbb.split(" ")).includes("0")  == false) & ((lastcc.split(" ")).includes("0")  == false) ) { 
-
-
-                    if ( (linked == "22222222") || (linked == "33333333") || (linked == "44444444") || (linked == "55555555") 
-                        || (linked == "66666666") || (linked == "77777777") || (linked == "88888888") || (linked == "99999999") ) {
+                            if(element.key == "nomc" ) {
+                                lastcc = element.val();
+                            }
                         
-                        var dataReffinal = firebase.database().ref("open").child("opena");
-                        dataReffinal.child(lastaa).remove();
-                        dataReffinal.child(lastbb).remove();
-                        dataReffinal.child(lastcc).remove();
-                                
-                        dataReffinal.child(lastaa).set({
-                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + (((lastaa).split(" ") ) [23] ) )
-                        }).then(()=>{
-                            dataReffinal.child(lastbb).set({
-                                'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + (((lastbb).split(" ") ) [23] ) )
+                        });
+                    });
+
+                    if ( (((lastaa.split(" ")).slice(4, 22)).includes("0") == false) & (((lastbb.split(" ")).slice(4, 22)).includes("0") == false) & (((lastcc.split(" ")).slice(4, 22)).includes("0") == false)) { 
+
+                        if ( (linked == "00000000") || (linked == "00000001") || (linked == "00000002") || (linked == "00000003") 
+                                || (linked == "00000004") || (linked == "00000016") || (linked == "00000028") || (linked == "00000040")
+                                || (linked == "00000005") || (linked == "00000017") || (linked == "00000029") || (linked == "00000041")
+                                || (linked == "00000006") || (linked == "00000018") || (linked == "00000030") || (linked == "00000042")
+                                || (linked == "00000007") || (linked == "00000019") || (linked == "00000031") || (linked == "00000043")
+                                || (linked == "00000008") || (linked == "00000020") || (linked == "00000032") || (linked == "00000044")
+                                || (linked == "00000009") || (linked == "00000021") || (linked == "00000033") || (linked == "00000045")
+                                || (linked == "00000010") || (linked == "00000022") || (linked == "00000034") || (linked == "00000046")
+                                || (linked == "00000011") || (linked == "00000023") || (linked == "00000035") || (linked == "00000047")
+                                || (linked == "00000012") || (linked == "00000024") || (linked == "00000036") || (linked == "00000048")
+                                || (linked == "00000013") || (linked == "00000025") || (linked == "00000037") || (linked == "00000049")
+                                || (linked == "00000014") || (linked == "00000026") || (linked == "00000038") || (linked == "00000050")
+                                || (linked == "00000015") || (linked == "00000027") || (linked == "00000039") ) {
+                            
+                            var dataReffinal = firebase.database().ref("open").child("opena");
+                            dataReffinal.child(lastaa).remove();
+                            dataReffinal.child(lastbb).remove();
+                            dataReffinal.child(lastcc).remove();
+                                    
+                            dataReffinal.child( ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) ) ).set({
+                                'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) )
                             }).then(()=>{
-                                dataReffinal.child(lastcc).set({
-                                    'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + (((lastcc).split(" ") ) [23] ) )
+
+                                dataReffinal.child( ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] ) ) ).set({
+                                    'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] ) )
                                 }).then(()=>{
+                                    dataReffinal.child( ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ) ) ).set({
+                                        'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ) )
+                                    }).then(()=>{
+                                        
+                                        dataRefb.set({
+                                    'a1' : ("0") ,
+                                    'a2' : ("0") ,
+                                    'a3' : ("0") ,
+                                    'a4' : ("0") ,
+                                    'a5' : ("0") ,
+                                    'a6' : ("0") ,
+                                    'a7' : ("0") ,
+                                    'a8' : ("0") ,
+                                    'a9' : ("0") ,
+                                    'a10' : ("0") ,
+                                    'a11' : ("0") ,
+                                    'a12' : ("0") ,
+                                    'a13' : ("0") ,
+                                    'a14' : ("0") ,
+                                    'a15' : ("0") ,
+                                    'a16' : ("0") ,
+                                    'a17' : ("0") ,
+                                    'a18' : ("0") ,
+
+
+                                    'b1' : ("0") ,
+                                    'b2' : ("0") ,
+                                    'b3' : ("0") ,
+                                    'b4' : ("0") ,
+                                    'b5' : ("0") ,
+                                    'b6' : ("0") ,
+                                    'b7' : ("0") ,
+                                    'b8' : ("0") ,
+                                    'b9' : ("0") ,
+                                    'b10' : ("0") ,
+                                    'b11' : ("0") ,
+                                    'b12' : ("0") ,
+                                    'b13' : ("0") ,
+                                    'b14' : ("0") ,
+                                    'b15' : ("0") ,
+                                    'b16' : ("0") ,
+                                    'b17' : ("0") ,
+                                    'b18' : ("0") ,
+
+
+                                    'c1' : ("0") ,
+                                    'c2' : ("0") ,
+                                    'c3' : ("0") ,
+                                    'c4' : ("0") ,
+                                    'c5' : ("0") ,
+                                    'c6' : ("0") ,
+                                    'c7' : ("0") ,
+                                    'c8' : ("0") ,
+                                    'c9' : ("0") ,
+                                    'c10' : ("0") ,
+                                    'c11' : ("0") ,
+                                    'c12' : ("0") ,
+                                    'c13' : ("0") ,
+                                    'c14' : ("0") ,
+                                    'c15' : ("0") ,
+                                    'c16' : ("0") ,
+                                    'c17' : ("0") ,
+                                    'c18' : ("0") ,
+
+                                'joueur1' : ( (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) ) ,
+                                'joueur2' : ( (((lastbb).split(" ") ) [2] ) +  " " + (((lastbb).split(" ") ) [3] ) ) ,
+                                'joueur3' : ( (((lastcc).split(" ") ) [2] ) +  " " + (((lastcc).split(" ") ) [3] ) ),
+
+                                'net1' : ((((lastaa).split(" ") ) [23] )),
+                                'net2' : ((((lastbb).split(" ") ) [23] )) ,
+                                'net3' : ((((lastcc).split(" ") ) [23] )) ,
+
+                                'netj1' : ((((lastaa).split(" ") ) [1] )) ,
+                                'netj2' : ((((lastbb).split(" ") ) [1] )) ,
+                                'netj3' : ((((lastcc).split(" ") ) [1] )) ,
+
+                                'brut1' : ((((lastaa).split(" ") ) [24] )),
+                                'brut2' : ((((lastbb).split(" ") ) [24] )) ,
+                                'brut3' : ((((lastcc).split(" ") ) [24] )) ,
+
+                                'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) ),
+                                'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] )),
+                                'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ))
+
+                            }).then(()=>{
                                     load.style.display = 'none';
-                                    window.alert("Sauvegarde pro reuissie.");               
+                                    window.alert("Sauvegarde pro reuissie.");       
+                                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';        
                                 }).catch((error)=>{
-                                    load.style.display = 'none';
-                                    window.alert("erreur survenue : "+ error);
-                                });        
-                            }).catch((error)=>{
                                 load.style.display = 'none';
                                 window.alert("erreur survenue : "+ error);
                             });
 
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
-                        
-                    }
-
-                    if ( (linked == "3MerT8vq") || (linked == "p5RZgH2J") || (linked == "00000000") || (linked == "11111111") ) {                      
-
-                        var dataReffinal = firebase.database().ref("open").child("openb");
-                                            dataReffinal.child(lastaa).remove();
-                                            dataReffinal.child(lastbb).remove();
-                                            dataReffinal.child(lastcc).remove();
-                                                    
-                                            dataReffinal.child(lastaa).set({
-                                                'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
-                                            }).then(()=>{
-                                                dataReffinal.child(lastbb).set({
-                                                    'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
-                                                }).then(()=>{
-                                                    dataReffinal.child(lastcc).set({
-                                                        'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" )
-                                                    }).then(()=>{
-                                                        load.style.display = 'none';
-                                                        window.alert("Sauvegarde pro reuissie.");               
-                                                    }).catch((error)=>{
-                                                        load.style.display = 'none';
-                                                        window.alert("erreur survenue : "+ error);
-                                                    });        
-                                                }).catch((error)=>{
-                                                    load.style.display = 'none';
-                                                    window.alert("erreur survenue : "+ error);
-                                                });
-
-                                            }).catch((error)=>{
-                                                load.style.display = 'none';
-                                                window.alert("erreur survenue : "+ error);
-                                            });
-                                            
-                        
-                    }
-
-                    dataRefb.set({
-                        'a1' : ("0") ,
-                                'a2' : ("0") ,
-                                'a3' : ("0") ,
-                                'a4' : ("0") ,
-                                'a5' : ("0") ,
-                                'a6' : ("0") ,
-                                'a7' : ("0") ,
-                                'a8' : ("0") ,
-                                'a9' : ("0") ,
-                                'a10' : ("0") ,
-                                'a11' : ("0") ,
-                                'a12' : ("0") ,
-                                'a13' : ("0") ,
-                                'a14' : ("0") ,
-                                'a15' : ("0") ,
-                                'a16' : ("0") ,
-                                'a17' : ("0") ,
-                                'a18' : ("0") ,
-
-
-                                'b1' : ("0") ,
-                                'b2' : ("0") ,
-                                'b3' : ("0") ,
-                                'b4' : ("0") ,
-                                'b5' : ("0") ,
-                                'b6' : ("0") ,
-                                'b7' : ("0") ,
-                                'b8' : ("0") ,
-                                'b9' : ("0") ,
-                                'b10' : ("0") ,
-                                'b11' : ("0") ,
-                                'b12' : ("0") ,
-                                'b13' : ("0") ,
-                                'b14' : ("0") ,
-                                'b15' : ("0") ,
-                                'b16' : ("0") ,
-                                'b17' : ("0") ,
-                                'b18' : ("0") ,
-
-
-                                'c1' : ("0") ,
-                                'c2' : ("0") ,
-                                'c3' : ("0") ,
-                                'c4' : ("0") ,
-                                'c5' : ("0") ,
-                                'c6' : ("0") ,
-                                'c7' : ("0") ,
-                                'c8' : ("0") ,
-                                'c9' : ("0") ,
-                                'c10' : ("0") ,
-                                'c11' : ("0") ,
-                                'c12' : ("0") ,
-                                'c13' : ("0") ,
-                                'c14' : ("0") ,
-                                'c15' : ("0") ,
-                                'c16' : ("0") ,
-                                'c17' : ("0") ,
-                                'c18' : ("0") ,
-
-                            'joueur1' : ( (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) ) ,
-                            'joueur2' : ( (((lastbb).split(" ") ) [2] ) +  " " + (((lastbb).split(" ") ) [3] ) ) ,
-                            'joueur3' : ( (((lastcc).split(" ") ) [2] ) +  " " + (((lastcc).split(" ") ) [3] ) ),
-
-                            'netj1' : ((((lastaa).split(" ") ) [1] )) ,
-                            'netj2' : ((((lastbb).split(" ") ) [1] )) ,
-                            'netj3' : ((((lastcc).split(" ") ) [1] )) ,
-
-                            'brut1' : ((((lastaa).split(" ") ) [24] )),
-                            'brut2' : ((((lastbb).split(" ") ) [24] )) ,
-                            'brut3' : ((((lastcc).split(" ") ) [24] )) ,
-
-                            'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) ),
-                            'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] )),
-                            'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ))
-
-                        }).then(()=>{
-                            load.style.display = 'none';
-                            window.alert("Sauvegarde reuissie.");
                                         
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                        });
+                                    }).catch((error)=>{
+                                        load.style.display = 'none';
+                                        window.alert("erreur survenue : "+ error);
+                                    });        
+                                }).catch((error)=>{
+                                    load.style.display = 'none';
+                                    window.alert("erreur survenue : "+ error);
+                                });
 
+                            }).catch((error)=>{
+                                load.style.display = 'none';
+                                window.alert("erreur survenue : "+ error);
+                            });
+                            
+                        }
 
+                        
+                        
+
+                    } else {
+                        load.style.display="none";
+                        window.alert("votre partie n'est pas encore terminée! Vous avez encore des scores marquées à ZERO")
+                    }
                 } else {
-                    window.alert("votre partie n'est pas encore terminée! Vous avez encore des scores marquées à ZERO")
-                }
-                
+                    window.alert('code administrateur incorrect');
+                    window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+                }            
             }   
         }
 
@@ -744,10 +768,15 @@
        
         var ecr = document.getElementById("ecr");                
 
+        var pa = "nom";
+        var pb = "nom";
+        var pc = "nom";
+
         function search(){                           
 
             var del = document.getElementById("del");                
             var ecr = document.getElementById("ecr"); 
+            var codeadmin = document.getElementById("codeadmin"); 
 
             var formulairec = document.getElementById("formulairec");
             var formulaireb = document.getElementById("formulaireb");
@@ -833,49 +862,49 @@
                             if(element.key == codesearch ) {
                                 i=1;
 
-                                if ( (codesearch == "22222222") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "33333333") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "44444444") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "55555555") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "66666666") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "77777777") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "88888888") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "99999999") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "3MerT8vq") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "p5RZgH2J") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "00000000") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else if ( (codesearch == "11111111") ) {
-                                    ecr.style.display = "block";
-                                    del.style.display = "none";
-                                } else {
-                                    del.style.display = "block";
-                                    ecr.style.display = "none";
-                                }
-
+                                if ( (codesearch == "00000000") || (codesearch == "00000001") || (codesearch == "00000002") || (codesearch == "00000003") 
+                                || (codesearch == "00000004") || (codesearch == "00000016") || (codesearch == "00000028") || (codesearch == "00000040")
+                                || (codesearch == "00000005") || (codesearch == "00000017") || (codesearch == "00000029") || (codesearch == "00000041")
+                                || (codesearch == "00000006") || (codesearch == "00000018") || (codesearch == "00000030") || (codesearch == "00000042")
+                                || (codesearch == "00000007") || (codesearch == "00000019") || (codesearch == "00000031") || (codesearch == "00000043")
+                                || (codesearch == "00000008") || (codesearch == "00000020") || (codesearch == "00000032") || (codesearch == "00000044")
+                                || (codesearch == "00000009") || (codesearch == "00000021") || (codesearch == "00000033") || (codesearch == "00000045")
+                                || (codesearch == "00000010") || (codesearch == "00000022") || (codesearch == "00000034") || (codesearch == "00000046")
+                                || (codesearch == "00000011") || (codesearch == "00000023") || (codesearch == "00000035") || (codesearch == "00000047")
+                                || (codesearch == "00000012") || (codesearch == "00000024") || (codesearch == "00000036") || (codesearch == "00000048")
+                                || (codesearch == "00000013") || (codesearch == "00000025") || (codesearch == "00000037") || (codesearch == "00000049")
+                                || (codesearch == "00000014") || (codesearch == "00000026") || (codesearch == "00000038") || (codesearch == "00000050")
+                                || (codesearch == "00000015") || (codesearch == "00000027") || (codesearch == "00000039") ) {
                                 
-
+                                    del.style.display="block";
+                                    ecr.style.display="block";
+                                    ecr.style.marginTop="113px";
+                                    codeadmin.style.display="block";
+                                
+                                }
+                                
+                                if ( !( (codesearch == "00000000") || (codesearch == "00000001") || (codesearch == "00000002") || (codesearch == "00000003") 
+                                || (codesearch == "00000004") || (codesearch == "00000016") || (codesearch == "00000028") || (codesearch == "00000040")
+                                || (codesearch == "00000005") || (codesearch == "00000017") || (codesearch == "00000029") || (codesearch == "00000041")
+                                || (codesearch == "00000006") || (codesearch == "00000018") || (codesearch == "00000030") || (codesearch == "00000042")
+                                || (codesearch == "00000007") || (codesearch == "00000019") || (codesearch == "00000031") || (codesearch == "00000043")
+                                || (codesearch == "00000008") || (codesearch == "00000020") || (codesearch == "00000032") || (codesearch == "00000044")
+                                || (codesearch == "00000009") || (codesearch == "00000021") || (codesearch == "00000033") || (codesearch == "00000045")
+                                || (codesearch == "00000010") || (codesearch == "00000022") || (codesearch == "00000034") || (codesearch == "00000046")
+                                || (codesearch == "00000011") || (codesearch == "00000023") || (codesearch == "00000035") || (codesearch == "00000047")
+                                || (codesearch == "00000012") || (codesearch == "00000024") || (codesearch == "00000036") || (codesearch == "00000048")
+                                || (codesearch == "00000013") || (codesearch == "00000025") || (codesearch == "00000037") || (codesearch == "00000049")
+                                || (codesearch == "00000014") || (codesearch == "00000026") || (codesearch == "00000038") || (codesearch == "00000050")
+                                || (codesearch == "00000015") || (codesearch == "00000027") || (codesearch == "00000039") ) ) {
+                                
+                                    del.style.display="block";
+                                    ecr.style.display="none";
+                                    codeadmin.style.display="none";
+                                
+                                }
+                                
+                                
+                                
                                 nompart.innerHTML="Partie n° " + codesearch;
                                 linked=codesearch;
 
@@ -884,10 +913,12 @@
                                     snapshot.forEach(function(element){
 
                                         if(element.key == "noma" ) {
+                                            pa=element.val();
                                             joueur1.innerHTML= "Joueur 1 : " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [0] ) + " ) " ;
                                         }
 
                                         if(element.key == "nomb" ) {
+                                            pb=element.val();
                                             if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
                                                 formulaireb.style.display = "none";
                                             }
@@ -895,6 +926,7 @@
                                         }
 
                                         if(element.key == "nomc" ) {
+                                            pc=element.val();
                                             if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
                                                 formulairec.style.display = "none";
                                             }
@@ -2303,6 +2335,9 @@
                         });
                     
                         if ( i == 0 ) {
+                            del.style.display="none";
+                            ecr.style.display="none";
+                            codeadmin.style.display="none";
                             load.style.display = "none";
                             window.alert("aucune Partie trouvée au code : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
@@ -2706,7 +2741,7 @@
                     if ( totala == 0 ) {
                         var noma = ( ( "new" ) + " " + ( parseInt(an1)  ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                         + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
-                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "---" ) + " " + parseInt(ajoueur1) + " " + ( parseInt(br1) + totalanet ) );
+                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "-" ) + " " + parseInt(ajoueur1) + " " + ( parseInt(br1) + totalanet ) );
                     }
 
 
@@ -2723,11 +2758,11 @@
                         if ( ( jb == "aucun joueur" ) || ( jb == "--- ---" ) ) {
                             var nomb = (  ( "new" ) + " " + (  parseInt(an2) + ( totalbnet - parseInt(ajoueur2) )  ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "--" ) + " " + parseInt(ajoueur2) + " " + ( parseInt(br2) + totalbnet ) );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + ( parseInt(br2) + totalbnet ) );
                         } else {
                             var nomb = (  ( "new" ) + " " + ( parseInt(an2) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "--" ) + " " + parseInt(ajoueur2) + " " + ( parseInt(br2) + totalbnet ) );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + ( parseInt(br2) + totalbnet ) );
                         }
                        
                     } else {
@@ -2749,30 +2784,37 @@
                         if ( ( jc == "aucun joueur" ) || ( jc == "--- ---" ) ) {
                             var nomc = ( ( "rnew" ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "--" ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
                         } else {
                             var nomc = ( ( "rnews" ) + " " + ( parseInt(an3) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "--" ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
                         }
                     } else {
                         var nomc = ( ( ( totalcnet - + parseInt(ajoueur3) ) + 250 ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                     + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                     + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalcnet ) + " " + parseInt(ajoueur3) + " " + ( parseInt(br3) + totalcnet ) );
                     }
-                    
 
 
-
-                    if ( (linked == "22222222") || (linked == "33333333") || (linked == "44444444") || (linked == "55555555") 
-                          || (linked == "66666666") || (linked == "77777777") || (linked == "88888888") || (linked == "99999999") ) {
-                        
-
-                        var dataReffinal = firebase.database().ref("open").child("opena");
+                    if ( (linked == "00000000") || (linked == "00000001") || (linked == "00000002") || (linked == "00000003") 
+                                || (linked == "00000004") || (linked == "00000016") || (linked == "00000028") || (linked == "00000040")
+                                || (linked == "00000005") || (linked == "00000017") || (linked == "00000029") || (linked == "00000041")
+                                || (linked == "00000006") || (linked == "00000018") || (linked == "00000030") || (linked == "00000042")
+                                || (linked == "00000007") || (linked == "00000019") || (linked == "00000031") || (linked == "00000043")
+                                || (linked == "00000008") || (linked == "00000020") || (linked == "00000032") || (linked == "00000044")
+                                || (linked == "00000009") || (linked == "00000021") || (linked == "00000033") || (linked == "00000045")
+                                || (linked == "00000010") || (linked == "00000022") || (linked == "00000034") || (linked == "00000046")
+                                || (linked == "00000011") || (linked == "00000023") || (linked == "00000035") || (linked == "00000047")
+                                || (linked == "00000012") || (linked == "00000024") || (linked == "00000036") || (linked == "00000048")
+                                || (linked == "00000013") || (linked == "00000025") || (linked == "00000037") || (linked == "00000049")
+                                || (linked == "00000014") || (linked == "00000026") || (linked == "00000038") || (linked == "00000050")
+                                || (linked == "00000015") || (linked == "00000027") || (linked == "00000039") ) {
+                            
+                                    var dataReffinal = firebase.database().ref("open").child("opena");
                         dataReffinal.child(lasta).remove();
                         dataReffinal.child(lastb).remove();
                         dataReffinal.child(lastc).remove();
-
                                 
                         dataReffinal.child(noma).set({
                             'noma' : (noma)
@@ -2800,49 +2842,9 @@
                             window.alert("erreur survenue : "+ error);
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';   
                         });
-
-                    }
-
-                    
-                    if ( (linked == "3MerT8vq") || (linked == "p5RZgH2J") || (linked == "00000000") || (linked == "11111111") ) {                      
-
-                        var dataReffinal = firebase.database().ref("open").child("openb");
-                        dataReffinal.child(lasta).remove();
-                        dataReffinal.child(lastb).remove();
-                        dataReffinal.child(lastc).remove();
-
-                                
-                        dataReffinal.child(noma).set({
-                            'noma' : (noma)
-                        }).then(()=>{
-                            dataReffinal.child(nomb).set({
-                                'nomb' : (nomb)
-                            }).then(()=>{
-                                dataReffinal.child(nomc).set({
-                                    'nomc' : (nomc)
-                                }).then(()=>{
-                                    load.style.display = 'none';
-                                }).catch((error)=>{
-                                    load.style.display = 'none';
-                                    window.alert("erreur survenue : "+ error);
-                                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                                });        
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                            });
-
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                        });
                         
                     }
-
-
-
+                
                     dataRefb.set({
                             'a1' : (a1) ,
                             'a2' : (a2) ,
@@ -2923,8 +2925,15 @@
                             'nomc' : (nomc)
 
                         }).then(()=>{
-                            load.style.display = 'none';
-                            window.alert("Sauvegarde reuissie.");
+
+                            if (linked == "22222222") {
+                                load.style.display = 'none';
+                            } else if (linked == "33333333") {
+                                load.style.display = 'none';
+                            } else {
+                                load.style.display = 'none';
+                                window.alert("Sauvegarde reuissie.");
+                            }
                                           
                         }).catch((error)=>{
                             load.style.display = 'none';

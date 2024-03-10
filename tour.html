@@ -49,38 +49,55 @@
                 <b class="tta" id="nompart" >Open</b>
 
                 <b class="ttb" onclick="formi()" >Inscriptions</b>
-
-
-                <div class="entete">
-                    <b class="boxentete" id="tot" style="background-color: rgb(46, 184, 69); text-align: start; border-top-left-radius: 10px; border-bottom-left-radius: 10px; 
-                    padding-left: 15px; width: 70px; margin-left: 15px; " onclick="play()" >Rank</b>                
-                    <b class="boxenteteu" id="listplayer" onclick="play()" >Players ...</b>                
-                    <b class="boxentete" >1</b>
-                    <b class="boxentete" >2</b>                
-                    <b class="boxentete" >3</b>                
-                    <b class="boxentete" >4</b>                
-                    <b class="boxentete" >5</b>                
-                    <b class="boxentete" >6</b> 
-                    <b class="boxentete" >7</b>                
-                    <b class="boxentete" >8</b>                
-                    <b class="boxentete" >9</b>                
-                    <b class="boxentete" >10</b>                
-                    <b class="boxentete" >11</b>                
-                    <b class="boxentete" >12</b> 
-                    <b class="boxentete" >13</b>                
-                    <b class="boxentete" >14</b>                
-                    <b class="boxentete" >15</b>                
-                    <b class="boxentete" >16</b>                
-                    <b class="boxentete" >17</b>                
-                    <b class="boxentete" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;
-                    width: 35px;" >18</b>                
+                
+                <div class="entete" style=" height: auto; border-radius: 15px; margin-left: 15px; margin-right: 25px;">
                     
-                    <b class="boxentete" style="font-size: 11px; background-color: rgb(2, 89, 26); border: 1px solid #05b102;border-radius: 5px; width: 50px; margin-left: 5px;" >Net</b>                
-                    <b class="boxentete" style="font-size: 11px; background-color: rgba(216, 4, 4); border-radius: 5px; width: 50px; margin-left: 5px;" >Brut</b>                
-                    <b class="boxentete" style="font-size: 11px; color: rgb(2, 89, 26); background-color: rgb(255, 238, 3); border-radius: 5px; width: 50px; margin-left: 5px;" >Today</b>                
+                    <b class="boxentetejz" onclick="play()" ></b>                
+                    <b class="boxentetej" style="text-align: start; border-top-left-radius: 8px; border-top-left-radius: 8px; 
+                    border-bottom-left-radius: 8px;  border-bottom-right-radius: 0px; border-top-right-radius: 0px; padding-left: 9px; width: 230px; margin-left: 24px; 
+                    background-color: #05571e;" >(index) Players ...</b>                
+                    
+
+                    <b class="boxentetejt" style="border-radius: 0px; background-color: #05571e;" id="h1a" >1</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h2a" >2</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h3a" >3</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h4a" >4</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h5a" >5</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h6a" >6</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h7a" >7</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h8a" >8</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h9a" >9</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h10a" >10</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h11a" >11</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h12a" >12</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h13a" >13</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h14a" >14</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h15a" >15</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h16a" >16</b>
+                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h17a" >17</b>
+                    <b class="boxentetej" style="border-radius: 0px; border-bottom-right-radius: 8px; border-top-right-radius: 8px; background-color: #05571e;" id="h18a" >18</b>
+                               
+                    <b class="boxenteteje" id="h19a"  style="border-radius: 0px; border-top-right-radius: 8px; border-top-left-radius: 8px; margin-left: 13px; background-color: rgb(0, 165, 47); border: 1px solid #0074157a;">Net</b>                
+                    <b class="boxenteteje" id="h20a" style="border-radius: 0px; border-top-right-radius: 8px; border-top-left-radius: 8px; background-color: rgb(216, 4, 4); border: 1px solid #0074157a;">Brut</b>                
+                    <b class="boxenteteje" id="h21a" style="border-radius: 0px; border-top-right-radius: 8px; border-top-left-radius: 8px; color: #05571e; background-color: rgb(255, 238, 3); border: 1px solid #0074157a;" >Tot</b>                
 
                 </div>
-                <div class="entete" style=" border-radius: 15px; padding-bottom: 15px; background-color: rgba(0, 90, 5, 0.774); margin-left: 15px; margin-right: 25px;">
+
+                <div class="entete" style=" margin-top: 10px; border-radius: 15px; padding-bottom: 15px; background-color: rgba(0, 90, 5, 0.774); margin-left: 15px; margin-right: 25px;">
+                    <img id="ba" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bb" style="margin-top: 56px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bc" style="margin-top: 77px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bd" style="margin-top: 98px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="be" style="margin-top: 119px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bf" style="margin-top: 140px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bg" style="margin-top: 161px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bh" style="margin-top: 182px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bi" style="margin-top: 203px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bj" style="margin-top: 224px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bk" style="margin-top: 245px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bl" style="margin-top: 266px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bm" style="margin-top: 287px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
+                    <img id="bn" style="margin-top: 308px;" class="bartab" src="./design_files/images/tourimg.jpg" alt="image">
                     <b class="boxentetejz" id="total"onclick="play()" ></b>                
                     <b class="boxentetej" id="players" style="text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
                       border: none; padding-left: 9px; width: 230px; margin-left: 24px; background-color: transparent; " ></b>                
@@ -188,6 +205,21 @@
         var dataRefauto = firebase.database().ref("open").child(nameopen);
         var i = 0 ;
 
+        var ba = document.getElementById("ba");                
+        var bb = document.getElementById("bb");                
+        var bc = document.getElementById("bc");                
+        var bd = document.getElementById("bd");                
+        var be = document.getElementById("be");                
+        var bf = document.getElementById("bf");                
+        var bg = document.getElementById("bg");                
+        var bh = document.getElementById("bh");                
+        var bi = document.getElementById("bi");                
+        var bj = document.getElementById("bj");                
+        var bk = document.getElementById("bk");                
+        var bl = document.getElementById("bl");                
+        var bm = document.getElementById("bm");                
+        var bn = document.getElementById("bn");                
+
         
             dataRefauto.on("value" , function(snapshot){
                 play();
@@ -243,6 +275,232 @@
                     document.querySelector('#par').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
                     document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
 
+                    if (i==0) {
+                        ba.style.display="none";
+                        bb.style.display="none";
+                        bc.style.display="none";
+                        bd.style.display="none";
+                        be.style.display="none";
+                        bf.style.display="none";
+                        bg.style.display="none";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==1) {
+                        ba.style.display="block";
+                        bb.style.display="none";
+                        bc.style.display="none";
+                        bd.style.display="none";
+                        be.style.display="none";
+                        bf.style.display="none";
+                        bg.style.display="none";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==2) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="none";
+                        bd.style.display="none";
+                        be.style.display="none";
+                        bf.style.display="none";
+                        bg.style.display="none";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==3) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="none";
+                        be.style.display="none";
+                        bf.style.display="none";
+                        bg.style.display="none";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==4) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="none";
+                        bf.style.display="none";
+                        bg.style.display="none";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==5) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="none";
+                        bg.style.display="none";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==6) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="none";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==7) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="none";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==8) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="none";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==9) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="none";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==10) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="none";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==11) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="none";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==2) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="none";
+                        bn.style.display="none";
+                    } else if (i==13) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="block";
+                        bn.style.display="none";
+                    } else if (i==14) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="block";
+                        bn.style.display="block";
+                    }
                 });        
 
             });
