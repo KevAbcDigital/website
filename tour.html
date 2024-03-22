@@ -28,62 +28,111 @@
 
     </head>
 
-    <body style="background-color: black;">
+    <body style="background-color: rgba(55, 180, 99, 0.895);">
 
         <audio loop autoplay id="autoplay">
             <source src="sona.mp3" type="audio/mpeg">
         </audio>
 
-        <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
+        <section id="toursliderabcphone" class="toursliderabcphone" >
+           
+            <b style="position: relative; margin-top: 50px; display: block; font-size: 13px; padding-left: 20px; color: white;" >Rotez l'ecran pour consulter les resultats</b>
+            <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
+
+        </section>
 
         <section id="toursliderabc" class="toursliderabc">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/tourimg.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/giftour.gif" alt="image">
             <img name="imgid" class="slideidaaab" src="./design_files/images/toure.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/tourgifb.gif" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourh.jpg" alt="image">
+            <img name="imgid" class="slideidaaab" src="./design_files/images/tourimg.jpg" alt="image">
             
 
             <section class="score">
      
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player style="width: 80%; margin-left: 10%; z-index: 1600; display: none; position: absolute;" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                background="transparent" speed="1"  loop autoplay></lottie-player> 
+
                 <b class="tt" >LEADERBOARD</b>
                 <b class="tta" id="nompart" >Open</b>
 
-                <b class="ttb" onclick="formi()" >Inscriptions</b>
+                <b class="ttb" onclick="formi()" >Cherher</b>
+
+                <input id="codesearch" type="text" placeholder="Rechercher un tournoi ..." class="form-controlab">
+
+                <img name="imgid" class="logogolf" src="./design_files/images/logogc.png" alt="image">
+
                 
-                <div class="entete" style=" height: auto; border-radius: 15px; margin-left: 15px; margin-right: 25px;">
-                    
-                    <b class="boxentetejz" onclick="play()" ></b>                
-                    <b class="boxentetej" style="text-align: start; border-top-left-radius: 8px; border-top-left-radius: 8px; 
-                    border-bottom-left-radius: 8px;  border-bottom-right-radius: 0px; border-top-right-radius: 0px; padding-left: 9px; width: 230px; margin-left: 24px; 
-                    background-color: #05571e;" >(index) Players ...</b>                
-                    
 
-                    <b class="boxentetejt" style="border-radius: 0px; background-color: #05571e;" id="h1a" >1</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h2a" >2</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h3a" >3</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h4a" >4</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h5a" >5</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h6a" >6</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h7a" >7</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h8a" >8</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h9a" >9</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h10a" >10</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h11a" >11</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h12a" >12</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h13a" >13</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h14a" >14</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h15a" >15</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h16a" >16</b>
-                    <b class="boxentetej" style="border-radius: 0px; background-color: #05571e;" id="h17a" >17</b>
-                    <b class="boxentetej" style="border-radius: 0px; border-bottom-right-radius: 8px; border-top-right-radius: 8px; background-color: #05571e;" id="h18a" >18</b>
-                               
-                    <b class="boxenteteje" id="h19a"  style="border-radius: 0px; border-top-right-radius: 8px; border-top-left-radius: 8px; margin-left: 13px; background-color: rgb(0, 165, 47); border: 1px solid #0074157a;">Net</b>                
-                    <b class="boxenteteje" id="h20a" style="border-radius: 0px; border-top-right-radius: 8px; border-top-left-radius: 8px; background-color: rgb(216, 4, 4); border: 1px solid #0074157a;">Brut</b>                
-                    <b class="boxenteteje" id="h21a" style="border-radius: 0px; border-top-right-radius: 8px; border-top-left-radius: 8px; color: #05571e; background-color: rgb(255, 238, 3); border: 1px solid #0074157a;" >Tot</b>                
+                <div class="entete" style="padding-top: 30px; border-top-right-radius: 15px; padding-bottom: 0px;">
+                   
+                    <b class="boxentetejz" style=" border: none; background-color: transparent; margin-left: 1%;"onclick="play()" >   </b>                
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" onclick="play()" >   </b>                
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" onclick="play()" >   </b>                
+                    <b class="boxentetejw" style="text-align: end; padding-right: 10px;" >Par</b>                
+                    <b class="boxentetejz" >3</b>
+                    <b class="boxentetejz" >5</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >5</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >3</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" >36</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >3</b>
+                    <b class="boxentetejz" >5</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >5</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >3</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" >36</b>
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
+                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
 
+         
                 </div>
 
-                <div class="entete" style=" margin-top: 10px; border-radius: 15px; padding-bottom: 15px; background-color: rgba(0, 90, 5, 0.774); margin-left: 15px; margin-right: 25px;">
+                <div class="entete" style="padding-bottom: 6px;">
+                   
+                    <b class="boxentetejz" style="margin-left: 1%;"onclick="play()" >cla</b>                
+                    <b class="boxentetejz" style="background-color: #00d1f5;" onclick="play()" >hcp</b>                
+                    <b class="boxentetejz" onclick="play()" >Net</b>                
+                    <b class="boxentetejw" >Players</b>                
+                    <b class="boxentetejz" >1</b>
+                    <b class="boxentetejz" >2</b>
+                    <b class="boxentetejz" >3</b>
+                    <b class="boxentetejz" >4</b>
+                    <b class="boxentetejz" >5</b>
+                    <b class="boxentetejz" >6</b>
+                    <b class="boxentetejz" >7</b>
+                    <b class="boxentetejz" >8</b>
+                    <b class="boxentetejz" >9</b>
+                    <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: 1px solid #ffffff;" >Al</b>
+                    <b class="boxentetejz" >10</b>
+                    <b class="boxentetejz" >11</b>
+                    <b class="boxentetejz" >12</b>
+                    <b class="boxentetejz" >13</b>
+                    <b class="boxentetejz" >14</b>
+                    <b class="boxentetejz" >15</b>
+                    <b class="boxentetejz" >16</b>
+                    <b class="boxentetejz" >17</b>
+                    <b class="boxentetejz" >18</b>
+                    <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: 1px solid #ffffff;" >Re</b>
+                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J1</b>
+                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J2</b>
+                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J3</b>
+                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J4</b>
+
+         
+                </div>
+
+                <div class="entete" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" >
                     <img id="ba" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bb" style="margin-top: 56px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bc" style="margin-top: 77px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
@@ -98,31 +147,43 @@
                     <img id="bl" style="margin-top: 266px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bm" style="margin-top: 287px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bn" style="margin-top: 308px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <b class="boxentetejz" id="total"onclick="play()" ></b>                
-                    <b class="boxentetej" id="players" style=" text-transform: uppercase; text-align: start; border-top-left-radius: 5px; border-bottom-left-radius: 5px; 
-                      border: none; padding-left: 9px; width: 230px; margin-left: 24px; background-color: transparent; " ></b>                
-                    <b class="boxentetejt" id="h1" ></b>
-                    <b class="boxentetej" id="h2" ></b>
-                    <b class="boxentetej" id="h3" ></b>
-                    <b class="boxentetej" id="h4" ></b>
-                    <b class="boxentetej" id="h5" ></b>
-                    <b class="boxentetej" id="h6" ></b>
-                    <b class="boxentetej" id="h7" ></b>
-                    <b class="boxentetej" id="h8" ></b>
-                    <b class="boxentetej" id="h9" ></b>
-                    <b class="boxentetej" id="h10" ></b>
-                    <b class="boxentetej" id="h11" ></b>
-                    <b class="boxentetej" id="h12" ></b>
-                    <b class="boxentetej" id="h13" ></b>
-                    <b class="boxentetej" id="h14" ></b>
-                    <b class="boxentetej" id="h15" ></b>
-                    <b class="boxentetej" id="h16" ></b>
-                    <b class="boxentetej" id="h17" ></b>
-                    <b class="boxentetej" id="h18" ></b>
+                    <img id="bo" style="margin-top: 329px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
+                    <img id="bp" style="margin-top: 350px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
+                    <img id="bq" style="margin-top: 371px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
+                    <img id="br" style="margin-top: 392px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
+                    <img id="bs" style="margin-top: 413px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
+                    
+                    
+                    <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border: 1px solid #ffffff; margin-left: 1%;" id="total"onclick="play()" ></b>                
+                    <b class="boxentetejz" style="border: 1px solid #ffffff;"  id="hcp"onclick="play()" ></b>        
+                    <b class="boxentetejz" style=" background-color: rgb(165, 36, 0); border: 1px solid #ffffff;" id="net"></b>                        
+                    <b class="boxentetejw" id="players"></b>                
+                    <b class="boxentetejz" id="h1" ></b>
+                    <b class="boxentetejz" id="h2" ></b>
+                    <b class="boxentetejz" id="h3" ></b>
+                    <b class="boxentetejz" id="h4" ></b>
+                    <b class="boxentetejz" id="h5" ></b>
+                    <b class="boxentetejz" id="h6" ></b>
+                    <b class="boxentetejz" id="h7" ></b>
+                    <b class="boxentetejz" id="h8" ></b>
+                    <b class="boxentetejz" id="h9" ></b>
+                    <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
+                    <b class="boxentetejz" id="h10" ></b>
+                    <b class="boxentetejz" id="h11" ></b>
+                    <b class="boxentetejz" id="h12" ></b>
+                    <b class="boxentetejz" id="h13" ></b>
+                    <b class="boxentetejz" id="h14" ></b>
+                    <b class="boxentetejz" id="h15" ></b>
+                    <b class="boxentetejz" id="h16" ></b>
+                    <b class="boxentetejz" id="h17" ></b>
+                    <b class="boxentetejz" id="h18" ></b>
+                    <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
+                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;"  id="par" ></b>
+                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;" id="day" ></b>
+                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;" id="net" ></b>
+                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;" id="total" ></b>
+
                                
-                    <b class="boxenteteje" style=" margin-left: 13px; background-color: rgb(0, 165, 47); border: 1px solid #a5b102;" id="net"></b>                
-                    <b class="boxenteteje" style="background-color: rgb(216, 4, 4);; border: 1px solid #02d50c1e;" id="par"></b>                
-                    <b class="boxenteteje" style="color: #05571e; background-color: rgb(255, 238, 3);" id="day"></b>                
 
                 </div>
 
@@ -143,16 +204,18 @@
     <script>
 
 
+
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
             var toursliderabc = document.getElementById('toursliderabc');
+            var toursliderabcphone = document.getElementById('toursliderabcphone');
 
             if (portrait) {
-                rotate.style.display="block";
                 toursliderabc.style.display="none";
+                toursliderabcphone.style.display="block";
             } else {
-                rotate.style.display="none";
+                toursliderabcphone.style.display="none";
                 toursliderabc.style.display="flex";
             }
         });
@@ -195,9 +258,131 @@
         const database = firebase.database();
 
         
-        function formi(){                           
-            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+        var dataRefautoa = firebase.database().ref("open").child(nameopen);
+        var dataRefcount = firebase.database().ref("count");
+        var i = 0 ;
+        var az = "0";
+        var a ="a";
+        var aa ="a";
+
+        var b ="b";
+        var bb ="b";
+
+        var c ="c";
+        var cc ="c";
+
+        var d ="d";
+        var dd ="d";
+
+
+        var a1 = document.getElementById("player1");                
+        var a2 = document.getElementById("player2");                
+        var a3 = document.getElementById("player3");                
+
+        
+        dataRefcount.on("value" , function(snapshot){
+            snapshot.forEach(function(element){ 
+                az = element.key;
+            });
+        });    
+
+
+        dataRefautoa.on("value" , function(snapshot){
+            i=0;                                
+            snapshot.forEach(function(element){ 
+                i = i + 1;
+                aa+= "&" + (element.key);
+                document.querySelector('#players').innerHTML += "-----" +  ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) + " ";
+            });
+            var index = parseInt(az);
+            
+            bb = aa.split("&")[index];
+            cc = aa.split("&")[index + 1];
+            dd = aa.split("&")[index + 2];
+
+            if ((bb == undefined) ) {
+                b = "aucun";
+            } else {
+                b = bb.split(" ")[2] + " " + bb.split(" ")[3];
+            }
+            if ((cc == undefined) ) {
+                c = "aucun";
+            } else {
+                c = cc.split(" ")[2] + " " + cc.split(" ")[3];
+            }
+            if ((dd == undefined) ) {
+                d = "aucun";
+            } else {
+                d = dd.split(" ")[2] + " " + dd.split(" ")[3];
+            }
+
+            a1.value = b;
+            a2.value = c;
+            a3.value = d;
+
+        });
+        
+
+*/
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        
+        function formi(){       
+            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html'; 
+       }
 
 
         var nompart = document.getElementById("nompart");          
@@ -221,12 +406,18 @@
         var bl = document.getElementById("bl");                
         var bm = document.getElementById("bm");                
         var bn = document.getElementById("bn");                
+        var bo = document.getElementById("bo");                
+        var bp = document.getElementById("bp");                
+        var bq = document.getElementById("bq");                
+        var br = document.getElementById("br");                
+        var bs = document.getElementById("bs");                
 
         
             dataRefauto.on("value" , function(snapshot){
                 play();
                 i=0;
                 document.querySelector('#total').innerHTML = "";
+                document.querySelector('#hcp').innerHTML = "";
                 document.querySelector('#players').innerHTML = "";
                 document.querySelector('#h1').innerHTML = "";
                 document.querySelector('#h2').innerHTML = "";
@@ -255,6 +446,7 @@
                     i = i + 1;
                     document.querySelector('#total').innerHTML+=`<div>${ i.toString() }</div>`
                     document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
+                    document.querySelector('#hcp').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [23] ) }</div>`
                     document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [4] ) + " " }</div>`
                     document.querySelector('#h2').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [5] ) }</div>`
                     document.querySelector('#h3').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [6] ) }</div>`
@@ -292,7 +484,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==1) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==1) {
                         ba.style.display="block";
                         bb.style.display="none";
                         bc.style.display="none";
@@ -307,7 +505,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==2) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==2) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="none";
@@ -322,7 +526,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==3) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==3) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -337,7 +547,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==4) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==4) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -352,7 +568,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==5) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==5) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -367,7 +589,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==6) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==6) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -382,7 +610,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==7) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==7) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -397,7 +631,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==8) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==8) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -412,7 +652,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==9) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==9) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -427,7 +673,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==10) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==10) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -442,7 +694,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==11) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==11) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -457,7 +715,13 @@
                         bl.style.display="none";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==2) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==2) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -472,7 +736,13 @@
                         bl.style.display="block";
                         bm.style.display="none";
                         bn.style.display="none";
-                    } else if (i==13) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==13) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -487,7 +757,13 @@
                         bl.style.display="block";
                         bm.style.display="block";
                         bn.style.display="none";
-                    } else if (i==14) {
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==14) {
                         ba.style.display="block";
                         bb.style.display="block";
                         bc.style.display="block";
@@ -502,6 +778,116 @@
                         bl.style.display="block";
                         bm.style.display="block";
                         bn.style.display="block";
+                        bo.style.display="none";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==15) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="block";
+                        bn.style.display="block";
+                        bo.style.display="block";
+                        bp.style.display="none";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==16) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="block";
+                        bn.style.display="block";
+                        bo.style.display="block";
+                        bp.style.display="block";
+                        bq.style.display="none";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==17) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="block";
+                        bn.style.display="block";
+                        bo.style.display="block";
+                        bp.style.display="block";
+                        bq.style.display="block";
+                        br.style.display="none";
+                        bs.style.display="none";
+                    } 
+                    else if (i==18) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="block";
+                        bn.style.display="block";
+                        bo.style.display="block";
+                        bp.style.display="block";
+                        bq.style.display="block";
+                        br.style.display="block";
+                        bs.style.display="none";
+                    }
+                    else if (i==19) {
+                        ba.style.display="block";
+                        bb.style.display="block";
+                        bc.style.display="block";
+                        bd.style.display="block";
+                        be.style.display="block";
+                        bf.style.display="block";
+                        bg.style.display="block";
+                        bh.style.display="block";
+                        bi.style.display="block";
+                        bj.style.display="block";
+                        bk.style.display="block";
+                        bl.style.display="block";
+                        bm.style.display="block";
+                        bn.style.display="block";
+                        bo.style.display="block";
+                        bp.style.display="block";
+                        bq.style.display="block";
+                        br.style.display="block";
+                        bs.style.display="block";
                     }
                 });        
 

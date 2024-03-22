@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>amicale</title>
+        <title>formulaire</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
@@ -28,8 +28,8 @@
 
     </head>
 
-    <body style="background-color: #001f01;">
-    
+    <body style="background-image: linear-gradient(rgb(3, 139, 149) , rgb(2, 142, 0)), url(./design_files/images/bartour.png);">
+
         <header style="background-color: transparent">
 
             <input type="checkbox" id="menu-bar">
@@ -52,7 +52,7 @@
                     </li>
 
 
-                    <li class="boutonm" onclick="openhome();" >
+                    <li class="boutonm" onclick="opena();" >
                          <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxd.png" alt="image">
                     </li>
 
@@ -64,10 +64,6 @@
                         <img style="width: 94%; margin-left: 3%; margin-top: 5px; height: auto;" src="./design_files/images/boxaa.png" alt="image">
                    </li>
 
-                   <li class="boutonm" onclick="openshop();" >
-                        <img style="width: 94%; margin-top: 5px; margin-left: 3%; height: auto;" src="./design_files/images/boxee.png" alt="image">
-                    </li>
-
                    <li class="boutonm"><a> </a></li>
                    <li class="boutonm"><a> </a></li>
                    <li class="boutonm"><a> </a></li>
@@ -77,159 +73,115 @@
 
         </header>
 
-        <section class="headerb">
- 
-            <div class="logo">
-                <img  href="index.html" src="./design_files/images/pngolf.png" alt="image">
-            </div>
+        <b style="color: rgb(255, 255, 255); margin-left: 10%; position: absolute; 
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+            font-size: 17px; font-weight: 800; margin-top: 120px; ">
+                OPEN DU CAMEROUN 2024
+        </b>
+
+        <b style="color: rgb(255, 255, 255); margin-left: 10%; position: absolute; 
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+            font-size: 10px; font-weight: 800; margin-top: 145px; ">
+                Reformez vos groupes de jeu
+        </b>
+
+        <b style="color: rgb(210, 241, 144); margin-left: 10%; position: absolute; 
+            font-family: cursive;
+            font-size: 11px; font-weight: 900; margin-top: 175px; ">
+            jj/mm/YY Powered by GOLF CLUB YAOUNDE
+        </b>
+
+        <section style="position: absolute; bottom: 0; width: 100%;
+         height: 55vh; background-color: #f4f0f0; ">
+
+            <section style="position: relative; width: 84%; box-shadow: -1px 1px 9px #25282592;
+            background-color: #ffffff; margin-left: 8%; border-radius: 20px;"
+            class="formulaire" id="formulaire">
+
+                <div style="padding-top: 35px; padding-bottom: 15px;" class="devisbloc ">
+
+                    <form name="formweb" style="padding: 0 25px;" action="">
 
 
-            <div class="menutop">
-                <ul>
-                    <li><a onclick="openhome();">Home</a></li>
-                    <li><a onclick="openamical();">Suivre ma partie</a></li>
-                    <li><a onclick="opena();">Open KRIBI</a></li>
-                    <li><a onclick="openb();">Open Cameroun</a></li>
-                    <li><a onclick="opentk();">Commencer une partie</a></li>
-                   
-                </ul>
-            </div>
+                        <div class="form-wrapper" style="display: flex; margin-top: 0px;">
+                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: start; padding-left: 20px; width: 66%; margin-right: 2%;">Noms et prenoms</b>
+                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%; margin-right: 2%;">Hcp</b>
+                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%;">Scr</b>
+                        </div>
+
+                        <div class="form-wrapper" style="display: flex; margin-top: 10px;">
+                            <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 66%; margin-right: 2%; " type="text" placeholder="Nom du 1er joueur" class="form-controla">
+                            <input id="ajoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px; width: 15%; margin-right: 2%;" type="number" placeholder="0" class="form-controla">
+                            <input id="sjoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder="0" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper" style="display: flex; margin-top: -5px;">
+                            <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 66%; margin-right: 2%;" type="text" placeholder="Nom du 2eme joueur" class="form-controla">
+                            <input id="ajoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder="0" class="form-controla">
+                            <input id="sjoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder="0" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper" style="display: flex; margin-top: -5px;">
+                            <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 10px; width: 66%; margin-right: 2%; " type="text" placeholder="Nom du 3eme joueur" class="form-controla">
+                            <input id="ajoueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder="0" class="form-controla">
+                            <input id="sjoueur3" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder="0" class="form-controla">
+                        </div>
+
+                        <a style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                             color: rgb(0, 48, 58);" class="titleform"> Securité de votre partie * *</a>
+                             
+                        <div class="form-wrapper" style="display: flex;">
+                            <input id="codepass" style=" display: flex; text-align: center; height: 30px; border: 1px solid #820000; padding-left: 15px; margin-right: 3%;" type="text" placeholder="Code groupe" class="form-controla">
+                            <input id="codeadmin" style=" display: flex; text-align: center; height: 30px; border: 1px solid #820000; padding-left: 15px;" type="text" placeholder="Code ADMIN" class="form-controla">
+                        </div>
+
+                    </form>
+
+                </div>
+            </section>
+
             
-        </section>
+            <div class="form-group container-login100-form-btn" style="margin-top: 0px; margin-bottom: 20px;">
 
-        <img name="imgid" style="height: 100vh;" class="sli" src="./design_files/images/gifform.gif" alt="image">
- 
-        <section style="position: absolute; bottom: 0; margin-bottom: 90px; width: 84%;
-        background-color: #011900ac; margin-left: 8%; border-radius: 20px;"
-         class="formulaire" id="formulaire">
-            
-            <div style="padding-top: 17px;" class="devisbloc ">
+                <button id="valider" style="border-radius: 6px; background-color: rgb(2, 125, 47);
+                color: rgb(255, 255, 255); margin-left: 10%; margin-right: 10%; border-radius: 50px;
+                    box-shadow: -1px 1px 9px #03a700e2; " type="button" onclick="send()">
+                     Créer ce groupe
 
-                <form name="formweb" style="padding: 0 25px;" action="">
-
-                    <b style="color: white; font-size: 10px; text-align: center;">PS: Entrez les noms et prénoms des joueurs suivis de leurs handicaps</b>
-
-                    <div class="form-wrapper" style="display: flex; margin-top: 10px;">
-                        <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px; width: 82%; margin-right: 2%; " type="text" placeholder="Nom du 1er joueur" class="form-controla">
-                        <input id="ajoueur1" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 7px;width: 15%;" type="number" placeholder="0" class="form-controla">
-                    </div>
-
-                    <div class="form-wrapper" style="display: flex; margin-top: -5px;">
-                        <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px; width: 82%; margin-right: 2%;" type="text" placeholder="Nom du 2eme joueur" class="form-controla">
-                        <input id="ajoueur2" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 7px;width: 15%;" type="number" placeholder="0" class="form-controla">
-                    </div>
-
-                    <div class="form-wrapper" style="display: flex; margin-top: -5px;">
-                        <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 15px; width: 82%; margin-right: 2%; " type="text" placeholder="Nom du 3eme joueur" class="form-controla">
-                        <input id="ajoueur3" style=" text-align: center; height: 30px; border: 1px solid #745b00; padding-left: 7px;width: 15%;" type="number" placeholder="0" class="form-controla">
-                    </div>
-
-                    <div class="form-wrapper">
-                        <a style="color: rgb(234, 255, 230);" class="titleform"> Créez un code pour votre partie * *</a>
-                        <input id="codepass" style=" text-align: center; height: 30px; border: 1px solid #047400; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
-                    </div>
-
-                    
-
-                    <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                        <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgba(0, 61, 23, 0.82);
-                         color: rgb(255, 255, 255);
-                              box-shadow: -1px 1px 9px #03a700e2; " type="button" onclick="send()">
-                            C'est parti 
-                            <i class="zmdi zmdi-arrow-right"></i>
-                        </button>
-                    </div>
-        
-                </form>
-
-                    </lottie-player>
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player style="color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                     background="transparent" speed="1"  loop autoplay></lottie-player>
-
-
-            </div>
-        </section>
-
-        <section class="banniereb" id="banniereb">
-            
-            <form name="formweb" style="padding: 0 35px;" action="">
-
-                <div class="form-wrapper">
-                    <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 1 *</a>
-                    <input id="joueur1" style=" border-radius: 7px; height: 30px; text-align: center; width: 50%; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
-                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
-                </div>
-
-                <div class="form-wrapper" style="margin-top: 10px;">
-                    <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 2 *</a>
-                    <input id="joueur2" style=" border-radius: 7px; height: 30px; text-align: center; width: 50%; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
-                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
-                </div>
-
-                <div class="form-wrapper" style="margin-top: 10px;">
-                    <a style="color: rgb(208, 228, 255);" class="titleform">Noms et prénoms du joueur 3 *</a>
-                    <input id="joueur3" style=" border-radius: 7px; height: 30px; text-align: center; width: 50%; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un nom et un prénom" class="form-controla">
-                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
-                </div>
-                <div class="form-wrapper" style="margin-top: 20px;">
-                    <a style="color: rgb(208, 228, 255);" class="titleform">Créez un mot de passe *</a>
-                    <input id="codepass" style=" border-radius: 7px; height: 30px; text-align: center; width: 40%; width: 300px; border: 1px solid #008006ab; padding-left: 15px;" type="text" placeholder="Entrez un code à 8 Caractères" class="form-controla">
-                    <i class="zmdi zmdi zmdi-arrow-right" style="margin-right: 15px;"></i>
-                </div>
-
+                </lottie-player>
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player style=" width: 30%; right: 0;  position: absolute; z-index: 1500; color: #ffffff; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+                background="transparent" speed="1"  loop autoplay></lottie-player>
                 
+                </button>
+            </div>
 
-                <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                    <button id="valider" style="border-radius: 6px; margin-top: 20px; background-color: rgb(255, 208, 0); color: rgb(0, 0, 0);
-                        box-shadow: -1px 1px 9px #838109d2; " type="button" onclick="send()">
-                        C'est parti 
-                        <i class="zmdi zmdi-arrow-right"></i>
-                    </button>
-                </div>
-    
-            </form>
 
-            
         </section>
 
+        <section class="indisponibletxt">
+            <a style="color: white;" class="txtindis">LEADERBOARD</a>
+        </section>  
 
-            
-
-        </section>
-    
+        <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; background-color: transparent;" id="footer">
+            <p style=" width: 100%; text-align: center; color: rgb(49, 60, 49); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © Tous droits réservés - Golf Yde </p>
+        </footer>
 
     </body>
 
     
     <script>
 
-
-        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-            const portrait = e.matches;
-            var gifmenu = document.getElementById('gifmenu');
-            var gifimg = document.getElementById('gifimg');
-            if (portrait) {
-                gifmenu.style.width="90%";
-                gifimg.style.display="block";
-            } else {
-                gifmenu.style.width="50%";
-                gifimg.style.display="none";
-            }
-        });
-         
+        function opena() {
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+        }
         function opentk() {
             window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-        }
-        function openhome() {
-            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
         }
         function openamical() {
             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
         }
-        function openshop() {
-            window.location.href = 'https://kevabcdigital.github.io/website/golfshop.html';
-        }        
+               
             
 
         const firebaseConfig = {
@@ -263,8 +215,11 @@
             var jc = document.getElementById("joueur3");                
             var aja = document.getElementById("ajoueur1");                
             var ajb = document.getElementById("ajoueur2");                
-            var ajc = document.getElementById("ajoueur3");                
-
+            var ajc = document.getElementById("ajoueur3");     
+            var sja = document.getElementById("sjoueur1");                
+            var sjb = document.getElementById("sjoueur2");                
+            var sjc = document.getElementById("sjoueur3");                
+            var cca = document.getElementById("codeadmin");                
             var cc = document.getElementById("codepass");                
 
             var joueur1 = $('#joueur1').val().toLowerCase().trim();
@@ -273,16 +228,21 @@
             var ajoueur1 = $('#ajoueur1').val().toLowerCase().trim();
             var ajoueur2 = $('#ajoueur2').val().toLowerCase().trim();
             var ajoueur3 = $('#ajoueur3').val().toLowerCase().trim();
-
+            var sjoueur1 = $('#sjoueur1').val().toLowerCase().trim();
+            var sjoueur2 = $('#sjoueur2').val().toLowerCase().trim();
+            var sjoueur3 = $('#sjoueur3').val().toLowerCase().trim();
+            var codeadmin = $('#codeadmin').val();
             var codepass = $('#codepass').val();
             var p = 0;
             var dataRef = firebase.database().ref("amical");
 
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
-               & joueur2 != "" & joueur2.length < 21 & codepass != "" & codepass.length == 8
-               & joueur1 != "aucun" & ajoueur1 != "" & ajoueur2 != "" & ajoueur3 != "" 
+               & joueur2 != "" & joueur2.length < 21 & joueur1 != "aucun" & ajoueur1 != "" & ajoueur2 != "" & ajoueur3 != "" 
                & ( containsOnlyNumbers(ajoueur1) == true ) & ( containsOnlyNumbers(ajoueur2) == true ) 
-               & ( containsOnlyNumbers(ajoueur3) == true )) {
+               & ( containsOnlyNumbers(ajoueur3) == true ) & sjoueur1 != "" & sjoueur2 != "" & sjoueur3 != "" 
+               & ( containsOnlyNumbers(sjoueur1) == true ) & ( containsOnlyNumbers(sjoueur2) == true ) 
+               & ( containsOnlyNumbers(sjoueur3) == true ) & codepass != "" & codepass.length == 8
+               & codeadmin != "" & codeadmin.length == 10) {
 
                 if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
                 if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
@@ -292,196 +252,135 @@
                 // nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
                 // window.alert(nbr);
 
-                var l = 0;
-                dataRef.on("value" , function(snapshot){
-                    var i = 0;
-                    snapshot.forEach(function(element){
-                        if(element.key == codepass) {
-                            i = 1;
-                        }
-                    });
-                                                
-                    if ( i == 0 ) {
-                        var dataRefb = firebase.database().ref("amical").child(codepass);
-                        l = 1;
-                        var verifiea = ( "(" + ajoueur1 + ")" + joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
-                        var verifieb = ( "(" + ajoueur2 + ")" + joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
-                        var verifiec = ( "(" + ajoueur3 + ")" + joueur3.split(" ")[0] + " " + joueur3.split(" ")[1]);
+                if (codeadmin == "adminpass" ) {
 
-                        var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + ajoueur1 + " 000";
-                        var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + ajoueur2 + " 000";
-                        var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + ajoueur3 + " 000";
+                    var result = confirm("NB : joueur : " + verifiea + " d'index ( " + ajoueur1 + " ) debutera cette partie avec une carte de " + sjoueur1 + ". Voulez vous continuer ?" );
+                    if (result == false) {
+                        event.preventDefault();
+                    } else {
+                        var resultb = confirm("NB : joueur : " + verifieb + " d'index ( " + ajoueur2 + " ) debutera cette partie avec une carte de " + sjoueur2 + ". Voulez vous continuer ?" );
+                        if (resultb == false) {
+                            event.preventDefault();
+                        } else {
+                            var resultc = confirm("NB : joueur : " + verifiec + " d'index ( " + ajoueur3 + " ) debutera cette partie avec une carte de " + sjoueur3 + ". Voulez vous terminer l'enregistrement ?" );
+                            if (resultc == false) {
+                                event.preventDefault();
+                            } else {
+                                
+                                var l = 0;
+                                dataRef.on("value" , function(snapshot){
+                                    var i = 0;
+                                    snapshot.forEach(function(element){
+                                        if(element.key == codepass) {
+                                            i = 1;
+                                        }
+                                    });
+                                                    
+                                    if ( i == 0 ) {
+                                    var dataRefb = firebase.database().ref("amical").child(codepass);
+                                    l = 1;
+                                    var verifiea = ( joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
+                                    var verifieb = ( joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
+                                    var verifiec = ( joueur3.split(" ")[0] + " " + joueur3.split(" ")[1]);
 
-
-                        if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) & ( ( joueur3.split(" ")[1]) != undefined )  ) {
-                           
-                            dataRefb.set({
-                                'a1' : ("0") ,
-                                'a2' : ("0") ,
-                                'a3' : ("0") ,
-                                'a4' : ("0") ,
-                                'a5' : ("0") ,
-                                'a6' : ("0") ,
-                                'a7' : ("0") ,
-                                'a8' : ("0") ,
-                                'a9' : ("0") ,
-                                'a10' : ("0") ,
-                                'a11' : ("0") ,
-                                'a12' : ("0") ,
-                                'a13' : ("0") ,
-                                'a14' : ("0") ,
-                                'a15' : ("0") ,
-                                'a16' : ("0") ,
-                                'a17' : ("0") ,
-                                'a18' : ("0") ,
+                                    var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur1 + " 00" ;
+                                    var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur2 + " 00" ;
+                                    var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur3 + " 00" ;
 
 
-                                'b1' : ("0") ,
-                                'b2' : ("0") ,
-                                'b3' : ("0") ,
-                                'b4' : ("0") ,
-                                'b5' : ("0") ,
-                                'b6' : ("0") ,
-                                'b7' : ("0") ,
-                                'b8' : ("0") ,
-                                'b9' : ("0") ,
-                                'b10' : ("0") ,
-                                'b11' : ("0") ,
-                                'b12' : ("0") ,
-                                'b13' : ("0") ,
-                                'b14' : ("0") ,
-                                'b15' : ("0") ,
-                                'b16' : ("0") ,
-                                'b17' : ("0") ,
-                                'b18' : ("0") ,
-
-
-                                'c1' : ("0") ,
-                                'c2' : ("0") ,
-                                'c3' : ("0") ,
-                                'c4' : ("0") ,
-                                'c5' : ("0") ,
-                                'c6' : ("0") ,
-                                'c7' : ("0") ,
-                                'c8' : ("0") ,
-                                'c9' : ("0") ,
-                                'c10' : ("0") ,
-                                'c11' : ("0") ,
-                                'c12' : ("0") ,
-                                'c13' : ("0") ,
-                                'c14' : ("0") ,
-                                'c15' : ("0") ,
-                                'c16' : ("0") ,
-                                'c17' : ("0") ,
-                                'c18' : ("0") ,
-
-                                'joueur1' : (verifiea) ,
-                                'joueur2' : (verifieb) ,
-                                'joueur3' : (verifiec) ,
-
-                                'net1' : (ajoueur1) ,
-                                'net2' : (ajoueur2) ,
-                                'net3' : (ajoueur3) ,
-
-                                'netj1' : ("00") ,
-                                'netj2' : ("00") ,
-                                'netj3' : ("00") ,
-
-                                'brut1' : ("00") ,
-                                'brut2' : ("00") ,
-                                'brut3' : ("00") ,
-
-                                'noma' : (noma) ,
-                                'nomb' : (nomb) ,
-                                'nomc' : (nomc) 
-
-
-                            }).then(()=>{
-
-                                if ( (codepass == "00000000") || (codepass == "00000001") || (codepass == "00000002") || (codepass == "00000003") 
-                                || (codepass == "00000004") || (codepass == "00000016") || (codepass == "00000028") || (codepass == "00000040")
-                                || (codepass == "00000005") || (codepass == "00000017") || (codepass == "00000029") || (codepass == "00000041")
-                                || (codepass == "00000006") || (codepass == "00000018") || (codepass == "00000030") || (codepass == "00000042")
-                                || (codepass == "00000007") || (codepass == "00000019") || (codepass == "00000031") || (codepass == "00000043")
-                                || (codepass == "00000008") || (codepass == "00000020") || (codepass == "00000032") || (codepass == "00000044")
-                                || (codepass == "00000009") || (codepass == "00000021") || (codepass == "00000033") || (codepass == "00000045")
-                                || (codepass == "00000010") || (codepass == "00000022") || (codepass == "00000034") || (codepass == "00000046")
-                                || (codepass == "00000011") || (codepass == "00000023") || (codepass == "00000035") || (codepass == "00000047")
-                                || (codepass == "00000012") || (codepass == "00000024") || (codepass == "00000036") || (codepass == "00000048")
-                                || (codepass == "00000013") || (codepass == "00000025") || (codepass == "00000037") || (codepass == "00000049")
-                                || (codepass == "00000014") || (codepass == "00000026") || (codepass == "00000038") || (codepass == "00000050")
-                                || (codepass == "00000015") || (codepass == "00000027") || (codepass == "00000039") ) {
+                                    if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) & ( ( joueur3.split(" ")[1]) != undefined )  ) {
                                     
+                                        dataRefb.set({
+                                            'a1' : ("0") , 'a2' : ("0") , 'a3' : ("0") , 'a4' : ("0") , 'a5' : ("0") ,
+                                            'a6' : ("0") , 'a7' : ("0") , 'a8' : ("0") , 'a9' : ("0") , 'a10' : ("0") ,
+                                            'a11' : ("0") , 'a12' : ("0") , 'a13' : ("0") , 'a14' : ("0") , 'a15' : ("0") ,
+                                            'a16' : ("0") , 'a17' : ("0") , 'a18' : ("0") ,
 
-                                    var result = confirm("NB : les joueurs (d'index) " + verifiea + " , " + verifieb + " , " + verifiec + " seront inscrits dans le meme groupe . Voulez vous continuer ?" );
-                                    if (result == false) {
-                                        event.preventDefault();
-                                    } else {
-                                        var dataReffinal = firebase.database().ref("open").child("opena");
-                                    dataReffinal.child(noma).set({
-                                        'noma' : (noma)
-                                    }).then(()=>{
-                                        
-                                        var dataReffinal = firebase.database().ref("open").child("opena");
-                                        dataReffinal.child(nomb).set({
-                                            'nomb' : (nomb)
+                                            'b1' : ("0") , 'b2' : ("0") , 'b3' : ("0") , 'b4' : ("0") , 'b5' : ("0") ,
+                                            'b6' : ("0") , 'b7' : ("0") , 'b8' : ("0") , 'b9' : ("0") , 'b10' : ("0") ,
+                                            'b11' : ("0") , 'b12' : ("0") , 'b13' : ("0") , 'b14' : ("0") , 'b15' : ("0") ,
+                                            'b16' : ("0") , 'b17' : ("0") , 'b18' : ("0") ,
+
+                                            'c1' : ("0") , 'c2' : ("0") , 'c3' : ("0") , 'c4' : ("0") , 'c5' : ("0") ,
+                                            'c6' : ("0") , 'c7' : ("0") , 'c8' : ("0") , 'c9' : ("0") , 'c10' : ("0") ,
+                                            'c11' : ("0") , 'c12' : ("0") , 'c13' : ("0") , 'c14' : ("0") , 'c15' : ("0") ,
+                                            'c16' : ("0") , 'c17' : ("0") , 'c18' : ("0") ,
+
+                                            'joueur1' : (verifiea) ,
+                                            'joueur2' : (verifieb) ,
+                                            'joueur3' : (verifiec) ,
+
+                                            'net1' : (ajoueur1) ,
+                                            'net2' : (ajoueur2) ,
+                                            'net3' : (ajoueur3) ,
+
+                                            'netj1' : ("00") ,
+                                            'netj2' : ("00") ,
+                                            'netj3' : ("00") ,
+
+                                            'brut1' : (sjoueur1) ,
+                                            'brut2' : (sjoueur2) ,
+                                            'brut3' : (sjoueur3) ,
+
+                                            'noma' : (noma) ,
+                                            'nomb' : (nomb) ,
+                                            'nomc' : (nomc) 
+
                                         }).then(()=>{
+
+                                            var dataReffinal = firebase.database().ref("open").child("open du cameroun 2024");
+                                                dataReffinal.child(noma).set({
+                                                    'noma' : (noma)
+                                                }).then(()=>{                                            
+                                                    dataReffinal.child(nomb).set({
+                                                        'nomb' : (nomb)
+                                                    }).then(()=>{                                                
+                                                        dataReffinal.child(nomc).set({
+                                                            'nomc' : (nomc)
+                                                        }).then(()=>{
+                                                            load.style.display = 'none';
+                                                            window.alert("Sauvegarde reuissie.");  
+                                                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';             
+                                                        }).catch((error)=>{
+                                                            load.style.display = 'none';
+                                                            window.alert("erreur survenue : "+ error);
+                                                        });
+                                                    }).catch((error)=>{
+                                                        load.style.display = 'none';
+                                                        window.alert("erreur survenue : "+ error);
+                                                    });
+                                                }).catch((error)=>{
+                                                    load.style.display = 'none';
+                                                    window.alert("erreur survenue : "+ error);
+                                                });
                                             
-                                            var dataReffinal = firebase.database().ref("open").child("opena");
-                                            dataReffinal.child(nomc).set({
-                                                'nomc' : (nomc)
-                                            }).then(()=>{
-                                                load.style.display = 'none';
-                                                window.alert("Sauvegarde reuissie.");  
-                                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';             
-                                            }).catch((error)=>{
-                                                load.style.display = 'none';
-                                                window.alert("erreur survenue : "+ error);
-                                            });
 
                                         }).catch((error)=>{
                                             load.style.display = 'none';
                                             window.alert("erreur survenue : "+ error);
                                         });
-
-                                    }).catch((error)=>{
-                                        load.style.display = 'none';
-                                        window.alert("erreur survenue : "+ error);
-                                    });
-                                    }
                                     
 
+                                    } else {
+                                        load.style.display = "none";
+                                        window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom')
+                                    }
+                            
+                                    }
+                            
+                                    if ( ( i == 1 ) & ( l == 0 ) ) {
+                                        load.style.display = "none";
+                                        window.alert("le code ( " + codepass + " ) a déjà été utilisé pour une partie . Utilisez un autre code");
+                                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                                    }
+                                });
 
-                                } else {
-                                    load.style.display = 'none';
-                                    window.alert("Votre partie amicale a été crée avec succès."); 
-                                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                                }
-                                
 
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                            });
-
-
-                        } else {
-                            load.style.display = "none";
-                            window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom')
+                            }
                         }
-                           
-                    
-                    }
-                    
-                    if ( ( i == 1 ) & ( l == 0 ) ) {
-                        load.style.display = "none";
-                        window.alert("le code ( " + codepass + " ) a déjà été utilisé pour une partie . Utilisez un autre code");
-                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                    }
-                });
-                       
+                    }  
 
-
+                }
 
 
                 
@@ -517,8 +416,16 @@
                 jc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( containsOnlyNumbers(ajoueur1) == false ) {
                 window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
+            } else if ( sjoueur1 == "" ) {
+                window.alert("Entrez le score cummulé du 1er joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
+                cc.style.backgroundColor="rgb(255, 255, 255)";
+                ja.style.backgroundColor="rgb(255, 220, 220)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( containsOnlyNumbers(sjoueur1) == false ) {
+                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( joueur2 == "" ) {
-                window.alert("Entrez (aucun) pour signifier qu'il nya pas de deuxieme joueur et entrez 0 comme handicap ...");
+                window.alert("Entrez (aucun) pour signifier qu'il nya pas de deuxieme joueur , entrez 0 comme handicap et 0 comme score ... ");
                 jb.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
@@ -537,8 +444,16 @@
                 jc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( containsOnlyNumbers(ajoueur2) == false ) {
                 window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
+            } else if ( sjoueur2 == "" ) {
+                window.alert("Entrez le score cummulé du 2eme joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
+                cc.style.backgroundColor="rgb(255, 255, 255)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 220, 220)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( containsOnlyNumbers(sjoueur2) == false ) {
+                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( joueur3 == "" ) {
-                window.alert("Entrez (aucun) pour signifier qu'il nya pas de troisieme joueur et entrez 0 comme handicap  ...");
+                window.alert("Entrez (aucun) pour signifier qu'il nya pas de troisieme joueur , entrez 0 comme handicap et 0 comme score ...");
                 jc.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
@@ -557,18 +472,39 @@
                 jc.style.backgroundColor="rgb(255, 220, 220)";
             } else if ( containsOnlyNumbers(ajoueur3) == false ) {
                 window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
+            } else if ( ajoueur3 == "" ) {
+                window.alert("Entrez le score cummulé du 3eme joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
+                cc.style.backgroundColor="rgb(255, 255, 255)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 220, 220)";
+            } else if ( containsOnlyNumbers(sjoueur3) == false ) {
+                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( codepass == "" ) {
-                window.alert("Entrer un mot de passe pour votre partie privée ...");
+                window.alert("Entrer un mot de passe pour cette partie ...");
                 cc.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 jc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( codepass.length != 8 ) {
-                window.alert("le mot de passe doit contenir exactement 8 caracteres");
+                window.alert("le code de la partie doit contenir exactement 8 caracteres");
                 cc.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( codeadmin == "" ) {
+                window.alert("Entrer votre code admin ...");
+                cca.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( codeadmin.length != 10 ) {
+                window.alert("code incorrect");
+                cca.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+                window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
             }
     
         }
