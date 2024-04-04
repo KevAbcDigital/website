@@ -64,7 +64,7 @@
 
                 
 
-                <div class="entete" style="padding-top: 30px; border-top-right-radius: 15px; padding-bottom: 0px;">
+                <div class="entete" style="padding-top: 40px; border-top-right-radius: 15px; padding-bottom: 0px;">
                    
                     <b class="boxentetejz" style=" border: none; background-color: transparent; margin-left: 1%;"onclick="play()" >   </b>                
                     <b class="boxentetejz" style="border: none; background-color: transparent;" onclick="play()" >   </b>                
@@ -90,18 +90,15 @@
                     <b class="boxentetejz" >3</b>
                     <b class="boxentetejz" >4</b>
                     <b class="boxentetejz" style="border: none; background-color: transparent;" >36</b>
-                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
-                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
-                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
-                    <b class="boxentetejz" style="border: none; background-color: transparent;" >72</b>
-
+                    <b class="boxentetejz" style="width: 40px;  border: none; background-color: transparent;" ></b>
+                    <b class="boxentetejz" style="width: 40px;  border: none; background-color: transparent;" ></b>
          
                 </div>
 
                 <div class="entete" style="padding-bottom: 6px;">
                    
                     <b class="boxentetejz" style="margin-left: 1%;"onclick="play()" >cla</b>                
-                    <b class="boxentetejz" style="background-color: #00d1f5;" onclick="play()" >hcp</b>                
+                    <b class="boxentetejz" style="background-color: #00515f;" onclick="play()" >hcp</b>                
                     <b class="boxentetejz" onclick="play()" >Net</b>                
                     <b class="boxentetejw" >Players</b>                
                     <b class="boxentetejz" >1</b>
@@ -124,12 +121,9 @@
                     <b class="boxentetejz" >17</b>
                     <b class="boxentetejz" >18</b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: 1px solid #ffffff;" >Re</b>
-                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J1</b>
-                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J2</b>
-                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J3</b>
-                    <b class="boxentetejz" style="background-color: #6f0202; border-radius: 4px;" >J4</b>
-
-         
+                    <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border-radius: 4px;" >Today</b>
+                    <b class="boxentetejz" style="width: 50px; background-color: transparent; border: none;  border-radius: 4px;" >Total</b>
+                    
                 </div>
 
                 <div class="entete" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" >
@@ -154,8 +148,8 @@
                     <img id="bs" style="margin-top: 413px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     
                     
-                    <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border: 1px solid #ffffff; margin-left: 1%;" id="total"onclick="play()" ></b>                
-                    <b class="boxentetejz" style="border: 1px solid #ffffff;"  id="hcp"onclick="play()" ></b>        
+                    <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border: 1px solid #ffffff; margin-left: 1%;" id="rank"onclick="play()" ></b>                
+                    <b class="boxentetejz" style="border: 1px solid #ffffff; background-color: #00515f;"  id="hcp"onclick="play()" ></b>        
                     <b class="boxentetejz" style=" background-color: rgb(165, 36, 0); border: 1px solid #ffffff;" id="net"></b>                        
                     <b class="boxentetejw" id="players"></b>                
                     <b class="boxentetejz" id="h1" ></b>
@@ -178,12 +172,8 @@
                     <b class="boxentetejz" id="h17" ></b>
                     <b class="boxentetejz" id="h18" ></b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
-                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;"  id="par" ></b>
-                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;" id="day" ></b>
-                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;" id="net" ></b>
-                    <b class="boxentetejz" style="background-color: #dc0202; border: 1px solid #ffffff;" id="total" ></b>
-
-                               
+                    <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border: 1px solid #ffffff;"  id="day" ></b>
+                    <b class="boxentetejz" style="width: 50px; background-color: transparent; border: none; color: #ebd000; " id="total" ></b>        
 
                 </div>
 
@@ -313,7 +303,7 @@
         function formi(){       
 
         var load = document.getElementById("lottieload");   
-        var codesearch = $('#codesearch').val();
+        var codesearch = $('#codesearch').val().toLowerCase();
         var dataRef = firebase.database().ref("open");
         var nompart = document.getElementById("nompart");          
         if ( codesearch != "") {
@@ -360,7 +350,7 @@
                         dataRefauto.on("value" , function(snapshot){
                             play();
                             i=0;
-                            document.querySelector('#total').innerHTML = "";
+                            document.querySelector('#rank').innerHTML = "";
                             document.querySelector('#hcp').innerHTML = "";
                             document.querySelector('#players').innerHTML = "";
                             document.querySelector('#h1').innerHTML = "";
@@ -382,13 +372,13 @@
                             document.querySelector('#h17').innerHTML = "";
                             document.querySelector('#h18').innerHTML = "";
                             document.querySelector('#net').innerHTML = "";
-                            document.querySelector('#par').innerHTML = "";
+                            document.querySelector('#total').innerHTML = "";
                             document.querySelector('#day').innerHTML = "";
                             
                             snapshot.forEach(function(element){ 
 
                                 i = i + 1;
-                                document.querySelector('#total').innerHTML+=`<div>${ i.toString() }</div>`
+                                document.querySelector('#rank').innerHTML+=`<div>${ i.toString() }</div>`
                                 document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
                                 document.querySelector('#hcp').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [23] ) }</div>`
                                 document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [4] ) + " " }</div>`
@@ -410,7 +400,7 @@
                                 document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
                                 document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
                                 document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
-                                document.querySelector('#par').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
+                                document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
                                 document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
 
                                 if (i==0) {
