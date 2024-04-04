@@ -280,82 +280,12 @@
 
 
 
-/*
-
-
-
-        var dataRefautoa = firebase.database().ref("open").child(nameopen);
-        var dataRefcount = firebase.database().ref("count");
-        var i = 0 ;
-        var az = "0";
-        var a ="a";
-        var aa ="a";
-
-        var b ="b";
-        var bb ="b";
-
-        var c ="c";
-        var cc ="c";
-
-        var d ="d";
-        var dd ="d";
-
-
-        var a1 = document.getElementById("player1");                
-        var a2 = document.getElementById("player2");                
-        var a3 = document.getElementById("player3");                
 
         
-        dataRefcount.on("value" , function(snapshot){
-            snapshot.forEach(function(element){ 
-                az = element.key;
-            });
-        });    
-
-
-        dataRefautoa.on("value" , function(snapshot){
-            i=0;                                
-            snapshot.forEach(function(element){ 
-                i = i + 1;
-                aa+= "&" + (element.key);
-                document.querySelector('#players').innerHTML += "-----" +  ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) + " ";
-            });
-            var index = parseInt(az);
-            
-            bb = aa.split("&")[index];
-            cc = aa.split("&")[index + 1];
-            dd = aa.split("&")[index + 2];
-
-            if ((bb == undefined) ) {
-                b = "aucun";
-            } else {
-                b = bb.split(" ")[2] + " " + bb.split(" ")[3];
-            }
-            if ((cc == undefined) ) {
-                c = "aucun";
-            } else {
-                c = cc.split(" ")[2] + " " + cc.split(" ")[3];
-            }
-            if ((dd == undefined) ) {
-                d = "aucun";
-            } else {
-                d = dd.split(" ")[2] + " " + dd.split(" ")[3];
-            }
-
-            a1.value = b;
-            a2.value = c;
-            a3.value = d;
-
-        });
-        
-
-*/
 
 
 
 
-
-        
 
 
 
@@ -379,519 +309,549 @@
 
 
 
-        
+                    
         function formi(){       
-            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html'; 
-       }
 
-
+        var load = document.getElementById("lottieload");   
+        var codesearch = $('#codesearch').val();
+        var dataRef = firebase.database().ref("open");
         var nompart = document.getElementById("nompart");          
-        if (nameopen == "opena") {
-            nompart.innerHTML= "PresidentCup 2024";
-        }
-        var dataRefauto = firebase.database().ref("open").child(nameopen);
-        var i = 0 ;
+        if ( codesearch != "") {
 
-        var ba = document.getElementById("ba");                
-        var bb = document.getElementById("bb");                
-        var bc = document.getElementById("bc");                
-        var bd = document.getElementById("bd");                
-        var be = document.getElementById("be");                
-        var bf = document.getElementById("bf");                
-        var bg = document.getElementById("bg");                
-        var bh = document.getElementById("bh");                
-        var bi = document.getElementById("bi");                
-        var bj = document.getElementById("bj");                
-        var bk = document.getElementById("bk");                
-        var bl = document.getElementById("bl");                
-        var bm = document.getElementById("bm");                
-        var bn = document.getElementById("bn");                
-        var bo = document.getElementById("bo");                
-        var bp = document.getElementById("bp");                
-        var bq = document.getElementById("bq");                
-        var br = document.getElementById("br");                
-        var bs = document.getElementById("bs");                
+            load.style.display = "block";
+            dataRef.on("value" , function(snapshot){
+                var a = 0;
+                snapshot.forEach(function(element){
+                    if(element.key == codesearch ) {
+                        a=1;
+                        nompart.innerHTML= codesearch ;
+                    }
+                });
+                
+                if ( a == 0 ) {
+                    load.style.display = "none";
+                    window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
+                } else {
+                    load.style.display = "none";
+                    var dataRefauto = firebase.database().ref("open").child(codesearch);
+                    var i = 0 ;
+
+                    var ba = document.getElementById("ba");                
+                    var bb = document.getElementById("bb");                
+                    var bc = document.getElementById("bc");                
+                    var bd = document.getElementById("bd");                
+                    var be = document.getElementById("be");                
+                    var bf = document.getElementById("bf");                
+                    var bg = document.getElementById("bg");                
+                    var bh = document.getElementById("bh");                
+                    var bi = document.getElementById("bi");                
+                    var bj = document.getElementById("bj");                
+                    var bk = document.getElementById("bk");                
+                    var bl = document.getElementById("bl");                
+                    var bm = document.getElementById("bm");                
+                    var bn = document.getElementById("bn");                
+                    var bo = document.getElementById("bo");                
+                    var bp = document.getElementById("bp");                
+                    var bq = document.getElementById("bq");                
+                    var br = document.getElementById("br");                
+                    var bs = document.getElementById("bs");                
+
+                    
+                        dataRefauto.on("value" , function(snapshot){
+                            play();
+                            i=0;
+                            document.querySelector('#total').innerHTML = "";
+                            document.querySelector('#hcp').innerHTML = "";
+                            document.querySelector('#players').innerHTML = "";
+                            document.querySelector('#h1').innerHTML = "";
+                            document.querySelector('#h2').innerHTML = "";
+                            document.querySelector('#h3').innerHTML = "";
+                            document.querySelector('#h4').innerHTML = "";
+                            document.querySelector('#h5').innerHTML = "";
+                            document.querySelector('#h6').innerHTML = "";
+                            document.querySelector('#h7').innerHTML = "";
+                            document.querySelector('#h8').innerHTML = "";
+                            document.querySelector('#h9').innerHTML = "";
+                            document.querySelector('#h10').innerHTML = "";
+                            document.querySelector('#h11').innerHTML = "";
+                            document.querySelector('#h12').innerHTML = "";
+                            document.querySelector('#h13').innerHTML = "";
+                            document.querySelector('#h14').innerHTML = "";
+                            document.querySelector('#h15').innerHTML = "";
+                            document.querySelector('#h16').innerHTML = "";
+                            document.querySelector('#h17').innerHTML = "";
+                            document.querySelector('#h18').innerHTML = "";
+                            document.querySelector('#net').innerHTML = "";
+                            document.querySelector('#par').innerHTML = "";
+                            document.querySelector('#day').innerHTML = "";
+                            
+                            snapshot.forEach(function(element){ 
+
+                                i = i + 1;
+                                document.querySelector('#total').innerHTML+=`<div>${ i.toString() }</div>`
+                                document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
+                                document.querySelector('#hcp').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [23] ) }</div>`
+                                document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [4] ) + " " }</div>`
+                                document.querySelector('#h2').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [5] ) }</div>`
+                                document.querySelector('#h3').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [6] ) }</div>`
+                                document.querySelector('#h4').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [7] ) }</div>`
+                                document.querySelector('#h5').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [8] ) }</div>`
+                                document.querySelector('#h6').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [9] ) }</div>`
+                                document.querySelector('#h7').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [10] ) }</div>`
+                                document.querySelector('#h8').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [11] ) }</div>`
+                                document.querySelector('#h9').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [12] ) }</div>`
+                                document.querySelector('#h10').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [13] ) }</div>`
+                                document.querySelector('#h11').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [14] ) }</div>`
+                                document.querySelector('#h12').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [15] ) }</div>`
+                                document.querySelector('#h13').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [16] ) }</div>`
+                                document.querySelector('#h14').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [17] ) }</div>`
+                                document.querySelector('#h15').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [18] ) }</div>`
+                                document.querySelector('#h16').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [19] ) }</div>`
+                                document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
+                                document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
+                                document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
+                                document.querySelector('#par').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
+                                document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
+
+                                if (i==0) {
+                                    ba.style.display="none";
+                                    bb.style.display="none";
+                                    bc.style.display="none";
+                                    bd.style.display="none";
+                                    be.style.display="none";
+                                    bf.style.display="none";
+                                    bg.style.display="none";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==1) {
+                                    ba.style.display="block";
+                                    bb.style.display="none";
+                                    bc.style.display="none";
+                                    bd.style.display="none";
+                                    be.style.display="none";
+                                    bf.style.display="none";
+                                    bg.style.display="none";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==2) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="none";
+                                    bd.style.display="none";
+                                    be.style.display="none";
+                                    bf.style.display="none";
+                                    bg.style.display="none";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==3) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="none";
+                                    be.style.display="none";
+                                    bf.style.display="none";
+                                    bg.style.display="none";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==4) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="none";
+                                    bf.style.display="none";
+                                    bg.style.display="none";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==5) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="none";
+                                    bg.style.display="none";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==6) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="none";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==7) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="none";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==8) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="none";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==9) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="none";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==10) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="none";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==11) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="none";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==2) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="none";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==13) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="block";
+                                    bn.style.display="none";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==14) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="block";
+                                    bn.style.display="block";
+                                    bo.style.display="none";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==15) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="block";
+                                    bn.style.display="block";
+                                    bo.style.display="block";
+                                    bp.style.display="none";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==16) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="block";
+                                    bn.style.display="block";
+                                    bo.style.display="block";
+                                    bp.style.display="block";
+                                    bq.style.display="none";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==17) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="block";
+                                    bn.style.display="block";
+                                    bo.style.display="block";
+                                    bp.style.display="block";
+                                    bq.style.display="block";
+                                    br.style.display="none";
+                                    bs.style.display="none";
+                                } 
+                                else if (i==18) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="block";
+                                    bn.style.display="block";
+                                    bo.style.display="block";
+                                    bp.style.display="block";
+                                    bq.style.display="block";
+                                    br.style.display="block";
+                                    bs.style.display="none";
+                                }
+                                else if (i==19) {
+                                    ba.style.display="block";
+                                    bb.style.display="block";
+                                    bc.style.display="block";
+                                    bd.style.display="block";
+                                    be.style.display="block";
+                                    bf.style.display="block";
+                                    bg.style.display="block";
+                                    bh.style.display="block";
+                                    bi.style.display="block";
+                                    bj.style.display="block";
+                                    bk.style.display="block";
+                                    bl.style.display="block";
+                                    bm.style.display="block";
+                                    bn.style.display="block";
+                                    bo.style.display="block";
+                                    bp.style.display="block";
+                                    bq.style.display="block";
+                                    br.style.display="block";
+                                    bs.style.display="block";
+                                }
+                        });        
+                        
+
+                    });
+                    
+                }              
+            });
+
+        } else {
+            window.alert("Entrez le nom du tournoi à suivre");
+        }
+
+        }
+
+
+
+
 
         
-            dataRefauto.on("value" , function(snapshot){
-                play();
-                i=0;
-                document.querySelector('#total').innerHTML = "";
-                document.querySelector('#hcp').innerHTML = "";
-                document.querySelector('#players').innerHTML = "";
-                document.querySelector('#h1').innerHTML = "";
-                document.querySelector('#h2').innerHTML = "";
-                document.querySelector('#h3').innerHTML = "";
-                document.querySelector('#h4').innerHTML = "";
-                document.querySelector('#h5').innerHTML = "";
-                document.querySelector('#h6').innerHTML = "";
-                document.querySelector('#h7').innerHTML = "";
-                document.querySelector('#h8').innerHTML = "";
-                document.querySelector('#h9').innerHTML = "";
-                document.querySelector('#h10').innerHTML = "";
-                document.querySelector('#h11').innerHTML = "";
-                document.querySelector('#h12').innerHTML = "";
-                document.querySelector('#h13').innerHTML = "";
-                document.querySelector('#h14').innerHTML = "";
-                document.querySelector('#h15').innerHTML = "";
-                document.querySelector('#h16').innerHTML = "";
-                document.querySelector('#h17').innerHTML = "";
-                document.querySelector('#h18').innerHTML = "";
-                document.querySelector('#net').innerHTML = "";
-                document.querySelector('#par').innerHTML = "";
-                document.querySelector('#day').innerHTML = "";
-                
-                snapshot.forEach(function(element){ 
-
-                    i = i + 1;
-                    document.querySelector('#total').innerHTML+=`<div>${ i.toString() }</div>`
-                    document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
-                    document.querySelector('#hcp').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [23] ) }</div>`
-                    document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [4] ) + " " }</div>`
-                    document.querySelector('#h2').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [5] ) }</div>`
-                    document.querySelector('#h3').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [6] ) }</div>`
-                    document.querySelector('#h4').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [7] ) }</div>`
-                    document.querySelector('#h5').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [8] ) }</div>`
-                    document.querySelector('#h6').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [9] ) }</div>`
-                    document.querySelector('#h7').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [10] ) }</div>`
-                    document.querySelector('#h8').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [11] ) }</div>`
-                    document.querySelector('#h9').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [12] ) }</div>`
-                    document.querySelector('#h10').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [13] ) }</div>`
-                    document.querySelector('#h11').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [14] ) }</div>`
-                    document.querySelector('#h12').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [15] ) }</div>`
-                    document.querySelector('#h13').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [16] ) }</div>`
-                    document.querySelector('#h14').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [17] ) }</div>`
-                    document.querySelector('#h15').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [18] ) }</div>`
-                    document.querySelector('#h16').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [19] ) }</div>`
-                    document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
-                    document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
-                    document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
-                    document.querySelector('#par').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
-                    document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
-
-                    if (i==0) {
-                        ba.style.display="none";
-                        bb.style.display="none";
-                        bc.style.display="none";
-                        bd.style.display="none";
-                        be.style.display="none";
-                        bf.style.display="none";
-                        bg.style.display="none";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==1) {
-                        ba.style.display="block";
-                        bb.style.display="none";
-                        bc.style.display="none";
-                        bd.style.display="none";
-                        be.style.display="none";
-                        bf.style.display="none";
-                        bg.style.display="none";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==2) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="none";
-                        bd.style.display="none";
-                        be.style.display="none";
-                        bf.style.display="none";
-                        bg.style.display="none";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==3) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="none";
-                        be.style.display="none";
-                        bf.style.display="none";
-                        bg.style.display="none";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==4) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="none";
-                        bf.style.display="none";
-                        bg.style.display="none";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==5) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="none";
-                        bg.style.display="none";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==6) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="none";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==7) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="none";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==8) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="none";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==9) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="none";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==10) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="none";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==11) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="none";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==2) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="none";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==13) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="block";
-                        bn.style.display="none";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==14) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="block";
-                        bn.style.display="block";
-                        bo.style.display="none";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==15) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="block";
-                        bn.style.display="block";
-                        bo.style.display="block";
-                        bp.style.display="none";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==16) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="block";
-                        bn.style.display="block";
-                        bo.style.display="block";
-                        bp.style.display="block";
-                        bq.style.display="none";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==17) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="block";
-                        bn.style.display="block";
-                        bo.style.display="block";
-                        bp.style.display="block";
-                        bq.style.display="block";
-                        br.style.display="none";
-                        bs.style.display="none";
-                    } 
-                    else if (i==18) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="block";
-                        bn.style.display="block";
-                        bo.style.display="block";
-                        bp.style.display="block";
-                        bq.style.display="block";
-                        br.style.display="block";
-                        bs.style.display="none";
-                    }
-                    else if (i==19) {
-                        ba.style.display="block";
-                        bb.style.display="block";
-                        bc.style.display="block";
-                        bd.style.display="block";
-                        be.style.display="block";
-                        bf.style.display="block";
-                        bg.style.display="block";
-                        bh.style.display="block";
-                        bi.style.display="block";
-                        bj.style.display="block";
-                        bk.style.display="block";
-                        bl.style.display="block";
-                        bm.style.display="block";
-                        bn.style.display="block";
-                        bo.style.display="block";
-                        bp.style.display="block";
-                        bq.style.display="block";
-                        br.style.display="block";
-                        bs.style.display="block";
-                    }
-                });        
-
-            });
         
 
     </script>
