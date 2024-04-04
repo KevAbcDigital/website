@@ -154,15 +154,15 @@ header {
   overflow-y: scroll;
 }
 .score .tt{
-  font-size: 35px;
+  font-size: 25px;
   color: rgb(255, 251, 210);
-  background-color: rgba(2, 15, 153, 0.842); 
+  background-color: rgba(4, 45, 62, 0.904); 
   padding-left: 12px;
   margin-left: 15px; 
   padding-top: 12px;
   border-top-left-radius: 15px;
   border-top-right-radius: 40px;
-  padding-right: 80px;
+  padding-right: 40px;
 
 }
 .score .tta{
@@ -201,7 +201,7 @@ header {
   display: flex;
   position: relative;
   padding-bottom: 15px; 
-  background-color: rgba(2, 15, 153, 0.904); 
+  background-color: rgba(8, 54, 74, 0.904); 
   margin-left: 15px; 
   margin-right: 25px;
 }
@@ -210,7 +210,7 @@ header {
   width: 70px;
   height: 70px;
   margin-left: 3%;
-  margin-top: 40px;
+  margin-top: 43px;
   z-index: 1700;
   left: 0;
 }
