@@ -100,7 +100,7 @@
                     <b class="boxentetejz" style="margin-left: 1%;"onclick="play()" >cla</b>                
                     <b class="boxentetejz" style="background-color: #00515f;" onclick="play()" >hcp</b>                
                     <b class="boxentetejz" onclick="play()" >Net</b>                
-                    <b class="boxentetejw" >Players</b>                
+                    <b class="boxentetejw" style="text-align: end; padding-right: 10px;" >Hole</b>                
                     <b class="boxentetejz" >1</b>
                     <b class="boxentetejz" >2</b>
                     <b class="boxentetejz" >3</b>
@@ -148,9 +148,9 @@
                     <img id="bs" style="margin-top: 413px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     
                     
-                    <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border: 1px solid #ffffff; margin-left: 1%;" id="rank"onclick="play()" ></b>                
-                    <b class="boxentetejz" style="border: 1px solid #ffffff; background-color: #00515f;"  id="hcp"onclick="play()" ></b>        
-                    <b class="boxentetejz" style=" background-color: rgb(165, 36, 0); border: 1px solid #ffffff;" id="net"></b>                        
+                    <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border-radius: 2px; border: 1px solid #ffffff; margin-left: 1%;" id="rank"onclick="play()" ></b>                
+                    <b class="boxentetejz" style="border: 1px solid #ffffff; border-radius: 2px; background-color: #00515f;"  id="hcp"onclick="play()" ></b>        
+                    <b class="boxentetejz" style=" background-color: rgb(165, 36, 0); border-radius: 2px; border: 1px solid #ffffff;" id="net"></b>                        
                     <b class="boxentetejw" id="players"></b>                
                     <b class="boxentetejz" id="h1" ></b>
                     <b class="boxentetejz" id="h2" ></b>
@@ -172,7 +172,7 @@
                     <b class="boxentetejz" id="h17" ></b>
                     <b class="boxentetejz" id="h18" ></b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
-                    <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border: 1px solid #ffffff;"  id="day" ></b>
+                    <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border-radius: 4px; border: 1px solid #ffffff;"  id="day" ></b>
                     <b class="boxentetejz" style="width: 50px; background-color: transparent; border: none; color: #ebd000; " id="total" ></b>        
 
                 </div>
@@ -400,7 +400,7 @@
                                 document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
                                 document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
                                 document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
-                                document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
+                                document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
                                 document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
 
                                 if (i==0) {
