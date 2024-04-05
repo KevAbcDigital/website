@@ -34,49 +34,19 @@
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">
-                <img class="imgmenu" src="./design_files/images/images/menubtnblanc.png" alt="image">
+                <img class="imgmenu" onclick="homebtn()" style="width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
             </label>
             
             <div class="logo">
                 <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
             </div>
 
-            
-            <div class="menutop">
-                <ul>
-
-                    <li class="boutonm" > <img style="width: 100%; height: auto; " src="./design_files/images/fondinscription.gif" alt="image"> </li>
-
-                    <li class="boutonm"><a style=" color: rgb(255, 255, 255); font-size: 7px; font-weight: 300; text-align: center;
-                        width: 100%; padding-top: 30px; padding-bottom: 20px; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
-                    </li>
-
-
-                    <li class="boutonm" onclick="opena();" >
-                         <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxd.png" alt="image">
-                    </li>
-
-                   <li class="boutonm" onclick="openamical();" >
-                        <img style="width: 94%; margin-top: 6px; margin-left: 3%; height: auto;" src="./design_files/images/boxb.png" alt="image">
-                   </li>
-
-                   <li class="boutonm" onclick="opentk();" >
-                        <img style="width: 94%; margin-left: 3%; margin-top: 5px; height: auto;" src="./design_files/images/boxaa.png" alt="image">
-                   </li>
-
-                   <li class="boutonm"><a> </a></li>
-                   <li class="boutonm"><a> </a></li>
-                   <li class="boutonm"><a> </a></li>
-                    
-                </ul>
-            </div>
-
         </header>
 
         <b style="color: rgb(255, 255, 255); margin-left: 10%; position: absolute; 
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-            font-size: 17px; font-weight: 800; margin-top: 120px; ">
-                OPEN DU CAMEROUN 2024
+            font-size: 17px; font-weight: 800; margin-top: 120px; " id="nompart">
+                Open de GOLF
         </b>
 
         <b style="color: rgb(255, 255, 255); margin-left: 10%; position: absolute; 
@@ -88,11 +58,11 @@
         <b style="color: rgb(210, 241, 144); margin-left: 10%; position: absolute; 
             font-family: cursive;
             font-size: 11px; font-weight: 900; margin-top: 175px; ">
-            jj/mm/YY Powered by GOLF CLUB YAOUNDE
+            Powered by GOLF CLUB YAOUNDE
         </b>
 
         <section style="position: absolute; bottom: 0; width: 100%;
-         height: 55vh; background-color: #f4f0f0; ">
+         height: 45vh; background-color: #f4f0f0; ">
 
             <section style="position: relative; width: 84%; box-shadow: -1px 1px 9px #25282592;
             background-color: #ffffff; margin-left: 8%; border-radius: 20px;"
@@ -106,25 +76,25 @@
                         <div class="form-wrapper" style="display: flex; margin-top: 0px;">
                             <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: start; padding-left: 20px; width: 66%; margin-right: 2%;">Noms et prenoms</b>
                             <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%; margin-right: 2%;">Hcp</b>
-                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%;">Scr</b>
+                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%;">Par</b>
                         </div>
 
                         <div class="form-wrapper" style="display: flex; margin-top: 10px;">
                             <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 66%; margin-right: 2%; " type="text" placeholder="Nom du 1er joueur" class="form-controla">
-                            <input id="ajoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px; width: 15%; margin-right: 2%;" type="number" placeholder="0" class="form-controla">
-                            <input id="sjoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder="0" class="form-controla">
+                            <input id="ajoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px; width: 15%; margin-right: 2%;" type="number" placeholder=".." class="form-controla">
+                            <input id="sjoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder=".." class="form-controla">
                         </div>
 
                         <div class="form-wrapper" style="display: flex; margin-top: -5px;">
                             <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 66%; margin-right: 2%;" type="text" placeholder="Nom du 2eme joueur" class="form-controla">
-                            <input id="ajoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder="0" class="form-controla">
-                            <input id="sjoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder="0" class="form-controla">
+                            <input id="ajoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder=".." class="form-controla">
+                            <input id="sjoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder=".." class="form-controla">
                         </div>
 
                         <div class="form-wrapper" style="display: flex; margin-top: -5px;">
                             <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 10px; width: 66%; margin-right: 2%; " type="text" placeholder="Nom du 3eme joueur" class="form-controla">
-                            <input id="ajoueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder="0" class="form-controla">
-                            <input id="sjoueur3" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder="0" class="form-controla">
+                            <input id="ajoueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder=".." class="form-controla">
+                            <input id="sjoueur3" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder=".." class="form-controla">
                         </div>
 
                         <a style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -172,17 +142,14 @@
     
     <script>
 
-        function opena() {
+        const nameopen = localStorage.getItem('openname');
+        var nompart = document.getElementById("nompart");       
+        nompart.innerHTML= nameopen ;
+        window.alert(nameopen)
+
+        function homebtn(){
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
-        function opentk() {
-            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-        }
-        function openamical() {
-            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-        }
-               
-            
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -242,7 +209,7 @@
                & ( containsOnlyNumbers(ajoueur3) == true ) & sjoueur1 != "" & sjoueur2 != "" & sjoueur3 != "" 
                & ( containsOnlyNumbers(sjoueur1) == true ) & ( containsOnlyNumbers(sjoueur2) == true ) 
                & ( containsOnlyNumbers(sjoueur3) == true ) & codepass != "" & codepass.length == 8
-               & codeadmin != "" & codeadmin.length == 10) {
+               & codeadmin != "" & codeadmin.length == 9) {
 
                 if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
                 if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
@@ -254,15 +221,15 @@
 
                 if (codeadmin == "adminpass" ) {
 
-                    var result = confirm("NB : joueur : " + verifiea + " d'index ( " + ajoueur1 + " ) debutera cette partie avec une carte de " + sjoueur1 + ". Voulez vous continuer ?" );
+                    var result = confirm("NB : joueur : " + joueur1 + " d'index ( " + ajoueur1 + " ) debutera cette partie avec une carte de " + sjoueur1 + ". Voulez vous continuer ?" );
                     if (result == false) {
                         event.preventDefault();
                     } else {
-                        var resultb = confirm("NB : joueur : " + verifieb + " d'index ( " + ajoueur2 + " ) debutera cette partie avec une carte de " + sjoueur2 + ". Voulez vous continuer ?" );
+                        var resultb = confirm("NB : joueur : " + joueur2 + " d'index ( " + ajoueur2 + " ) debutera cette partie avec une carte de " + sjoueur2 + ". Voulez vous continuer ?" );
                         if (resultb == false) {
                             event.preventDefault();
                         } else {
-                            var resultc = confirm("NB : joueur : " + verifiec + " d'index ( " + ajoueur3 + " ) debutera cette partie avec une carte de " + sjoueur3 + ". Voulez vous terminer l'enregistrement ?" );
+                            var resultc = confirm("NB : joueur : " + joueur3 + " d'index ( " + ajoueur3 + " ) debutera cette partie avec une carte de " + sjoueur3 + ". Voulez vous terminer l'enregistrement ?" );
                             if (resultc == false) {
                                 event.preventDefault();
                             } else {
@@ -328,7 +295,7 @@
 
                                         }).then(()=>{
 
-                                            var dataReffinal = firebase.database().ref("open").child("open du cameroun 2024");
+                                            var dataReffinal = firebase.database().ref("open").child(nameopen);
                                                 dataReffinal.child(noma).set({
                                                     'noma' : (noma)
                                                 }).then(()=>{                                            
@@ -380,6 +347,9 @@
                         }
                     }  
 
+                } else {
+                    window.alert("code incorrect");
+                    window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
                 }
 
 
@@ -479,7 +449,7 @@
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 jc.style.backgroundColor="rgb(255, 220, 220)";
             } else if ( containsOnlyNumbers(sjoueur3) == false ) {
-                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
+                window.alert("Le score du 3ème joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( codepass == "" ) {
                 window.alert("Entrer un mot de passe pour cette partie ...");
                 cc.style.backgroundColor="rgb(255, 220, 220)";
@@ -498,7 +468,7 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( codeadmin.length != 10 ) {
+            } else if ( codeadmin.length != 9 ) {
                 window.alert("code incorrect");
                 cca.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";

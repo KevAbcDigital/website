@@ -28,487 +28,425 @@
 
     </head>
 
-    <body style="background-color: rgb(0, 49, 18);" >
-        
-        <header>
+    <body style="background-image: linear-gradient(rgb(3, 139, 149) , rgb(2, 142, 0)), url(./design_files/images/bartour.png);">
+
+        <header style="background-color: transparent">
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">
-                <img class="imgmenu" src="./design_files/images/images/menubtnblanc.png" alt="image">
+                <img class="imgmenu" onclick="homebtn()" style="width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
             </label>
             
-           
-            <div class="menutop">
-                <ul>
-
-                    <li class="boutonm" > <img style="width: 100%; height: auto; " src="./design_files/images/fondinscription.gif" alt="image"> </li>
-
-                    <li class="boutonm"><a style=" color: rgb(255, 255, 255); font-size: 7px; font-weight: 300; text-align: center;
-                        width: 100%; padding-top: 30px; padding-bottom: 20px; font-family: 'Poppins', sans-serif;">By Kevdesign</a>
-                    </li>
-
-
-                    <li class="boutonm" onclick="openhome();" >
-                        <img style="width: 94%; margin-top: 2px; margin-left: 3%; height: auto;" src="./design_files/images/boxd.png" alt="image">
-                   </li>
-
-                    <li class="boutonm" onclick="openamical();" >
-                         <img style="width: 94%; margin-top: 6px; margin-left: 3%; height: auto;" src="./design_files/images/boxbb.png" alt="image">
-                    </li>
-
-                    <li class="boutonm" onclick="opentk();" >
-                        <img style="width: 94%; margin-left: 3%; margin-top: 5px; height: auto;" src="./design_files/images/boxa.png" alt="image">
-                   </li>
-
-                   <li class="boutonm" onclick="openshop();" >
-                        <img style="width: 94%; margin-top: 5px; margin-left: 3%; height: auto;" src="./design_files/images/boxee.png" alt="image">
-                    </li>
-
-                   <li class="boutonm"><a> </a></li>
-                   <li class="boutonm"><a> </a></li>
-                   <li class="boutonm"><a> </a></li>
-                    
-                </ul>
+            <div class="logo">
+                <img onclick="openhome();" src="./design_files/images/pngolf.png" alt="image">
             </div>
-            
+
         </header>
+     
+        <b id="nompart" style="color: rgb(255, 255, 255); margin-left: 10%; position: absolute; 
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+            font-size: 13px; font-weight: 800; margin-top: 0px; ">
+                By Golf Club Yaoundé
+        </b>
+
+        <div class="form-group container-login100-form-btn" style="margin-top: 100px;">
+
+            <button id="valider" style="border-radius: 6px; background-color: rgb(2, 125, 47);
+            color: rgb(255, 255, 255); margin-left: 20%; margin-right: 20%; border-radius: 50px;
+                box-shadow: -1px 1px 9px #03a700e2; " type="button" onclick="send()">
+                 Sauvegarder
+
+            </lottie-player>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player style=" width: 30%; right: 0; display: none; position: absolute; z-index: 1500; color: #ffffff; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
+            background="transparent" speed="1"  loop autoplay></lottie-player>
+            
+            </button>
+        </div>
+
+
+
         
+        
+
+        <section style="position: absolute; bottom: 0; width: 100%;
+        height: 45vh; background-color: #f4f0f0; ">
+
+        <section class="card">
+
+            <section style=" position: relative; width: 90%; box-shadow: -1px 1px 9px #25282592;
+            background-color: #ffffff; margin-left: 5%; border-radius: 20px;" class="formulaire" id="formulairea">
+
+
+                <div style="padding-top: 17px; display: block;" class="devisbloc ">
+
+                    <a style="color: rgb(3, 24, 87); font-size: 12px;" id="joueur1" class="txtindis"> Joueur 1</a>
+
+                    <form name="formweb" style="display: flex;" action="">
+
+                        <div class="form-wrapper">
+                            <a  style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
+                            <input id="a1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
+                            <input id="a2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
+                            <input id="a3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
+                            <input id="a4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
+                            <input id="a5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
+                            <input id="a6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                    </form>
+
+                    <form name="formweb" style="display: flex; margin-top: -15px;" action="">
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
+                            <input id="a7" style="height: 30px; width: 44px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
+                            <input id="a8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
+                            <input id="a9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
+                            <input id="a10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
+                            <input id="a11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
+                            <input id="a12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+                    
+                    </form>
+
+                    <form name="formweb" style="display: flex; margin-top: -15px;" action="">
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
+                            <input id="a13" style="height: 30px; width: 44px ;border: 1px solid #004004d0; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
+                            <input id="a14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #004d04ec; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
+                            <input id="a15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014604e7; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
+                            <input id="a16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #004404d7; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
+                            <input id="a17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #025306d2; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
+                            <input id="a18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014604d6; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+                    
+                    </form>
+
+                </div>
+            </section>
+
+            <section style=" margin: 20px; width: 90%; border-radius: 20px; margin-left: 5%; box-shadow: -1px 1px 9px #25282592; 
+            background-color: rgb(255, 255, 255);" class="formulaire" id="formulaireb">
+                
+                <div style="padding-top: 17px; display: block;" class="devisbloc ">
+
+                    <a style="color: rgb(3, 24, 87); font-size: 12px;" id="joueur2" class="txtindis"> Joueur 2</a>
+
+                    <form name="formweb" style="display: flex;" action="">
+
+                        <div class="form-wrapper">
+                            <a  style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
+                            <input id="b1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
+                            <input id="b2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
+                            <input id="b3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
+                            <input id="b4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
+                            <input id="b5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
+                            <input id="b6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                    </form>
+
+                    <form name="formweb" style="display: flex; margin-top: -15px;" action="">
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
+                            <input id="b7" style="height: 30px; width: 44px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
+                            <input id="b8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
+                            <input id="b9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
+                            <input id="b10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
+                            <input id="b11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
+                            <input id="b12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+                    
+                    </form>
+
+                    <form name="formweb" style="display: flex; margin-top: -15px;" action="">
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
+                            <input id="b13" style="height: 30px; width: 44px ;border: 1px solid #004004d0; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
+                            <input id="b14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #004d04ec; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
+                            <input id="b15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014604e7; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
+                            <input id="b16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #004404d7; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
+                            <input id="b17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #025306d2; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
+                            <input id="b18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014604d6; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+                    
+                    </form>
+
+                </div>
+            </section>
+
+            <section style=" margin: 20px; width: 90%; border-radius: 20px; margin-left: 5%;  box-shadow: -1px 1px 9px #25282592;
+            background-color: rgb(255, 255, 255);" class="formulaire" id="formulairec">
+
+
+                <div style="padding-top: 17px; display: block;" class="devisbloc ">
+
+                    <a style="color: rgb(3, 24, 87); font-size: 12px;" id="joueur3" class="txtindis"> Joueur 3</a>
+
+                    <form name="formweb" style="display: flex;" action="">
+
+                        <div class="form-wrapper">
+                            <a  style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
+                            <input id="c1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
+                            <input id="c2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
+                            <input id="c3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
+                            <input id="c4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
+                            <input id="c5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
+                            <input id="c6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                    </form>
+
+                    <form name="formweb" style="display: flex; margin-top: -15px;" action="">
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
+                            <input id="c7" style="height: 30px; width: 44px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
+                            <input id="c8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
+                            <input id="c9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
+                            <input id="c10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
+                            <input id="c11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
+                            <input id="c12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014a03d1; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+                    
+                    </form>
+
+                    <form name="formweb" style="display: flex; margin-top: -15px;" action="">
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
+                            <input id="c13" style="height: 30px; width: 44px ;border: 1px solid #004004d0; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
+                            <input id="c14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #004d04ec; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
+                            <input id="c15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014604e7; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
+                            <input id="c16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #004404d7; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
+                            <input id="c17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #025306d2; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(1, 72, 14); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
+                            <input id="c18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #014604d6; padding-left: 12px;" type="number" placeholder="" class="form-controla">
+                        </div>
+                    
+                    </form>
+                    
+                </div>
+            </section>
+
+        </section>
+
+           
+        </section>
+
         <section class="indisponibletxt">
             <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
 
-        <section class="fondgif">
+        <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; background-color: transparent;" id="footer">
+            <p style=" width: 100%; text-align: center; color: rgb(49, 60, 49); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © Tous droits réservés - Golf Yde </p>
+        </footer>
 
-            <b style="font-size: 17px; font-weight: 700; color: rgb(219, 251, 211);
-            position: absolute; right: 0; margin-right: 20px; margin-top: 30px;" id="nompart">PARTIE n° xxxxxxxx</b>
-
-            <b style="background-color: rgb(7, 90, 29); box-shadow: -1px 1px 9px rgba(201, 255, 204);
-            color: white; font-size: 12px; width: fit-content ; margin-top: 65px; font-family: 'Poppins', sans-serif;
-            border-radius: 8px; display: none; font-size: 15px; font-weight: 700; padding: 10px; 
-            position: absolute; right: 0; margin-right: 20px;" onclick="delet();" id="del" >Supprimer la partie </b>
-
-            <b style="background-color: rgb(7, 90, 29); box-shadow: -1px 1px 9px rgb(201, 255, 204);
-            color: white; font-size: 12px; width: fit-content ; margin-top: 65px; font-family: 'Poppins', sans-serif;
-            border-radius: 8px; display: none; font-size: 15px; font-weight: 700; padding: 10px; 
-            position: absolute; right: 0; margin-right: 20px;" onclick="ecraser();" id="ecr" >Ecaser la partie </b>
-
-
-            <img name="imgid" style="width: 23%; height: auto; margin-left: 20px; margin-top: 80px;" 
-            src="./design_files/images/panel.png" alt="image">
-
-            <section style="border-radius: 15px; margin-top: 10px; margin-left: 20px; margin-right: 20px; 
-                background-color: transparent; position: relative; z-index: 1500;" class="searchcode">
-                    <div style="padding-top: 17px;" class="devisbloc ">
-
-                        <form name="formweb" action="">
-
-                            <div class="form-wrapper">
-                                <input id="codeadmin" style="display: none; box-shadow: -1px 1px 9px rgb(78, 162, 82); text-align: center;" 
-                                type="text" placeholder="code administrateur" class="form-controla">
-                                <input id="codesearch" style="box-shadow: -1px 1px 9px rgb(78, 162, 82); text-align: center;" 
-                                type="text" placeholder="Entrez le code de votre partie" class="form-controla">
-                            </div>
-
-                            <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
-                                <button id="valider" style="border-radius: 6px; margin-top: 20px;background-color: rgb(0, 82, 24); 
-                                box-shadow: -1px 1px 9px rgba(221, 255, 1, 0.733); color: rgb(198, 255, 200);height: 33px;font-weight: 600; " type="button" onclick="search()">
-                                    Chercher
-                                    <i class="zmdi zmdi-arrow-right"></i>
-                                </button>
-                        
-                                <lottie-player style=" width: 100px; height: 100px; position: absolute; right: 0;
-                                    margin-top: -15px; display: none; " class="lottiescriptb" id="lottieloadb"
-                                    src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                                    background="transparent" speed="1"  loop autoplay></lottie-player>
-                            </div>
-                                    
-                        </form>
-                    </div>
-            </section>
-
-            <section class="card">
-
-                <section style=" margin: 20px; border-radius: 20px; background-color: rgb(7, 47, 17);" class="formulaire" id="formulairea">
-            
-            
-                    <div style="padding-top: 17px; display: block;" class="devisbloc ">
-        
-                        <a style="color: white; font-size: 12px;" id="joueur1" class="txtindis"> Joueur 1</a>
-
-                        <form name="formweb" style="display: flex;" action="">
-        
-                            <div class="form-wrapper">
-                                <a  style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
-                                <input id="a1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
-                                <input id="a2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
-                                <input id="a3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
-                                <input id="a4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
-                                <input id="a5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
-                                <input id="a6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                        </form>
-
-                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
-                                <input id="a7" style="height: 30px; width: 44px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
-                                <input id="a8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
-                                <input id="a9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
-                                <input id="a10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
-                                <input id="a11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
-                                <input id="a12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-                        
-                        </form>
-
-                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
-                                <input id="a13" style="height: 30px; width: 44px ;border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
-                                <input id="a14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
-                                <input id="a15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
-                                <input id="a16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
-                                <input id="a17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
-                                <input id="a18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-                        
-                        </form>
-        
-                    </div>
-                </section>
-        
-                <section style=" margin: 20px; width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 47, 17);" class="formulaire" id="formulaireb">
-                     
-                    <div style="padding-top: 17px; display: block;" class="devisbloc ">
-        
-                        <a style="color: white; font-size: 12px;" id="joueur2" class="txtindis"> Joueur 2</a>
-
-                        <form name="formweb" style="display: flex;" action="">
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
-                                <input id="b1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
-                                <input id="b2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
-                                <input id="b3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
-                                <input id="b4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
-                                <input id="b5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
-                                <input id="b6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                        </form>
-
-                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
-                                <input id="b7" style="height: 30px; width: 44px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
-                                <input id="b8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
-                                <input id="b9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
-                                <input id="b10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
-                                <input id="b11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
-                                <input id="b12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-                        
-                        </form>
-
-                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
-                                <input id="b13" style="height: 30px; width: 44px ;border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
-                                <input id="b14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
-                                <input id="b15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
-                                <input id="b16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
-                                <input id="b17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
-                                <input id="b18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-                        
-                        </form>
-        
-                    </div>
-                </section>
-
-                <section style=" margin: 20px; width: 94%; border-radius: 20px; margin-left: 3%; background-color: rgb(7, 47, 17);" class="formulaire" id="formulairec">
-            
-            
-                    <div style="padding-top: 17px; display: block;" class="devisbloc ">
-        
-                        <a style="color: white; font-size: 12px;" id="joueur3" class="txtindis"> Joueur 3</a>
-
-                        <form name="formweb" style="display: flex;" action="">
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">1</a>
-                                <input id="c1" style="height: 30px; width: 44px; margin-right: 3px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">2</a>
-                                <input id="c2" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">3</a>
-                                <input id="c3" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">4</a>
-                                <input id="c4" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">5</a>
-                                <input id="c5" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">6</a>
-                                <input id="c6" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                        </form>
-
-                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">7</a>
-                                <input id="c7" style="height: 30px; width: 44px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">8</a>
-                                <input id="c8" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">9</a>
-                                <input id="c9" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">10</a>
-                                <input id="c10" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder=""  class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">11</a>
-                                <input id="c11" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">12</a>
-                                <input id="c12" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-                        
-                        </form>
-
-                        <form name="formweb" style="display: flex; margin-top: -15px;" action="">
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">13</a>
-                                <input id="c13" style="height: 30px; width: 44px ;border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">14</a>
-                                <input id="c14" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">15</a>
-                                <input id="c15" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">16</a>
-                                <input id="c16" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">17</a>
-                                <input id="c17" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-        
-                            <div class="form-wrapper">
-                                <a style="color: rgb(127, 250, 150); font-size: 8px; margin-left: 7px;" class="titleform">18</a>
-                                <input id="c18" style="height: 30px; width: 44px; margin-left: 4px; border: 1px solid #008006ab; padding-left: 12px;" type="number" placeholder="" class="form-controla">
-                            </div>
-                        
-                        </form>
-                        
-                    </div>
-                </section>
-
-                <section style = "margin-bottom: 20px;" class = "formulaire">
-                    
-                    <div class="form-group container-login100-form-btn" style="margin-top: -20px;">
-                        <button id="valider" style=" margin-left: 3%; margin-right: 3%; border-radius: 6px; margin-top: 40px; background-color: rgb(238, 255, 0); color: rgb(0, 0, 0);
-                            box-shadow: -1px 1px 9px #1c0983d2; " type="button" onclick="send()">
-                            Enregistrer
-                            <i class="zmdi zmdi-arrow-right"></i>
-                        </button>
-                    </div>
-                        
-        
-                    
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player style="display: none ; color: #008006ab; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                    background="transparent" speed="1"  loop autoplay></lottie-player>
-                
-                </section>
-        
-
-            </section>
-
-
-        </section>
 
     </body>
 
 
     <script>
         
-        function opentk() {
-            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+    
+        const nameopen = localStorage.getItem('openname');
+        var nompart = document.getElementById("nompart");       
+        nompart.innerHTML= nameopen ;
+        window.alert(nameopen)
+
+        function homebtn(){
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
-     
-        function openhome() {
-            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
-        }
-     
-        function openamical() {
-            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-        }
-     
-        function openshop() {
-            window.location.href = 'https://kevabcdigital.github.io/website/golfshop.html';
-        }
+
         var linked = "non";
 
+
+        
+
+/*
         function delet() {
             var result = confirm('voulez vous supprimer cette partie ?');
             var load = document.getElementById("lottieloadb");            
@@ -748,7 +686,7 @@
                 }            
             }   
         }
-
+*/
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
             apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
@@ -764,14 +702,19 @@
     
         const database = firebase.database();
 
-        var del = document.getElementById("del");                
-       
-        var ecr = document.getElementById("ecr");                
+        // var del = document.getElementById("del");                
+        // var ecr = document.getElementById("ecr");                
 
-        var pa = "nom";
-        var pb = "nom";
-        var pc = "nom";
+        // var pa = "nom";
+        // var pb = "nom"; 
+        // var pc = "nom";
 
+        var codesearch = prompt("Entrez le code de la partie à suivre ou cliquez sur annuler pour etre redirigé vers le scoreboard ");
+        if ( codesearch != "" ) {
+            search();
+        } else {
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+        }
         function search(){                           
 
             var del = document.getElementById("del");                
@@ -847,65 +790,19 @@
             var load = document.getElementById("lottieloadb");                
             var nompart = document.getElementById("nompart");                
 
-            var codesearch = $('#codesearch').val();
             var p = 0;
 
             var dataRef = firebase.database().ref("amical");
 
-            if ( codesearch != "" & codesearch.length == 8) {
-
-                    load.style.display = "block";
+            if ( codesearch != "" ) {
 
                     dataRef.on("value" , function(snapshot){
                         var i = 0;
                         snapshot.forEach(function(element){
                             if(element.key == codesearch ) {
-                                i=1;
-
-                                if ( (codesearch == "00000000") || (codesearch == "00000001") || (codesearch == "00000002") || (codesearch == "00000003") 
-                                || (codesearch == "00000004") || (codesearch == "00000016") || (codesearch == "00000028") || (codesearch == "00000040")
-                                || (codesearch == "00000005") || (codesearch == "00000017") || (codesearch == "00000029") || (codesearch == "00000041")
-                                || (codesearch == "00000006") || (codesearch == "00000018") || (codesearch == "00000030") || (codesearch == "00000042")
-                                || (codesearch == "00000007") || (codesearch == "00000019") || (codesearch == "00000031") || (codesearch == "00000043")
-                                || (codesearch == "00000008") || (codesearch == "00000020") || (codesearch == "00000032") || (codesearch == "00000044")
-                                || (codesearch == "00000009") || (codesearch == "00000021") || (codesearch == "00000033") || (codesearch == "00000045")
-                                || (codesearch == "00000010") || (codesearch == "00000022") || (codesearch == "00000034") || (codesearch == "00000046")
-                                || (codesearch == "00000011") || (codesearch == "00000023") || (codesearch == "00000035") || (codesearch == "00000047")
-                                || (codesearch == "00000012") || (codesearch == "00000024") || (codesearch == "00000036") || (codesearch == "00000048")
-                                || (codesearch == "00000013") || (codesearch == "00000025") || (codesearch == "00000037") || (codesearch == "00000049")
-                                || (codesearch == "00000014") || (codesearch == "00000026") || (codesearch == "00000038") || (codesearch == "00000050")
-                                || (codesearch == "00000015") || (codesearch == "00000027") || (codesearch == "00000039") ) {
+                                i=1;         
                                 
-                                    del.style.display="block";
-                                    ecr.style.display="block";
-                                    ecr.style.marginTop="113px";
-                                    codeadmin.style.display="block";
-                                
-                                }
-                                
-                                if ( !( (codesearch == "00000000") || (codesearch == "00000001") || (codesearch == "00000002") || (codesearch == "00000003") 
-                                || (codesearch == "00000004") || (codesearch == "00000016") || (codesearch == "00000028") || (codesearch == "00000040")
-                                || (codesearch == "00000005") || (codesearch == "00000017") || (codesearch == "00000029") || (codesearch == "00000041")
-                                || (codesearch == "00000006") || (codesearch == "00000018") || (codesearch == "00000030") || (codesearch == "00000042")
-                                || (codesearch == "00000007") || (codesearch == "00000019") || (codesearch == "00000031") || (codesearch == "00000043")
-                                || (codesearch == "00000008") || (codesearch == "00000020") || (codesearch == "00000032") || (codesearch == "00000044")
-                                || (codesearch == "00000009") || (codesearch == "00000021") || (codesearch == "00000033") || (codesearch == "00000045")
-                                || (codesearch == "00000010") || (codesearch == "00000022") || (codesearch == "00000034") || (codesearch == "00000046")
-                                || (codesearch == "00000011") || (codesearch == "00000023") || (codesearch == "00000035") || (codesearch == "00000047")
-                                || (codesearch == "00000012") || (codesearch == "00000024") || (codesearch == "00000036") || (codesearch == "00000048")
-                                || (codesearch == "00000013") || (codesearch == "00000025") || (codesearch == "00000037") || (codesearch == "00000049")
-                                || (codesearch == "00000014") || (codesearch == "00000026") || (codesearch == "00000038") || (codesearch == "00000050")
-                                || (codesearch == "00000015") || (codesearch == "00000027") || (codesearch == "00000039") ) ) {
-                                
-                                    del.style.display="block";
-                                    ecr.style.display="none";
-                                    codeadmin.style.display="none";
-                                
-                                }
-                                
-                                
-                                
-                                nompart.innerHTML="Partie n° " + codesearch;
+                                nompart.innerHTML="Groupe " + codesearch + " - " + nameopen;
                                 linked=codesearch;
 
                                 var dataRefb = firebase.database().ref("amical").child(codesearch);
@@ -2324,9 +2221,6 @@
                                             c18.value=element.val();
                                         }
 
-
-                                        load.style.display = "none";
-
                                     });
                                 });
 
@@ -2335,10 +2229,7 @@
                         });
                     
                         if ( i == 0 ) {
-                            del.style.display="none";
-                            ecr.style.display="none";
-                            codeadmin.style.display="none";
-                            load.style.display = "none";
+                            
                             window.alert("aucune Partie trouvée au code : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                         }
@@ -2347,10 +2238,8 @@
 
 
 
-                }  else if ( codesearch == "" ) {
+                }  else {
                     window.alert("Entrer le mot de passe de votre partie ...");
-                } else if ( codesearch.length != 8 ) {
-                    window.alert("le mot de passe doit contenir exactement 8 caracteres");
                 }
 
         }
@@ -2797,21 +2686,9 @@
                     }
 
 
-                    if ( (linked == "00000000") || (linked == "00000001") || (linked == "00000002") || (linked == "00000003") 
-                                || (linked == "00000004") || (linked == "00000016") || (linked == "00000028") || (linked == "00000040")
-                                || (linked == "00000005") || (linked == "00000017") || (linked == "00000029") || (linked == "00000041")
-                                || (linked == "00000006") || (linked == "00000018") || (linked == "00000030") || (linked == "00000042")
-                                || (linked == "00000007") || (linked == "00000019") || (linked == "00000031") || (linked == "00000043")
-                                || (linked == "00000008") || (linked == "00000020") || (linked == "00000032") || (linked == "00000044")
-                                || (linked == "00000009") || (linked == "00000021") || (linked == "00000033") || (linked == "00000045")
-                                || (linked == "00000010") || (linked == "00000022") || (linked == "00000034") || (linked == "00000046")
-                                || (linked == "00000011") || (linked == "00000023") || (linked == "00000035") || (linked == "00000047")
-                                || (linked == "00000012") || (linked == "00000024") || (linked == "00000036") || (linked == "00000048")
-                                || (linked == "00000013") || (linked == "00000025") || (linked == "00000037") || (linked == "00000049")
-                                || (linked == "00000014") || (linked == "00000026") || (linked == "00000038") || (linked == "00000050")
-                                || (linked == "00000015") || (linked == "00000027") || (linked == "00000039") ) {
+                    
                             
-                                    var dataReffinal = firebase.database().ref("open").child("opena");
+                        var dataReffinal = firebase.database().ref("open").child(nameopen);
                         dataReffinal.child(lasta).remove();
                         dataReffinal.child(lastb).remove();
                         dataReffinal.child(lastc).remove();
@@ -2843,7 +2720,7 @@
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';   
                         });
                         
-                    }
+                    
                 
                     dataRefb.set({
                             'a1' : (a1) ,
@@ -2926,14 +2803,8 @@
 
                         }).then(()=>{
 
-                            if (linked == "22222222") {
-                                load.style.display = 'none';
-                            } else if (linked == "33333333") {
-                                load.style.display = 'none';
-                            } else {
-                                load.style.display = 'none';
-                                window.alert("Sauvegarde reuissie.");
-                            }
+                            load.style.display = 'none';
+                            window.alert("Sauvegarde reuissie.");
                                           
                         }).catch((error)=>{
                             load.style.display = 'none';

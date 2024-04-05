@@ -28,7 +28,7 @@
 
     </head>
 
-    <body style="background-color: rgba(55, 180, 99, 0.895);">
+    <body style="background-color: rgb(255, 255, 255);">
 
         <audio loop autoplay id="autoplay">
             <source src="sona.mp3" type="audio/mpeg">
@@ -36,9 +36,27 @@
 
         <section id="toursliderabcphone" class="toursliderabcphone" >
            
-            <b style="position: relative; margin-top: 50px; display: block; font-size: 13px; padding-left: 20px; color: white;" >Rotez l'ecran pour consulter les resultats</b>
+            <b style="position: relative; margin-top: 50px; display: block; font-size: 13px; padding-left: 20px; 
+            color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran ( LEADERBOARD )</b>
             <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
+            <img name="imgid" style="height: 100vh; background-size: cover; background-position: center; " 
+            class="sli" src="./design_files/images/fondtour.jpg" alt="image">
 
+            <div style="width: 100%; display: block; position: absolute; bottom: 0; margin-bottom: 140px; z-index: 1600; margin-left: 7%; padding-right: 7%;">
+                <b style="display: block; color: #ffffff;">HELLO, User !</b>
+                <b style="display: block; margin-top: 2px; margin-right: 15px; font-size: 12px; color: rgba(255, 215, 208, 0.726);" >Retournez votre écran et entrez le nom du tournoi que vous souhaitez suivre</b>
+            </div>
+
+            <div style="width: 100%; display: flex; position: absolute; bottom: 0; margin-bottom: 60px; z-index: 1600;">
+                <b onclick="groupebtn()" style="color: #03001b; display: flex; width: 40%; text-align: center; justify-content: center; align-items: center; 
+                width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Créer</b>
+                <b onclick="cartebtn()" style="color: #ffffff; display: flex; width: 40%; margin-left: 3%; position: relative; text-align: center; justify-content: center;
+                 align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Marqueurs</b>
+            </div>
+            
+            <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; background-color: transparent;" id="footer">
+                <p style=" width: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © - Golf Yde </p>
+            </footer>
         </section>
 
         <section id="toursliderabc" class="toursliderabc">
@@ -91,6 +109,7 @@
                     <b class="boxentetejz" >4</b>
                     <b class="boxentetejz" style="border: none; background-color: transparent;" >36</b>
                     <b class="boxentetejz" style="width: 50px;  border: none; background-color: transparent;" ></b>
+                    <b class="boxentetejz" style="width: 45px;  border: none; background-color: transparent;" ></b>
                     <b class="boxentetejz" style="width: 50px;  border: none; background-color: transparent;" ></b>
          
                 </div>
@@ -122,8 +141,9 @@
                     <b class="boxentetejz" >18</b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: 1px solid #ffffff;" >Re</b>
                     <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border-radius: 4px;" >Today</b>
-                    <b class="boxentetejz" style="width: 50px; background-color: transparent; border: none;  border-radius: 4px;" >Total</b>
-                    
+                    <b class="boxentetejz" style="width: 45px; background-color: transparent; border: none;  border-radius: 4px;" >Last</b>
+                    <b class="boxentetejz" style="width: 50px; background-color: #fbff00; color: #010033; border-radius: 4px;" >Total</b>
+
                 </div>
 
                 <div class="entete" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;" >
@@ -173,7 +193,8 @@
                     <b class="boxentetejz" id="h18" ></b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
                     <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border-radius: 4px; border: 1px solid #ffffff;"  id="day" ></b>
-                    <b class="boxentetejz" style="width: 50px; background-color: transparent; border: none; color: #ebd000; " id="total" ></b>        
+                    <b class="boxentetejz" style="width: 45px; background-color: transparent; border: none; color: #ebd000; " id="last" ></b>        
+                    <b class="boxentetejz" style="width: 50px; background-color: #fbff00; color: #010033; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
 
                 </div>
 
@@ -210,7 +231,6 @@
             }
         });
 
-        const nameopen = localStorage.getItem('openname');
         
         function play(){
             document.getElementById('autoplay').play();
@@ -292,22 +312,68 @@
 
 
 
-
-
-
         
+        var charge = "aucun";
+        function groupebtn(){    
+            
+            var codeshow = prompt("entrez le code ADMIN pour créer un nouveau tournoi");
+            if (codeshow == "") {
+                window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
+            } else if (codeshow == "adminpass") {
+                
+                var nomopen = prompt("entrez le nom de votre tournoi");
+                if (nomopen == "") {
+                    window.alert("Entrez un nom correct pour votre tournoi ou cliquez sur annuler !");
+                } else {
+                    const touropen = nomopen;
+                    localStorage.setItem('openname' , touropen );
+                    window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                }
+
+
+            } else {
+                if (charge == "aucun") {
+                    window.alert("Code ADMIN incorrect! Rotez l'ecran de votre télephone et recherchez un tournoi sur notre SCOREBOARD");
+                } else {
+                    var result = confirm('voulez vous modifier ou créer vos groupes de jeu ?');    
+                    if (result == false) {
+                        event.preventDefault();
+                    } else {
+                        const touropen = charge;
+                        localStorage.setItem('openname' , touropen );
+                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                    }
+                }            
+            }
+        }
+
+        function cartebtn(){       
+            if (charge == "aucun") {
+                window.alert("Rotez l'ecran et recherhchez le tournoi que vous souhaitez suivre");
+            } else {
+                var result = confirm('voulez vous modifier les cartes de score ?');    
+                if (result == false) {
+                    event.preventDefault();
+                } else {
+                    const touropen = nomopen;
+                    localStorage.setItem('openname' , touropen );
+                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                }
+
+            }
+        }
 
 
 
                     
         function formi(){       
-
-        var load = document.getElementById("lottieload");   
+        var nompart = document.getElementById("nompart");       
         var codesearch = $('#codesearch').val().toLowerCase();
+        var load = document.getElementById("lottieload");   
         var dataRef = firebase.database().ref("open");
-        var nompart = document.getElementById("nompart");          
         if ( codesearch != "") {
 
+            var bb = 0;
             load.style.display = "block";
             dataRef.on("value" , function(snapshot){
                 var a = 0;
@@ -318,10 +384,12 @@
                     }
                 });
                 
-                if ( a == 0 ) {
+                if ( a == 0 & bb == 0 ) {
+                    bb = 1;
                     load.style.display = "none";
                     window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
                 } else {
+                    charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
                     var i = 0 ;
@@ -373,6 +441,7 @@
                             document.querySelector('#h18').innerHTML = "";
                             document.querySelector('#net').innerHTML = "";
                             document.querySelector('#total').innerHTML = "";
+                            document.querySelector('#last').innerHTML = "";
                             document.querySelector('#day').innerHTML = "";
                             
                             snapshot.forEach(function(element){ 
@@ -400,8 +469,9 @@
                                 document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
                                 document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
                                 document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
-                                document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
                                 document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
+                                document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
+                                document.querySelector('#last').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
 
                                 if (i==0) {
                                     ba.style.display="none";
