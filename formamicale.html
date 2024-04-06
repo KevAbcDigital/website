@@ -307,8 +307,9 @@
                                                         }).then(()=>{
                                                             load.style.display = 'none';
                                                             window.alert("Sauvegarde reuissie.");  
-                                                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';             
-                                                        }).catch((error)=>{
+                                                            const touropena = nameopen;
+                                                            localStorage.setItem('openname' , touropena );
+                                                            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';                                                        }).catch((error)=>{
                                                             load.style.display = 'none';
                                                             window.alert("erreur survenue : "+ error);
                                                         });
