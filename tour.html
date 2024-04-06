@@ -322,12 +322,12 @@
             } else if (codeshow == "adminpass") {
                 
                 var nomopen = prompt("entrez le nom de votre tournoi");
-                if (nomopen == "") {
-                    window.alert("Entrez un nom correct pour votre tournoi ou cliquez sur annuler !");
-                } else {
+                if (nomopen != "" & nomopen.length > 1) {
                     const touropen = nomopen;
                     localStorage.setItem('openname' , touropen );
                     window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                } else {
+                    window.alert("Code ADMIN incorrect! Rotez l'ecran de votre télephone et recherchez un tournoi sur notre SCOREBOARD");
                 }
 
 
