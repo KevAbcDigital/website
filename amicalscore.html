@@ -254,13 +254,9 @@
 
         </section>
 
-        
-
         <section class="indisponibletxt">
             <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
         </section>
-
-
 
     </body>
 
@@ -628,7 +624,7 @@
 
             var p = 0;
 
-            var dataRef = firebase.database().ref("amical");
+            var dataRef = firebase.database().ref(nameopen);
 
             if ( codesearch != "" ) {
 
@@ -641,7 +637,7 @@
                                 nompart.innerHTML="Groupe " + codesearch + " - " + nameopen;
                                 linked=codesearch;
 
-                                var dataRefb = firebase.database().ref("amical").child(codesearch);
+                                var dataRefb = firebase.database().ref(nameopen).child(codesearch);
                                 dataRefb.on("value" , function(snapshot){
                                     snapshot.forEach(function(element){
 
@@ -2088,7 +2084,7 @@
             
             var load = document.getElementById("lottieload");                
             
-            var dataRef = firebase.database().ref("amical");
+            var dataRef = firebase.database().ref(nameopen);
 
             var formulairea= document.getElementById("formulairea");                
             var formulaireb= document.getElementById("formulaireb");                
@@ -2224,7 +2220,7 @@
 
                 load.style.display = 'block';
 
-                var dataRefb = firebase.database().ref("amical").child(linked);
+                var dataRefb = firebase.database().ref(nameopen).child(linked);
                 var ja = "non";
                 var jb = "non";
                 var jc = "non";
