@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>formulaire</title>
+        <title>cut</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
@@ -101,7 +101,8 @@
                              color: rgb(0, 48, 58);" class="titleform"> Securité de votre partie * *</a>
                              
                         <div class="form-wrapper" style="display: flex;">
-                            <input id="codepass" style=" display: flex; text-align: center; height: 30px; border: 1px solid #820000; padding-left: 15px;" type="text" placeholder="Code du groupe" class="form-controla">
+                            <input id="codepass" style=" display: flex; text-align: center; height: 30px; border: 1px solid #820000; padding-left: 15px; margin-right: 3%;" type="text" placeholder="Code groupe" class="form-controla">
+                            <input id="codeadmin" style=" display: flex; text-align: center; height: 30px; border: 1px solid #820000; padding-left: 15px;" type="text" placeholder="Code ADMIN" class="form-controla">
                         </div>
 
                     </form>
@@ -146,9 +147,6 @@
         nompart.innerHTML= nameopen ;
         window.alert(nameopen)
 
-        if (nameopen == null) {
-            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-        }
         function homebtn(){
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
@@ -200,6 +198,7 @@
             var sjoueur1 = $('#sjoueur1').val().toLowerCase().trim();
             var sjoueur2 = $('#sjoueur2').val().toLowerCase().trim();
             var sjoueur3 = $('#sjoueur3').val().toLowerCase().trim();
+            var codeadmin = $('#codeadmin').val();
             var codepass = $('#codepass').val();
             var p = 0;
             var dataRef = firebase.database().ref(nameopen);
@@ -209,7 +208,8 @@
                & ( containsOnlyNumbers(ajoueur1) == true ) & ( containsOnlyNumbers(ajoueur2) == true ) 
                & ( containsOnlyNumbers(ajoueur3) == true ) & sjoueur1 != "" & sjoueur2 != "" & sjoueur3 != "" 
                & ( containsOnlyNumbers(sjoueur1) == true ) & ( containsOnlyNumbers(sjoueur2) == true ) 
-               & ( containsOnlyNumbers(sjoueur3) == true ) & codepass != "" & codepass.length == 8) {
+               & ( containsOnlyNumbers(sjoueur3) == true ) & codepass != "" & codepass.length == 8
+               & codeadmin != "" & codeadmin.length == 9) {
 
                 if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
                 if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
@@ -339,7 +339,7 @@
                                     if ( ( i == 1 ) & ( l == 0 ) ) {
                                         load.style.display = "none";
                                         window.alert("le code ( " + codepass + " ) a déjà été utilisé pour une partie . Utilisez un autre code");
-                                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
                                     }
                                 });
 
@@ -350,7 +350,7 @@
 
                 } else {
                     window.alert("code incorrect");
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                    window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
                 }
 
 
@@ -463,13 +463,26 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( codeadmin == "" ) {
+                window.alert("Entrer votre code admin ...");
+                cca.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( codeadmin.length != 9 ) {
+                window.alert("code incorrect");
+                cca.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
+                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jc.style.backgroundColor="rgb(255, 255, 255)";
+                window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
             }
     
         }
 
         function invalid() {
             window.alert("Desolé ce formulaire est indisponible pour le moment.");
-            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
         }
 
     </script>

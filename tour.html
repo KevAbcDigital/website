@@ -49,9 +49,9 @@
 
             <div style="width: 100%; display: flex; position: absolute; bottom: 0; margin-bottom: 60px; z-index: 1600;">
                 <b onclick="groupebtn()" style="color: #03001b; display: flex; width: 40%; text-align: center; justify-content: center; align-items: center; 
-                width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Créer</b>
+                width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Creer</b>
                 <b onclick="cartebtn()" style="color: #ffffff; display: flex; width: 40%; margin-left: 3%; position: relative; text-align: center; justify-content: center;
-                 align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Marqueurs</b>
+                 align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Notebook</b>
             </div>
             
             <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; background-color: transparent;" id="footer">
@@ -315,36 +315,56 @@
         
         var charge = "aucun";
         function groupebtn(){    
-            
+
             var codeshow = prompt("entrez votre code ADMIN pour continuer");
-            if (codeshow == "") {
-                window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-            } else if (codeshow == "adminpass") {
-                
-                var nomopen = prompt("entrez le nom de votre tournoi");
-                if (nomopen != "" & nomopen.length > 1) {
-                    const touropen = nomopen;
-                    localStorage.setItem('openname' , touropen );
-                    window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                } else {
-                    window.alert("Code ADMIN incorrect! Rotez l'ecran de votre télephone et recherchez un tournoi sur notre SCOREBOARD");
-                }
+                if (codeshow == "") {
+                    window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
+                } else if (codeshow == "adminpass") {
+                    
+                    var nomopen = prompt("entrez le nom de votre tournoi. puis cliquez sur OK. NB : cette operation peut prendre quelques secondes ... ");
+                    if (nomopen != "" & nomopen.length > 7) {
 
+                        var dataRefc = firebase.database().ref("open");
+                        var cc = 0;
+                        dataRefc.on("value" , function(snapshot){
+                            var ac = 0;
+                            snapshot.forEach(function(element){
+                                if(element.key == nomopen ) {
+                                    ac=1;
+                                }
+                            });
 
-            } else {
-                if (charge == "aucun") {
-                    window.alert("Code ADMIN incorrect! Rotez l'ecran de votre télephone et recherchez un tournoi sur notre SCOREBOARD");
-                } else {
-                    var result = confirm('voulez vous modifier ou créer vos groupes de jeu ?');    
-                    if (result == false) {
-                        event.preventDefault();
+                            if ( ac == 0 & cc == 0 ) {
+                                cc = 1;
+                                var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Vous allez par la suite créez vos propres groupes de jeu et designer si oui le CUT de la compétition.     Voulez vous CONTINUER ?');    
+                                if (result == false) {
+                                    event.preventDefault();
+                                } else {
+                                    const touropen = nomopen;
+                                    localStorage.setItem('openname' , touropen );
+                                    window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                                }                            
+                            } else {
+                                var result = confirm('voulez vous modifier ou créer de nouveaux groupes de jeu pour cette compétition ?');    
+                                if (result == false) {
+                                    event.preventDefault();
+                                } else {
+                                    const touropen = charge;
+                                    localStorage.setItem('openname' , touropen );
+                                    window.location.href = 'https://kevabcdigital.github.io/website/cut.html';
+                                }
+                                    }
+                                });
+                    
                     } else {
-                        const touropen = charge;
-                        localStorage.setItem('openname' , touropen );
-                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                        window.alert("Désole ! Le nom du tournoi doit contenir au moins 8 caracteres");
                     }
-                }            
-            }
+
+                } else {
+                    window.alert("Code ADMIN incorrect! Rotez l'ecran de votre télephone et recherchez un tournoi sur notre SCOREBOARD");
+                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                }
+            
         }
 
         function cartebtn(){       
