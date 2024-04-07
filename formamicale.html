@@ -74,27 +74,23 @@
 
 
                         <div class="form-wrapper" style="display: flex; margin-top: 0px;">
-                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: start; padding-left: 20px; width: 66%; margin-right: 2%;">Noms et prenoms</b>
-                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%; margin-right: 2%;">Hcp</b>
-                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%;">Par</b>
+                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: start; padding-left: 20px; width: 79%; margin-left: 2%;">Noms et prenoms</b>
+                            <b style="color: rgb(0, 46, 7); font-size: 11px; font-weight: 900; text-align: center; width: 15%; margin-left: 2%;">Index</b>
                         </div>
 
                         <div class="form-wrapper" style="display: flex; margin-top: 10px;">
-                            <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 66%; margin-right: 2%; " type="text" placeholder="Nom du 1er joueur" class="form-controla">
-                            <input id="ajoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px; width: 15%; margin-right: 2%;" type="number" placeholder=".." class="form-controla">
-                            <input id="sjoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder=".." class="form-controla">
+                            <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 79%; margin-left: 2%; " type="text" placeholder="Nom du 1er joueur" class="form-controla">
+                            <input id="ajoueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px; width: 15%; margin-left: 2%;" type="number" placeholder=".." class="form-controla">
                         </div>
 
                         <div class="form-wrapper" style="display: flex; margin-top: -5px;">
-                            <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 66%; margin-right: 2%;" type="text" placeholder="Nom du 2eme joueur" class="form-controla">
-                            <input id="ajoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder=".." class="form-controla">
-                            <input id="sjoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder=".." class="form-controla">
+                            <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 79%; margin-left: 2%;" type="text" placeholder="Nom du 2eme joueur" class="form-controla">
+                            <input id="ajoueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px; width: 15%; margin-left: 2%;" type="number" placeholder=".." class="form-controla">
                         </div>
 
                         <div class="form-wrapper" style="display: flex; margin-top: -5px;">
-                            <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 10px; width: 66%; margin-right: 2%; " type="text" placeholder="Nom du 3eme joueur" class="form-controla">
-                            <input id="ajoueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 3px;width: 15%; margin-right: 2%;" type="number" placeholder=".." class="form-controla">
-                            <input id="sjoueur3" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 3px;width: 15%;" type="number" placeholder=".." class="form-controla">
+                            <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 10px; width: 79%; margin-left: 2%; " type="text" placeholder="Nom du 3eme joueur" class="form-controla">
+                            <input id="ajoueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 3px; width: 15%; margin-left: 2%;" type="number" placeholder=".." class="form-controla">
                         </div>
 
                         <a style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -184,11 +180,7 @@
             var jc = document.getElementById("joueur3");                
             var aja = document.getElementById("ajoueur1");                
             var ajb = document.getElementById("ajoueur2");                
-            var ajc = document.getElementById("ajoueur3");     
-            var sja = document.getElementById("sjoueur1");                
-            var sjb = document.getElementById("sjoueur2");                
-            var sjc = document.getElementById("sjoueur3");                
-            var cca = document.getElementById("codeadmin");                
+            var ajc = document.getElementById("ajoueur3");                     
             var cc = document.getElementById("codepass");                
 
             var joueur1 = $('#joueur1').val().toLowerCase().trim();
@@ -197,9 +189,6 @@
             var ajoueur1 = $('#ajoueur1').val().toLowerCase().trim();
             var ajoueur2 = $('#ajoueur2').val().toLowerCase().trim();
             var ajoueur3 = $('#ajoueur3').val().toLowerCase().trim();
-            var sjoueur1 = $('#sjoueur1').val().toLowerCase().trim();
-            var sjoueur2 = $('#sjoueur2').val().toLowerCase().trim();
-            var sjoueur3 = $('#sjoueur3').val().toLowerCase().trim();
             var codepass = $('#codepass').val();
             var p = 0;
             var dataRef = firebase.database().ref(nameopen);
@@ -207,9 +196,7 @@
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
                & joueur2 != "" & joueur2.length < 21 & joueur1 != "aucun" & ajoueur1 != "" & ajoueur2 != "" & ajoueur3 != "" 
                & ( containsOnlyNumbers(ajoueur1) == true ) & ( containsOnlyNumbers(ajoueur2) == true ) 
-               & ( containsOnlyNumbers(ajoueur3) == true ) & sjoueur1 != "" & sjoueur2 != "" & sjoueur3 != "" 
-               & ( containsOnlyNumbers(sjoueur1) == true ) & ( containsOnlyNumbers(sjoueur2) == true ) 
-               & ( containsOnlyNumbers(sjoueur3) == true ) & codepass != "" & codepass.length == 8) {
+               & ( containsOnlyNumbers(ajoueur3) == true ) & codepass != "" & codepass.length == 8) {
 
                 if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
                 if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
@@ -221,38 +208,29 @@
 
                 if (codeadmin == "adminpass" ) {
 
-                    var result = confirm("NB : joueur : " + joueur1 + " d'index ( " + ajoueur1 + " ) debutera cette partie avec une carte de " + sjoueur1 + ". Voulez vous continuer ?" );
+                    var result = confirm("NB : Les joueurs : " + joueur1 + " d'index ( " + ajoueur1 + " ) " + joueur2 + " d'index ( " + ajoueur2 + " ) " + joueur3 + " d'index ( " + ajoueur3 + " ) seront dans le meme groupe . Voulez vous continuer ?" );
                     if (result == false) {
                         event.preventDefault();
                     } else {
-                        var resultb = confirm("NB : joueur : " + joueur2 + " d'index ( " + ajoueur2 + " ) debutera cette partie avec une carte de " + sjoueur2 + ". Voulez vous continuer ?" );
-                        if (resultb == false) {
-                            event.preventDefault();
-                        } else {
-                            var resultc = confirm("NB : joueur : " + joueur3 + " d'index ( " + ajoueur3 + " ) debutera cette partie avec une carte de " + sjoueur3 + ". Voulez vous terminer l'enregistrement ?" );
-                            if (resultc == false) {
-                                event.preventDefault();
-                            } else {
-                                
-                                var l = 0;
-                                dataRef.on("value" , function(snapshot){
-                                    var i = 0;
-                                    snapshot.forEach(function(element){
-                                        if(element.key == codepass) {
-                                            i = 1;
-                                        }
-                                    });
+                        var l = 0;
+                        dataRef.on("value" , function(snapshot){
+                            var i = 0;
+                            snapshot.forEach(function(element){
+                                if(element.key == codepass) {
+                                    i = 1;
+                                }
+                            });
                                                     
-                                    if ( i == 0 ) {
-                                    var dataRefb = firebase.database().ref(nameopen).child(codepass);
-                                    l = 1;
+                            if ( i == 0 ) {
+                            var dataRefb = firebase.database().ref(nameopen).child(codepass);
+                            l = 1;
                                     var verifiea = ( joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
                                     var verifieb = ( joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
                                     var verifiec = ( joueur3.split(" ")[0] + " " + joueur3.split(" ")[1]);
 
-                                    var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur1 + " " + sjoueur1 + " 00"  ;
-                                    var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur2 + " " + sjoueur2 + " 00" ;
-                                    var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur3 + " " + sjoueur3 + " 00" ;
+                                    var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur1 + " " + "00" + " 00"  ;
+                                    var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur2 + " " + "00" + " 00" ;
+                                    var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur3 + " " + "00" + " 00" ;
 
 
                                     if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) & ( ( joueur3.split(" ")[1]) != undefined )  ) {
@@ -285,9 +263,9 @@
                                             'netj2' : ("00") ,
                                             'netj3' : ("00") ,
 
-                                            'brut1' : (sjoueur1) ,
-                                            'brut2' : (sjoueur2) ,
-                                            'brut3' : (sjoueur3) ,
+                                            'brut1' : ("00") ,
+                                            'brut2' : ("00") ,
+                                            'brut3' : ("00") ,
 
                                             'noma' : (noma) ,
                                             'nomb' : (nomb) ,
@@ -344,10 +322,8 @@
                                 });
 
 
-                            }
-                        }
-                    }  
-
+                            
+                    }
                 } else {
                     window.alert("code incorrect");
                     window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
