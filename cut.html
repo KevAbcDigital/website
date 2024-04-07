@@ -39,11 +39,11 @@
 
         </header>
 
-        <div style="margin-top: 0px; width: 100%;">
-            <img style="width: 40%; margin-left: 30%; filter: sepia(40%);" src="./design_files/images/gifcut.gif" alt="image">
-        </div>
+        <img style="width: 100%; height: 100vh; filter: sepia(40%); filter: opacity(0.1);" src="./design_files/images/gifcut.gif" alt="image">
 
-        <section class="card" style="margin-top: 30px; padding-bottom: 20px;" >
+        <img id="loadgif" style="display: none; top: 0; position: absolute; margin-top: 100px; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
+
+        <section style=" position: absolute; z-index: 1300; top: 0; margin-top: 80px; width: 100%; " >
 
             <b style="color: rgb(255, 255, 255); width: 100%;;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
             font-size: 25px; font-weight: 800; margin-top: 0px; text-align: center; display: block; ">
@@ -54,49 +54,57 @@
             font-size: 13px; font-weight: 800; margin-top: 0px; text-align: center; display: block; ">
                 By Golf Club Yaoundé
             </b>
+            <b style="color: rgb(255, 252, 90); width: 100%; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+            font-size: 13px; font-weight: 800; margin-top: 8px; text-align: center; display: block; padding: 0px 40px; ">
+                Entrez les noms des joueurs comme inscrits sur le scoreboard (sans Majuscules)
+            </b>
 
             <div class="form-group container-login100-form-btn" style="margin-top: -30px;">
 
                 <button id="valider" style="border-radius: 6px; background-color: rgb(252, 228, 16);
                 color: rgb(0, 20, 2); margin-left: 20%; margin-right: 20%; border-radius: 50px;
                     box-shadow: -1px 1px 9px #1e4d198e; " type="button" onclick="send()">
-                     Sauvegarder
-    
-                </lottie-player>
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player style=" width: 30%; right: 0; display: none; position: absolute; z-index: 1500; color: #ffffff; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                background="transparent" speed="1"  loop autoplay></lottie-player>
-                
+                     Créer ce groupe
                 </button>
             </div>
 
-            <div style="display: block; width: 88%; margin-top: 30px; margin-left: 6%;" class="devisbloc">
+            <section style="position: relative; margin-top: 50px; width: 84%; box-shadow: -1px 1px 9px #25282592;
+            background-color: #6dacff60; margin-left: 8%; border-radius: 20px;"
+            class="formulaire" id="formulaire">
 
-                <b id="j1" style="width: 16%; color: #ffffff; ">Saisissez le dernier du joueur </b>
+                <div style="padding-top: 35px; padding-bottom: 15px;" class="devisbloc ">
 
+                    <form name="formweb" style="padding: 0 25px;" action="">
 
-                <div style="display: flex; margin-bottom: 3px; margin-top: 8px;">
-                    <input id="n1" style="height: 33px; width: 16%; border: 1px solid #014a03d1; padding-left: 12px; border-bottom-left-radius: 10px;" type="number" placeholder="" >
-                    <b id="j1" style="width: 16%; color: #ffffff; ">Hole1</b>
+                        <div class="form-wrapper" style="display: flex; margin-top: 0px;">
+                            <b style="color: rgb(255, 255, 255); font-size: 11px; font-weight: 900; text-align: start; padding-left: 20px; width: 90%; margin-left: 5%;">Noms et prenoms</b>
+                        </div>
+
+                        <div class="form-wrapper" style="display: flex; margin-top: 10px;">
+                            <input id="joueur1" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 90%; margin-left: 5%; " type="text" placeholder="Nom du 1er joueur" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper" style="display: flex; margin-top: -5px;">
+                            <input id="joueur2" style=" text-align: center; height: 30px; border: 1px solid #007411; padding-left: 10px; width: 90%; margin-left: 5%;" type="text" placeholder="Nom du 2eme joueur" class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper" style="display: flex; margin-top: -5px;">
+                            <input id="joueur3" style=" text-align: center; height: 30px; border: 1px solid #007449; padding-left: 10px; width: 90%; margin-left: 5%; " type="text" placeholder="Nom du 3eme joueur" class="form-controla">
+                        </div>
+
+                        <a style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                             color: rgb(255, 238, 4);" class="titleform"> Securité de votre partie * *</a>
+                             
+                        <div class="form-wrapper" style="display: flex;">
+                            <input id="codepass" style=" display: flex; text-align: center; height: 30px; border: 1px solid #fffb06; padding-left: 15px;" type="text" placeholder="Code du groupe" class="form-controla">
+                        </div>
+
+                    </form>
+
                 </div>
+            </section>
 
-                <div style="display: flex; margin-bottom: 3px; margin-top: 8px;">
-                    <input id="n1" style="height: 33px; width: 16%; border: 1px solid #014a03d1; padding-left: 12px; border-bottom-left-radius: 10px;" type="number" placeholder="" >
-                    <b id="j1" style="width: 16%; color: #ffffff; ">Hole1</b>
-                </div>
-
-                <div style="display: flex; margin-bottom: 3px; margin-top: 8px;">
-                    <input id="n1" style="height: 33px; width: 16%; border: 1px solid #014a03d1; padding-left: 12px; border-bottom-left-radius: 10px;" type="number" placeholder="" >
-                    <b id="j1" style="width: 16%; color: #ffffff; ">Hole1</b>
-                </div>
-
-                
-                <div class="form-wrapper" style="display: flex;">
-                    <input id="codepass" style=" display: flex; text-align: center; height: 30px; border: 1px solid #820000; padding-left: 15px;" type="text" placeholder="Code du groupe" class="form-controla">
-                </div>
-            </div>
-
-            <p style=" width: 100%; text-align: center; margin-top: 40px; color: rgb(223, 255, 223); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © Tous droits réservés - Golf Yde </p>
+            <p style=" width: 100%; text-align: center; margin-top: 40px; color: rgb(200, 255, 0); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © Tous droits réservés - Golf Yde </p>
 
         </section>
 
@@ -106,7 +114,7 @@
 
     </body>
 
-    
+     
     <script>
 
         const nameopen = localStorage.getItem('openname');
@@ -114,9 +122,14 @@
         nompart.innerHTML= nameopen ;
         window.alert(nameopen)
 
+        if (nameopen == null) {
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+        }
         function homebtn(){
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
+
+        var loadgif = document.getElementById('loadgif');
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -142,89 +155,213 @@
 
         function send(){
             
-            
-            var load = document.getElementById("lottieload");                
             var ja = document.getElementById("joueur1");                
             var jb = document.getElementById("joueur2");                
-            var jc = document.getElementById("joueur3");                
-            var aja = document.getElementById("ajoueur1");                
-            var ajb = document.getElementById("ajoueur2");                
-            var ajc = document.getElementById("ajoueur3");     
-            var sja = document.getElementById("sjoueur1");                
-            var sjb = document.getElementById("sjoueur2");                
-            var sjc = document.getElementById("sjoueur3");                
-            var cca = document.getElementById("codeadmin");                
+            var jc = document.getElementById("joueur3");                                    
             var cc = document.getElementById("codepass");                
 
             var joueur1 = $('#joueur1').val().toLowerCase().trim();
             var joueur2 = $('#joueur2').val().toLowerCase().trim();
             var joueur3 = $('#joueur3').val().toLowerCase().trim();
-            var ajoueur1 = $('#ajoueur1').val().toLowerCase().trim();
-            var ajoueur2 = $('#ajoueur2').val().toLowerCase().trim();
-            var ajoueur3 = $('#ajoueur3').val().toLowerCase().trim();
-            var sjoueur1 = $('#sjoueur1').val().toLowerCase().trim();
-            var sjoueur2 = $('#sjoueur2').val().toLowerCase().trim();
-            var sjoueur3 = $('#sjoueur3').val().toLowerCase().trim();
-            var codeadmin = $('#codeadmin').val();
             var codepass = $('#codepass').val();
             var p = 0;
             var dataRef = firebase.database().ref(nameopen);
 
             if ( joueur1 != "" & joueur1.length < 21 & joueur3 != "" & joueur3.length < 21 
-               & joueur2 != "" & joueur2.length < 21 & joueur1 != "aucun" & ajoueur1 != "" & ajoueur2 != "" & ajoueur3 != "" 
-               & ( containsOnlyNumbers(ajoueur1) == true ) & ( containsOnlyNumbers(ajoueur2) == true ) 
-               & ( containsOnlyNumbers(ajoueur3) == true ) & sjoueur1 != "" & sjoueur2 != "" & sjoueur3 != "" 
-               & ( containsOnlyNumbers(sjoueur1) == true ) & ( containsOnlyNumbers(sjoueur2) == true ) 
-               & ( containsOnlyNumbers(sjoueur3) == true ) & codepass != "" & codepass.length == 8
-               & codeadmin != "" & codeadmin.length == 9) {
+               & joueur2 != "" & joueur2.length < 21 & joueur1 != "aucun" & codepass != "" & codepass.length == 8) {
 
-                if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
-                if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
-
-                load.style.display = "block";
                 // var nbr = 0;            
                 // nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
                 // window.alert(nbr);
+                
+                if ( (joueur3 == "aucun") ) {
+                    
+                    loadgif.style.display='block';
+                    var count1 = 0;
+                    var count2 = 0;
 
-                if (codeadmin == "adminpass" ) {
+                    var al1 = "non";
+                    var al2 = "non";
 
-                    var result = confirm("NB : joueur : " + joueur1 + " d'index ( " + ajoueur1 + " ) debutera cette partie avec une carte de " + sjoueur1 + ". Voulez vous continuer ?" );
-                    if (result == false) {
-                        event.preventDefault();
-                    } else {
-                        var resultb = confirm("NB : joueur : " + joueur2 + " d'index ( " + ajoueur2 + " ) debutera cette partie avec une carte de " + sjoueur2 + ". Voulez vous continuer ?" );
-                        if (resultb == false) {
-                            event.preventDefault();
-                        } else {
-                            var resultc = confirm("NB : joueur : " + joueur3 + " d'index ( " + ajoueur3 + " ) debutera cette partie avec une carte de " + sjoueur3 + ". Voulez vous terminer l'enregistrement ?" );
-                            if (resultc == false) {
-                                event.preventDefault();
+                    var aj1 = "non";
+                    var aj2 = "non";
+
+                    var ab1 = "non";
+                    var ab2 = "non";
+
+
+                    var dataRefauto = firebase.database().ref("open").child(nameopen);
+                    dataRefauto.on("value" , function(snapshot){
+                        snapshot.forEach(function(element){ 
+
+                            if ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )  == joueur1 ) {
+                                count1 = 1;
+                                aj1 = ( ( (element.key).split(" ") ) [23] ) ;
+                                ab1 = ( ( (element.key).split(" ") ) [1] ) ;
+                                al1 = element.key ;
+                            }
+                            if ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )  == joueur2 ) {
+                                count2 = 1;
+                                aj2 = ( ( (element.key).split(" ") ) [23] ) ;
+                                ab2 = ( ( (element.key).split(" ") ) [1] ) ;
+                                al2 = element.key ;
+                            }
+
+                        });
+
+                            if ( count1 == 1 ) {
+                                if ( count2 == 1 ) {
+                                    var result = confirm("NB : Les joueurs : " + joueur1 + "  , " + joueur2 + " seront désormais dans le meme groupe . Voulez vous continuer ?" );
+                                    if (result == false) {
+                                        event.preventDefault();
+                                        loadgif.style.display='none';
+                                    } else {
+                                        var dataReffinaldel = firebase.database().ref("open").child(nameopen);
+                                        dataReffinaldel.child(al1).remove();
+                                        dataReffinaldel.child(al2).remove();
+
+                                        var dataReffinaldela = firebase.database().ref(nameopen);
+                                        dataReffinaldela.remove();
+
+                                        var dataRefbaa = firebase.database().ref(nameopen).child(codepass);
+
+                                        var noma = ab1 + " --- " + joueur1 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj1 + " " + ab1 + " 00"  ;
+                                        var nomb = ab2 + " --- " + joueur2 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj2 + " " + ab2 + " 00" ;
+
+                                        dataRefbaa.set({
+                                            'a1' : ("0") , 'a2' : ("0") , 'a3' : ("0") , 'a4' : ("0") , 'a5' : ("0") ,
+                                            'a6' : ("0") , 'a7' : ("0") , 'a8' : ("0") , 'a9' : ("0") , 'a10' : ("0") ,
+                                            'a11' : ("0") , 'a12' : ("0") , 'a13' : ("0") , 'a14' : ("0") , 'a15' : ("0") ,
+                                            'a16' : ("0") , 'a17' : ("0") , 'a18' : ("0") ,
+
+                                            'b1' : ("0") , 'b2' : ("0") , 'b3' : ("0") , 'b4' : ("0") , 'b5' : ("0") ,
+                                            'b6' : ("0") , 'b7' : ("0") , 'b8' : ("0") , 'b9' : ("0") , 'b10' : ("0") ,
+                                            'b11' : ("0") , 'b12' : ("0") , 'b13' : ("0") , 'b14' : ("0") , 'b15' : ("0") ,
+                                            'b16' : ("0") , 'b17' : ("0") , 'b18' : ("0") ,
+
+                                            'joueur1' : (joueur1) ,
+                                            'joueur2' : (joueur2) ,
+
+                                            'net1' : (aj1) ,
+                                            'net2' : (aj2) ,
+
+                                            'netj1' : ("00") ,
+                                            'netj2' : ("00") ,
+
+                                            'brut1' : (ab1) ,
+                                            'brut2' : (ab2) ,
+
+                                            'noma' : (noma) ,
+                                            'nomb' : (nomb) ,
+                                            'nomc' : ("aucun") 
+
+                                        }).then(()=>{
+
+                                            var dataReffinal = firebase.database().ref("open").child(nameopen);
+                                                dataReffinal.child(noma).set({
+                                                    'noma' : (noma)
+                                                }).then(()=>{                                            
+                                                    dataReffinal.child(nomb).set({
+                                                        'nomb' : (nomb)
+                                                    }).then(()=>{                                                
+                                                        loadgif.style.display = 'none';
+                                                        window.alert("Sauvegarde reuissie.");  
+                                                        const touropena = nameopen;
+                                                        localStorage.setItem('openname' , touropena );
+                                                        window.location.href = 'https://kevabcdigital.github.io/website/cut.html';                                                        }).catch((error)=>{
+                                                    }).catch((error)=>{
+                                                        loadgif.style.display = 'none';
+                                                        window.alert("erreur survenue : "+ error);
+                                                    });
+                                                }).catch((error)=>{
+                                                    loadgif.style.display = 'none';
+                                                    window.alert("erreur survenue : "+ error);
+                                                });
+                                            
+
+                                        }).catch((error)=>{
+                                            loadgif.style.display = 'none';
+                                            window.alert("erreur survenue : "+ error);
+                                        });
+
+
+                                    }
+                                } else {
+                                    loadgif.style.display='none';
+                                    window.alert("Désole le nom du 2eme joueur a été mal saisi . verifiez l'orthographe ou l'agencement des noms et prénoms")
+                                }
                             } else {
-                                
-                                var l = 0;
-                                dataRef.on("value" , function(snapshot){
-                                    var i = 0;
-                                    snapshot.forEach(function(element){
-                                        if(element.key == codepass) {
-                                            i = 1;
-                                        }
-                                    });
-                                                    
-                                    if ( i == 0 ) {
-                                    var dataRefb = firebase.database().ref(nameopen).child(codepass);
-                                    l = 1;
-                                    var verifiea = ( joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
-                                    var verifieb = ( joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
-                                    var verifiec = ( joueur3.split(" ")[0] + " " + joueur3.split(" ")[1]);
+                                loadgif.style.display='none';
+                                window.alert("Désole le nom du 1er joueur a été mal saisi . verifiez l'orthographe ou l'agencement des noms et prénoms")
+                            }
+                    });
 
-                                    var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur1 + " " + sjoueur1 + " 00"  ;
-                                    var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur2 + " " + sjoueur2 + " 00" ;
-                                    var nomc = "new " + "--- " + verifiec + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur3 + " " + sjoueur3 + " 00" ;
+                } else {
+                    loadgif.style.display='block';
+                    var count1 = 0;
+                    var count2 = 0;
+                    var count3 = 0;
+
+                    var aj1 = "non";
+                    var aj2 = "non";
+                    var aj3 = "non";
+
+                    var ab1 = "non";
+                    var ab2 = "non";
+                    var ab3 = "non";
+
+                    var al1 = "non";
+                    var al2 = "non";
+                    var al3 = "non";
+
+                    var dataRefauto = firebase.database().ref("open").child(nameopen);
+                    dataRefauto.on("value" , function(snapshot){
+                        snapshot.forEach(function(element){ 
+
+                            if ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )  == joueur1 ) {
+                                count1 = 1;
+                                aj1 = ( ( (element.key).split(" ") ) [23] ) ;
+                                ab1 = ( ( (element.key).split(" ") ) [1] ) ;
+                                al1 = element.key;
+                            }
+                            if ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )  == joueur2 ) {
+                                count2 = 1;
+                                aj2 = ( ( (element.key).split(" ") ) [23] ) ;
+                                ab2 = ( ( (element.key).split(" ") ) [1] ) ;
+                                al2 = element.key;
+                            }
+                            if ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )  == joueur3 ) {
+                                count3 = 1;
+                                aj3 = ( ( (element.key).split(" ") ) [23] ) ;
+                                ab3 = ( ( (element.key).split(" ") ) [1] ) ;
+                                al3 = element.key;
+                            }
+                        });
+
+                            if ( count1 == 1 ) {
+                                if ( count2 == 1 ) {
+                                    if ( count3 == 1 ) {
+                                        
+                                        var result = confirm("NB : Les joueurs : " + joueur1 + "  , " + joueur2 + " , " + joueur3 + " seront désormais dans le meme groupe . Voulez vous continuer ?" );
+                                        if (result == false) {
+                                            event.preventDefault();
+                                            loadgif.style.display='none';
+                                        } else {
+                                            var dataReffinaldel = firebase.database().ref("open").child(nameopen);
+                                            dataReffinaldel.child(al1).remove();
+                                            dataReffinaldel.child(al2).remove();
+
+                                            var dataReffinaldela = firebase.database().ref(nameopen);
+                                            dataReffinaldela.remove();
+                                            
+                                            var dataRefbaa = firebase.database().ref(nameopen).child(codepass);
+
+                                            var noma = ab1 + " --- " + joueur1 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj1 + " " + ab1 + " 00"  ;
+                                            var nomb = ab2 + " --- " + joueur2 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj2 + " " + ab2 + " 00" ;
+                                            var nomc = ab3 + " --- " + joueur3 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj3 + " " + ab3 + " 00" ;
 
 
-                                    if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) & ( ( joueur3.split(" ")[1]) != undefined )  ) {
-                                    
-                                        dataRefb.set({
+                                            dataRefbaa.set({
                                             'a1' : ("0") , 'a2' : ("0") , 'a3' : ("0") , 'a4' : ("0") , 'a5' : ("0") ,
                                             'a6' : ("0") , 'a7' : ("0") , 'a8' : ("0") , 'a9' : ("0") , 'a10' : ("0") ,
                                             'a11' : ("0") , 'a12' : ("0") , 'a13' : ("0") , 'a14' : ("0") , 'a15' : ("0") ,
@@ -240,21 +377,21 @@
                                             'c11' : ("0") , 'c12' : ("0") , 'c13' : ("0") , 'c14' : ("0") , 'c15' : ("0") ,
                                             'c16' : ("0") , 'c17' : ("0") , 'c18' : ("0") ,
 
-                                            'joueur1' : (verifiea) ,
-                                            'joueur2' : (verifieb) ,
-                                            'joueur3' : (verifiec) ,
+                                            'joueur1' : (joueur1) ,
+                                            'joueur2' : (joueur2) ,
+                                            'joueur3' : (joueur3) ,
 
-                                            'net1' : (ajoueur1) ,
-                                            'net2' : (ajoueur2) ,
-                                            'net3' : (ajoueur3) ,
+                                            'net1' : (aj1) ,
+                                            'net2' : (aj2) ,
+                                            'net3' : (aj3) ,
 
                                             'netj1' : ("00") ,
                                             'netj2' : ("00") ,
                                             'netj3' : ("00") ,
 
-                                            'brut1' : (sjoueur1) ,
-                                            'brut2' : (sjoueur2) ,
-                                            'brut3' : (sjoueur3) ,
+                                            'brut1' : (ab1) ,
+                                            'brut2' : (ab2) ,
+                                            'brut3' : (ab3) ,
 
                                             'noma' : (noma) ,
                                             'nomb' : (nomb) ,
@@ -272,61 +409,48 @@
                                                         dataReffinal.child(nomc).set({
                                                             'nomc' : (nomc)
                                                         }).then(()=>{
-                                                            load.style.display = 'none';
+                                                            loadgif.style.display = 'none';
                                                             window.alert("Sauvegarde reuissie.");  
                                                             const touropena = nameopen;
                                                             localStorage.setItem('openname' , touropena );
-                                                            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';                                                        }).catch((error)=>{
-                                                            load.style.display = 'none';
-                                                            window.alert("erreur survenue : "+ error);
+                                                            window.location.href = 'https://kevabcdigital.github.io/website/cut.html';                                                        }).catch((error)=>{
                                                         });
                                                     }).catch((error)=>{
-                                                        load.style.display = 'none';
+                                                        loadgif.style.display = 'none';
                                                         window.alert("erreur survenue : "+ error);
                                                     });
                                                 }).catch((error)=>{
-                                                    load.style.display = 'none';
+                                                    loadgif.style.display = 'none';
                                                     window.alert("erreur survenue : "+ error);
                                                 });
                                             
 
                                         }).catch((error)=>{
-                                            load.style.display = 'none';
+                                            loadgif.style.display = 'none';
                                             window.alert("erreur survenue : "+ error);
                                         });
                                     
 
+
+
+                                        }
+
                                     } else {
-                                        load.style.display = "none";
-                                        window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom')
+                                        loadgif.style.display='none';
+                                        window.alert("Désole le nom du 3ème joueur a été mal saisi . verifiez l'orthographe ou l'agencement des noms et prénoms")
                                     }
-                            
-                                    }
-                            
-                                    if ( ( i == 1 ) & ( l == 0 ) ) {
-                                        load.style.display = "none";
-                                        window.alert("le code ( " + codepass + " ) a déjà été utilisé pour une partie . Utilisez un autre code");
-                                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                                    }
-                                });
-
-
+                                } else {
+                                    loadgif.style.display='none';
+                                    window.alert("Désole le nom du 2eme joueur a été mal saisi . verifiez l'orthographe ou l'agencement des noms et prénoms")
+                                }
+                            } else {
+                                loadgif.style.display='none';
+                                window.alert("Désole le nom du 1er joueur a été mal saisi . verifiez l'orthographe ou l'agencement des noms et prénoms")
                             }
-                        }
-                    }  
-
-                } else {
-                    window.alert("code incorrect");
-                    window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                }
-
-
+                    });
+                }       
+            
                 
-                
-
-
-
-
                
             } else if ( joueur1 == "aucun" ) {
                 window.alert("veuillez attribuer un nom correct au joueur 1 ...");
@@ -346,24 +470,14 @@
                 jb.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
                 cc.style.backgroundColor="rgb(255, 255, 255)";            
-            } else if ( ajoueur1 == "" ) {
-                window.alert("Entrez l'handicap du 1er joueur");
-                cc.style.backgroundColor="rgb(255, 255, 255)";
+            } else if ( joueur2 == "aucun" ) {
+                window.alert("veuillez attribuer un nom correct au joueur 2 ...");
                 ja.style.backgroundColor="rgb(255, 220, 220)";
-                jb.style.backgroundColor="rgb(255, 255, 255)";   
+                jb.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( containsOnlyNumbers(ajoueur1) == false ) {
-                window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
-            } else if ( sjoueur1 == "" ) {
-                window.alert("Entrez le score cummulé du 1er joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
                 cc.style.backgroundColor="rgb(255, 255, 255)";
-                ja.style.backgroundColor="rgb(255, 220, 220)";
-                jb.style.backgroundColor="rgb(255, 255, 255)";   
-                jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( containsOnlyNumbers(sjoueur1) == false ) {
-                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( joueur2 == "" ) {
-                window.alert("Entrez (aucun) pour signifier qu'il nya pas de deuxieme joueur , entrez 0 comme handicap et 0 comme score ... ");
+                window.alert("veuillez entrer le nom du joueur 2 ...");
                 jb.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
@@ -374,22 +488,6 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
                 cc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( ajoueur2 == "" ) {
-                window.alert("Entrez l'handicap du 2eme joueur");
-                cc.style.backgroundColor="rgb(255, 255, 255)";
-                ja.style.backgroundColor="rgb(255, 255, 255)";
-                jb.style.backgroundColor="rgb(255, 220, 220)";   
-                jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( containsOnlyNumbers(ajoueur2) == false ) {
-                window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
-            } else if ( sjoueur2 == "" ) {
-                window.alert("Entrez le score cummulé du 2eme joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
-                cc.style.backgroundColor="rgb(255, 255, 255)";
-                ja.style.backgroundColor="rgb(255, 255, 255)";
-                jb.style.backgroundColor="rgb(255, 220, 220)";   
-                jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( containsOnlyNumbers(sjoueur2) == false ) {
-                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( joueur3 == "" ) {
                 window.alert("Entrez (aucun) pour signifier qu'il nya pas de troisieme joueur , entrez 0 comme handicap et 0 comme score ...");
                 jc.style.backgroundColor="rgb(255, 220, 220)";
@@ -402,22 +500,6 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 cc.style.backgroundColor="rgb(255, 255, 255)";         
-            } else if ( ajoueur3 == "" ) {
-                window.alert("Entrez l'handicap du 3eme joueur");
-                cc.style.backgroundColor="rgb(255, 255, 255)";
-                ja.style.backgroundColor="rgb(255, 255, 255)";
-                jb.style.backgroundColor="rgb(255, 255, 255)";   
-                jc.style.backgroundColor="rgb(255, 220, 220)";
-            } else if ( containsOnlyNumbers(ajoueur3) == false ) {
-                window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
-            } else if ( ajoueur3 == "" ) {
-                window.alert("Entrez le score cummulé du 3eme joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
-                cc.style.backgroundColor="rgb(255, 255, 255)";
-                ja.style.backgroundColor="rgb(255, 255, 255)";
-                jb.style.backgroundColor="rgb(255, 255, 255)";   
-                jc.style.backgroundColor="rgb(255, 220, 220)";
-            } else if ( containsOnlyNumbers(sjoueur3) == false ) {
-                window.alert("Le score du 3ème joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( codepass == "" ) {
                 window.alert("Entrer un mot de passe pour cette partie ...");
                 cc.style.backgroundColor="rgb(255, 220, 220)";
@@ -430,29 +512,16 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( codeadmin == "" ) {
-                window.alert("Entrer votre code admin ...");
-                cca.style.backgroundColor="rgb(255, 220, 220)";
-                ja.style.backgroundColor="rgb(255, 255, 255)";
-                jb.style.backgroundColor="rgb(255, 255, 255)";   
-                jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( codeadmin.length != 9 ) {
-                window.alert("code incorrect");
-                cca.style.backgroundColor="rgb(255, 220, 220)";
-                ja.style.backgroundColor="rgb(255, 255, 255)";
-                jb.style.backgroundColor="rgb(255, 255, 255)";   
-                jc.style.backgroundColor="rgb(255, 255, 255)";
-                window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
             }
     
         }
 
         function invalid() {
             window.alert("Desolé ce formulaire est indisponible pour le moment.");
-            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
 
     </script>
-    
+  
 
 </html>

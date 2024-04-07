@@ -45,20 +45,14 @@
 
         <b style="color: rgb(255, 255, 255); margin-left: 10%; position: absolute; 
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-            font-size: 17px; font-weight: 800; margin-top: 120px; " id="nompart">
+            font-size: 17px; font-weight: 800; margin-top: 100px; " id="nompart">
                 Open de GOLF
         </b>
 
-        <b style="color: rgb(255, 255, 255); margin-left: 10%; position: absolute; 
+        <b style="color: rgb(255, 233, 174); margin-left: 10%; position: absolute; padding-right: 50px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-            font-size: 10px; font-weight: 800; margin-top: 145px; ">
-                Reformez vos groupes de jeu
-        </b>
-
-        <b style="color: rgb(210, 241, 144); margin-left: 10%; position: absolute; 
-            font-family: cursive;
-            font-size: 11px; font-weight: 900; margin-top: 175px; ">
-            Powered by GOLF CLUB YAOUNDE
+            font-size: 12px; font-weight: 400; margin-top: 125px; ">
+                NB: Pour les parties à 2 , saisissez le mot "AUCUN" comme le nom du 3ème joueur et "0" comme handicap par defaut
         </b>
 
         <section style="position: absolute; bottom: 0; width: 100%;
@@ -198,19 +192,130 @@
                & ( containsOnlyNumbers(ajoueur1) == true ) & ( containsOnlyNumbers(ajoueur2) == true ) 
                & ( containsOnlyNumbers(ajoueur3) == true ) & codepass != "" & codepass.length == 8) {
 
-                if (joueur2 == "aucun") { joueur2 = "aucun joueur"; }
-                if (joueur3 == "aucun") { joueur3 = "aucun joueur"; }
-
                 load.style.display = "block";
                 // var nbr = 0;            
                 // nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
                 // window.alert(nbr);
 
-                if (codeadmin == "adminpass" ) {
+                if ( (joueur3 == "aucun") ) {
+                    
+                    var result = confirm("NB : Les joueurs : " + joueur1 + " d'index ( " + ajoueur1 + " ) " + joueur2 + " d'index ( " + ajoueur2 + " ) seront dans le meme groupe . Voulez vous continuer ?" );
+                    if (result == false) {
+                        event.preventDefault();
+                        load.style.display = "none";
+                    } else {
+                        var l = 0;
+                        dataRef.on("value" , function(snapshot){
+                            var i = 0;
+                            snapshot.forEach(function(element){
+                                if(element.key == codepass) {
+                                    i = 1;
+                                }
+                            });
+                                                    
+                            if ( i == 0 ) {
+                            var dataRefb = firebase.database().ref(nameopen).child(codepass);
+                            l = 1;
+                                    var verifiea = ( joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
+                                    var verifieb = ( joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
 
+                                    var noma = "new " + "--- " + verifiea + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur1 + " " + "00" + " 00"  ;
+                                    var nomb = "new " + "--- " + verifieb + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + ajoueur2 + " " + "00" + " 00" ;
+
+                                    if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) ) {
+                                    
+                                        
+                                        var dataReffinaldel = firebase.database().ref("open").child(nameopen);
+                                        dataReffinaldel.child(al1).remove();
+                                        dataReffinaldel.child(al2).remove();
+
+                                        var dataReffinaldela = firebase.database().ref(nameopen);
+                                        dataReffinaldela.remove();
+
+                                        var noma = ab1 + " --- " + joueur1 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj1 + " " + ab1 + " 00"  ;
+                                        var nomb = ab2 + " --- " + joueur2 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj2 + " " + ab2 + " 00" ;
+
+                                        dataRefb.set({
+                                            'a1' : ("0") , 'a2' : ("0") , 'a3' : ("0") , 'a4' : ("0") , 'a5' : ("0") ,
+                                            'a6' : ("0") , 'a7' : ("0") , 'a8' : ("0") , 'a9' : ("0") , 'a10' : ("0") ,
+                                            'a11' : ("0") , 'a12' : ("0") , 'a13' : ("0") , 'a14' : ("0") , 'a15' : ("0") ,
+                                            'a16' : ("0") , 'a17' : ("0") , 'a18' : ("0") ,
+
+                                            'b1' : ("0") , 'b2' : ("0") , 'b3' : ("0") , 'b4' : ("0") , 'b5' : ("0") ,
+                                            'b6' : ("0") , 'b7' : ("0") , 'b8' : ("0") , 'b9' : ("0") , 'b10' : ("0") ,
+                                            'b11' : ("0") , 'b12' : ("0") , 'b13' : ("0") , 'b14' : ("0") , 'b15' : ("0") ,
+                                            'b16' : ("0") , 'b17' : ("0") , 'b18' : ("0") ,
+
+                                            'joueur1' : (joueur1) ,
+                                            'joueur2' : (joueur2) ,
+
+                                            'net1' : (aj1) ,
+                                            'net2' : (aj2) ,
+
+                                            'netj1' : ("00") ,
+                                            'netj2' : ("00") ,
+
+                                            'brut1' : (ab1) ,
+                                            'brut2' : (ab2) ,
+
+                                            'noma' : (noma) ,
+                                            'nomb' : (nomb) ,
+                                            'nomc' : ("aucun") 
+
+                                        }).then(()=>{
+
+                                            var dataReffinal = firebase.database().ref("open").child(nameopen);
+                                                dataReffinal.child(noma).set({
+                                                    'noma' : (noma)
+                                                }).then(()=>{                                            
+                                                    dataReffinal.child(nomb).set({
+                                                        'nomb' : (nomb)
+                                                    }).then(()=>{                                                
+                                                        load.style.display = 'none';
+                                                        window.alert("Sauvegarde reuissie.");  
+                                                        const touropena = nameopen;
+                                                        localStorage.setItem('openname' , touropena );
+                                                        window.location.href = 'https://kevabcdigital.github.io/website/cut.html';                                                        }).catch((error)=>{
+                                                        load.style.display = 'none';
+                                                        window.alert("erreur survenue : "+ error);
+                                                    }).catch((error)=>{
+                                                        load.style.display = 'none';
+                                                        window.alert("erreur survenue : "+ error);
+                                                    });
+                                                }).catch((error)=>{
+                                                    load.style.display = 'none';
+                                                    window.alert("erreur survenue : "+ error);
+                                                });
+                                            
+
+                                        }).catch((error)=>{
+                                            load.style.display = 'none';
+                                            window.alert("erreur survenue : "+ error);
+                                        });
+
+
+                                    } else {
+                                        load.style.display = "none";
+                                        window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom')
+                                    }
+                            
+                                    }
+                            
+                                    if ( ( i == 1 ) & ( l == 0 ) ) {
+                                        load.style.display = "none";
+                                        window.alert("le code ( " + codepass + " ) a déjà été utilisé pour une partie . Utilisez un autre code");
+                                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                                    }
+                                });
+                            
+                    }
+
+                } else {
+                    
                     var result = confirm("NB : Les joueurs : " + joueur1 + " d'index ( " + ajoueur1 + " ) " + joueur2 + " d'index ( " + ajoueur2 + " ) " + joueur3 + " d'index ( " + ajoueur3 + " ) seront dans le meme groupe . Voulez vous continuer ?" );
                     if (result == false) {
                         event.preventDefault();
+                        load.style.display = "none";
                     } else {
                         var l = 0;
                         dataRef.on("value" , function(snapshot){
@@ -320,22 +425,9 @@
                                         window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                                     }
                                 });
-
-
                             
                     }
-                } else {
-                    window.alert("code incorrect");
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                 }
-
-
-                
-                
-
-
-
-
                
             } else if ( joueur1 == "aucun" ) {
                 window.alert("veuillez attribuer un nom correct au joueur 1 ...");
@@ -363,16 +455,14 @@
                 jc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( containsOnlyNumbers(ajoueur1) == false ) {
                 window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
-            } else if ( sjoueur1 == "" ) {
-                window.alert("Entrez le score cummulé du 1er joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
-                cc.style.backgroundColor="rgb(255, 255, 255)";
-                ja.style.backgroundColor="rgb(255, 220, 220)";
-                jb.style.backgroundColor="rgb(255, 255, 255)";   
+            } else if ( joueur2 == "aucun" ) {
+                window.alert("veuillez attribuer un nom correct au joueur 2 ...");
+                jb.style.backgroundColor="rgb(255, 220, 220)";
+                ja.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( containsOnlyNumbers(sjoueur1) == false ) {
-                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
+                cc.style.backgroundColor="rgb(255, 255, 255)"; 
             } else if ( joueur2 == "" ) {
-                window.alert("Entrez (aucun) pour signifier qu'il nya pas de deuxieme joueur , entrez 0 comme handicap et 0 comme score ... ");
+                window.alert("veuillez entrer le nom du joueur 2 ...");
                 jb.style.backgroundColor="rgb(255, 220, 220)";
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jc.style.backgroundColor="rgb(255, 255, 255)";
@@ -391,14 +481,6 @@
                 jc.style.backgroundColor="rgb(255, 255, 255)";
             } else if ( containsOnlyNumbers(ajoueur2) == false ) {
                 window.alert("Les handicaps doivent contenir uniquement des chiffres ...");
-            } else if ( sjoueur2 == "" ) {
-                window.alert("Entrez le score cummulé du 2eme joueur. Le score doit contenir uniquement des chiffres ... ex: 72");
-                cc.style.backgroundColor="rgb(255, 255, 255)";
-                ja.style.backgroundColor="rgb(255, 255, 255)";
-                jb.style.backgroundColor="rgb(255, 220, 220)";   
-                jc.style.backgroundColor="rgb(255, 255, 255)";
-            } else if ( containsOnlyNumbers(sjoueur2) == false ) {
-                window.alert("Le score du 1er joueur doit contenir uniquement des chiffres ... ex: 72 ");
             } else if ( joueur3 == "" ) {
                 window.alert("Entrez (aucun) pour signifier qu'il nya pas de troisieme joueur , entrez 0 comme handicap et 0 comme score ...");
                 jc.style.backgroundColor="rgb(255, 220, 220)";

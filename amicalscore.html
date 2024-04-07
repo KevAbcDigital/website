@@ -187,7 +187,7 @@
 
             </div>
 
-            <div style="display: block; width: 88%; margin-top: 30px; margin-left: 6%;" class="devisbloc">
+            <div id="formulairec" style="display: block; width: 88%; margin-top: 30px; margin-left: 6%;" class="devisbloc">
 
                 <a style="color: rgb(255, 208, 0); padding-left: 30px;  font-size: 12px;" id="joueur3"> Joueur 3</a>
 
@@ -275,9 +275,7 @@
 
         var linked = "non";
 
-        var loadgif = document.getElementById('loadgif');
-
-        
+        var loadgif = document.getElementById('loadgif');        
 
 /*
         function delet() {
@@ -549,13 +547,13 @@
         } else {
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
-        
+
+        var ccc = 0;
         function search(){                           
 
             loadgif.style.display='block';
 
             var formulairec = document.getElementById("formulairec");
-            var formulaireb = document.getElementById("formulaireb");
             
             var joueur1 = document.getElementById("joueur1");                
             var joueur2 = document.getElementById("joueur2");                
@@ -651,18 +649,17 @@
 
                                         if(element.key == "nomb" ) {
                                             pb=element.val();
-                                            if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
-                                                formulaireb.style.display = "none";
-                                            }
                                             joueur2.innerHTML= "> " +  ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
                                         }
 
                                         if(element.key == "nomc" ) {
                                             pc=element.val();
-                                            if ( ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "aucun joueur" ) || ( ( ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) ) == "--- ---" )  ) {
+                                            if ( element.val() == "aucun" ) {
                                                 formulairec.style.display = "none";
+                                                ccc = 1;
                                             }
                                             joueur3.innerHTML= "> " + ( ( (element.val()).split(" ") ) [2] ) + " " + ( ( (element.val()).split(" ") ) [3] ) + " ( " + ( ( (element.val()).split(" ") ) [22] ) + " ) " ;
+                                        
                                         }
                                        
 
@@ -2083,12 +2080,11 @@
             return /^\d+$/.test(str); 
         }
 
+        
         function send(){
 
             var dataRef = firebase.database().ref(nameopen);
 
-            var formulairea= document.getElementById("formulairea");                
-            var formulaireb= document.getElementById("formulaireb");                
             var formulairec= document.getElementById("formulairec");                
 
             var a1 = document.getElementById("a1");                
@@ -2524,7 +2520,9 @@
                         var dataReffinal = firebase.database().ref("open").child(nameopen);
                         dataReffinal.child(lasta).remove();
                         dataReffinal.child(lastb).remove();
-                        dataReffinal.child(lastc).remove();
+                        if ( ccc == 0 ) {
+                            dataReffinal.child(lastc).remove();
+                        }
                                 
                         dataReffinal.child(noma).set({
                             'noma' : (noma)
@@ -2532,20 +2530,26 @@
                             dataReffinal.child(nomb).set({
                                 'nomb' : (nomb)
                             }).then(()=>{
-                                dataReffinal.child(nomc).set({
-                                    'nomc' : (nomc)
-                                }).then(()=>{
+
+                                if ( ccc == 0 ) {
+                                    dataReffinal.child(nomc).set({
+                                        'nomc' : (nomc)
+                                    }).then(()=>{
+                                        loadgif.style.display='none';
+                                    }).catch((error)=>{
+                                        loadgif.style.display='none';
+                                        window.alert("erreur survenue 6 : "+ error);
+                                        const touropen = nameopen;
+                                        localStorage.setItem('openname' , touropen );
+                                        window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                                    });
+                                } else {
                                     loadgif.style.display='none';
-                                }).catch((error)=>{
-                                    loadgif.style.display='none';
-                                    window.alert("erreur survenue : "+ error);
-                                    const touropen = nameopen;
-                                    localStorage.setItem('openname' , touropen );
-                                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                                });        
+                                }
+                                        
                             }).catch((error)=>{
                                 loadgif.style.display='none';
-                                window.alert("erreur survenue : "+ error);
+                                window.alert("erreur survenue 4 : "+ error);
                                 const touropen = nameopen;
                                 localStorage.setItem('openname' , touropen );
                                 window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
@@ -2553,114 +2557,186 @@
 
                         }).catch((error)=>{
                             loadgif.style.display='none';
-                            window.alert("erreur survenue : "+ error);
+                            window.alert("erreur survenue 3 : "+ error);
                             const touropen = nameopen;
                             localStorage.setItem('openname' , touropen );
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';   
                         });
-                        
                     
-                
-                    dataRefb.set({
-                            'a1' : (a1) ,
-                            'a2' : (a2) ,
-                            'a3' : (a3) ,
-                            'a4' : (a4) ,
-                            'a5' : (a5) ,
-                            'a6' : (a6) ,
-                            'a7' : (a7) ,
-                            'a8' : (a8) ,
-                            'a9' : (a9) ,
-                            'a10' : (a10) ,
-                            'a11' : (a11) ,
-                            'a12' : (a12) ,
-                            'a13' : (a13) ,
-                            'a14' : (a14) ,
-                            'a15' : (a15) ,
-                            'a16' : (a16) ,
-                            'a17' : (a17) ,
-                            'a18' : (a18) ,
+                        
+                    if ( ccc == 0 ) {
+                            dataRefb.set({
+                                'a1' : (a1) ,
+                                'a2' : (a2) ,
+                                'a3' : (a3) ,
+                                'a4' : (a4) ,
+                                'a5' : (a5) ,
+                                'a6' : (a6) ,
+                                'a7' : (a7) ,
+                                'a8' : (a8) ,
+                                'a9' : (a9) ,
+                                'a10' : (a10) ,
+                                'a11' : (a11) ,
+                                'a12' : (a12) ,
+                                'a13' : (a13) ,
+                                'a14' : (a14) ,
+                                'a15' : (a15) ,
+                                'a16' : (a16) ,
+                                'a17' : (a17) ,
+                                'a18' : (a18) ,
 
 
-                            'b1' : (b1) ,
-                            'b2' : (b2) ,
-                            'b3' : (b3) ,
-                            'b4' : (b4) ,
-                            'b5' : (b5) ,
-                            'b6' : (b6) ,
-                            'b7' : (b7) ,
-                            'b8' : (b8) ,
-                            'b9' : (b9) ,
-                            'b10' : (b10) ,
-                            'b11' : (b11) ,
-                            'b12' : (b12) ,
-                            'b13' : (b13) ,
-                            'b14' : (b14) ,
-                            'b15' : (b15) ,
-                            'b16' : (b16) ,
-                            'b17' : (b17) ,
-                            'b18' : (b18) ,
+                                'b1' : (b1) ,
+                                'b2' : (b2) ,
+                                'b3' : (b3) ,
+                                'b4' : (b4) ,
+                                'b5' : (b5) ,
+                                'b6' : (b6) ,
+                                'b7' : (b7) ,
+                                'b8' : (b8) ,
+                                'b9' : (b9) ,
+                                'b10' : (b10) ,
+                                'b11' : (b11) ,
+                                'b12' : (b12) ,
+                                'b13' : (b13) ,
+                                'b14' : (b14) ,
+                                'b15' : (b15) ,
+                                'b16' : (b16) ,
+                                'b17' : (b17) ,
+                                'b18' : (b18) ,
+
+                                'c1' : (c1) ,
+                                'c2' : (c2) ,
+                                'c3' : (c3) ,
+                                'c4' : (c4) ,
+                                'c5' : (c5) ,
+                                'c6' : (c6) ,
+                                'c7' : (c7) ,
+                                'c8' : (c8) ,
+                                'c9' : (c9) ,
+                                'c10' : (c10) ,
+                                'c11' : (c11) ,
+                                'c12' : (c12) ,
+                                'c13' : (c13) ,
+                                'c14' : (c14) ,
+                                'c15' : (c15) ,
+                                'c16' : (c16) ,
+                                'c17' : (c17) ,
+                                'c18' : (c18) ,
+                                'joueur1' : (ja) ,
+                                'joueur2' : (jb) ,
+                                'joueur3' : (jc),
+
+                                'net1' : (ajoueur1) ,
+                                'net2' : (ajoueur2) ,
+                                'net3' : (ajoueur3) ,
+
+                                'netj1' : (an1) ,
+                                'netj2' : (an2) ,
+                                'netj3' : (an3) ,
+
+                                'brut1' : (br1) ,
+                                'brut2' : (br2) ,
+                                'brut3' : (br3) ,
+
+                                'noma' : (noma),
+                                'nomb' : (nomb),
+                                'nomc' : (nomc)
+
+                            }).then(()=>{
+
+                                loadgif.style.display = 'none';
+                                window.alert("Sauvegarde reuissie.");
+                                            
+                            }).catch((error)=>{
+                                loadgif.style.display = 'none';
+                                window.alert("erreur survenue 2 : "+ error);
+                                const touropen = nameopen;
+                                localStorage.setItem('openname' , touropen );
+                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                        });
+                    } else {
+
+                        dataRefb.set({
+                                'a1' : (a1) ,
+                                'a2' : (a2) ,
+                                'a3' : (a3) ,
+                                'a4' : (a4) ,
+                                'a5' : (a5) ,
+                                'a6' : (a6) ,
+                                'a7' : (a7) ,
+                                'a8' : (a8) ,
+                                'a9' : (a9) ,
+                                'a10' : (a10) ,
+                                'a11' : (a11) ,
+                                'a12' : (a12) ,
+                                'a13' : (a13) ,
+                                'a14' : (a14) ,
+                                'a15' : (a15) ,
+                                'a16' : (a16) ,
+                                'a17' : (a17) ,
+                                'a18' : (a18) ,
 
 
-                            'c1' : (c1) ,
-                            'c2' : (c2) ,
-                            'c3' : (c3) ,
-                            'c4' : (c4) ,
-                            'c5' : (c5) ,
-                            'c6' : (c6) ,
-                            'c7' : (c7) ,
-                            'c8' : (c8) ,
-                            'c9' : (c9) ,
-                            'c10' : (c10) ,
-                            'c11' : (c11) ,
-                            'c12' : (c12) ,
-                            'c13' : (c13) ,
-                            'c14' : (c14) ,
-                            'c15' : (c15) ,
-                            'c16' : (c16) ,
-                            'c17' : (c17) ,
-                            'c18' : (c18) ,
-                            'joueur1' : (ja) ,
-                            'joueur2' : (jb) ,
-                            'joueur3' : (jc),
+                                'b1' : (b1) ,
+                                'b2' : (b2) ,
+                                'b3' : (b3) ,
+                                'b4' : (b4) ,
+                                'b5' : (b5) ,
+                                'b6' : (b6) ,
+                                'b7' : (b7) ,
+                                'b8' : (b8) ,
+                                'b9' : (b9) ,
+                                'b10' : (b10) ,
+                                'b11' : (b11) ,
+                                'b12' : (b12) ,
+                                'b13' : (b13) ,
+                                'b14' : (b14) ,
+                                'b15' : (b15) ,
+                                'b16' : (b16) ,
+                                'b17' : (b17) ,
+                                'b18' : (b18) ,
 
-                            'net1' : (ajoueur1) ,
-                            'net2' : (ajoueur2) ,
-                            'net3' : (ajoueur3) ,
+                                'joueur1' : (ja) ,
+                                'joueur2' : (jb) ,
 
-                            'netj1' : (an1) ,
-                            'netj2' : (an2) ,
-                            'netj3' : (an3) ,
+                                'net1' : (ajoueur1) ,
+                                'net2' : (ajoueur2) ,
 
-                            'brut1' : (br1) ,
-                            'brut2' : (br2) ,
-                            'brut3' : (br3) ,
+                                'netj1' : (an1) ,
+                                'netj2' : (an2) ,
 
-                            'noma' : (noma),
-                            'nomb' : (nomb),
-                            'nomc' : (nomc)
+                                'brut1' : (br1) ,
+                                'brut2' : (br2) ,
 
-                        }).then(()=>{
+                                'noma' : (noma),
+                                'nomb' : (nomb),
+                                'nomc' : ("aucun")
 
-                            load.style.display = 'none';
-                            window.alert("Sauvegarde reuissie.");
-                                          
-                        }).catch((error)=>{
-                            load.style.display = 'none';
-                            window.alert("erreur survenue : "+ error);
-                            const touropen = nameopen;
-                            localStorage.setItem('openname' , touropen );
-                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                    });
+                            }).then(()=>{
+
+                                loadgif.style.display = 'none';
+                                window.alert("Sauvegarde reuissie.");
+                                            
+                            }).catch((error)=>{
+                                loadgif.style.display = 'none';
+                                window.alert("erreur survenue 1: "+ error);
+                                const touropen = nameopen;
+                                localStorage.setItem('openname' , touropen );
+                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                        });
+
+                    }  
+
     
                 } else if (ja == "non") {
-                    load.style.display = 'none';
+                    loadgif.style.display = 'none';
                     window.alert("actualisez la page et reinserez votre code ");
                 }
 
                     
             } else if ( linked == "non" ) {
-                load.style.display = 'none';
+                loadgif.style.display = 'none';
                 window.alert("Aucune partie en cours ... Veuillez saisir le code de votre partie et lancer la partie");
                 const touropen = nameopen;
                 localStorage.setItem('openname' , touropen );
