@@ -322,7 +322,7 @@
                 } else if (codeshow == "adminpass") {
                     
                     var nomopen = prompt("entrez le nom de votre tournoi. puis cliquez sur OK. NB : cette operation peut prendre quelques secondes ... ");
-                    if (nomopen != "" & nomopen.length > 7) {
+                    if (nomopen != "" & nomopen.length > 4) {
 
                         var dataRefc = firebase.database().ref("open");
                         var cc = 0;
@@ -357,7 +357,7 @@
                                 });
                     
                     } else {
-                        window.alert("Désole ! Le nom du tournoi doit contenir au moins 8 caracteres");
+                        window.alert("Désole ! Le nom du tournoi doit contenir au moins 5 caracteres");
                     }
 
                 } else {
