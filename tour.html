@@ -39,6 +39,9 @@
             <b style="position: relative; margin-top: 50px; display: block; font-size: 13px; padding-left: 20px; 
             color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran ( LEADERBOARD )</b>
             <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
+
+            <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
+
             <img name="imgid" style="height: 100vh; background-size: cover; background-position: center; " 
                 src="./design_files/images/fondtour.jpg" alt="image">
 
@@ -216,6 +219,8 @@
 
 
 
+        var loadgif = document.getElementById('loadgif');
+        
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
@@ -316,16 +321,18 @@
         var charge = "aucun";
         function groupebtn(){    
 
-            var codeshow = prompt("entrez votre code ADMIN pour continuer");
-                if (codeshow == "") {
+            var codeshowa = prompt("entrez votre code ADMIN pour continuer");
+            var codeshow = codeshowa.toLowerCase().trim();
+            if (codeshow == "") {
                     window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
                 } else if (codeshow == "adminpass") {
                     
-                    var nomopen = prompt("entrez le nom de votre tournoi. puis cliquez sur OK. NB : cette operation peut prendre quelques secondes ... ");
-                    if (nomopen != "" & nomopen.length > 4) {
+                    var nomopen = prompt("entrez le nom du tournoi. ");
+                    if (nomopen != "" & nomopen.length > 7) {
 
                         var dataRefc = firebase.database().ref("open");
                         var cc = 0;
+                        loadgif.style.display='block';
                         dataRefc.on("value" , function(snapshot){
                             var ac = 0;
                             snapshot.forEach(function(element){
@@ -336,7 +343,8 @@
 
                             if ( ac == 0 & cc == 0 ) {
                                 cc = 1;
-                                var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Vous allez par la suite créez vos propres groupes de jeu et designer si oui le CUT de la compétition.     Voulez vous CONTINUER ?');    
+                                loadgif.style.display='none';
+                                var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Voulez vous CONTINUER ?');    
                                 if (result == false) {
                                     event.preventDefault();
                                 } else {
@@ -345,6 +353,7 @@
                                     window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
                                 }                            
                             } else {
+                                loadgif.style.display='none';
                                 var result = confirm('voulez vous modifier ou créer de nouveaux groupes de jeu pour cette compétition ?');    
                                 if (result == false) {
                                     event.preventDefault();
@@ -357,7 +366,7 @@
                                 });
                     
                     } else {
-                        window.alert("Désole ! Le nom du tournoi doit contenir au moins 5 caracteres");
+                        window.alert("Désole ! Le nom du tournoi doit contenir au moins 8 caracteres");
                     }
 
                 } else {

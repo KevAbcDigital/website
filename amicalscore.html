@@ -43,6 +43,8 @@
             <img style="width: 40%; margin-left: 30%;" src="./design_files/images/scorecard.gif" alt="image">
         </div>
 
+        <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
+
         <section class="card" style="margin-top: 30px; padding-bottom: 20px;" >
 
             <b style="color: rgb(255, 255, 255); width: 100%;;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
@@ -61,12 +63,7 @@
                 color: rgb(0, 20, 2); margin-left: 20%; margin-right: 20%; border-radius: 50px;
                     box-shadow: -1px 1px 9px #1e4d198e; " type="button" onclick="send()">
                      Sauvegarder
-    
-                </lottie-player>
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player style=" width: 30%; right: 0; display: none; position: absolute; z-index: 1500; color: #ffffff; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                background="transparent" speed="1"  loop autoplay></lottie-player>
-                
+        
                 </button>
             </div>
 
@@ -278,6 +275,7 @@
 
         var linked = "non";
 
+        var loadgif = document.getElementById('loadgif');
 
         
 
@@ -544,17 +542,17 @@
         // var pb = "nom"; 
         // var pc = "nom";
 
-        var codesearch = prompt("Entrez le code de la partie à suivre ou cliquez sur annuler pour etre redirigé vers le scoreboard ");
+        var codesearcha = prompt("Entrez le code du groupe que vous souhaitez suivre");
+        var codesearch = codesearcha.toLowerCase().trim();
         if ( codesearch != "" ) {
             search();
         } else {
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
+        
         function search(){                           
 
-            var del = document.getElementById("del");                
-            var ecr = document.getElementById("ecr"); 
-            var codeadmin = document.getElementById("codeadmin"); 
+            loadgif.style.display='block';
 
             var formulairec = document.getElementById("formulairec");
             var formulaireb = document.getElementById("formulaireb");
@@ -643,6 +641,8 @@
                                 var dataRefb = firebase.database().ref(nameopen).child(codesearch);
                                 dataRefb.on("value" , function(snapshot){
                                     snapshot.forEach(function(element){
+
+                                        loadgif.style.display='none';
 
                                         if(element.key == "noma" ) {
                                             pa=element.val();
@@ -2064,7 +2064,7 @@
                         });
                     
                         if ( i == 0 ) {
-                            
+                            loadgif.style.display='none';
                             window.alert("aucune Partie trouvée au code : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
                             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                         }
@@ -2084,9 +2084,7 @@
         }
 
         function send(){
-            
-            var load = document.getElementById("lottieload");                
-            
+
             var dataRef = firebase.database().ref(nameopen);
 
             var formulairea= document.getElementById("formulairea");                
@@ -2221,7 +2219,7 @@
 
             if ( linked != "non" ) {
 
-                load.style.display = 'block';
+                loadgif.style.display='block';
 
                 var dataRefb = firebase.database().ref(nameopen).child(linked);
                 var ja = "non";
@@ -2537,21 +2535,27 @@
                                 dataReffinal.child(nomc).set({
                                     'nomc' : (nomc)
                                 }).then(()=>{
-                                    load.style.display = 'none';
+                                    loadgif.style.display='none';
                                 }).catch((error)=>{
-                                    load.style.display = 'none';
+                                    loadgif.style.display='none';
                                     window.alert("erreur survenue : "+ error);
+                                    const touropen = nameopen;
+                                    localStorage.setItem('openname' , touropen );
                                     window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                                 });        
                             }).catch((error)=>{
-                                load.style.display = 'none';
+                                loadgif.style.display='none';
                                 window.alert("erreur survenue : "+ error);
+                                const touropen = nameopen;
+                                localStorage.setItem('openname' , touropen );
                                 window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                             });
 
                         }).catch((error)=>{
-                            load.style.display = 'none';
+                            loadgif.style.display='none';
                             window.alert("erreur survenue : "+ error);
+                            const touropen = nameopen;
+                            localStorage.setItem('openname' , touropen );
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';   
                         });
                         
@@ -2644,6 +2648,8 @@
                         }).catch((error)=>{
                             load.style.display = 'none';
                             window.alert("erreur survenue : "+ error);
+                            const touropen = nameopen;
+                            localStorage.setItem('openname' , touropen );
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                     });
     
@@ -2656,6 +2662,8 @@
             } else if ( linked == "non" ) {
                 load.style.display = 'none';
                 window.alert("Aucune partie en cours ... Veuillez saisir le code de votre partie et lancer la partie");
+                const touropen = nameopen;
+                localStorage.setItem('openname' , touropen );
                 window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
             }
     
@@ -2664,7 +2672,7 @@
 
         function invalid() {
             window.alert("Desolé ce formulaire est indisponible pour le moment.");
-            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
 
     </script>
