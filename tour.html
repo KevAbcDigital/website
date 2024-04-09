@@ -30,11 +30,12 @@
 
     <body style="background-color: rgb(255, 255, 255);">
 
-        <audio loop autoplay id="autoplay">
-            <source src="sona.mp3" type="audio/mpeg">
+        <audio loop id="autoplay">
+            <source src="sonc.mp3" type="audio/mpeg">
         </audio>
 
         <section id="toursliderabcphone" class="toursliderabcphone" >
+
            
             <b style="position: relative; margin-top: 50px; display: block; font-size: 13px; padding-left: 20px; 
             color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran ( LEADERBOARD )</b>
@@ -63,10 +64,11 @@
         </section>
 
         <section id="toursliderabc" class="toursliderabc">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/toure.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/tourh.jpg" alt="image">
-            <img name="imgid" class="slideidaaab" src="./design_files/images/tourimg.jpg" alt="image">
-            
+
+            <video style=" width: 100%; height: auto; filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+            id="videoplay" loop muted plays-inline poster="poster.jpeg" >
+                <source src="video.mp4" type="video/mp4">
+            </video>
 
             <section class="score">
      
@@ -87,8 +89,7 @@
 
                 <div class="entete" style="padding-top: 40px; border-top-right-radius: 15px; padding-bottom: 0px;">
                    
-                    <b class="boxentetejz" style=" border: none; background-color: transparent; margin-left: 1%;"onclick="play()" >   </b>                
-                    <b class="boxentetejz" style="border: none; background-color: transparent;" onclick="play()" >   </b>                
+                    <b class="boxentetejz" style=" border: none; background-color: transparent; margin-left: 2%;"onclick="play()" >   </b>                
                     <b class="boxentetejz" style="border: none; background-color: transparent;" onclick="play()" >   </b>                
                     <b class="boxentetejw" style="text-align: end; padding-right: 10px;" >Par</b>                
                     <b class="boxentetejz" >3</b>
@@ -119,9 +120,8 @@
 
                 <div class="entete" style="padding-bottom: 6px;">
                    
-                    <b class="boxentetejz" style="margin-left: 1%;"onclick="play()" >cla</b>                
+                    <b class="boxentetejz" style="margin-left: 2%;"onclick="play()" >cla</b>                
                     <b class="boxentetejz" style="background-color: #00515f;" onclick="play()" >hcp</b>                
-                    <b class="boxentetejz" onclick="play()" >Net</b>                
                     <b class="boxentetejw" style="text-align: end; padding-right: 10px;" >Hole</b>                
                     <b class="boxentetejz" >1</b>
                     <b class="boxentetejz" >2</b>
@@ -143,9 +143,9 @@
                     <b class="boxentetejz" >17</b>
                     <b class="boxentetejz" >18</b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: 1px solid #ffffff;" >Re</b>
-                    <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border-radius: 4px;" >Today</b>
-                    <b class="boxentetejz" style="width: 45px; background-color: transparent; border: none;  border-radius: 4px;" >Last</b>
-                    <b class="boxentetejz" style="width: 50px; background-color: #fbff00; color: #010033; border-radius: 4px;" >Total</b>
+                    <b class="boxentetejz" style="width: 50px; background-color: #05991d; color: #ffffff; border-radius: 4px;" >Total</b>
+                    <b class="boxentetejz" style="width: 45px; background-color: transparent; border: none; border-radius: 4px;" >Last</b>
+                    <b class="boxentetejz" style="width: 50px; background-color: transparent; border: none; border-radius: 4px;" >Today</b>
 
                 </div>
 
@@ -171,9 +171,8 @@
                     <img id="bs" style="margin-top: 413px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     
                     
-                    <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border-radius: 2px; border: 1px solid #ffffff; margin-left: 1%;" id="rank"onclick="play()" ></b>                
+                    <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border-radius: 2px; border: 1px solid #ffffff; margin-left: 2%;" id="rank"onclick="play()" ></b>                
                     <b class="boxentetejz" style="border: 1px solid #ffffff; border-radius: 2px; background-color: #00515f;"  id="hcp"onclick="play()" ></b>        
-                    <b class="boxentetejz" style=" background-color: rgb(165, 36, 0); border-radius: 2px; border: 1px solid #ffffff;" id="net"></b>                        
                     <b class="boxentetejw" id="players"></b>                
                     <b class="boxentetejz" id="h1" ></b>
                     <b class="boxentetejz" id="h2" ></b>
@@ -195,10 +194,9 @@
                     <b class="boxentetejz" id="h17" ></b>
                     <b class="boxentetejz" id="h18" ></b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
-                    <b class="boxentetejz" style="width: 50px; background-color: #1149ff; border-radius: 4px; border: 1px solid #ffffff;"  id="day" ></b>
+                    <b class="boxentetejz" style="width: 50px; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
                     <b class="boxentetejz" style="width: 45px; background-color: transparent; border: none; color: #ebd000; " id="last" ></b>        
-                    <b class="boxentetejz" style="width: 50px; background-color: #fbff00; color: #010033; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
-
+                    <b class="boxentetejz" style="width: 50px; border-radius: 4px; background-color: rgb(255, 255, 0); color: #010033; border: 1px solid #ffffff;"  id="day" ></b>
                 </div>
 
 
@@ -217,10 +215,6 @@
 
     <script>
 
-
-
-        var loadgif = document.getElementById('loadgif');
-        
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
@@ -236,15 +230,21 @@
             }
         });
 
+        var loadgif = document.getElementById('loadgif');
+
         
         function play(){
             document.getElementById('autoplay').play();
         }
 
+        function playv(){
+            document.getElementById('videoplay').play();
+        }
 
-        var firstindex=0;
+
+        /*var firstindex=0;
         function automaticslide(){
-            setTimeout(automaticslide, 60000);
+            setTimeout(automaticslide, 6000);
             var pics;
             const img = document.getElementsByClassName('slideidaaab');
             for(pics=0; pics<img.length; pics++) {
@@ -257,7 +257,7 @@
             img[firstindex - 1].style.display="block";
         }
         automaticslide();
-
+*/
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
             apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
@@ -327,7 +327,8 @@
                     window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
                 } else if (codeshow == "adminpass") {
                     
-                    var nomopen = prompt("entrez le nom du tournoi. ");
+                    var nomopenz = prompt("entrez le nom du tournoi. ");
+                    var nomopen = nomopenz.toLowerCase().trim();
                     if (nomopen != "" & nomopen.length > 7) {
 
                         var dataRefc = firebase.database().ref("open");
@@ -402,7 +403,6 @@
         var dataRef = firebase.database().ref("open");
         if ( codesearch != "") {
 
-            var bb = 0;
             load.style.display = "block";
             dataRef.on("value" , function(snapshot){
                 var a = 0;
@@ -413,11 +413,15 @@
                     }
                 });
                 
-                if ( a == 0 & bb == 0 ) {
+                if ( a == 0 ) {
                     bb = 1;
                     load.style.display = "none";
-                    window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
+                    // window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
+                    nompart.innerHTML= "Aucun Tournoi trouvé" ;
                 } else {
+
+                    playv();
+                    play();
                     charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
@@ -468,7 +472,6 @@
                             document.querySelector('#h16').innerHTML = "";
                             document.querySelector('#h17').innerHTML = "";
                             document.querySelector('#h18').innerHTML = "";
-                            document.querySelector('#net').innerHTML = "";
                             document.querySelector('#total').innerHTML = "";
                             document.querySelector('#last').innerHTML = "";
                             document.querySelector('#day').innerHTML = "";
@@ -497,8 +500,7 @@
                                 document.querySelector('#h16').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [19] ) }</div>`
                                 document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
                                 document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
-                                document.querySelector('#net').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
-                                document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [22] ) }</div>`                    
+                                document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
                                 document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
                                 document.querySelector('#last').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
 
