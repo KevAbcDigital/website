@@ -138,10 +138,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-.toursliderabc img {
-  width: 100%;
-  height: 100vh;
-}
 .score {
   display: block;
   z-index: 1000;
@@ -166,8 +162,10 @@ header {
 
 }
 .score .tta{
-  font-size: 15px;
-  color: rgb(0, 70, 17);
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgb(255, 27, 27);
+  font-weight: 900;
 }
 .score .ttb{
   font-size: 10px;
@@ -215,9 +213,9 @@ header {
   left: 0;
 }
 .score .entete .bartab {
-  width: 93%;
+  width: 91%;
   height: 1px;
-  margin-left: 1%;
+  margin-left: 2%;
   filter: opacity(0.2);
   margin-top: 35px;
   display: none;
@@ -236,7 +234,7 @@ header {
   color: white;
 }
 .score .entete .boxentetejw {
-  width: 18%;
+  width: 20%;
   margin-top: 14px;
   border-radius: 4px;
   height: max-content;
@@ -258,7 +256,12 @@ header {
   font-size: 14px;
   color: white;
 }
-
+.btna {
+  display: none;
+}
+.btnb {
+  display: none;
+}
 
 
 
@@ -917,7 +920,9 @@ header {
 }
 .score .tta{
   font-size: 10px;
-  color: rgb(9, 81, 9);
+  color: rgb(255, 12, 12);
+  text-transform: uppercase;
+  font-weight: 900;
 }
 .score .ttb{
   font-size: 10px;
@@ -968,7 +973,7 @@ header {
   color: white;
 }
 .score .entete .boxentetejw {
-  width: 30%;
+  width: 31%;
   text-align: center;
   margin-top: 14px;
   height: content;
@@ -988,10 +993,13 @@ header {
   font-size: 8px;
   color: white;
 }
-
-
-
 .slideshop {
+  display: flex;
+}
+.btna {
+  display: flex;
+}
+.btnb {
   display: flex;
 }
 
