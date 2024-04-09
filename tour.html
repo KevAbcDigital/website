@@ -51,9 +51,9 @@
             </div>
 
             <div style="width: 100%; display: flex; position: absolute; bottom: 0; margin-bottom: 60px; z-index: 1600;">
-                <b onclick="groupebtn()" style="color: #03001b; display: flex; width: 40%; text-align: center; justify-content: center; align-items: center; 
+                <b onclick="groupebtn()" class="btna" id="btna" style="color: #03001b; width: 40%; text-align: center; justify-content: center; align-items: center; 
                 width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Creer</b>
-                <b onclick="cartebtn()" style="color: #ffffff; display: flex; width: 40%; margin-left: 3%; position: relative; text-align: center; justify-content: center;
+                <b onclick="cartebtn()" class="btnb" id="btnb" style="color: #ffffff; width: 40%; margin-left: 3%; position: relative; text-align: center; justify-content: center;
                  align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Notebook</b>
             </div>
             
@@ -219,13 +219,19 @@
             var rotate = document.getElementById('rotate');
             var toursliderabc = document.getElementById('toursliderabc');
             var toursliderabcphone = document.getElementById('toursliderabcphone');
+            var btna = document.getElementById('btna');
+            var btnb= document.getElementById('btnb');
 
             if (portrait) {
                 toursliderabc.style.display="none";
                 toursliderabcphone.style.display="block";
+                btna.style.display="flex";
+                btnb.style.display="flex";
             } else {
                 toursliderabcphone.style.display="none";
                 toursliderabc.style.display="flex";
+                btna.style.display="none";
+                btnb.style.display="none";
             }
         });
 
@@ -415,7 +421,6 @@
                     nompart.innerHTML= "Aucun Tournoi trouvé" ;
                 } else {
 
-                    playv();
                     play();
                     charge = codesearch;
                     load.style.display = "none";
