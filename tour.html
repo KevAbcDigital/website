@@ -241,6 +241,9 @@
         function play(){
             document.getElementById('autoplay').play();
         }
+        function playv(){
+            document.getElementById('videoplay').play();
+        }
 
 
         /*var firstindex=0;
@@ -422,6 +425,7 @@
                 } else {
 
                     play();
+                    playv();
                     charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
