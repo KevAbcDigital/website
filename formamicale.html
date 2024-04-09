@@ -55,6 +55,8 @@
                 NB: Pour les parties à 2 , saisissez le mot "AUCUN" comme le nom du 3ème joueur et "0" comme handicap par defaut
         </b>
 
+        <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-top: 100px; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
+
         <section style="position: absolute; bottom: 0; width: 100%;
          height: 45vh; background-color: #f4f0f0; ">
 
@@ -106,12 +108,6 @@
                 color: rgb(255, 255, 255); margin-left: 10%; margin-right: 10%; border-radius: 50px;
                     box-shadow: -1px 1px 9px #03a700e2; " type="button" onclick="send()">
                      Créer ce groupe
-
-                </lottie-player>
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                <lottie-player style=" width: 30%; right: 0; display: none;  position: absolute; z-index: 1500; color: #ffffff; margin-top: -5px;" class="lottiescript" id="lottieload" src="https://lottie.host/7d8680f1-08e2-48c5-b9c5-d85e94277409/h4XhZ3sxIH.json"
-                background="transparent" speed="1"  loop autoplay></lottie-player>
-                
                 </button>
             </div>
 
@@ -167,7 +163,7 @@
         function send(){
             
             
-            var load = document.getElementById("lottieload");                
+            var load = document.getElementById("loadgif");                
             var ja = document.getElementById("joueur1");                
             var jb = document.getElementById("joueur2");                
             var jc = document.getElementById("joueur3");                
