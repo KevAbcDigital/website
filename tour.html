@@ -65,7 +65,7 @@
         <section id="toursliderabc" class="toursliderabc">
 
             <video style=" width: 100%; height: auto; filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
-            id="videoplay" loop muted plays-inline poster="poster.jpeg" >
+            autoplay id="videoplay" class="videoplay" loop muted plays-inline>
                 <source src="video.mp4" type="video/mp4">
             </video>
 
@@ -234,10 +234,6 @@
         
         function play(){
             document.getElementById('autoplay').play();
-        }
-
-        function playv(){
-            document.getElementById('videoplay').play();
         }
 
 
