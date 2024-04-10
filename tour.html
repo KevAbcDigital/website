@@ -38,7 +38,7 @@
 
            
             <b style="position: relative; margin-top: 50px; display: block; font-size: 13px; padding-left: 20px; 
-            color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran ( pour afficher le LEADERBOARD )</b>
+            color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran pour afficher le LEADERBOARD</b>
             <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
 
             <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
@@ -52,7 +52,7 @@
 
             <div style="width: 100%; display: flex; position: absolute; bottom: 0; margin-bottom: 60px; z-index: 1600;">
                 <b onclick="groupebtn()" class="btna" id="btna" style="color: #03001b; width: 40%; text-align: center; justify-content: center; align-items: center; 
-                width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Creer</b>
+                width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Tournoi</b>
                 <b onclick="cartebtn()" class="btnb" id="btnb" style="color: #ffffff; width: 40%; margin-left: 3%; position: relative; text-align: center; justify-content: center;
                  align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Carte de jeu</b>
             </div>
@@ -362,6 +362,7 @@
                                     var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Voulez vous CONTINUER ?');    
                                     if (result == false) {
                                         event.preventDefault();
+                                        loadgif.style.display='block';
                                     } else {
                                         const touropen = nomopen;
                                         localStorage.setItem('openname' , touropen );
@@ -372,6 +373,7 @@
                                     var result = confirm('voulez vous modifier ou créer de nouveaux groupes de jeu pour cette compétition ?');    
                                     if (result == false) {
                                         event.preventDefault();
+                                        loadgif.style.display='block';
                                     } else {
                                         const touropen = charge;
                                         localStorage.setItem('openname' , touropen );
@@ -385,7 +387,6 @@
                         }
                     
                     } else if ( acz == 0 & cgc == 0 ) {
-                        
                         loadgif.style.display='none';
                         // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
                         window.alert("Désole ! mot de passe incorrect !");
@@ -422,7 +423,7 @@
                             window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                         } else {
                             loadgif.style.display='none';
-                            window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit");
+                            window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit.");
                         }
                     });
                     
