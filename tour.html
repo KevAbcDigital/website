@@ -403,7 +403,7 @@
             
             var loadgif = document.getElementById('loadgif');
 
-            var nomopenz = prompt("Quel tournoi souhaitez vous marquer ?");
+            var nomopenz = prompt("Quel tournoi souhaitez vous suivre ?");
             var nomopen = nomopenz.toLowerCase().trim();
                 if (nomopen != "" ) {
 
@@ -418,9 +418,41 @@
                         });
 
                         if ( ac == 1 ) {
-                            const touropen = nomopen;
-                            localStorage.setItem('openname' , touropen );
-                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+
+
+                            var codesearcha = prompt("Entrez le code de la partie que vous souhaitez marquer");
+                            var codesearch = codesearcha.toLowerCase().trim();
+                            if (codesearch != "" ) {
+
+                                var dataRefcc = firebase.database().ref(nomopen);
+                                dataRefcc.on("value" , function(snapshot){
+                                    var ace = 0;
+                                    snapshot.forEach(function(element){
+                                        if(element.key == codesearch ) {
+                                            ace=1;
+                                        }
+                                    });
+
+                                    if ( ace == 1 ) {
+                                        const touropen = nomopen;
+                                        localStorage.setItem('openname' , touropen );
+                                    
+                                        const touropenz = codesearch;
+                                        localStorage.setItem('opennameb' , touropenz );
+                                        window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                                    
+                                    } else {
+                                        loadgif.style.display='none';
+                                        window.alert("Désole ! Le code " + codesearch + " n'existe pas .");
+                                    }
+                                });
+                                
+                            } else {
+                                window.alert("Entrez le code de la partie que vous souhaitez marquer");
+                            }
+
+
+
                         } else {
                             loadgif.style.display='none';
                             window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit.");

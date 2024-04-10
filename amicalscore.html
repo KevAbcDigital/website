@@ -261,10 +261,16 @@
         
     
         const nameopen = localStorage.getItem('openname');
+        const nameopenb = localStorage.getItem('opennameb');
+
+
         var nompart = document.getElementById("nompart");       
         nompart.innerHTML= nameopen ;
 
         if (nameopen == null) {
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+        }
+        if (nameopenb == null) {
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
         function homebtn(){
@@ -531,24 +537,8 @@
     
         const database = firebase.database();
 
-        // var del = document.getElementById("del");                
-        // var ecr = document.getElementById("ecr");                
-
-        // var pa = "nom";
-        // var pb = "nom"; 
-        // var pc = "nom";
-
-        var codesearcha = prompt("Entrez le code du groupe que vous souhaitez suivre");
-        var codesearch = codesearcha.toLowerCase().trim();
-        if ( codesearch != "" ) {
-            search();
-        } else {
-            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-        }
-
         var ccc = 0;
-        function search(){                           
-
+        
             loadgif.style.display='block';
 
             var formulairec = document.getElementById("formulairec");
@@ -623,18 +613,11 @@
 
             var dataRef = firebase.database().ref(nameopen);
 
-            if ( codesearch != "" ) {
+            
+                                nompart.innerHTML="Groupe " + nameopenb + " - " + nameopen;
+                                linked=nameopenb;
 
-                    dataRef.on("value" , function(snapshot){
-                        var i = 0;
-                        snapshot.forEach(function(element){
-                            if(element.key == codesearch ) {
-                                i=1;         
-                                
-                                nompart.innerHTML="Groupe " + codesearch + " - " + nameopen;
-                                linked=codesearch;
-
-                                var dataRefb = firebase.database().ref(nameopen).child(codesearch);
+                                var dataRefb = firebase.database().ref(nameopen).child(nameopenb);
                                 dataRefb.on("value" , function(snapshot){
                                     snapshot.forEach(function(element){
 
@@ -2052,28 +2035,10 @@
                                         }
 
                                     });
-                                });
+            });
 
 
-                            }
-                        });
-                    
-                        if ( i == 0 ) {
-                            loadgif.style.display='none';
-                            window.alert("aucune Partie trouvée au code : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
-                            const touropen = nameopen;
-                            localStorage.setItem('openname' , touropen );
-                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';                        }
-                    
-                    });
-
-
-
-                }  else {
-                    window.alert("Entrer le mot de passe de votre partie ...");
-                }
-
-        }
+        
 
         function containsOnlyNumbers(str) {
             return /^\d+$/.test(str); 
