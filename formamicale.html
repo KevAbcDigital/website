@@ -230,18 +230,18 @@
                                             'b11' : ("0") , 'b12' : ("0") , 'b13' : ("0") , 'b14' : ("0") , 'b15' : ("0") ,
                                             'b16' : ("0") , 'b17' : ("0") , 'b18' : ("0") ,
 
-                                            'joueur1' : (joueur1) ,
-                                            'joueur2' : (joueur2) ,
+                                            'joueur1' : (verifiea) ,
+                                            'joueur2' : (verifieb) ,
 
-                                            'net1' : (aj1) ,
-                                            'net2' : (aj2) ,
+                                            'net1' : (ajoueur1) ,
+                                            'net2' : (ajoueur2) ,
 
                                             'netj1' : ("00") ,
                                             'netj2' : ("00") ,
 
-                                            'brut1' : (ab1) ,
-                                            'brut2' : (ab2) ,
-
+                                            'brut1' : ("00") ,
+                                            'brut2' : ("00") ,
+                                            
                                             'noma' : (noma) ,
                                             'nomb' : (nomb) ,
                                             'nomc' : ("aucun") 
@@ -259,9 +259,8 @@
                                                         window.alert("Sauvegarde reuissie.");  
                                                         const touropena = nameopen;
                                                         localStorage.setItem('openname' , touropena );
-                                                        window.location.href = 'https://kevabcdigital.github.io/website/cut.html';                                                        }).catch((error)=>{
-                                                        load.style.display = 'none';
-                                                        window.alert("erreur survenue : "+ error);
+                                                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';                                                        }).catch((error)=>{
+                                                        
                                                     }).catch((error)=>{
                                                         load.style.display = 'none';
                                                         window.alert("erreur survenue : "+ error);
@@ -270,7 +269,7 @@
                                                     load.style.display = 'none';
                                                     window.alert("erreur survenue : "+ error);
                                                 });
-                                            
+
 
                                         }).catch((error)=>{
                                             load.style.display = 'none';
@@ -283,14 +282,13 @@
                                         window.alert('rassurez vous que chaque joueur possede au moins un nom et un prénom')
                                     }
                             
-                                    }
+                            }
                             
-                                    if ( ( i == 1 ) & ( l == 0 ) ) {
-                                        load.style.display = "none";
-                                        window.alert("le code ( " + codepass + " ) a déjà été utilisé pour une partie . Utilisez un autre code");
-                                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                                    }
-                                });
+                            if ( ( i == 1 ) & ( l == 0 ) ) {
+                                load.style.display = "none";
+                                window.alert("le code ( " + codepass + " ) a déjà été utilisé pour une partie . Utilisez un autre code");
+                            }
+                        });
                             
                     }
 
