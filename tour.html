@@ -54,7 +54,7 @@
                 <b onclick="groupebtn()" class="btna" id="btna" style="color: #03001b; width: 40%; text-align: center; justify-content: center; align-items: center; 
                 width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Creer</b>
                 <b onclick="cartebtn()" class="btnb" id="btnb" style="color: #ffffff; width: 40%; margin-left: 3%; position: relative; text-align: center; justify-content: center;
-                 align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Notebook</b>
+                 align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Carte de jeu</b>
             </div>
             
             <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; background-color: transparent;" id="footer">
@@ -237,7 +237,6 @@
 
         var loadgif = document.getElementById('loadgif');
 
-        
         function play(){
             document.getElementById('autoplay').play();
         }
@@ -323,78 +322,113 @@
 
         
         var charge = "aucun";
-        function groupebtn(){    
+        function groupebtn(){ 
 
-            var codeshowa = prompt("entrez votre code ADMIN pour continuer");
-            var codeshow = codeshowa.toLowerCase().trim();
+            var loadgif = document.getElementById('loadgif');
+            
+            var codeshow = prompt("entrez votre code ADMIN pour continuer");
             if (codeshow == "") {
-                    window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-                } else if (codeshow == "adminpass") {
-                    
-                    var nomopenz = prompt("entrez le nom du tournoi. ");
-                    var nomopen = nomopenz.toLowerCase().trim();
-                    if (nomopen != "" & nomopen.length > 7) {
+                window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
+            } else {
+                var dataRefcz = firebase.database().ref("code");
+                loadgif.style.display='block';
+                var cgc = 0;
+                dataRefcz.on("value" , function(snapshot){
+                    var acz = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == codeshow ) {
+                            acz=1;
+                        }
+                    });
 
-                        var dataRefc = firebase.database().ref("open");
-                        var cc = 0;
-                        loadgif.style.display='block';
-                        dataRefc.on("value" , function(snapshot){
-                            var ac = 0;
-                            snapshot.forEach(function(element){
-                                if(element.key == nomopen ) {
-                                    ac=1;
-                                }
-                            });
-
-                            if ( ac == 0 & cc == 0 ) {
-                                cc = 1;
-                                loadgif.style.display='none';
-                                var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Voulez vous CONTINUER ?');    
-                                if (result == false) {
-                                    event.preventDefault();
-                                } else {
-                                    const touropen = nomopen;
-                                    localStorage.setItem('openname' , touropen );
-                                    window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                                }                            
-                            } else {
-                                loadgif.style.display='none';
-                                var result = confirm('voulez vous modifier ou créer de nouveaux groupes de jeu pour cette compétition ?');    
-                                if (result == false) {
-                                    event.preventDefault();
-                                } else {
-                                    const touropen = charge;
-                                    localStorage.setItem('openname' , touropen );
-                                    window.location.href = 'https://kevabcdigital.github.io/website/cut.html';
-                                }
+                    if ( acz == 1 & cgc == 0 ) {
+                        cgc = 1;
+                        var nomopenz = prompt("entrez le nom du tournoi. ");
+                        var nomopen = nomopenz.toLowerCase().trim();
+                        if (nomopen != "" ) {
+                            var dataRefc = firebase.database().ref("open");
+                            var cc = 0;
+                            dataRefc.on("value" , function(snapshot){
+                                var ac = 0;
+                                snapshot.forEach(function(element){
+                                    if(element.key == nomopen ) {
+                                        ac=1;
                                     }
                                 });
+
+                                if ( ac == 0 & cc == 0 ) {
+                                    cc = 1;
+                                    loadgif.style.display='none';
+                                    var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Voulez vous CONTINUER ?');    
+                                    if (result == false) {
+                                        event.preventDefault();
+                                    } else {
+                                        const touropen = nomopen;
+                                        localStorage.setItem('openname' , touropen );
+                                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                                    }                            
+                                } else if ( ac == 1 & cc == 0 ) {
+                                    loadgif.style.display='none';
+                                    var result = confirm('voulez vous modifier ou créer de nouveaux groupes de jeu pour cette compétition ?');    
+                                    if (result == false) {
+                                        event.preventDefault();
+                                    } else {
+                                        const touropen = charge;
+                                        localStorage.setItem('openname' , touropen );
+                                        window.location.href = 'https://kevabcdigital.github.io/website/cut.html';
+                                    }
+                                }
+                            });
+                        }  else {
+                            window.alert("Entrez le nom du tournoi que vous souhaitez créer ou modifier");
+                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                        }
                     
-                    } else {
-                        window.alert("Désole ! Le nom du tournoi doit contenir au moins 8 caracteres");
+                    } else if ( acz == 0 & cgc == 0 ) {
+                        
+                        loadgif.style.display='none';
+                        // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
+                        window.alert("Désole ! mot de passe incorrect !");
+                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                     }
 
-                } else {
-                    window.alert("Code ADMIN incorrect! Rotez l'ecran de votre télephone et recherchez un tournoi sur notre SCOREBOARD");
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                }
+                });
+            }
             
+                
         }
 
-        function cartebtn(){       
-            if (charge == "aucun") {
-                window.alert("Rotez l'ecran et recherhchez le tournoi que vous souhaitez suivre");
-            } else {
-                var result = confirm('voulez vous modifier les cartes de score ?');    
-                if (result == false) {
-                    event.preventDefault();
-                } else {
-                    const touropen = charge;
-                    localStorage.setItem('openname' , touropen );
-                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                }
+        function cartebtn(){      
+            
+            var loadgif = document.getElementById('loadgif');
 
-            }
+            var nomopenz = prompt("Quel tournoi souhaitez vous marquer ?");
+            var nomopen = nomopenz.toLowerCase().trim();
+                if (nomopen != "" ) {
+
+                    var dataRefc = firebase.database().ref("open");
+                    loadgif.style.display='block';
+                    dataRefc.on("value" , function(snapshot){
+                        var ac = 0;
+                        snapshot.forEach(function(element){
+                            if(element.key == nomopen ) {
+                                ac=1;
+                            }
+                        });
+
+                        if ( ac == 1 ) {
+                            const touropen = nomopen;
+                            localStorage.setItem('openname' , touropen );
+                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+                        } else {
+                            loadgif.style.display='none';
+                            window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit");
+                        }
+                    });
+                    
+                } else {
+                    window.alert("Entrez le nom du tournoi que vous souhaitez marquer");
+                }
         }
 
 
