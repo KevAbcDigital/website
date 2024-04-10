@@ -219,17 +219,6 @@
 
                                     if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) ) {
                                     
-                                        
-                                        var dataReffinaldel = firebase.database().ref("open").child(nameopen);
-                                        dataReffinaldel.child(al1).remove();
-                                        dataReffinaldel.child(al2).remove();
-
-                                        var dataReffinaldela = firebase.database().ref(nameopen);
-                                        dataReffinaldela.remove();
-
-                                        var noma = ab1 + " --- " + joueur1 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj1 + " " + ab1 + " 00"  ;
-                                        var nomb = ab2 + " --- " + joueur2 + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 00" + " " + aj2 + " " + ab2 + " 00" ;
-
                                         dataRefb.set({
                                             'a1' : ("0") , 'a2' : ("0") , 'a3' : ("0") , 'a4' : ("0") , 'a5' : ("0") ,
                                             'a6' : ("0") , 'a7' : ("0") , 'a8' : ("0") , 'a9' : ("0") , 'a10' : ("0") ,
