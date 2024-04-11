@@ -322,7 +322,7 @@
 
             var loadgif = document.getElementById('loadgif');
             
-            var codeshow = prompt("entrez votre code ADMIN pour continuer");
+            var codeshow = prompt("entrez votre code ADMIN ");
             if (codeshow == "") {
                 window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
             } else {
@@ -339,7 +339,7 @@
 
                     if ( acz == 1 & cgc == 0 ) {
                         cgc = 1;
-                        var nomopenz = prompt("entrez le nom du tournoi. ");
+                        var nomopenz = prompt("entrez le nom du tournoi à editer/créer . ");
                         var nomopen = nomopenz.toLowerCase().trim();
                         if (nomopen != "" ) {
                             var dataRefc = firebase.database().ref("open");
@@ -371,7 +371,7 @@
                                         event.preventDefault();
                                         loadgif.style.display='block';
                                     } else {
-                                        const touropenw = charge;
+                                        const touropenw = nomopen;
                                         localStorage.setItem('opennamew' , touropenw );
                                         window.location.href = 'https://kevabcdigital.github.io/website/cut.html';
                                     }
