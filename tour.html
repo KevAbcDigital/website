@@ -181,7 +181,7 @@
                     <b class="boxentetejz" id="h7" ></b>
                     <b class="boxentetejz" id="h8" ></b>
                     <b class="boxentetejz" id="h9" ></b>
-                    <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
+                    <b class="boxentetejz" style="background-color: rgba(1, 21, 30, 0.973); color: #eeff06; border: none;"  id="hal" ></b>
                     <b class="boxentetejz" id="h10" ></b>
                     <b class="boxentetejz" id="h11" ></b>
                     <b class="boxentetejz" id="h12" ></b>
@@ -191,7 +191,7 @@
                     <b class="boxentetejz" id="h16" ></b>
                     <b class="boxentetejz" id="h17" ></b>
                     <b class="boxentetejz" id="h18" ></b>
-                    <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: none;"  id="h1" ></b>
+                    <b class="boxentetejz" style="background-color: rgba(1, 21, 30, 0.973); color: #eeff06; border: none;"  id="hre" ></b>
                     <b class="boxentetejz" style="width: 50px; margin-left: 6px; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
                     <b class="boxentetejz" style="width: 45px; background-color: transparent; border: none; color: #ebd000; " id="last" ></b>        
                     <b class="boxentetejz" style="width: 50px; border-radius: 4px; background-color: rgb(255, 255, 0); color: #010033; border: 1px solid #ffffff;"  id="day" ></b>
@@ -580,6 +580,8 @@
                             document.querySelector('#total').innerHTML = "";
                             document.querySelector('#last').innerHTML = "";
                             document.querySelector('#day').innerHTML = "";
+                            document.querySelector('#hal').innerHTML = "";
+                            document.querySelector('#hre').innerHTML = "";
 
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomfirst').innerHTML = "";
@@ -625,6 +627,8 @@
                                 document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
                                 document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
                                 document.querySelector('#last').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
+                                document.querySelector('#hal').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [26] ) }</div>`                    
+                                document.querySelector('#hre').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [27] ) }</div>`                    
 
                                 if (i==0) {
                                     ba.style.display="none";

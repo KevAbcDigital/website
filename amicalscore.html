@@ -33,8 +33,9 @@
         <header style="background-color: transparent">
 
             <input type="checkbox" id="menu-bar">
-            <label for="menu-bar">
-                <img class="imgmenu" onclick="homebtn()" style="width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
+            <label for="menu-bar" style="display: block;">
+                <img class="imgmenu" onclick="homebtn()" style="display: block; width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
+                <img class="imgmenu" onclick="savebtn()" style="display: block; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/adda.gif" alt="image">
             </label>
 
         </header>
@@ -280,6 +281,47 @@
         var linked = "non";
 
         var loadgif = document.getElementById('loadgif');        
+
+
+
+
+
+
+        function savebtn() {
+
+            var codeshow = prompt("entrez votre code ADMIN ");
+            if (codeshow == "") {
+                window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
+            } else {
+                var dataRefcz = firebase.database().ref("code");
+                loadgif.style.display='block';
+                var cgc = 0;
+                dataRefcz.on("value" , function(snapshot){
+                    var acz = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == codeshow ) {
+                            acz=1;
+                        }
+                    });
+
+                    if ( acz == 1 & cgc == 0 ) {
+                        cgc = 1;
+                    
+
+
+
+                    } else if ( acz == 0 & cgc == 0 ) {
+                        loadgif.style.display='none';
+                        // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
+                        window.alert("Désole ! mot de passe incorrect !");
+                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                    }
+                });
+            
+            }
+        }
+
+
 
 /*
         function delet() {
@@ -2414,17 +2456,24 @@
                     var totala = ( parseInt(a1) + parseInt(a2) + parseInt(a3) + parseInt(a4) + parseInt(a5) + parseInt(a6) +
                     parseInt(a7) + parseInt(a8) +parseInt(a9) +parseInt(a10) + parseInt(a11) +parseInt(a12) +
                     parseInt(a13) + parseInt(a14) +parseInt(a15) + parseInt(a16) + parseInt(a17) +parseInt(a18) );
+                    
+                    var totalaal = ( parseInt(a1) + parseInt(a2) + parseInt(a3) + parseInt(a4) + parseInt(a5) + parseInt(a6) +
+                    parseInt(a7) + parseInt(a8) +parseInt(a9) );
+                    
+                    var totalare = ( parseInt(a10) + parseInt(a11) +parseInt(a12) +
+                    parseInt(a13) + parseInt(a14) +parseInt(a15) + parseInt(a16) + parseInt(a17) +parseInt(a18) );
+                    
                     var totalanet = ( ( parseInt(aa1) - 3 ) + ( parseInt(aa2) - 5 ) + ( parseInt(aa3) - 4 ) + ( parseInt(aa4) - 5 ) + ( parseInt(aa5) - 4 ) + ( parseInt(aa6) - 3 ) +
                     ( parseInt(aa7) - 4 ) + ( parseInt(aa8) - 4 ) + ( parseInt(aa9) - 4 ) + ( parseInt(aa10) - 4 ) + ( parseInt(aa11) - 4 ) + ( parseInt(aa12) - 3 ) +
                     ( parseInt(aa13) - 5 ) + ( parseInt(aa14) - 4 ) + ( parseInt(aa15) - 5 ) + ( parseInt(aa16) - 4 ) + ( parseInt(aa17) - 3 ) + ( parseInt(aa18) - 4 ) );
                     
                     var noma = ( ( ( totalanet - parseInt(ajoueur1) ) + 250 ) + " " + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                     + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
-                    + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totala ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) );
+                    + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totala ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
                     if ( totala == 0 ) {
                         var noma = ( ( "new" ) + " " + ( parseInt(an1)  ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                         + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
-                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "-" ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) );
+                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "-" ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
                     }
 
 
@@ -2433,6 +2482,14 @@
                     var totalb = ( parseInt(b1) + parseInt(b2) +parseInt(b3) +parseInt(b4) + parseInt(b5) +parseInt(b6) +
                     parseInt(b7) + parseInt(b8) +parseInt(b9) +parseInt(b10) + parseInt(b11) +parseInt(b12) +
                     parseInt(b13) + parseInt(b14) +parseInt(b15) + parseInt(b16) + parseInt(b17) +parseInt(b18) );
+                    
+                    var totalbal = ( parseInt(b1) + parseInt(b2) +parseInt(b3) +parseInt(b4) + parseInt(b5) +parseInt(b6) +
+                    parseInt(b7) + parseInt(b8) +parseInt(b9) );
+                    
+                    var totalbre = ( parseInt(b10) + parseInt(b11) +parseInt(b12) +
+                    parseInt(b13) + parseInt(b14) +parseInt(b15) + parseInt(b16) + parseInt(b17) +parseInt(b18) );
+                    
+
                     var totalbnet = ( ( parseInt(bb1) - 3 ) + ( parseInt(bb2) - 5 ) + ( parseInt(bb3) - 4 ) + ( parseInt(bb4) - 5 ) + ( parseInt(bb5) - 4 ) + ( parseInt(bb6) - 3 ) +
                     ( parseInt(bb7) - 4 ) + ( parseInt(bb8) - 4 ) + ( parseInt(bb9) - 4 ) + ( parseInt(bb10) - 4 ) + ( parseInt(bb11) - 4 ) + ( parseInt(bb12) - 3 ) +
                     ( parseInt(bb13) - 5 ) + ( parseInt(bb14) - 4 ) + ( parseInt(bb15) - 5 ) + ( parseInt(bb16) - 4 ) + ( parseInt(bb17) - 3 ) + ( parseInt(bb18) - 4 ) );
@@ -2441,17 +2498,17 @@
                         if ( ( jb == "aucun joueur" ) || ( jb == "--- ---" ) ) {
                             var nomb = (  ( "new" ) + " " + (  parseInt(an2) + ( totalbnet - parseInt(ajoueur2) )  ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                         } else {
                             var nomb = (  ( "new" ) + " " + ( parseInt(an2) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                         }
                        
                     } else {
                         var nomb = ( ( ( totalbnet - parseInt(ajoueur2) ) + 250 ) + " " + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                         + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalb ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) );
+                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalb ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                     }
 
 
@@ -2459,6 +2516,13 @@
                     var totalc = ( parseInt(c1) + parseInt(c2) +parseInt(c3) +parseInt(c4) + parseInt(c5) +parseInt(c6) +
                     parseInt(c7) + parseInt(c8) +parseInt(c9) +parseInt(c10) + parseInt(c11) +parseInt(c12) +
                     parseInt(c13) + parseInt(c14) +parseInt(c15) + parseInt(c16) + parseInt(c17) +parseInt(c18) );
+                    
+                    var totalcal = ( parseInt(c1) + parseInt(c2) +parseInt(c3) +parseInt(c4) + parseInt(c5) +parseInt(c6) +
+                    parseInt(c7) + parseInt(c8) +parseInt(c9) );
+                    
+                    var totalcre = ( parseInt(c10) + parseInt(c11) +parseInt(c12) +
+                    parseInt(c13) + parseInt(c14) +parseInt(c15) + parseInt(c16) + parseInt(c17) +parseInt(c18) );
+                    
                     var totalcnet = ( ( parseInt(cc1) - 3 ) + ( parseInt(cc2) - 5 ) + ( parseInt(cc3) - 4 ) + ( parseInt(cc4) - 5 ) + ( parseInt(cc5) - 4 ) + ( parseInt(cc6) - 3 ) +
                     ( parseInt(cc7) - 4 ) + ( parseInt(cc8) - 4 ) + ( parseInt(cc9) - 4 ) + ( parseInt(cc10) - 4 ) + ( parseInt(cc11) - 4 ) + ( parseInt(cc12) - 3 ) +
                     ( parseInt(cc13) - 5 ) + ( parseInt(cc14) - 4 ) + ( parseInt(cc15) - 5 ) + ( parseInt(cc16) - 4 ) + ( parseInt(cc17) - 3 ) + ( parseInt(cc18) - 4 ) );
@@ -2467,16 +2531,16 @@
                         if ( ( jc == "aucun joueur" ) || ( jc == "--- ---" ) ) {
                             var nomc = ( ( "rnew" ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) );
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                         } else {
                             var nomc = ( ( "rnews" ) + " " + ( parseInt(an3) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) );
+                            + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                         }
                     } else {
                         var nomc = ( ( ( totalcnet - parseInt(ajoueur3) ) + 250 ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                     + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
-                    + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalc ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) );
+                    + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalc ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                     }
 
 
