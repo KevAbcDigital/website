@@ -162,7 +162,7 @@
                     <img id="bk" style="margin-top: 238px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bl" style="margin-top: 259px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bm" style="margin-top: 280px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bn" style="margin-top: 201px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
+                    <img id="bn" style="margin-top: 301px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bo" style="margin-top: 322px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bp" style="margin-top: 343px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bq" style="margin-top: 364px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
@@ -203,21 +203,24 @@
              background-color: rgba(1, 21, 30, 0.973); padding-top: 10px;
              padding-bottom: 10px; height: 80px;">
 
-                <img id="imgfirst" class="logogolf" src="./design_files/images/profileimg.png" alt="image">
+                <div class="logogolff" id="imagefirst"></div>
                 <div style="display: block;" >
                     <b class="ttaz" style="font-size: 11px; display: block;">FIRST</b>
                     <b class="ttaz" style="font-size: 8px; color: #fbffdbee; display: block;" id="nomfirst" >Player</b>
                     <b class="ttaz" style="font-size: 11px; color: #ffffffee; display: block;" id="scorefirst" >Score</b>
                 </div>
                 <img style="width: 2px;" class="logogolf" src="./design_files/images/bartour.png" alt="image">
-                <img id="imgsecond" class="logogolf" src="./design_files/images/profileimg.png" alt="image">
+
+
+                <div class="logogolff" id="imagesecond"></div>
                 <div style="display: block;" >
                     <b class="ttaz" style="font-size: 11px; display: block;" >SECOND</b>
                     <b class="ttaz" style="font-size: 8px; color: #fbffdbee; display: block;" id="nomsecond" >Player</b>
                     <b class="ttaz" style="font-size: 11px; color: #ffffffee; display: block;" id="scoresecond" >Score</b>
                 </div>
                 <img style="width: 2px;" class="logogolf" src="./design_files/images/bartour.png" alt="image">
-                <img id="imgthird" class="logogolf" src="./design_files/images/profileimg.png" alt="image">
+
+                <div class="logogolff" id="imagethird"></div>
                 <div style="display: block;" >
                     <b class="ttaz" style="font-size: 11px; display: block;" >THIRD</b>
                     <b class="ttaz" style="font-size: 8px; color: #fbffdbee; display: block;" id="nomthird" >Player</b>
@@ -543,7 +546,15 @@
                     var bq = document.getElementById("bq");                
                     var br = document.getElementById("br");                
                     var bs = document.getElementById("bs");               
+
+                    var ia = document.getElementById("imagefirst");               
+                    var ib = document.getElementById("imagesecond");               
+                    var ic = document.getElementById("imagethird");   
                     
+                    var ida = "profileimg.png";
+                    var idb = "profileimg.png";
+                    var idc = "profileimg.png";
+
                         dataRefauto.on("value" , function(snapshot){
                             play();
                             i=0;
@@ -575,14 +586,19 @@
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomfirst').innerHTML = "";
                             document.querySelector('#scorefirst').innerHTML = "";
+                            ia.style.backgroundImage= "url('profileimg.png')";
 
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomsecond').innerHTML = "";
                             document.querySelector('#scoresecond').innerHTML = "";
+                            ib.style.backgroundImage= "url('profileimg.png')";
+
 
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomthird').innerHTML = "";
                             document.querySelector('#scorethird').innerHTML = "";
+                            ic.style.backgroundImage= "url('profileimg.png')";
+
 
                             snapshot.forEach(function(element){ 
 
@@ -654,7 +670,8 @@
                                     br.style.display="none";
                                     bs.style.display="none";
                                     document.querySelector('#nomfirst').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    document.querySelector('#scorefirst').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    document.querySelector('#scorefirst').innerHTML = ( ( (element.key).split(" ") ) [25] ) ;
+                                    ida = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] );                                    
                                 } 
                                 else if (i==2) {
                                     ba.style.display="block";
@@ -678,6 +695,7 @@
                                     bs.style.display="none";
                                     document.querySelector('#nomsecond').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     document.querySelector('#scoresecond').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    idb = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] );                                    
                                 } 
                                 else if (i==3) {
                                     ba.style.display="block";
@@ -701,6 +719,7 @@
                                     bs.style.display="none";
                                     document.querySelector('#nomthird').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     document.querySelector('#scorethird').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    idc = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] );                                    
                                 } 
                                 else if (i==4) {
                                     ba.style.display="block";
@@ -870,7 +889,7 @@
                                     br.style.display="none";
                                     bs.style.display="none";
                                 } 
-                                else if (i==2) {
+                                else if (i==12) {
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -1040,8 +1059,26 @@
                                 }
                             
                         });        
-                        
 
+                    });
+
+                    var dataRefimagea = firebase.database().ref("players");
+                    dataRefimagea.on("value" , function(snapshot){
+                        snapshot.forEach(function(element){
+                            
+                            if(element.key == ida) {
+                                ia.style.backgroundImage="url("+element.val()+")";
+                            }
+
+                            if(element.key == idb) {
+                                ib.style.backgroundImage="url("+element.val()+")";
+                            }
+
+                            if(element.key == idc) {
+                                ic.style.backgroundImage="url("+element.val()+")";
+                            }
+                            
+                        });
                     });
                     
                 }              
