@@ -132,29 +132,55 @@ header {
 
 
 .toursliderabc {
-  display: flex;
+  display: block;
   z-index: 100;
+  width: 100%;
+  height: 100vh;
   position: relative;
   align-items: center;
   justify-content: center;
 }
+.entetescore {
+  display: flex;
+  z-index: 1000;
+  width: 94%;
+  top: 0;
+  margin-left: 3%;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  overflow-y: auto;
+}
+.entetescore .logogolf {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+}
+.entetescore .ttaz{
+  text-transform: uppercase;
+  font-size: 10px;
+  color: rgb(255, 241, 216);
+  border-radius: 5px;
+  padding-bottom: 3px;
+  margin-left: 30px;
+  font-weight: 900;
+}
 .score {
   display: block;
   z-index: 1000;
-  width: 96%;
-  height: 90%;
-  border-radius: 10px;
-  position: absolute;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  overflow-y: scroll;
+  width: 94%;
+  height: 80%;
+  top: 0;
+  margin-left: 3%;
+  position: relative;
+  padding-top: 3%;
+  overflow-y: auto;
 }
 .score .tt{
   font-size: 25px;
   color: rgb(255, 251, 210);
   background-color: rgba(4, 45, 62, 0.904); 
   padding-left: 12px;
-  margin-left: 15px; 
   padding-top: 12px;
   border-top-left-radius: 15px;
   border-top-right-radius: 40px;
@@ -163,61 +189,61 @@ header {
 }
 .score .tta{
   text-transform: uppercase;
-  font-size: 16px;
-  color: rgb(255, 27, 27);
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding-top: 8px;
+  margin-left: 30px;
   font-weight: 900;
 }
-.score .ttb{
+.score .ttaz{
+  text-transform: uppercase;
   font-size: 10px;
-  color: rgb(6, 0, 89);
-  background-color: rgb(245, 200, 0);
-  border-radius: 10px;
-  text-align: end;
-  cursor: pointer;
-  padding: 5px 13px;
-  height: 25px;
-  width: 100px;
-  padding-right: 20px;
-  position: absolute;
-  right: 0; 
-  margin-right: 20px;
+  color: rgb(255, 241, 216);
+  border-radius: 5px;
+  padding-bottom: 3px;
+  margin-left: 30px;
+  font-weight: 900;
 }
+
 .score .form-controlab {
   box-shadow: -1px 1px 9px rgb(78, 162, 82);
   border: 1px solid #faeb1c;
   text-align: center; 
   font-size: 11px;
   height: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 20px;
+  background-color: #00250b;
+  color: white;
+  padding-right: 20px;
+  border-radius: 5px;
   position: absolute;
   right: 0;
-  margin-right: 100px;
+  margin-right: 50px;
+}
+.score .selectbox {
+  background-color: #00250b;
+  color: white;
 }
 .score .entete {
   display: flex;
   position: relative;
   padding-bottom: 15px; 
   background-color: rgba(8, 54, 74, 0.904); 
-  margin-left: 15px; 
-  margin-right: 25px;
 }
 .score .logogolf {
-  position: absolute;
   width: 70px;
   height: 70px;
-  margin-left: 3%;
-  margin-top: 43px;
-  z-index: 1700;
-  left: 0;
+  margin-left: 10px;
 }
 .score .entete .bartab {
-  width: 91%;
+  width: 94%;
   height: 1px;
   margin-left: 2%;
   filter: opacity(0.2);
-  margin-top: 35px;
+  margin-top: 28px;
   display: none;
   position: absolute;
   z-index: 1900;
@@ -225,7 +251,7 @@ header {
 .score .entete .boxentetejz {
   width: 30px;
   text-align: center;
-  margin-top: 14px;
+  margin-top: 8px;
   margin-left: 3px;
   height: max-content;
   border: 1px solid #a5d1ab7d;
@@ -235,7 +261,7 @@ header {
 }
 .score .entete .boxentetejw {
   width: 20%;
-  margin-top: 14px;
+  margin-top: 8px;
   border-radius: 4px;
   height: max-content;
   text-align: center;
@@ -248,7 +274,7 @@ header {
 .score .entete .boxentetej {
   width: 30px;
   text-align: center;
-  margin-top: 14px;
+  margin-top: 8px;
   height: max-content;
   text-align: center;
   border-radius: 4px;
@@ -890,8 +916,51 @@ header {
 .toursliderabcphone {
   display: block;
 }
+
 .toursliderabc {
-  display: none;
+  display: block;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.toursliderabc .entetescore {
+  display: flex;
+  z-index: 1000;
+  width: 94%;
+  top: 0;
+  margin-left: 3%;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  overflow-y: auto;
+}
+.entetescore .logogolf {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+}
+.entetescore .ttaz{
+  text-transform: uppercase;
+  font-size: 10px;
+  color: rgb(255, 241, 216);
+  border-radius: 5px;
+  padding-bottom: 3px;
+  margin-left: 30px;
+  font-weight: 900;
+}
+.toursliderabc .score {
+  display: block;
+  z-index: 1000;
+  width: 94%;
+  height: 80%;
+  top: 0;
+  margin-left: 3%;
+  position: relative;
+  padding-top: 3%;
+  overflow-y: auto;
 }
 .rotate {
   display: block;
@@ -911,17 +980,30 @@ header {
   border-radius: 10px;
   position: absolute;
   right: 0;
-  margin-right: 100px;
+  margin-right: 40px;
 }
+
 .score .tt{
   font-size: 15px;
-  margin-left: 15px;
   color: rgb(255, 251, 210);
 }
+
 .score .tta{
-  font-size: 10px;
-  color: rgb(255, 12, 12);
   text-transform: uppercase;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding-top: 8px;
+  margin-left: 20px;
+  font-weight: 900;
+}
+.score .ttaz{
+  text-transform: uppercase;
+  font-size: 6px;
+  color: rgb(255, 241, 216);
+  border-radius: 5px;
+  padding-bottom: 3px;
+  margin-left: 20px;
   font-weight: 900;
 }
 .score .ttb{
@@ -939,26 +1021,12 @@ header {
   right: 0; 
   margin-right: 20px;
 }
-.score .entete {
-  display: flex;
-  position: relative;
-  padding-right: 50px;
-}
 .score .ttta {
   display: none;
 }
 .score .entete .bartab {
   display: none;
   filter: opacity(0);
-}
-.score .logogolf {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  margin-left: 7%;
-  margin-top: 35px;
-  z-index: 1700;
-  left: 0;
 }
 
 .score .entete .boxentetejz {
