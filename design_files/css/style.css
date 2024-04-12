@@ -238,6 +238,18 @@ header {
   height: 70px;
   margin-left: 10px;
 }
+.entetescore .logogolff {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+  position: relative;
+  display: block;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/profileimg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .score .entete .bartab {
   width: 94%;
   height: 1px;
@@ -960,7 +972,7 @@ header {
   margin-left: 3%;
   position: relative;
   padding-top: 3%;
-  overflow-y: auto;
+  overflow-y: auto; 
 }
 .rotate {
   display: block;
