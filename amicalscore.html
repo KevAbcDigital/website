@@ -9,11 +9,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-               
-        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="floating-wpp.min.js"></script>
-        <link rel="stylesheet" href="floating-wpp.min.css">
-
+      
         <!-- MATERIAL DESIGN ICONIC FONT -->
         <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
                 
@@ -2090,7 +2086,8 @@
         function send(){
 
             var dataRef = firebase.database().ref(nameopen);
-
+            var loadgif = document.getElementById('loadgif');
+            loadgif.style.display='block';
             var formulairec= document.getElementById("formulairec");                
 
             var a1 = document.getElementById("a1");                
@@ -2221,8 +2218,6 @@
 
             if ( linked != "non" ) {
 
-                loadgif.style.display='block';
-
                 var dataRefb = firebase.database().ref(nameopen).child(linked);
                 var ja = "non";
                 var jb = "non";
@@ -2243,6 +2238,9 @@
                 var br1 = "non";
                 var br2 = "non";
                 var br3 = "non";
+
+                var loadgif = document.getElementById('loadgif');        
+                loadgif.style.display='block';
 
                 dataRefb.on("value" , function(snapshot){             
                     snapshot.forEach(function(element){
@@ -2467,11 +2465,11 @@
                     ( parseInt(aa7) - 4 ) + ( parseInt(aa8) - 4 ) + ( parseInt(aa9) - 4 ) + ( parseInt(aa10) - 4 ) + ( parseInt(aa11) - 4 ) + ( parseInt(aa12) - 3 ) +
                     ( parseInt(aa13) - 5 ) + ( parseInt(aa14) - 4 ) + ( parseInt(aa15) - 5 ) + ( parseInt(aa16) - 4 ) + ( parseInt(aa17) - 3 ) + ( parseInt(aa18) - 4 ) );
                     
-                    var noma = ( ( ( totalanet - parseInt(ajoueur1) ) + 250 ) + " " + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
+                    var noma = ( ( parseInt(br1) + ( totalanet - parseInt(ajoueur1) ) + 250 ) + " " + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                     + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
                     + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totala ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
                     if ( totala == 0 ) {
-                        var noma = ( ( "new" ) + " " + ( parseInt(an1)  ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
+                        var noma = ( ( "new" + parseInt(br1) ) + " " + ( parseInt(an1)  ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                         + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
                         + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "-" ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
                     }
@@ -2496,17 +2494,17 @@
                     
                     if ( totalb == 0 ) {
                         if ( ( jb == "aucun joueur" ) || ( jb == "--- ---" ) ) {
-                            var nomb = (  ( "new" ) + " " + (  parseInt(an2) + ( totalbnet - parseInt(ajoueur2) )  ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            var nomb = (  ( "new"+ parseInt(br2) ) + " " + (  parseInt(an2) + ( totalbnet - parseInt(ajoueur2) )  ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
                             + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                         } else {
-                            var nomb = (  ( "new" ) + " " + ( parseInt(an2) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            var nomb = (  ( "new" + parseInt(br2) ) + " " + ( parseInt(an2) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
                             + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                         }
                        
                     } else {
-                        var nomb = ( ( ( totalbnet - parseInt(ajoueur2) ) + 250 ) + " " + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                        var nomb = ( ( parseInt(br2) + ( totalbnet - parseInt(ajoueur2) ) + 250 ) + " " + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                         + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
                         + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalb ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                     }
@@ -2529,16 +2527,16 @@
                     
                     if ( totalc == 0 ) {
                         if ( ( jc == "aucun joueur" ) || ( jc == "--- ---" ) ) {
-                            var nomc = ( ( "rnew" ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            var nomc = ( ( "new"+ parseInt(br3) ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                             + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                         } else {
-                            var nomc = ( ( "rnews" ) + " " + ( parseInt(an3) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            var nomc = ( ( "new"+ parseInt(br3) ) + " " + ( parseInt(an3) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                             + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                         }
                     } else {
-                        var nomc = ( ( ( totalcnet - parseInt(ajoueur3) ) + 250 ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                        var nomc = ( ( parseInt(br3) + ( totalcnet - parseInt(ajoueur3) ) + 250 ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                     + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                     + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalc ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                     }
@@ -2552,7 +2550,9 @@
                         if ( ccc == 0 ) {
                             dataReffinal.child(lastc).remove();
                         }
-                                
+                        var loadgif = document.getElementById('loadgif');        
+                        loadgif.style.display='block';
+
                         dataReffinal.child(noma).set({
                             'noma' : (noma)
                         }).then(()=>{
