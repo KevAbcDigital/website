@@ -9,10 +9,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-               
-        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="floating-wpp.min.js"></script>
-        <link rel="stylesheet" href="floating-wpp.min.css">
 
         <!-- MATERIAL DESIGN ICONIC FONT -->
         <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
@@ -34,7 +30,7 @@
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar" style="display: block;">
-                <img class="imgmenu" onclick="homebtn()" style="display: block; margin-top: 180px; width: 45px; height: 35px;" src="./design_files/images/homebtn.png" alt="image">
+                <img class="imgmenu" onclick="homebtn()" style="display: block; width: 45px; height: 35px;" src="./design_files/images/homebtn.png" alt="image">
             </label>
 
         </header>
@@ -42,33 +38,36 @@
         <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;
         width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
 
-        <img name="imgid" style="height: 100vh; background-size: cover; background-position: center; " 
+        <img name="imgid" id="fondopen" style="height: 100vh; background-size: cover; background-position: center; width: 100%; " 
         src="./design_files/images/fondblancvert.jpg" alt="image">    
 
+        <img name="imgid" id="fondopenb" style="height: 100vh; background-size: cover; background-position: center; width: 100%; " 
+        src="./design_files/images/fondtest.gif" alt="image">    
 
-        <section style="position: absolute; left: 0; top: 0; width: 100%; margin-top: 450px;" >
 
-            <b style="background-color: orange; color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+        <section id="boxbtn" style="position: absolute; left: 0; top: 0; width: 100%; margin-top: 450px;" >
+
+            <b style="background-color: orange; color: rgb(255, 255, 255); width: max-content; font-size: 15px;
             font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 10px #83f6bbf9; 
-            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="newbtn()">
+            border-top-right-radius: 15px; border-bottom-right-radius: 15px; text-align: left;" onclick="newbtn()">
                 Créer un tournoi
             </b>
 
-            <b style="background-color: rgb(2, 65, 131); color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+            <b style="background-color: rgb(2, 65, 131); color: rgb(255, 255, 255); width: max-content; font-size: 15px;
             font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 10px #0000bd54;
-            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="groupbtn()">
+            border-top-right-radius: 15px; border-bottom-right-radius: 15px; text-align: left;" onclick="groupbtn()">
                 Groupes de jeu
             </b>
 
-            <b style="background-color: rgb(5, 90, 0); color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+            <b style="background-color: rgb(5, 90, 0); color: rgb(255, 255, 255); width: max-content; font-size: 15px;
             font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 12px #014316fa;
-            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="cutbtn()">
+            border-top-right-radius: 15px; border-bottom-right-radius: 15px; text-align: left;" onclick="cutbtn()">
                 Gerer les cuts
             </b>
 
-            <b style="background-color: rgb(90, 0, 23); color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+            <b style="background-color: rgb(90, 0, 23); color: rgb(255, 255, 255); width: max-content; font-size: 15px;
             font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 12px #4e0152f6;
-            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="profilbtn()">
+            border-top-right-radius: 15px; border-bottom-right-radius: 15px; text-align: left;" onclick="profilbtn()">
                 Créer un profil
             </b>
 
@@ -87,19 +86,32 @@
      
     <script>
 
+        window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+            const portrait = e.matches;
+            var fondopen = document.getElementById('fondopen');
+            var fondopenb = document.getElementById('fondopenb');
+            var boxbtn = document.getElementById('boxbtn');
+            
+            if (portrait) {
+                fondopen.style.display="block";
+                fondopenb.style.display="none";
+                boxbtn.style.marginTop="400px";
+                boxbtn.style.width="100%";
+            } else {
+                fondopen.style.display="none";
+                fondopenb.style.display="block";
+                boxbtn.style.marginTop="100px";
+                boxbtn.style.width="50%";
+            }
+        });
+
         const nameopen = localStorage.getItem('opennameopen');
-
-        var nompart = document.getElementById("nompart");       
-        // nompart.innerHTML= nameopen ;
-
         if (nameopen == null) {
             //window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
         function homebtn(){
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
-
-        // var loadgif = document.getElementById('loadgif');
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -115,6 +127,83 @@
     
         const database = firebase.database();
 
+        function newbtn() {
+            var loadgif = document.getElementById('loadgif');
+            var nomopenz = prompt("entrez le nom de votre tournoi . ");
+            var nomopen = nomopenz.toLowerCase().trim();
+            if (nomopen != "" ) {
+                loadgif.style.display='block';
+                var dataRefc = firebase.database().ref("open");
+                var cc = 0;
+                dataRefc.on("value" , function(snapshot){
+                    var ac = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == nomopen ) {
+                            ac=1;
+                        }
+                    });
+
+                    if ( ac == 0 & cc == 0 ) {
+                                    
+                        cc = 1;
+                        loadgif.style.display='none';
+                        var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Voulez vous CONTINUER ?');    
+                        if (result == false) {
+                            event.preventDefault();
+                            loadgif.style.display='none';
+                        } else {
+                            const touropenq = nomopen;
+                            localStorage.setItem('opennameq' , touropenq );
+                            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                        }                            
+                    } else {
+                        loadgif.style.display='none';
+                        window.alert("Désole ! Ce tournoi existe déjà");
+                    }
+            
+                });
+            } else {
+                window.alert("Entrez un nom valide pour créer votre tournoi !");
+            }
+
+        }
+  
+        function groupbtn() {
+            var loadgif = document.getElementById('loadgif');
+            var nomopenz = prompt("Quel tournoi souhaitez vous modifier ? ");
+            var nomopen = nomopenz.toLowerCase().trim();
+            if (nomopen != "" ) {
+                loadgif.style.display='block';
+                var dataRefc = firebase.database().ref("open");
+                var cc = 0;
+                dataRefc.on("value" , function(snapshot){
+                    var ac = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == nomopen ) {
+                            ac=1;
+                        }
+                    });
+
+                    if ( ac == 0 & cc == 0 ) {
+                                    
+                        cc = 1;
+                        loadgif.style.display='none';
+                        const touropenq = nomopen;
+                        localStorage.setItem('opennameq' , touropenq );
+                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
+                                               
+                    } else {
+                        loadgif.style.display='none';
+                        window.alert("Désole ! Ce tournoi existe déjà");
+                    }
+            
+                });
+            } else {
+                window.alert("Entrez un nom valide pour créer votre tournoi !");
+            }
+
+        }
+  
     </script>
   
 
