@@ -358,7 +358,8 @@
             var codeshow = prompt("entrez votre code ADMIN ");
             if (codeshow == "") {
                 window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-            } else {
+            } else if (codeshow != "") {                   
+
                 var dataRefcz = firebase.database().ref("code");
                 loadgif.style.display='block';
                 var cgc = 0;
@@ -372,6 +373,12 @@
 
                     if ( acz == 1 & cgc == 0 ) {
                         cgc = 1;
+
+                        const touropenq = codeshow;
+                        localStorage.setItem('opennameopen' , touropenq );
+                        window.location.href = 'https://kevabcdigital.github.io/website/open.html';
+                
+                        /*
                         var nomopenz = prompt("entrez le nom du tournoi à editer/créer . ");
                         var nomopen = nomopenz.toLowerCase().trim();
                         if (nomopen != "" ) {
@@ -414,6 +421,7 @@
                             window.alert("Entrez le nom du tournoi que vous souhaitez créer ou modifier");
                             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                         }
+                        */
                     
                     } else if ( acz == 0 & cgc == 0 ) {
                         loadgif.style.display='none';
@@ -423,6 +431,8 @@
                     }
 
                 });
+            } else {
+                window.alert("Désole ! mot de passe incorrect !");
             }
             
                 

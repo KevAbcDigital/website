@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>cut</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+    
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+
+    </head>
+
+    <body style="background-color: rgb(40, 140, 140);">
+
+        <header style="background-color: transparent">
+
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar" style="display: block;">
+                <img class="imgmenu" onclick="homebtn()" style="display: block; margin-top: 180px; width: 45px; height: 35px;" src="./design_files/images/homebtn.png" alt="image">
+            </label>
+
+        </header>
+
+        <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;
+        width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
+
+        <img name="imgid" style="height: 100vh; background-size: cover; background-position: center; " 
+        src="./design_files/images/fondblancvert.jpg" alt="image">    
+
+
+        <section style="position: absolute; left: 0; top: 0; width: 100%; margin-top: 450px;" >
+
+            <b style="background-color: orange; color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+            font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 10px #83f6bbf9; 
+            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="newbtn()">
+                Créer un tournoi
+            </b>
+
+            <b style="background-color: rgb(2, 65, 131); color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+            font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 10px #0000bd54;
+            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="groupbtn()">
+                Groupes de jeu
+            </b>
+
+            <b style="background-color: rgb(5, 90, 0); color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+            font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 12px #014316fa;
+            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="cutbtn()">
+                Gerer les cuts
+            </b>
+
+            <b style="background-color: rgb(90, 0, 23); color: rgb(255, 255, 255); width: 60%; font-size: 15px;
+            font-weight: 800; text-align: center; display: block; margin-top: 12px; padding: 7px 25px; box-shadow: -1px 1px 12px #4e0152f6;
+            border-top-right-radius: 10px; border-bottom-right-radius: 10px; text-align: left;" onclick="profilbtn()">
+                Créer un profil
+            </b>
+
+        </section>
+
+        <section class="indisponibletxt">
+            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+
+        <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; background-color: transparent;" id="footer">
+            <p style=" width: 100%; text-align: center; color: rgb(0, 82, 34); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © - Golf Yde </p>
+        </footer>
+        
+    </body>
+
+     
+    <script>
+
+        const nameopen = localStorage.getItem('opennameopen');
+
+        var nompart = document.getElementById("nompart");       
+        // nompart.innerHTML= nameopen ;
+
+        if (nameopen == null) {
+            //window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+        }
+        function homebtn(){
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+        }
+
+        // var loadgif = document.getElementById('loadgif');
+
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+    
+        const database = firebase.database();
+
+    </script>
+  
+
+</html>
