@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>formulaire</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="design_files/css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+               
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="floating-wpp.min.js"></script>
+        <link rel="stylesheet" href="floating-wpp.min.css">
+
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">
+    
+        <!-- javadev -->
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+
+    </head>
+
+    <body style="background-color: rgb(255, 255, 255);">
+        
+        <header style="background-color: transparent">
+
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">
+                <img class="imgmenu" onclick="homebtn()" style="width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
+            </label>
+            
+            <div class="logo">
+                <img onclick="openhome();" src="./design_files/images/logogc.png" alt="image">
+            </div>
+
+        </header>
+
+        <section class="indisponibletxt">
+            <a style="color: white;" class="txtindis">Désole ce site est accessible uniquement sur des equipements mobiles ( smartphones, tablettes etc ... )</a>
+        </section>
+
+        <img name="imgid" style="height: 100vh; background-size: cover; background-position: center; " 
+        src="./design_files/images/fondblancvert.jpg" alt="image">    
+         
+        <section style="position: absolute; bottom: 0; width: 100%;
+         height: 45vh; background-color: #f4f0f0; ">
+
+            <section style="position: relative; width: 84%; box-shadow: -1px 1px 9px #25282592;
+            background-color: #ffffff; margin-left: 8%; border-radius: 20px;"
+            class="formulaire" id="formulaire">
+
+                <div style="padding-top: 35px; padding-bottom: 15px;" class="devisbloc ">
+
+                    <img class="addbtn" id="addphoto" src="./design_files/images/addprofilebtn.png" alt="image">        
+
+                    <form name="formweb" style="padding: 0 25px;" action="">
+
+                        <h1 style="font-weight: 600; color: rgb(4, 70, 4);">Inscrivez vous</h1>
+                        <h3 style="color: rgb(4, 70, 4);" class="textcontenu">NB: Date limite des inscriptions : Mardi 21 Novembre 2023 à 15H . </h3>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(4, 70, 4);" class="titleform">Noms et prénoms du joueur *</a>
+                            <input id="nomuser" style="border: 1px solid #008006ab; padding-left: 15px;" type="email" placeholder="Entrez votre nom complet ..." class="form-controla">
+                        </div>
+
+                        <div class="form-wrapper" style="margin-bottom: 1px;">
+                            <a style="color: rgb(3, 53, 12);" class="titleform">Telephone * ( Ex : 698328283 )</a>
+                            <input id="teluser" style="border: 1px solid #0cca057a; padding-left: 15px;" type="email" placeholder="Entrez votre numéro de téléphone ..." class="form-controla">
+                            <i class="zmdi zmdi zmdi-email" style="margin-right: 15px;"></i>
+                        </div>
+
+                        <div class="form-wrapper">
+                            <a style="color: rgb(4, 70, 7);" class="titleform">Club d'appartenance *</a>
+                            <input id="clubuser" style=" border: 1px solid #03b60381; padding-left: 15px;" type="email" placeholder="Ex: Golf club Yaounde" class="form-controla">
+                        </div>
+
+                        <div class="form-group container-login100-form-btn" style="margin-bottom: 20px;">
+                            <button id="valider" style="border-radius: 6px; margin-top: 35px; background-color: rgb(4, 70, 4); color: rgb(255, 255, 255);
+                                box-shadow: -1px 1px 9px #f4fa9bd2; " type="button" onclick="send()">
+                                Envoyer
+                                <i class="zmdi zmdi-arrow-right"></i>
+                            </button>
+                        </div>
+            
+                    </form>
+
+                </div>
+            </section>
+
+            
+            <div class="form-group container-login100-form-btn" style="margin-top: 0px; margin-bottom: 20px;">
+
+                <button id="valider" style="border-radius: 6px; background-color: rgb(2, 125, 47);
+                color: rgb(255, 255, 255); margin-left: 10%; margin-right: 10%; border-radius: 50px;
+                    box-shadow: -1px 1px 9px #03a700e2; " type="button" onclick="send()">
+                     Créer ce groupe
+                </button>
+            </div>
+
+
+        </section>
+
+
+
+    </body>
+
+    <script>
+
+
+            var files = [];
+            var imgphoto;
+            var txtphoto = "nul";
+            var photourl = "nul";
+            var reader = new FileReader();
+            var myimg = document.getElementById('myimg');
+            var addphoto = document.getElementById('addphoto');
+            var input = document.createElement('input');
+
+            input.type = 'file';
+            input.onchange = e => {
+                files = e.target.files;
+                var extention = GetFileExt(files[0]);
+                var name = GetFileName(files[0]);
+                reader.readAsDataURL(files[0]);
+                imgphoto = files[0];
+                txtphoto = name+extention;
+            }
+            reader.onload = function(){
+                myimg.src = reader.result;
+            }
+            addphoto.onclick = function() {
+                input.click();
+            }
+            myimg.onclick = function() {
+                input.click();
+            }
+            function GetFileExt(file) {
+                var temp = file.name.split('.');
+                var ext = temp.slice((temp.length-1),(temp.length));
+                return '.' + ext[0];
+            }
+            function GetFileName(file) {
+                var temp = file.name.split('.');
+                var fname = temp.slice(0,-1).join('.');
+                return fname;
+            }
+
+
+
+            function savoirplus() {
+                window.location.href = 'https://kevabcdigital.github.io/website/formulairelicence.html';
+            }
+            function j30douala() {
+                window.location.href = 'https://kevabcdigital.github.io/website/j30douala.html';
+            }
+            function opengaroua() {
+                window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+            }
+            function opentk() {
+                window.location.href = 'https://kevabcdigital.github.io/website/tenniskids.html';
+            }
+            function openhome() {
+                window.location.href = 'https://kevabcdigital.github.io/website/programme.html';
+            }
+        
+            
+
+        const firebaseConfig = {
+            databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+            apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
+            authDomain: "nlogagolf-ed63e.firebaseapp.com",
+            projectId: "nlogagolf-ed63e",
+            storageBucket: "nlogagolf-ed63e.appspot.com",
+            messagingSenderId: "104686743459",
+            appId: "1:104686743459:web:c380b6e47ebb21d413f416",
+            measurementId: "G-6BW97RHV89"
+        };
+        firebase.initializeApp(firebaseConfig)
+    
+        const database = firebase.database();
+    
+        function containsOnlyNumbers(str) {
+            return /^\d+$/.test(str); 
+        }
+
+        function send(){
+            
+            var load = document.getElementById("lottieload");                
+            var nom = $('#nomuser').val().toLowerCase().trim();
+            var tel = $('#teluser').val();
+            var club = $('#clubuser').val();
+            var p = 0;
+            var dataRef = firebase.database().ref("players");
+
+            if ( nom != "" & tel != "" & club != "" & tel.length == 9 & ( containsOnlyNumbers(tel) == true ) 
+                    & txtphoto != "nul") {
+
+
+                load.style.display = "block";
+                var play = (nom.toLowerCase().trim()) + " ( " + (club.toLowerCase().trim()) + " ) " + " - Tel : " + tel ;
+
+
+
+
+                let storageRef = firebase.storage().ref("images/"+(nom.toLowerCase().trim()));
+                let uploadTask = storageRef.put(imgphoto);
+                uploadTask.on("state_changed",(snapshot)=>{
+                    console.log("patientez s'il vous plait");
+                },(error)=>{
+                    load.style.display = "none";
+                    window.alert("error ");
+                },()=>{
+                    uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
+                        if(url != "") {
+                            photourl = url;
+
+                            dataRef.on("value" , function(snapshot){
+                                var i = 0;
+                                snapshot.forEach(function(element){
+                                    if(element.key == nom.toLowerCase().trim() ) {
+                                        i = 1;
+                                    }
+                                });
+                                if ( i == 1 ) {
+                                    load.style.display = "none";
+                                    window.alert("le joueur " + nom.toLowerCase().trim() + " a déjà été inscrit .");
+                                    window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                                } else {
+                                    i = 2;
+                                    var dataRefb = firebase.database().ref("liste").child(play);
+                                    dataRefb.set({
+                                        'info' : (play) ,
+                                        'url' : (photourl)
+                                    }).then(()=>{
+
+                                        (dataRef.child(nom.toLowerCase().trim())).set({
+                                            'info' : (play) ,
+                                            'url' : (photourl)
+                                        }).then(()=>{
+                                            load.style.display = 'none';
+                                            window.alert("enregistrement reuissi. le joueur " + nom + " a été inscrit .");
+                                            window.location.href = 'https://kevabcdigital.github.io/website/garouasahel.html';
+                                        }).catch((error)=>{
+                                            load.style.display = 'none';
+                                            window.alert("erreur survenue : "+ error);
+                                        });
+                                                
+                                    }).catch((error)=>{
+                                        load.style.display = 'none';
+                                        window.alert("erreur survenue : "+ error);
+                                    });
+                                }
+                            });
+                        }
+                    })
+                });
+
+
+
+
+                
+                
+
+
+
+                
+            
+
+
+
+
+
+   
+            } else if ( txtphoto == "nul" ) {
+                window.alert("Veuillez ajouter votre photo de profil");
+            } else if ( nom == "" ) {
+                window.alert("veuillez entrer votre nom complet dans l'ordre...");
+            } else if ( tel == "" ) {
+                window.alert("Veuillez entrer votre numero de téléphone ...");
+            } else if ( containsOnlyNumbers(tel) == false ) {
+                window.alert("Le numero de téléphone devra contenir uniquement des chiffres ...");
+            } else if ( tel.length != 9 ) {
+                window.alert("Veuillez entrer numero de téléphone à 09 chiffres ...");
+            } else if ( club == "" ) {
+                window.alert("Veuillez saisir le nom de votre club");
+            }
+    
+        }
+
+        function invalid() {
+            window.alert("Desolé ce formulaire est indisponible pour le moment.");
+            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+        }
+
+        
+        var datagarcon = firebase.database().ref("liste");
+        var i = 0 ;
+        datagarcon.on("value" , function(snapshot){
+            snapshot.forEach(function(element){
+                i = i + 1;
+                document.querySelector('#listplayer').innerHTML+=`<div>${ i.toString() + " ) " + element.key}</div>`
+            });
+        });
+
+
+    </script>
+    
+
+</html>

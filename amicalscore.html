@@ -30,8 +30,8 @@
 
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar" style="display: block;">
-                <img class="imgmenu" onclick="homebtn()" style="display: block; width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
-                <img class="imgmenu" onclick="savebtn()" style="display: block; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/adda.gif" alt="image">
+                <img class="imgmenu" onclick="homebtn()" style="display: block; margin-top: 40px; width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
+                <img class="imgmenu" id="delbt" onclick="delbtn()" style="display: none; border-radius: 10px; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/della.gif" alt="image">
             </label>
 
         </header>
@@ -259,6 +259,7 @@
     
         const nameopen = localStorage.getItem('openname');
         const nameopenb = localStorage.getItem('opennameb');
+        const nameopeno = localStorage.getItem('opennameop');
 
 
         var nompart = document.getElementById("nompart");       
@@ -267,21 +268,23 @@
         if (nameopen == null) {
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
+        if (nameopeno == "null") {
+            var delbt = document.getElementById("delbt");  
+            delbt.style.display="none";   
+        } else {
+            var delbt = document.getElementById("delbt");  
+            delbt.style.display="block";   
+        }
         if (nameopenb == null) {
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
         function homebtn(){
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
-
+        
         var linked = "non";
 
         var loadgif = document.getElementById('loadgif');        
-
-
-
-
-
 
         function savebtn() {
 
@@ -315,6 +318,28 @@
                 });
             
             }
+        }
+
+        function delet() {
+            var result = confirm('voulez vous supprimer cette partie ?');
+            var load = document.getElementById("loadgif");            
+            load.style.display = "block";   
+            if (result == false) {
+                event.preventDefault();
+                load.style.display = "none";
+            } else {
+                var dataRef = firebase.database().ref(nameopen);
+                var dataRefo = firebase.database().ref("open");
+                    if (pa!="non" & pb!="non" & pc!="non") {
+                        dataRefo.child("opena").child(pa).remove();
+                        dataRefo.child("opena").child(pb).remove();
+                        dataRefo.child("opena").child(pc).remove();
+                        dataRef.child(linked).remove();
+                        window.alert('Partie supprimée avec succès!');
+                        localStorage.setItem('opennameop' , nameopeno );
+                        window.location.href = 'https://kevabcdigital.github.io/website/open.html';                    }
+                }
+        
         }
 
 
@@ -576,6 +601,10 @@
         const database = firebase.database();
 
         var ccc = 0;
+        
+        var pa = "non";
+        var pb = "non";
+        var pc = "non";
         
             loadgif.style.display='block';
 
