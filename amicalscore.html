@@ -31,7 +31,7 @@
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar" style="display: block;">
                 <img class="imgmenu" onclick="homebtn()" style="display: block; margin-top: 40px; width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
-                <img class="imgmenu" id="delbt" onclick="delbtn()" style="display: none; border-radius: 10px; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/della.gif" alt="image">
+                <img class="imgmenu" id="delbt" onclick="delet()" style="display: none; border-radius: 10px; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/della.gif" alt="image">
             </label>
 
         </header>
@@ -331,14 +331,16 @@
                 var dataRef = firebase.database().ref(nameopen);
                 var dataRefo = firebase.database().ref("open");
                     if (pa!="non" & pb!="non" & pc!="non") {
-                        dataRefo.child("opena").child(pa).remove();
-                        dataRefo.child("opena").child(pb).remove();
-                        dataRefo.child("opena").child(pc).remove();
-                        dataRef.child(linked).remove();
+                        
+                        dataRefo.child(nameopen).child(pa).remove();
+                        dataRefo.child(nameopen).child(pb).remove();
+                        dataRefo.child(nameopen).child(pc).remove();
+                        dataRef.child(nameopenb).remove();
                         window.alert('Partie supprimée avec succès!');
                         localStorage.setItem('opennameop' , nameopeno );
-                        window.location.href = 'https://kevabcdigital.github.io/website/open.html';                    }
-                }
+                        window.location.href = 'https://kevabcdigital.github.io/website/open.html';                    
+                    }                    
+            }
         
         }
 
