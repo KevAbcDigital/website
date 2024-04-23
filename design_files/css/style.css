@@ -225,6 +225,11 @@ header {
   right: 0;
   margin-right: 50px;
 }
+
+.toursliderabcphone .form-controlabc {
+  display: none;
+}
+
 .score .selectbox {
   background-color: #00250b;
   color: white;
@@ -999,6 +1004,23 @@ header {
   position: absolute;
   right: 0;
   margin-right: 40px;
+}
+
+.toursliderabcphone .form-controlabc {
+  box-shadow: -1px 1px 9px rgb(78, 162, 82);
+  border: 1px solid #faeb1c;
+  text-align: center; 
+  color: white;
+  background-color: #003811;
+  font-size: 11px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 50px;
+  margin-left: 4%;
+  width: 92%;
+  display: block;
 }
 
 .score .tt{
