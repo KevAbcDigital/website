@@ -88,6 +88,10 @@
 
     <script>
 
+        const nameopenform = localStorage.getItem('nameopenform');
+        if (nameopenform == null) {
+            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+        }
 
             var files = [];
             var imgphoto;
