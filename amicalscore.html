@@ -31,14 +31,16 @@
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar" style="display: block;">
                 <img class="imgmenu" onclick="homebtn()" style="display: block; margin-top: 40px; width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
-                <img class="imgmenu" id="delbt" onclick="delet()" style="display: none; border-radius: 10px; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/della.gif" alt="image">
+                <img class="imgmenu" id="delbt" onclick="delet()" style="display: block; border-radius: 10px; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/della.gif" alt="image">
             </label>
 
         </header>
 
-        <div style="margin-top: 0px; width: 100%;">
+        <div class="designgif" style="margin-top: 0px; width: 100%;">
             <img style="width: 40%; margin-left: 30%;" src="./design_files/images/scorecard.gif" alt="image">
         </div>
+
+        
 
         <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
 
@@ -256,11 +258,8 @@
 
     <script>
         
-    
         const nameopen = localStorage.getItem('openname');
         const nameopenb = localStorage.getItem('opennameb');
-        const nameopeno = localStorage.getItem('opennameop');
-
 
         var nompart = document.getElementById("nompart");       
         nompart.innerHTML= nameopen ;
@@ -268,13 +267,7 @@
         if (nameopen == null) {
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
-        if (nameopeno == "null") {
-            var delbt = document.getElementById("delbt");  
-            delbt.style.display="none";   
-        } else {
-            var delbt = document.getElementById("delbt");  
-            delbt.style.display="block";   
-        }
+    
         if (nameopenb == null) {
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
@@ -286,40 +279,7 @@
 
         var loadgif = document.getElementById('loadgif');        
 
-        function savebtn() {
-
-            var codeshow = prompt("entrez votre code ADMIN ");
-            if (codeshow == "") {
-                window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-            } else {
-                var dataRefcz = firebase.database().ref("code");
-                loadgif.style.display='block';
-                var cgc = 0;
-                dataRefcz.on("value" , function(snapshot){
-                    var acz = 0;
-                    snapshot.forEach(function(element){
-                        if(element.key == codeshow ) {
-                            acz=1;
-                        }
-                    });
-
-                    if ( acz == 1 & cgc == 0 ) {
-                        cgc = 1;
-                    
-
-
-
-                    } else if ( acz == 0 & cgc == 0 ) {
-                        loadgif.style.display='none';
-                        // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                        window.alert("Désole ! mot de passe incorrect !");
-                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                    }
-                });
-            
-            }
-        }
-
+        
         function delet() {
             var result = confirm('voulez vous supprimer cette partie ?');
             var load = document.getElementById("loadgif");            
@@ -337,8 +297,7 @@
                         dataRefo.child(nameopen).child(pc).remove();
                         dataRef.child(nameopenb).remove();
                         window.alert('Partie supprimée avec succès!');
-                        localStorage.setItem('opennameop' , nameopeno );
-                        window.location.href = 'https://kevabcdigital.github.io/website/open.html';                    
+                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';                    
                     }                    
             }
         
