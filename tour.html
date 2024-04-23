@@ -34,9 +34,9 @@
 
             <select class="form-controlabc" id="listaction" onchange="getaction()">
                 <option class="selectbox" value="aucun">> Que souhaitez vous ? ...</option>
-                <option class="selectbox" value="touradd">> Créer un nouveau tour</option>
-                <option class="selectbox" style="background-color: red;" value="delete">> Supprimer un tour</option>
-                <option class="selectbox" value="carte">> Marquer un groupe</option>
+                <option class="selectbox" value="touradd"> Créer un nouveau tour</option>
+                <option class="selectbox" style="background-color: red;" value="delete"> Supprimer un tour</option>
+                <option class="selectbox" value="carte"> Marquer un groupe</option>
             </select>
             
             <b style="position: relative; margin-top: 40px; display: block; font-size: 13px; padding-left: 20px; 
@@ -80,8 +80,9 @@
 
                     <select class="form-controlab" id="list" onchange="getvalue()">
                         <option class="selectbox" value="aucun">> Selectionnez un tournoi ici ...</option>
-                        <option class="selectbox" value="2024 presidents cup golf club yaounde">> 2024 PRESIDENTS CUP</option>
-                        <option class="selectbox" value="2024 open total energies gcy">> 2024 TOTAL ENERGIE</option>
+                        <option class="selectbox" value="2024 presidents cup golf club yaounde"> 2024 PRESIDENTS CUP</option>
+                        <option class="selectbox" value="2024 open total energies gcy"> 2024 TOTAL ENERGIE</option>
+                        <option class="selectbox" value="autre"> Autre tournoi</option>
                     </select>
 
                 </div>
@@ -308,100 +309,45 @@
         
         var charge = "aucun";
     
-        function groupebtn(){ 
-
-            var loadgif = document.getElementById('loadgif');
-            
-            var codeshow = prompt("entrez votre code ADMIN ");
-            if (codeshow == "") {
-                window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-            } else if (codeshow != "") {                   
-
-                var dataRefcz = firebase.database().ref("code");
-                loadgif.style.display='block';
-                var cgc = 0;
-                dataRefcz.on("value" , function(snapshot){
-                    var acz = 0;
-                    snapshot.forEach(function(element){
-                        if(element.key == codeshow ) {
-                            acz=1;
-                        }
-                    });
-
-                    if ( acz == 1 & cgc == 0 ) {
-                        cgc = 1;
-
-                        const touropenq = codeshow;
-                        localStorage.setItem('opennameop' , touropenq );
-                        window.location.href = 'https://kevabcdigital.github.io/website/open.html';
-                
-                        /*
-                        var nomopenz = prompt("entrez le nom du tournoi à editer/créer . ");
-                        var nomopen = nomopenz.toLowerCase().trim();
-                        if (nomopen != "" ) {
-                            var dataRefc = firebase.database().ref("open");
-                            var cc = 0;
-                            dataRefc.on("value" , function(snapshot){
-                                var ac = 0;
-                                snapshot.forEach(function(element){
-                                    if(element.key == nomopen ) {
-                                        ac=1;
-                                    }
-                                });
-
-                                if ( ac == 0 & cc == 0 ) {
-                                    cc = 1;
-                                    loadgif.style.display='none';
-                                    var result = confirm('Vous vous appretez à créer un nouveau tounoi nommé : ' + nomopen + ' . Voulez vous CONTINUER ?');    
-                                    if (result == false) {
-                                        event.preventDefault();
-                                        loadgif.style.display='block';
-                                    } else {
-                                        const touropenq = nomopen;
-                                        localStorage.setItem('opennameq' , touropenq );
-                                        window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                                    }                            
-                                } else if ( ac == 1 & cc == 0 ) {
-                                    loadgif.style.display='none';
-                                    var result = confirm('voulez vous modifier ou créer de nouveaux groupes de jeu pour cette compétition ?');    
-                                    if (result == false) {
-                                        event.preventDefault();
-                                        loadgif.style.display='block';
-                                    } else {
-                                        const touropenw = nomopen;
-                                        localStorage.setItem('opennamew' , touropenw );
-                                        window.location.href = 'https://kevabcdigital.github.io/website/cut.html';
-                                    }
-                                }
-                            });
-                        }  else {
-                            window.alert("Entrez le nom du tournoi que vous souhaitez créer ou modifier");
-                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                        }
-                        */
-                    
-                    } else if ( acz == 0 & cgc == 0 ) {
-                        loadgif.style.display='none';
-                        // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                        window.alert("Désole ! mot de passe incorrect !");
-                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                    }
-
-                });
-            } else {
-                window.alert("Désole ! mot de passe incorrect !");
-                loadgif.style.display='none';
-            }
-            
-                
-        }
-
         function getvalue(){       
         var nompart = document.getElementById("nompart");       
-        var codesearch = document.getElementById("list").value; 
+        var codesearchz = document.getElementById("list").value; 
         var load = document.getElementById("lottieload");   
         var dataRef = firebase.database().ref("open");
-        if ( codesearch != "aucun") {
+
+        if ( codesearchz != "aucun") {
+            var codesearch = codesearchz;
+
+            if ( codesearchz == "autre" ) {
+                
+                var nomopenz = prompt("Quel tournoi souhaitez vous suivre ?");
+                if (nomopenz != "" & nomopenz != null ) {
+
+                    var nomopen = nomopenz.toLowerCase().trim();
+                    var dataRefc = firebase.database().ref("open");
+                    load.style.display='block';
+                    dataRefc.on("value" , function(snapshot){
+                        var ac = 0;
+                        snapshot.forEach(function(element){
+                            if(element.key == nomopen ) {
+                                ac=1;
+                            }
+                        });
+
+                        if ( ac == 1 ) {
+                            codesearch = nomopen;
+                        } else {
+                            loadgif.style.display='none';
+                            window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit.");
+                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                        }
+                    });
+                    
+                } else {
+                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                }
+
+            }
 
             load.style.display = "block";
             dataRef.on("value" , function(snapshot){
@@ -997,6 +943,8 @@
 
         function getaction(){ 
             var act = document.getElementById("listaction").value; 
+
+
             if (act == "carte") {
                 var loadgif = document.getElementById('loadgif');
                 var nomopenz = prompt("Quel tournoi souhaitez vous suivre ?");
@@ -1017,9 +965,9 @@
 
 
                             var codesearcha = prompt("Entrez le code de la partie que vous souhaitez marquer");
-                            var codesearch = codesearcha.toLowerCase().trim();
-                            if (codesearch != "" ) {
+                            if (codesearcha != "" & codesearcha != null ) {
 
+                                var codesearch = codesearcha.toLowerCase().trim();
                                 var dataRefcc = firebase.database().ref(nomopen);
                                 dataRefcc.on("value" , function(snapshot){
                                     var ace = 0;
@@ -1131,13 +1079,13 @@
                         } else if ( acz == 0 & cgc == 0 ) {
                             loadgif.style.display='none';
                             // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                            window.alert("Désole ! mot de passe incorrect !");
+                            window.alert("Désole ! code admin incorrect !");
                             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                         }
 
                     });
                 } else {
-                    window.alert("Désole ! mot de passe incorrect !");
+                    window.alert("Désole ! code admin incorrect !");
                     loadgif.style.display='none';
                     window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                 }
@@ -1183,7 +1131,7 @@
                                                     
                                         cc = 1;
                                         loadgif.style.display='none';
-                                        var result = confirm(" le tournoi ( " + nomopen + " ) n'existe pas . veuillez vous rassurer de l'orthographe exacte de ce tournoi comme sur notre leaderboard . Voulez vous créer un nouveau tounoi nommé : ( " + nomopen + " ) . Voulez vous CONTINUER ?");    
+                                        var result = confirm(" le tournoi ( " + nomopen + " ) n'EXISTE PAS . Voulez vous créer un NOUVEAU TOUR nommé : ( " + nomopen + " ) . Voulez vous CONTINUER ?");    
                                         if (result == false) {
                                             event.preventDefault();
                                             loadgif.style.display='none';
@@ -1194,7 +1142,7 @@
                                         }                            
                                     } else {
                                         loadgif.style.display='none';
-                                        var result = confirm(" le tournoi ( " + nomopen + " ) existe déjà . Voulez vous ajouter de nouveaux participants ?");    
+                                        var result = confirm("Voulez vous ajouter de NOUVEAUX participants ?");    
                                         if (result == false) {
                                             event.preventDefault();
                                             loadgif.style.display='none';
@@ -1215,13 +1163,13 @@
                         } else if ( acz == 0 & cgc == 0 ) {
                             loadgif.style.display='none';
                             // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                            window.alert("Désole ! mot de passe incorrect !");
+                            window.alert("Désole ! code admin incorrect !");
                             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                         }
 
                     });
                 } else {
-                    window.alert("Désole ! mot de passe incorrect !");
+                    window.alert("Désole ! code admin incorrect !");
                     loadgif.style.display='none';
                     window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
                 }
