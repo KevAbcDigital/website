@@ -195,7 +195,7 @@
                     <b class="boxentetejz" style="background-color: rgba(1, 21, 30, 0.973); color: #eeff06; border: none;"  id="hre" ></b>
                     <b class="boxentetejz" style="width: 50px; margin-left: 6px; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
                     <b class="boxentetejz" style="width: 45px; background-color: transparent; font-weight: 500; border: none; color: #ebd000; " id="last" ></b>        
-                    <b class="boxentetejz" style="width: 50px; color: #ffffff; font-weight: 500; border: none; " id="day" ></b>
+                    <b class="boxentetejz" style="width: 50px; color: white; font-weight: 500; border: none; " id="day" ></b>
                 </div>
 
             </section>
@@ -227,6 +227,11 @@
                     <b class="ttaz" style="font-size: 8px; color: #fbffdbee; display: block;" id="nomthird" >Player</b>
                     <b class="ttaz" style="font-size: 11px; color: #ffffffee; display: block;" id="scorethird" >Score</b>
                 </div>
+
+                <img style="width: 2px;" class="logogolf" src="./design_files/images/bartour.png" alt="image">
+
+                <div class="logogolff" style="background-image: url('design_files/images/codecolor.png');" ></div>
+
                 <img style="width: 2px;" class="logogolf" src="./design_files/images/bartour.png" alt="image">
 
                 <img style="position: absolute; right: 0; margin-right: 10px;" class="logogolf" src="./design_files/images/fondtest.gif" alt="image">
@@ -300,7 +305,6 @@
     
         const database = firebase.database();
 
-        
         var charge = "aucun";
     
         function getvalue(){       
@@ -441,37 +445,77 @@
                             document.querySelector('#scorethird').innerHTML = "";
                             ic.style.backgroundImage= "url('profileimg.png')";
 
+                            
+                            var dim = 0;
+                            var newh1 = "";
+                            var h1 = document.getElementById("h1");
+                            var newh2 = "";
+                            var h2 = document.getElementById("h2");
+                            var newh3 = "";
+                            var h3 = document.getElementById("h3");
+                            var newh4 = "";
+                            var h4 = document.getElementById("h4");
+                            var newh5 = "";
+                            var h5 = document.getElementById("h5");
+                            var newh6 = "";
+                            var h6 = document.getElementById("h6");
+                            var newh7 = "";
+                            var h7 = document.getElementById("h7");
+                            var newh8 = "";
+                            var h8 = document.getElementById("h8");
+                            var newh9 = "";
+                            var h9 = document.getElementById("h9");
+                            var newh10 = "";
+                            var h10 = document.getElementById("h10");
+                            var newh11 = "";
+                            var h11 = document.getElementById("h11");
+                            var newh12 = "";
+                            var h12 = document.getElementById("h12");
+                            var newh13 = "";
+                            var h13 = document.getElementById("h13");
+                            var newh14 = "";
+                            var h14 = document.getElementById("h14");
+                            var newh15 = "";
+                            var h15 = document.getElementById("h15");
+                            var newh16 = "";
+                            var h16 = document.getElementById("h16");
+                            var newh17 = "";
+                            var h17 = document.getElementById("h17");
+                            var newh18 = "";
+                            var h18 = document.getElementById("h18");
 
                             snapshot.forEach(function(element){ 
 
                                 i = i + 1;
+                                dim = dim + 1 ;
                                 document.querySelector('#rank').innerHTML+=`<div>${ i.toString() }</div>`
                                 document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
                                 document.querySelector('#hcp').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [23] ) }</div>`
-                                document.querySelector('#h1').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [4] ) + " " }</div>`
-                                document.querySelector('#h2').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [5] ) }</div>`
-                                document.querySelector('#h3').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [6] ) }</div>`
-                                document.querySelector('#h4').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [7] ) }</div>`
-                                document.querySelector('#h5').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [8] ) }</div>`
-                                document.querySelector('#h6').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [9] ) }</div>`
-                                document.querySelector('#h7').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [10] ) }</div>`
-                                document.querySelector('#h8').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [11] ) }</div>`
-                                document.querySelector('#h9').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [12] ) }</div>`
-                                document.querySelector('#h10').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [13] ) }</div>`
-                                document.querySelector('#h11').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [14] ) }</div>`
-                                document.querySelector('#h12').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [15] ) }</div>`
-                                document.querySelector('#h13').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [16] ) }</div>`
-                                document.querySelector('#h14').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [17] ) }</div>`
-                                document.querySelector('#h15').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [18] ) }</div>`
-                                document.querySelector('#h16').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [19] ) }</div>`
-                                document.querySelector('#h17').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [20] ) }</div>`
-                                document.querySelector('#h18').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [21] ) }</div>`
                                 document.querySelector('#day').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
                                 document.querySelector('#total').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
                                 document.querySelector('#last').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [24] ) }</div>`                    
                                 document.querySelector('#hal').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [26] ) }</div>`                    
                                 document.querySelector('#hre').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [27] ) }</div>`                    
 
+                                newh1 +=( ( (element.key).split(" ") ) [4] ) ;
+                                newh2 +=( ( (element.key).split(" ") ) [5] ) ;
+                                newh3 +=( ( (element.key).split(" ") ) [6] ) ;
+                                newh4 +=( ( (element.key).split(" ") ) [7] ) ;
+                                newh5 +=( ( (element.key).split(" ") ) [8] ) ;
+                                newh6 +=( ( (element.key).split(" ") ) [9] ) ;
+                                newh7 +=( ( (element.key).split(" ") ) [10] ) ;
+                                newh8 +=( ( (element.key).split(" ") ) [11] ) ;
+                                newh9 +=( ( (element.key).split(" ") ) [12] ) ;
+                                newh10 +=( ( (element.key).split(" ") ) [13] ) ;
+                                newh11 +=( ( (element.key).split(" ") ) [14] ) ;
+                                newh12 +=( ( (element.key).split(" ") ) [15] ) ;
+                                newh13 +=( ( (element.key).split(" ") ) [16] ) ;
+                                newh14 +=( ( (element.key).split(" ") ) [17] ) ;
+                                newh15 +=( ( (element.key).split(" ") ) [18] ) ;
+                                newh16 +=( ( (element.key).split(" ") ) [19] ) ;
+                                newh17 +=( ( (element.key).split(" ") ) [20] ) ;
+                                newh18 +=( ( (element.key).split(" ") ) [21] ) ;
+                                
                                 if (i==0) {
                                     ba.style.display="none";
                                     bb.style.display="none";
@@ -905,7 +949,381 @@
                             
                         });        
 
+                        var newTexth1 = "";
+                        var newTexth2 = "";
+                        var newTexth3 = "";
+                        var newTexth4 = "";
+                        var newTexth5 = "";
+                        var newTexth6 = "";
+                        var newTexth7 = "";
+                        var newTexth8 = "";
+                        var newTexth9 = "";
+                        var newTexth10 = "";
+                        var newTexth11 = "";
+                        var newTexth12 = "";
+                        var newTexth13 = "";
+                        var newTexth14 = "";
+                        var newTexth15 = "";
+                        var newTexth16 = "";
+                        var newTexth17 = "";
+                        var newTexth18 = "";
+
+                        var colorcode1 = "white";
+                        var colorcode2 = "white";
+                        var colorcode3 = "white";
+                        var colorcode4 = "white";
+                        var colorcode5 = "white";
+                        var colorcode6 = "white";
+                        var colorcode7 = "white";
+                        var colorcode8 = "white";
+                        var colorcode9 = "white";
+                        var colorcode10 = "white";
+                        var colorcode11 = "white";
+                        var colorcode12 = "white";
+                        var colorcode13 = "white";
+                        var colorcode14 = "white";
+                        var colorcode15 = "white";
+                        var colorcode16 = "white";
+                        var colorcode17 = "white";
+                        var colorcode18 = "white";
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh1.charAt(i) == "1") ) {
+                                colorcode3 = 'orange';
+                            } else if (newh1.charAt(i) == "2") {
+                                colorcode3 = 'yellow';
+                            } else if (newh1.charAt(i) == "3") {
+                                colorcode3 = 'wheat';
+                            } else {
+                                colorcode3 = 'white';
+                            } 
+
+                            newTexth1 += `<div>${ '<span style="color:' + colorcode3 + '; ">'+newh1.charAt(i)+'</span>' }</div>`;
+        
+                        }
+                     
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh6.charAt(i) == "1") ) {
+                                colorcode6 = 'orange';
+                            } else if (newh6.charAt(i) == "2") {
+                                colorcode6 = 'yellow';
+                            } else if (newh6.charAt(i) == "3") {
+                                colorcode6 = 'wheat';
+                            } else {
+                                colorcode6 = 'white';
+                            } 
+
+                            newTexth6 += `<div>${ '<span style="color:' + colorcode6 + '; ">'+newh6.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh12.charAt(i) == "1") ) {
+                                colorcode12 = 'orange';
+                            } else if (newh12.charAt(i) == "2") {
+                                colorcode12 = 'yellow';
+                            } else if (newh12.charAt(i) == "3") {
+                                colorcode12 = 'wheat';
+                            } else {
+                                colorcode12 = 'white';
+                            } 
+
+                            newTexth12 += `<div>${ '<span style="color:' + colorcode12 + '; ">'+newh12.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh17.charAt(i) == "1") ) {
+                                colorcode17 = 'orange';
+                            } else if (newh17.charAt(i) == "2") {
+                                colorcode17 = 'yellow';
+                            } else if (newh17.charAt(i) == "3") {
+                                colorcode17 = 'wheat';
+                            } else {
+                                colorcode17 = 'white';
+                            } 
+
+                            newTexth17 += `<div>${ '<span style="color:' + colorcode17 + '; ">'+newh17.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh2.charAt(i) == "2") ) {
+                                colorcode2 = 'violet';
+                            } else if ((newh2.charAt(i) == "3") ) {
+                                colorcode2 = 'orange';
+                            } else if (newh2.charAt(i) == "4") {
+                                colorcode2 = 'yellow';
+                            } else if (newh2.charAt(i) == "5") {
+                                colorcode2 = 'wheat';
+                            } else {
+                                colorcode2 = 'white';
+                            } 
+
+                            newTexth2 += `<div>${ '<span style="color:' + colorcode2 + '; ">'+newh2.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh4.charAt(i) == "2") ) {
+                                colorcode4 = 'violet';
+                            } else if ((newh4.charAt(i) == "3") ) {
+                                colorcode4 = 'orange';
+                            } else if (newh4.charAt(i) == "4") {
+                                colorcode4 = 'yellow';
+                            } else if (newh4.charAt(i) == "5") {
+                                colorcode4 = 'wheat';
+                            } else {
+                                colorcode4 = 'white';
+                            } 
+
+                            newTexth4 += `<div>${ '<span style="color:' + colorcode4 + '; ">'+newh4.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh13.charAt(i) == "2") ) {
+                                colorcode13 = 'violet';
+                            } else if ((newh13.charAt(i) == "3") ) {
+                                colorcode13 = 'orange';
+                            } else if (newh13.charAt(i) == "4") {
+                                colorcode13 = 'yellow';
+                            } else if (newh13.charAt(i) == "5") {
+                                colorcode13 = 'wheat';
+                            } else {
+                                colorcode13 = 'white';
+                            } 
+
+                            newTexth13 += `<div>${ '<span style="color:' + colorcode13 + '; ">'+newh13.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh15.charAt(i) == "2") ) {
+                                colorcode15 = 'violet';
+                            } else if ((newh15.charAt(i) == "3") ) {
+                                colorcode15 = 'orange';
+                            } else if (newh15.charAt(i) == "4") {
+                                colorcode15 = 'yellow';
+                            } else if (newh15.charAt(i) == "5") {
+                                colorcode15 = 'wheat';
+                            } else {
+                                colorcode15 = 'white';
+                            } 
+
+                            newTexth15 += `<div>${ '<span style="color:' + colorcode15 + '; ">'+newh15.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh3.charAt(i) == "1") ) {
+                                colorcode3 = 'violet';
+                            } else if ((newh3.charAt(i) == "2") ) {
+                                colorcode3 = 'orange';
+                            } else if (newh3.charAt(i) == "3") {
+                                colorcode3 = 'yellow';
+                            } else if (newh3.charAt(i) == "4") {
+                                colorcode3 = 'wheat';
+                            } else {
+                                colorcode3 = 'white';
+                            } 
+
+                            newTexth3 += `<div>${ '<span style="color:' + colorcode3 + '; ">'+newh3.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh5.charAt(i) == "1") ) {
+                                colorcode5 = 'violet';
+                            } else if ((newh5.charAt(i) == "2") ) {
+                                colorcode5 = 'orange';
+                            } else if (newh5.charAt(i) == "3") {
+                                colorcode5 = 'yellow';
+                            } else if (newh5.charAt(i) == "4") {
+                                colorcode5 = 'wheat';
+                            } else {
+                                colorcode5 = 'white';
+                            } 
+
+                            newTexth5 += `<div>${ '<span style="color:' + colorcode5 + '; ">'+newh5.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh7.charAt(i) == "1") ) {
+                                colorcode7 = 'violet';
+                            } else if ((newh7.charAt(i) == "2") ) {
+                                colorcode7 = 'orange';
+                            } else if (newh7.charAt(i) == "3") {
+                                colorcode7 = 'yellow';
+                            } else if (newh7.charAt(i) == "4") {
+                                colorcode7 = 'wheat';
+                            } else {
+                                colorcode7 = 'white';
+                            } 
+
+                            newTexth7 += `<div>${ '<span style="color:' + colorcode7 + '; ">'+newh7.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh8.charAt(i) == "1") ) {
+                                colorcode8 = 'violet';
+                            } else if ((newh8.charAt(i) == "2") ) {
+                                colorcode8 = 'orange';
+                            } else if (newh8.charAt(i) == "3") {
+                                colorcode8 = 'yellow';
+                            } else if (newh8.charAt(i) == "4") {
+                                colorcode8 = 'wheat';
+                            } else {
+                                colorcode8 = 'white';
+                            } 
+
+                            newTexth8 += `<div>${ '<span style="color:' + colorcode8 + '; ">'+newh8.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh9.charAt(i) == "1") ) {
+                                colorcode9 = 'violet';
+                            } else if ((newh9.charAt(i) == "2") ) {
+                                colorcode9 = 'orange';
+                            } else if (newh9.charAt(i) == "3") {
+                                colorcode9 = 'yellow';
+                            } else if (newh9.charAt(i) == "4") {
+                                colorcode9 = 'wheat';
+                            } else {
+                                colorcode9 = 'white';
+                            } 
+
+                            newTexth9 += `<div>${ '<span style="color:' + colorcode9 + '; ">'+newh9.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh10.charAt(i) == "1") ) {
+                                colorcode10 = 'violet';
+                            } else if ((newh10.charAt(i) == "2") ) {
+                                colorcode10 = 'orange';
+                            } else if (newh10.charAt(i) == "3") {
+                                colorcode10 = 'yellow';
+                            } else if (newh10.charAt(i) == "4") {
+                                colorcode10 = 'wheat';
+                            } else {
+                                colorcode10 = 'white';
+                            } 
+
+                            newTexth10 += `<div>${ '<span style="color:' + colorcode10 + '; ">'+newh10.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh11.charAt(i) == "1") ) {
+                                colorcode11 = 'violet';
+                            } else if ((newh11.charAt(i) == "2") ) {
+                                colorcode11 = 'orange';
+                            } else if (newh11.charAt(i) == "3") {
+                                colorcode11 = 'yellow';
+                            } else if (newh11.charAt(i) == "4") {
+                                colorcode11 = 'wheat';
+                            } else {
+                                colorcode11 = 'white';
+                            } 
+
+                            newTexth11 += `<div>${ '<span style="color:' + colorcode11 + '; ">'+newh11.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+                     
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh14.charAt(i) == "1") ) {
+                                colorcode14 = 'violet';
+                            } else if ((newh14.charAt(i) == "2") ) {
+                                colorcode14 = 'orange';
+                            } else if (newh14.charAt(i) == "3") {
+                                colorcode14 = 'yellow';
+                            } else if (newh14.charAt(i) == "4") {
+                                colorcode14 = 'wheat';
+                            } else {
+                                colorcode14 = 'white';
+                            } 
+
+                            newTexth14 += `<div>${ '<span style="color:' + colorcode14 + '; ">'+newh14.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh16.charAt(i) == "1") ) {
+                                colorcode16 = 'violet';
+                            } else if ((newh16.charAt(i) == "2") ) {
+                                colorcode16 = 'orange';
+                            } else if (newh16.charAt(i) == "3") {
+                                colorcode16 = 'yellow';
+                            } else if (newh16.charAt(i) == "4") {
+                                colorcode16 = 'wheat';
+                            } else {
+                                colorcode16 = 'white';
+                            } 
+
+                            newTexth16 += `<div>${ '<span style="color:' + colorcode16 + '; ">'+newh16.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+                        for(var i=0, dim; i<dim; i++)
+                        {
+                            if ((newh18.charAt(i) == "1") ) {
+                                colorcode18 = 'violet';
+                            } else if ((newh18.charAt(i) == "2") ) {
+                                colorcode18 = 'orange';
+                            } else if (newh18.charAt(i) == "3") {
+                                colorcode18 = 'yellow';
+                            } else if (newh18.charAt(i) == "4") {
+                                colorcode18 = 'wheat';
+                            } else {
+                                colorcode18 = 'white';
+                            } 
+
+                            newTexth18 += `<div>${ '<span style="color:' + colorcode18 + '; ">'+newh18.charAt(i)+'</span>' }</div>`;
+                        
+                        }
+
+
+                        h1.innerHTML = newTexth1;
+                        h2.innerHTML = newTexth2;
+                        h3.innerHTML = newTexth3;
+                        h4.innerHTML = newTexth4;
+                        h5.innerHTML = newTexth5;
+                        h6.innerHTML = newTexth6;
+                        h7.innerHTML = newTexth7;
+                        h8.innerHTML = newTexth8;
+                        h9.innerHTML = newTexth9;
+                        h10.innerHTML = newTexth10;
+                        h11.innerHTML = newTexth11;
+                        h12.innerHTML = newTexth12;
+                        h13.innerHTML = newTexth13;
+                        h14.innerHTML = newTexth14;
+                        h15.innerHTML = newTexth15;
+                        h16.innerHTML = newTexth16;
+                        h17.innerHTML = newTexth17;
+                        h18.innerHTML = newTexth18;
                     });
+
 
                     var dataRefimagea = firebase.database().ref("players");
                     dataRefimagea.on("value" , function(snapshot){
@@ -1173,10 +1591,6 @@
 
         }
 
-
-
-        
-        
 
     </script>
     
