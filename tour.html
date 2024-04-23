@@ -37,6 +37,7 @@
                 <option class="selectbox" value="touradd"> Créer un nouveau tour</option>
                 <option class="selectbox" style="background-color: red;" value="delete"> Supprimer un tour</option>
                 <option class="selectbox" value="carte"> Marquer un groupe</option>
+                <option class="selectbox" value="add"> Ajouter un profil</option>
             </select>
             
             <b style="position: relative; margin-top: 40px; display: block; font-size: 13px; padding-left: 20px; 
@@ -1330,15 +1331,42 @@
                         snapshot.forEach(function(element){
                             
                             if(element.key == ida) {
-                                ia.style.backgroundImage="url("+element.val()+")";
+
+                                var dataRefimageaa = dataRefimagea.child(element.key);
+                                dataRefimageaa.on("value" , function(snapshota){
+                                    snapshota.forEach(function(elementa){
+                                        if(elementa.key == "url") {
+                                            ia.style.backgroundImage="url("+elementa.val()+")";
+                                        }
+                                    });
+                                });
+                    
                             }
 
                             if(element.key == idb) {
-                                ib.style.backgroundImage="url("+element.val()+")";
+
+                                var dataRefimagebb = dataRefimagea.child(element.key);
+                                dataRefimagebb.on("value" , function(snapshotb){
+                                    snapshotb.forEach(function(elementb){
+                                        if(elementb.key == "url") {
+                                            ib.style.backgroundImage="url("+elementb.val()+")";
+                                        }
+                                    });
+                                });
+
                             }
 
                             if(element.key == idc) {
-                                ic.style.backgroundImage="url("+element.val()+")";
+
+                                var dataRefimagecc = dataRefimagea.child(element.key);
+                                dataRefimagecc.on("value" , function(snapshotc){
+                                    snapshotc.forEach(function(elementc){
+                                        if(elementc.key == "url") {
+                                            ic.style.backgroundImage="url("+elementc.val()+")";
+                                        }
+                                    });
+                                });
+
                             }
                             
                         });
@@ -1587,7 +1615,48 @@
                 }
             
 
+            } else if (act == "add") { 
+                
+                var loadgif = document.getElementById('loadgif');
+                
+                var codeshow = prompt("entrez votre code ADMIN ");
+                if (codeshow == "") {
+                    window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
+                } else if (codeshow != "") {                   
+
+                    var dataRefcz = firebase.database().ref("code");
+                    loadgif.style.display='block';
+                    var cgc = 0;
+                    dataRefcz.on("value" , function(snapshot){
+                        var acz = 0;
+                        snapshot.forEach(function(element){
+                            if(element.key == codeshow ) {
+                                acz=1;
+                            }
+                        });
+
+                        if ( acz == 1 & cgc == 0 ) {
+                            cgc = 1;
+
+                            window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
+                         
+                        } else if ( acz == 0 & cgc == 0 ) {
+                            loadgif.style.display='none';
+                            // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
+                            window.alert("Désole ! code admin incorrect !");
+                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                        }
+
+                    });
+                } else {
+                    window.alert("Désole ! code admin incorrect !");
+                    loadgif.style.display='none';
+                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                }
+            
+
             }
+
 
         }
 
