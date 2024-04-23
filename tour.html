@@ -24,7 +24,7 @@
 
     </head>
 
-    <body style="background-color: rgb(255, 255, 255);">
+    <body class="bod" style="background-color: rgb(255, 255, 255);">
 
         <audio loop id="autoplay">
             <source src="sonc.mp3" type="audio/mpeg">
@@ -32,19 +32,18 @@
 
         <section id="toursliderabcphone" class="toursliderabcphone" >
 
-           
             <b style="position: relative; margin-top: 50px; display: block; font-size: 13px; padding-left: 20px; 
             color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran pour afficher le LEADERBOARD</b>
             <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
-
+    
             <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
-
-            <img name="imgid" style="height: 100vh; background-size: cover; background-position: center; " 
+    
+            <img name="imgid" style="height: 100vh; margin-top: -70px; background-size: cover; background-position: center; " 
                 src="./design_files/images/fondtour.jpg" alt="image">    
-
+            
             <div style="width: 100%; display: flex; position: absolute; bottom: 0; margin-bottom: 60px; z-index: 1600;">
                 <b onclick="groupebtn()" class="btna" id="btna" style="color: #03001b; width: 40%; text-align: center; justify-content: center; align-items: center; 
-                width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Tournoi</b>
+                width: 40%; margin-left: 8%; border-radius: 6px; height: 35px; border: 1px solid #10223a; background-color: #ffffffa6;">Admin</b>
                 <b onclick="cartebtn()" class="btnb" id="btnb" style="color: #ffffff; width: 40%; margin-left: 3%; position: relative; text-align: center; justify-content: center;
                  align-items: center; width: 40%; margin-right: 8%; height: 35px; border-radius: 6px; border: 1px solid #f0f0f0b9; background-color: #010033;">Carte de jeu</b>
             </div>
@@ -289,6 +288,7 @@
         }
         automaticslide();
 */
+
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
             apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
@@ -433,6 +433,7 @@
                 });
             } else {
                 window.alert("Désole ! mot de passe incorrect !");
+                loadgif.style.display='none';
             }
             
                 
@@ -683,9 +684,10 @@
                                     bq.style.display="none";
                                     br.style.display="none";
                                     bs.style.display="none";
-                                    document.querySelector('#nomfirst').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
+
+                                    document.querySelector('#nomfirst').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
                                     document.querySelector('#scorefirst').innerHTML = ( ( (element.key).split(" ") ) [25] ) ;
-                                    ida = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] );                                    
+                                    ida = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase() ;                                    
                                 } 
                                 else if (i==2) {
                                     ba.style.display="block";
@@ -709,7 +711,7 @@
                                     bs.style.display="none";
                                     document.querySelector('#nomsecond').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     document.querySelector('#scoresecond').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
-                                    idb = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] );                                    
+                                    idb = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                 } 
                                 else if (i==3) {
                                     ba.style.display="block";
@@ -733,7 +735,7 @@
                                     bs.style.display="none";
                                     document.querySelector('#nomthird').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     document.querySelector('#scorethird').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
-                                    idc = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] );                                    
+                                    idc = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                 } 
                                 else if (i==4) {
                                     ba.style.display="block";
