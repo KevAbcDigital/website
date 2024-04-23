@@ -119,8 +119,10 @@ header {
 .besoin {
   display: none;
 }
-
 .rotate {
+  display: none;
+}
+.designgif {
   display: none;
 }
 
@@ -772,7 +774,9 @@ header {
 
 
 
-
+  .designgif {
+    display: block;
+  }
 
   .searchcode {
     display: block;
@@ -931,7 +935,7 @@ header {
 }
 
 .toursliderabc {
-  display: block;
+  display: none;
   z-index: 100;
   width: 100%;
   height: 100vh;
