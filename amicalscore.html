@@ -43,6 +43,7 @@
         
 
         <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
+        <img id="loadg" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
 
         <section class="card" style="margin-top: 30px; padding-bottom: 20px;" >
 
@@ -2080,8 +2081,6 @@
         function send(){
 
             var dataRef = firebase.database().ref(nameopen);
-            var loadgif = document.getElementById('loadgif');
-            loadgif.style.display='block';
             var formulairec= document.getElementById("formulairec");                
 
             var a1 = document.getElementById("a1");                
@@ -2233,8 +2232,8 @@
                 var br2 = "non";
                 var br3 = "non";
 
-                var loadgif = document.getElementById('loadgif');        
-                loadgif.style.display='block';
+                var loadg = document.getElementById('loadg');        
+                loadg.style.display='block';
 
                 dataRefb.on("value" , function(snapshot){             
                     snapshot.forEach(function(element){
@@ -2316,64 +2315,64 @@
 
                 if ( ja != "non") {
 
-
-                    if (a1 < 10 ) { a1= "0" + a1; }
-                    if (a2 < 10 ) { a2="0" + (a2); }
-                    if (a3 < 10 ) { a3="0" + (a3); }
-                    if (a4 < 10 ) { a4="0" + (a4); }
-                    if (a5 < 10 ) { a5="0" + (a5); }
-                    if (a6 < 10 ) { a6="0" + (a6); }
-                    if (a7 < 10 ) { a7="0" + (a7); }
-                    if (a8 < 10 ) { a8="0" + (a8); }
-                    if (a9 < 10 ) { a9="0" + (a9); }
-                    if (a10 < 10 ) { a10="0" + (a10); }
-                    if (a11 < 10 ) { a11="0" + (a11); }
-                    if (a12 < 10 ) { a12="0" + (a12); }
-                    if (a13 < 10 ) { a13="0" + (a13); }
-                    if (a14 < 10 ) { a14="0" + (a14); }
-                    if (a15 < 10 ) { a15="0" + (a15); }
-                    if (a16 < 10 ) { a16="0" + (a16); }
-                    if (a17 < 10 ) { a17="0" + (a17); }
-                    if (a18 < 10 ) { a18="0" + (a18); }
+                    if (a1.length == 1 ) { a1= "0" + a1; }
+                    if (a2.length == 1 ) { a2="0" + (a2); }
+                    if (a3.length == 1 ) { a3="0" + (a3); }
+                    if (a4.length == 1 ) { a4="0" + (a4); }
+                    if (a5.length == 1 ) { a5="0" + (a5); }
+                    if (a6.length == 1 ) { a6="0" + (a6); }
+                    if (a7.length == 1 ) { a7="0" + (a7); }
+                    if (a8.length == 1 ) { a8="0" + (a8); }
+                    if (a9.length == 1 ) { a9="0" + (a9); }
+                    if (a10.length == 1 ) { a10="0" + (a10); }
+                    if (a11.length == 1 ) { a11="0" + (a11); }
+                    if (a12.length == 1) { a12="0" + (a12); }
+                    if (a13.length == 1 ) { a13="0" + (a13); }
+                    if (a14.length == 1) { a14="0" + (a14); }
+                    if (a15.length == 1 ) { a15="0" + (a15); }
+                    if (a16.length == 1 ) { a16="0" + (a16); }
+                    if (a17.length == 1) { a17="0" + (a17); }
+                    if (a18.length == 1) { a18="0" + (a18); }
                 
-                    if (b1 < 10 ) { b1="0" + (b1); }
-                    if (b2 < 10 ) { b2="0" + (b2); }
-                    if (b3 < 10 ) { b3="0" + (b3); }
-                    if (b4 < 10 ) { b4="0" + (b4); }
-                    if (b5 < 10 ) { b5="0" + (b5); }
-                    if (b6 < 10 ) { b6="0" + (b6); }
-                    if (b7 < 10 ) { b7="0" + (b7); }
-                    if (b8 < 10 ) { b8="0" + (b8); }
-                    if (b9 < 10 ) { b9="0" + (b9); }
-                    if (b10 < 10 ) { b10="0" + (b10); }
-                    if (b11 < 10 ) { b11="0" + (b11); }
-                    if (b12 < 10 ) { b12="0" + (b12); }
-                    if (b13 < 10 ) { b13="0" + (b13); }
-                    if (b14 < 10 ) { b14="0" + (b14); }
-                    if (b15 < 10 ) { b15="0" + (b15); }
-                    if (b16 < 10 ) { b16="0" + (b16); }
-                    if (b17 < 10 ) { b17="0" + (b17); }
-                    if (b18 < 10 ) { b18="0" + (b18); }
+                    if (b1.length == 1 ) { b1="0" + (b1); }
+                    if (b2.length == 1 ) { b2="0" + (b2); }
+                    if (b3.length == 1 ) { b3="0" + (b3); }
+                    if (b4.length == 1 ) { b4="0" + (b4); }
+                    if (b5.length == 1 ) { b5="0" + (b5); }
+                    if (b6.length == 1 ) { b6="0" + (b6); }
+                    if (b7.length == 1 ) { b7="0" + (b7); }
+                    if (b8.length == 1 ) { b8="0" + (b8); }
+                    if (b9.length == 1 ) { b9="0" + (b9); }
+                    if (b10.length == 1 ) { b10="0" + (b10); }
+                    if (b11.length == 1 ) { b11="0" + (b11); }
+                    if (b12.length == 1 ) { b12="0" + (b12); }
+                    if (b13.length == 1 ) { b13="0" + (b13); }
+                    if (b14.length == 1 ) { b14="0" + (b14); }
+                    if (b15.length == 1 ) { b15="0" + (b15); }
+                    if (b16.length == 1 ) { b16="0" + (b16); }
+                    if (b17.length == 1 ) { b17="0" + (b17); }
+                    if (b18.length == 1 ) { b18="0" + (b18); }
 
 
-                    if (c1 < 10 ) { c1="0" + (c1); }
-                    if (c2 < 10 ) { c2="0" + (c2); }
-                    if (c3 < 10 ) { c3="0" + (c3); }
-                    if (c4 < 10 ) { c4="0" + (c4); }
-                    if (c5 < 10 ) { c5="0" + (c5); }
-                    if (c6 < 10 ) { c6="0" + (c6); }
-                    if (c7 < 10 ) { c7="0" + (c7); }
-                    if (c8 < 10 ) { c8="0" + (c8); }
-                    if (c9 < 10 ) { c9="0" + (c9); }
-                    if (c10 < 10 ) { c10="0" + (c10); }
-                    if (c11 < 10 ) { c11="0" + (c11); }
-                    if (c12 < 10 ) { c12="0" + (c12); }
-                    if (c13 < 10 ) { c13="0" + (c13); }
-                    if (c14 < 10 ) { c14="0" + (c14); }
-                    if (c15 < 10 ) { c15="0" + (c15); }
-                    if (c16 < 10 ) { c16="0" + (c16); }
-                    if (c17 < 10 ) { c17="0" + (c17); }
-                    if (c18 < 10 ) { c18="0" + (c18); }
+                    if (c1.length == 1 ) { c1="0" + (c1); }
+                    if (c2.length == 1 ) { c2="0" + (c2); }
+                    if (c3.length == 1 ) { c3="0" + (c3); }
+                    if (c4.length == 1 ) { c4="0" + (c4); }
+                    if (c5.length == 1 ) { c5="0" + (c5); }
+                    if (c6.length == 1 ) { c6="0" + (c6); }
+                    if (c7.length == 1 ) { c7="0" + (c7); }
+                    if (c8.length == 1 ) { c8="0" + (c8); }
+                    if (c9.length == 1 ) { c9="0" + (c9); }
+                    if (c10.length == 1 ) { c10="0" + (c10); }
+                    if (c11.length == 1 ) { c11="0" + (c11); }
+                    if (c12.length == 1 ) { c12="0" + (c12); }
+                    if (c13.length == 1 ) { c13="0" + (c13); }
+                    if (c14.length == 1 ) { c14="0" + (c14); }
+                    if (c15.length == 1 ) { c15="0" + (c15); }
+                    if (c16.length == 1 ) { c16="0" + (c16); }
+                    if (c17.length == 1 ) { c17="0" + (c17); }
+                    if (c18.length == 1 ) { c18="0" + (c18); }
+                    
 
                     var aa1 = a1 ;
                     var aa2 = a2 ;
@@ -2601,8 +2600,6 @@
                         if ( ccc == 0 ) {
                             dataReffinal.child(lastc).remove();
                         }
-                        var loadgif = document.getElementById('loadgif');        
-                        loadgif.style.display='block';
 
                         dataReffinal.child(noma).set({
                             'noma' : (noma)
@@ -2615,20 +2612,20 @@
                                     dataReffinal.child(nomc).set({
                                         'nomc' : (nomc)
                                     }).then(()=>{
-                                        loadgif.style.display='none';
+                                        loadg.style.display='none';
                                     }).catch((error)=>{
-                                        loadgif.style.display='none';
+                                        loadg.style.display='none';
                                         window.alert("erreur survenue 6 : "+ error);
                                         const touropen = nameopen;
                                         localStorage.setItem('openname' , touropen );
                                         window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                                     });
                                 } else {
-                                    loadgif.style.display='none';
+                                    loadg.style.display='none';
                                 }
                                         
                             }).catch((error)=>{
-                                loadgif.style.display='none';
+                                loadg.style.display='none';
                                 window.alert("erreur survenue 4 : "+ error);
                                 const touropen = nameopen;
                                 localStorage.setItem('openname' , touropen );
@@ -2636,7 +2633,7 @@
                             });
 
                         }).catch((error)=>{
-                            loadgif.style.display='none';
+                            loadg.style.display='none';
                             window.alert("erreur survenue 3 : "+ error);
                             const touropen = nameopen;
                             localStorage.setItem('openname' , touropen );
@@ -2725,11 +2722,11 @@
 
                             }).then(()=>{
 
-                                loadgif.style.display = 'none';
+                                loadg.style.display = 'none';
                                 window.alert("Sauvegarde reuissie.");
                                             
                             }).catch((error)=>{
-                                loadgif.style.display = 'none';
+                                loadg.style.display = 'none';
                                 window.alert("erreur survenue 2 : "+ error);
                                 const touropen = nameopen;
                                 localStorage.setItem('openname' , touropen );
@@ -2795,11 +2792,11 @@
 
                             }).then(()=>{
 
-                                loadgif.style.display = 'none';
+                                loadg.style.display = 'none';
                                 window.alert("Sauvegarde reuissie.");
                                             
                             }).catch((error)=>{
-                                loadgif.style.display = 'none';
+                                loadg.style.display = 'none';
                                 window.alert("erreur survenue 1: "+ error);
                                 const touropen = nameopen;
                                 localStorage.setItem('openname' , touropen );
@@ -2810,13 +2807,13 @@
 
     
                 } else if (ja == "non") {
-                    loadgif.style.display = 'none';
+                    loadg.style.display = 'none';
                     window.alert("actualisez la page et reinserez votre code ");
                 }
 
                     
             } else if ( linked == "non" ) {
-                loadgif.style.display = 'none';
+                loadg.style.display = 'none';
                 window.alert("Aucune partie en cours ... Veuillez saisir le code de votre partie et lancer la partie");
                 const touropen = nameopen;
                 localStorage.setItem('openname' , touropen );
