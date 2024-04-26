@@ -186,8 +186,8 @@ header {
   padding-top: 12px;
   border-top-left-radius: 15px;
   border-top-right-radius: 40px;
-  padding-right: 40px;
-
+  width: 25%;
+  display: block;
 }
 .score .tta{
   text-transform: uppercase;
@@ -300,7 +300,44 @@ header {
 .btnb {
   display: none;
 }
-
+.scoreboxb {
+  display: none;
+  position: relative;
+  padding-bottom: 15px; 
+  background-color: rgba(8, 54, 74, 0.904); 
+  padding: 2% 7%;
+  border-radius: 6px;
+  margin: 10px 30px;
+  overflow-y: scroll;
+  overflow: scroll;
+}
+.scoreboxb .logogobox {
+  width: 8%;
+  height: 80px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  right: 0;
+  margin-right: 7%;
+  position: absolute;
+  display: block;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/profileimg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.scoreboxb .logogoboxb {
+  width: 8%;
+  height: 30px;
+  position: relative;
+  margin-left: 12px;
+  display: block;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/bartour.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 
 .lottiescriptc {
