@@ -239,6 +239,8 @@ header {
   position: relative;
   padding-bottom: 15px; 
   background-color: rgba(8, 54, 74, 0.904); 
+  padding-left: 1.5%;
+  padding-right: 1.5%;
 }
 .score .logogolf {
   width: 70px;
@@ -258,7 +260,7 @@ header {
   background-position: center;
 }
 .score .entete .bartab {
-  width: 92%;
+  width: 98%;
   height: 1px;
   margin-left: 2%;
   filter: opacity(0.2);
@@ -269,10 +271,10 @@ header {
   z-index: 1900;
 }
 .score .entete .boxentetejz {
-  width: 30px;
+  width: 3%;
   text-align: center;
   margin-top: 8px;
-  margin-left: 3px;
+  margin-left: 0.2%;
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
@@ -280,7 +282,7 @@ header {
   color: white;
 }
 .score .entete .boxentetejw {
-  width: 20%;
+  width: 23%;
   margin-top: 8px;
   border-radius: 4px;
   height: max-content;
@@ -741,12 +743,6 @@ header {
     height: auto;
     object-fit: cover;
     z-index: 1000;
-  }
-  .addbtn{
-    width: 60%;
-    margin-left: 33%;
-    margin-top: -35px;
-    margin-bottom: 15px;
   }
   .lico{
     position: relative;
