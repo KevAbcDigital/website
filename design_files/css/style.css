@@ -278,16 +278,16 @@ header {
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
 }
 .score .entete .boxentetejw {
-  width: 23%;
+  width: 24%;
   margin-top: 8px;
   border-radius: 4px;
   height: max-content;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
   text-transform: uppercase;
   text-align: start; 
