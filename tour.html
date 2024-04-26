@@ -58,19 +58,26 @@
 
         <section id="toursliderabc" class="toursliderabc">
 
-            <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
+            <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
             autoplay id="videoplay" class="videoplay" poster="bartour.png" loop muted plays-inline>
                 <source src="video.mp4" type="video/mp4">
             </video>
 
-            <section class="score">
+            <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+             id="videoplayb" class="videoplay" poster="bartour.png" loop muted plays-inline>
+                <source src="live.mp4" type="video/mp4">
+            </video>
+
+            
+            <section class="score" id="score">
 
                 <img id="lottieload" style="display: none; margin-top: 10%; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
 
-                <b class="tt" >LEADERBOARD</b>
+                <b class="tt" id="tab00" >LEADERBOARD</b>
                 
-                <div class="entete" style=" align-items: center; background-color: rgba(1, 21, 30, 0.973); padding-top: 10px; padding-bottom: 10px; height: 80px;">
+                <div class="entete" id="tab0" style=" align-items: center; background-color: rgba(1, 21, 30, 0.973); padding-top: 10px; padding-bottom: 10px; height: 80px;">
 
                     <img name="imgid" class="logogolf" src="./design_files/images/logogd.png" alt="image">
 
@@ -89,7 +96,8 @@
 
                 </div>
 
-                <div class="entete" style="padding-top: 4px; padding-bottom: 0px;">
+
+                <div class="entete" id="tab1" style="padding-top: 4px; padding-bottom: 0px;">
                    
                     <b class="boxentetejz" style="background-color: transparent; border: none;" onclick="play()" >   </b>                
                     <b class="boxentetejz" style="background-color: transparent; border: none;" onclick="play()" >   </b>                
@@ -120,7 +128,7 @@
          
                 </div>
 
-                <div class="entete" style="padding-bottom: 6px;">
+                <div class="entete" id="tab2" style="padding-bottom: 6px;">
                    
                     <b class="boxentetejz" style="background-color: transparent; border: none;" onclick="play()" >cla</b>                
                     <b class="boxentetejz" style="background-color: #00515f;" onclick="play()" >hcp</b>                
@@ -151,7 +159,7 @@
 
                 </div>
 
-                <div class="entete" >
+                <div class="entete" id="tab3" >
                     <img id="ba" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bb" style="margin-top: 56px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bc" style="margin-top: 80px;" class="bartab" src="./design_files/images/bartour.png" alt="image">
@@ -200,9 +208,72 @@
                     <b class="boxentetejz" style="width: 5%; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
                 </div>
 
+                <div class="scoreboxb" id="photo" style=" background-color: rgba(21, 79, 44, 0.178);">
+
+                    <div class="rankimg" style="margin-top: 0px; height: 80px; background-color: #03293f ; border-radius: 7px; display: flex; align-items: center;">
+                        <b class="ttaz" style=" width: 4%; font-size: 14px; color: #fbffdbee; display: block;" >1er</b>
+                        <div class="logogoboxb" id="paysfirstb"></div>
+                        <b class="ttaz" style=" background-color: #0214258b; width: 60%; font-size: 22px; color: #fbffdbee; text-align: center; display: block;" id="nomfirstb" >Player</b>
+                        <b class="ttaz" style=" position: absolute; right: 0; margin-right: 16%; width: 8%; font-size: 18px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorefirstb" >Score</b>
+                        <div class="logogobox" id="imagefirstb"></div>
+                    </div>
+                       
+                   <div class="rankimg" style="margin-top: 4px; height: 80px;  background-color: #03293f ; border-radius: 7px; display: flex; align-items: center;">
+                        <b class="ttaz" style=" width: 4%; font-size: 14px; color: #fbffdbee; display: block;" >2ème</b>
+                        <div class="logogoboxb" id="payssecondb"></div>
+                        <b class="ttaz" style=" background-color: #0214256f; width: 60%; font-size: 22px; color: #fbffdbee; text-align: center; display: block;" id="nomsecondb" >Player</b>
+                        <b class="ttaz" style=" position: absolute; right: 0; margin-right: 16%; width: 8%; font-size: 18px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoresecondb" >Score</b>
+                        <div class="logogobox" id="imagesecondb"></div>
+                    </div>
+        
+                   <div class="rankimg" style="margin-top: 4px; height: 80px;  background-color: #03293f ; border-radius: 7px; display: flex; align-items: center;">
+                        <b class="ttaz" style=" width: 4%; font-size: 14px; color: #fbffdbee; display: block;" >3ème</b>
+                        <div class="logogoboxb" id="paysthirdb"></div>
+                        <b class="ttaz" style=" background-color: #02142555 ; width: 60%; font-size: 22px; color: #fbffdbee; text-align: center; display: block;" id="nomthirdb" >Player</b>
+                        <b class="ttaz" style=" position: absolute; right: 0; margin-right: 16%; width: 8%; font-size: 18px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorethirdb" >Score</b>
+                        <div class="logogobox" id="imagethirdb"></div>
+                    </div>
+
+                    <div class="rankimg" style="margin-top: 4px; height: 80px;  background-color: #03293f ; border-radius: 7px; display: flex; align-items: center;">
+                        <b class="ttaz" style=" width: 4%; font-size: 14px; color: #fbffdbee; display: block;" >4ème</b>
+                        <div class="logogoboxb" id="paysfourb"></div>
+                        <b class="ttaz" style=" background-color: #0214253e ; width: 60%; font-size: 22px; color: #fbffdbee; text-align: center; display: block;" id="nomfourb" >Player</b>
+                        <b class="ttaz" style=" position: absolute; right: 0; margin-right: 16%; width: 8%; font-size: 18px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorefourb" >Score</b>
+                        <div class="logogobox" id="imagefourb"></div>
+                    </div>
+
+                    <div class="rankimg" style="margin-top: 4px; height: 80px;  background-color: #03293f ; border-radius: 7px; display: flex; align-items: center;">
+                        <b class="ttaz" style=" width: 4%; font-size: 14px; color: #fbffdbee; display: block;" >5ème</b>
+                        <div class="logogoboxb" id="paysfiveb"></div>
+                        <b class="ttaz" style=" background-color: #02142521 ; width: 60%; font-size: 22px; color: #fbffdbee; text-align: center; display: block;" id="nomfiveb" >Player</b>
+                        <b class="ttaz" style=" position: absolute; right: 0; margin-right: 16%; width: 8%; font-size: 18px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorefiveb" >Score</b>
+                        <div class="logogobox" id="imagefiveb"></div>
+                    </div>
+
+                    <div class="rankimg" style="margin-top: 4px; height: 80px;  background-color: #03293f ; border-radius: 7px; display: flex; align-items: center;">
+                        <b class="ttaz" style=" width: 4%; font-size: 14px; color: #fbffdbee; display: block;" >6ème</b>
+                        <div class="logogoboxb" id="payssixb"></div>
+                        <b class="ttaz" style=" background-color: #0214250e ; width: 60%; font-size: 22px; color: #fbffdbee; text-align: center; display: block;" id="nomsixb" >Player</b>
+                        <b class="ttaz" style=" position: absolute; right: 0; margin-right: 16%; width: 8%; font-size: 18px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoresixb" >Score</b>
+                        <div class="logogobox" id="imagesixb"></div>
+                    </div>
+
+                    <div class="rankimg" style="margin-top: 4px; height: 80px;  background-color: #03293f ; border-radius: 7px; display: flex; align-items: center;">
+                        <b class="ttaz" style=" width: 4%; font-size: 14px; color: #fbffdbee; display: block;" >7ème</b>
+                        <div class="logogoboxb" id="payssevenb"></div>
+                        <b class="ttaz" style=" background-color: #02142558 ; width: 60%; font-size: 22px; color: #fbffdbee; text-align: center; display: block;" id="nomsevenb" >Player</b>
+                        <b class="ttaz" style=" position: absolute; right: 0; margin-right: 16%; width: 8%; font-size: 18px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoresevenb" >Score</b>
+                        <div class="logogobox" id="imagesevenb"></div>
+                    </div>
+
+                    
+        
+                </div>
+
+
             </section>
 
-            <section class="entetescore" style=" align-items: center;
+            <section id="tab4" class="entetescore" style=" align-items: center;
              background-color: rgba(1, 21, 30, 0.973); padding-top: 10px;
              padding-bottom: 10px; height: 80px;">
 
@@ -240,12 +311,9 @@
 
             </section>
 
-
-
-
-        
         </section>
 
+        
     </body>
 
 
@@ -309,6 +377,65 @@
 
         var charge = "aucun";
     
+        var score = document.getElementById("score");       
+        var tab00 = document.getElementById("tab00");       
+        var tab0 = document.getElementById("tab0");       
+        var tab1 = document.getElementById("tab1");       
+        var tab2 = document.getElementById("tab2");       
+        var tab3 = document.getElementById("tab3");       
+        var tab4 = document.getElementById("tab4");       
+        var photo = document.getElementById("photo");       
+        var videoplay = document.getElementById("videoplay");       
+        var videoplayb = document.getElementById("videoplayb");       
+
+        var dataRefpost = firebase.database().ref("post");
+        dataRefpost.on("value" , function(snapshot){
+            snapshot.forEach(function(element){
+                if (element.key == "state") {
+
+                    if( element.val() == "Tab") {
+                        score.style.display="block";
+                        tab00.style.display="block";
+                        tab0.style.display="flex";
+                        tab1.style.display="flex";
+                        tab2.style.display="flex";
+                        tab3.style.display="flex";
+                        tab4.style.display="flex";
+                        photo.style.display="none";
+                        videoplay.style.display="block";
+                        videoplayb.style.display="none";
+                        videoplay.play();
+                    } else if( element.val() == "Photo") {
+                        score.style.display="block";
+                        tab00.style.display="none";
+                        tab0.style.display="none";
+                        tab1.style.display="none";
+                        tab2.style.display="none";
+                        tab3.style.display="none";
+                        tab4.style.display="none";
+                        photo.style.display="block";
+                        videoplay.style.display="block";
+                        videoplayb.style.display="none";
+                        videoplay.play();
+                    } else if( element.val() == "Video") {
+                        score.style.display="none";
+                        tab00.style.display="none";
+                        tab0.style.display="none";
+                        tab1.style.display="none";
+                        tab2.style.display="none";
+                        tab3.style.display="none";
+                        tab4.style.display="none";
+                        photo.style.display="none";
+                        videoplay.style.display="none";
+                        videoplayb.style.display="block";
+                        videoplayb.play();
+                    }
+                }
+            });
+        });
+
+
+
         function getvalue(){       
         var nompart = document.getElementById("nompart");       
         var codesearchz = document.getElementById("list").value; 
@@ -395,11 +522,34 @@
 
                     var ia = document.getElementById("imagefirst");               
                     var ib = document.getElementById("imagesecond");               
-                    var ic = document.getElementById("imagethird");   
+                    var ic = document.getElementById("imagethird");    
                     
                     var ida = "profileimg.png";
                     var idb = "profileimg.png";
                     var idc = "profileimg.png";
+                    var idd = "profileimg.png";
+                    var ide = "profileimg.png";
+                    var idf = "profileimg.png";
+                    var idg = "profileimg.png";
+                    
+
+                    var iab = document.getElementById("imagefirstb");               
+                    var ibb = document.getElementById("imagesecondb");               
+                    var icb = document.getElementById("imagethirdb");   
+                    var iddb = document.getElementById("imagefourb");               
+                    var ieb = document.getElementById("imagefiveb");               
+                    var ifb = document.getElementById("imagesixb");   
+                    var igb = document.getElementById("imagesevenb");  
+                    
+                    var iabb = document.getElementById("paysfirstb");               
+                    var ibbb = document.getElementById("payssecondb");               
+                    var icbb = document.getElementById("paysthirdb");   
+                    var idbb = document.getElementById("paysfourb");               
+                    var iebb = document.getElementById("paysfiveb");               
+                    var ifbb = document.getElementById("payssixb");   
+                    var igbb = document.getElementById("payssevenb");  
+                    
+                
 
                         dataRefauto.on("value" , function(snapshot){
                             play();
@@ -435,18 +585,44 @@
                             document.querySelector('#nomfirst').innerHTML = "";
                             document.querySelector('#scorefirst').innerHTML = "";
                             ia.style.backgroundImage= "url('profileimg.png')";
+                            iab.style.backgroundImage= "url('profileimg.png')";
+                            iabb.style.backgroundImage= "url('bartour.png')";
 
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomsecond').innerHTML = "";
                             document.querySelector('#scoresecond').innerHTML = "";
                             ib.style.backgroundImage= "url('profileimg.png')";
+                            ibb.style.backgroundImage= "url('profileimg.png')";
+                            ibbb.style.backgroundImage= "url('bartour.png')";
 
 
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomthird').innerHTML = "";
                             document.querySelector('#scorethird').innerHTML = "";
                             ic.style.backgroundImage= "url('profileimg.png')";
+                            icb.style.backgroundImage= "url('profileimg.png')";
+                            icbb.style.backgroundImage= "url('bartour.png')";
 
+                            document.querySelector('#nomfourb').innerHTML = "";
+                            document.querySelector('#scorefourb').innerHTML = "";
+                            iddb.style.backgroundImage= "url('profileimg.png')";
+                            idbb.style.backgroundImage= "url('bartour.png')";
+
+                            document.querySelector('#nomfiveb').innerHTML = "";
+                            document.querySelector('#scorefiveb').innerHTML = "";
+                            ieb.style.backgroundImage= "url('profileimg.png')";
+                            iebb.style.backgroundImage= "url('bartour.png')";
+
+                            document.querySelector('#nomsixb').innerHTML = "";
+                            document.querySelector('#scoresixb').innerHTML = "";
+                            ifb.style.backgroundImage= "url('profileimg.png')";
+                            ifbb.style.backgroundImage= "url('bartour.png')";
+                            
+                            document.querySelector('#nomsevenb').innerHTML = "";
+                            document.querySelector('#scoresevenb').innerHTML = "";
+                            igb.style.backgroundImage= "url('profileimg.png')";
+                            igbb.style.backgroundImage= "url('bartour.png')";
+                            
                             
                             var dim = 0;
                             var newh1 = "";
@@ -563,6 +739,9 @@
                                     document.querySelector('#nomfirst').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
                                     document.querySelector('#scorefirst').innerHTML = ( ( (element.key).split(" ") ) [25] ) ;
                                     ida = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase() ;                                    
+                                    document.querySelector('#nomfirstb').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
+                                    document.querySelector('#scorefirstb').innerHTML = ( ( (element.key).split(" ") ) [25] ) ;
+                                    
                                 } 
                                 else if (i==2) {
                                     ba.style.display="block";
@@ -587,6 +766,9 @@
                                     document.querySelector('#nomsecond').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     document.querySelector('#scoresecond').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
                                     idb = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
+                                    document.querySelector('#nomsecondb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
+                                    document.querySelector('#scoresecondb').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    
                                 } 
                                 else if (i==3) {
                                     ba.style.display="block";
@@ -611,6 +793,9 @@
                                     document.querySelector('#nomthird').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     document.querySelector('#scorethird').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
                                     idc = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
+                                    document.querySelector('#nomthirdb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
+                                    document.querySelector('#scorethirdb').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    
                                 } 
                                 else if (i==4) {
                                     ba.style.display="block";
@@ -632,6 +817,11 @@
                                     bq.style.display="none";
                                     br.style.display="none";
                                     bs.style.display="none";
+
+                                    idd = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
+                                    document.querySelector('#nomfourb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
+                                    document.querySelector('#scorefourb').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    
                                 } 
                                 else if (i==5) {
                                     ba.style.display="block";
@@ -653,6 +843,11 @@
                                     bq.style.display="none";
                                     br.style.display="none";
                                     bs.style.display="none";
+
+                                    ide = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
+                                    document.querySelector('#nomfiveb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
+                                    document.querySelector('#scorefiveb').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    
                                 } 
                                 else if (i==6) {
                                     ba.style.display="block";
@@ -674,6 +869,11 @@
                                     bq.style.display="none";
                                     br.style.display="none";
                                     bs.style.display="none";
+
+                                    idf = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
+                                    document.querySelector('#nomsixb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
+                                    document.querySelector('#scoresixb').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    
                                 } 
                                 else if (i==7) {
                                     ba.style.display="block";
@@ -695,6 +895,11 @@
                                     bq.style.display="none";
                                     br.style.display="none";
                                     bs.style.display="none";
+
+                                    idg = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
+                                    document.querySelector('#nomsevenb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
+                                    document.querySelector('#scoresevenb').innerHTML = ( ( (element.key).split(" ") ) [25] )  ;
+                                    
                                 } 
                                 else if (i==8) {
                                     ba.style.display="block";
@@ -1340,6 +1545,10 @@
                                     snapshota.forEach(function(elementa){
                                         if(elementa.key == "url") {
                                             ia.style.backgroundImage="url("+elementa.val()+")";
+                                            iab.style.backgroundImage="url("+elementa.val()+")";
+                                        }
+                                        if(elementa.key == "pays") {
+                                            iabb.style.backgroundImage="url("+elementa.val()+")";
                                         }
                                     });
                                 });
@@ -1353,6 +1562,10 @@
                                     snapshotb.forEach(function(elementb){
                                         if(elementb.key == "url") {
                                             ib.style.backgroundImage="url("+elementb.val()+")";
+                                            ibb.style.backgroundImage="url("+elementb.val()+")";
+                                        }
+                                        if(elementb.key == "pays") {
+                                            ibbb.style.backgroundImage="url("+elementb.val()+")";
                                         }
                                     });
                                 });
@@ -1366,6 +1579,74 @@
                                     snapshotc.forEach(function(elementc){
                                         if(elementc.key == "url") {
                                             ic.style.backgroundImage="url("+elementc.val()+")";
+                                            icb.style.backgroundImage="url("+elementc.val()+")";
+                                        }
+                                        if(elementc.key == "pays") {
+                                            icbb.style.backgroundImage="url("+elementc.val()+")";
+                                        }
+                                    });
+                                });
+
+                            }
+
+                            if(element.key == idd) {
+
+                                var dataRefimagecc = dataRefimagea.child(element.key);
+                                dataRefimagecc.on("value" , function(snapshotc){
+                                    snapshotc.forEach(function(elementd){
+                                        if(elementd.key == "url") {
+                                            iddb.style.backgroundImage="url("+elementd.val()+")";
+                                        }
+                                        if(elementd.key == "pays") {
+                                            idbb.style.backgroundImage="url("+elementd.val()+")";
+                                        }
+                                    });
+                                });
+
+                            }
+
+                            if(element.key == ide) {
+
+                                var dataRefimagecc = dataRefimagea.child(element.key);
+                                dataRefimagecc.on("value" , function(snapshotc){
+                                    snapshotc.forEach(function(elemente){
+                                        if(elemente.key == "url") {
+                                            ieb.style.backgroundImage="url("+elemente.val()+")";
+                                        }
+                                        if(elemente.key == "pays") {
+                                            iebb.style.backgroundImage="url("+elemente.val()+")";
+                                        }
+                                    });
+                                });
+
+                            }
+
+                            if(element.key == idf) {
+
+                                var dataRefimagecc = dataRefimagea.child(element.key);
+                                dataRefimagecc.on("value" , function(snapshotc){
+                                    snapshotc.forEach(function(elementf){
+                                        if(elementf.key == "url") {
+                                            ifb.style.backgroundImage="url("+elementf.val()+")";
+                                        }
+                                        if(elementf.key == "pays") {
+                                            ifbb.style.backgroundImage="url("+elementf.val()+")";
+                                        }
+                                    });
+                                });
+
+                            }
+
+                            if(element.key == idg) {
+
+                                var dataRefimagecc = dataRefimagea.child(element.key);
+                                dataRefimagecc.on("value" , function(snapshotc){
+                                    snapshotc.forEach(function(elementg){
+                                        if(elementg.key == "url") {
+                                            igb.style.backgroundImage="url("+elementg.val()+")";
+                                        }
+                                        if(elementg.key == "pays") {
+                                            igbb.style.backgroundImage="url("+elementg.val()+")";
                                         }
                                     });
                                 });
@@ -1385,8 +1666,9 @@
         }
 
         function getaction(){ 
-            var act = document.getElementById("listaction").value; 
 
+
+            var act = document.getElementById("listaction").value;
 
             if (act == "carte") {
                 var loadgif = document.getElementById('loadgif');

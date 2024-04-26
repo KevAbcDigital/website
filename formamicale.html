@@ -199,7 +199,7 @@
                 // nbr = (Math.round(Math.random() * (900000 - 100000) + 100000));
                 // window.alert(nbr);
 
-                if ( (joueur3 == "aucun") ) {
+                if ( (joueur3 == "AUCUN") ) {
                     
                     var result = confirm("NB : Les joueurs : " + joueur1 + " d'index ( " + ajoueur1 + " ) " + joueur2 + " d'index ( " + ajoueur2 + " ) seront dans le meme groupe . Voulez vous continuer ?" );
                     if (result == false) {
@@ -221,8 +221,8 @@
                                     var verifiea = ( joueur1.split(" ")[0] + " " + joueur1.split(" ")[1]);
                                     var verifieb = ( joueur2.split(" ")[0] + " " + joueur2.split(" ")[1]);
 
-                                    var noma = "new " + "--- " + verifiea + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " " + ajoueur1 + " " + "00" + " 00"  ;
-                                    var nomb = "new " + "--- " + verifieb + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " " + ajoueur2 + " " + "00" + " 00" ;
+                                    var noma = "new" + sjoueur1 + " --- " + verifiea + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " " + ajoueur1 + " " + sjoueur1 + " 00" + " " + "00" + " 00"  ;
+                                    var nomb = "new" + sjoueur2 + " --- " + verifieb + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " 00" + " " + ajoueur2 + " " + sjoueur2 + " 00" + " " + "00" + " 00"  ;
 
                                     if ( ( ( joueur1.split(" ")[1]) != undefined ) & ( ( joueur2.split(" ")[1]) != undefined ) ) {
                                     
@@ -534,7 +534,7 @@
                 ja.style.backgroundColor="rgb(255, 255, 255)";
                 jb.style.backgroundColor="rgb(255, 255, 255)";   
                 jc.style.backgroundColor="rgb(255, 255, 255)";
-            }
+            } 
     
         }
 
