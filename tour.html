@@ -311,6 +311,18 @@
 
             </section>
 
+            <section id="tab5" class="entetescoreb" style=" align-items: center; background-color: rgba(41, 91, 116, 0.856);">
+
+                <b class="ttaz" style=" color: rgb(133, 119, 255); font-size: 11px; display: block;">Ranking</b>
+                <div style="margin-top: 5px; display: flex;">
+                    <b class="boxentetejw" style="color: white; width: 5%; margin-left: 1%;" id="rankb">0</b>                
+                    <b class="boxentetejw" style="color: white; width: 70%; margin-left: 2%;" id="playersb">Players</b>                
+                    <b class="boxentetejw" style="color: white; width: 5%;" id="dayb">00</b>                
+                    <b class="boxentetejw" style="color: rgb(255, 239, 9);margin-left: 3%; width: 5%;" id="totalb">00</b>                
+
+                </div>
+            </section>
+
         </section>
 
         
@@ -383,6 +395,7 @@
         var tab1 = document.getElementById("tab1");       
         var tab2 = document.getElementById("tab2");       
         var tab3 = document.getElementById("tab3");       
+        var tab5 = document.getElementById("tab5");       
         var tab4 = document.getElementById("tab4");       
         var photo = document.getElementById("photo");       
         var videoplay = document.getElementById("videoplay");       
@@ -401,6 +414,7 @@
                         tab2.style.display="flex";
                         tab3.style.display="flex";
                         tab4.style.display="flex";
+                        tab5.style.display="none";
                         photo.style.display="none";
                         videoplay.style.display="block";
                         videoplayb.style.display="none";
@@ -413,6 +427,7 @@
                         tab2.style.display="none";
                         tab3.style.display="none";
                         tab4.style.display="none";
+                        tab5.style.display="none";
                         photo.style.display="block";
                         videoplay.style.display="block";
                         videoplayb.style.display="none";
@@ -425,6 +440,7 @@
                         tab2.style.display="none";
                         tab3.style.display="none";
                         tab4.style.display="none";
+                        tab5.style.display="block";
                         photo.style.display="none";
                         videoplay.style.display="none";
                         videoplayb.style.display="block";
@@ -554,6 +570,12 @@
                         dataRefauto.on("value" , function(snapshot){
                             play();
                             i=0;
+
+                            document.querySelector('#rankb').innerHTML = "";
+                            document.querySelector('#playersb').innerHTML = "";
+                            document.querySelector('#dayb').innerHTML = "";
+                            document.querySelector('#totalb').innerHTML = "";
+
                             document.querySelector('#rank').innerHTML = "";
                             document.querySelector('#hcp').innerHTML = "";
                             document.querySelector('#players').innerHTML = "";
@@ -666,6 +688,13 @@
 
                                 i = i + 1;
                                 dim = dim + 1 ;
+
+                                document.querySelector('#rankb').innerHTML+=`<div>${ i.toString() }</div>`
+                                document.querySelector('#playersb').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
+                                document.querySelector('#dayb').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [1] ) }</div>`                    
+                                document.querySelector('#totalb').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
+
+
                                 document.querySelector('#rank').innerHTML+=`<div>${ i.toString() }</div>`
                                 document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
                                 document.querySelector('#hcp').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [23] ) }</div>`
