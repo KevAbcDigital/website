@@ -58,18 +58,18 @@
 
         <section id="toursliderabc" class="toursliderabc">
 
-            <img style="position: absolute; z-index: 2; top: 0; width: 100%; height: auto; z-index: 2;
-            filter: saturate(140%) contrast(103%) brightness(1.4) ; " id="photopost"
-            src="giftour.gif" alt="image">    
+            <img style="position: absolute; z-index: 2; top: 0; width: 100%; height: 100%; z-index: 2;
+            filter: saturate(110%) ; " id="photopost"
+            src="toure.jpg" alt="image">    
 
             <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
              id="videoplay" class="videoplay" poster="giftour.gif" loop muted plays-inline>
                 <source src="video.mp4" type="video/mp4">
             </video>
 
             <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
              id="videoplayb" class="videoplay" poster="giftour.gif" loop muted plays-inline>
                  <source src="live.mp4" type="video/mp4">
             </video>
@@ -438,8 +438,6 @@
 
                         var videoa = document.getElementById('videoplay');
                         var videob = document.getElementById('videoplayb');
-                        videoa.style.display="block";
-                        videob.style.display="block";
                         videoa.play();
                         // videob.play();
                         videoa.addEventListener('timeupdate', function() {
