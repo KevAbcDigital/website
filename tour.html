@@ -364,7 +364,7 @@
             audio.addEventListener('timeupdate', function() {
                 var audstart = parseInt(audio.currentTime + ( audio.duration - 30 ));
                 var audend = parseInt(audio.duration);
-                // console.log(audstart);
+                console.log(audstart);
                 if (audstart == audend) {
                     audio.muted = false ;
                 }
