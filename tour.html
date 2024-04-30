@@ -417,27 +417,58 @@
         var photo = document.getElementById("photo");       
         var golflogo = document.getElementById("golflogo");       
         var photopost = document.getElementById("photopost");       
-        // var videoa = document.getElementById('videoplay');
-        var videob = document.getElementById('videoplayb');
+        var videobb = document.getElementById('videoplayb');
+        var videob = document.getElementById('videoplay');
+        var vidstartz = 0;
+        var videndz = 0;
+        var vidstart = 0;
+        var vidend = 0;
+        var i = 0;
 
         function videoshow() {
             videob.play();
+            videobb.pause();
             videob.addEventListener('timeupdate', function() {
-            var vidstart = parseInt(videob.currentTime);
-            var vidend = parseInt(videob.duration);
-            console.log(vidstart);
-            if (vidstart == vidend) {
-                // videob.muted = false;
-                playaudio();
-                videob.style.display="block";
-                photopost.style.display="none";
-            } else if (vidstart == 59) {
-                // videob.muted = false;
-                playaudio();
-                videob.style.display="block";
-                photopost.style.display="none";
-            }
-        });
+                vidstartz = parseInt(videob.currentTime);
+                videndz = parseInt(videob.duration);
+                console.log(vidstartz);
+                if ((vidstartz == videndz) & (i == 1) ) {
+                    // videob.muted = false;
+                    // playaudio();
+                    videob.style.display="block";
+                    videobb.style.display="none";
+                    photopost.style.display="none";
+                } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
+                    // videob.muted = false;
+                    // playaudio();
+                    videob.style.display="block";
+                    videobb.style.display="none";
+                    photopost.style.display="none";
+                }
+            });
+        }
+
+        function videoshowb() {
+            videobb.play();
+            videob.pause();
+            videobb.addEventListener('timeupdate', function() {
+                vidstart = parseInt(videobb.currentTime);
+                vidend = parseInt(videobb.duration);
+                console.log(vidstart);
+                if ((vidstart == vidend) & (i == 2) ) {
+                    // videob.muted = false;
+                    // playaudio();
+                    videobb.style.display="block";
+                    videob.style.display="none";
+                    photopost.style.display="none";
+                } else if ((vidstart == (vidend - 1 )) & (i == 2)) {
+                    // videob.muted = false;
+                    // playaudio();
+                    videobb.style.display="block";
+                    videob.style.display="none";
+                    photopost.style.display="none";
+                }
+            });
         }
         
 
@@ -458,6 +489,9 @@
                         photo.style.display="none";
                         golflogo.style.display="none";
                         photopost.style.display="block";
+
+                        i = 1;
+                        videoshow();
  
                     } else if( element.val() == "P") {
                         score.style.display="block";
@@ -472,6 +506,7 @@
                         golflogo.style.display="none";
                         photopost.style.display="block";
 
+
                     } else if( element.val() == "V") {
                         score.style.display="none";
                         tab00.style.display="none";
@@ -484,6 +519,9 @@
                         photo.style.display="none";
                         golflogo.style.display="block";
                         photopost.style.display="block";
+
+                        i = 2;
+                        videoshowb();
                  
                     }
                 }
@@ -549,8 +587,8 @@
                     nompart.innerHTML= "Aucun Tournoi trouvé" ;
                 } else {
 
-                    // playaudio();
-                    videoshow();
+                    playaudio();
+                    // videoshow();
                     charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
