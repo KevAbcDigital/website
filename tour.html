@@ -362,7 +362,7 @@
             var audio = document.getElementById('audioplay');
             audio.play();
             audio.addEventListener('timeupdate', function() {
-                var audstart = parseInt(audio.currentTime + ( audio.duration - 30 ));
+                var audstart = parseInt(audio.currentTime);
                 var audend = parseInt(audio.duration);
                 console.log(audstart);
                 if (audstart == audend) {
@@ -417,9 +417,19 @@
         var photo = document.getElementById("photo");       
         var golflogo = document.getElementById("golflogo");       
         var photopost = document.getElementById("photopost");       
-        var videoa = document.getElementById('videoplay');
+        // var videoa = document.getElementById('videoplay');
         var videob = document.getElementById('videoplayb');
-        
+        videob.play();
+        videob.addEventListener('timeupdate', function() {
+            var vidstart = parseInt(videob.currentTime);
+            var vidend = parseInt(videob.duration);
+            console.log(vidstart);
+            if (vidstart == vidend) {
+                videob.style.display="block";
+                photopost.style.display="none";
+            }
+        });
+
         var dataRefpost = firebase.database().ref("post");
         dataRefpost.on("value" , function(snapshot){
             snapshot.forEach(function(element){
@@ -437,21 +447,6 @@
                         photo.style.display="none";
                         golflogo.style.display="none";
                         photopost.style.display="block";
-
-                        videob.play();
-                        videoa.play();
-                        videoa.addEventListener('timeupdate', function() {
-                            var vidstart = parseInt(videoa.currentTime);
-                            var vidend = parseInt(videoa.duration);
-                            console.log(vidstart);
-                            if (vidstart == vidend) {
-                                photopost.style.display="none";
-                                videoa.style.display="block";
-                                videob.style.display="none";
-                                videob.pause();
-                                videoa.play();
-                            }
-                        });
  
                     } else if( element.val() == "P") {
                         score.style.display="block";
@@ -466,22 +461,6 @@
                         golflogo.style.display="none";
                         photopost.style.display="block";
 
-                        
-                        videoa.pause();
-                        videob.play();
-                        videob.addEventListener('timeupdate', function() {
-                            var vidstartb = parseInt(videob.currentTime);
-                            var videndb = parseInt(videob.duration);
-                            console.log(vidstartb);
-                            if (vidstartb == videndb) {
-                                photopost.style.display="none";
-                                videoa.style.display="none";
-                                videob.style.display="block";   
-                                videoa.pause();
-                                videob.play();                         
-                            }
-                        });
-
                     } else if( element.val() == "V") {
                         score.style.display="none";
                         tab00.style.display="none";
@@ -494,21 +473,7 @@
                         photo.style.display="none";
                         golflogo.style.display="block";
                         photopost.style.display="block";
-                        
-                        videoa.pause();
-                        videob.play();
-                        videob.addEventListener('timeupdate', function() {
-                            var vidstartc = parseInt(videob.currentTime);
-                            var videndc = parseInt(videob.duration);
-                            console.log(vidstartc);
-                            if (vidstartc == videndc) {
-                                photopost.style.display="none";
-                                videoa.style.display="none";
-                                videob.style.display="block";                      
-                                videoa.pause();
-                                videob.play();       
-                            }
-                        });
+                 
                     }
                 }
             });
