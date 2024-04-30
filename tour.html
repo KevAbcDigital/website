@@ -365,7 +365,9 @@
                 var audstart = parseInt(audio.currentTime);
                 var audend = parseInt(audio.duration);
                 console.log(audstart);
-                if (audstart == audend) {
+                if ((audstart == audend)) {
+                    audio.muted = false ;
+                } else if (audstart == ( audend - 1)) {
                     audio.muted = false ;
                 }
             });
