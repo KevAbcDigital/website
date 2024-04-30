@@ -438,16 +438,18 @@
 
                         var videoa = document.getElementById('videoplay');
                         var videob = document.getElementById('videoplayb');
+                        videob.play();
                         videoa.play();
-                        // videob.play();
                         videoa.addEventListener('timeupdate', function() {
                             var vidstart = parseInt(videoa.currentTime);
                             var vidend = parseInt(videoa.duration);
-                            // console.log(vidstart);
+                            console.log(vidstart);
                             if (vidstart == vidend) {
                                 photopost.style.display="none";
                                 videoa.style.display="block";
                                 videob.style.display="none";
+                                videob.pause();
+                                videoa.play();
                             }
                         });
  
@@ -466,7 +468,7 @@
 
                         var videoa = document.getElementById('videoplay');
                         var videob = document.getElementById('videoplayb');
-                        // videoa.play();
+                        videoa.pause();
                         videob.play();
                         videob.addEventListener('timeupdate', function() {
                             var vidstartb = parseInt(videob.currentTime);
@@ -475,7 +477,9 @@
                             if (vidstartb == videndb) {
                                 photopost.style.display="none";
                                 videoa.style.display="none";
-                                videob.style.display="block";                            
+                                videob.style.display="block";   
+                                videoa.pause();
+                                videob.play();                         
                             }
                         });
 
@@ -494,15 +498,17 @@
                         
                         var videoa = document.getElementById('videoplay');
                         var videob = document.getElementById('videoplayb');
-                        // videob.play();
+                        videob.play();
                         videob.addEventListener('timeupdate', function() {
                             var vidstartc = parseInt(videob.currentTime);
                             var videndc = parseInt(videob.duration);
-                            // console.log(vidstartc);
+                             console.log(vidstartc);
                             if (vidstartc == videndc) {
                                 photopost.style.display="none";
                                 videoa.style.display="none";
-                                videob.style.display="block";                            
+                                videob.style.display="block";                      
+                                videoa.pause();
+                                videob.play();       
                             }
                         });
                     }
