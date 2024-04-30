@@ -419,16 +419,21 @@
         var photopost = document.getElementById("photopost");       
         // var videoa = document.getElementById('videoplay');
         var videob = document.getElementById('videoplayb');
-        videob.play();
-        videob.addEventListener('timeupdate', function() {
+
+        function videoshow() {
+            videob.play();
+            videob.addEventListener('timeupdate', function() {
             var vidstart = parseInt(videob.currentTime);
             var vidend = parseInt(videob.duration);
             console.log(vidstart);
             if (vidstart == vidend) {
+                videob.muted = false;
                 videob.style.display="block";
                 photopost.style.display="none";
             }
         });
+        }
+        
 
         var dataRefpost = firebase.database().ref("post");
         dataRefpost.on("value" , function(snapshot){
@@ -538,7 +543,8 @@
                     nompart.innerHTML= "Aucun Tournoi trouvé" ;
                 } else {
 
-                    playaudio();
+                    // playaudio();
+                    videoshow();
                     charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
