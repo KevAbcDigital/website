@@ -151,7 +151,7 @@ header {
   margin-bottom: 50px;
   z-index: 1000;
   width: 42%;
-  height: 200px;
+  height: 300px;
   display: none;
   padding: 10px;
   overflow-y: auto;
@@ -1152,6 +1152,32 @@ header {
   border: 1px solid #a5d1ab7d;
   font-size: 8px;
   color: white;
+}
+.entetescoreb {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  z-index: 1000;
+  width: 55%;
+  height: 120px;
+  display: none;
+  padding: 10px;
+  overflow-y: auto;
+}
+.entetescoreb .boxe {
+  margin-top: 8px;
+  border-radius: 4px;
+  height: max-content;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+  text-align: start; 
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .slideshop {
   display: flex;
