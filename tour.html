@@ -60,14 +60,14 @@
 
             <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
-            autoplay id="videoplay" class="videoplay" poster="bartour.png" loop muted plays-inline>
+             id="videoplay" class="videoplay" poster="giftour.gif" loop muted plays-inline>
                 <source src="video.mp4" type="video/mp4">
             </video>
 
             <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
-             id="videoplayb" class="videoplay" poster="bartour.png" loop muted plays-inline>
-                <source src="li.mp4" type="video/mp4">
+             id="videoplayb" class="videoplay" poster="fondscorea.gif" loop muted plays-inline>
+                <source src="live.mp4" type="video/mp4">
             </video>
             
             <section class="score" id="score">
@@ -94,7 +94,6 @@
                     </select>
 
                 </div>
-
 
                 <div class="entete" id="tab1" style="padding-top: 4px; padding-bottom: 0px;">
                    
@@ -310,7 +309,7 @@
 
             </section>
 
-            <img id="golflogo" class="logogolfaz" style="position: absolute; top: 0; left: 0; margin: 2%;
+            <img id="golflogo" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
             width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
 
             <section id="tab5" class="entetescoreb" style=" align-items: center; background-color: rgba(20, 69, 78, 0.87);">
@@ -425,10 +424,10 @@
                         tab4.style.display="flex";
                         tab5.style.display="none";
                         photo.style.display="none";
-                        videoplay.style.display="block";
-                        videoplayb.style.display="none";
+                        // videoplay.style.display="block";
+                        // videoplayb.style.display="none";
                         golflogo.style.display="none";
-                        videoplay.play();
+                        // videoplay.play();
                     } else if( element.val() == "P") {
                         score.style.display="block";
                         tab00.style.display="none";
@@ -439,10 +438,10 @@
                         tab4.style.display="none";
                         tab5.style.display="none";
                         photo.style.display="block";
-                        videoplay.style.display="block";
-                        videoplayb.style.display="none";
+                        // videoplay.style.display="none";
+                        // videoplayb.style.display="block";
                         golflogo.style.display="none";
-                        videoplay.play();
+                        // videoplay.play();
                     } else if( element.val() == "V") {
                         score.style.display="none";
                         tab00.style.display="none";
