@@ -58,7 +58,7 @@
 
         <section id="toursliderabc" class="toursliderabc">
 
-            <img style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto; z-index: 2;
+            <img style="position: absolute; z-index: 2; top: 0; width: 100%; height: auto; z-index: 2;
             filter: saturate(140%) contrast(103%) brightness(1.4) ; " id="photopost"
             src="giftour.gif" alt="image">    
 
@@ -364,6 +364,7 @@
             audio.addEventListener('timeupdate', function() {
                 var audstart = parseInt(audio.currentTime + ( audio.duration - 30 ));
                 var audend = parseInt(audio.duration);
+                // console.log(audstart);
                 if (audstart == audend) {
                     audio.muted = false ;
                 }
@@ -440,10 +441,11 @@
                         videoa.style.display="block";
                         videob.style.display="block";
                         videoa.play();
-                        videob.play();
+                        // videob.play();
                         videoa.addEventListener('timeupdate', function() {
                             var vidstart = parseInt(videoa.currentTime);
                             var vidend = parseInt(videoa.duration);
+                            // console.log(vidstart);
                             if (vidstart == vidend) {
                                 photopost.style.display="none";
                                 videoa.style.display="block";
@@ -466,12 +468,13 @@
 
                         var videoa = document.getElementById('videoplay');
                         var videob = document.getElementById('videoplayb');
-                        videoa.play();
+                        // videoa.play();
                         videob.play();
                         videob.addEventListener('timeupdate', function() {
-                            var vidstart = parseInt(videob.currentTime);
-                            var vidend = parseInt(videob.duration);
-                            if (vidstart == vidend) {
+                            var vidstartb = parseInt(videob.currentTime);
+                            var videndb = parseInt(videob.duration);
+                            // console.log(vidstartb);
+                            if (vidstartb == videndb) {
                                 photopost.style.display="none";
                                 videoa.style.display="none";
                                 videob.style.display="block";                            
@@ -493,13 +496,14 @@
                         
                         var videoa = document.getElementById('videoplay');
                         var videob = document.getElementById('videoplayb');
-                        videob.play();
+                        // videob.play();
                         videob.addEventListener('timeupdate', function() {
-                            var vidstart = parseInt(videob.currentTime);
-                            var vidend = parseInt(videob.duration);
-                            if (vidstart == vidend) {
+                            var vidstartc = parseInt(videob.currentTime);
+                            var videndc = parseInt(videob.duration);
+                            // console.log(vidstartc);
+                            if (vidstartc == videndc) {
                                 photopost.style.display="none";
-                                videoa.style.display="block";
+                                videoa.style.display="none";
                                 videob.style.display="block";                            
                             }
                         });
