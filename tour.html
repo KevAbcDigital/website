@@ -427,7 +427,13 @@
             var vidend = parseInt(videob.duration);
             console.log(vidstart);
             if (vidstart == vidend) {
-                videob.muted = false;
+                // videob.muted = false;
+                playaudio();
+                videob.style.display="block";
+                photopost.style.display="none";
+            } else if (vidstart == 59) {
+                // videob.muted = false;
+                playaudio();
                 videob.style.display="block";
                 photopost.style.display="none";
             }
