@@ -26,7 +26,7 @@
 
     <body class="bod" style="background-color: rgb(255, 255, 255);">
 
-        <audio loop id="autoplay">
+        <audio loop muted id="audioplay">
             <source src="sonc.mp3" type="audio/mpeg">
         </audio>
 
@@ -58,6 +58,10 @@
 
         <section id="toursliderabc" class="toursliderabc">
 
+            <img style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto; z-index: 2;
+            filter: saturate(140%) contrast(103%) brightness(1.4) ; " id="photopost"
+            src="giftour.gif" alt="image">    
+
             <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
              id="videoplay" class="videoplay" poster="giftour.gif" loop muted plays-inline>
@@ -66,7 +70,7 @@
 
             <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
-             id="videoplayb" class="videoplay" poster="giftour.gif" loop muted plays-inline autoplay>
+             id="videoplayb" class="videoplay" poster="giftour.gif" loop muted plays-inline>
                  <source src="live.mp4" type="video/mp4">
             </video>
             
@@ -354,12 +358,18 @@
 
         var loadgif = document.getElementById('loadgif');
 
-        function play(){
-            document.getElementById('autoplay').play();
+        function playaudio() {
+            var audio = document.getElementById('audioplay');
+            audio.play();
+            audio.addEventListener('timeupdate', function() {
+                var audstart = parseInt(audio.currentTime + ( audio.duration - 30 ));
+                var audend = parseInt(audio.duration);
+                if (audstart == audend) {
+                    audio.muted = false ;
+                }
+            });
         }
-        function playv(){
-            document.getElementById('videoplay').play();
-        }
+        
 
 
         /*var firstindex=0;
@@ -405,9 +415,7 @@
         var tab4 = document.getElementById("tab4");       
         var photo = document.getElementById("photo");       
         var golflogo = document.getElementById("golflogo");       
-        
-        var videoplay = document.getElementById("videoplay");       
-        var videoplayb = document.getElementById("videoplayb");       
+        var photopost = document.getElementById("photopost");       
 
         var dataRefpost = firebase.database().ref("post");
         dataRefpost.on("value" , function(snapshot){
@@ -424,11 +432,25 @@
                         tab4.style.display="flex";
                         tab5.style.display="none";
                         photo.style.display="none";
-                        videoplay.style.display="block";
-                        videoplayb.style.display="none";
                         golflogo.style.display="none";
-                        videoplay.play();
-                        videoplayb.play();
+                        photopost.style.display="block";
+
+                        var videoa = document.getElementById('videoplay');
+                        var videob = document.getElementById('videoplayb');
+                        videoa.style.display="block";
+                        videob.style.display="block";
+                        videoa.play();
+                        videob.play();
+                        videoa.addEventListener('timeupdate', function() {
+                            var vidstart = parseInt(videoa.currentTime);
+                            var vidend = parseInt(videoa.duration);
+                            if (vidstart == vidend) {
+                                photopost.style.display="none";
+                                videoa.style.display="block";
+                                videob.style.display="none";
+                            }
+                        });
+ 
                     } else if( element.val() == "P") {
                         score.style.display="block";
                         tab00.style.display="none";
@@ -439,11 +461,23 @@
                         tab4.style.display="none";
                         tab5.style.display="none";
                         photo.style.display="block";
-                        videoplay.style.display="none";
-                        videoplayb.style.display="block";
                         golflogo.style.display="none";
-                        videoplay.play();
-                        videoplayb.play();
+                        photopost.style.display="block";
+
+                        var videoa = document.getElementById('videoplay');
+                        var videob = document.getElementById('videoplayb');
+                        videoa.play();
+                        videob.play();
+                        videob.addEventListener('timeupdate', function() {
+                            var vidstart = parseInt(videob.currentTime);
+                            var vidend = parseInt(videob.duration);
+                            if (vidstart == vidend) {
+                                photopost.style.display="none";
+                                videoa.style.display="none";
+                                videob.style.display="block";                            
+                            }
+                        });
+
                     } else if( element.val() == "V") {
                         score.style.display="none";
                         tab00.style.display="none";
@@ -454,11 +488,21 @@
                         tab4.style.display="none";
                         tab5.style.display="block";
                         photo.style.display="none";
-                        videoplay.style.display="none";
-                        videoplayb.style.display="block";
                         golflogo.style.display="block";
-                        videoplayb.play();
-                        videoplay.play();
+                        photopost.style.display="block";
+                        
+                        var videoa = document.getElementById('videoplay');
+                        var videob = document.getElementById('videoplayb');
+                        videob.play();
+                        videob.addEventListener('timeupdate', function() {
+                            var vidstart = parseInt(videob.currentTime);
+                            var vidend = parseInt(videob.duration);
+                            if (vidstart == vidend) {
+                                photopost.style.display="none";
+                                videoa.style.display="block";
+                                videob.style.display="block";                            
+                            }
+                        });
                     }
                 }
             });
@@ -523,8 +567,7 @@
                     nompart.innerHTML= "Aucun Tournoi trouvé" ;
                 } else {
 
-                    play();
-                    playv();
+                    playaudio();
                     charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
@@ -582,7 +625,7 @@
                 
 
                         dataRefauto.on("value" , function(snapshot){
-                            play();
+
                             i=0;
 
                             document.querySelector('#rankb').innerHTML = "";
