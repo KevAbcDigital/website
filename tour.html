@@ -417,7 +417,9 @@
         var photo = document.getElementById("photo");       
         var golflogo = document.getElementById("golflogo");       
         var photopost = document.getElementById("photopost");       
-
+        var videoa = document.getElementById('videoplay');
+        var videob = document.getElementById('videoplayb');
+        
         var dataRefpost = firebase.database().ref("post");
         dataRefpost.on("value" , function(snapshot){
             snapshot.forEach(function(element){
@@ -436,14 +438,12 @@
                         golflogo.style.display="none";
                         photopost.style.display="block";
 
-                        var videoa = document.getElementById('videoplay');
-                        var videob = document.getElementById('videoplayb');
                         videob.play();
                         videoa.play();
                         videoa.addEventListener('timeupdate', function() {
                             var vidstart = parseInt(videoa.currentTime);
                             var vidend = parseInt(videoa.duration);
-                            // console.log(vidstart);
+                            console.log(vidstart);
                             if (vidstart == vidend) {
                                 photopost.style.display="none";
                                 videoa.style.display="block";
@@ -466,14 +466,13 @@
                         golflogo.style.display="none";
                         photopost.style.display="block";
 
-                        var videoa = document.getElementById('videoplay');
-                        var videob = document.getElementById('videoplayb');
+                        
                         videoa.pause();
                         videob.play();
                         videob.addEventListener('timeupdate', function() {
                             var vidstartb = parseInt(videob.currentTime);
                             var videndb = parseInt(videob.duration);
-                            // console.log(vidstartb);
+                            console.log(vidstartb);
                             if (vidstartb == videndb) {
                                 photopost.style.display="none";
                                 videoa.style.display="none";
@@ -496,13 +495,12 @@
                         golflogo.style.display="block";
                         photopost.style.display="block";
                         
-                        var videoa = document.getElementById('videoplay');
-                        var videob = document.getElementById('videoplayb');
+                        videoa.pause();
                         videob.play();
                         videob.addEventListener('timeupdate', function() {
                             var vidstartc = parseInt(videob.currentTime);
                             var videndc = parseInt(videob.duration);
-                            // console.log(vidstartc);
+                            console.log(vidstartc);
                             if (vidstartc == videndc) {
                                 photopost.style.display="none";
                                 videoa.style.display="none";
