@@ -66,8 +66,8 @@
 
             <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
-             id="videoplayb" class="videoplay" poster="giftour.gif" loop muted plays-inline>
-                <source src="live.mp4" type="video/mp4">
+             id="videoplayb" class="videoplay" poster="giftour.gif" loop muted plays-inline autoplay>
+                 <source src="live.mp4" type="video/mp4">
             </video>
             
             <section class="score" id="score">
@@ -428,6 +428,7 @@
                         videoplayb.style.display="none";
                         golflogo.style.display="none";
                         videoplay.play();
+                        videoplayb.play();
                     } else if( element.val() == "P") {
                         score.style.display="block";
                         tab00.style.display="none";
@@ -442,6 +443,7 @@
                         videoplayb.style.display="block";
                         golflogo.style.display="none";
                         videoplay.play();
+                        videoplayb.play();
                     } else if( element.val() == "V") {
                         score.style.display="none";
                         tab00.style.display="none";
@@ -456,6 +458,7 @@
                         videoplayb.style.display="block";
                         golflogo.style.display="block";
                         videoplayb.play();
+                        videoplay.play();
                     }
                 }
             });
