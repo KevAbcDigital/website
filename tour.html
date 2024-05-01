@@ -58,9 +58,13 @@
 
         <section id="toursliderabc" class="toursliderabc">
 
-            <img style="position: absolute; z-index: 2; top: 0; width: 100%; height: 100%; z-index: 2;
+            <img style="position: absolute; z-index: 4; top: 0; width: 100%; height: 100%; z-index: 2;
             filter: saturate(110%) ; " id="photopost"
-            src="toure.jpg" alt="image">    
+            src="toure.jpg" alt="image"> 
+            
+            <img style="position: absolute; z-index: 3; top: 0; width: 100%; height: 100%; z-index: 2;
+            filter: saturate(110%) ; " id="photoposta"
+            src="postere.webp" alt="image"> 
 
             <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
@@ -70,7 +74,7 @@
 
             <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
-             id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
+             id="videoplayb" class="videoplay" poster="postere.webp" loop muted plays-inline>
                  <source src="live.mp4" type="video/mp4">
             </video>
             
@@ -313,8 +317,27 @@
 
             </section>
 
-            <img id="golflogo" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
-            width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
+            <img id="golflogo" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            margin-top: 10px; margin-left: 10px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
+
+            <img id="logogspoa" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            margin-top: 10px; margin-left: 110px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
+
+            <img id="logogspob" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            margin-top: 10px; margin-left: 210px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
+
+            <img id="logogspoc" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            margin-top: 10px; margin-left: 310px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
+
+
+            <img id="golflogoza" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
+            margin-top: 120px; margin-left: 10px; width: 90px; height: 110px;" src="./design_files/images/sponsora.png" alt="image">
+
+            <img id="golflogozb" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
+            margin-top: 220px; margin-left: 10px; width: 90px; height: 110px;" src="./design_files/images/sponsorb.png" alt="image">
+
+            <img id="golflogozc" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
+            margin-top: 320px; margin-left: 10px; width: 90px; height: 110px;" src="./design_files/images/sponsorc.png" alt="image">
 
             <section id="tab5" class="entetescoreb" style=" align-items: center; background-color: rgba(20, 69, 78, 0.87);">
 
@@ -361,13 +384,13 @@
         function playaudio() {
             var audio = document.getElementById('audioplay');
             audio.play();
+            audio.muted = false ;
+            
             audio.addEventListener('timeupdate', function() {
                 var audstart = parseInt(audio.currentTime);
                 var audend = parseInt(audio.duration);
                 console.log(audstart);
-                if ((audstart == audend)) {
-                    audio.muted = false ;
-                } else if (audstart == ( audend - 1)) {
+                if (audstart == audend) {
                     audio.muted = false ;
                 }
             });
@@ -417,8 +440,15 @@
         var tab5 = document.getElementById("tab5");       
         var tab4 = document.getElementById("tab4");       
         var photo = document.getElementById("photo");       
+        var golflogoa = document.getElementById("golflogoza");       
+        var golflogob = document.getElementById("golflogozb");       
+        var golflogoc = document.getElementById("golflogozc");       
         var golflogo = document.getElementById("golflogo");       
+        var logogspoa = document.getElementById("logogspoa");      
+        var logogspob = document.getElementById("logogspob");      
+        var logogspoc = document.getElementById("logogspoc");      
         var photopost = document.getElementById("photopost");       
+        var photoposta = document.getElementById("photoposta");       
         var videobb = document.getElementById('videoplayb');
         var videob = document.getElementById('videoplay');
         var vidstartz = 0;
@@ -490,7 +520,15 @@
                         tab5.style.display="none";
                         photo.style.display="none";
                         golflogo.style.display="none";
+                        golflogoa.style.display="none";
+                        golflogob.style.display="none";
+                        golflogoc.style.display="none";
+                        logogspoa.style.display="none";
+                        logogspob.style.display="none";
+                        logogspoc.style.display="none";
                         photopost.style.display="block";
+                        photoposta.style.display="none";
+
 
                         i = 1;
                         videoshow();
@@ -506,10 +544,17 @@
                         tab5.style.display="none";
                         photo.style.display="block";
                         golflogo.style.display="none";
-                        photopost.style.display="block";
+                        golflogoa.style.display="none";
+                        golflogob.style.display="none";
+                        golflogoc.style.display="none";
+                        logogspoa.style.display="none";
+                        logogspob.style.display="none";
+                        logogspoc.style.display="none";
+                        photopost.style.display="none";
+                        photoposta.style.display="block";
 
                         i = 1;
-                        videoshow();
+                        // videoshow();
 
 
                     } else if( element.val() == "V") {
@@ -523,7 +568,14 @@
                         tab5.style.display="block";
                         photo.style.display="none";
                         golflogo.style.display="block";
-                        photopost.style.display="block";
+                        golflogoa.style.display="block";
+                        golflogob.style.display="block";
+                        golflogoc.style.display="block";
+                        logogspoa.style.display="block";
+                        logogspob.style.display="block";
+                        logogspoc.style.display="block";
+                        photopost.style.display="none";
+                        photoposta.style.display="block";
 
                         i = 2;
                         videoshowb();
