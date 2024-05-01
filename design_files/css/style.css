@@ -328,14 +328,44 @@ header {
 }
 .scoreboxb {
   display: none;
-  position: relative;
-  padding-bottom: 15px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  margin-top: 7%;
+  margin-left: 10%;
+  z-index: 1000;
   background-color: rgba(8, 54, 74, 0.904); 
-  padding: 2% 7%;
   border-radius: 6px;
-  margin: 10px 30px;
   overflow-y: scroll;
-  overflow: scroll;
+}
+.scoreboxb .rankimg {
+  width: 60%;
+  position: relative;
+  margin-left: 40%;
+  margin-top: 0px; 
+  height: 80px; 
+  background-color: #03293f ; 
+  border-radius: 7px; 
+  margin-top: 4px;
+  display: flex; 
+  align-items: center;
+}
+.scoreboxb .leadimg {
+  width: 42%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  display: block;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/fondblanc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .scoreboxb .logogobox {
   width: 8%;
@@ -343,7 +373,6 @@ header {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   right: 0;
-  margin-right: 7%;
   position: absolute;
   display: block;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
@@ -353,10 +382,10 @@ header {
   background-position: center;
 }
 .scoreboxb .logogoboxb {
-  width: 8%;
+  width: 9%;
   height: 30px;
   position: relative;
-  margin-left: 12px;
+  margin-left: 2%;
   display: block;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
     url(../images/bartour.png);
