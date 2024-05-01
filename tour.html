@@ -26,7 +26,7 @@
 
     <body class="bod" style="background-color: rgb(255, 255, 255);">
 
-        <audio loop muted id="audioplay">
+        <audio loop id="audioplay">
             <source src="sonc.mp3" type="audio/mpeg">
         </audio>
 
@@ -58,23 +58,23 @@
 
         <section id="toursliderabc" class="toursliderabc">
 
-            <img style="position: absolute; z-index: 4; top: 0; width: 100%; height: 100%; z-index: 2;
+            <img style="position: absolute; z-index: 2; top: 0; width: 100%; height: 100%; z-index: 2;
             filter: saturate(110%) ; " id="photopost"
             src="toure.jpg" alt="image"> 
             
-            <img style="position: absolute; z-index: 3; top: 0; width: 100%; height: 100%; z-index: 2;
+            <img style="position: absolute; z-index: 1; top: 0; width: 100%; height: 100%; z-index: 2;
             filter: saturate(110%); display: none; " id="photoposta"
             src="postere.webp" alt="image"> 
 
-            <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
+            <video style="position: absolute; z-index: 4; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
-             id="videoplay" class="videoplay" poster="toure.jpg" preload="metadata" loop muted plays-inline>
+             id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
                 <source src="video.mp4" type="video/mp4">
             </video>
 
-            <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
+            <video style="position: absolute; z-index: 3; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
-             id="videoplayb" class="videoplay" poster="postere.webp" preload="metadata" loop muted plays-inline>
+             id="videoplayb" class="videoplay" poster="postere.webp" loop muted plays-inline>
                  <source src="live.mp4" type="video/mp4">
             </video>
             
@@ -355,26 +355,25 @@
 
             </section>
 
-            <img id="golflogo" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            <img id="golflogo" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; 
             margin-top: 10px; margin-left: 10px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
 
-            <img id="logogspoa" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            <img id="logogspoa" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; 
             margin-top: 10px; margin-left: 110px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
 
-            <img id="logogspob" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            <img id="logogspob" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; 
             margin-top: 10px; margin-left: 210px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
 
-            <img id="logogspoc" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; 
+            <img id="logogspoc" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; 
             margin-top: 10px; margin-left: 310px;  width: 90px; height: 90px;" src="./design_files/images/logogd.png" alt="image">
 
-
-            <img id="golflogoza" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
+            <img id="golflogoza" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; margin: 2%;
             margin-top: 120px; margin-left: 10px; width: 90px; height: 110px;" src="./design_files/images/sponsora.png" alt="image">
 
-            <img id="golflogozb" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
+            <img id="golflogozb" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; margin: 2%;
             margin-top: 220px; margin-left: 10px; width: 90px; height: 110px;" src="./design_files/images/sponsorb.png" alt="image">
 
-            <img id="golflogozc" class="logogolfaz" style="position: absolute; top: 0; z-index: 1; display: none; left: 0; margin: 2%;
+            <img id="golflogozc" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; margin: 2%;
             margin-top: 320px; margin-left: 10px; width: 90px; height: 110px;" src="./design_files/images/sponsorc.png" alt="image">
 
             <section id="tab5" class="entetescoreb" style=" align-items: center; background-color: rgba(20, 69, 78, 0.87);">
@@ -435,6 +434,7 @@
             });
             */
         }
+
         
 
 
@@ -497,10 +497,10 @@
         var vidstart = 0;
         var vidend = 0;
         var i = 0;
-        
+        videob.style.display="none";
+        videobb.style.display="none";
+
         function videoshow() {
-            videob.play();
-            videobb.pause();
             videob.addEventListener('timeupdate', function() {
                 vidstartz = parseInt(videob.currentTime);
                 videndz = parseInt(videob.duration);
@@ -518,8 +518,7 @@
         }
 
         function videoshowb() {
-            videobb.play();
-            videob.pause();
+
             videobb.addEventListener('timeupdate', function() {
                 vidstart = parseInt(videobb.currentTime);
                 vidend = parseInt(videobb.duration);
@@ -561,10 +560,7 @@
                         logogspoa.style.display="none";
                         logogspob.style.display="none";
                         logogspoc.style.display="none";
-                        photopost.style.display="block";
-                        photoposta.style.display="none";
-
-
+                        
                         i = 1;
                         videoshow();
  
@@ -586,9 +582,7 @@
                         logogspoa.style.display="none";
                         logogspob.style.display="none";
                         logogspoc.style.display="none";
-                        photopost.style.display="block";
-                        photoposta.style.display="none";
-
+                        
                         i = 1;
                         videoshow();
 
@@ -611,10 +605,9 @@
                         logogspoa.style.display="block";
                         logogspob.style.display="block";
                         logogspoc.style.display="block";
-                        photopost.style.display="none";
-                        photoposta.style.display="block";
-
+                        
                         i = 2;
+                        
                         videoshowb();
                  
                     }
@@ -709,6 +702,9 @@
                 } else {
 
                     playaudio();
+                    videob.play();
+                    videobb.play();
+
                     // videoshow();
                     charge = codesearch;
                     load.style.display = "none";
@@ -2115,7 +2111,7 @@
             setTimeout(automaticslide, 6000);
             if (mm == 1) {
                 leadimg.style.backgroundImage="url("+idal+")";
-                box1.style.backgroundColor="rgb(255, 196, 0)";
+                box1.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2127,7 +2123,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";                
             } else if (mm == 2) {
                 leadimg.style.backgroundImage="url("+idbl+")";
-                box2.style.backgroundColor="rgb(255, 196, 0)";
+                box2.style.backgroundColor="rgb(0, 161, 62)";
                 box1.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2139,7 +2135,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 3) {
                 leadimg.style.backgroundImage="url("+idcl+")";
-                box3.style.backgroundColor="rgb(255, 196, 0)";
+                box3.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box1.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2151,7 +2147,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 4) {
                 leadimg.style.backgroundImage="url("+iddl+")";
-                box4.style.backgroundColor="rgb(255, 196, 0)";
+                box4.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box1.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2163,7 +2159,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 5) {
                 leadimg.style.backgroundImage="url("+idel+")";
-                box5.style.backgroundColor="rgb(255, 196, 0)";
+                box5.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2175,7 +2171,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 6) {
                 leadimg.style.backgroundImage="url("+idfl+")";
-                box6.style.backgroundColor="rgb(255, 196, 0)";
+                box6.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2187,7 +2183,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 7) {
                 leadimg.style.backgroundImage="url("+idgl+")";
-                box7.style.backgroundColor="rgb(255, 196, 0)";
+                box7.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2199,7 +2195,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 8) {
                 leadimg.style.backgroundImage="url("+idhl+")";
-                box8.style.backgroundColor="rgb(255, 196, 0)";
+                box8.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2211,7 +2207,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 9) {
                 leadimg.style.backgroundImage="url("+idil+")";
-                box9.style.backgroundColor="rgb(255, 196, 0)";
+                box9.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
@@ -2223,7 +2219,7 @@
                 box10.style.backgroundColor="rgb(8, 40, 60)";
             } else if (mm == 10) {
                 leadimg.style.backgroundImage="url("+idjl+")";
-                box10.style.backgroundColor="rgb(255, 196, 0)";
+                box10.style.backgroundColor="rgb(0, 161, 62)";
                 box2.style.backgroundColor="rgb(8, 40, 60)";                
                 box3.style.backgroundColor="rgb(8, 40, 60)";                
                 box4.style.backgroundColor="rgb(8, 40, 60)";                
