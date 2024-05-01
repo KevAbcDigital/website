@@ -303,7 +303,7 @@ header {
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 22px;
+  font-size: 24px;
   color: white;
 }
 .score .entete .boxentetejw {
@@ -313,7 +313,7 @@ header {
   border-radius: 4px;
   height: max-content;
   text-align: center;
-  font-size: 22px;
+  font-size: 24px;
   color: white;
   text-transform: uppercase;
   text-align: start; 
