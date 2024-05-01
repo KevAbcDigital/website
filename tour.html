@@ -342,10 +342,10 @@
             <section id="tab5" class="entetescoreb" style=" align-items: center; background-color: rgba(20, 69, 78, 0.87);">
 
                 <div style="margin-top: 5px; display: flex;">
-                    <b class="boxe" style="font-size: 10px; color: white; width: 5%; margin-left: 1%;" >Rank</b>                
-                    <b class="boxe" style="font-size: 10px; color: white; width: 66%; margin-left: 2%;"></b>                
-                    <b class="boxe" style="font-size: 10px; color: white; width: 10%; text-align: center; border-radius: none; background-color: rgb(8, 100, 39);">Today</b>                
-                    <b class="boxe" style="font-size: 10px; color: rgb(255, 239, 9);margin-left: 5%; width: 5%;">Total</b>                
+                    <b class="boxe" style="font-size: 13px; color: white; width: 5%; margin-left: 1%;" >Rank</b>                
+                    <b class="boxe" style="font-size: 13px; color: white; width: 64%; margin-left: 2%;"></b>                
+                    <b class="boxe" style="font-size: 13px; color: white; width: 10%; text-align: center; border-radius: none; background-color: rgb(8, 100, 39);">Today</b>                
+                    <b class="boxe" style="font-size: 13px; color: rgb(255, 239, 9);margin-left: 5%; width: 5%;">Total</b>                
                 </div>
 
                 <div style="margin-top: 5px; display: flex;">
@@ -465,14 +465,10 @@
                 videndz = parseInt(videob.duration);
                 console.log(vidstartz);
                 if ((vidstartz == videndz) & (i == 1) ) {
-                    // videob.muted = false;
-                    // playaudio();
                     videob.style.display="block";
                     videobb.style.display="none";
                     photopost.style.display="none";
                 } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
-                    // videob.muted = false;
-                    // playaudio();
                     videob.style.display="block";
                     videobb.style.display="none";
                     photopost.style.display="none";
@@ -488,17 +484,13 @@
                 vidend = parseInt(videobb.duration);
                 console.log(vidstart);
                 if ((vidstart == vidend) & (i == 2) ) {
-                    // videob.muted = false;
-                    // playaudio();
                     videobb.style.display="block";
                     videob.style.display="none";
-                    photopost.style.display="none";
+                    photoposta.style.display="none";
                 } else if ((vidstart == (vidend - 1 )) & (i == 2)) {
-                    // videob.muted = false;
-                    // playaudio();
                     videobb.style.display="block";
                     videob.style.display="none";
-                    photopost.style.display="none";
+                    photoposta.style.display="none";
                 }
             });
         }
