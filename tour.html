@@ -218,7 +218,15 @@
 
             <div class="scoreboxb" id="photo" style=" background-color: rgb(3, 31, 48);">
 
-                <div class="leadimg" id="leadimg"></div>
+                <div class="leadimg" id="leadimg">
+                    <b class="tt" style="position: relative; width: 45%; margin-top: 15%;
+                    border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-color: #020d18b9; 
+                    color: #fbffdbee; text-align: center; display: block;" > # LEADER 1</b>
+
+                    <b class="tt" style=" position: relative; width: 45%; margin-top: 1px;
+                    border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+                    color: #fbffdbee; text-align: center; display: block; font-size: 8px;" id="namecompet" > of the Competition ...</b>
+                </div>
             
                 <div class="rankimg" style="margin-top: 0px; border-top-left-radius: 0px;" >
                     <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 11px; color: #fbffdbee; display: block;" >1er</b>
@@ -581,6 +589,7 @@
 
         function getvalue(){       
         var nompart = document.getElementById("nompart");       
+        var namecompet = document.getElementById("namecompet");       
         var codesearchz = document.getElementById("list").value; 
         var load = document.getElementById("lottieload");   
         var dataRef = firebase.database().ref("open");
@@ -626,6 +635,7 @@
                     if(element.key == codesearch ) {
                         a=1;
                         nompart.innerHTML= codesearch ;
+                        namecompet.innerHTML= codesearch ;
                     }
                 });
                 
@@ -634,6 +644,7 @@
                     load.style.display = "none";
                     // window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
                     nompart.innerHTML= "Aucun Tournoi trouvé" ;
+                    namecompet.innerHTML= "of the competition" ;
                 } else {
 
                     playaudio();
