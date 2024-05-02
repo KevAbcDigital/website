@@ -177,7 +177,7 @@ header {
   position: relative;
   padding-top: 10px;
   padding-bottom: 5px;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .entetescore .logogolf {
   width: 70px;
