@@ -62,16 +62,6 @@
             filter: saturate(110%) ; " id="photopost"
             src="toure.jpg" alt="image"> 
             
-            <img style="position: absolute; z-index: 1; top: 0; width: 100%; height: 100%; z-index: 2;
-            filter: saturate(110%); display: none; " id="photoposta"
-            src="postere.webp" alt="image"> 
-
-            <video style="position: absolute; z-index: 4; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
-             id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
-                <source src="video.mp4" type="video/mp4">
-            </video>
-
             <video style="position: absolute; z-index: 3; top: 0; width: 100%; height: auto;
              filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none;" 
              id="videoplayb" class="videoplay" poster="postere.webp" loop muted plays-inline>
@@ -183,9 +173,6 @@
                     <img id="bn" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bo" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     <img id="bp" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bq" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="br" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bs" class="bartab" src="./design_files/images/bartour.png" alt="image">
                     
                 </div>
 
@@ -402,10 +389,9 @@
 
     <script>
 
-
+        
         var up = false;
         var lastPosition;
-
         var interval = setInterval(function () {
             var $container = $("#tab3");
             var position = $container.scrollTop();
@@ -511,18 +497,16 @@
         var logogspob = document.getElementById("logogspob");      
         var logogspoc = document.getElementById("logogspoc");      
         var photopost = document.getElementById("photopost");       
-        var photoposta = document.getElementById("photoposta");       
         var videobb = document.getElementById('videoplayb');
-        var videob = document.getElementById('videoplay');
         var barbox= document.getElementById('barbox');
         var vidstartz = 0;
         var videndz = 0;
         var vidstart = 0;
         var vidend = 0;
         var i = 0;
-        videob.style.display="none";
-        videobb.style.display="none";
 
+
+        /*
         function videoshow() {
             videob.addEventListener('timeupdate', function() {
                 vidstartz = parseInt(videob.currentTime);
@@ -539,26 +523,7 @@
                 }
             });
         }
-
-        function videoshowb() {
-
-            videobb.addEventListener('timeupdate', function() {
-                vidstart = parseInt(videobb.currentTime);
-                vidend = parseInt(videobb.duration);
-                console.log(vidstart);
-                if ((vidstart == vidend) & (i == 2) ) {
-                    videobb.style.display="block";
-                    videob.style.display="none";
-                    photoposta.style.display="none";
-                } else if ((vidstart == (vidend - 1 )) & (i == 2)) {
-                    videobb.style.display="block";
-                    videob.style.display="none";
-                    photoposta.style.display="none";
-                }
-            });
-        }
-        
-
+        */
        
         var dataRefpost = firebase.database().ref("post");
         dataRefpost.on("value" , function(snapshot){
@@ -585,7 +550,7 @@
                         logogspoc.style.display="none";
                         
                         i = 1;
-                        videoshow();
+                        // videoshow();
  
                     } else if( element.val() == "P") {
                         score.style.display="block";
@@ -607,7 +572,7 @@
                         logogspoc.style.display="none";
                         
                         i = 1;
-                        videoshow();
+                        //videoshow();
 
 
                     } else if( element.val() == "V") {
@@ -631,7 +596,7 @@
                         
                         i = 2;
                         
-                        videoshowb();
+                        //videoshowb();
                  
                     }
                 }
@@ -725,10 +690,8 @@
                 } else {
 
                     playaudio();
-                    videob.play();
-                    videobb.play();
-
                     // videoshow();
+
                     charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
@@ -749,10 +712,7 @@
                     var bm = document.getElementById("bm");                
                     var bn = document.getElementById("bn");                
                     var bo = document.getElementById("bo");                
-                    var bp = document.getElementById("bp");                
-                    var bq = document.getElementById("bq");                
-                    var br = document.getElementById("br");                
-                    var bs = document.getElementById("bs");               
+                    var bp = document.getElementById("bp");                            
 
                     var ia = document.getElementById("imagefirst");               
                     var ib = document.getElementById("imagesecond");               
@@ -984,9 +944,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                   
                                 } 
                                 else if (i==1) {
                                     ba.style.display="block";
@@ -1005,10 +963,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                   
                                     document.querySelector('#nomfirst').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
                                     ida = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase() ;                                    
                                     document.querySelector('#nomfirstb').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
@@ -1044,9 +999,8 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                    
+                                    
                                     document.querySelector('#nomsecond').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     idb = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomsecondb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
@@ -1081,9 +1035,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                               
                                     document.querySelector('#nomthird').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     idc = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomthirdb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
@@ -1118,10 +1070,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                    
                                     idd = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomfourb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1151,10 +1100,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                    
                                     ide = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomfiveb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1184,10 +1130,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                    
                                     idf = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomsixb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1217,10 +1160,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                    
                                     idg = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomsevenb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1250,10 +1190,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                   
                                     idh = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomheightb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1283,10 +1220,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                    
                                     idi = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomnineb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1316,10 +1250,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-
+                                    
                                     idj = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomtenb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1349,9 +1280,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                    
                                 } 
                                 else if (i==12) {
                                     ba.style.display="block";
@@ -1370,9 +1299,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                    
                                 } 
                                 else if (i==13) {
                                     ba.style.display="block";
@@ -1391,9 +1318,7 @@
                                     bn.style.display="none";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                    
                                 } 
                                 else if (i==14) {
                                     ba.style.display="block";
@@ -1412,9 +1337,7 @@
                                     bn.style.display="block";
                                     bo.style.display="none";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                    
                                 } 
                                 else if (i==15) {
                                     ba.style.display="block";
@@ -1433,9 +1356,7 @@
                                     bn.style.display="block";
                                     bo.style.display="block";
                                     bp.style.display="none";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                    
                                 } 
                                 else if (i==16) {
                                     ba.style.display="block";
@@ -1454,10 +1375,9 @@
                                     bn.style.display="block";
                                     bo.style.display="block";
                                     bp.style.display="block";
-                                    bq.style.display="none";
-                                    br.style.display="none";
-                                    bs.style.display="none";
+                                    
                                 } 
+                            /*
                                 else if (i==17) {
                                     ba.style.display="block";
                                     bb.style.display="block";
@@ -1521,7 +1441,7 @@
                                     br.style.display="block";
                                     bs.style.display="block";
                                 }
-                            
+                            */
                             
                         });        
 
