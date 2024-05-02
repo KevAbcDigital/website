@@ -399,7 +399,7 @@ header {
   width: 9%;
   height: 30px;
   position: relative;
-  margin-left: 2%;
+  margin-left: 8%;
   display: block;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
     url(../images/bartour.png);
