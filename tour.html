@@ -189,7 +189,7 @@
                     
                 </div>
 
-                <div class="entete" id="tab3" >
+                <div class="entetetab3" id="tab3" >
                     
                     <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border-radius: 2px; border: 1px solid #ffffff;" id="rank"onclick="play()" ></b>                
                     <b class="boxentetejz" style="border: 1px solid #ffffff; border-radius: 2px; background-color: #00515f;"  id="hcp"onclick="play()" ></b>        
@@ -401,6 +401,28 @@
 
 
     <script>
+
+
+        var up = false;
+        var lastPosition;
+
+        var interval = setInterval(function () {
+            var $container = $("#tab3");
+            var position = $container.scrollTop();
+            var height = $container[0].scrollHeight;
+
+            // If we haven't moved, switch direction
+            if(position === lastPosition) up = !up;
+            lastPosition = position;
+
+            if (up) {
+                // Going up
+                $container.scrollTop(position - 40);
+            } else {
+                // Going down
+                $container.scrollTop(position + 40);
+            }
+        }, 12000);
 
 
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
