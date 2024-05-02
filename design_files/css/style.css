@@ -1199,6 +1199,41 @@ header {
 }
 
 
+.score .entetetab3 {
+  display: flex;
+  position: relative;
+  height: 60%;
+  padding-bottom: 15px; 
+  background-color: rgba(8, 54, 74, 0.904); 
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  overflow-y: scroll;
+  overflow: hidden;
+  scrollbar-color: transparent;
+}
+.score .entetetab3 .boxentetejz {
+  width: 30px;
+  text-align: center;
+  margin-top: 14px;
+  margin-left: 1px;
+  height: max-content;
+  border: 1px solid #a5d1ab7d;
+  text-align: center;
+  font-size: 8px;
+  color: white;
+}
+.score .entetetab3 .boxentetejw {
+  width: 31%;
+  text-align: center;
+  margin-top: 14px;
+  height: content;
+  font-size: 8px;
+  color: white;
+  text-transform: lowercase;
+  text-align: start; 
+  padding-left: 4px;
+}
+
 .score .entete .boxentetejz {
   width: 30px;
   text-align: center;
