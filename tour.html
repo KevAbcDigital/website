@@ -519,6 +519,13 @@
 
         
         function videoshow() {
+
+            videobb.play();
+            videobb.style.display="block";
+            videob.style.display="none";
+            photopost.style.display="none";
+
+            /*
             videobb.addEventListener('timeupdate', function() {
                 vidstartz = parseInt(videobb.currentTime);
                 videndz = parseInt(videobb.duration);
@@ -533,6 +540,7 @@
                     photopost.style.display="none";
                 }
             });
+            */
         }
 
         function videoshowb() {
