@@ -236,9 +236,10 @@ header {
   border: 1px solid #faeb1c;
   text-align: center; 
   align-items: center;
-  font-size: 11px;
-  height: 25px;
-  margin-top: 10px;
+  font-size: 17px;
+  height: 35px;
+  width: auto;
+  margin-top: 6px;
   padding-left: 20px;
   background-color: #00250b;
   color: white;
