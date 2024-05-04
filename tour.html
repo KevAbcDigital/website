@@ -61,6 +61,18 @@
             <img style="position: absolute; z-index: 3; top: 0; width: 100%; height: 100%;
             filter: saturate(110%) ;  " id="photopost"
             src="toure.jpg" alt="image"> 
+
+            <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+            autoplay id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+
+            <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+            autoplay id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
+                <source src="live.mp4" type="video/mp4">
+            </video>
             
             <section class="score" id="score">
 
@@ -426,11 +438,10 @@
 
         var loadgif = document.getElementById('loadgif');
 
+        /*
         function playaudio() {
             var audio = document.getElementById('audioplay');
-            audio.play();
-            // audio.muted = false ;
-            /*
+            audio.play();    
             audio.addEventListener('timeupdate', function() {
                 var audstart = parseInt(audio.currentTime);
                 var audend = parseInt(audio.duration);
@@ -439,55 +450,11 @@
                     audio.muted = false ;
                 }
             });
-            */
+        
         }
+        */
 
-        /*
-
-        
-        function videoshow() {
-            photopost.style.display="none";
-            videobb.play();
-            videobb.style.display="block";
-            videob.style.display="block";
-
-        
-            videobb.addEventListener('timeupdate', function() {
-                vidstartz = parseInt(videobb.currentTime);
-                videndz = parseInt(videobb.duration);
-                console.log(vidstartz);
-                if ((vidstartz == videndz) & (i == 1) ) {
-                    videobb.style.display="block";
-                    videob.style.display="none";
-                    photopost.style.display="none";
-                } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
-                    videobb.style.display="block";
-                    videob.style.display="none";
-                    photopost.style.display="none";
-                }
-            });
-            
-        }
-
-        function videoshowb() {
-            videob.addEventListener('timeupdate', function() {
-                vidstart = parseInt(videob.currentTime);
-                vidend = parseInt(videob.duration);
-                console.log(vidstart);
-                if ((vidstart == vidend) & (i == 2) ) {
-                    videobb.style.display="none";
-                    videob.style.display="block";
-                    photopost.style.display="none";
-                } else if ((vidstart == (vidend - 1)) & (i == 2) ) {
-                    videobb.style.display="none";
-                    videob.style.display="block";
-                    photopost.style.display="none";
-                }
-            });
-        }
-        
-        
-        
+        /* 
         var firstindex=0;
         function automaticslide(){
             setTimeout(automaticslide, 6000);
@@ -538,9 +505,47 @@
         var logogspob = document.getElementById("logogspob");      
         var logogspoc = document.getElementById("logogspoc");      
         var photopost = document.getElementById("photopost");       
+        var videob = document.getElementById("videoplayb");       
+        var videobb = document.getElementById("videoplay");       
         var barbox= document.getElementById('barbox');
         var i = 0;
 
+        function videoshow() {
+
+            videobb.addEventListener('timeupdate', function() {
+                vidstartz = parseInt(videobb.currentTime);
+                videndz = parseInt(videobb.duration);
+                console.log(vidstartz);
+                if ((vidstartz == videndz) & (i == 1) ) {
+                    videobb.style.display="block";
+                    videob.style.display="none";
+                    photopost.style.display="none";
+                } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
+                    videobb.style.display="block";
+                    videob.style.display="none";
+                    photopost.style.display="none";
+                }
+            });
+            
+        }
+
+        function videoshowb() {
+            videob.addEventListener('timeupdate', function() {
+                vidstart = parseInt(videob.currentTime);
+                vidend = parseInt(videob.duration);
+                console.log(vidstart);
+                if ((vidstart == vidend) & (i == 2) ) {
+                    videobb.style.display="none";
+                    videob.style.display="block";
+                    photopost.style.display="none";
+                } else if ((vidstart == (vidend - 1)) & (i == 2) ) {
+                    videobb.style.display="none";
+                    videob.style.display="block";
+                    photopost.style.display="none";
+                }
+            });
+        }
+        
 
         
         var dataRefpost = firebase.database().ref("post");
@@ -589,11 +594,8 @@
                         logogspob.style.display="none";
                         logogspoc.style.display="none";
                         
-                        photopost.style.display="block";
-
                         i = 1;
-                        //videoshow();
-
+                        // videoshow();
 
                     } else if( element.val() == "V") {
                         score.style.display="none";
@@ -614,10 +616,7 @@
                         logogspob.style.display="block";
                         logogspoc.style.display="block";
                         
-                        photopost.style.display="block";
-
                         i = 2;
-                        
                         // videoshowb();
                  
                     }  else if( element.val() == "A") {
@@ -641,8 +640,7 @@
                         photopost.style.display="none";
 
                         i = 1;
-                        //videoshow();
-
+                        // videoshow();
 
                     }
                 }
@@ -736,7 +734,6 @@
                 } else {
 
                     // playaudio();
-                    // videoshow();
                     // videobb.play();
                     // videob.play();
 
