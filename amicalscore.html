@@ -277,6 +277,8 @@
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
         function homebtn(){
+            localStorage.setItem('openname' , null );                                   
+            localStorage.setItem('opennameb' , null );
             window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
         }
         
@@ -286,24 +288,57 @@
 
         
         function delet() {
-            var result = confirm('voulez vous supprimer cette partie ?');
-            var load = document.getElementById("loadgif");            
-            load.style.display = "block";   
-            if (result == false) {
-                event.preventDefault();
-                load.style.display = "none";
-            } else {
-                var dataRef = firebase.database().ref(nameopen);
-                var dataRefo = firebase.database().ref("open");
-                    if (pa!="non" & pb!="non" & pc!="non") {
+
+            var codeshow = prompt("entrez votre code ADMIN ");
+            if (codeshow == "") {
+                window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
+            } else if (codeshow != "") {                   
+
+                var dataRefcz = firebase.database().ref("code");
+                loadgif.style.display='block';
+                var cgc = 0;
+                dataRefcz.on("value" , function(snapshot){
+                    var acz = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == codeshow ) {
+                            acz=1;
+                        }
+                    });
+
+                    if ( acz == 1 & cgc == 0 ) {
+                        cgc = 1;
                         
-                        dataRefo.child(nameopen).child(pa).remove();
-                        dataRefo.child(nameopen).child(pb).remove();
-                        dataRefo.child(nameopen).child(pc).remove();
-                        dataRef.child(nameopenb).remove();
-                        window.alert('Partie supprimée avec succès!');
-                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';                    
-                    }                    
+                        var result = confirm('voulez vous supprimer cette partie ?');
+                        if (result == false) {
+                            event.preventDefault();
+                            loadgif.style.display = "none";
+                        } else {
+                            var dataRef = firebase.database().ref(nameopen);
+                            var dataRefo = firebase.database().ref("open");
+                            if (pa!="non" & pb!="non" & pc!="non") {
+                                    
+                                dataRefo.child(nameopen).child(pa).remove();
+                                dataRefo.child(nameopen).child(pb).remove();
+                                dataRefo.child(nameopen).child(pc).remove();
+                                dataRef.child(nameopenb).remove();
+                                loadgif.style.display='none';
+                                window.alert('Partie supprimée avec succès!');
+                                window.location.href = 'https://kevabcdigital.github.io/website/tour.html';                    
+                            }                    
+                        }
+
+                    } else if ( acz == 0 & cgc == 0 ) {
+                        loadgif.style.display='none';
+                            // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
+                        window.alert("Désole ! code admin incorrect !");
+                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                    }
+
+                    });
+                } else {
+                    window.alert("Désole ! code admin incorrect !");
+                    loadgif.style.display='none';
+                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
             }
         
         }
@@ -2515,13 +2550,13 @@
                     ( parseInt(aa7) - 4 ) + ( parseInt(aa8) - 4 ) + ( parseInt(aa9) - 4 ) + ( parseInt(aa10) - 4 ) + ( parseInt(aa11) - 4 ) + ( parseInt(aa12) - 3 ) +
                     ( parseInt(aa13) - 5 ) + ( parseInt(aa14) - 4 ) + ( parseInt(aa15) - 5 ) + ( parseInt(aa16) - 4 ) + ( parseInt(aa17) - 3 ) + ( parseInt(aa18) - 4 ) );
                     
-                    var noma = ( ( parseInt(br1) + ( totalanet - parseInt(ajoueur1) ) + 250 ) + " " + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
+                    var noma = ( ( parseInt(br1) + ( totalanet - parseInt(ajoueur1) ) + 250 ) + " " + ( totala ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                     + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
-                    + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totala ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
+                    + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( totala ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
                     if ( totala == 0 ) {
-                        var noma = ( ( "new" + parseInt(br1) ) + " " + ( parseInt(an1)  ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
+                        var noma = ( ( "new" + (parseInt(br1) + 250) ) + " " + ( parseInt(an1)  ) + " " + ja + " " + a1 + " " + a2 + " " + a3 + " " + a4 + " " + a5 + " " + a6
                         + " " + a7 + " " + a8 + " " + a9 + " " + a10 + " " + a11 + " " + a12 + " " + a13 + " " + a14
-                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "-" ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( parseInt(an1) + ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
+                        + " " + a15 + " " + a16 + " " + a17 + " " + a18 + " " + ( "-" ) + " " + parseInt(ajoueur1) + " " + parseInt(br1) + " " + ( parseInt(br1) + ( ( totalanet - parseInt(ajoueur1) ) ) ) + " " + totalaal + " " + totalare );
                     }
 
 
@@ -2544,19 +2579,19 @@
                     
                     if ( totalb == 0 ) {
                         if ( ( jb == "aucun joueur" ) || ( jb == "--- ---" ) ) {
-                            var nomb = (  ( "new"+ parseInt(br2) ) + " " + (  parseInt(an2) + ( totalbnet - parseInt(ajoueur2) )  ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            var nomb = (  ( "new"+ parseInt(br2) ) + " " + ( totalb ) + " " + "--- ---" + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                         } else {
-                            var nomb = (  ( "new" + parseInt(br2) ) + " " + ( parseInt(an2) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                            var nomb = (  ( "new" + (parseInt(br2) + 250) ) + " " + ( parseInt(an2) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                             + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
+                            + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( "-" ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                         }
                        
                     } else {
-                        var nomb = ( ( parseInt(br2) + ( totalbnet - parseInt(ajoueur2) ) + 250 ) + " " + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
+                        var nomb = ( ( parseInt(br2) + ( totalbnet - parseInt(ajoueur2) ) + 250 ) + " " + ( totalb ) + " " + jb + " " + b1 + " " + b2 + " " + b3 + " " + b4 + " " + b5 + " " + b6
                         + " " + b7 + " " + b8 + " " + b9 + " " + b10 + " " + b11 + " " + b12 + " " + b13 + " " + b14
-                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalb ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( parseInt(an2) + ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
+                        + " " + b15 + " " + b16 + " " + b17 + " " + b18 + " " + ( totalb ) + " " + parseInt(ajoueur2) + " " + parseInt(br2) + " " + ( parseInt(br2) + ( ( totalbnet - parseInt(ajoueur2) ) ) ) + " " + totalbal + " " + totalbre );
                     }
 
 
@@ -2577,16 +2612,16 @@
                     
                     if ( totalc == 0 ) {
                         if ( ( jc == "aucun joueur" ) || ( jc == "--- ---" ) ) {
-                            var nomc = ( ( "new"+ parseInt(br3) ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            var nomc = ( ( "new"+ parseInt(br3) ) + " " + ( totalc ) + " " + "--- ---" + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                             + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                         } else {
-                            var nomc = ( ( "new"+ parseInt(br3) ) + " " + ( parseInt(an3) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                            var nomc = ( ( "new"+ (parseInt(br3) + 250) ) + " " + ( parseInt(an3) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                             + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                             + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( "-" ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                         }
                     } else {
-                        var nomc = ( ( parseInt(br3) + ( totalcnet - parseInt(ajoueur3) ) + 250 ) + " " + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
+                        var nomc = ( ( parseInt(br3) + ( totalcnet - parseInt(ajoueur3) ) + 250 ) + " " + ( totalc ) + " " + jc + " " + c1 + " " + c2 + " " + c3 + " " + c4 + " " + c5 + " " + c6
                     + " " + c7 + " " + c8 + " " + c9 + " " + c10 + " " + c11 + " " + c12 + " " + c13 + " " + c14
                     + " " + c15 + " " + c16 + " " + c17 + " " + c18 + " " + ( totalc ) + " " + parseInt(ajoueur3) + " " + parseInt(br3) + " " + ( parseInt(br3) + ( parseInt(an3) + ( totalcnet - parseInt(ajoueur3) ) ) ) + " " + totalcal + " " + totalcre );
                     }
@@ -2612,7 +2647,6 @@
                                     dataReffinal.child(nomc).set({
                                         'nomc' : (nomc)
                                     }).then(()=>{
-                                        loadg.style.display='none';
                                     }).catch((error)=>{
                                         loadg.style.display='none';
                                         window.alert("erreur survenue 6 : "+ error);
@@ -2723,7 +2757,7 @@
                             }).then(()=>{
 
                                 loadg.style.display = 'none';
-                                window.alert("Sauvegarde reuissie.");
+                                // window.alert("Sauvegarde reuissie.");
                                             
                             }).catch((error)=>{
                                 loadg.style.display = 'none';
@@ -2793,7 +2827,7 @@
                             }).then(()=>{
 
                                 loadg.style.display = 'none';
-                                window.alert("Sauvegarde reuissie.");
+                                // window.alert("Sauvegarde reuissie.");
                                             
                             }).catch((error)=>{
                                 loadg.style.display = 'none';

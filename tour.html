@@ -57,18 +57,6 @@
         </section>
 
         <section id="toursliderabc" class="toursliderabc">
-
-            <video style="position: absolute; z-index: 2; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ;"
-             id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
-                 <source src="video.mp4" type="video/mp4">
-            </video>
-
-            <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ;"
-             id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
-                 <source src="live.mp4" type="video/mp4">
-            </video>
             
             <img style="position: absolute; z-index: 3; top: 0; width: 100%; height: 100%;
             filter: saturate(110%) ;  " id="photopost"
@@ -96,10 +84,11 @@
                         <option class="selectbox" value="2024 presidents cup golf club yaounde"> 2024 PRESIDENTS CUP</option>
                         <option class="selectbox" value="2024 presidents cup golf club yaounde"> 2024 PRESIDENTS CUP</option>
                     -->    
+                        <option class="selectbox" value="autre"> Selectionnez un tournoi ici</option>
                         <option class="selectbox" value="2024 open total energies gcy"> 2024 TOTAL ENERGIE</option>
                         <option class="selectbox" value="open national team j1"> open national team j1</option>
                         <option class="selectbox" value="open national team j2"> open national team j2</option>
-                        <option class="selectbox" value="autre"> Autre tournoi</option>
+                        <option class="selectbox" value="open national team j3"> open national team j3</option>
                     </select>
 
                 </div>
@@ -420,7 +409,6 @@
             }
         }, 12000);
 
-
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
@@ -454,10 +442,53 @@
             */
         }
 
+        /*
+
         
+        function videoshow() {
+            photopost.style.display="none";
+            videobb.play();
+            videobb.style.display="block";
+            videob.style.display="block";
 
+        
+            videobb.addEventListener('timeupdate', function() {
+                vidstartz = parseInt(videobb.currentTime);
+                videndz = parseInt(videobb.duration);
+                console.log(vidstartz);
+                if ((vidstartz == videndz) & (i == 1) ) {
+                    videobb.style.display="block";
+                    videob.style.display="none";
+                    photopost.style.display="none";
+                } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
+                    videobb.style.display="block";
+                    videob.style.display="none";
+                    photopost.style.display="none";
+                }
+            });
+            
+        }
 
-        /*var firstindex=0;
+        function videoshowb() {
+            videob.addEventListener('timeupdate', function() {
+                vidstart = parseInt(videob.currentTime);
+                vidend = parseInt(videob.duration);
+                console.log(vidstart);
+                if ((vidstart == vidend) & (i == 2) ) {
+                    videobb.style.display="none";
+                    videob.style.display="block";
+                    photopost.style.display="none";
+                } else if ((vidstart == (vidend - 1)) & (i == 2) ) {
+                    videobb.style.display="none";
+                    videob.style.display="block";
+                    photopost.style.display="none";
+                }
+            });
+        }
+        
+        
+        
+        var firstindex=0;
         function automaticslide(){
             setTimeout(automaticslide, 6000);
             var pics;
@@ -507,59 +538,11 @@
         var logogspob = document.getElementById("logogspob");      
         var logogspoc = document.getElementById("logogspoc");      
         var photopost = document.getElementById("photopost");       
-        var videobb = document.getElementById('videoplayb');
-        var videob = document.getElementById('videoplay');
         var barbox= document.getElementById('barbox');
-        var vidstartz = 0;
-        var videndz = 0;
-        var vidstart = 0;
-        var vidend = 0;
         var i = 0;
 
 
         
-        function videoshow() {
-            photopost.style.display="none";
-            videobb.play();
-            videobb.style.display="block";
-            videob.style.display="block";
-
-            /*
-            videobb.addEventListener('timeupdate', function() {
-                vidstartz = parseInt(videobb.currentTime);
-                videndz = parseInt(videobb.duration);
-                console.log(vidstartz);
-                if ((vidstartz == videndz) & (i == 1) ) {
-                    videobb.style.display="block";
-                    videob.style.display="none";
-                    photopost.style.display="none";
-                } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
-                    videobb.style.display="block";
-                    videob.style.display="none";
-                    photopost.style.display="none";
-                }
-            });
-            */
-        }
-
-        function videoshowb() {
-            videob.addEventListener('timeupdate', function() {
-                vidstart = parseInt(videob.currentTime);
-                vidend = parseInt(videob.duration);
-                console.log(vidstart);
-                if ((vidstart == vidend) & (i == 2) ) {
-                    videobb.style.display="none";
-                    videob.style.display="block";
-                    photopost.style.display="none";
-                } else if ((vidstart == (vidend - 1)) & (i == 2) ) {
-                    videobb.style.display="none";
-                    videob.style.display="block";
-                    photopost.style.display="none";
-                }
-            });
-        }
-        
-       
         var dataRefpost = firebase.database().ref("post");
         dataRefpost.on("value" , function(snapshot){
             snapshot.forEach(function(element){
@@ -631,10 +614,36 @@
                         logogspob.style.display="block";
                         logogspoc.style.display="block";
                         
+                        photopost.style.display="block";
+
                         i = 2;
                         
                         // videoshowb();
                  
+                    }  else if( element.val() == "A") {
+                        score.style.display="block";
+                        tab00.style.display="none";
+                        tab0.style.display="none";
+                        tab1.style.display="none";
+                        tab2.style.display="none";
+                        tab3.style.display="none";
+                        tab4.style.display="none";
+                        tab5.style.display="none";
+                        barbox.style.display="none";
+                        photo.style.display="none";
+                        golflogo.style.display="none";
+                        golflogoa.style.display="none";
+                        golflogob.style.display="none";
+                        golflogoc.style.display="none";
+                        logogspoa.style.display="none";
+                        logogspob.style.display="none";
+                        logogspoc.style.display="none";
+                        photopost.style.display="none";
+
+                        i = 1;
+                        //videoshow();
+
+
                     }
                 }
             });
@@ -726,7 +735,7 @@
                     namecompet.innerHTML= "of the competition" ;
                 } else {
 
-                    playaudio();
+                    // playaudio();
                     // videoshow();
                     // videobb.play();
                     // videob.play();
