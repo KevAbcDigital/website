@@ -557,10 +557,12 @@
             });
         }
         
+        /*
+        var timepage = 10000;
         var timepost = 0
         var firstindex=0;
         function automaticslidepage(){
-            setTimeout(automaticslidepage, 60000);
+            setTimeout(automaticslidepage, timepage);
             if (timepost == 0) {
                 score.style.display="block";
                 tab00.style.display="block";
@@ -579,11 +581,10 @@
                 logogspoa.style.display="none";
                 logogspob.style.display="none";
                 logogspoc.style.display="none";
-
                 photopost.style.display="none";
                 videobb.style.display="block";
                 // videob.style.display="none";
-                i = 1;
+                timepage = 10000;
             } else if (timepost == 1) {
                 score.style.display="block";
                 tab00.style.display="block";
@@ -602,11 +603,10 @@
                 logogspoa.style.display="none";
                 logogspob.style.display="none";
                 logogspoc.style.display="none";
-
                 photopost.style.display="none";
                 videobb.style.display="block";
                 // videob.style.display="none";
-                i = 1;
+                timepage = 10000;
             } else if (timepost == 2) {
                 score.style.display="block";
                 tab00.style.display="none";
@@ -625,19 +625,15 @@
                 logogspoa.style.display="none";
                 logogspob.style.display="none";
                 logogspoc.style.display="none";
-                        
                 photopost.style.display="none";
                 videobb.style.display="block";
-                // videob.style.display="none";
-
-                i = 1;
-                // videoshow();
                 timepost = 0;
+                timepage = 200;
             }   
             timepost++;
         }
         automaticslidepage();
-
+        */
 
 
         
@@ -2325,7 +2321,7 @@
 
         var mm = 1;
         function automaticslide(){
-            setTimeout(automaticslide, 6000);
+            setTimeout(automaticslide, 3000);
             if (mm == 1) {
                 leadimg.style.backgroundImage="url("+idal+")";
                 box1.style.backgroundColor="rgb(0, 161, 62)";
