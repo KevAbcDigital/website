@@ -67,12 +67,6 @@
             autoplay id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
                 <source src="video.mp4" type="video/mp4">
             </video>
-
-            <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none; " 
-            autoplay id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
-                <source src="live.mp4" type="video/mp4">
-            </video>
             
             <section class="score" id="score">
 
@@ -505,7 +499,15 @@
         var logogspob = document.getElementById("logogspob");      
         var logogspoc = document.getElementById("logogspoc");      
         var photopost = document.getElementById("photopost");       
-        var videob = document.getElementById("videoplayb");       
+        /*
+        var videob = document.getElementById("videoplayb");  
+        
+        <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto;
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; display: block; " 
+            autoplay id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
+                <source src="live.mp4" type="video/mp4">
+            </video>
+        */
         var videobb = document.getElementById("videoplay");       
         var barbox= document.getElementById('barbox');
         var i = 0;
@@ -518,11 +520,11 @@
                 console.log(vidstartz);
                 if ((vidstartz == videndz) & (i == 1) ) {
                     videobb.style.display="block";
-                    videob.style.display="none";
+                    // videob.style.display="none";
                     photopost.style.display="none";
                 } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
                     videobb.style.display="block";
-                    videob.style.display="none";
+                    // videob.style.display="none";
                     photopost.style.display="none";
                 }
             });
