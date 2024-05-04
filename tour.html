@@ -63,13 +63,13 @@
             src="toure.jpg" alt="image"> 
 
             <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; display: block; " 
             autoplay id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
                 <source src="video.mp4" type="video/mp4">
             </video>
 
             <video style="position: absolute; z-index: 0; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4) ; " 
+             filter: saturate(140%) contrast(103%) brightness(1.4) ; display: none; " 
             autoplay id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
                 <source src="live.mp4" type="video/mp4">
             </video>
@@ -573,7 +573,7 @@
                         logogspoc.style.display="none";
 
                         i = 1;
-                        // videoshow();
+                        videoshow();
  
                     } else if( element.val() == "P") {
                         score.style.display="block";
