@@ -386,22 +386,43 @@
 
     <script>
 
-        var firstindex=0;
-        function automaticscroll(){
-            setTimeout(automaticscroll, 30000);
+        var toursliderabc = document.getElementById('toursliderabc');
+        var toursliderabcphone = document.getElementById('toursliderabcphone');
+        
+        if ( (window.innerWidth) < 500) {
             
-            var up = false;
-            var interval = setInterval(function () {
-                var $container = $("#tab3");
-                var position = $container.scrollTop();
-                var height = $container[0].scrollHeight;
-                if(position >= 52) up = !up;
-                if(position == 0) {}
-                if (up) { $container.scrollTop(position - 52); } 
-                else { $container.scrollTop(position + 52);}
-            }, 10000);
+            toursliderabc.style.display="none";
+            toursliderabcphone.style.display="block";
+
+        } else if ( ((window.innerWidth) > 500) & ((window.innerWidth) < 1000)) {
+
+            toursliderabcphone.style.display="none";
+            toursliderabc.style.display="block";
+
+        } else if ( window.innerWidth > 1000) {
+
+            toursliderabcphone.style.display="none";
+            toursliderabc.style.display="block";
+
+            var firstindex=0;
+            function automaticscroll(){
+                setTimeout(automaticscroll, 70000);
+                
+                var up = false;
+                var interval = setInterval(function () {
+                    var $container = $("#tab3");
+                    var position = $container.scrollTop();
+                    var height = $container[0].scrollHeight;
+                    if(position >= 54) up = !up;
+                    if(position == 0) {}
+                    if (up) { $container.scrollTop(position - 54); } 
+                    else { $container.scrollTop(position + 54);}
+                }, 10000);
+            }
+            automaticscroll();
         }
-        automaticscroll();
+
+        
         
 
         
@@ -409,7 +430,7 @@
         
        
 
-
+        /*
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
@@ -424,6 +445,7 @@
                 toursliderabc.style.display="block";
             }
         });
+        */
 
         var loadgif = document.getElementById('loadgif');
         
