@@ -171,7 +171,7 @@ header {
 .entetescore {
   display: flex;
   z-index: 1000;
-  width: 94%;
+  width: 74%;
   top: 0;
   margin-left: 3%;
   position: relative;
@@ -293,10 +293,10 @@ header {
 }
 .score .barbox .bartab {
   width: 96.5%;
-  height: 1.4px;
-  filter: opacity(0.3);
+  height: 1.5px;
+  filter: opacity(0.2);
   margin-left: 1.8%;
-  margin-top: 25.7px;
+  margin-top: 2.15%;
   display: none;
   position: relative;
   box-shadow: -1px 12px 12px #5e6b64;
@@ -315,14 +315,14 @@ header {
   scrollbar-color: transparent;
 }
 .score .entetetab3 .boxentetejz {
-  width: 3%;
+  width: 3.1%;
   text-align: center;
   margin-top: 0px;
   margin-left: 0.2%;
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 18px;
+  font-size: 19px;
   color: white;
 }
 .score .entetetab3 .boxentetejw {
@@ -332,7 +332,7 @@ header {
   border-radius: 4px;
   height: max-content;
   text-align: center;
-  font-size: 18px;
+  font-size: 19px;
   color: white;
   text-transform: uppercase;
   text-align: start; 
@@ -340,14 +340,14 @@ header {
   padding-right: 10px;
 }
 .score .entete .boxentetejz {
-  width: 3%;
+  width: 3.1%;
   text-align: center;
   margin-top: 8px;
   margin-left: 0.2%;
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 18px;
+  font-size: 19px;
   color: white;
 }
 .score .entete .boxentetejw {
@@ -357,7 +357,7 @@ header {
   border-radius: 4px;
   height: max-content;
   text-align: center;
-  font-size: 18px;
+  font-size: 19px;
   color: white;
   text-transform: uppercase;
   text-align: start; 
@@ -1071,25 +1071,31 @@ header {
   z-index: 100;
   width: 100%;
   height: 100vh;
+  overflow: scroll;
+  overflow-y: scroll;
   padding-right: 5px;
   position: relative;
   align-items: center;
   justify-content: center;
 }
-.toursliderabc .entetescore {
+.toursliderabc .score {
+  overflow: scroll;
+  overflow-y: scroll;
+}
+
+.entetescore {
   display: flex;
   z-index: 1000;
-  width: 98%;
+  width: 100%;
   top: 0;
-  margin-left: 1%;
+  margin-left: 0%;
   position: relative;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  overflow-y: auto;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .entetescore .logogolf {
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   margin-left: 10px;
 }
 .entetescore .ttaz{
@@ -1153,6 +1159,16 @@ header {
   display: block;
 }
 
+.score {
+  display: block;
+  z-index: 1000;
+  width: 100%;
+  height: 70%;
+  top: 0;
+  margin-left: 0%;
+  position: relative;
+  padding-top: 3%;
+}
 .score .tt{
   font-size: 15px;
   color: rgb(255, 251, 210);
@@ -1208,64 +1224,59 @@ header {
   background-color: rgba(8, 54, 74, 0.904); 
   padding-left: 1.5%;
   padding-right: 1.5%;
-  overflow-y: scroll;
-  overflow: hidden;
+  overflow-y: none;
+  overflow: none;
   scrollbar-color: transparent;
 }
 .score .entetetab3 .boxentetejz {
-  width: 30px;
+  width: 3.5%;
   text-align: center;
-  margin-top: 14px;
-  margin-left: 1px;
+  margin-top: 0px;
+  margin-left: 0.2%;
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 8px;
+  font-size: 11px;
   color: white;
 }
 .score .entetetab3 .boxentetejw {
-  width: 31%;
+  width: 20%;
+  background-color: rgba(1, 21, 30, 0.973);
+  margin-top: 0px;
+  border-radius: 4px;
+  height: max-content;
   text-align: center;
-  margin-top: 14px;
-  height: content;
-  font-size: 8px;
+  font-size: 11px;
   color: white;
-  text-transform: lowercase;
+  text-transform: uppercase;
   text-align: start; 
-  padding-left: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-
 .score .entete .boxentetejz {
-  width: 30px;
+  width: 3.5%;
   text-align: center;
-  margin-top: 14px;
-  margin-left: 1px;
+  margin-top: 8px;
+  margin-left: 0.2%;
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 8px;
+  font-size: 11px;
   color: white;
 }
 .score .entete .boxentetejw {
-  width: 31%;
+  width: 20%;
+  background-color: rgba(1, 21, 30, 0.973);
+  margin-top: 8px;
+  border-radius: 4px;
+  height: max-content;
   text-align: center;
-  margin-top: 14px;
-  height: content;
-  font-size: 8px;
+  font-size: 11px;
   color: white;
-  text-transform: lowercase;
+  text-transform: uppercase;
   text-align: start; 
-  padding-left: 4px;
-}
-.score .entete .boxentetej {
-  width: 30px;
-  text-align: center;
-  margin-top: 14px;
-  height: content;
-  text-align: center;
-  border: 1px solid #a5d1ab7d;
-  font-size: 8px;
-  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .entetescoreb {
   display: block;
