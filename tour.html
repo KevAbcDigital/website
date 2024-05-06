@@ -24,62 +24,25 @@
 
     </head>
 
-    <body class="bod" style="background-color: rgb(255, 255, 255);">
-
-        <audio loop muted id="audioplay">
-            <source src="sonc.mp3" type="audio/mpeg">
-        </audio>
+    <body class="bod" style="background-color: rgb(0, 0, 0);">
 
         <section id="toursliderabcphone" class="toursliderabcphone" >
 
-            <select class="form-controlabc" id="listaction" onchange="getaction()">
-                <option class="selectbox" value="aucun">> Que souhaitez vous ? ...</option>
-                <option class="selectbox" value="touradd"> Créer un nouveau tour</option>
-                <option class="selectbox" style="background-color: red;" value="delete"> Supprimer un tour</option>
-                <option class="selectbox" value="carte"> Marquer un groupe</option>
-                <option class="selectbox" value="add"> Ajouter un profil</option>
-            </select>
-            
-            <b style="position: relative; margin-top: 40px; display: block; font-size: 13px; padding-left: 20px; 
-            color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran pour afficher le LEADERBOARD</b>
-            <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
-
-            <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
-
-            <img name="imgid" style="height: 100vh; margin-top: -70px; background-size: cover; background-position: center; " 
-            src="./design_files/images/fondtour.jpg" alt="image">    
-
-            
-            
-            <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; margin-bottom: 15px; background-color: transparent;" id="footer">
-                <p style=" width: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © - Golf Club Yoaundé </p>
+            <img name="imgid" style="width: 100%; background-size: cover; background-position: center; " 
+            src="./design_files/images/rot.gif" alt="image">    
+   
+            <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; margin-bottom: 45px; background-color: transparent;" id="footer">
+                <p style=" width: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 14px; 
+                font-weight: 700;" class="copyrigth"> Rotez l'ecran pour voir le leaderboard </p>
             </footer>
         </section>
 
         <section id="toursliderabc" class="toursliderabc">
             
-            <img style="position: absolute; z-index: 3; top: 0; width: 100%; height: 100%;
-            filter: saturate(110%) ;  " id="photopost"
-            src="toure.jpg" alt="image"> 
-
-            <video style="position: absolute; z-index: 2; top: 0; width: 100%; height: auto;
-             filter: saturate(140%) contrast(103%) brightness(1.4); " 
-            autoplay id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
-                <source src="video.mp4" type="video/mp4">
-            </video>
-
-            <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto; display: block; " 
-            autoplay id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
-                <source src="live.mp4" type="video/mp4">
-            </video>
-
-            
-            
             <section class="score" id="score">
 
                 <img id="lottieload" style="display: none; margin-top: 10%; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
 
-                
                 <div class="entete" id="tab0" style=" align-items: center; background-color: rgba(1, 21, 30, 0.973); padding-top: 10px; padding-bottom: 10px; height: 80px;">
 
                     <img name="imgid" class="logogolf" src="./design_files/images/logogd.png" alt="image">
@@ -101,7 +64,7 @@
                         <option class="selectbox" value="open national team j1"> open national team j1</option>
                         <option class="selectbox" value="open national team j2"> open national team j2</option>
                         <option class="selectbox" value="open national team j3"> open national team j3</option>
-                         <option class="selectbox" value="open national team j4"> open national team j4</option>
+                        <option class="selectbox" value="open national team j4"> open national team j4</option>
                     </select>
 
                 </div>
@@ -132,8 +95,8 @@
                     <b class="boxentetejz" style="border: none;">4</b>
                     <b class="boxentetejz" style="background-color: transparent;" >36</b>
                     <b class="boxentetejz" style="margin-left: 1%; border: none; background-color: transparent;" ></b>
-                    <b class="boxentetejz" style="width: 5%; border: none; background-color: transparent;" ></b>
-                    <b class="boxentetejz" style="width: 5%; border: none; background-color: transparent;" ></b>
+                    <b class="boxentetejz" style="width: 4%; border: none; background-color: transparent;" ></b>
+                    <b class="boxentetejz" style="width: 4%; border: none; background-color: transparent;" ></b>
          
                 </div>
 
@@ -163,32 +126,12 @@
                     <b class="boxentetejz" >18</b>
                     <b class="boxentetejz" style="background-color: rgb(255, 255, 0); color: #010e71; border: 1px solid #ffffff;" >Re</b>
                     <b class="boxentetejz" style="margin-left: 1%; background-color: transparent; font-weight: 500; border: none; border-radius: 4px;" >par</b>
-                    <b class="boxentetejz" style="width: 5%; background-color: transparent; font-weight: 500; border: none; border-radius: 4px;" ></b>
-                    <b class="boxentetejz" style="width: 5%; background-color: #05991d; color: #ffffff; border-radius: 4px;" >Total</b>
+                    <b class="boxentetejz" style="width: 4%; background-color: transparent; font-weight: 500; border: none; border-radius: 4px;" ></b>
+                    <b class="boxentetejz" style="width: 4%; background-color: #05991d; color: #ffffff; border-radius: 4px;" >Total</b>
 
                 </div>
 
-                <div class="barbox" id="barbox">
-                    <img id="ba" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bb" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bc" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bd" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="be" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bf" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bg" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bh" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bi" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bj" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bk" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bl" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bm" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bn" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bo" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    <img id="bp" class="bartab" src="./design_files/images/bartour.png" alt="image">
-                    
-                </div>
-
-                <div class="entetetab3" id="tab3" >
+                <div class="entete" id="tab3" >
                     
                     <b class="boxentetejz" style="background-color: rgb(0, 82, 5); border-radius: 2px; border: 1px solid #ffffff;" id="rank"onclick="play()" ></b>                
                     <b class="boxentetejz" style="border: 1px solid #ffffff; border-radius: 2px; background-color: #00515f;"  id="hcp"onclick="play()" ></b>        
@@ -214,108 +157,13 @@
                     <b class="boxentetejz" id="h18" ></b>
                     <b class="boxentetejz" style="background-color: rgba(1, 21, 30, 0.973); color: #eeff06; border: none;"  id="hre" ></b>
                     <b class="boxentetejz" style="margin-left: 1%; color: white; font-weight: 500; border: none; " id="day" ></b>
-                    <b class="boxentetejz" style="width: 5%; background-color: transparent; font-weight: 500; border: none; color: #ebd000; " id="last" ></b>        
-                    <b class="boxentetejz" style="width: 5%; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
+                    <b class="boxentetejz" style="width: 4%; background-color: transparent; font-weight: 500; border: none; color: #ebd000; " id="last" ></b>        
+                    <b class="boxentetejz" style="width: 4%; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
                 </div>
 
                 
 
             </section>
-
-            <div class="scoreboxb" id="photo" style=" background-color: rgb(3, 31, 48);">
-
-                <div class="leadimg" id="leadimg">
-                    <b class="tt" style="position: relative; width: 45%; margin-top: 15%;
-                    border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-color: #020d18b9; 
-                    color: #fbffdbee; text-align: center; display: block;" > # TOP 10</b>
-
-                    <b class="tt" style=" position: relative; width: 45%; margin-top: 1px;
-                    border-top-right-radius: 10px; border-bottom-right-radius: 10px;
-                    color: #fbffdbee; text-align: center; display: block; font-size: 8px;" id="namecompet" > of the Competition ...</b>
-                </div>
-            
-                <div class="rankimg" id="box1" >
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >1er</b>
-                    <div class="logogoboxb" id="paysfirstb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #0214258b; color: #fbffdbee; text-align: center; display: block;" id="nomfirstb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorefirstb" >Score</b>
-                    <div class="logogobox" id="imagefirstb"></div>
-                </div>
-                   
-               <div class="rankimg" id="box2" >
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >2è</b>
-                    <div class="logogoboxb" id="payssecondb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #0214256f; color: #fbffdbee; text-align: center; display: block;" id="nomsecondb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoresecondb" >Score</b>
-                    <div class="logogobox" id="imagesecondb"></div>
-                </div>
-            
-               <div class="rankimg" id="box3">
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >3è</b>
-                    <div class="logogoboxb" id="paysthirdb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #02142555 ; color: #fbffdbee; text-align: center; display: block;" id="nomthirdb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorethirdb" >Score</b>
-                    <div class="logogobox" id="imagethirdb"></div>
-                </div>
-            
-                <div class="rankimg" id="box4" >
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >4è</b>
-                    <div class="logogoboxb" id="paysfourb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #0214253e ; color: #fbffdbee; text-align: center; display: block;" id="nomfourb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorefourb" >Score</b>
-                    <div class="logogobox" id="imagefourb"></div>
-                </div>
-            
-                <div class="rankimg" id="box5">
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >5è</b>
-                    <div class="logogoboxb" id="paysfiveb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #02142521 ; color: #fbffdbee; text-align: center; display: block;" id="nomfiveb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorefiveb" >Score</b>
-                    <div class="logogobox" id="imagefiveb"></div>
-                </div>
-            
-                <div class="rankimg" id="box6">
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >6è</b>
-                    <div class="logogoboxb" id="payssixb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #0214250e ; color: #fbffdbee; text-align: center; display: block;" id="nomsixb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoresixb" >Score</b>
-                    <div class="logogobox" id="imagesixb"></div>
-                </div>
-            
-                <div class="rankimg" id="box7">
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >7è</b>
-                    <div class="logogoboxb" id="payssevenb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #02142558 ; color: #fbffdbee; text-align: center; display: block;" id="nomsevenb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoresevenb" >Score</b>
-                    <div class="logogobox" id="imagesevenb"></div>
-                </div>
-
-                <div class="rankimg" id="box8" >
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >8è</b>
-                    <div class="logogoboxb" id="paysheightb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #02142558 ; color: #fbffdbee; text-align: center; display: block;" id="nomheightb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoreheightb" >Score</b>
-                    <div class="logogobox" id="imageheightb"></div>
-                </div>
-
-
-                <div class="rankimg" id="box9">
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >9è</b>
-                    <div class="logogoboxb" id="paysnineb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #02142558 ; color: #fbffdbee; text-align: center; display: block;" id="nomnineb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scorenineb" >Score</b>
-                    <div class="logogobox" id="imagenineb"></div>
-                </div>
-
-                <div class="rankimg" id="box10" >
-                    <b class="ttaz" style=" margin-left: 2%; width: 4%; font-size: 26px; color: #fbffdbee; display: block;" >10è</b>
-                    <div class="logogoboxb" id="paystenb"></div>
-                    <b class="tt" style="margin-left: 2%; background-color: #02142558 ; color: #fbffdbee; text-align: center; display: block;" id="nomtenb" >Player</b>
-                    <b class="ttaz" style="margin-left: 2%; width: 8%; font-size: 32px; background-color: #2b06ff; border-radius: 4px; color: #ffffffee; display: block; text-align: center;" id="scoretenb" >Score</b>
-                    <div class="logogobox" id="imagetenb"></div>
-                </div>
-            
-            </div>
 
             <section id="tab4" class="entetescore" style=" align-items: center;
              background-color: rgba(1, 21, 30, 0.973); padding-top: 10px;
@@ -351,32 +199,7 @@
 
                 <img style="width: 2px;" class="logogolf" src="./design_files/images/bartour.png" alt="image">
 
-                <img style="position: absolute; right: 0; margin-right: 10px;" class="logogolf" src="./design_files/images/fondtest.gif" alt="image">
 
-            </section>
-
-
-            <img id="golflogo" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; 
-            margin-top: 10px; margin-left: 10px;  width: 110px; height: 110px;" src="./design_files/images/logogd.png" alt="image">
-
-            <img id="golflogoza" class="logogolfaz" style="position: absolute; top: 0; z-index: 5; display: none; left: 0; margin: 2%;
-            margin-top: 120px; margin-left: 10px; width: 120px; height: 310px;" src="liveimg.png" alt="image">
-
-            <section id="tab5" class="entetescoreb" style=" align-items: center; background-color: rgba(20, 69, 78, 0.87);">
-
-                <div style="margin-top: 5px; display: flex;">
-                    <b class="boxe" style="font-size: 13px; color: white; width: 5%; margin-left: 1%;" >Rank</b>                
-                    <b class="boxe" style="font-size: 13px; color: white; width: 55%; margin-left: 4%;"></b>                
-                    <b class="boxe" style="font-size: 13px; color: white; width: 10%; text-align: center; border-radius: none; background-color: rgb(8, 100, 39);">Today</b>                
-                    <b class="boxe" style="font-size: 13px; color: rgb(255, 239, 9);margin-left: 5%; width: 5%;">Total</b>                
-                </div>
-
-                <div style="margin-top: 5px; display: flex;">
-                    <b class="boxe" style="color: white; width: 5%; margin-left: 1%;" id="rankb">0</b>                
-                    <b class="boxe" style="color: white; width: 60%; margin-left: 2%;" id="playersb">Players</b>                
-                    <b class="boxe" style="color: white; width: 10%; text-align: center; border-radius: none; background-color: rgb(8, 100, 39); " id="dayb">00</b>                
-                    <b class="boxe" style="color: rgb(255, 239, 9);margin-left: 5%; width: 5%;" id="totalb">00</b>                
-                </div>
             </section>
 
         </section>
@@ -389,6 +212,7 @@
 
         var toursliderabc = document.getElementById('toursliderabc');
         var toursliderabcphone = document.getElementById('toursliderabcphone');
+        
         
         if ( (window.innerWidth) < 500) {
             
@@ -405,33 +229,8 @@
             toursliderabcphone.style.display="none";
             toursliderabc.style.display="block";
 
-            var firstindex=0;
-            function automaticscroll(){
-                setTimeout(automaticscroll, 70000);
-                
-                var up = false;
-                var interval = setInterval(function () {
-                    var $container = $("#tab3");
-                    var position = $container.scrollTop();
-                    var height = $container[0].scrollHeight;
-                    if(position >= 54) up = !up;
-                    if(position == 0) {}
-                    if (up) { $container.scrollTop(position - 54); } 
-                    else { $container.scrollTop(position + 54);}
-                }, 10000);
-            }
-            automaticscroll();
         }
-
         
-        
-
-        
-  
-        
-       
-
-        /*
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
@@ -446,43 +245,8 @@
                 toursliderabc.style.display="block";
             }
         });
-        */
-
-        var loadgif = document.getElementById('loadgif');
         
-        function playaudio() {
-            var audio = document.getElementById('audioplay');
-            audio.play();    
-            audio.muted=false;
-            /*
-            audio.addEventListener('timeupdate', function() {
-                var audstart = parseInt(audio.currentTime);
-                var audend = parseInt(audio.duration);
-                console.log(audstart);
-                if (audstart == audend) {
-                    audio.muted = false ;
-                }
-            });
-            */
-        }
-
-        /* 
-        var firstindex=0;
-        function automaticslide(){
-            setTimeout(automaticslide, 6000);
-            var pics;
-            const img = document.getElementsByClassName('slideidaaab');
-            for(pics=0; pics<img.length; pics++) {
-                img[pics].style.display="none";
-            }
-            firstindex++;
-            if(firstindex > img.length) {
-                firstindex = 1;
-            }
-            img[firstindex - 1].style.display="block";
-        }
-        automaticslide();
-*/
+        var loadgif = document.getElementById('loadgif');
 
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
@@ -498,257 +262,11 @@
     
         const database = firebase.database();
 
-        var charge = "aucun";
-    
-        var score = document.getElementById("score");       
-        var tab0 = document.getElementById("tab0");       
-        var tab1 = document.getElementById("tab1");       
-        var tab2 = document.getElementById("tab2");       
-        var tab3 = document.getElementById("tab3");       
-        var tab5 = document.getElementById("tab5");       
-        var tab4 = document.getElementById("tab4");       
-        var photo = document.getElementById("photo");       
-        var golflogoa = document.getElementById("golflogoza");       
-        var golflogo = document.getElementById("golflogo");            
-        var photopost = document.getElementById("photopost");       
-        var videobb = document.getElementById("videoplay");  
-        var videob = document.getElementById("videoplayb");  
-
-        /*
-        var videob = document.getElementById("videoplayb");  
-        
-        
-            
-        */
-        var videobb = document.getElementById("videoplay");       
-        var barbox= document.getElementById('barbox');
-        var i = 0;
-
-        function videoshow() {
-
-            videobb.addEventListener('timeupdate', function() {
-                vidstartz = parseInt(videobb.currentTime);
-                videndz = parseInt(videobb.duration);
-                console.log(vidstartz);
-                if ((vidstartz == videndz) & (i == 1) ) {
-                    videobb.style.display="block";
-                    // videob.style.display="none";
-                    photopost.style.display="none";
-                } else if ((vidstartz == (videndz - 1)) & (i == 1) ) {
-                    videobb.style.display="block";
-                    // videob.style.display="none";
-                    photopost.style.display="none";
-                }
-            });
-            
-        }
-
-        function videoshowb() {
-            videob.addEventListener('timeupdate', function() {
-                vidstart = parseInt(videob.currentTime);
-                vidend = parseInt(videob.duration);
-                console.log(vidstart);
-                if ((vidstart == vidend) & (i == 2) ) {
-                    videobb.style.display="none";
-                    videob.style.display="block";
-                    photopost.style.display="none";
-                } else if ((vidstart == (vidend - 1)) & (i == 2) ) {
-                    videobb.style.display="none";
-                    videob.style.display="block";
-                    photopost.style.display="none";
-                }
-            });
-        }
-        
-        /*
-        var timepage = 10000;
-        var timepost = 0
-        var firstindex=0;
-        function automaticslidepage(){
-            setTimeout(automaticslidepage, timepage);
-            if (timepost == 0) {
-                score.style.display="block";
-                tab00.style.display="block";
-                tab0.style.display="flex";
-                tab1.style.display="flex";
-                tab2.style.display="flex";
-                tab3.style.display="flex";
-                tab4.style.display="flex";
-                tab5.style.display="none";
-                barbox.style.display="block";
-                photo.style.display="none";
-                golflogo.style.display="none";
-                golflogoa.style.display="none";
-                golflogob.style.display="none";
-                golflogoc.style.display="none";
-                logogspoa.style.display="none";
-                logogspob.style.display="none";
-                logogspoc.style.display="none";
-                photopost.style.display="none";
-                videobb.style.display="block";
-                // videob.style.display="none";
-                timepage = 10000;
-            } else if (timepost == 1) {
-                score.style.display="block";
-                tab00.style.display="block";
-                tab0.style.display="flex";
-                tab1.style.display="flex";
-                tab2.style.display="flex";
-                tab3.style.display="flex";
-                tab4.style.display="flex";
-                tab5.style.display="none";
-                barbox.style.display="block";
-                photo.style.display="none";
-                golflogo.style.display="none";
-                golflogoa.style.display="none";
-                golflogob.style.display="none";
-                golflogoc.style.display="none";
-                logogspoa.style.display="none";
-                logogspob.style.display="none";
-                logogspoc.style.display="none";
-                photopost.style.display="none";
-                videobb.style.display="block";
-                // videob.style.display="none";
-                timepage = 10000;
-            } else if (timepost == 2) {
-                score.style.display="block";
-                tab00.style.display="none";
-                tab0.style.display="none";
-                tab1.style.display="none";
-                tab2.style.display="none";
-                tab3.style.display="none";
-                tab4.style.display="none";
-                tab5.style.display="none";
-                barbox.style.display="none";
-                photo.style.display="block";
-                golflogo.style.display="none";
-                golflogoa.style.display="none";
-                golflogob.style.display="none";
-                golflogoc.style.display="none";
-                logogspoa.style.display="none";
-                logogspob.style.display="none";
-                logogspoc.style.display="none";
-                photopost.style.display="none";
-                videobb.style.display="block";
-                timepost = 0;
-                timepage = 200;
-            }   
-            timepost++;
-        }
-        automaticslidepage();
-        */
-
-
-        
-        var dataRefpost = firebase.database().ref("post");
-        dataRefpost.on("value" , function(snapshot){
-            snapshot.forEach(function(element){
-                if (element.key == "state") {
-
-                    if( element.val() == "T") {
-                        score.style.display="block";
-                        tab0.style.display="flex";
-                        tab1.style.display="flex";
-                        tab2.style.display="flex";
-                        tab3.style.display="flex";
-                        tab4.style.display="flex";
-                        tab5.style.display="none";
-                        barbox.style.display="block";
-                        photo.style.display="none";
-                        golflogo.style.display="none";
-                        golflogoa.style.display="none";
-                        i = 1;
-                        // videoshow();
-                        videobb.style.display="block";
-                        videob.style.display="none";
-                        photopost.style.display="none";
-
- 
-                    } else if( element.val() == "P") {
-                        score.style.display="block";
-                        tab0.style.display="none";
-                        tab1.style.display="none";
-                        tab2.style.display="none";
-                        tab3.style.display="none";
-                        tab4.style.display="none";
-                        tab5.style.display="none";
-                        barbox.style.display="none";
-                        photo.style.display="block";
-                        golflogo.style.display="none";
-                        golflogoa.style.display="none";
-                        videobb.style.display="none";
-                        videob.style.display="block";
-                        photopost.style.display="none";
-
-                        i = 1;
-                        // videoshow();
-
-                    } else if( element.val() == "V") {
-                        score.style.display="none";
-                        tab0.style.display="none";
-                        tab1.style.display="none";
-                        tab2.style.display="none";
-                        tab3.style.display="none";
-                        tab4.style.display="none";
-                        tab5.style.display="block";
-                        barbox.style.display="none";
-                        photo.style.display="none";
-                        golflogo.style.display="block";
-                        golflogoa.style.display="block";
-                        videobb.style.display="none";
-                        videob.style.display="block";
-                        photopost.style.display="none";
-                        i = 2;
-                        // videoshowb();
-                 
-                    }  else if( element.val() == "A") {
-                        score.style.display="none";
-                        tab0.style.display="none";
-                        tab1.style.display="none";
-                        tab2.style.display="none";
-                        tab3.style.display="none";
-                        tab4.style.display="none";
-                        tab5.style.display="none";
-                        barbox.style.display="none";
-                        photo.style.display="none";
-                        golflogo.style.display="none";
-                        golflogoa.style.display="none";
-                        photopost.style.display="none";
-
-                        i = 1;
-                        // videoshow();
-
-                    }
-                }
-            });
-        });
-
-        var idal = "profileimg.png";
-        var idbl = "profileimg.png";
-        var idcl = "profileimg.png";
-        var iddl = "profileimg.png";
-        var idel = "profileimg.png";
-        var idfl = "profileimg.png";
-        var idgl = "profileimg.png";
-        var idhl = "profileimg.png";
-        var idil = "profileimg.png";
-        var idjl = "profileimg.png";
-
-        var box1= document.getElementById("box1");               
-        var box2= document.getElementById("box2");               
-        var box3= document.getElementById("box3");               
-        var box4= document.getElementById("box4");               
-        var box5= document.getElementById("box5");               
-        var box6= document.getElementById("box6");               
-        var box7= document.getElementById("box7");               
-        var box8= document.getElementById("box8");               
-        var box9= document.getElementById("box9");               
-        var box10= document.getElementById("box10");          
+        var charge = "aucun";    
 
 
         function getvalue(){       
         var nompart = document.getElementById("nompart");       
-        var namecompet = document.getElementById("namecompet");       
         var codesearchz = document.getElementById("list").value; 
         var load = document.getElementById("lottieload");   
         var dataRef = firebase.database().ref("open");
@@ -794,7 +312,6 @@
                     if(element.key == codesearch ) {
                         a=1;
                         nompart.innerHTML= codesearch ;
-                        namecompet.innerHTML= codesearch ;
                     }
                 });
                 
@@ -803,84 +320,24 @@
                     load.style.display = "none";
                     // window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
                     nompart.innerHTML= "Aucun Tournoi trouvé" ;
-                    namecompet.innerHTML= "of the competition" ;
                 } else {
 
-                    playaudio();
-                    // videobb.play();
-                    // videob.play();
-
+                   
                     charge = codesearch;
                     load.style.display = "none";
                     var dataRefauto = firebase.database().ref("open").child(codesearch);
                     var i = 0 ;
 
                     var ba = document.getElementById("ba");                
-                    var bb = document.getElementById("bb");                
-                    var bc = document.getElementById("bc");                
-                    var bd = document.getElementById("bd");                
-                    var be = document.getElementById("be");                
-                    var bf = document.getElementById("bf");                
-                    var bg = document.getElementById("bg");                
-                    var bh = document.getElementById("bh");                
-                    var bi = document.getElementById("bi");                
-                    var bj = document.getElementById("bj");    
-                    var bk = document.getElementById("bk");                
-                    var bl = document.getElementById("bl");                
-                    var bm = document.getElementById("bm");                
-                    var bn = document.getElementById("bn");                
-                    var bo = document.getElementById("bo");                
-                    var bp = document.getElementById("bp");                            
+                                 
 
                     var ia = document.getElementById("imagefirst");               
                     var ib = document.getElementById("imagesecond");               
                     var ic = document.getElementById("imagethird");    
-                    
-                    var ida = "profileimg.png";
-                    var idb = "profileimg.png";
-                    var idc = "profileimg.png";
-                    var idd = "profileimg.png";
-                    var ide = "profileimg.png";
-                    var idf = "profileimg.png";
-                    var idg = "profileimg.png";
-                    var idh = "profileimg.png";
-                    var idi = "profileimg.png";
-                    var idj = "profileimg.png";
-        
-
-                    var iab = document.getElementById("imagefirstb");               
-                    var ibb = document.getElementById("imagesecondb");               
-                    var icb = document.getElementById("imagethirdb");   
-                    var iddb = document.getElementById("imagefourb");               
-                    var ieb = document.getElementById("imagefiveb");               
-                    var ifb = document.getElementById("imagesixb");   
-                    var igb = document.getElementById("imagesevenb");  
-                    var ihb = document.getElementById("imageheightb");  
-                    var iib = document.getElementById("imagenineb");  
-                    var ijb = document.getElementById("imagetenb");  
-                    var leadimg = document.getElementById("leadimg");  
-                    
-                    var iabb = document.getElementById("paysfirstb");               
-                    var ibbb = document.getElementById("payssecondb");               
-                    var icbb = document.getElementById("paysthirdb");   
-                    var idbb = document.getElementById("paysfourb");               
-                    var iebb = document.getElementById("paysfiveb");               
-                    var ifbb = document.getElementById("payssixb");   
-                    var igbb = document.getElementById("payssevenb");  
-                    var ihbb = document.getElementById("paysheightb");  
-                    var iibb = document.getElementById("paysnineb");  
-                    var ijbb = document.getElementById("paystenb");  
-                    
-                
 
                         dataRefauto.on("value" , function(snapshot){
 
                             i=0;
-
-                            document.querySelector('#rankb').innerHTML = "";
-                            document.querySelector('#playersb').innerHTML = "";
-                            document.querySelector('#dayb').innerHTML = "";
-                            document.querySelector('#totalb').innerHTML = "";
 
                             document.querySelector('#rank').innerHTML = "";
                             document.querySelector('#hcp').innerHTML = "";
@@ -909,65 +366,22 @@
                             document.querySelector('#hal').innerHTML = "";
                             document.querySelector('#hre').innerHTML = "";
 
-                            leadimg.style.backgroundImage= "url('profileimg.png')";
-
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomfirst').innerHTML = "";
                             document.querySelector('#scorefirst').innerHTML = "";
                             ia.style.backgroundImage= "url('profileimg.png')";
-                            iab.style.backgroundImage= "url('profileimg.png')";
-                            iabb.style.backgroundImage= "url('bartour.png')";
-
+                           
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomsecond').innerHTML = "";
                             document.querySelector('#scoresecond').innerHTML = "";
                             ib.style.backgroundImage= "url('profileimg.png')";
-                            ibb.style.backgroundImage= "url('profileimg.png')";
-                            ibbb.style.backgroundImage= "url('bartour.png')";
-
-
+                           
                             // document.querySelector('#day').innerHTML = "";
                             document.querySelector('#nomthird').innerHTML = "";
                             document.querySelector('#scorethird').innerHTML = "";
                             ic.style.backgroundImage= "url('profileimg.png')";
-                            icb.style.backgroundImage= "url('profileimg.png')";
-                            icbb.style.backgroundImage= "url('bartour.png')";
-
-                            document.querySelector('#nomfourb').innerHTML = "";
-                            document.querySelector('#scorefourb').innerHTML = "";
-                            iddb.style.backgroundImage= "url('profileimg.png')";
-                            idbb.style.backgroundImage= "url('bartour.png')";
-
-                            document.querySelector('#nomfiveb').innerHTML = "";
-                            document.querySelector('#scorefiveb').innerHTML = "";
-                            ieb.style.backgroundImage= "url('profileimg.png')";
-                            iebb.style.backgroundImage= "url('bartour.png')";
-
-                            document.querySelector('#nomsixb').innerHTML = "";
-                            document.querySelector('#scoresixb').innerHTML = "";
-                            ifb.style.backgroundImage= "url('profileimg.png')";
-                            ifbb.style.backgroundImage= "url('bartour.png')";
-                            
-                            document.querySelector('#nomsevenb').innerHTML = "";
-                            document.querySelector('#scoresevenb').innerHTML = "";
-                            igb.style.backgroundImage= "url('profileimg.png')";
-                            igbb.style.backgroundImage= "url('bartour.png')";
-
-                            document.querySelector('#nomheightb').innerHTML = "";
-                            document.querySelector('#scoreheightb').innerHTML = "";
-                            ihb.style.backgroundImage= "url('profileimg.png')";
-                            ihbb.style.backgroundImage= "url('bartour.png')";
-
-                            document.querySelector('#nomnineb').innerHTML = "";
-                            document.querySelector('#scorenineb').innerHTML = "";
-                            iib.style.backgroundImage= "url('profileimg.png')";
-                            iibb.style.backgroundImage= "url('bartour.png')";
-
-                            document.querySelector('#nomtenb').innerHTML = "";
-                            document.querySelector('#scoretenb').innerHTML = "";
-                            ijb.style.backgroundImage= "url('profileimg.png')";
-                            ijbb.style.backgroundImage= "url('bartour.png')";
-                            
+                       
+                          
                             
                             var dim = 0;
                             var newh1 = "";
@@ -1011,14 +425,6 @@
 
                                 i = i + 1;
                                 dim = dim + 1 ;
-
-                                if (i<6) {
-                                    document.querySelector('#rankb').innerHTML+=`<div>${ i.toString() }</div>`
-                                    document.querySelector('#playersb').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
-                                    document.querySelector('#dayb').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [28] ) }</div>`                    
-                                    document.querySelector('#totalb').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [25] ) }</div>`                    
-
-                                }
                                 
                                 document.querySelector('#rank').innerHTML+=`<div>${ i.toString() }</div>`
                                 document.querySelector('#players').innerHTML+=`<div>${ ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) }</div>`
@@ -1048,522 +454,53 @@
                                 newh17 +=( ( (element.key).split(" ") ) [20] ) ;
                                 newh18 +=( ( (element.key).split(" ") ) [21] ) ;
                                 
-                                if (i==0) {
-                                    ba.style.display="none";
-                                    bb.style.display="none";
-                                    bc.style.display="none";
-                                    bd.style.display="none";
-                                    be.style.display="none";
-                                    bf.style.display="none";
-                                    bg.style.display="none";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                   
+                                if (i==0) { 
                                 } 
                                 else if (i==1) {
-                                    ba.style.display="block";
-                                    bb.style.display="none";
-                                    bc.style.display="none";
-                                    bd.style.display="none";
-                                    be.style.display="none";
-                                    bf.style.display="none";
-                                    bg.style.display="none";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
                                    
                                     document.querySelector('#nomfirst').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
                                     ida = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase() ;                                    
-                                    document.querySelector('#nomfirstb').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
                                         document.querySelector('#scorefirst').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                        document.querySelector('#scorefirstb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
                                         document.querySelector('#scorefirst').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                        document.querySelector('#scorefirstb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
                                         document.querySelector('#scorefirst').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                        document.querySelector('#scorefirstb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
                                         document.querySelector('#scorefirst').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                        document.querySelector('#scorefirstb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
                                     }
                                     
                                 } 
                                 else if (i==2) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="none";
-                                    bd.style.display="none";
-                                    be.style.display="none";
-                                    bf.style.display="none";
-                                    bg.style.display="none";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
                                     
                                     document.querySelector('#nomsecond').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     idb = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomsecondb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
                                         document.querySelector('#scoresecond').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                        document.querySelector('#scoresecondb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
                                         document.querySelector('#scoresecond').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                        document.querySelector('#scoresecondb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
                                         document.querySelector('#scoresecond').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                        document.querySelector('#scoresecondb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
                                         document.querySelector('#scoresecond').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                        document.querySelector('#scoresecondb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
                                     }
                                 } 
                                 else if (i==3) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="none";
-                                    be.style.display="none";
-                                    bf.style.display="none";
-                                    bg.style.display="none";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
+                                
                                
                                     document.querySelector('#nomthird').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     idc = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomthirdb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
                                         document.querySelector('#scorethird').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                        document.querySelector('#scorethirdb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
                                         document.querySelector('#scorethird').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                        document.querySelector('#scorethirdb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
                                         document.querySelector('#scorethird').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                        document.querySelector('#scorethirdb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
                                     } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
                                         document.querySelector('#scorethird').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                        document.querySelector('#scorethirdb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
                                     }
                                 } 
-                                else if (i==4) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="none";
-                                    bf.style.display="none";
-                                    bg.style.display="none";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                    idd = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomfourb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
-                                        document.querySelector('#scorefourb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
-                                        document.querySelector('#scorefourb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
-                                        document.querySelector('#scorefourb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
-                                        document.querySelector('#scorefourb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                    }
-                                } 
-                                else if (i==5) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="none";
-                                    bg.style.display="none";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                    ide = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomfiveb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
-                                        document.querySelector('#scorefiveb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
-                                        document.querySelector('#scorefiveb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
-                                        document.querySelector('#scorefiveb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
-                                        document.querySelector('#scorefiveb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                    }
-                                } 
-                                else if (i==6) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="none";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                    idf = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomsixb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
-                                        document.querySelector('#scoresixb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
-                                        document.querySelector('#scoresixb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
-                                        document.querySelector('#scoresixb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
-                                        document.querySelector('#scoresixb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                    }
-                                } 
-                                else if (i==7) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="none";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                    idg = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomsevenb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
-                                        document.querySelector('#scoresevenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
-                                        document.querySelector('#scoresevenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
-                                        document.querySelector('#scoresevenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
-                                        document.querySelector('#scoresevenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                    }
-                                } 
-                                else if (i==8) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="none";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                   
-                                    idh = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomheightb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
-                                        document.querySelector('#scoreheightb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
-                                        document.querySelector('#scoreheightb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
-                                        document.querySelector('#scoreheightb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
-                                        document.querySelector('#scoreheightb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                    }
-                                } 
-                                else if (i==9) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="none";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                    idi = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomnineb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
-                                        document.querySelector('#scorenineb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
-                                        document.querySelector('#scorenineb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
-                                        document.querySelector('#scorenineb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
-                                        document.querySelector('#scorenineb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                    }
-                                } 
-                                else if (i==10) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="none";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                    idj = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
-                                    document.querySelector('#nomtenb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
-                                    if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
-                                        document.querySelector('#scoretenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 0 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 52 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 102 ) ) {
-                                        document.querySelector('#scoretenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 72 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 102 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 172 ) ) {
-                                        document.querySelector('#scoretenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 144 ) ;
-                                    } else if ( ( parseInt(( (element.key).split(" ") ) [24]) > 180 ) & ( parseInt(( (element.key).split(" ") ) [24]) < 252 ) ) {
-                                        document.querySelector('#scoretenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
-                                    }
-                                } 
-                                else if (i==11) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="none";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                } 
-                                else if (i==12) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="none";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                } 
-                                else if (i==13) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="block";
-                                    bn.style.display="none";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                } 
-                                else if (i==14) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="block";
-                                    bn.style.display="block";
-                                    bo.style.display="none";
-                                    bp.style.display="none";
-                                    
-                                } 
-                                else if (i==15) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="block";
-                                    bn.style.display="block";
-                                    bo.style.display="block";
-                                    bp.style.display="none";
-                                    
-                                } 
-                                else if (i==16) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="block";
-                                    bn.style.display="block";
-                                    bo.style.display="block";
-                                    bp.style.display="block";
-                                    
-                                } 
-                            /*
-                                else if (i==17) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="block";
-                                    bn.style.display="block";
-                                    bo.style.display="block";
-                                    bp.style.display="block";
-                                    bq.style.display="block";
-                                    br.style.display="none";
-                                    bs.style.display="none";
-                                } 
-                                else if (i==18) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="block";
-                                    bn.style.display="block";
-                                    bo.style.display="block";
-                                    bp.style.display="block";
-                                    bq.style.display="block";
-                                    br.style.display="block";
-                                    bs.style.display="none";
-                                }
-                                else if (i==19) {
-                                    ba.style.display="block";
-                                    bb.style.display="block";
-                                    bc.style.display="block";
-                                    bd.style.display="block";
-                                    be.style.display="block";
-                                    bf.style.display="block";
-                                    bg.style.display="block";
-                                    bh.style.display="block";
-                                    bi.style.display="block";
-                                    bj.style.display="block";
-                                    bk.style.display="block";
-                                    bl.style.display="block";
-                                    bm.style.display="block";
-                                    bn.style.display="block";
-                                    bo.style.display="block";
-                                    bp.style.display="block";
-                                    bq.style.display="block";
-                                    br.style.display="block";
-                                    bs.style.display="block";
-                                }
-                            */
-                            
+                
                         });        
 
                         dim = dim*2;
@@ -2116,12 +1053,7 @@
                                     snapshota.forEach(function(elementa){
                                         if(elementa.key == "url") {
                                             ia.style.backgroundImage="url("+elementa.val()+")";
-                                            iab.style.backgroundImage="url("+elementa.val()+")";
-                                            idal = elementa.val();
-                                        }
-                                        if(elementa.key == "pays") {
-                                            iabb.style.backgroundImage="url("+elementa.val()+")";
-                                        }
+                                        }                                        
                                     });
                                 });
                     
@@ -2133,12 +1065,7 @@
                                 dataRefimagebb.on("value" , function(snapshotb){
                                     snapshotb.forEach(function(elementb){
                                         if(elementb.key == "url") {
-                                            ib.style.backgroundImage="url("+elementb.val()+")";
-                                            ibb.style.backgroundImage="url("+elementb.val()+")";
-                                            idbl = elementb.val();
-                                        }
-                                        if(elementb.key == "pays") {
-                                            ibbb.style.backgroundImage="url("+elementb.val()+")";
+                                            ib.style.backgroundImage="url("+elementb.val()+")"; 
                                         }
                                     });
                                 });
@@ -2152,137 +1079,12 @@
                                     snapshotc.forEach(function(elementc){
                                         if(elementc.key == "url") {
                                             ic.style.backgroundImage="url("+elementc.val()+")";
-                                            icb.style.backgroundImage="url("+elementc.val()+")";
-                                            idcl = elementc.val();
-                                        }
-                                        if(elementc.key == "pays") {
-                                            icbb.style.backgroundImage="url("+elementc.val()+")";
                                         }
                                     });
                                 });
 
                             }
-
-                            if(element.key == idd) {
-
-                                var dataRefimagecc = dataRefimagea.child(element.key);
-                                dataRefimagecc.on("value" , function(snapshotc){
-                                    snapshotc.forEach(function(elementd){
-                                        if(elementd.key == "url") {
-                                            iddb.style.backgroundImage="url("+elementd.val()+")";
-                                            iddl = elementd.val();
-                                        }
-                                        if(elementd.key == "pays") {
-                                            idbb.style.backgroundImage="url("+elementd.val()+")";
-                                        }
-                                    });
-                                });
-
-                            }
-
-                            if(element.key == ide) {
-
-                                var dataRefimagecc = dataRefimagea.child(element.key);
-                                dataRefimagecc.on("value" , function(snapshotc){
-                                    snapshotc.forEach(function(elemente){
-                                        if(elemente.key == "url") {
-                                            ieb.style.backgroundImage="url("+elemente.val()+")";
-                                            idel = elemente.val();
-                                        }
-                                        if(elemente.key == "pays") {
-                                            iebb.style.backgroundImage="url("+elemente.val()+")";
-                                        }
-                                    });
-                                });
-
-                            }
-
-                            if(element.key == idf) {
-
-                                var dataRefimagecc = dataRefimagea.child(element.key);
-                                dataRefimagecc.on("value" , function(snapshotc){
-                                    snapshotc.forEach(function(elementf){
-                                        if(elementf.key == "url") {
-                                            ifb.style.backgroundImage="url("+elementf.val()+")";
-                                            idfl = elementf.val();
-                                        }
-                                        if(elementf.key == "pays") {
-                                            ifbb.style.backgroundImage="url("+elementf.val()+")";
-                                        }
-                                    });
-                                });
-
-                            }
-
-                            if(element.key == idg) {
-
-                                var dataRefimagecc = dataRefimagea.child(element.key);
-                                dataRefimagecc.on("value" , function(snapshotc){
-                                    snapshotc.forEach(function(elementg){
-                                        if(elementg.key == "url") {
-                                            igb.style.backgroundImage="url("+elementg.val()+")";
-                                            idgl = elementg.val();
-                                        }
-                                        if(elementg.key == "pays") {
-                                            igbb.style.backgroundImage="url("+elementg.val()+")";
-                                        }
-                                    });
-                                });
-
-                            }
-
-                            if(element.key == idh) {
-
-                                var dataRefimagecc = dataRefimagea.child(element.key);
-                                dataRefimagecc.on("value" , function(snapshotc){
-                                    snapshotc.forEach(function(elementh){
-                                        if(elementh.key == "url") {
-                                            ihb.style.backgroundImage="url("+elementh.val()+")";
-                                            idhl = elementh.val();
-                                        }
-                                        if(elementh.key == "pays") {
-                                            ihbb.style.backgroundImage="url("+elementh.val()+")";
-                                        }
-                                    });
-                                });
-
-                            }
-
-                            if(element.key == idi) {
-
-                                var dataRefimagecc = dataRefimagea.child(element.key);
-                                dataRefimagecc.on("value" , function(snapshotc){
-                                    snapshotc.forEach(function(elementi){
-                                        if(elementi.key == "url") {
-                                            iib.style.backgroundImage="url("+elementi.val()+")";
-                                            idil = elementi.val();
-                                        }
-                                        if(elementi.key == "pays") {
-                                            iibb.style.backgroundImage="url("+elementi.val()+")";
-                                        }
-                                    });
-                                });
-
-                            }
-
-                            if(element.key == idj) {
-
-                                var dataRefimagecc = dataRefimagea.child(element.key);
-                                dataRefimagecc.on("value" , function(snapshotc){
-                                    snapshotc.forEach(function(elementj){
-                                        if(elementj.key == "url") {
-                                            ijb.style.backgroundImage="url("+elementj.val()+")";
-                                            idjl = elementj.val();
-                                        }
-                                        if(elementj.key == "pays") {
-                                            ijbb.style.backgroundImage="url("+elementj.val()+")";
-                                        }
-                                    });
-                                });
-
-                            }
-                            
-                            
+    
                         });
                     });
                     
@@ -2294,497 +1096,6 @@
         }
 
         }
-
-        var mm = 1;
-        function automaticslide(){
-            setTimeout(automaticslide, 3000);
-            if (mm == 1) {
-                leadimg.style.backgroundImage="url("+idal+")";
-                box1.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";                
-            } else if (mm == 2) {
-                leadimg.style.backgroundImage="url("+idbl+")";
-                box2.style.backgroundColor="rgb(0, 161, 62)";
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 3) {
-                leadimg.style.backgroundImage="url("+idcl+")";
-                box3.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 4) {
-                leadimg.style.backgroundImage="url("+iddl+")";
-                box4.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 5) {
-                leadimg.style.backgroundImage="url("+idel+")";
-                box5.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 6) {
-                leadimg.style.backgroundImage="url("+idfl+")";
-                box6.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 7) {
-                leadimg.style.backgroundImage="url("+idgl+")";
-                box7.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 8) {
-                leadimg.style.backgroundImage="url("+idhl+")";
-                box8.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 9) {
-                leadimg.style.backgroundImage="url("+idil+")";
-                box9.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";                
-                box10.style.backgroundColor="rgb(8, 40, 60)";
-            } else if (mm == 10) {
-                leadimg.style.backgroundImage="url("+idjl+")";
-                box10.style.backgroundColor="rgb(0, 161, 62)";
-                box2.style.backgroundColor="rgb(8, 40, 60)";                
-                box3.style.backgroundColor="rgb(8, 40, 60)";                
-                box4.style.backgroundColor="rgb(8, 40, 60)";                
-                box5.style.backgroundColor="rgb(8, 40, 60)";                
-                box6.style.backgroundColor="rgb(8, 40, 60)";                
-                box7.style.backgroundColor="rgb(8, 40, 60)";                
-                box8.style.backgroundColor="rgb(8, 40, 60)";                
-                box9.style.backgroundColor="rgb(8, 40, 60)";                
-                box1.style.backgroundColor="rgb(8, 40, 60)";
-                mm = 0;
-            }   
-            mm++;
-        }
-        automaticslide();
-
-        function getaction(){ 
-
-
-            var act = document.getElementById("listaction").value;
-
-            if (act == "carte") {
-
-
-                /*
-                var loadgif = document.getElementById('loadgif');
-                
-                var codeshow = prompt("entrez votre code ADMIN ");
-                if (codeshow == "") {
-                    window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-                } else if (codeshow != "") {                   
-
-                    var dataRefcz = firebase.database().ref("code");
-                    loadgif.style.display='block';
-                    var cgc = 0;
-                    dataRefcz.on("value" , function(snapshot){
-                        var acz = 0;
-                        snapshot.forEach(function(element){
-                            if(element.key == codeshow ) {
-                                acz=1;
-                            }
-                        });
-
-                        if ( acz == 1 & cgc == 0 ) {
-                            cgc = 1;
-
-                            var nomopenz = prompt("Quel tournoi souhaitez vous suivre ?");
-                            if (nomopenz != "" & nomopenz != null ) {
-
-                                var nomopen = nomopenz.toLowerCase().trim();
-                                var dataRefc = firebase.database().ref("open");
-                                loadgif.style.display='block';
-                                dataRefc.on("value" , function(snapshot){
-                                    var ac = 0;
-                                    snapshot.forEach(function(element){
-                                        if(element.key == nomopen ) {
-                                            ac=1;
-                                        }
-                                    });
-
-                                    if ( ac == 1 ) {
-
-                                        const touropen = nomopen;
-                                        localStorage.setItem('openname' , touropen );
-                                                
-                                        const touropenz = codeshow;
-                                        localStorage.setItem('opennameb' , touropenz );
-
-                                        window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                                                
-
-                                    } else {
-                                        loadgif.style.display='none';
-                                        window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit.");
-                                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                                    }
-                                });
-                                
-                            } else {
-                                window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                            }
-
-                         
-                        } else if ( acz == 0 & cgc == 0 ) {
-                            loadgif.style.display='none';
-                            // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                            window.alert("Désole ! code admin incorrect !");
-                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                        }
-
-                    });
-                } else {
-                    window.alert("Désole ! code admin incorrect !");
-                    loadgif.style.display='none';
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                }
-                
-                */
-
-                var loadgif = document.getElementById('loadgif');
-                var nomopenz = prompt("Quel tournoi souhaitez vous suivre ?");
-                if (nomopenz != "" & nomopenz != null ) {
-
-                    var nomopen = nomopenz.toLowerCase().trim();
-                    var dataRefc = firebase.database().ref("open");
-                    loadgif.style.display='block';
-                    dataRefc.on("value" , function(snapshot){
-                        var ac = 0;
-                        snapshot.forEach(function(element){
-                            if(element.key == nomopen ) {
-                                ac=1;
-                            }
-                        });
-
-                        if ( ac == 1 ) {
-
-
-                            var codesearcha = prompt("Entrez le code de la partie que vous souhaitez marquer");
-                            if (codesearcha != "" & codesearcha != null ) {
-
-                                var codesearch = codesearcha.toLowerCase().trim();
-                                var dataRefcc = firebase.database().ref(nomopen);
-                                dataRefcc.on("value" , function(snapshot){
-                                    var ace = 0;
-                                    snapshot.forEach(function(element){
-                                        if(element.key == codesearch ) {
-                                            ace=1;
-                                        }
-                                    });
-
-                                    if ( ace == 1 ) {
-                                        const touropen = nomopen;
-                                        localStorage.setItem('openname' , touropen );
-                                    
-                                        const touropenz = codesearch;
-                                        localStorage.setItem('opennameb' , touropenz );
-
-                                        window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                                    
-                                    } else {
-                                        loadgif.style.display='none';
-                                        window.alert("Désole ! Le code " + codesearch + " n'existe pas .");
-                                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                                    }
-                                });
-                                
-                            } else {
-                                window.alert("Entrez le code de la partie que vous souhaitez marquer");
-                                window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                            }
-
-
-
-                        } else {
-                            loadgif.style.display='none';
-                            window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit.");
-                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                        }
-                    });
-                    
-                } else {
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                }
-
-                
-            } else if (act == "delete") {
-
-
-                var loadgif = document.getElementById('loadgif');
-                
-                var codeshow = prompt("entrez votre code ADMIN ");
-                if (codeshow == "") {
-                    window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-                } else if (codeshow != "") {                   
-
-                    var dataRefcz = firebase.database().ref("code");
-                    loadgif.style.display='block';
-                    var cgc = 0;
-                    dataRefcz.on("value" , function(snapshot){
-                        var acz = 0;
-                        snapshot.forEach(function(element){
-                            if(element.key == codeshow ) {
-                                acz=1;
-                            }
-                        });
-
-                        if ( acz == 1 & cgc == 0 ) {
-                            cgc = 1;
-
-                            var nomopenz = prompt("Quel tournoi souhaitez vous supprimer ?");
-                            if (nomopenz != "" & nomopenz != null ) {
-                                var nomopen = nomopenz.toLowerCase().trim();
-                                var dataRefc = firebase.database().ref("open");
-                                var cc = 0;
-                                dataRefc.on("value" , function(snapshot){
-                                    var ac = 0;
-                                    snapshot.forEach(function(element){
-                                        if(element.key == nomopen ) {
-                                            ac=1;
-                                        }
-                                    });
-
-                                    if ( ac == 1 & cc == 0 ) {
-                                        cc = 1;
-                                        var result = confirm('Vous vous appretez à supprimer toutes les données du tournoi ( ' + nomopen + ' ) . Voulez vous CONTINUER ?');    
-                                        if (result == false) {
-                                            event.preventDefault();
-                                            loadgif.style.display='none';
-                                        } else {
-                                            var dataRefg = firebase.database().ref(nomopen);
-                                            var dataRefo = firebase.database().ref("open");
-                                            
-                                            dataRefo.child(nomopen).remove();
-                                            dataRefg.remove();
-
-                                            loadgif.style.display='none';
-                                            window.alert('le tour ' + nomopen +' a été supprimé avec succès!');
-                                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html'; 
-                                        }                            
-                                    } else {
-                                        window.alert("Desole! Ce tournoi n'existe pas!");
-                                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html'; 
-                                    }
-                            
-                                });
-                            } else {
-                                window.alert("Entrez un nom valide pour créer votre tournoi !");
-                                window.location.href = 'https://kevabcdigital.github.io/website/tour.html'; 
-                            }
-                    
-                         
-                        } else if ( acz == 0 & cgc == 0 ) {
-                            loadgif.style.display='none';
-                            // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                            window.alert("Désole ! code admin incorrect !");
-                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                        }
-
-                    });
-                } else {
-                    window.alert("Désole ! code admin incorrect !");
-                    loadgif.style.display='none';
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                }
-            
-            }  else if (act == "touradd") { 
-                
-                var loadgif = document.getElementById('loadgif');
-                
-                var codeshow = prompt("entrez votre code ADMIN ");
-                if (codeshow == "") {
-                    window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-                } else if (codeshow != "") {                   
-
-                    var dataRefcz = firebase.database().ref("code");
-                    loadgif.style.display='block';
-                    var cgc = 0;
-                    dataRefcz.on("value" , function(snapshot){
-                        var acz = 0;
-                        snapshot.forEach(function(element){
-                            if(element.key == codeshow ) {
-                                acz=1;
-                            }
-                        });
-
-                        if ( acz == 1 & cgc == 0 ) {
-                            cgc = 1;
-
-                            var nomopenz = prompt("entrez le nom de votre tournoi . ");
-                            if (nomopenz != "" & nomopenz != null ) {
-
-                                var nomopen = nomopenz.toLowerCase().trim();
-                                var dataRefc = firebase.database().ref("open");
-                                var cc = 0;
-                                dataRefc.on("value" , function(snapshot){
-                                    var ac = 0;
-                                    snapshot.forEach(function(element){
-                                        if(element.key == nomopen ) {
-                                            ac=1;
-                                        }
-                                    });
-
-                                    if ( ac == 0 & cc == 0 ) {
-                                                    
-                                        cc = 1;
-                                        loadgif.style.display='none';
-                                        var result = confirm(" le tournoi ( " + nomopen + " ) n'existe PAS . Voulez vous créer un nouveau tour nommé : ( " + nomopen + " ) ?");    
-                                        if (result == false) {
-                                            event.preventDefault();
-                                            loadgif.style.display='none';
-                                        } else {
-                                            const touropenq = nomopen;
-                                            localStorage.setItem('opennameq' , touropenq );
-                                            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                                        }                            
-                                    } else {
-                                        loadgif.style.display='none';
-                                        var result = confirm("Voulez vous ajouter de NOUVEAUX participants ?");    
-                                        if (result == false) {
-                                            event.preventDefault();
-                                            loadgif.style.display='none';
-                                        } else {
-                                            const touropenq = nomopen;
-                                            localStorage.setItem('opennameq' , touropenq ); 
-                                            window.location.href = 'https://kevabcdigital.github.io/website/formamicale.html';
-                                        }    
-                                    }
-                            
-                                });
-                            } else {
-                                window.alert("Entrez un nom valide pour créer votre tournoi !");
-                                window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                            }
-                    
-                         
-                        } else if ( acz == 0 & cgc == 0 ) {
-                            loadgif.style.display='none';
-                            // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                            window.alert("Désole ! code admin incorrect !");
-                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                        }
-
-                    });
-                } else {
-                    window.alert("Désole ! code admin incorrect !");
-                    loadgif.style.display='none';
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                }
-            
-
-            } else if (act == "add") { 
-                
-                var loadgif = document.getElementById('loadgif');
-                
-                var codeshow = prompt("entrez votre code ADMIN ");
-                if (codeshow == "") {
-                    window.alert("Entrez un code ADMIN ou cliquez sur annuler !");
-                } else if (codeshow != "") {                   
-
-                    var dataRefcz = firebase.database().ref("code");
-                    loadgif.style.display='block';
-                    var cgc = 0;
-                    dataRefcz.on("value" , function(snapshot){
-                        var acz = 0;
-                        snapshot.forEach(function(element){
-                            if(element.key == codeshow ) {
-                                acz=1;
-                            }
-                        });
-
-                        if ( acz == 1 & cgc == 0 ) {
-                            cgc = 1;
-
-                            const nameopenforma = "admin";
-                            localStorage.setItem('nameopenform' , nameopenforma );
-                            window.location.href = 'https://kevabcdigital.github.io/website/formulaire.html';
-                         
-                        } else if ( acz == 0 & cgc == 0 ) {
-                            loadgif.style.display='none';
-                            // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
-                            window.alert("Désole ! code admin incorrect !");
-                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                        }
-
-                    });
-                } else {
-                    window.alert("Désole ! code admin incorrect !");
-                    loadgif.style.display='none';
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                }
-            
-
-            }
-
-
-        }
-
 
     </script>
     
