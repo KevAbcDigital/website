@@ -475,13 +475,15 @@
     
         const database = firebase.database();
 
-        var nompart = document.getElementById("nompart");       
         var charge = "aucun";    
         var codesearch = "aucun";
         var codesearchjour = "aucun";
-        var jour = document.getElementById("listjour").value; 
         var load = document.getElementById("lottieload");   
+        var nompart = document.getElementById("nompart");       
         var boxjour = document.getElementById("listjour");   
+        var barbox = document.getElementById("barbox");   
+        var jour = document.getElementById("listjour").value; 
+
 
         function getjour() {
 
@@ -1358,7 +1360,6 @@
                     boxjour.style.display="block";
                     getjour();
                     move();
-                
                 }              
             });
 
