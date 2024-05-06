@@ -270,7 +270,25 @@ header {
   right: 0;
   margin-right: 50px;
 }
-
+.score .form-controlabj {
+  box-shadow: -1px 1px 9px rgb(78, 162, 82);
+  border: 1px solid #30682e;
+  text-align: center; 
+  align-items: center;
+  font-size: 17px;
+  display: none;
+  height: 35px;
+  width: auto;
+  margin-top: 6px;
+  padding-left: 20px;
+  background-color: #00250b;
+  color: white;
+  padding-right: 20px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  margin-right: 350px;
+}
 .toursliderabcphone .form-controlabc {
   display: none;
 }
@@ -1139,6 +1157,20 @@ header {
   position: absolute;
   right: 0;
   margin-right: 40px;
+}
+.score .form-controlabj {
+  box-shadow: -1px 1px 9px rgb(78, 162, 82);
+  border: 1px solid #faeb1c;
+  text-align: center; 
+  font-size: 11px;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  right: 0;
+  margin-right: 240px;
 }
 
 .toursliderabcphone .form-controlabc {
