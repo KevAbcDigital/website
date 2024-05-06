@@ -42,7 +42,7 @@
             <img style="position: absolute; z-index: 3; top: 0; width: 100%; height: 100%;
             filter: saturate(110%) ;  " id="photopost"
             src="toure.jpg" alt="image"> 
-            
+
             <section class="score" id="score">
 
                 <img id="lottieload" style="display: none; margin-top: 10%; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
@@ -56,20 +56,31 @@
                         <b class="ttaz" style=" display: block;" id="nompart" >POWERED BY GOLF CLUB YAOUNDE</b>
                     </div>
 
+                    <select class="form-controlabj" id="listjour" onchange="getjour()">
+                        <option class="selectbox" value="">journée ??</option>
+                        <option class="selectbox" value=" j1">journée 1</option>
+                        <option class="selectbox" value=" j2">journée 2</option>
+                        <option class="selectbox" value=" j3">journée 3</option>
+                        <option class="selectbox" value=" j4">journée 4</option>
+                    </select>
+
+
                     <select class="form-controlab" id="list" onchange="getvalue()">
                     <!--    
                         <option class="selectbox" value="aucun">> Selectionnez un tournoi ici ...</option>
                     
                         <option class="selectbox" value="2024 presidents cup golf club yaounde"> 2024 PRESIDENTS CUP</option>
                         <option class="selectbox" value="2024 presidents cup golf club yaounde"> 2024 PRESIDENTS CUP</option>
-                    -->    
-                        <option class="selectbox" value="autre"> Selectionnez un tournoi ici</option>
-                        <option class="selectbox" value="2024 open total energies gcy"> 2024 TOTAL ENERGIE</option>
                         <option class="selectbox" value="open national team j1"> open national team j1</option>
                         <option class="selectbox" value="open national team j2"> open national team j2</option>
                         <option class="selectbox" value="open national team j3"> open national team j3</option>
-                        <option class="selectbox" value="open national team j4"> open national team j4</option>
+                    -->    
+                        <option class="selectbox" value="autre">^ Cherchez un tournoi ici</option>
+                        <option class="selectbox" value="2024 open total energies gcy"> 2024 TOTAL ENERGIE</option>
+                        <option class="selectbox" value="open national team"> National team </option>
                     </select>
+
+            
 
                 </div>
 
@@ -267,74 +278,48 @@
         const database = firebase.database();
 
         var charge = "aucun";    
-
-
-        function getvalue(){       
-        var nompart = document.getElementById("nompart");       
-        var codesearchz = document.getElementById("list").value; 
+        var codesearch = "aucun";
+        var codesearchjour = "aucun";
+        var jour = document.getElementById("listjour").value; 
         var load = document.getElementById("lottieload");   
-        var dataRef = firebase.database().ref("open");
+        var boxjour = document.getElementById("listjour");   
 
-        if ( codesearchz != "aucun") {
-            var codesearch = codesearchz;
+        function getjour() {
 
-            if ( codesearchz == "autre" ) {
-                
-                var nomopenz = prompt("Quel tournoi souhaitez vous suivre ?");
-                if (nomopenz != "" & nomopenz != null ) {
-
-                    var nomopen = nomopenz.toLowerCase().trim();
-                    var dataRefc = firebase.database().ref("open");
-                    load.style.display='block';
-                    dataRefc.on("value" , function(snapshot){
-                        var ac = 0;
-                        snapshot.forEach(function(element){
-                            if(element.key == nomopen ) {
-                                ac=1;
-                            }
-                        });
-
-                        if ( ac == 1 ) {
-                            codesearch = nomopen;
-                        } else {
-                            loadgif.style.display='none';
-                            window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit.");
-                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                        }
-                    });
-                    
-                } else {
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
-                }
-
+            jour = document.getElementById("listjour").value; 
+            if (codesearchjour.includes("j1")) {
+                codesearchjour = codesearchjour.replace("j1", "");
+            } else if (codesearchjour.includes("j2")) {                
+                codesearchjour = codesearchjour.replace("j2", "");
+            } else if (codesearchjour.includes("j3")) {
+                codesearchjour = codesearchjour.replace("j3", "");
+            } else if (codesearchjour.includes("j4")) {
+                codesearchjour = codesearchjour.replace("j4", "");
             }
 
-            load.style.display = "block";
-            dataRef.on("value" , function(snapshot){
-                var a = 0;
+            if (codesearchjour == "aucun") {
+                codesearchjour = (codesearch.trim()) ;
+            } else {
+                codesearchjour = (codesearchjour.trim()) + jour ;
+            }
+
+            var dat = firebase.database().ref("open");
+            load.style.display='block';
+            dat.on("value" , function(snapshot){
+            var ac = 0;
                 snapshot.forEach(function(element){
-                    if(element.key == codesearch ) {
-                        a=1;
-                        nompart.innerHTML= codesearch ;
+                    if(element.key == codesearchjour ) {
+                        ac=1;
                     }
                 });
-                
-                if ( a == 0 ) {
-                    bb = 1;
-                    load.style.display = "none";
-                    // window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
-                    nompart.innerHTML= "Aucun Tournoi trouvé" ;
-                } else {
 
-                   
+                if ( ac == 1 ) {
                     charge = codesearch;
                     load.style.display = "none";
-                    var dataRefauto = firebase.database().ref("open").child(codesearch);
+                    var dataRefauto = firebase.database().ref("open").child(codesearchjour);
                     var i = 0 ;
-
                     var ba = document.getElementById("ba");                
-                                 
-
+                                        
                     var ia = document.getElementById("imagefirst");               
                     var ib = document.getElementById("imagesecond");               
                     var ic = document.getElementById("imagethird");    
@@ -1092,11 +1077,89 @@
                         });
                     });
                     
+                 
+                } else {
+                    load.style.display='none';
+                    // boxjour.style.display="none";
+                    window.alert("Cette journée n'est encore pas disponible ! Patientez un instant" );
+                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                }
+            });  
+                
+
+        }
+
+
+        function getvalue(){       
+        var nompart = document.getElementById("nompart");       
+        var codesearchz = document.getElementById("list").value; 
+        var load = document.getElementById("lottieload");   
+        var dataRef = firebase.database().ref("open");
+
+        if ( codesearchz != "aucun") {
+            codesearch = codesearchz;
+
+            if ( codesearchz == "autre" ) {
+                
+                var nomopenz = prompt("Quel tournoi souhaitez vous suivre ?");
+                if (nomopenz != "" & nomopenz != null ) {
+
+                    var nomopen = nomopenz.toLowerCase().trim();
+                    var dataRefc = firebase.database().ref("open");
+                    load.style.display='block';
+                    dataRefc.on("value" , function(snapshot){
+                        var ac = 0;
+                        snapshot.forEach(function(element){
+                            if(element.key.includes(nomopen)) {
+                                ac=1;
+                                nomopen = element.key
+                            }
+                        });
+
+                        if ( ac == 1 ) {
+                            codesearch = nomopen;
+                        } else {
+                            loadgif.style.display='none';
+                            boxjour.style.display="none";
+                            window.alert("Désole ! Le tournoi " + nomopen + " n'existe pas ou encore a été mal écrit.");
+                            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                        }
+                    });
+                    
+                } else {
+                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                }
+
+            }
+
+            load.style.display = "block";
+            dataRef.on("value" , function(snapshot){
+                var a = 0;
+                snapshot.forEach(function(element){
+                    if(element.key.includes(codesearch)) {
+                        a=1;
+                        codesearch=element.key;
+                        nompart.innerHTML= codesearch ;
+                    }
+                });
+                
+                if ( a == 0 ) {
+                    bb = 1;
+                    boxjour.style.display="none";
+                    load.style.display = "none";
+                    // window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
+                    nompart.innerHTML= "Aucun Tournoi trouvé" ;
+                } else {
+
+                    boxjour.style.display="block";
+                    getjour();
+                
                 }              
             });
 
         } else {
             window.alert("selectionnez le nom du tournoi à suivre");
+            boxjour.style.display="none";
         }
 
         }
