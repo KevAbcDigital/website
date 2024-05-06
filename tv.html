@@ -26,22 +26,48 @@
 
     <body class="bod" style="background-color: rgb(0, 0, 0);">
 
+        <audio loop muted id="audioplay">
+            <source src="sonc.mp3" type="audio/mpeg">
+        </audio>
+
         <section id="toursliderabcphone" class="toursliderabcphone" >
 
-            <img name="imgid" style="width: 100%; background-size: cover; background-position: center; " 
-            src="./design_files/images/rot.gif" alt="image">    
-   
-            <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; margin-bottom: 45px; background-color: transparent;" id="footer">
-                <p style=" width: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 14px; 
-                font-weight: 700;" class="copyrigth"> Rotez l'ecran pour voir le leaderboard </p>
+            <select class="form-controlabc" id="listaction" onchange="getaction()">
+                <option class="selectbox" value="aucun">> Que souhaitez vous ? ...</option>
+                <option class="selectbox" value="touradd"> Créer un nouveau tour</option>
+                <option class="selectbox" style="background-color: red;" value="delete"> Supprimer un tour</option>
+                <option class="selectbox" value="carte"> Marquer un groupe</option>
+                <option class="selectbox" value="add"> Ajouter un profil</option>
+            </select>
+            
+            <b style="position: relative; margin-top: 40px; display: block; font-size: 13px; padding-left: 20px; 
+            color: rgb(12, 0, 44); z-index: 1500;" >Rotez l'ecran pour afficher le LEADERBOARD</b>
+            <img id="rotate" class="rotate" src="./design_files/images/rotate.gif" alt="image">
+
+            <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
+
+            <img name="imgid" style="height: 100vh; margin-top: -70px; background-size: cover; background-position: center; " 
+            src="./design_files/images/fondtour.jpg" alt="image">    
+
+            
+            
+            <footer class="footer" style=" width: 100%; position: absolute; bottom: 0; margin-bottom: 15px; background-color: transparent;" id="footer">
+                <p style=" width: 100%; text-align: center; color: rgb(255, 255, 255); font-size: 11px; font-weight: 700;" class="copyrigth">Copyright © - Golf Club Yoaundé </p>
             </footer>
         </section>
 
         <section id="toursliderabc" class="toursliderabc">
             
-            <img style="position: absolute; z-index: 3; top: 0; width: 100%; height: 100%;
-            filter: saturate(110%) ;  " id="photopost"
-            src="toure.jpg" alt="image"> 
+            <video style="position: absolute; z-index: 2; top: 0; width: 100%; height: auto;
+             filter: saturate(140%) contrast(103%) brightness(1.4); " 
+            autoplay id="videoplay" class="videoplay" poster="toure.jpg" loop muted plays-inline>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+
+            <video style="position: absolute; z-index: 1; top: 0; width: 100%; height: auto; display: block; " 
+            autoplay id="videoplayb" class="videoplay" poster="toure.jpg" loop muted plays-inline>
+                <source src="live.mp4" type="video/mp4">
+            </video>
 
             <section class="score" id="score">
 
@@ -176,7 +202,6 @@
                     <b class="boxentetejz" style="width: 4%; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
                 </div>
 
-                
 
             </section>
 
