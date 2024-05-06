@@ -287,6 +287,7 @@
         function getjour() {
 
             jour = document.getElementById("listjour").value; 
+
             if (codesearchjour.includes("j1")) {
                 codesearchjour = codesearchjour.replace("j1", "");
             } else if (codesearchjour.includes("j2")) {                
@@ -299,10 +300,13 @@
 
             if (codesearchjour == "aucun") {
                 codesearchjour = (codesearch.trim()) ;
-            } else {
+            } else if (codesearch.includes(codesearchjour)) {
                 codesearchjour = (codesearchjour.trim()) + jour ;
+            } else {
+                codesearchjour = (codesearch.trim()) ;
             }
 
+            window.alert(codesearchjour);
             var dat = firebase.database().ref("open");
             load.style.display='block';
             dat.on("value" , function(snapshot){
