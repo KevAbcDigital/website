@@ -171,14 +171,31 @@ header {
 .entetescore {
   display: flex;
   z-index: 1000;
-  width: 74%;
+  width: 94%;
   top: 0;
   margin-left: 3%;
   position: relative;
   padding-top: 10px;
   padding-bottom: 5px;
 }
+.entetescore .logogolff {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+  position: relative;
+  display: block;
+  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
+    url(../images/profileimg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .entetescore .logogolf {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+}
+.score .logogolf {
   width: 70px;
   height: 70px;
   margin-left: 10px;
@@ -201,7 +218,10 @@ header {
   margin-left: 3%;
   position: relative;
   padding-top: 3%;
+  overflow: hidden;
+  overflow-y: hidden;
 }
+
 .score .tt{
   font-size: 25px;
   color: rgb(255, 251, 210);
@@ -272,18 +292,6 @@ header {
   height: 70px;
   margin-left: 10px;
 }
-.entetescore .logogolff {
-  width: 70px;
-  height: 70px;
-  margin-left: 10px;
-  position: relative;
-  display: block;
-  background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
-    url(../images/profileimg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 .score .barbox {
   position: absolute;
   width: 100%;
@@ -296,7 +304,7 @@ header {
   height: 1.5px;
   filter: opacity(0.2);
   margin-left: 1.8%;
-  margin-top: 2.15%;
+  margin-top: 2.11%;
   display: none;
   position: relative;
   box-shadow: -1px 12px 12px #5e6b64;
@@ -310,9 +318,8 @@ header {
   background-color: rgba(8, 54, 74, 0.904); 
   padding-left: 1.5%;
   padding-right: 1.5%;
-  overflow-y: scroll;
-  overflow: hidden;
-  scrollbar-color: transparent;
+  overflow-y: hidden;
+  overflow: auto;
 }
 .score .entetetab3 .boxentetejz {
   width: 3.1%;
@@ -1071,16 +1078,10 @@ header {
   z-index: 100;
   width: 100%;
   height: 100vh;
-  overflow: scroll;
-  overflow-y: scroll;
   padding-right: 5px;
   position: relative;
   align-items: center;
   justify-content: center;
-}
-.toursliderabc .score {
-  overflow: scroll;
-  overflow-y: scroll;
 }
 
 .entetescore {
@@ -1116,7 +1117,8 @@ header {
   top: 0;
   position: relative;
   padding-top: 3%;
-  overflow-y: auto; 
+  overflow: scroll;
+  overflow-y: scroll;
 }
 .rotate {
   display: block;
@@ -1159,16 +1161,6 @@ header {
   display: block;
 }
 
-.score {
-  display: block;
-  z-index: 1000;
-  width: 100%;
-  height: 70%;
-  top: 0;
-  margin-left: 0%;
-  position: relative;
-  padding-top: 3%;
-}
 .score .tt{
   font-size: 15px;
   color: rgb(255, 251, 210);
@@ -1224,9 +1216,8 @@ header {
   background-color: rgba(8, 54, 74, 0.904); 
   padding-left: 1.5%;
   padding-right: 1.5%;
-  overflow-y: none;
-  overflow: none;
-  scrollbar-color: transparent;
+  overflow: scroll;
+  overflow-y: scroll;
 }
 .score .entetetab3 .boxentetejz {
   width: 3.5%;
