@@ -277,6 +277,7 @@
     
         const database = firebase.database();
 
+        var nompart = document.getElementById("nompart");       
         var charge = "aucun";    
         var codesearch = "aucun";
         var codesearchjour = "aucun";
@@ -306,7 +307,6 @@
                 codesearchjour = (codesearch.trim()) ;
             }
 
-            window.alert(codesearchjour);
             var dat = firebase.database().ref("open");
             load.style.display='block';
             dat.on("value" , function(snapshot){
@@ -320,6 +320,7 @@
                 if ( ac == 1 ) {
                     charge = codesearch;
                     load.style.display = "none";
+                    nompart.innerHTML= codesearchjour ;
                     var dataRefauto = firebase.database().ref("open").child(codesearchjour);
                     var i = 0 ;
                     var ba = document.getElementById("ba");                
@@ -1086,7 +1087,8 @@
                     load.style.display='none';
                     // boxjour.style.display="none";
                     window.alert("Cette journée n'est encore pas disponible ! Patientez un instant" );
-                    window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                    // window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                    codesearchjour = "aucun";
                 }
             });  
                 
@@ -1095,7 +1097,6 @@
 
 
         function getvalue(){       
-        var nompart = document.getElementById("nompart");       
         var codesearchz = document.getElementById("list").value; 
         var load = document.getElementById("lottieload");   
         var dataRef = firebase.database().ref("open");
