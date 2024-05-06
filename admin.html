@@ -214,8 +214,8 @@
                     <b class="boxentetejz" id="h18" ></b>
                     <b class="boxentetejz" style="background-color: rgba(1, 21, 30, 0.973); color: #eeff06; border: none;"  id="hre" ></b>
                     <b class="boxentetejz" style="margin-left: 1%; color: white; font-weight: 500; border: none; " id="day" ></b>
-                    <b class="boxentetejz" style="width: 5%; background-color: transparent; font-weight: 500; border: none; color: #ebd000; " id="last" ></b>        
-                    <b class="boxentetejz" style="width: 5%; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
+                    <b class="boxentetejz" style="width: 4%; background-color: transparent; font-weight: 500; border: none; color: #ebd000; " id="last" ></b>        
+                    <b class="boxentetejz" style="width: 4%; background-color: #05991d; color: #ffffff; border-radius: 4px; border: 1px solid #ffffff;"  id="total" ></b>
                 </div>
 
                 
@@ -390,7 +390,7 @@
         var toursliderabc = document.getElementById('toursliderabc');
         var toursliderabcphone = document.getElementById('toursliderabcphone');
         
-        /*
+        
         if ( (window.innerWidth) < 500) {
             
             toursliderabc.style.display="none";
@@ -406,33 +406,42 @@
             toursliderabcphone.style.display="none";
             toursliderabc.style.display="block";
 
+            /*
             var firstindex=0;
             function automaticscroll(){
                 setTimeout(automaticscroll, 70000);
+                console.log(setTimeout);
                 
                 var up = false;
                 var interval = setInterval(function () {
                     var $container = $("#tab3");
                     var position = $container.scrollTop();
                     var height = $container[0].scrollHeight;
-                    if(position >= 54) up = !up;
+                    if(position >= 27) up = !up;
                     if(position == 0) {}
-                    if (up) { $container.scrollTop(position - 54); } 
-                    else { $container.scrollTop(position + 54);}
+                    if (up) { $container.scrollTop(position - 27.5); } 
+                    else { $container.scrollTop(position + 27.5);}
                 }, 10000);
             }
             automaticscroll();
+            
+            var i = 0 ;
+            var $container = $("#tab3");
+            function automaticscroll(){
+                setTimeout(automaticscroll, 5000);
+                $container.scrollTop= 0; 
+
+                console.log(i++);
+
+            }
+            automaticscroll();
+            */
+
         }
 
-        */
         
-
+           
         
-  
-        
-       
-
-        /*
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
@@ -447,7 +456,7 @@
                 toursliderabc.style.display="block";
             }
         });
-        */
+        
 
         var loadgif = document.getElementById('loadgif');
         
