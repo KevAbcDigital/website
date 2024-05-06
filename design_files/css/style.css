@@ -312,18 +312,17 @@ header {
 }
 .score .barbox {
   position: absolute;
-  width: 100%;
-  height: 67%;
+  width: 96.7%;
   display: block;
-  z-index: 1600;
+  z-index: 1900;
 }
 .score .barbox .bartab {
   width: 96.5%;
   height: 1.5px;
   filter: opacity(0.2);
   margin-left: 1.8%;
-  margin-top: 2.11%;
-  display: none;
+  margin-top: 2.21%;
+  display: block;
   position: relative;
   box-shadow: -1px 12px 12px #5e6b64;
   z-index: 1900;
@@ -332,7 +331,7 @@ header {
   display: flex;
   position: relative;
   height: 67%;
-  padding-bottom: 15px; 
+  padding-bottom: 0px; 
   background-color: rgba(8, 54, 74, 0.904); 
   padding-left: 1.5%;
   padding-right: 1.5%;
