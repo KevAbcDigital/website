@@ -415,16 +415,16 @@
             var interval = setInterval(function () {
                 var position = $container.scrollTop();
                 var height = $container[0].scrollHeight;
-                if(timescroll < 3) {
+                if(timescroll < 2) {
                     $container.scrollTop(position + 257.5);
-                }  else if(timescroll == 3) {
+                }  else if(timescroll == 2) {
                     $container.scrollTop(0, 0);                 
                 } else if (timescroll > 8) {
                     timescroll = 0;
                 }
                 timescroll = timescroll + 1;
                 console.log(timescroll);
-            }, 15000);
+            }, 11000);
         }
         
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
