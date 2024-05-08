@@ -31,39 +31,38 @@
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar" style="display: block;">
                 <img class="imgmenu" onclick="homebtn()" style="display: block; margin-top: 40px; width: 40px; height: 30px;" src="./design_files/images/homebtn.png" alt="image">
-                <img class="imgmenu" id="delbt" onclick="delet()" style="display: block; border-radius: 10px; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/della.gif" alt="image">
+                <img class="imgmenu" id="delbt" onclick="delet()" style="display: none; border-radius: 10px; margin-top: 20px; width: 40px; height: 40px;" src="./design_files/images/della.gif" alt="image">
             </label>
 
         </header>
 
-        <div class="designgif" style="margin-top: 0px; width: 100%;">
-            <img style="width: 40%; margin-left: 30%;" src="./design_files/images/scorecard.gif" alt="image">
+        <div class="form-wrapper" style="position: absolute; top: 0; right: 0; margin-top: 70px; margin-right: 25px;">
+            <input id="nomuser" style="border: 1px solid #008006ab; padding-left: 5px; text-align: center;" type="text" placeholder="Code du groupe" class="form-controla">
         </div>
-
         
 
         <img id="loadgif" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
         <img id="loadg" style="display: none; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
 
-        <section class="card" style="margin-top: 30px; padding-bottom: 20px;" >
-
-            <b style="color: rgb(255, 255, 255); width: 100%;;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-            font-size: 25px; font-weight: 800; margin-top: 0px; text-align: center; display: block; ">
-                SCORECARD
-            </b>
+        <section class="card" style="margin-top: 100px; padding-bottom: 20px;" >
 
             <b id="nompart" style="color: rgb(203, 255, 201); width: 100%; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-            font-size: 13px; font-weight: 800; margin-top: 0px; text-align: center; display: block; ">
+            font-size: 13px; font-weight: 800; margin-top: 20px; text-align: end; padding-right: 50px; display: block; width: 100%;">
                 By Golf Club Yaoundé
             </b>
 
-            <div class="form-group container-login100-form-btn" style="margin-top: -30px;">
+            <div class="form-group container-login100-form-btn" style="margin-top: -20px;">
 
                 <button id="valider" style="border-radius: 6px; background-color: rgb(252, 228, 16);
-                color: rgb(0, 20, 2); margin-left: 20%; margin-right: 20%; border-radius: 50px;
+                color: rgb(0, 20, 2); margin-left: 20%; margin-right: 20%; border-radius: 50px; display: none;
                     box-shadow: -1px 1px 9px #1e4d198e; " type="button" onclick="send()">
                      Sauvegarder
-        
+                </button>
+
+                <button id="chercher" style="border-radius: 6px; background-color: rgb(252, 228, 16);
+                color: rgb(0, 20, 2); margin-left: 20%; margin-right: 20%; border-radius: 50px; display: block;
+                    box-shadow: -1px 1px 9px #1e4d198e; " type="button" onclick="chercher()">
+                     chercher
                 </button>
             </div>
 
@@ -259,33 +258,26 @@
 
     <script>
 
-        
-
-
-        
         const nameopen = localStorage.getItem('openname');
-        const nameopenb = localStorage.getItem('opennameb');
-
         var nompart = document.getElementById("nompart");       
         nompart.innerHTML= nameopen ;
+        var linked = "non";
+        var loadgif = document.getElementById('loadgif');        
+        nameopenb = "";
 
         if (nameopen == null) {
-            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+            window.location.href = 'https://kevabcdigital.github.io/website/tv.html';
         }
-    
-        if (nameopenb == null) {
-            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+
+        var delbt = document.getElementById("delbt");          
+        if (nameopenb == "") {
+            delbt.style.display="none";      
         }
+
         function homebtn(){
             localStorage.setItem('openname' , null );                                   
-            localStorage.setItem('opennameb' , null );
-            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+            window.location.href = 'https://kevabcdigital.github.io/website/tv.html';
         }
-        
-        var linked = "non";
-
-        var loadgif = document.getElementById('loadgif');        
-
         
         function delet() {
 
@@ -323,15 +315,18 @@
                                 dataRef.child(nameopenb).remove();
                                 loadgif.style.display='none';
                                 window.alert('Partie supprimée avec succès!');
-                                window.location.href = 'https://kevabcdigital.github.io/website/tour.html';                    
-                            }                    
+                                window.location.href = 'https://kevabcdigital.github.io/website/tv.html';                    
+                            } else {
+                                window.alert("aucune partie ouverte");
+                                loadgif.style.display='none';
+                            }               
                         }
 
                     } else if ( acz == 0 & cgc == 0 ) {
                         loadgif.style.display='none';
                             // window.alert("Désole ! le tournoi " + nomopen + " est introuvable");
                         window.alert("Désole ! code admin incorrect !");
-                        window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+                        window.location.href = 'https://kevabcdigital.github.io/website/tv.html';
                     }
 
                     });
@@ -342,250 +337,44 @@
             }
         
         }
+   
+        var chercherbtn = document.getElementById("chercher");          
+        var validbtn = document.getElementById("valider");          
 
+        function chercher() {
 
-
-/*
-        function delet() {
-            var result = confirm('voulez vous supprimer cette partie ?');
-            var load = document.getElementById("lottieloadb");            
-            var codead = $('#codeadmin').val().toLowerCase().trim();
- 
-            load.style.display = "block";   
-            if (result == false) {
-                event.preventDefault();
-                load.style.display = "none";
-            } else {
-                var dataRef = firebase.database().ref("amical");
-                var dataRefo = firebase.database().ref("open");
-
-                if (linked != "non") {
-                    
-                    if (linked == "22222222") {
-                        if (codead == "adminpass") {
-                            if (pa!="non" & pb!="non" & pc!="non")
-                            dataRefo.child("opena").child(pa).remove();
-                            dataRefo.child("opena").child(pb).remove();
-                            dataRefo.child("opena").child(pc).remove();
-                            dataRef.child(linked).remove();
-                            window.alert('Partie supprimée avec succès!');
-                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                        } else {
-                            window.alert('code administrateur incorrect');
-                            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
+            nameopenb = $('#nomuser').val().toLowerCase().trim();
+            if (nameopenb != "" & nameopenb != null ) {
+                var dataRefcc = firebase.database().ref(nameopen);
+                loadgif.style.display='block';
+                dataRefcc.on("value" , function(snapshot){
+                    var ace = 0;
+                    snapshot.forEach(function(element){
+                        if(element.key == nameopenb ) {
+                            ace=1;
                         }
-                    }else if (linked == "33333333") {
-                        if (codead == "adminpass") {
-                            if (pa!="non" & pb!="non" & pc!="non")
-                            dataRefo.child("opena").child(pa).remove();
-                            dataRefo.child("opena").child(pb).remove();
-                            dataRefo.child("opena").child(pc).remove();
-                            dataRef.child(linked).remove();
-                            window.alert('Partie supprimée avec succès!');
-                            window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                        } else {
-                            window.alert('code administrateur incorrect');
-                            window.location.href = 'https://kevabcdigital.github.io/website/home.html';
-                        }
-                    } else {
-                        dataRef.child(linked).remove();
-                        window.alert('Partie supprimée avec succès!');
-                        window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
-                    }
-
-                } else {
-                    window.alert("aucune partie ouverte");
-                }
-            }
-            
-        }
-
-        function ecraser() {
-            var codead = $('#codeadmin').val().toLowerCase().trim();
-            var result = confirm('voulez vous sauvergarder les scores et creer une nouvelle carte ?');
-            var load = document.getElementById("lottieloadb");             
-            load.style.display = "block"; 
-            if (result == false) {
-                event.preventDefault();
-            } else {
-
-                if (codead == "adminpass") {
-                    var dataRefb = firebase.database().ref("amical").child(linked);
-
-                    var lastaa = "non";
-                    var lastbb = "non";
-                    var lastcc = "non";
-
-                    dataRefb.on("value" , function(snapshot){             
-                        snapshot.forEach(function(element){
-
-                            if(element.key == "noma" ) {
-                                lastaa = element.val();
-                            }
-
-                            if(element.key == "nomb" ) {
-                                lastbb = element.val();
-                            }
-
-                            if(element.key == "nomc" ) {
-                                lastcc = element.val();
-                            }
-                        
-                        });
                     });
 
-                    if ( (((lastaa.split(" ")).slice(4, 22)).includes("0") == false) & (((lastbb.split(" ")).slice(4, 22)).includes("0") == false) & (((lastcc.split(" ")).slice(4, 22)).includes("0") == false)) { 
-
-                        if ( (linked == "00000000") || (linked == "00000001") || (linked == "00000002") || (linked == "00000003") 
-                                || (linked == "00000004") || (linked == "00000016") || (linked == "00000028") || (linked == "00000040")
-                                || (linked == "00000005") || (linked == "00000017") || (linked == "00000029") || (linked == "00000041")
-                                || (linked == "00000006") || (linked == "00000018") || (linked == "00000030") || (linked == "00000042")
-                                || (linked == "00000007") || (linked == "00000019") || (linked == "00000031") || (linked == "00000043")
-                                || (linked == "00000008") || (linked == "00000020") || (linked == "00000032") || (linked == "00000044")
-                                || (linked == "00000009") || (linked == "00000021") || (linked == "00000033") || (linked == "00000045")
-                                || (linked == "00000010") || (linked == "00000022") || (linked == "00000034") || (linked == "00000046")
-                                || (linked == "00000011") || (linked == "00000023") || (linked == "00000035") || (linked == "00000047")
-                                || (linked == "00000012") || (linked == "00000024") || (linked == "00000036") || (linked == "00000048")
-                                || (linked == "00000013") || (linked == "00000025") || (linked == "00000037") || (linked == "00000049")
-                                || (linked == "00000014") || (linked == "00000026") || (linked == "00000038") || (linked == "00000050")
-                                || (linked == "00000015") || (linked == "00000027") || (linked == "00000039") ) {
-                            
-                            var dataReffinal = firebase.database().ref("open").child("opena");
-                            dataReffinal.child(lastaa).remove();
-                            dataReffinal.child(lastbb).remove();
-                            dataReffinal.child(lastcc).remove();
-                                    
-                            dataReffinal.child( ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) ) ).set({
-                                'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) )
-                            }).then(()=>{
-
-                                dataReffinal.child( ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] ) ) ).set({
-                                    'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] ) )
-                                }).then(()=>{
-                                    dataReffinal.child( ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ) ) ).set({
-                                        'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ) )
-                                    }).then(()=>{
-                                        
-                                        dataRefb.set({
-                                    'a1' : ("0") ,
-                                    'a2' : ("0") ,
-                                    'a3' : ("0") ,
-                                    'a4' : ("0") ,
-                                    'a5' : ("0") ,
-                                    'a6' : ("0") ,
-                                    'a7' : ("0") ,
-                                    'a8' : ("0") ,
-                                    'a9' : ("0") ,
-                                    'a10' : ("0") ,
-                                    'a11' : ("0") ,
-                                    'a12' : ("0") ,
-                                    'a13' : ("0") ,
-                                    'a14' : ("0") ,
-                                    'a15' : ("0") ,
-                                    'a16' : ("0") ,
-                                    'a17' : ("0") ,
-                                    'a18' : ("0") ,
-
-
-                                    'b1' : ("0") ,
-                                    'b2' : ("0") ,
-                                    'b3' : ("0") ,
-                                    'b4' : ("0") ,
-                                    'b5' : ("0") ,
-                                    'b6' : ("0") ,
-                                    'b7' : ("0") ,
-                                    'b8' : ("0") ,
-                                    'b9' : ("0") ,
-                                    'b10' : ("0") ,
-                                    'b11' : ("0") ,
-                                    'b12' : ("0") ,
-                                    'b13' : ("0") ,
-                                    'b14' : ("0") ,
-                                    'b15' : ("0") ,
-                                    'b16' : ("0") ,
-                                    'b17' : ("0") ,
-                                    'b18' : ("0") ,
-
-
-                                    'c1' : ("0") ,
-                                    'c2' : ("0") ,
-                                    'c3' : ("0") ,
-                                    'c4' : ("0") ,
-                                    'c5' : ("0") ,
-                                    'c6' : ("0") ,
-                                    'c7' : ("0") ,
-                                    'c8' : ("0") ,
-                                    'c9' : ("0") ,
-                                    'c10' : ("0") ,
-                                    'c11' : ("0") ,
-                                    'c12' : ("0") ,
-                                    'c13' : ("0") ,
-                                    'c14' : ("0") ,
-                                    'c15' : ("0") ,
-                                    'c16' : ("0") ,
-                                    'c17' : ("0") ,
-                                    'c18' : ("0") ,
-
-                                'joueur1' : ( (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) ) ,
-                                'joueur2' : ( (((lastbb).split(" ") ) [2] ) +  " " + (((lastbb).split(" ") ) [3] ) ) ,
-                                'joueur3' : ( (((lastcc).split(" ") ) [2] ) +  " " + (((lastcc).split(" ") ) [3] ) ),
-
-                                'net1' : ((((lastaa).split(" ") ) [23] )),
-                                'net2' : ((((lastbb).split(" ") ) [23] )) ,
-                                'net3' : ((((lastcc).split(" ") ) [23] )) ,
-
-                                'netj1' : ((((lastaa).split(" ") ) [1] )) ,
-                                'netj2' : ((((lastbb).split(" ") ) [1] )) ,
-                                'netj3' : ((((lastcc).split(" ") ) [1] )) ,
-
-                                'brut1' : ((((lastaa).split(" ") ) [24] )),
-                                'brut2' : ((((lastbb).split(" ") ) [24] )) ,
-                                'brut3' : ((((lastcc).split(" ") ) [24] )) ,
-
-                                'noma' : ( (((lastaa).split(" ") ) [0] ) + " " + (((lastaa).split(" ") ) [1] ) + " " + (((lastaa).split(" ") ) [2] ) + " " + (((lastaa).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastaa).split(" ") ) [23] ) + " " + (((lastaa).split(" ") ) [24] ) ),
-                                'nomb' : ( (((lastbb).split(" ") ) [0] ) + " " + (((lastbb).split(" ") ) [1] ) + " " + (((lastbb).split(" ") ) [2] ) + " " + (((lastbb).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastbb).split(" ") ) [23] ) + " " + (((lastbb).split(" ") ) [24] )),
-                                'nomc' : ( (((lastcc).split(" ") ) [0] ) + " " + (((lastcc).split(" ") ) [1] ) + " " + (((lastcc).split(" ") ) [2] ) + " " + (((lastcc).split(" ") ) [3] ) + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 0" + " 000" + " " + (((lastcc).split(" ") ) [23] ) + " " + (((lastcc).split(" ") ) [24] ))
-
-                            }).then(()=>{
-                                    load.style.display = 'none';
-                                    window.alert("Sauvegarde pro reuissie.");       
-                                    window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';        
-                                }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                            });
-
-                                        
-                                    }).catch((error)=>{
-                                        load.style.display = 'none';
-                                        window.alert("erreur survenue : "+ error);
-                                    });        
-                                }).catch((error)=>{
-                                    load.style.display = 'none';
-                                    window.alert("erreur survenue : "+ error);
-                                });
-
-                            }).catch((error)=>{
-                                load.style.display = 'none';
-                                window.alert("erreur survenue : "+ error);
-                            });
-                            
-                        }
-
+                    if ( ace == 1 ) {
+                        ouvrir();
+                        delbt.style.display="block"; 
+                        chercherbtn.style.display="none"; 
+                        validbtn.style.display="block"; 
                         
-                        
-
                     } else {
-                        load.style.display="none";
-                        window.alert("votre partie n'est pas encore terminée! Vous avez encore des scores marquées à ZERO")
+                        loadgif.style.display='none';
+                        window.alert("Désole ! Le code " + nameopenb + " n'existe pas . verifiez les caractères , majuscule ou accents");
+                        window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                     }
-                } else {
-                    window.alert('code administrateur incorrect');
-                    window.location.href = 'https://kevabcdigital.github.io/website/home.html';
-                }            
-            }   
+                });
+                                
+            } else {
+                window.alert("Entrez le code de la partie que vous souhaitez marquer");
+                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
+            }
+
         }
-*/
+
         const firebaseConfig = {
             databaseURL : "https://nlogagolf-ed63e-default-rtdb.asia-southeast1.firebasedatabase.app",
             apiKey: "AIzaSyCDKDeQxFPyVRMyMaxvcOFrxva2Fn7iKnw",
@@ -598,19 +387,17 @@
         };
        
         firebase.initializeApp(firebaseConfig)
-    
         const database = firebase.database();
 
-        var ccc = 0;
-        
+        var ccc = 0; 
         var pa = "non";
         var pb = "non";
         var pc = "non";
-        
-            loadgif.style.display='block';
 
-            var formulairec = document.getElementById("formulairec");
+        function ouvrir() {
             
+            var formulairec = document.getElementById("formulairec");
+                
             var joueur1 = document.getElementById("joueur1");                
             var joueur2 = document.getElementById("joueur2");                
             var joueur3 = document.getElementById("joueur3");
@@ -2104,15 +1891,12 @@
 
                                     });
             });
-
-
+        }
         
-
         function containsOnlyNumbers(str) {
             return /^\d+$/.test(str); 
         }
-
-        
+   
         function send(){
 
             var dataRef = firebase.database().ref(nameopen);
@@ -2757,7 +2541,7 @@
                             }).then(()=>{
 
                                 loadg.style.display = 'none';
-                                // window.alert("Sauvegarde reuissie.");
+                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                                             
                             }).catch((error)=>{
                                 loadg.style.display = 'none';
@@ -2827,7 +2611,7 @@
                             }).then(()=>{
 
                                 loadg.style.display = 'none';
-                                // window.alert("Sauvegarde reuissie.");
+                                window.location.href = 'https://kevabcdigital.github.io/website/amicalscore.html';
                                             
                             }).catch((error)=>{
                                 loadg.style.display = 'none';
@@ -2859,7 +2643,7 @@
 
         function invalid() {
             window.alert("Desolé ce formulaire est indisponible pour le moment.");
-            window.location.href = 'https://kevabcdigital.github.io/website/tour.html';
+            window.location.href = 'https://kevabcdigital.github.io/website/tv.html';
         }
 
     </script>
