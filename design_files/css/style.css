@@ -322,7 +322,7 @@ header {
   filter: opacity(0.2);
   margin-left: 1.8%;
   margin-top: 2.21%;
-  display: block;
+  display: none;
   position: relative;
   box-shadow: -1px 12px 12px #5e6b64;
   z-index: 1900;
@@ -1385,8 +1385,8 @@ header {
   height: 30px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  position: relative;
-  margin-left: 3%;
+  position: absolute;
+  right: 0;
   display: block;
   background-image: linear-gradient(rgba(110, 107, 107, 0) , rgba(119, 119, 119, 0)), 
     url(../images/profileimg.png);
