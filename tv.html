@@ -73,7 +73,7 @@
                     <img name="imgid" class="logogolf" src="./design_files/images/logogd.png" alt="image">
 
                     <div style="display: block;" >
-                        <b class="tta" style=" display: block;" id="nompart" >TOURNAMENTS-SCOREBOARD</b>
+                        <b class="tta" style="display: block;" id="nompart" >TOURNAMENTS-SCOREBOARD</b>
                         <b class="ttaz" style=" display: block;" id="nompart" >POWERED BY GOLF CLUB YAOUNDE</b>
                     </div>
 
@@ -402,16 +402,17 @@
 
         }
 
+        
         function move() {
             var $container = $("#tab3");
             var timescroll = 0;
             var interval = setInterval(function () {
                 var position = $container.scrollTop();
-                if(timescroll < 6) {
+                if(timescroll < 4) {
                     $container.scrollTop(position + 257.5);
-                }  else if((timescroll > 5) & ((timescroll < 13))) {
+                }  else if((timescroll > 3) & ((timescroll < 14))) {
                     $container.scrollTop(0, 0);                 
-                } else if (timescroll > 12) {
+                } else if (timescroll > 13) {
                     timescroll = -1;
                 }
                 timescroll = timescroll + 1;
