@@ -330,8 +330,8 @@ header {
 .score .entetetab3 {
   display: flex;
   position: relative;
-  height: 67%;
-  padding-bottom: 0px; 
+  height: 71%;
+  padding-bottom: 16px; 
   background-color: rgba(8, 54, 74, 0.904); 
   padding-left: 1.5%;
   padding-right: 1.5%;
@@ -1258,7 +1258,7 @@ header {
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 9px;
+  font-size: 8px;
   color: white;
 }
 .score .entetetab3 .boxentetejw {
@@ -1268,7 +1268,7 @@ header {
   border-radius: 4px;
   height: max-content;
   text-align: center;
-  font-size: 9px;
+  font-size: 8px;
   color: white;
   text-transform: uppercase;
   text-align: start; 
@@ -1283,7 +1283,7 @@ header {
   height: max-content;
   border: 1px solid #a5d1ab7d;
   text-align: center;
-  font-size: 9px;
+  font-size: 8px;
   color: white;
 }
 .score .entete .boxentetejw {
@@ -1293,7 +1293,7 @@ header {
   border-radius: 4px;
   height: max-content;
   text-align: center;
-  font-size: 9px;
+  font-size: 8px;
   color: white;
   text-transform: uppercase;
   text-align: start; 
