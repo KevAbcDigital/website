@@ -26,6 +26,10 @@
 
     <body class="bod" style="background-color: rgb(0, 0, 0);">
 
+        <audio loop muted id="audioplay">
+            <source src="sonc.mp3" type="audio/mpeg">
+        </audio>
+
         <section id="toursliderabcphone" class="toursliderabcphone" >
 
             <img name="imgid" style="width: 100%; background-size: cover; background-position: center; " 
@@ -44,6 +48,7 @@
             src="toure.jpg" alt="image"> 
 
             <section class="score" id="score">
+
 
                 <img id="lottieload" style="display: none; margin-top: 10%; position: absolute; z-index: 1700; margin-left: 25%;width: 50%;" src="./design_files/images/loadgif.gif" alt="image">
 
@@ -76,7 +81,7 @@
                         <option class="selectbox" value="open national team j3"> open national team j3</option>
                     -->    
                         <option class="selectbox" value="autre">^ Cherchez un tournoi ici</option>
-                        <option class="selectbox" value="11th international open of cameroon j2"> open du cameroun</option>
+                        <option class="selectbox" value="11th international open of cameroon j2"> Open du cameroun</option>
                         <option class="selectbox" value="2024 open total energies gcy"> 2024 TOTAL ENERGIE</option>
                         <option class="selectbox" value="open national team"> National team </option>
                     </select>
@@ -226,6 +231,24 @@
 
     <script>
 
+        
+        function playaudio() {
+            // var audio = document.getElementById('audioplay');
+            // audio.play();    
+            // audio.muted=false;
+            /*
+            audio.addEventListener('timeupdate', function() {
+                var audstart = parseInt(audio.currentTime);
+                var audend = parseInt(audio.duration);
+                console.log(audstart);
+                if (audstart == audend) {
+                    audio.muted = false ;
+                }
+            });
+            */
+        }
+
+
         var toursliderabc = document.getElementById('toursliderabc');
         var toursliderabcphone = document.getElementById('toursliderabcphone');
         
@@ -307,6 +330,11 @@
             } else {
                 codesearchjour = (codesearch.trim()) ;
             }
+
+            if ((codesearchjour == "11th international open of cameroon")) {
+                codesearchjour = "11th international open of cameroon j2";
+            }
+            
 
             var dat = firebase.database().ref("open");
             load.style.display='block';
@@ -1142,7 +1170,14 @@
             dataRef.on("value" , function(snapshot){
                 var a = 0;
                 snapshot.forEach(function(element){
+                    /*
                     if(element.key.includes(codesearch)) {
+                        a=1;
+                        codesearch=element.key;
+                        nompart.innerHTML= codesearch ;
+                    }
+                    */
+                    if((element.key) == codesearch) {
                         a=1;
                         codesearch=element.key;
                         nompart.innerHTML= codesearch ;
@@ -1156,6 +1191,7 @@
                     // window.alert("aucun tournoi trouvé au nom de : " + codesearch + " veuillez vous rassurez des Majuscules ou autres caracteres spécifiques");                        
                     nompart.innerHTML= "Aucun Tournoi trouvé" ;
                 } else {
+                    playaudio();
 
                     boxjour.style.display="block";
                     getjour();
