@@ -97,7 +97,7 @@
                         <option class="selectbox" value="open national team j3"> open national team j3</option>
                     -->    
                         <option class="selectbox" value="autre">^ Cherchez un tournoi ici</option>
-                        <option class="selectbox" value="11th international open of cameroon j2"> Open du cameroun </option>
+                        <option class="selectbox" value="11th international open of cameroon j3"> Open du cameroun </option>
                         <option class="selectbox" value="2024 open total energies gcy"> 2024 TOTAL ENERGIE</option>
                         <option class="selectbox" value="open national team"> National team </option>
                     </select>
@@ -481,11 +481,24 @@
                 codesearchjour = (codesearch.trim()) ;
             }
 
-
-            
+            /*
+            if ((codesearchjour == "11th international open of cameroon j1")) {
+                codesearchjour = "11th international open of cameroon";
+            }
+            */
 
             if ((codesearchjour == "11th international open of cameroon")) {
-                codesearchjour = "11th international open of cameroon j2";
+                codesearchjour = "11th international open of cameroon j3";
+                // window.alert("1111111");
+            } else if ((codesearchjour == "11th international open of cameroon j1")) {
+                codesearchjour = "11th international open of cameroon j3";
+                // window.alert("1111111");
+            } else if ((codesearchjour == "11th international open of cameroon j2")) {
+                codesearchjour = "11th international open of cameroon j3";
+                // window.alert("1111111");
+            } else if ((codesearchjour == "11th international open of cameroon j3")) {
+                codesearchjour = "11th international open of cameroon j3";
+                // window.alert("1111111");
             }
 
             var dat = firebase.database().ref("open");
@@ -2765,18 +2778,13 @@
             dataRef.on("value" , function(snapshot){
                 var a = 0;
                 snapshot.forEach(function(element){
-                    /*
+                    
                     if(element.key.includes(codesearch)) {
                         a=1;
                         codesearch=element.key;
                         nompart.innerHTML= codesearch ;
                     }
-                    */
-                    if((element.key) == codesearch) {
-                        a=1;
-                        codesearch=element.key;
-                        nompart.innerHTML= codesearch ;
-                    }
+                    
                 });
                 
                 if ( a == 0 ) {
