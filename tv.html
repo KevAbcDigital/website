@@ -402,24 +402,6 @@
 
         }
 
-        
-        function move() {
-            var $container = $("#tab3");
-            var timescroll = 0;
-            var interval = setInterval(function () {
-                var position = $container.scrollTop();
-                if(timescroll < 4) {
-                    $container.scrollTop(position + 257.5);
-                }  else if((timescroll > 3) & ((timescroll < 14))) {
-                    $container.scrollTop(0, 0);                 
-                } else if (timescroll > 13) {
-                    timescroll = -1;
-                }
-                timescroll = timescroll + 1;
-                console.log(timescroll);
-            }, 6000);
-        }
-        
         window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
             const portrait = e.matches;
             var rotate = document.getElementById('rotate');
@@ -469,6 +451,7 @@
 
         var charge = "aucun";    
         var codesearch = "aucun";
+        
         var codesearchjour = "aucun";
         var load = document.getElementById("lottieload");   
         var nompart = document.getElementById("nompart");       
@@ -496,6 +479,17 @@
                 codesearchjour = (codesearchjour.trim()) + jour ;
             } else {
                 codesearchjour = (codesearch.trim()) ;
+            }
+
+
+            
+            window.alert(codesearchjour);
+
+            if ((jour == "") & (codesearchjour == "11th international open of cameroon j2")) {
+                window.alert("tttttttttt");
+                //codesearchjour = codesearchjour.replace("j2", "");
+            } else if (jour == "j1" & codesearchjour == "11th international open of cameroon j2") {
+                codesearchjour = codesearchjour.replace("j2", "");
             }
 
             var dat = firebase.database().ref("open");
@@ -746,6 +740,7 @@
                                 newh18 +=( ( (element.key).split(" ") ) [21] ) ;
                                 
                                 if (i==0) {
+                                    /*
                                     ba.style.display="none";
                                     bb.style.display="none";
                                     bc.style.display="none";
@@ -759,9 +754,10 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                   
+                                    */
                                 } 
                                 else if (i==1) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="none";
                                     bc.style.display="none";
@@ -775,7 +771,8 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                  
+                                    */
+
                                     document.querySelector('#nomfirst').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
                                     ida = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase() ;                                    
                                     document.querySelector('#nomfirstb').innerHTML = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] )) ;
@@ -795,6 +792,7 @@
                                     
                                 } 
                                 else if (i==2) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="none";
@@ -808,7 +806,7 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                    
+                                    */
                                     document.querySelector('#nomsecond').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     idb = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomsecondb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
@@ -827,6 +825,7 @@
                                     }
                                 } 
                                 else if (i==3) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -840,7 +839,8 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                 
+                                    */
+
                                     document.querySelector('#nomthird').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     idc = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomthirdb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
@@ -859,6 +859,7 @@
                                     }
                                 } 
                                 else if (i==4) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -872,7 +873,8 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                 
+                                    */
+
                                     idd = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomfourb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -886,6 +888,7 @@
                                     }
                                 } 
                                 else if (i==5) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -899,7 +902,8 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                 
+                                    */
+
                                     ide = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomfiveb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -913,6 +917,7 @@
                                     }
                                 } 
                                 else if (i==6) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -926,7 +931,8 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                 
+                                    */
+
                                     idf = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomsixb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -940,6 +946,7 @@
                                     }
                                 } 
                                 else if (i==7) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -953,7 +960,8 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                 
+                                    */
+
                                     idg = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomsevenb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -967,6 +975,7 @@
                                     }
                                 } 
                                 else if (i==8) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -980,7 +989,7 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                
+                                    */
                                     idh = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomheightb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -994,6 +1003,7 @@
                                     }
                                 } 
                                 else if (i==9) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -1007,7 +1017,7 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                 
+                                    */
                                     idi = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomnineb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1021,6 +1031,7 @@
                                     }
                                 } 
                                 else if (i==10) {
+                                    /*
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -1034,7 +1045,8 @@
                                     bk.style.display="none";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                   
+                                    */
+
                                     idj = ( ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ).toLowerCase();                                    
                                     document.querySelector('#nomtenb').innerHTML = ( ( (element.key).split(" ") ) [2] ) + " " + ( ( (element.key).split(" ") ) [3] ) ;
                                     if ( parseInt(( (element.key).split(" ") ) [24]) == 0 ) {
@@ -1047,7 +1059,9 @@
                                         document.querySelector('#scoretenb').innerHTML = ( parseInt(( (element.key).split(" ") ) [25]) - 216 ) ;
                                     }
                                 } 
+                                /*
                                 else if (i==11) {
+
                                     ba.style.display="block";
                                     bb.style.display="block";
                                     bc.style.display="block";
@@ -1061,7 +1075,6 @@
                                     bk.style.display="block";
                                     bl.style.display="none";
                                     bm.style.display="none";
-                                 
                                 } 
                                 else if (i==12) {
                                     ba.style.display="block";
@@ -1095,7 +1108,6 @@
                                     bm.style.display="block";
                                     
                                 }
-                            /* 
                                 else if (i==14) {
                                     ba.style.display="block";
                                     bb.style.display="block";
@@ -1153,7 +1165,7 @@
                                     bp.style.display="block";
                                     
                                 } 
-                            /*
+                            
                                 else if (i==17) {
                                     ba.style.display="block";
                                     bb.style.display="block";
@@ -2775,7 +2787,7 @@
                     playaudio();
                     boxjour.style.display="block";
                     getjour();
-                    move();
+                    // move();
                 }              
             });
 
@@ -2792,7 +2804,27 @@
         var photo = document.getElementById("photo");
         var golflogo = document.getElementById("golflogo");
 
+        /*
+        function move() {
+            var $container = $("#tab3");
+            var timescroll = 0;
+            var interval = setInterval(function () {
+                var position = $container.scrollTop();
+                if(timescroll < 4) {
+                    $container.scrollTop(position + 257.5);
+                }  else if((timescroll > 3) & ((timescroll < 14))) {
+                    $container.scrollTop(0, 0);                 
+                } else if (timescroll > 13) {
+                    timescroll = -1;
+                }
+                timescroll = timescroll + 1;
+                console.log(timescroll);
+            }, 6000);
+        }
+        */
+
         var dataRefpost = firebase.database().ref("post");
+        var $container = $("#tab3");
         dataRefpost.on("value" , function(snapshot){
             snapshot.forEach(function(element){
                 if (element.key == "state") {
@@ -2802,7 +2834,8 @@
                         tab4.style.display="flex";                        
                         tab5.style.display="none";                        
                         photo.style.display="none";                        
-                        golflogo.style.display="none";                        
+                        golflogo.style.display="none";    
+                        $container.scrollTop(0, 0);                    
  
                     } else if( element.val() == "P") {
                         score.style.display="none";                        
@@ -2811,6 +2844,41 @@
                         photo.style.display="none"; 
                         golflogo.style.display="block";                  
                         slidepic();                        
+                    }  else if( element.val() == "A") {
+                        score.style.display="none";                        
+                        tab4.style.display="none";       
+                        tab5.style.display="none";                        
+                        photo.style.display="block";
+                        golflogo.style.display="none";           
+                        //slidepic();                        
+                    } else if( element.val() == "S1") {
+                        score.style.display="block";                        
+                        tab4.style.display="flex";                        
+                        tab5.style.display="none";                        
+                        photo.style.display="none";                        
+                        golflogo.style.display="none";    
+                        $container.scrollTop(313.5);                        
+                    } else if( element.val() == "S2") {
+                        score.style.display="block";                        
+                        tab4.style.display="flex";                        
+                        tab5.style.display="none";                        
+                        photo.style.display="none";                        
+                        golflogo.style.display="none";    
+                        $container.scrollTop(627);                        
+                    } else if( element.val() == "S3") {
+                        score.style.display="block";                        
+                        tab4.style.display="flex";                        
+                        tab5.style.display="none";                        
+                        photo.style.display="none";                        
+                        golflogo.style.display="none";    
+                        $container.scrollTop(940.5);                        
+                    } else if( element.val() == "S4") {
+                        score.style.display="block";                        
+                        tab4.style.display="flex";                        
+                        tab5.style.display="none";                        
+                        photo.style.display="none";                        
+                        golflogo.style.display="none";    
+                        $container.scrollTop(1150);                        
                     }
                 }
             });
@@ -2828,13 +2896,13 @@
                     tab5.style.display="none";                        
                     photo.style.display="block";
                     golflogo.style.display="none"; 
-                } else if (timesclide > 13) {
+                } else if (timesclide == 14) {
 
                     var dataRefpp = firebase.database();
                     dataRefpp.ref("post").set({
                         state : "T" 
                     }).then(()=>{
-                        timesclide = 15;
+                        // timesclide = 15;
                     }).catch((error)=>{
                         window.alert("erreur survenue : "+ error);
                     });
